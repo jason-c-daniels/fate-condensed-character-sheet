@@ -10,13 +10,16 @@
     };
 </script>
 <script>
+    import {createEventDispatcher} from 'svelte'
     import Check from './small-check.svg';
     export let number = 1;
     export let css = defaultCss;
     export let checked;
+    const dispatch = createEventDispatcher();
 
     function handleClick() {
         checked = !checked;
+        dispatch('checkedChanged', { checked: checked });
     }
 </script>
 

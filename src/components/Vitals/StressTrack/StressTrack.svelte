@@ -4,11 +4,14 @@
 <script>
     import CheckedItem, {defaultCss as CSS} from "../CheckedItem/CheckedItem.svelte";
     export let title = "Physical";
-    // export let idBase = title.toLocaleLowerCase().replace(" ", "_") + "_";
-    export let count = 6;
+    export let stressTaken=0;
+    export let count = 3;
     let css={...CSS,color:'black'};
-    let grayCss={...css,color:'gray'}
+    let grayCss={...css,color:'gray'};
 
+    function handleCheckedChanged(event) {
+        stressTaken += event.detail.checked ? 1 : -1;
+    }
 </script>
 
 
@@ -19,7 +22,7 @@
 
     {#each Array(count) as _, i}
         <div class="column">
-            <CheckedItem css="{i < 3 ? css : grayCss}" number="1"/>
+            <CheckedItem css="{i < 3 ? css : grayCss}" number="1" checked="{i < stressTaken}" on:checkedChanged={handleCheckedChanged}/>
         </div>
     {/each}
     <div class=".last-col">

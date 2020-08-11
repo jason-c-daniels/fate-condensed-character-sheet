@@ -1,0 +1,44 @@
+:root {
+    --header-font-height: 26pt;
+    --header-span-height: calc(var(--header-font-height) * 5 / 6);
+    --header-padding-top: calc(var(--header-font-height) * 1 / 6 - 2);
+}
+
+.section {
+    height: auto;
+    position: relative;
+    display: block;
+}
+
+.header {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: var(--header-font-height);
+    background-color: var(--header-primary-background-color);
+    color: var(--header-primary-color);
+    text-align: left;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    padding-top: var(--header-padding-top);
+    text-transform: uppercase;
+}
+
+.header span {
+    box-sizing: border-box;
+    display: block;
+    height: var(--header-span-height);
+    width: 100%;
+    font-weight: 900;
+}
+
+.hint {
+    font-family: 'Barlow', sans-serif;
+    font-size: 8pt;
+    display: block;
+    text-align: justify;
+    margin-bottom: 5pt;
+}
+
+.content {
+    padding: 5pt 15pt;
+}

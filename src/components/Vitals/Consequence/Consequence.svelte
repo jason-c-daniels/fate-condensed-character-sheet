@@ -8,7 +8,6 @@
     export let value = 2;
     export let isExtra = false;
     export let description = "";
-    // export let idBase = name.toLocaleLowerCase().replace(" ", "_") + "_";
     let css={...CSS,color:'black'};
     let grayCss={...css,color:'gray'}
 
@@ -17,9 +16,10 @@
 <div class="row">
 
     <div class="column">
-        <CheckedItem css="{isExtra ? grayCss : css}" number="{value}"/>
+        <CheckedItem css="{isExtra ? grayCss : css}" number="{value}" checked={description!=""}/>
     </div>
     <div class="column" style="padding-left:1em; width:90%;">
-        <MultilineInput title="{name}" text="{description}" rows="1" fontSize="9pt" width="100%"/>
+        <label><span>{name}</span></label>
+        <textarea rows=2 bind:value={description} placeholder="Please state the consequence"></textarea>
     </div>
 </div>

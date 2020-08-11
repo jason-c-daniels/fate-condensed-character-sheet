@@ -1,0 +1,17 @@
+/* import the actual base font's css files here. This file is already imported. */
+/*
+
+Barlow Condensed - Black 900 - Main Headings and Name Input
+Barlow Condensed - SemiBold 500 -  Stress Track names and consequence descriptors (Mild...etc.)
+
+Barlow - Normal 400 - freeform text, and skill names.
+
+Gothic A1 - Normal 400 - Skill values
+Gothic A1 - Black 900 - Subheadings
+*/
+
+@import "../../public/fonts/GothicA1.css";
+@import "../../public/fonts/Barlow.css";
+@import "../../public/fonts/BarlowCondensed.css";
+@import "../../public/fonts/BarlowSemicondensed.css";
+
