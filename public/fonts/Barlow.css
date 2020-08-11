@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('../fonts/Barlow-Regular.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Barlow-Regular.woff') format('woff')
+}

@@ -1,0 +1,116 @@
+:root{
+    --circle-radius:1.6em;
+    --header-font-height: 24pt;
+    --header-span-height: calc(var(--header-font-height) * 5 / 6);
+    --header-padding-top: calc(var(--header-font-height) * 1 / 6 - 2);
+}
+
+/* draw it as a circle!*/
+.circle {
+    background-color: white;
+    color: black;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    text-align: center;
+    width: var(--circle-radius);
+    height: var(--circle-radius);
+    font-size: 42pt;
+    font-weight: bold;
+    border: 1.5pt solid black;
+    z-index: 1000;
+}
+
+/* Hide the focus box */
+input[type="number"]:focus {
+    outline: none;
+}
+
+/* hide the spinners for this numeric input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.refresh-label {
+    width: auto;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0%;
+    text-align: left;
+    position: absolute;
+    bottom: -4px;
+    left: -2.3em;
+    display: inline-block;
+}
+
+.refresh-label,
+.refresh-points {
+    float: left;
+}
+
+.refresh-points {
+    position: absolute;
+    width: auto;
+    left: 0.3em;
+    top: -1.3em;
+}
+
+.fate-label {
+    width: 50%;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0%;
+    right: -0.7em;
+    bottom: -4px;
+    text-align: right;
+    position: absolute;
+    display: block;
+}
+
+.fate-label,
+.fate-points {
+    float: right;
+}
+
+.fate-points {
+    position: absolute;
+    width: auto;
+    right: 1em;
+    top: -0.7em;
+}
+
+.header {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: var(--header-font-height);
+    background-color: var(--header-primary-background-color);
+    color: var(--header-primary-color);
+    text-align: left;
+    position: relative;
+    height: var(--header-span-height);
+
+    text-transform: uppercase;
+    margin-top: 32pt;
+    margin-bottom:32pt;
+}
+
+.header span {
+    box-sizing: border-box;
+    height: var(--header-span-height);
+    width: 100%;
+    font-weight: 900;
+}
+
+.header:after {
+    clear:both;
+    display:block;
+}
