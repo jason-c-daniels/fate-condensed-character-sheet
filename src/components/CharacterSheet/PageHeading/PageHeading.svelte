@@ -15,7 +15,7 @@
         </div>
         <div class="td bottom">
                 <input  class="name-input"
-                        maxlength="20"
+                        maxlength="25"
                         type="text"
                         placeholder="Please enter a name"
                         bind:value="{name}"
