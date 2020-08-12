@@ -3,7 +3,7 @@
      box-sizing: content-box;
  }*/
 
-.content {
+.check-text {
     opacity: 80%;
     padding-left: 0;
     display: table-cell;
@@ -20,7 +20,7 @@
     display: inline-block;
 }
 
-.content,
+.check-text,
 .checkmark {
     float: left;
     vertical-align: middle;
@@ -30,7 +30,7 @@
 }
 
 .checkmark span,
-.content span {
+.check-text span {
     text-align: center;
     vertical-align: top;
 }
@@ -42,7 +42,7 @@
     font-weight: normal !important;
 }
 
-.content span {
+.check-text span {
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 900;
     height: 100%;

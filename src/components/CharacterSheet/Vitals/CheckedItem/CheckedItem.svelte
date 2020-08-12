@@ -27,7 +27,7 @@
         class="box"
         style="color:{css.color}; width:{css.size}; height:{css.size}; border-width:{css.borderWidth};
   border-color:{css.color}; border-style:solid; background-color:{css.backgroundColor};" on:click={handleClick}>
-    <div class="content" style="width:{css.size}; height:{css.size};">
+    <div class="check-text" style="width:{css.size}; height:{css.size};">
     <span>
       {number}
     </span>
