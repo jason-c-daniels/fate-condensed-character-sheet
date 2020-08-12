@@ -34,7 +34,7 @@
     {#each skills as skill}
         <div class="skill-line">
             <span>+</span>
-            <input type="number" class="skill-value" min="0" max="10" bind:value={skill.value}/>
+            <input maxlength="2" type="number" class="skill-value" min="0" max="10" bind:value={skill.value}/>
             <label>{skill.name}</label>
         </div>
     {/each}
