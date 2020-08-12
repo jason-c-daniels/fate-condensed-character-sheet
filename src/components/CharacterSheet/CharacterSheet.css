@@ -1,7 +1,7 @@
 
 .character-sheet {
     padding: 0.5in;
-    margin: 64px 128px;
+    margin: 64px auto;
     min-height: 10in;
     width: 8.5in;
     border-collapse: collapse;

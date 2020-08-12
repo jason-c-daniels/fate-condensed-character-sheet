@@ -37,9 +37,9 @@
     <div style="margin-left:2em">
         <!-- TODO: account for physique and will below -->
         <StressTrack title="Physical" bind:stressTaken="{vitals.physicalStressTaken}"
-                     count="{getStressTrackCount(will)}"/>
-        <StressTrack title="Mental" bind:stressTaken="{vitals.mentalStressTaken}"
                      count="{getStressTrackCount(physique)}"/>
+        <StressTrack title="Mental" bind:stressTaken="{vitals.mentalStressTaken}"
+                     count="{getStressTrackCount(will)}"/>
     </div>
 
     <div class="row subheading" style="margin-top:10px">

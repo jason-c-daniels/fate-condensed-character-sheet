@@ -13,13 +13,13 @@
 
 </script>
 
-<div class="row">
+<div class="row consequence">
 
     <div class="column">
-        <CheckedItem css="{isExtra ? grayCss : css}" number="{value}" checked={description!=""}/>
+        <CheckedItem css="{isExtra == "true" ? grayCss : css}" number="{value}" checked={description!=""}/>
     </div>
     <div class="column" style="padding-left:1em; width:90%;">
-        <label><span>{name}</span></label>
+        <label class="title"><span>{name}</span></label>
         <textarea rows=2 bind:value={description} placeholder="Please state the consequence"></textarea>
     </div>
 </div>

@@ -21,7 +21,7 @@
                 <Aspects bind:aspects="{character.aspects}"/>
             </div>
             <div class="td">
-                <Vitals bind:vitals="{character.vitals}" bind:will={character.skills[18].value} bind:physique={character.skills[11].value}/>
+                <Vitals bind:vitals="{character.vitals}" bind:will={character.skills[18].value} bind:physique={character.skills[12].value}/>
             </div>
         </div>
 
