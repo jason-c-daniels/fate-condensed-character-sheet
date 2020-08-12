@@ -1,17 +1,14 @@
 <script>
 
     import GlobalCss from "../GlobalCss";
-    import PageHeading from "../components/PageHeading";
-    import Aspects from "../components/Aspects";
-    import Vitals from "../components/Vitals";
-    import Skills from "../components/Skills";
-    import Stunts from "../components/Stunts";
-    import RefreshAndFate from "../components/RefreshAndFate";
+    import CharacterSheet from "../components/CharacterSheet";
     import saveAs from 'file-saver';
 
     export let name;
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
     import Dropzone from "svelte-file-dropzone";
+
+    let showLoadPane = false;
 
     function getNewCharacter() {
         return {
@@ -73,6 +70,10 @@
         saveAs(blob, character.name + ".charfc");
     }
 
+    function loadCharacter() {
+        showLoadPane = true;
+    }
+
     function newCharacter() {
         character = getNewCharacter();
     }
@@ -80,15 +81,23 @@
     function handleFilesSelect(e) {
         let files = e.detail.acceptedFiles;
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             // e.target.result should contain the text
-            let text=e.target.result;
-            character=JSON.parse(text);
+            let text = e.target.result;
+            character = JSON.parse(text);
+            showLoadPane = false;
         };
         reader.readAsText(files[0]);
 
     }
 
+    function printCharacter(e){
+        print();
+    }
+
+    function cancelLoad() {
+        showLoadPane = false;
+    }
 </script>
 <style>
     @import "App.css";
@@ -99,32 +108,21 @@
 </svelte:head>
 
 <GlobalCss/>
-<div class="noprint" style="width:100%; height:50px;">
-    <Dropzone on:drop={handleFilesSelect} />
+
+<div class="action-bar noprint" on:keys.escape={cancelLoad}>
+    <input class="noprint" type="button" on:click={newCharacter} value="New"/>
+    <input class="noprint" type="button" on:click={loadCharacter} value="Load"/>
+    <input class="noprint" type="button" on:click={saveCharacter} value="Save"/>
+    <input class="noprint" type="button" on:click={printCharacter} value="Print"/>
+    {#if (showLoadPane)}
+        <input class="noprint" type="button" on:click={cancelLoad} value="Cancel Load"/>
+    {/if}
 </div>
-<input class="noprint" type="button" on:click={newCharacter} value="New"/>
-<input class="noprint" type="button" on:click={saveCharacter} value="Save"/>
-<main>
-    <PageHeading bind:name="{character.name}"/>
-    <div class="table">
-
-        <div class="tr">
-            <div class="td border">
-                <Aspects bind:aspects="{character.aspects}"/>
-            </div>
-            <div class="td">
-                <Vitals bind:vitals="{character.vitals}"/>
-            </div>
+<main on:keys.escape={cancelLoad}>
+    {#if (showLoadPane)}
+        <div class="noprint file-loader" on:keys.escape={cancelLoad}>
+            <Dropzone on:drop={handleFilesSelect} on:keys.escape={cancelLoad} containerStyles="height:100%"	/>
         </div>
-
-        <div class="tr">
-            <div class="td border">
-                <Stunts bind:stunts="{character.stunts}"/>
-                <RefreshAndFate bind:fate="{character.fate}" bind:refresh="{character.refresh}"/>
-            </div>
-            <div class="td">
-                <Skills bind:skills={character.skills}/>
-            </div>
-        </div>
-    </div>
+    {/if}
+    <CharacterSheet {character}/>
 </main>

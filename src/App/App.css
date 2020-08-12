@@ -1,16 +1,60 @@
-
-main {
-    padding: 0.5in;
-    margin: 64px 128px;
-    min-height: 11in;
-    width: 8.5in;
-    border-collapse: collapse;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    position: relative;
+@media print {
+    main {
+        border-collapse: collapse;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: auto !important;
+        box-shadow: none !important;
+    }
 }
 
-.td.border {
-    border-right-color: black;
-    border-right-style: solid;
-    border-right-width: 2pt;
+main {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: auto;
+    position: relative;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.action-bar {
+    height: 3em;
+    width: 100%;
+    background-color: #26285c;
+    color: white;
+    z-index: 3000;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.action-bar input[type="button"] {
+    background-color: inherit;
+    color: inherit;
+    height: 100%;
+    width: auto;
+    padding: 0.2em;
+
+}
+
+.file-loader {
+    z-index: 2000;
+    position: fixed;
+    top: 3em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 100%;
+    background-color: #333333;
+}
+
+.file-loader div,
+.file-loader div p {
+    display: block;
+    height: 100%;
+    width: 100%;
 }

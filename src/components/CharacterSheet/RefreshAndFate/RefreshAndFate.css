@@ -70,7 +70,7 @@ input[type="number"] {
     font-weight: 900;
     text-transform: uppercase;
     margin: 0%;
-    right: -0.7em;
+    right: -1.2em;
     bottom: -4px;
     text-align: right;
     position: absolute;
@@ -85,7 +85,7 @@ input[type="number"] {
 .fate-points {
     position: absolute;
     width: auto;
-    right: 1em;
+    right: 0.5em;
     top: -0.7em;
 }
 

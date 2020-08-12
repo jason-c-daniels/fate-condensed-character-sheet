@@ -19,17 +19,27 @@
     };
     export let will = 0;
     export let physique = 0;
-
+    function getStressTrackCount(attr){
+        if (attr > 0) {
+            if (attr > 2)  {
+                return 6;
+            }
+                return 4;
+        }
+        return 3;
+    }
 </script>
 
-<Section title="Vitals" >
+<Section title="Vitals">
     <div class="row subheading">
         <span>STRESS</span>
     </div>
     <div style="margin-left:2em">
         <!-- TODO: account for physique and will below -->
-        <StressTrack title="Physical" bind:stressTaken="{vitals.physicalStressTaken}"/>
-        <StressTrack title="Mental" bind:stressTaken="{vitals.mentalStressTaken}"/>
+        <StressTrack title="Physical" bind:stressTaken="{vitals.physicalStressTaken}"
+                     count="{getStressTrackCount(will)}"/>
+        <StressTrack title="Mental" bind:stressTaken="{vitals.mentalStressTaken}"
+                     count="{getStressTrackCount(physique)}"/>
     </div>
 
     <div class="row subheading" style="margin-top:10px">
@@ -39,6 +49,7 @@
     <Consequence name="Mild" isExtra="false" value="2" bind:description="{vitals.consequences.mild1}"/>
     <Consequence name="Moderate" isExtra="false" value="4" bind:description="{vitals.consequences.moderate}"/>
     <Consequence name="Severe" isExtra="false" value="6" bind:description="{vitals.consequences.severe}"/>
-    <Consequence name="Mild" isExtra="true" value="2" bind:description="{vitals.consequences.mild2}"/>
-
+    {#if (will > 4 || physique > 4)}
+        <Consequence name="Mild" isExtra="true" value="2" bind:description="{vitals.consequences.mild2}"/>
+    {/if}
 </Section>
