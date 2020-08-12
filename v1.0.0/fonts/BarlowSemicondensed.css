@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('../fonts/BarlowSemiCondensed-Regular.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/BarlowSemiCondensed-Regular.woff') format('woff') /* Modern Browsers */
+
+}
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    url('../fonts/BarlowSemiCondensed-Black.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/BarlowSemiCondensed-Black.woff') format('woff') /* Modern Browsers */
+}
