@@ -12,6 +12,7 @@
     <div style="display: inline-block">&nbsp;</div>
     <div class="refresh-points">
         <input
+                maxlength="1"
                 class="circle"
                 type="number"
                 step={1}
@@ -28,6 +29,7 @@
     </div>
     <div class="fate-points">
         <input
+                maxlength="1"
                 class="circle"
                 type="number"
                 step={1}

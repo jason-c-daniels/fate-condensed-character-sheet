@@ -21,9 +21,10 @@
 
     {#each stunts as stunt,i}
         <div class="stunt">
-            <input type="text" class="name-input" placeholder="Please name the stunt." bind:value={stunt.name}/>
+            <input type="text" maxlength="100" class="name-input" placeholder="Please name the stunt." bind:value={stunt.name}/>
             <textarea placeholder="Please describe the stunt."
                       bind:value="{stunt.description}"
+                      maxlength="300"
                       rows="{rows}"></textarea>
         </div>
     {/each}
