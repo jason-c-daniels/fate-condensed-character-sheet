@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Gothic A1';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('../fonts/GothicA1-Regular.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/GothicA1-Regular.woff') format('woff') /* Modern Browsers */
+}
+@font-face {
+  font-family: 'Gothic A1';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    url('../fonts/GothicA1-Black.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/GothicA1-Black.woff') format('woff') /* Modern Browsers */
+
+}

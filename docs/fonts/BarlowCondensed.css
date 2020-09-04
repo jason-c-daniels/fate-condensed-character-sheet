@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('../fonts/BarlowCondensed-Medium.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/BarlowCondensed-Medium.woff') format('woff') /* Modern Browsers */
+
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    url('../fonts/BarlowCondensed-Black.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/BarlowCondensed-Black.woff') format('woff') /* Modern Browsers */
+
+}
