@@ -2,80 +2,69 @@
 
     import GlobalCss from "../GlobalCss";
     import CharacterSheet from "../components/CharacterSheet";
-    import saveAs from 'file-saver';
-
+    import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
+    import '@material/mwc-top-app-bar-fixed';
+    import '@material/mwc-icon-button';
+    import '@material/mwc-drawer';
+    import '@material/mwc-icon';
+    import '@material/mwc-list';
+    import '@material/mwc-list/mwc-list-item';
+    import '@material/mwc-list/mwc-check-list-item';
+    import '@material/mwc-list/mwc-radio-list-item';
+    import '@material/mwc-snackbar';
+    import getNewCharacter from "../model/character"
+    import downloadToClient from 'file-saver';
+    import Dropzone from "svelte-file-dropzone";
+    import LocalStorageController from '../controllers/localStorageController'
     export let name;
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
-    import Dropzone from "svelte-file-dropzone";
 
+    let printOptionListElement,
+            snackBarElement,
+            saveOptionsListElement;
+
+    let disabled = "";
     let showLoadPane = false;
+    let firstCall = true;
+    let saveAlsoDownloads = true;
+    let localStorageController = new LocalStorageController();
+    let url=new URL(window.location);
+    let basePath=url.origin+url.pathname;
+    let snackBarText="Replace this with a real message";
 
-    function getNewCharacter() {
-        return {
-            name: "",
-            fate: 3,
-            refresh: 3,
-            aspects: {
-                highConcept: "",
-                trouble: "",
-                relationship: "",
-                otherAspects: ["", ""]
-            },
-            skills: [
-                {name: "Academics", value: 0},
-                {name: "Athletics", value: 0},
-                {name: "Burglary", value: 0},
-                {name: "Contacts", value: 0},
-                {name: "Crafts", value: 0},
-                {name: "Deceive", value: 0},
-                {name: "Drive", value: 0},
-                {name: "Empathy", value: 0},
-                {name: "Fight", value: 0},
-                {name: "Investigate", value: 0},
-                {name: "Lore", value: 0},
-                {name: "Notice", value: 0},
-                {name: "Physique", value: 0},
-                {name: "Provoke", value: 0},
-                {name: "Rapport", value: 0},
-                {name: "Resources", value: 0},
-                {name: "Shoot", value: 0},
-                {name: "Stealth", value: 0},
-                {name: "Will", value: 0}
-            ],
-            stunts: [
-                {name: "", description: ""},
-                {name: "", description: ""},
-                {name: "", description: ""},
-                {name: "", description: ""},
-                {name: "", description: ""},
-                {name: "", description: ""}
-            ],
-            vitals: {
-                physicalStressTaken: 0,
-                mentalStressTaken: 0,
-                consequences: {
-                    mild1: "",
-                    moderate: "",
-                    severe: "",
-                    mild2: "",
-                }
-            }
-        };
+    let character = (url.searchParams.has('character'))
+            ? JSON.parse(decodeURIComponent(url.searchParams.get("character")))
+            : localStorageController.loadCharacter()
+    ;
+
+    if (url.searchParams.has('character')) {
+        // now store it before we redirect
+        localStorageController.saveCharacter(character);
+        window.location.replace(basePath);
+    }
+    scheduleAutosave();
+
+    function handleSaveCharacterClicked() {
+        let blob = new Blob([JSON.stringify(character, null, 2)], {type: "text/plain;charset=utf-8"});
+        localStorageController.saveCharacter(character);
+        showSnackBar("Character saved to local storage.");
+        if (true /*viewOptions.saveAlsoDownloads*/) {
+            setTimeout(() => {
+                let charsheet=`${character.name}.fcchar`;
+                downloadToClient(blob, charsheet);
+                showSnackBar(`Sending file: ${charsheet}. Check your downloads folder.`);
+            }, 2000);
+        }
     }
 
-    let character = getNewCharacter();
-
-    function saveCharacter() {
-        var blob = new Blob([JSON.stringify(character, null, 2)], {type: "text/plain;charset=utf-8"});
-        saveAs(blob, character.name + ".charfc");
-    }
-
-    function loadCharacter() {
+    function handleLoadCharacterClicked() {
         showLoadPane = true;
+        disabled = "disabled";
     }
 
-    function newCharacter() {
+    function handleNewCharacterClicked() {
         character = getNewCharacter();
+        showSnackBar("Created new character.");
     }
 
     function handleFilesSelect(e) {
@@ -85,18 +74,32 @@
             // e.target.result should contain the text
             let text = e.target.result;
             character = JSON.parse(text);
-            showLoadPane = false;
+            setTimeout(()=> showSnackBar("Character loaded from file."),250);
+            hideLoadPane();
         };
         reader.readAsText(files[0]);
-
     }
 
-    function printCharacter(e){
-        print();
-    }
-
-    function cancelLoad() {
+    function hideLoadPane() {
         showLoadPane = false;
+        disabled = "";
+    }
+
+    function handlePrintClicked() {
+        setTimeout(() => window.print(), 500);
+    }
+
+
+    function scheduleAutosave() {
+        if (!firstCall) { return; }
+        firstCall = false;
+        if (typeof (Storage) === "undefined") { return; } // nothing to schedule since we can't get at local storage.
+        setInterval(()=>localStorageController.saveCharacter(character), 5 * 1000);
+    }
+
+    function showSnackBar(text) {
+        snackBarText=text;
+        snackBarElement.show();
     }
 </script>
 <style>
@@ -105,24 +108,51 @@
 
 <svelte:head>
     <title>{appSettings.applicationName}</title>
-</svelte:head>
 
+    <!-- Your application must load the Roboto and Material Icons fonts. -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+</svelte:head>
 <GlobalCss/>
 
-<div class="action-bar noprint" on:keys.escape={cancelLoad}>
-    <input class="noprint" type="button" on:click={newCharacter} value="New"/>
-    <input class="noprint" type="button" on:click={loadCharacter} value="Load"/>
-    <input class="noprint" type="button" on:click={saveCharacter} value="Save"/>
-    <input class="noprint" type="button" on:click={printCharacter} value="Print"/>
-    {#if (showLoadPane)}
-        <input class="noprint" type="button" on:click={cancelLoad} value="Cancel Load"/>
-    {/if}
-</div>
-<main on:keys.escape={cancelLoad}>
-    {#if (showLoadPane)}
-        <div class="noprint file-loader" on:keys.escape={cancelLoad}>
-            <Dropzone on:drop={handleFilesSelect} on:keys.escape={cancelLoad} containerStyles="height:100%"	/>
-        </div>
-    {/if}
-    <CharacterSheet {character}/>
+<main class="noprint">
+
+    <mwc-top-app-bar-fixed style="height:100%">
+
+        <div slot="title"><span>{appSettings.applicationName}</span></div>
+        <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewCharacterClicked} {disabled}></mwc-icon-button>
+        {#if showLoadPane}
+            <mwc-icon-button icon="cancel" slot="actionItems" on:click={hideLoadPane}></mwc-icon-button>
+        {:else}
+            <mwc-icon-button icon="folder_open" slot="actionItems" on:click={handleLoadCharacterClicked}></mwc-icon-button>
+        {/if}
+        <mwc-icon-button icon="save" slot="actionItems" on:click={handleSaveCharacterClicked} {disabled}></mwc-icon-button>
+        <mwc-icon-button icon="print" slot="actionItems" on:click={handlePrintClicked} {disabled}></mwc-icon-button>
+
+        {#if (showLoadPane)}
+            <div id="content" class="noprint file-loader" style="height: 100%">
+                <Dropzone on:drop={handleFilesSelect} containerStyles="height:92vh;color:#333333; background-color:#EFEFEF;"/>
+            </div>
+        {:else}
+            <div id="content" style="margin: 10pt;">
+                <div class="page">
+                    <CharacterSheet bind:character={character}/>
+                </div>
+                <mwc-snackbar labelText="{snackBarText}" bind:this={snackBarElement}>
+                    <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+                </mwc-snackbar>
+            </div>
+        {/if}
+    </mwc-top-app-bar-fixed>
+
+</main>
+
+<main class="printme" style="margin: 0.5in">
+    <!-- This section is intended for print rendering only. You may suppress the rendering of this entire section
+         to HTML if you like, but you'll need to ensure it's been rendered right before the print dialog is invoked.
+         (i.e. print() )
+     -->
+    <div class="page">
+        <CharacterSheet bind:character={character}/>
+    </div>
 </main>
