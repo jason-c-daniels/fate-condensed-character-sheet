@@ -9,7 +9,7 @@ export default class LocalStorageController {
 
     save(itemName, object) {
         console.log("save");
-        let key="slug-"+itemName;
+        let key="fate-condensed-"+itemName;
         if (typeof (Storage) !== "undefined") {
             console.log("saving...");
             // Code for localStorage/sessionStorage.
@@ -24,7 +24,7 @@ export default class LocalStorageController {
 
     load(itemName,defaultItemGenerator= ()=>null) {
         console.log("load");
-        let key="slug-"+itemName;
+        let key="fate-condensed-"+itemName;
         if (typeof (Storage) === "undefined" || localStorage.getItem(key) === null) {
             console.log("LocalStorage not supported, or no prior item found. Creating new character instead.");
             return defaultItemGenerator();
