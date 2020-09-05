@@ -20,7 +20,7 @@
             <div class="td border">
                 <Aspects bind:aspects="{character.aspects}"/>
             </div>
-            <div class="td">
+            <div class="td" style="width: 40.8%">
                 <Vitals bind:vitals="{character.vitals}" bind:will={character.skills[18].value} bind:physique={character.skills[12].value}/>
             </div>
         </div>

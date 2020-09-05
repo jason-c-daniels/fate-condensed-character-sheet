@@ -4,20 +4,33 @@
     margin-bottom: 0.5pt;
 }
 
-.skill-value {
-    font-family: 'Gothic A1 Black', sans-serif;
+.skill-value, .skill-name {
+    font-family: 'Gothic A1', sans-serif;
     width: 2.2em;
     margin-left: 0.5pt;
-    margin-right: 3pt;
     border-bottom-width: 1.5pt;
+}
+
+.skill-value {
+    margin-right: 3pt;
+    font-weight: bolder;
 }
 
 input[type="number"],
 input[type="number"]:active,
 input[type="number"]:hover,
-input[type="number"]:focus
+input[type="number"]:focus,
+input[type="text"],
+input[type="text"]:active,
+input[type="text"]:hover,
+input[type="text"]:focus
+
 {
     border-radius: 0;
     border: 1px solid white;
     border-bottom-color: black;
+}
+
+.skill-name {
+    width:70%;
 }
