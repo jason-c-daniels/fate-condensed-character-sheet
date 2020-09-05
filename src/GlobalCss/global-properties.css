@@ -12,6 +12,28 @@ classes or elements, place definitions under :root */
 
 :root {
 	/* these examples are from material design (https://material.io/design/color/the-color-system.html#color-theme-creation) */
+	--mdc-theme-primary: #000000;                          /* The theme primary color. */
+	--mdc-theme-secondary: #385e7d;                        /* The theme secondary color. */
+	--mdc-theme-surface: #ffffff;                          /* The theme surface color. */
+	--mdc-theme-background: #ffffff;                       /* The theme background color. */
+	--mdc-theme-on-primary: #ffffff;                       /* Primary text on top of a theme primary color background. */
+	--mdc-theme-on-secondary: #ffffff;                     /* Secondary text on top of a theme primary color background. */
+	--mdc-theme-on-surface: #000000;                       /* Hint text on top of a theme primary color background. */
+	--mdc-theme-text-primary-on-background: #000000;       /* Primary text on top of the theme background color. */
+	--mdc-theme-text-secondary-on-background: #000000;     /* Secondary text on top of the theme background color. */
+	--mdc-theme-text-hint-on-background: #7f7f7f;          /* Hint text on top of the theme background color. */
+	--mdc-theme-text-disabled-on-background: #9f9f9f;      /* Disabled text on top of the theme background color. */
+	--mdc-theme-text-icon-on-background: #7f7f7f;          /* Icons on top of the theme background color. */
+	--mdc-theme-text-primary-on-light: #000000;            /* Primary text on top of a light-colored background. */
+	--mdc-theme-text-secondary-on-light: #000000;          /* Secondary text on top of a light-colored background. */
+	--mdc-theme-text-hint-on-light: #7f7f7f;               /* Hint text on top of a light-colored background. */
+	--mdc-theme-text-disabled-on-light: #9f9f9f;           /* Disabled text on top of a light-colored background. */
+	--mdc-theme-text-icon-on-light: #7f7f7f;               /* Icons on top of a light-colored background. */
+	--mdc-theme-text-primary-on-dark: #FFFFFF;             /* Primary text on top of a dark-colored background. */
+	--mdc-theme-text-secondary-on-dark: #FFFFFF;           /* Secondary text on top of a dark-colored background. */
+	--mdc-theme-text-hint-on-dark: #CFCFCF;                /* Hint text on top of a dark-colored background. */
+	--mdc-theme-text-disabled-on-dark: #CCCCCC;            /* Disabled text on top of a dark-colored background. */
+	--mdc-theme-text-icon-on-dark: #9f9f9f;                /* Icons on top of a dark-colored background. */
 
 	/* these used in normalize.css and through out the rest of the app*/
 	--header-primary-background-color: black;
@@ -33,21 +55,5 @@ classes or elements, place definitions under :root */
 	--button-background-color-active: #ddd;
 	--button-border-color-focus: #666;
 
-	/* aliases for font faces. the exact font in use may change. but I don't want to update lots of separate files. */
-	/*
-	--section-header-font: 'Helvetica';
-	--subsection-header-font: 'Arial';
-	--main-text-font: 'Courier New';
-	--stress-track-title-font: 'Arial';
-	--consequence-title-font: 'Arial';
-	--skill-number-font: 'Arial Bold';
-	--skill-title-font: 'Helvetica';
-	--hint-text-font: 'Courier New';
-	--name-text-font: 'Helvetica';
-	--stunt-name-font: 'Helvetica';
-	--stunt-description-font: 'Courier New';
-	--aspect-text-font: 'Courier New';
-	*/
 
-	/* NOTE: Any values that will be reused, within related/similar contexts, but spread across components are candidates to place in this file.*/
 }
