@@ -1,17 +1,16 @@
 .skill-line {
-    font-family: 'Barlow',sans-serif;
-    font-size: 16pt;
     margin-bottom: 0.5pt;
 }
 
 .skill-value, .skill-name {
     font-family: 'Gothic A1', sans-serif;
-    width: 2.2em;
-    margin-left: 0.5pt;
-    border-bottom-width: 1.5pt;
+    font-size: 16pt;
+    border-bottom-width: 0.5pt;
 }
 
+
 .skill-value {
+    width: 2.2em;
     margin-right: 3pt;
     font-weight: bolder;
 }
@@ -23,14 +22,19 @@ input[type="number"]:focus,
 input[type="text"],
 input[type="text"]:active,
 input[type="text"]:hover,
-input[type="text"]:focus
-
-{
+input[type="text"]:focus {
     border-radius: 0;
-    border: 1px solid white;
+    border: 0.5pt solid white;
     border-bottom-color: black;
 }
 
 .skill-name {
-    width:70%;
+    width: 70%;
+    border-bottom-color: #666;
+}
+
+@media print {
+    .skill-name {
+        border-color: white !important;
+    }
 }

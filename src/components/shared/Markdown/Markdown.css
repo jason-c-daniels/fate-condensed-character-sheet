@@ -1,0 +1,26 @@
+.astyle {
+    background-color: var(--text-alternate-background-color);
+}
+
+
+.single-column-content {
+
+    text-align: justify;
+}
+
+.two-column-content {
+    column-count: 2;
+    text-align: justify;
+}
+
+.three-column-content {
+    column-count: 3;
+    text-align: justify;
+}
+
+section {
+    display:block;
+}
+section:after {
+    clear: both;
+}

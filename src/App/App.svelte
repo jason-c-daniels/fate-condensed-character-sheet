@@ -6,6 +6,8 @@
     import '@material/mwc-top-app-bar-fixed';
     import '@material/mwc-icon-button';
     import '@material/mwc-drawer';
+    import '@material/mwc-tab';
+    import '@material/mwc-tab-bar';
     import '@material/mwc-icon';
     import '@material/mwc-list';
     import '@material/mwc-list/mwc-list-item';
@@ -21,7 +23,8 @@
 
     let printOptionListElement,
             snackBarElement,
-            saveOptionsListElement;
+            saveOptionsListElement,
+            tabBarElement;
 
     let disabled = "";
     let showLoadPane = false;
@@ -41,6 +44,8 @@
         window.location.replace(basePath);
     }
     scheduleAutosave();
+    let activeIndex=1;
+
     function doInitialCharacterLoad() {
         let tmpChar;
         let charIsValid = false;
@@ -176,7 +181,14 @@
 
     <mwc-top-app-bar-fixed style="height:100%">
 
-        <div slot="title"><span>{appSettings.applicationName}</span></div>
+        <div slot="title">
+            <div style="display: inline-block"><span>{appSettings.applicationName}</span></div>
+            <mwc-tab-bar style="display: inline-block" bind:this={tabBarElement} activeIndex={activeIndex} >
+                <mwc-tab label="Character Sheet"></mwc-tab>
+                <mwc-tab label="Aspects and Fate Points"></mwc-tab>
+                <mwc-tab label="Skills and Stunts"></mwc-tab>
+            </mwc-tab-bar>
+        </div>
         <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewCharacterClicked} {disabled}></mwc-icon-button>
         {#if showLoadPane}
             <mwc-icon-button icon="cancel" slot="actionItems" on:click={hideLoadPane}></mwc-icon-button>

@@ -72,3 +72,10 @@ main {
     height: 100vh;
     width: 100%;
 }
+
+mwc-tab-bar {
+    --mdc-theme-primary: var(--mdc-theme-text-primary-on-dark);
+    --mdc-text-transform: none;
+    --mdc-tab-color-default: var(--mdc-theme-text-primary-on-dark);
+    --mdc-tab-text-label-color-default: var(--mdc-theme-text-primary-on-dark);
+}
