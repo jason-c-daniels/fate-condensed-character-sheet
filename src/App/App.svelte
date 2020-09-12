@@ -14,6 +14,7 @@
 
     import GlobalCss from "../GlobalCss";
     import CharacterSheet from "../components/CharacterSheet";
+    import SRD from "../components/SRD";
     import Markdown from '../components/shared/Markdown';
 
     import getNewCharacter from "../model/character"
@@ -26,7 +27,7 @@
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
     let activeIndex;
 
-    let aspectsMarkdown, skillsMarkdown, stuntsMarkdown, srdMarkdown;
+    let aspectsMarkdown, skillsMarkdown, stuntsMarkdown, srdMarkdown, tocMarkdown;
     fetch("./md/Aspects.md").then((response) => response.text().then((data) => aspectsMarkdown = data));
     fetch("./md/Skills.md").then((response) => response.text().then((data) => skillsMarkdown = data));
     fetch("./md/Stunts.md").then((response) => response.text().then((data) => stuntsMarkdown = data));
@@ -233,7 +234,7 @@
             {:else if activeIndex === 3}
                 <Markdown markdown={stuntsMarkdown} />
             {:else if activeIndex === 4}
-                <Markdown markdown={srdMarkdown} columns="1" props={{style:"line-height:1.2rem;"}}/>
+                <SRD bind:tocMarkdown bind:srdMarkdown />
             {:else}
                 <h3>TBD/Coming Soon</h3>
             {/if}

@@ -10,6 +10,7 @@
     import Stunts from "./Stunts";
     import RefreshAndFate from "./RefreshAndFate";
     export let character;
+    window.scrollTo(0,0);
 </script>
 
 <div class="character-sheet">

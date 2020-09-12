@@ -18,12 +18,12 @@
         3: "three-column-content",
         4: "four-column-content",
         "not-found":"two-column-content"
-    }
+    };
 
     if (columns in lookup) {
         columnClass=lookup[columns];
     }
-
+    window.scrollTo(0,0);
 </script>
 
 {#if markdown}

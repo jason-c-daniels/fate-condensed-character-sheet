@@ -1,4 +1,19 @@
-.astyle {
-    background-color: var(--text-alternate-background-color);
+.toc {
+    padding: 1em;
+    float: left;
+    position: fixed;
+    top:4rem;
+    left:0;
+    width:auto;
+    max-width: 20rem;
+    height: calc(100vh - 4rem);
+    overflow: auto;
+    border-right: #666666 1.5pt solid !important;
+    background-color: var(--mdc-theme-surface);
 }
 
+.page-content {
+    height: calc(100vh - 6rem);
+    overflow: auto;
+    margin:0;
+}
