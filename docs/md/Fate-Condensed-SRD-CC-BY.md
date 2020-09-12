@@ -1,5 +1,6 @@
-Fate Condensed
-==============
+# Fate Condensed
+
+----------------
 
 Fate Condensed ©2020 Evil Hat Productions, LLC.
 
@@ -9,8 +10,9 @@ This is the System Reference Document for use with the Creative Commons Attribut
 
 This work is based on Fate Condensed (found at http://www.faterpg.com/), a product of Evil Hat Productions, LLC, developed, authored, and edited by PK Sullivan, Lara Turner, Leonard Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
 
-Credits
-=======
+# Credits
+
+----------------
 
 Fate Condensed by PK Sullivan, Lara Turner, and Fred Hicks. Additional development by Richard Bellingham, Robert Hanz, and Sophie Lagacé.
 
@@ -22,15 +24,17 @@ Turn order system based on “Accidentally Designing Marvel’s Action Order Sys
 
 Portions of this work are based on Fateful Concepts: Hacking Contests by Ryan Macklin, licensed for our use under the Creative Commons Attribution 3.0 Unported license.
 
-Introduction
-============
+# Introduction
+
+----------------
 
 This is *Fate Condensed*, a version of *Fate Core System* in as compact a form as we can manage. It is a complete roleplaying game; while other books might enhance your use of it, you don’t need any other book to play.
 
 On that note, let’s get into what you *do* need!
 
-What Do I Need to Play?
------------------------
+## What Do I Need to Play?
+
+----------------
 
 To play *Fate Condensed* you’ll need two to six friends with one acting as Game Master (GM), some dice, some tokens, writing implements, paper, and something to write short notes on (*e.g.,* small “sticky notes”).
 
@@ -47,18 +51,21 @@ Condensing the gist of a system from nearly 300 pages down to about 50 pages of 
 -   Create an Advantage has been tweaked to offer better clarity and agency around the discovery of existing unknown aspects (**page XX**).
 -   Full defense is presented as optional and has been altered a bit to accommodate the expanded scope of the defend action (**page XX**). Other standard rules options are presented as well, starting on **page XX**.
 
-Getting Started
-===============
+# Getting Started
 
-Define Your Setting
--------------------
+----------------
+
+## Define Your Setting
+
+----------------
 
 Any game of Fate starts with defining your setting. This might be a concept your GM is bringing to the table, a popular media property the players are familiar with, or a collaborative world-building exercise involving everyone at the table. The setting discussion may be quick and light on detail, or may involve a detailed full session with the whole group, or anything in between.
 
 Your choice of setting forms the basis of the table’s consensus about what is true, and what is acceptable in play and in character concepts. If your setting doesn’t have flying people in it, then a player deciding to make a flying-person character doesn’t pass muster. If your world involves shadowy organizations and deep conspiracies, players may expect story-lines free of clear-cut good-and-evil conflicts and devoid of farcical murder-clowns. It’s up to you!
 
-Create Your Characters
-----------------------
+## Create Your Characters
+
+----------------
 
 ### Who Are You?
 
@@ -129,8 +136,8 @@ In *Fate Condensed*, and Fate in general, all ratings are organized into a ladde
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p>Rating</p></td>
-<td align="left"><p>Adjective</p></td>
+<th align="left"><p>Rating</p></th>
+<th align="left"><p>Adjective</p></th>
 </tr>
 <tr class="even">
 <td align="left"><p>+8</p></td>
@@ -190,26 +197,20 @@ In *Fate Condensed*, and Fate in general, all ratings are organized into a ladde
 #### Skill List
 
 Descriptions for these skills are found below.
+<br/>
+<br/>
 
--   **Academics**
--   **Athletics**
--   **Burglary**
--   **Contacts**
--   **Crafts**
--   **Deceive**
--   **Drive**
--   **Empathy**
--   **Fight**
--   **Investigate**
--   **Lore**
--   **Notice**
--   **Physique**
--   **Provoke**
--   **Rapport**
--   **Resources**
--   **Shoot**
--   **Stealth**
--   **Will**
+|               |                 |              |               |
+| ------------- | --------------- | ------------ | ------------- |
+| **Academics** | **Deceive**     | **Lore**     | **Resources** |
+| **Athletics** | **Drive**       | **Notice**   | **Shoot**     |
+| **Burglary**  | **Empathy**     | **Physique** | **Stealth**   |
+| **Contacts**  | **Fight**       | **Provoke**  | **Will**      |
+| **Crafts**    | **Investigate** | **Rapport**  |               |
+
+<br/>
+<br/>
+<br/>
 
 **Academics:** Mundane, everyday human knowledge and education, including history, sciences, and medicine. Academics stunts often refer to specialized areas of knowledge and medical skills.
 
@@ -313,8 +314,8 @@ Your rating in Physique affects how many total physical stress boxes you have. W
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p>Physique/Will</p></td>
-<td align="left"><p>Physical/Mental Stress</p></td>
+<th align="left"><p>Physique/Will</p></th>
+<th align="left"><p>Physical/Mental Stress</p></th>
 </tr>
 <tr class="even">
 <td align="left"><p>Mediocre (+0)</p></td>
@@ -351,8 +352,9 @@ There are a few other angles on this style that you’ll want to keep in mind.
 
 Give your character a name and description, and discuss their history with the other players. If you haven’t written down a relationship aspect yet, do so now.
 
-Taking Action, Rolling the Dice
-===============================
+# Taking Action, Rolling the Dice
+
+----------------
 
 In a game of *Fate Condensed*, you will control the actions of the character you created, contributing to the story you are all telling together. In general, the GM will narrate the world and the actions of non-player characters (**NPCs**), and the other players will narrate their individual PCs’ actions.
 
@@ -377,7 +379,8 @@ Whenever you take action, follow these steps:
 5.  Modify the dice by invoking aspects (**page XX**) and using stunts (**page XX**).
 6.  Declare your total result, called your **effort**.
 
-Difficulty and Opposition
+## Difficulty and Opposition
+
 -------------------------
 
 If the character’s action faces a fixed obstacle or otherwise tries to alter the world rather than a character or creature, their action faces a static **difficulty** rating. These actions include picking locks, barring doors, and tactically assessing an enemy camp. The GM may decide that the presence of certain aspects (on the character, the scene, or something else) justifies changing the difficulty.
@@ -386,7 +389,8 @@ At other times, an enemy will provide **opposition** against the character’s a
 
 Opposition can take many forms. Struggling with a cultist over the ritual dagger has a clear opponent. Or you might be opposed by the power of an ancient ritual that must be overcome to save the world. Cracking the safe in the First Metropolitan Bank to access the safe deposit boxes is a challenge with risk of discovery, but it’s up to the GM if you’re rolling against *opposition* from the patrolling guards or the *difficulty* presented by the safe itself.
 
-Modifying the Dice
+## Modifying the Dice
+
 ------------------
 
 You may modify your dice by invoking aspects to get +2 to your roll or reroll the dice. Some stunts also give you a bonus. You may also invoke aspects to support an ally (**page XX**) or to increase the difficulty an enemy faces.
@@ -409,7 +413,8 @@ Stunts may give you a bonus to your roll, provided you meet the criteria written
 
 Normally, stunts give you a +2 bonus in a narrow circumstance with no cost; you may use them anytime they apply. Some rare and exceptionally powerful stunts may require you to spend a fate point to use them.
 
-Outcomes
+## Outcomes
+
 --------
 
 Whenever you roll dice, the difference between your effort and the target difficulty or opposition is measured in **shifts**. A shift has a value of 1. There are four possible outcomes:
@@ -487,7 +492,8 @@ You get what you want, and you get a bit more on top of that.
 
 Ethan is beyond lucky; the safe door opens almost instantly. Not only does he get the ritual, but he has enough time to poke through the other papers in the back of the safe. Amidst various ledgers and financial documents, he finds a map of the old Akeley mansion.
 
-Actions
+## Actions
+
 -------
 
 There are four actions you can roll, each with a specific purpose and effect on the story:
@@ -609,12 +615,14 @@ The default list of skills follows these guidelines:
 
 Other skills may gain permission to attack or defend under special circumstances, as determined by the GM or table consensus. Some stunts may grant broader, guaranteed permission when circumstances might otherwise not do so. When a skill can’t be used to attack or defend but might help with it, prepare for it by using that skill with the create an advantage action, and use the free invokes generated on your next attack or defend roll.
 
-Aspects and Fate Points
-=======================
+# Aspects and Fate Points
+
+----------------
 
 An **aspect** is a word or phrase that describes something special about a person, place, thing, situation, or group. Almost anything you can think of can have aspects. A person might have a reputation as the **Greatest Sharpshooter in the Wasteland** (see below for more about these kinds of aspects). A room might be **On Fire** after you knock over an oil lamp. After an encounter with a monster, you might be **Terrified**. Aspects let you change the story in ways that go along with your character’s tendencies, skills, or problems.
 
-Aspects Are Always True
+## Aspects Are Always True
+
 -----------------------
 
 You can invoke aspects for a bonus to a roll (**page XX**) and compel them to create a complication (**page XX**). But even when those aren’t in play, aspects still affect the narrative. When you have that flesh-wrapped monstrosity **Pinned in a Hydraulic Press**, that is *true*. It can’t do much stuck in there, and it’s not getting out easy.
@@ -625,7 +633,8 @@ That’s not to say you can create any aspect you want and use its truth like a 
 
 Sure, you might *like* to use create an advantage to inflict the aspect **Dismembered** on that fungal super-soldier, but that clearly steps on the toes of the attack action, and besides, it takes a bit more work to lop her arm off than that (could work as a consequence, though—see the next page). You might *say* you’re the **World’s Best Shot**, but you’ll need to back that up with your skills. And as much as you’d like to make yourself **Bulletproof**, removing permission for someone to use small arms fire to harm you, that is unlikely to fly unless the game you’re playing involves using aspects-as-superpowers.
 
-What Kinds of Aspects Are There?
+## What Kinds of Aspects Are There?
+
 --------------------------------
 
 There’s an endless variety of aspects (see **page XX** for more), but no matter what they’re called, they all work pretty much the same way. The main difference is how long they stick around before going away.
@@ -654,7 +663,8 @@ A **boost** is a special kind of aspect, representing an extremely temporary or 
 
 **Examples:** **In My Sights; Distracted; Unstable Footing**
 
-What Can I Do with Aspects?
+## What Can I Do with Aspects?
+
 ---------------------------
 
 ### Earning Fate Points
@@ -727,7 +737,8 @@ Compels let you, as a player or GM, change what a scene is *about*. They throw a
 
 Hostile invocations help you in the current moment. In addition to your own aspects, you have your opponent’s aspects available to invoke, giving you more options and making scenes more dynamic and connected.
 
-How Can I Add and Remove Aspects?
+## How Can I Add and Remove Aspects?
+
 ---------------------------------
 
 You can create or discover a situation aspect using the create an advantage action (**page XX**). You may also create boosts that way, or as a result of a tie or success with style when you overcome an obstacle, attack, or defend.
@@ -736,7 +747,8 @@ You can remove an aspect provided you can think of a way your character could do
 
 However, if there’s no narrative block to removing an aspect, you can simply do so. If you’re **All Tied Up** and then a friend unties you, the aspect goes away. If there’s nothing stopping you, there’s no need to roll.
 
-Other Kinds of Aspects
+## Other Kinds of Aspects
+
 ----------------------
 
 We’ve covered the standard aspect types on **page XX**. These additional types are optional, but may add value to your game. To some extent these are variants on character aspects (if you expand your notion of what counts as a character) and situation aspects (if you change your notion of how long those last).
@@ -749,8 +761,9 @@ We’ve covered the standard aspect types on **page XX**. These additional types
 
 **Zone aspects:** You can attach situation aspects to a particular place on the map represented by a zone (**page XX**). This can add extra dynamism to your group’s interactions with the map. A GM can encourage this by making an “up for grabs” free invoke available on a zone aspect at the start of the scene, drawing characters (player and non-player alike) to leverage that aspect as part of their early strategy.
 
-Challenges, Conflicts, and Contests
-===================================
+# Challenges, Conflicts, and Contests
+
+----------------
 
 Many times, you will be able to resolve an action with a single roll of the dice—do you crack the safe, avoid security, or convince the reporter to give you their notes? Other times you’ll face extended engagements that take many rolls to resolve. For those cases, we offer three resolution tools: **challenges**, **contests**, and **conflicts**. Each does things a little differently, depending on the goal of the engagement and the opposition involved.
 
@@ -758,7 +771,8 @@ Many times, you will be able to resolve an action with a single roll of the dice
 -   **A contest is a situation where two or more parties are pursuing mutually exclusive goals, but not actively harming one another.** Contests are perfect for chases, debates, and races of all sorts. (And just because the parties are not trying to harm each other doesn’t mean that harm can’t befall them!)
 -   **A conflict is when characters can and want to harm one another.** Wrestling in the mud with a cultist as knives stab at bellies, riddling a swarm of ghouls with bullets as their claws rake at your flesh, and an exchange of vicious barbs with your rival under the watchful eye of the queen—these are all conflicts.
 
-Setting Up Scenes
+## Setting Up Scenes
+
 -----------------
 
 Regardless of the type of scene, the GM will start by setting the essential pieces into place, so that the players know what resources are available and what complications are in play.
@@ -811,7 +825,8 @@ Unfortunately, now that all the PCs in the scene have acted, Ruth has no choice 
 
 This method of determining turn order goes by several names in online discussion: elective action order, and “popcorn,” “handoff,” or “Balsera Style” initiative, the last one named after Fate Core author Leonard Balsera, who planted the seed of the idea. You can learn more about this method and its strategies at [https://www.deadlyfredly.com/2012/02/marvel/](https://www.deadlyfredly.com/2012/02/marvel/)
 
-Teamwork
+## Teamwork
+
 --------
 
 Fate offers three methods for teamwork: combining the same skill from multiple characters on a single roll, stacking free invokes by creating advantages to set up a team member for success, and invoking aspects on an ally’s behalf.
@@ -820,7 +835,8 @@ When you combine skills, figure out who has the highest level in the skill among
 
 Otherwise, you can create an advantage on your turn and let an ally use the free invokes when it makes sense that they can. Outside of your turn, you may invoke an aspect to add a bonus to someone else’s roll.
 
-Challenges
+## Challenges
+
 ----------
 
 Many of the difficulties your characters face can be handled with a single roll in the course of a scene—disarm the bomb, find the tome of eldritch lore, or decode the cypher. But sometimes things are more fluid, more complicated, and it’s just not as simple as finding the tome of eldritch lore because the yacht you’re searching is careening through Hong Kong harbor while a monsoon rages outside and the boat’s library is on fire—which is totally not your fault.
@@ -833,7 +849,8 @@ GMs, do your best to give each character in the scene an opportunity to contribu
 
 After the rolls have been made, the GM will evaluate the successes, failures, and costs of each action as they interpret how the scene proceeds. It could be that the results lead into another challenge, a contest, or even a conflict. A mix of successes and failures should allow the characters to move forward with a partial victory as they face new entangling complications.
 
-Contests
+## Contests
+
 --------
 
 A **contest** is when two or more sides are in direct opposition but there isn’t a conflict. This doesn’t mean one side doesn’t *want* to hurt the other. Contests may involve the group trying to escape a threat before it cuts off any chance of victory.
@@ -852,7 +869,8 @@ In contests where a threate is trying to harm any of the contestants, everyone o
 
 During any exchange, your side can try to create advantages before making your overcome roll. The target, or anyone else who can reasonably interfere, may oppose with a defend roll as normal. Each participant may attempt to create an advantage in addition to rolling or providing a teamwork bonus (**page XX**). If you fail to create an advantage, you have a choice: either your side forfeits its overcome roll, or you may “succeed at a cost” (preserving your roll or teamwork bonus) by giving the other side a free invoke instead. If you at least tie, proceed as normal with your roll or bonus.
 
-Conflicts
+## Conflicts
+
 ---------
 
 When the heroes get into a straight-up fight—whether with the authorities, cultists, or some unspeakable horror—and can win, you have a **conflict**. In other words, use conflicts when violence or coercion is a reasonable means to the ends of the PCs.
@@ -941,12 +959,14 @@ Success here is only the first hurdle—it takes time to clear the consequence.
 -   **Moderate** consequences last longer, taking a full session after treatment to clear.
 -   **Severe**consequences only clear when you reach a breakthrough (**page XX**) after treatment.
 
-Advancement
-===========
+# Advancement
+
+----------------
 
 As your characters muck about in the storyline, they’ll grow and change. At the end of each session you’ll earn a **milestone**, which lets you move things around on your character sheet. As you conclude each arc of the story, you’ll earn a **breakthrough**, which lets you add things to your character sheet. (Learn more about sessions and arcs on **page XX**.)
 
-Milestones
+## Milestones
+
 ----------
 
 Milestones happen at the end of a session, part of the way through dealing with a story arc. They are focused on adjusting your character laterally rather than advancing the character. You may not wish to use a milestone, which is fine. It doesn’t always make sense to change your character. The opportunity is there if you need it.
@@ -958,7 +978,8 @@ During a milestone, you can do one of the following:
 -   Purchase a new stunt by spending 1 refresh. (Remember, you can’t go below 1 refresh.)
 -   Rewrite any one of your aspects, except your high concept.
 
-Breakthroughs
+## Breakthroughs
+
 -------------
 
 Breakthroughs are more significant, letting your character actually grow in power. A breakthrough lets you do one thing from the milestone list. On top of that, you do *all* of the following:
@@ -981,9 +1002,9 @@ Ruth wants to increase her Lore from Average (+1) to Fair (+2), but this means
 <table id="table003">
     <tbody>
     <tr>
-        <td colspan="2">
+        <th colspan="2">
             <p>The pyramid</p>
-        </td>
+        </th>
 		<td></td>
     </tr>
     <tr>
@@ -1024,9 +1045,9 @@ Ruth wants to increase her Lore from Average (+1) to Fair (+2), but this means
 <table id="table004">
     <tbody>
     <tr>
-        <td colspan="2">
+        <th colspan="2">
             <p>Not Valid</p>
-        </td>
+        </th>
         		<td></td>
     </tr>
     <tr>
@@ -1067,9 +1088,9 @@ Ruth wants to increase her Lore from Average (+1) to Fair (+2), but this means
 <table id="table005">
     <tbody>
     <tr>
-        <td colspan="2">
+        <th colspan="2">
             <p>Valid</p>
-		<td></td>            
+		<td></td>
         </td>
     </tr>
     <tr>
@@ -1110,10 +1131,10 @@ Ruth wants to increase her Lore from Average (+1) to Fair (+2), but this means
 <table id="table006">
     <tbody>
     <tr>
-        <td colspan="2">
+        <th colspan="2">
             <p>Also Valid</p>
-        </td>
-		<td></td>        
+        </th>
+		<td></td>
     </tr>
     <tr>
         <td>
@@ -1150,7 +1171,8 @@ Ruth wants to increase her Lore from Average (+1) to Fair (+2), but this means
     </tbody>
 </table>
 
-Sessions and Arcs
+## Sessions and Arcs
+
 -----------------
 
 There are a few assumptions at play here where we talk about sessions and arcs. We’d like to shine some light on those assumptions so you can make adjustments based on how your game differs from them.
@@ -1161,8 +1183,9 @@ An **arc** is a series of sessions that often contain plot elements that carry o
 
 If your gameplay falls outside of those “likely” ranges, you may want to change how some parts of advancement work. If your arcs run more than four to six sessions of play, you may want to allow Severe consequences to clear after four sessions pass rather than waiting until the end of the arc. If you want advancement to happen more slowly, you might allow improvements like skill points and refresh gains less often. If your group tends to schedule fairly short sessions, you might not hit a milestone at the end of every session. Season to taste; the game is yours to shape!
 
-Being the Game Master
-=====================
+# Being the Game Master
+
+----------------
 
 As the GM, you are the director of game sessions. Note that you are not the *boss.**Fate Condensed* is collaborative, and the players have say in what happens to their characters. Your job is to keep things moving by doing these things:
 
@@ -1176,7 +1199,8 @@ As the GM, you are the director of game sessions. Note that you are not the *bos
 -   **Complicate the PCs’ lives:** In addition to throwing monsters at the characters, you will be the primary source of compels. Players can compel themselves and other characters, of course, but you must ensure that everyone gets opportunities to experience the negative repercussions of their aspects.
 -   **Build off player choices:** Look at the actions the PCs have taken during play and think about how the world changes and responds. Make the world feel alive by presenting the PCs with those consequences—good and bad—in play.
 
-Setting Difficulty and Opposition
+## Setting Difficulty and Opposition
+
 ---------------------------------
 
 Sometimes, a PC’s action will face **opposition** via a defend roll from another character in the scene. In this case, the opposing character rolls dice and adds their relevant skill rating, just like the PC. If the opposing character has relevant aspects, they can be invoked; the GM can invoke NPCs’ aspects using the fate point in their pool (**page XX**).
@@ -1199,7 +1223,8 @@ If the task is impossibly difficult, go as high as you think makes sense. The PC
 
 For an expanded look at what you can do to create varied and interesting opposition and adversaries for your players, check out the *Fate Adversary Toolkit*, available for sale as a PDF or with its essentials freely available in the online system reference documents at [*https://fate-srd.com/*](https://fate-srd.com/)
 
-NPCs
+## NPCs
+
 ----
 
 NPCs include bystanders, supporting cast, allies, foes, monsters, and pretty much anything else that might complicate or oppose the efforts of the PCs. You will probably want to create other characters for the PCs to interact with.
@@ -1226,7 +1251,8 @@ Give them zero to three stress boxes; the more they have, the more of a threat t
 
 Like minor NPCs, monsters and other threats (like a storm, a spreading fire, or a squad of armored minions) are written up as characters, but are usually simpler than a PC. You only need to define what is absolutely necessary. Unlike minor NPCs, these threats can be defined really in any way. Break the rules. Give them whatever combination of aspects, skills, stunts, stress, and consequences it will take to make them dangerous, and think about what sort of difficulties they will present to the PCs when determining their ratings.
 
-Your Fate Points
+## Your Fate Points
+
 ----------------
 
 At the start of each scene, begin with a pool of fate points equal to the number of PCs. If the scene includes a major NPC or monster that conceded (**page XX**) a previous conflict, or received hostile invokes (**page XX**) in a previous scene, those fate points are added to your pool. If you received a compel in the prior scene that ended that scene, giving you no opportunity to spend the earned fate point, you may add that point to your pool as well.
@@ -1237,7 +1263,8 @@ As the GM, you can spend fate points from this pool to invoke aspects, refuse co
 
 **However, you do *not* need to spend fate points to compel any aspects.**You have an infinite supply of fate points for that purpose.
 
-Safety Tools
+## Safety Tools
+
 ------------
 
 GMs (and truly, players as well) have a responsibility to ensure that everyone at the table feels safe in the game and space they’re playing. One way a GM can support this is by offering a framework for anyone at the table to voice a concern or objection. When this happens, it must take priority and must be addressed. Here are some tools that can help make that process more available to the players at the table and more easy to enact when necessary.
@@ -1247,12 +1274,14 @@ GMs (and truly, players as well) have a responsibility to ensure that everyone a
 
 Tools like these may also be used like the bogus rule (**page XX**) for calibration. They offer a way for players to comfortably advocate for what they’re looking for in the game. Give such tools the respect and support they deserve!
 
-Optional Rules
-==============
+# Optional Rules
+
+----------------
 
 These are a few optional or alternative rules you can decide to use in your game.
 
-Conditions
+## Conditions
+
 ----------
 
 **Conditions**are a substitute for consequences, and replace them entirely. Conditions serve two purposes: they take some of the pressure off of the players and GM to quickly figure out a correctly-worded aspect for an inflicted consequence, and they give you an opportunity to shape the nature of your game by pre-defining the ways lasting harm befalls characters.
@@ -1279,7 +1308,8 @@ If you would gain a mild consequence slot (from high Physique, Will, or a stunt)
 
 Several published Fate-based games use conditions instead of consequences. Feel free to adopt their implementation instead of this one if it better suits you. Each one achieves much the same purpose for the game: reducing pressure to figure out consequence aspects on the fly, and guiding the nature of the game by limiting the kinds of lasting harm characters can take.
 
-Changing the Skill List
+## Changing the Skill List
+
 -----------------------
 
 As mentioned on **page XX** skill lists are the first thing to consider tinkering with when making your own Fate game. Our default skill setup presents a list of 19 skills arranged in a pyramid of 10. That list is also structured around a traditional notion of capabilities in various fields of action, in essence addressing the question “what can you do?” Other skill lists aren’t necessarily the same length, arranged the same way, or addressing the same question. With that said, here are some short skill lists to consider, borrow, and modify.
@@ -1307,14 +1337,16 @@ If you want a longer list, try starting with the default list, adding, combining
 
 **Combination:** You may want to have two lists, with players adding together one from each to make their roll. The main thing to keep in mind is keeping the potential totals inside the zero-to-cap range. You might have ratings from +0 to +2 on each list, or -1 to +1 on one and +1 to +3 on the other, etc.
 
-Character Creation As You Play
+## Character Creation As You Play
+
 ------------------------------
 
 If a player is comfortable making quick creative decisions in the moment, they may enjoy creating characters *as they play* rather than ahead of time. This mimics the way characters reveal themselves and develop in other media. It’s not for everyone, but for groups where the method clicks it can be a real crowd-pleaser.
 
 With this method, characters start with only a name, high concept aspect, and highest skill—if that! As play progresses and they are called on to use an unrated skill, they can choose an empty slot and reveal their knowledge of it in the moment. Similarly, aspects and stunts can be filled in when the circumstances that call for them, right in the moment a fate point is spent or a bonus claimed.
 
-Countdowns
+## Countdowns
+
 ----------
 
 A countdown adds urgency to an adversary or situation: deal with it now or things will get worse. Whether you’re talking about a ticking bomb, a ritual near completion, a bus teetering on the edge of a suspension bridge, or a soldier with a radio who’s about to call in reinforcements, countdowns force the PCs to act quickly or face a worse outcome.
@@ -1331,7 +1363,8 @@ GMs might wish to reveal the existence of a countdown track to players without t
 
 A countdown can have more than one trigger if you want; perhaps the countdown proceeds at a predictable pace until something happens that accelerates it. You could also give a different trigger to each box on the countdown track, if you want a specific series of events to set off the outcome.
 
-Extreme Consequences
+## Extreme Consequences
+
 --------------------
 
 Extreme consequences introduce an optional fourth severity of consequence to your game: something that permanently, irrevocably changes a character.
@@ -1342,7 +1375,8 @@ By default, there is no option to recover from an extreme consequence. It has be
 
 Between breakthroughs, a character may only use this option once.
 
-Faster Contests
+## Faster Contests
+
 ---------------
 
 Some groups may feel contests involve too many attempts to create advantages per exchange. For those groups, try the following method: In each exchange of a contest, each participant may choose only one of these three options:
@@ -1351,7 +1385,8 @@ Some groups may feel contests involve too many attempts to create advantages per
 -   Roll to create an advantage, but no teamwork bonus (**page XX**).
 -   Provide their teamwork bonus to their side’s overcome roll or another’s attempt to create an advantage. Don’t roll.
 
-Full Defense
+## Full Defense
+
 ------------
 
 Sometimes a player (or GM) may want their character to go all-in on using defend until their next turn, rather than taking an action on their turn. This is called **full defense**.
@@ -1362,7 +1397,8 @@ When declaring full defense, you must be clear about the **focus** of your effor
 
 If nothing comes of it and you haven’t rolled to defend at all by the time your next turn comes around, you gain a boost (**page XX**) as you’ve gotten the opportunity to prepare for your next action. This offsets “losing a turn” because you focused your efforts on defending against something that didn’t happen at all.
 
-Obstacles
+## Obstacles
+
 ---------
 
 The defining quality of enemies is that they can be attacked and taken out. By contrast, the defining quality of **obstacles** is that they can’t. Obstacles make scenes demonstrably more difficult on the PCs, but the PCs cannot simply fight them. Obstacles must be circumvented, endured, or rendered irrelevant.
@@ -1440,7 +1476,8 @@ Distractions
     **Repercussion (leave the gem):** You don’t get the (priceless) gem.
     **Repercussion (take the gem):** You activate the traps in the temple.
 
-Scale
+## Scale
+
 -----
 
 **Scale**is an optional subsystem that you can use to represent supernatural beings which operate on a level beyond the general range of capabilities of most characters in your game. Usually you don’t need to worry about the impact of scale within your game. There may be times, however, where it’s desirable to present the characters with a threat bigger than they typically face—or an opportunity for the characters to punch outside their usual weight class.
@@ -1475,7 +1512,8 @@ If you are creating an advantage via supernatural means and *an opposing party c
 
 *Otherwise,* you roll to create the advantage without scale (likely against a set difficulty), but later use of that aspect grants scale when appropriate.
 
-Time Shifts
+## Time Shifts
+
 -----------
 
 When determining how long it takes characters to do something, you may want to use a more systematic approach to decide the impacts of success, failure, and “at a cost” options. How much longer or faster? Let the shifts decide, using these guidelines.
@@ -1488,7 +1526,8 @@ So if your starting point is “a few hours,” then one shift faster jumps the 
 
 In the case of slower, it’s the same process in the opposite direction: one shift slower is “several hours,” two is “half a day,” three is “about one day.”
 
-Ways to Break the Rules for Big Bads
+## Ways to Break the Rules for Big Bads
+
 ------------------------------------
 
 Between combining skills and creating advantages for teamwork (**page XX**), a group of PCs can really overwhelm a single opponent. This is fine if you want to respect the advantage of numbers, but not great if you want to present a “big bad” that’s the equal of the whole group.
@@ -1544,7 +1583,8 @@ This method works particularly well if your big bad is a truly gigantic monster,
 
 Whether you fully engage the map idea or simply build the big bad as a hive, you’re sure to end up with a more dynamic fight where the big bad acts more frequently, and the players must figure out a plan of attack that eliminates the threat piece by piece before they can finally put it down.
 
-Ways to Handle Multiple Targets
+## Ways to Handle Multiple Targets
+
 -------------------------------
 
 Inevitably, someone at your table will want to affect multiple targets at once. If it’s allowed, here are some methods you can use.
@@ -1561,7 +1601,8 @@ With any of these methods, all of the targets should occupy the same zone. The G
 
 Only one action type should be used—such as attacking several targets in one blow, solving two problems at once with overcome, or swaying the minds of a few key NPCs with create an advantage. A GM might allow two different action types under special circumstances, but those actions should make sense for the skill used by both.
 
-Weapon and Armor Ratings
+## Weapon and Armor Ratings
+
 ------------------------
 
 Want to tap into a little bit of that combat equipment vibe other games have? Consider weapon and armor ratings. In short, getting hit by a weapon will damage you more, and having armor keeps that from happening. (You could model this with stunts, but using stunt slots might not feel right to you.)
@@ -1572,8 +1613,9 @@ An **armor** value reduces the shifts of a successful hit. So, Armor:2 makes any
 
 Choose your range of ratings carefully. Keep an eye on how likely they make a consequence (or worse) on a tie. We recommend a range of 0 to 4 at most.
 
-What Version Is This?
-=====================
+# What Version Is This?
+
+----------------
 
 Since late 2012, there has been only one version of Fate from Evil Hat: *Fate Core System*, the fourth edition of the system.
 
@@ -1581,7 +1623,8 @@ Ah, but what about *Fate Accelerated*, the perspicacious Fate afficionado might 
 
 These two perspectives on Fate Core come together here, in *Fate Condensed*—very literally, in fact. Condensed began as the Accelerated text, minus all of the Accelerated dial settings, replaced by Core’s. From that starting-point we applied eight years of community-play experience to refine and clarify. That effort produced *some* minor differences as noted on **page XX**, but whether you choose to play with them or without, the system is still Fate Core at the end of the day. We feel Condensed is an improvement for sure, but there are no edition wars to be had here (and please don’t try to start one). It’s all Fate Core.
 
-What Came Before
+## What Came Before
+
 ----------------
 
 Fate started as a hack of the Fudge system circa 2000, a culmination of a few fevered conversations Fred Hicks and Rob Donoghue had about what they might do to run another Amber game. The versions that arose between then and 2005 were free, digital, and released to the Fudge community online to a surprisingly enthusiastic reception. These spanned from “Fate Zero” up to Fate 2.0.
@@ -1590,7 +1633,8 @@ Then, Jim Butcher offered them a chance to create an RPG based on the Dresden Fi
 
 The effort to extract the system (by Leonard Balsera and Ryan Macklin) to present it on its own led to many improvements, and that gave us Fate Core.
 
-Licensing
+## Licensing
+
 ---------
 
 In one form or another, Fate has always been open-licensable. You can find details about licensing Fate for your projects at [http://www.faterpg.com/licensing](http://www.faterpg.com/licensing)
