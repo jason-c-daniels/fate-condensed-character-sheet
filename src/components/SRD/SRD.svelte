@@ -3,10 +3,12 @@
 </style>
 
 <script>
+    import '@material/mwc-icon-button'
     import marked from 'marked';
     import Markdown from '../shared/Markdown';
     export let srdMarkdown;
     export let tocMarkdown;
+    let showToc= window.innerWidth > 15.25*6.022*16; //(inches*em/inch*px/em)
     if (!srdMarkdown) {
         fetch("./md/Fate-Condensed-SRD-CC-BY.md").then((response) => response.text().then((data) => srdMarkdown = data));
     }
@@ -23,8 +25,15 @@
 
 
     <div class="toc">
-        <h2>Table of Contents</h2>
-        {#if tocMarkdown}
+
+        {#if showToc}
+            <mwc-icon-button style="float:right" icon="expand_less" on:click={()=> showToc=false} ></mwc-icon-button>
+        {:else}
+            <mwc-icon-button icon="expand_more" on:click={()=> showToc=true} ></mwc-icon-button>
+        {/if}
+
+        {#if tocMarkdown && showToc}
+            <h2>Table of Contents</h2>
             {@html marked(tocMarkdown)}
         {/if}
     </div>

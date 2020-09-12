@@ -203,9 +203,6 @@
         </div>
         <mwc-tab-bar slot="actionItems" style="display: inline-block" bind:this={tabBarElement} activeIndex={activeIndex} on:MDCTabBar:activated={handleTabActivated} >
             <mwc-tab label="Character Sheet"></mwc-tab>
-            <mwc-tab label="Aspects"></mwc-tab>
-            <mwc-tab label="Skills"></mwc-tab>
-            <mwc-tab label="Stunts"></mwc-tab>
             <mwc-tab label="SRD"></mwc-tab>
         </mwc-tab-bar>
         <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewCharacterClicked} {disabled}></mwc-icon-button>
@@ -228,12 +225,6 @@
                     <CharacterSheet bind:character={character}/>
                 </div>
             {:else if activeIndex === 1}
-                <Markdown markdown={aspectsMarkdown} props={{style:"height:8.5in", id:"aspects"} }/>
-            {:else if activeIndex === 2}
-                <Markdown markdown={skillsMarkdown} />
-            {:else if activeIndex === 3}
-                <Markdown markdown={stuntsMarkdown} />
-            {:else if activeIndex === 4}
                 <SRD bind:tocMarkdown bind:srdMarkdown />
             {:else}
                 <h3>TBD/Coming Soon</h3>
