@@ -1,7 +1,4 @@
 <script>
-
-    import GlobalCss from "../GlobalCss";
-    import CharacterSheet from "../components/CharacterSheet";
     import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
     import '@material/mwc-top-app-bar-fixed';
     import '@material/mwc-icon-button';
@@ -14,17 +11,30 @@
     import '@material/mwc-list/mwc-check-list-item';
     import '@material/mwc-list/mwc-radio-list-item';
     import '@material/mwc-snackbar';
+
+    import GlobalCss from "../GlobalCss";
+    import CharacterSheet from "../components/CharacterSheet";
+    import Markdown from '../components/shared/Markdown';
+
     import getNewCharacter from "../model/character"
     import downloadToClient from 'file-saver';
     import Dropzone from "svelte-file-dropzone";
+
     import LocalStorageController from '../controllers/localStorageController'
+
     export let name;
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
+    let activeIndex;
 
+    // Special DOM elements.
     let printOptionListElement,
             snackBarElement,
             saveOptionsListElement,
             tabBarElement;
+
+    function handleTabActivated(e) {
+        activeIndex = tabBarElement.activeIndex;
+    }
 
     let disabled = "";
     let showLoadPane = false;
@@ -44,7 +54,6 @@
         window.location.replace(basePath);
     }
     scheduleAutosave();
-    let activeIndex=1;
 
     function doInitialCharacterLoad() {
         let tmpChar;
@@ -151,7 +160,6 @@
         setTimeout(() => window.print(), 500);
     }
 
-
     function scheduleAutosave() {
         if (!firstCall) { return; }
         firstCall = false;
@@ -169,7 +177,7 @@
 </style>
 
 <svelte:head>
-    <title>{appSettings.applicationName}</title>
+    <title>{character.name} - {appSettings.applicationName}</title>
 
     <!-- Your application must load the Roboto and Material Icons fonts. -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
@@ -183,12 +191,13 @@
 
         <div slot="title">
             <div style="display: inline-block"><span>{appSettings.applicationName}</span></div>
-            <mwc-tab-bar style="display: inline-block" bind:this={tabBarElement} activeIndex={activeIndex} >
-                <mwc-tab label="Character Sheet"></mwc-tab>
-                <mwc-tab label="Aspects and Fate Points"></mwc-tab>
-                <mwc-tab label="Skills and Stunts"></mwc-tab>
-            </mwc-tab-bar>
         </div>
+        <mwc-tab-bar slot="actionItems" style="display: inline-block" bind:this={tabBarElement} activeIndex={activeIndex} on:MDCTabBar:activated={handleTabActivated} >
+            <mwc-tab label="Character Sheet"></mwc-tab>
+            <mwc-tab label="Aspects"></mwc-tab>
+            <mwc-tab label="Skills"></mwc-tab>
+            <mwc-tab label="Stunts"></mwc-tab>
+        </mwc-tab-bar>
         <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewCharacterClicked} {disabled}></mwc-icon-button>
         {#if showLoadPane}
             <mwc-icon-button icon="cancel" slot="actionItems" on:click={hideLoadPane}></mwc-icon-button>
@@ -204,9 +213,18 @@
             </div>
         {:else}
             <div id="content" style="margin: 10pt;">
+            {#if activeIndex === 0}
                 <div class="page">
                     <CharacterSheet bind:character={character}/>
                 </div>
+            {:else if activeIndex === 1}
+                <Markdown markdownFile="./md/Aspects.md" />
+            {:else if activeIndex === 2}
+                <Markdown markdownFile="./md/Skills.md" />
+            {:else if activeIndex === 3}
+                <Markdown markdownFile="./md/Stunts.md" />            {:else}
+                <h3>TBD/Coming Soon</h3>
+            {/if}
                 <mwc-snackbar labelText="{snackBarText}" bind:this={snackBarElement}>
                     <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
                 </mwc-snackbar>
