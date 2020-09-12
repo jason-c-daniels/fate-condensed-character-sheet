@@ -225,7 +225,7 @@
                     <CharacterSheet bind:character={character}/>
                 </div>
             {:else if activeIndex === 1}
-                <Markdown markdown={aspectsMarkdown} />
+                <Markdown markdown={aspectsMarkdown} props={{style:"height:8.5in"}}/>
             {:else if activeIndex === 2}
                 <Markdown markdown={skillsMarkdown} />
             {:else if activeIndex === 3}
