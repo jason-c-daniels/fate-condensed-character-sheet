@@ -1,7 +1,23 @@
-.astyle {
-    background-color: var(--text-alternate-background-color);
+
+:global(h1,h2,h3,h4,h5,h6)
+{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
+:global(p) {
+    margin-bottom: 0.5rem;
+    text-indent: 1.1rem;
+}
+
+:global(li) {
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+:global(#trouble) {
+    break-before: column;
+}
 
 .single-column-content {
 
@@ -18,9 +34,23 @@
     text-align: justify;
 }
 
+.four-column-content {
+    column-count: 4;
+    text-align: justify;
+}
 section {
     display:block;
+
 }
 section:after {
     clear: both;
+}
+
+.page {
+    width: 8.5in;
+    height: auto;
+    padding: 0.5in;
+    margin: 5rem auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

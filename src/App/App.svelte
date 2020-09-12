@@ -26,6 +26,11 @@
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
     let activeIndex;
 
+    let aspectsMarkdown, skillsMarkdown, stuntsMarkdown;
+    fetch("./md/Aspects.md").then((response) => response.text().then((data) => aspectsMarkdown = data));
+    fetch("./md/Skills.md").then((response) => response.text().then((data) => skillsMarkdown = data));
+    fetch("./md/Stunts.md").then((response) => response.text().then((data) => stuntsMarkdown = data));
+
     // Special DOM elements.
     let printOptionListElement,
             snackBarElement,
@@ -124,6 +129,7 @@
 
     function handleNewCharacterClicked() {
         character = getNewCharacter();
+        activeIndex=0;
         showSnackBar("Created new character.");
     }
 
@@ -138,6 +144,7 @@
                 if (validateCharacter(tmpChar)) {
                     setTimeout(() => showSnackBar("Character loaded from file."), 250);
                     character=tmpChar;
+                    activeIndex=0;
                 }
             }
             catch(err) {
@@ -218,11 +225,12 @@
                     <CharacterSheet bind:character={character}/>
                 </div>
             {:else if activeIndex === 1}
-                <Markdown markdownFile="./md/Aspects.md" />
+                <Markdown markdown={aspectsMarkdown} />
             {:else if activeIndex === 2}
-                <Markdown markdownFile="./md/Skills.md" />
+                <Markdown markdown={skillsMarkdown} />
             {:else if activeIndex === 3}
-                <Markdown markdownFile="./md/Stunts.md" />            {:else}
+                <Markdown markdown={stuntsMarkdown} />
+            {:else}
                 <h3>TBD/Coming Soon</h3>
             {/if}
                 <mwc-snackbar labelText="{snackBarText}" bind:this={snackBarElement}>
