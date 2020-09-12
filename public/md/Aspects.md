@@ -36,6 +36,9 @@ You can make your character’s last two aspects anything you want—there are n
 the setting. Choose anything which you think will make your character more interesting, more fun to play, or better 
 connected to the world they occupy.
 
-## Attribution
+# Attribution
 
-This work is based on Fate Condensed (found at http://www.faterpg.com/), a product of Evil Hat Productions, LLC, developed, authored, and edited by PK Sullivan, Lara Turner, Leonard Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
+This work is based on Fate Condensed (found at http://www.faterpg.com/), a product of Evil Hat Productions, LLC, 
+developed, authored, and edited by PK Sullivan, Lara Turner, Leonard Balsera, Fred Hicks, Richard Bellingham, 
+Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use under the [Creative Commons Attribution 3.0 
+Unported license](http://creativecommons.org/licenses/by/3.0/).
