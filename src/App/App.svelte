@@ -26,10 +26,11 @@
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
     let activeIndex;
 
-    let aspectsMarkdown, skillsMarkdown, stuntsMarkdown;
+    let aspectsMarkdown, skillsMarkdown, stuntsMarkdown, srdMarkdown;
     fetch("./md/Aspects.md").then((response) => response.text().then((data) => aspectsMarkdown = data));
     fetch("./md/Skills.md").then((response) => response.text().then((data) => skillsMarkdown = data));
     fetch("./md/Stunts.md").then((response) => response.text().then((data) => stuntsMarkdown = data));
+    fetch("./md/Fate-Condensed-SRD-CC-BY.md").then((response) => response.text().then((data) => srdMarkdown = data));
 
     // Special DOM elements.
     let printOptionListElement,
@@ -204,6 +205,7 @@
             <mwc-tab label="Aspects"></mwc-tab>
             <mwc-tab label="Skills"></mwc-tab>
             <mwc-tab label="Stunts"></mwc-tab>
+            <mwc-tab label="SRD"></mwc-tab>
         </mwc-tab-bar>
         <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewCharacterClicked} {disabled}></mwc-icon-button>
         {#if showLoadPane}
@@ -225,11 +227,13 @@
                     <CharacterSheet bind:character={character}/>
                 </div>
             {:else if activeIndex === 1}
-                <Markdown markdown={aspectsMarkdown} props={{style:"height:8.5in"}}/>
+                <Markdown markdown={aspectsMarkdown} props={{style:"height:8.5in", id:"aspects"} }/>
             {:else if activeIndex === 2}
                 <Markdown markdown={skillsMarkdown} />
             {:else if activeIndex === 3}
                 <Markdown markdown={stuntsMarkdown} />
+            {:else if activeIndex === 4}
+                <Markdown markdown={srdMarkdown} columns="1" props={{style:"line-height:1.2rem;"}}/>
             {:else}
                 <h3>TBD/Coming Soon</h3>
             {/if}

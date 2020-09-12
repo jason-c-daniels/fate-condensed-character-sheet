@@ -15,7 +15,16 @@
     margin-bottom: 0.5rem;
 }
 
-:global(#trouble) {
+:global(td) {
+    padding-left: 2rem;
+}
+
+:global(th) {
+    padding-left: 2rem;
+    font-weight: bolder;
+}
+
+:global(#aspects #trouble) {
     break-before: column;
 }
 

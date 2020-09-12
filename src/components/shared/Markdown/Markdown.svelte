@@ -10,10 +10,25 @@
         fetch(markdownFile).then((response) => response.text().then((data) => markdown = data));
     }
     export let props={};
+    export let columns=2;
+    let columnClass="two-column-content";
+    let lookup={
+        1: "single-column-content",
+        2: "two-column-content",
+        3: "three-column-content",
+        4: "four-column-content",
+        "not-found":"two-column-content"
+    }
+
+    if (columns in lookup) {
+        columnClass=lookup[columns];
+    }
+
 </script>
 
 {#if markdown}
-<section class="two-column-content page" {...props}>
+
+<section class="{columnClass} page" {...props}>
     {@html marked(markdown)}
 </section>
 {/if}
