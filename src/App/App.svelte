@@ -26,11 +26,11 @@
     export let name;
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
     let activeIndex;
-
-    let aspectsMarkdown, skillsMarkdown, stuntsMarkdown, srdMarkdown, tocMarkdown;
-    fetch("./md/Aspects.md").then((response) => response.text().then((data) => aspectsMarkdown = data));
+    let activeSection;
+    let /*aspectsMarkdown, skillsMarkdown, stuntsMarkdown, */srdMarkdown, tocMarkdown;
+/*    fetch("./md/Aspects.md").then((response) => response.text().then((data) => aspectsMarkdown = data));
     fetch("./md/Skills.md").then((response) => response.text().then((data) => skillsMarkdown = data));
-    fetch("./md/Stunts.md").then((response) => response.text().then((data) => stuntsMarkdown = data));
+    fetch("./md/Stunts.md").then((response) => response.text().then((data) => stuntsMarkdown = data));*/
     fetch("./md/Fate-Condensed-SRD-CC-BY.md").then((response) => response.text().then((data) => srdMarkdown = data));
 
     // Special DOM elements.
@@ -41,6 +41,7 @@
 
     function handleTabActivated(e) {
         activeIndex = tabBarElement.activeIndex;
+        activeSection = activeIndex === 0 ? "Character Sheet" : "SRD";
     }
 
     let disabled = "";
@@ -186,7 +187,7 @@
 </style>
 
 <svelte:head>
-    <title>{character.name} - {appSettings.applicationName}</title>
+    <title>{character.name} - {appSettings.applicationName} - {activeSection}</title>
 
     <!-- Your application must load the Roboto and Material Icons fonts. -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
@@ -199,7 +200,7 @@
     <mwc-top-app-bar-fixed style="height:100%">
 
         <div slot="title">
-            <div style="display: inline-block"><span>{appSettings.applicationName}</span></div>
+            <div style="display: inline-block"><span>{appSettings.applicationName} - {activeSection}</span></div>
         </div>
         <mwc-tab-bar slot="actionItems" style="display: inline-block" bind:this={tabBarElement} activeIndex={activeIndex} on:MDCTabBar:activated={handleTabActivated} >
             <mwc-tab label="Character Sheet"></mwc-tab>
