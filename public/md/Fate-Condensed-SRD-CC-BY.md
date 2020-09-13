@@ -38,7 +38,7 @@ On that note, let’s get into what you *do* need!
 
 To play *Fate Condensed* you’ll need two to six friends with one acting as Game Master (GM), some dice, some tokens, writing implements, paper, and something to write short notes on (*e.g.,* small “sticky notes”).
 
-*Fate Condensed*uses **Fate Dice™** when characters take action. Fate dice are six-sided dice with two [0] sides, two [+] sides, and two [-] sides. One set of four dice will work fine, but one set per player is ideal. Other alternatives exist, such as using standard six-sided dice (1-2 = [-], 3-4 = [0], 5-6 = [+]), or the **Deck of Fate**, which uses cards instead of dice. We use the word “roll” throughout the text for simplicity.
+*Fate Condensed* uses **Fate Dice™** when characters take action. Fate dice are six-sided dice with two [0] sides, two [+] sides, and two [-] sides. One set of four dice will work fine, but one set per player is ideal. Other alternatives exist, such as using standard six-sided dice (1-2 = [-], 3-4 = [0], 5-6 = [+]), or the **Deck of Fate**, which uses cards instead of dice. We use the word “roll” throughout the text for simplicity.
 
 ### For Veterans: Changes From Fate Core
 
