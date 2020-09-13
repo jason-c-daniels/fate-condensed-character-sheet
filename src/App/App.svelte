@@ -41,7 +41,7 @@
 
     function handleTabActivated(e) {
         activeIndex = tabBarElement.activeIndex;
-        activeSection = activeIndex === 0 ? "Character Sheet" : "SRD";
+        activeSection = activeIndex === 0 ? "Character Sheet" : "Rules";
     }
 
     let disabled = "";
@@ -204,7 +204,7 @@
         </div>
         <mwc-tab-bar slot="actionItems" style="display: inline-block" bind:this={tabBarElement} activeIndex={activeIndex} on:MDCTabBar:activated={handleTabActivated} >
             <mwc-tab label="Character Sheet"></mwc-tab>
-            <mwc-tab label="SRD"></mwc-tab>
+            <mwc-tab label="Rules"></mwc-tab>
         </mwc-tab-bar>
         <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewCharacterClicked} {disabled}></mwc-icon-button>
         {#if showLoadPane}
