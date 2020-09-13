@@ -27,9 +27,9 @@
     <div class="toc">
 
         {#if showToc}
-            <mwc-icon-button style="float:right" icon="expand_less" on:click={()=> showToc=false} ></mwc-icon-button>
+            <mwc-icon-button style="float:right" icon="chevron_left" on:click={()=> showToc=false} ></mwc-icon-button>
         {:else}
-            <mwc-icon-button icon="expand_more" on:click={()=> showToc=true} ></mwc-icon-button>
+            <mwc-icon-button icon="chevron_right" on:click={()=> showToc=true} ></mwc-icon-button>
         {/if}
 
         {#if tocMarkdown && showToc}

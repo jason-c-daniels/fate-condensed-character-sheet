@@ -19049,8 +19049,8 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			mwc_icon_button = element("mwc-icon-button");
-    			set_custom_element_data(mwc_icon_button, "icon", "expand_more");
-    			add_location(mwc_icon_button, file$c, 47, 12, 1345);
+    			set_custom_element_data(mwc_icon_button, "icon", "chevron_right");
+    			add_location(mwc_icon_button, file$c, 47, 12, 1346);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
@@ -19089,7 +19089,7 @@ var app = (function () {
     		c: function create() {
     			mwc_icon_button = element("mwc-icon-button");
     			set_style(mwc_icon_button, "float", "right");
-    			set_custom_element_data(mwc_icon_button, "icon", "expand_less");
+    			set_custom_element_data(mwc_icon_button, "icon", "chevron_left");
     			add_location(mwc_icon_button, file$c, 45, 12, 1211);
     		},
     		m: function mount(target, anchor) {
@@ -19133,7 +19133,7 @@ var app = (function () {
     			h2.textContent = "Table of Contents";
     			t1 = space();
     			html_anchor = empty();
-    			add_location(h2, file$c, 51, 12, 1494);
+    			add_location(h2, file$c, 51, 12, 1497);
     			html_tag = new HtmlTag(html_anchor);
     		},
     		m: function mount(target, anchor) {
@@ -19244,7 +19244,7 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			attr_dev(div0, "class", "toc svelte-11e011a");
     			add_location(div0, file$c, 42, 4, 1158);
-    			add_location(div1, file$c, 55, 4, 1590);
+    			add_location(div1, file$c, 55, 4, 1593);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
