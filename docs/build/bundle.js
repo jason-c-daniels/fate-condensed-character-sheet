@@ -20693,7 +20693,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$e = "src/App/App.svelte";
 
-    // (287:8) {:else}
+    // (288:8) {:else}
     function create_else_block_2(ctx) {
     	let mwc_icon_button;
     	let mounted;
@@ -20705,13 +20705,13 @@ var app = (function () {
     			set_custom_element_data(mwc_icon_button, "icon", "folder_open");
     			set_custom_element_data(mwc_icon_button, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button, file$e, 287, 12, 9443);
+    			add_location(mwc_icon_button, file$e, 288, 12, 9580);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(mwc_icon_button, "click", /*handleLoadCharacterClicked*/ ctx[12], false, false, false);
+    				dispose = listen_dev(mwc_icon_button, "click", /*handleLoadCharacterClicked*/ ctx[13], false, false, false);
     				mounted = true;
     			}
     		},
@@ -20727,14 +20727,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(287:8) {:else}",
+    		source: "(288:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (285:8) {#if showLoadPane}
+    // (286:8) {#if showLoadPane}
     function create_if_block_3(ctx) {
     	let mwc_icon_button;
     	let mounted;
@@ -20746,13 +20746,13 @@ var app = (function () {
     			set_custom_element_data(mwc_icon_button, "icon", "cancel");
     			set_custom_element_data(mwc_icon_button, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button, file$e, 285, 12, 9322);
+    			add_location(mwc_icon_button, file$e, 286, 12, 9459);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(mwc_icon_button, "click", /*hideLoadPane*/ ctx[15], false, false, false);
+    				dispose = listen_dev(mwc_icon_button, "click", /*hideLoadPane*/ ctx[16], false, false, false);
     				mounted = true;
     			}
     		},
@@ -20768,14 +20768,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(285:8) {#if showLoadPane}",
+    		source: "(286:8) {#if showLoadPane}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (297:8) {:else}
+    // (298:8) {:else}
     function create_else_block$1(ctx) {
     	let div;
     	let current_block_type_index;
@@ -20806,14 +20806,14 @@ var app = (function () {
     			set_custom_element_data(mwc_icon_button, "icon", "close");
     			set_custom_element_data(mwc_icon_button, "slot", "dismiss");
     			set_custom_element_data(mwc_icon_button, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button, file$e, 308, 20, 10578);
-    			set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[8]);
+    			add_location(mwc_icon_button, file$e, 309, 20, 10715);
+    			set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[9]);
     			set_custom_element_data(mwc_snackbar, "class", "svelte-1x6mkq6");
-    			add_location(mwc_snackbar, file$e, 307, 16, 10488);
+    			add_location(mwc_snackbar, file$e, 308, 16, 10625);
     			attr_dev(div, "id", "content");
     			set_style(div, "margin", "10pt");
     			attr_dev(div, "class", "svelte-1x6mkq6");
-    			add_location(div, file$e, 297, 12, 10094);
+    			add_location(div, file$e, 298, 12, 10231);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20821,7 +20821,7 @@ var app = (function () {
     			append_dev(div, t);
     			append_dev(div, mwc_snackbar);
     			append_dev(mwc_snackbar, mwc_icon_button);
-    			/*mwc_snackbar_binding*/ ctx[21](mwc_snackbar);
+    			/*mwc_snackbar_binding*/ ctx[22](mwc_snackbar);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -20849,8 +20849,8 @@ var app = (function () {
     				if_block.m(div, t);
     			}
 
-    			if (!current || dirty[0] & /*snackBarText*/ 256) {
-    				set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[8]);
+    			if (!current || dirty[0] & /*snackBarText*/ 512) {
+    				set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[9]);
     			}
     		},
     		i: function intro(local) {
@@ -20865,7 +20865,7 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			if_blocks[current_block_type_index].d();
-    			/*mwc_snackbar_binding*/ ctx[21](null);
+    			/*mwc_snackbar_binding*/ ctx[22](null);
     		}
     	};
 
@@ -20873,14 +20873,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(297:8) {:else}",
+    		source: "(298:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (293:8) {#if (showLoadPane)}
+    // (294:8) {#if (showLoadPane)}
     function create_if_block$5(ctx) {
     	let div;
     	let dropzone;
@@ -20893,7 +20893,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	dropzone.$on("drop", /*handleFilesSelect*/ ctx[14]);
+    	dropzone.$on("drop", /*handleFilesSelect*/ ctx[15]);
 
     	const block = {
     		c: function create() {
@@ -20902,7 +20902,7 @@ var app = (function () {
     			attr_dev(div, "id", "content");
     			attr_dev(div, "class", "noprint file-loader svelte-1x6mkq6");
     			set_style(div, "height", "100%");
-    			add_location(div, file$e, 293, 12, 9852);
+    			add_location(div, file$e, 294, 12, 9989);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20929,14 +20929,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(293:8) {#if (showLoadPane)}",
+    		source: "(294:8) {#if (showLoadPane)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (305:12) {:else}
+    // (306:12) {:else}
     function create_else_block_1(ctx) {
     	let h3;
 
@@ -20945,7 +20945,7 @@ var app = (function () {
     			h3 = element("h3");
     			h3.textContent = "TBD/Coming Soon";
     			attr_dev(h3, "class", "svelte-1x6mkq6");
-    			add_location(h3, file$e, 305, 16, 10429);
+    			add_location(h3, file$e, 306, 16, 10566);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -20962,14 +20962,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(305:12) {:else}",
+    		source: "(306:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (303:40) 
+    // (304:40) 
     function create_if_block_2$1(ctx) {
     	let srd;
     	let updating_tocMarkdown;
@@ -20977,21 +20977,21 @@ var app = (function () {
     	let current;
 
     	function srd_tocMarkdown_binding(value) {
-    		/*srd_tocMarkdown_binding*/ ctx[19].call(null, value);
+    		/*srd_tocMarkdown_binding*/ ctx[20].call(null, value);
     	}
 
     	function srd_srdMarkdown_binding(value) {
-    		/*srd_srdMarkdown_binding*/ ctx[20].call(null, value);
+    		/*srd_srdMarkdown_binding*/ ctx[21].call(null, value);
     	}
 
     	let srd_props = {};
 
-    	if (/*tocMarkdown*/ ctx[3] !== void 0) {
-    		srd_props.tocMarkdown = /*tocMarkdown*/ ctx[3];
+    	if (/*tocMarkdown*/ ctx[4] !== void 0) {
+    		srd_props.tocMarkdown = /*tocMarkdown*/ ctx[4];
     	}
 
-    	if (/*srdMarkdown*/ ctx[2] !== void 0) {
-    		srd_props.srdMarkdown = /*srdMarkdown*/ ctx[2];
+    	if (/*srdMarkdown*/ ctx[3] !== void 0) {
+    		srd_props.srdMarkdown = /*srdMarkdown*/ ctx[3];
     	}
 
     	srd = new SRD({ props: srd_props, $$inline: true });
@@ -21009,15 +21009,15 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const srd_changes = {};
 
-    			if (!updating_tocMarkdown && dirty[0] & /*tocMarkdown*/ 8) {
+    			if (!updating_tocMarkdown && dirty[0] & /*tocMarkdown*/ 16) {
     				updating_tocMarkdown = true;
-    				srd_changes.tocMarkdown = /*tocMarkdown*/ ctx[3];
+    				srd_changes.tocMarkdown = /*tocMarkdown*/ ctx[4];
     				add_flush_callback(() => updating_tocMarkdown = false);
     			}
 
-    			if (!updating_srdMarkdown && dirty[0] & /*srdMarkdown*/ 4) {
+    			if (!updating_srdMarkdown && dirty[0] & /*srdMarkdown*/ 8) {
     				updating_srdMarkdown = true;
-    				srd_changes.srdMarkdown = /*srdMarkdown*/ ctx[2];
+    				srd_changes.srdMarkdown = /*srdMarkdown*/ ctx[3];
     				add_flush_callback(() => updating_srdMarkdown = false);
     			}
 
@@ -21041,14 +21041,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(303:40) ",
+    		source: "(304:40) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (299:12) {#if activeIndex === 0}
+    // (300:12) {#if activeIndex === 0}
     function create_if_block_1$1(ctx) {
     	let div;
     	let charactersheet;
@@ -21056,13 +21056,13 @@ var app = (function () {
     	let current;
 
     	function charactersheet_character_binding(value) {
-    		/*charactersheet_character_binding*/ ctx[18].call(null, value);
+    		/*charactersheet_character_binding*/ ctx[19].call(null, value);
     	}
 
     	let charactersheet_props = {};
 
-    	if (/*character*/ ctx[9] !== void 0) {
-    		charactersheet_props.character = /*character*/ ctx[9];
+    	if (/*character*/ ctx[10] !== void 0) {
+    		charactersheet_props.character = /*character*/ ctx[10];
     	}
 
     	charactersheet = new CharacterSheet({
@@ -21077,7 +21077,7 @@ var app = (function () {
     			div = element("div");
     			create_component(charactersheet.$$.fragment);
     			attr_dev(div, "class", "page svelte-1x6mkq6");
-    			add_location(div, file$e, 299, 16, 10187);
+    			add_location(div, file$e, 300, 16, 10324);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -21087,9 +21087,9 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const charactersheet_changes = {};
 
-    			if (!updating_character && dirty[0] & /*character*/ 512) {
+    			if (!updating_character && dirty[0] & /*character*/ 1024) {
     				updating_character = true;
-    				charactersheet_changes.character = /*character*/ ctx[9];
+    				charactersheet_changes.character = /*character*/ ctx[10];
     				add_flush_callback(() => updating_character = false);
     			}
 
@@ -21114,7 +21114,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(299:12) {#if activeIndex === 0}",
+    		source: "(300:12) {#if activeIndex === 0}",
     		ctx
     	});
 
@@ -21136,21 +21136,23 @@ var app = (function () {
     	let t2_value = /*appSettings*/ ctx[0].applicationName + "";
     	let t2;
     	let t3;
+    	let t4;
+    	let t5;
     	let mwc_tab_bar;
     	let mwc_tab0;
-    	let t4;
-    	let mwc_tab1;
-    	let t5;
-    	let mwc_icon_button0;
     	let t6;
+    	let mwc_tab1;
     	let t7;
-    	let mwc_icon_button1;
+    	let mwc_icon_button0;
     	let t8;
-    	let mwc_icon_button2;
     	let t9;
+    	let mwc_icon_button1;
+    	let t10;
+    	let mwc_icon_button2;
+    	let t11;
     	let current_block_type_index;
     	let if_block1;
-    	let t10;
+    	let t12;
     	let main1;
     	let div2;
     	let charactersheet;
@@ -21158,11 +21160,11 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	document.title = title_value = "" + (/*character*/ ctx[9].name + " - " + /*appSettings*/ ctx[0].applicationName);
+    	document.title = title_value = "" + (/*character*/ ctx[10].name + " - " + /*appSettings*/ ctx[0].applicationName + " - " + /*activeSection*/ ctx[2]);
     	globalcss = new GlobalCss({ $$inline: true });
 
     	function select_block_type(ctx, dirty) {
-    		if (/*showLoadPane*/ ctx[7]) return create_if_block_3;
+    		if (/*showLoadPane*/ ctx[8]) return create_if_block_3;
     		return create_else_block_2;
     	}
 
@@ -21172,7 +21174,7 @@ var app = (function () {
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*showLoadPane*/ ctx[7]) return 0;
+    		if (/*showLoadPane*/ ctx[8]) return 0;
     		return 1;
     	}
 
@@ -21180,13 +21182,13 @@ var app = (function () {
     	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
     	function charactersheet_character_binding_1(value) {
-    		/*charactersheet_character_binding_1*/ ctx[22].call(null, value);
+    		/*charactersheet_character_binding_1*/ ctx[23].call(null, value);
     	}
 
     	let charactersheet_props = {};
 
-    	if (/*character*/ ctx[9] !== void 0) {
-    		charactersheet_props.character = /*character*/ ctx[9];
+    	if (/*character*/ ctx[10] !== void 0) {
+    		charactersheet_props.character = /*character*/ ctx[10];
     	}
 
     	charactersheet = new CharacterSheet({
@@ -21209,77 +21211,79 @@ var app = (function () {
     			div0 = element("div");
     			span = element("span");
     			t2 = text(t2_value);
-    			t3 = space();
+    			t3 = text(" - ");
+    			t4 = text(/*activeSection*/ ctx[2]);
+    			t5 = space();
     			mwc_tab_bar = element("mwc-tab-bar");
     			mwc_tab0 = element("mwc-tab");
-    			t4 = space();
-    			mwc_tab1 = element("mwc-tab");
-    			t5 = space();
-    			mwc_icon_button0 = element("mwc-icon-button");
     			t6 = space();
-    			if_block0.c();
+    			mwc_tab1 = element("mwc-tab");
     			t7 = space();
-    			mwc_icon_button1 = element("mwc-icon-button");
+    			mwc_icon_button0 = element("mwc-icon-button");
     			t8 = space();
-    			mwc_icon_button2 = element("mwc-icon-button");
+    			if_block0.c();
     			t9 = space();
-    			if_block1.c();
+    			mwc_icon_button1 = element("mwc-icon-button");
     			t10 = space();
+    			mwc_icon_button2 = element("mwc-icon-button");
+    			t11 = space();
+    			if_block1.c();
+    			t12 = space();
     			main1 = element("main");
     			div2 = element("div");
     			create_component(charactersheet.$$.fragment);
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Roboto:300,400,500");
     			attr_dev(link0, "rel", "stylesheet");
     			attr_dev(link0, "class", "svelte-1x6mkq6");
-    			add_location(link0, file$e, 267, 4, 8431);
+    			add_location(link0, file$e, 268, 4, 8550);
     			attr_dev(link1, "href", "https://fonts.googleapis.com/css?family=Material+Icons&display=block");
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "class", "svelte-1x6mkq6");
-    			add_location(link1, file$e, 268, 4, 8525);
+    			add_location(link1, file$e, 269, 4, 8644);
     			attr_dev(span, "class", "svelte-1x6mkq6");
-    			add_location(span, file$e, 277, 47, 8801);
+    			add_location(span, file$e, 278, 47, 8920);
     			set_style(div0, "display", "inline-block");
     			attr_dev(div0, "class", "svelte-1x6mkq6");
-    			add_location(div0, file$e, 277, 12, 8766);
+    			add_location(div0, file$e, 278, 12, 8885);
     			attr_dev(div1, "slot", "title");
     			attr_dev(div1, "class", "svelte-1x6mkq6");
-    			add_location(div1, file$e, 276, 8, 8735);
+    			add_location(div1, file$e, 277, 8, 8854);
     			set_custom_element_data(mwc_tab0, "label", "Character Sheet");
     			set_custom_element_data(mwc_tab0, "class", "svelte-1x6mkq6");
-    			add_location(mwc_tab0, file$e, 280, 12, 9045);
+    			add_location(mwc_tab0, file$e, 281, 12, 9182);
     			set_custom_element_data(mwc_tab1, "label", "SRD");
     			set_custom_element_data(mwc_tab1, "class", "svelte-1x6mkq6");
-    			add_location(mwc_tab1, file$e, 281, 12, 9101);
+    			add_location(mwc_tab1, file$e, 282, 12, 9238);
     			set_custom_element_data(mwc_tab_bar, "slot", "actionItems");
     			set_style(mwc_tab_bar, "display", "inline-block");
     			set_custom_element_data(mwc_tab_bar, "activeindex", /*activeIndex*/ ctx[1]);
     			set_custom_element_data(mwc_tab_bar, "class", "svelte-1x6mkq6");
-    			add_location(mwc_tab_bar, file$e, 279, 8, 8873);
+    			add_location(mwc_tab_bar, file$e, 280, 8, 9010);
     			set_custom_element_data(mwc_icon_button0, "icon", "note_add");
     			set_custom_element_data(mwc_icon_button0, "slot", "actionItems");
-    			set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[6]);
+    			set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[7]);
     			set_custom_element_data(mwc_icon_button0, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button0, file$e, 283, 8, 9164);
+    			add_location(mwc_icon_button0, file$e, 284, 8, 9301);
     			set_custom_element_data(mwc_icon_button1, "icon", "save");
     			set_custom_element_data(mwc_icon_button1, "slot", "actionItems");
-    			set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[6]);
+    			set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[7]);
     			set_custom_element_data(mwc_icon_button1, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button1, file$e, 289, 8, 9577);
+    			add_location(mwc_icon_button1, file$e, 290, 8, 9714);
     			set_custom_element_data(mwc_icon_button2, "icon", "print");
     			set_custom_element_data(mwc_icon_button2, "slot", "actionItems");
-    			set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[6]);
+    			set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[7]);
     			set_custom_element_data(mwc_icon_button2, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button2, file$e, 290, 8, 9701);
+    			add_location(mwc_icon_button2, file$e, 291, 8, 9838);
     			set_style(mwc_top_app_bar_fixed, "height", "100%");
     			set_custom_element_data(mwc_top_app_bar_fixed, "class", "svelte-1x6mkq6");
-    			add_location(mwc_top_app_bar_fixed, file$e, 274, 4, 8682);
+    			add_location(mwc_top_app_bar_fixed, file$e, 275, 4, 8801);
     			attr_dev(main0, "class", "noprint svelte-1x6mkq6");
-    			add_location(main0, file$e, 272, 0, 8654);
+    			add_location(main0, file$e, 273, 0, 8773);
     			attr_dev(div2, "class", "page svelte-1x6mkq6");
-    			add_location(div2, file$e, 321, 4, 11060);
+    			add_location(div2, file$e, 322, 4, 11197);
     			attr_dev(main1, "class", "printme svelte-1x6mkq6");
     			set_style(main1, "margin", "0.5in");
-    			add_location(main1, file$e, 316, 0, 10746);
+    			add_location(main1, file$e, 317, 0, 10883);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -21296,23 +21300,25 @@ var app = (function () {
     			append_dev(div1, div0);
     			append_dev(div0, span);
     			append_dev(span, t2);
-    			append_dev(mwc_top_app_bar_fixed, t3);
+    			append_dev(span, t3);
+    			append_dev(span, t4);
+    			append_dev(mwc_top_app_bar_fixed, t5);
     			append_dev(mwc_top_app_bar_fixed, mwc_tab_bar);
     			append_dev(mwc_tab_bar, mwc_tab0);
-    			append_dev(mwc_tab_bar, t4);
+    			append_dev(mwc_tab_bar, t6);
     			append_dev(mwc_tab_bar, mwc_tab1);
-    			/*mwc_tab_bar_binding*/ ctx[17](mwc_tab_bar);
-    			append_dev(mwc_top_app_bar_fixed, t5);
-    			append_dev(mwc_top_app_bar_fixed, mwc_icon_button0);
-    			append_dev(mwc_top_app_bar_fixed, t6);
-    			if_block0.m(mwc_top_app_bar_fixed, null);
+    			/*mwc_tab_bar_binding*/ ctx[18](mwc_tab_bar);
     			append_dev(mwc_top_app_bar_fixed, t7);
-    			append_dev(mwc_top_app_bar_fixed, mwc_icon_button1);
+    			append_dev(mwc_top_app_bar_fixed, mwc_icon_button0);
     			append_dev(mwc_top_app_bar_fixed, t8);
-    			append_dev(mwc_top_app_bar_fixed, mwc_icon_button2);
+    			if_block0.m(mwc_top_app_bar_fixed, null);
     			append_dev(mwc_top_app_bar_fixed, t9);
+    			append_dev(mwc_top_app_bar_fixed, mwc_icon_button1);
+    			append_dev(mwc_top_app_bar_fixed, t10);
+    			append_dev(mwc_top_app_bar_fixed, mwc_icon_button2);
+    			append_dev(mwc_top_app_bar_fixed, t11);
     			if_blocks[current_block_type_index].m(mwc_top_app_bar_fixed, null);
-    			insert_dev(target, t10, anchor);
+    			insert_dev(target, t12, anchor);
     			insert_dev(target, main1, anchor);
     			append_dev(main1, div2);
     			mount_component(charactersheet, div2, null);
@@ -21320,9 +21326,9 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(mwc_tab_bar, "MDCTabBar:activated", /*handleTabActivated*/ ctx[10], false, false, false),
-    					listen_dev(mwc_icon_button0, "click", /*handleNewCharacterClicked*/ ctx[13], false, false, false),
-    					listen_dev(mwc_icon_button1, "click", /*handleSaveCharacterClicked*/ ctx[11], false, false, false),
+    					listen_dev(mwc_tab_bar, "MDCTabBar:activated", /*handleTabActivated*/ ctx[11], false, false, false),
+    					listen_dev(mwc_icon_button0, "click", /*handleNewCharacterClicked*/ ctx[14], false, false, false),
+    					listen_dev(mwc_icon_button1, "click", /*handleSaveCharacterClicked*/ ctx[12], false, false, false),
     					listen_dev(mwc_icon_button2, "click", handlePrintClicked, false, false, false)
     				];
 
@@ -21330,18 +21336,19 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty[0] & /*character, appSettings*/ 513) && title_value !== (title_value = "" + (/*character*/ ctx[9].name + " - " + /*appSettings*/ ctx[0].applicationName))) {
+    			if ((!current || dirty[0] & /*character, appSettings, activeSection*/ 1029) && title_value !== (title_value = "" + (/*character*/ ctx[10].name + " - " + /*appSettings*/ ctx[0].applicationName + " - " + /*activeSection*/ ctx[2]))) {
     				document.title = title_value;
     			}
 
     			if ((!current || dirty[0] & /*appSettings*/ 1) && t2_value !== (t2_value = /*appSettings*/ ctx[0].applicationName + "")) set_data_dev(t2, t2_value);
+    			if (!current || dirty[0] & /*activeSection*/ 4) set_data_dev(t4, /*activeSection*/ ctx[2]);
 
     			if (!current || dirty[0] & /*activeIndex*/ 2) {
     				set_custom_element_data(mwc_tab_bar, "activeindex", /*activeIndex*/ ctx[1]);
     			}
 
-    			if (!current || dirty[0] & /*disabled*/ 64) {
-    				set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[6]);
+    			if (!current || dirty[0] & /*disabled*/ 128) {
+    				set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[7]);
     			}
 
     			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block0) {
@@ -21352,16 +21359,16 @@ var app = (function () {
 
     				if (if_block0) {
     					if_block0.c();
-    					if_block0.m(mwc_top_app_bar_fixed, t7);
+    					if_block0.m(mwc_top_app_bar_fixed, t9);
     				}
     			}
 
-    			if (!current || dirty[0] & /*disabled*/ 64) {
-    				set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[6]);
+    			if (!current || dirty[0] & /*disabled*/ 128) {
+    				set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[7]);
     			}
 
-    			if (!current || dirty[0] & /*disabled*/ 64) {
-    				set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[6]);
+    			if (!current || dirty[0] & /*disabled*/ 128) {
+    				set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[7]);
     			}
 
     			let previous_block_index = current_block_type_index;
@@ -21390,9 +21397,9 @@ var app = (function () {
 
     			const charactersheet_changes = {};
 
-    			if (!updating_character && dirty[0] & /*character*/ 512) {
+    			if (!updating_character && dirty[0] & /*character*/ 1024) {
     				updating_character = true;
-    				charactersheet_changes.character = /*character*/ ctx[9];
+    				charactersheet_changes.character = /*character*/ ctx[10];
     				add_flush_callback(() => updating_character = false);
     			}
 
@@ -21418,10 +21425,10 @@ var app = (function () {
     			destroy_component(globalcss, detaching);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(main0);
-    			/*mwc_tab_bar_binding*/ ctx[17](null);
+    			/*mwc_tab_bar_binding*/ ctx[18](null);
     			if_block0.d();
     			if_blocks[current_block_type_index].d();
-    			if (detaching) detach_dev(t10);
+    			if (detaching) detach_dev(t12);
     			if (detaching) detach_dev(main1);
     			destroy_component(charactersheet);
     			mounted = false;
@@ -21454,17 +21461,23 @@ var app = (function () {
     	} } = $$props;
 
     	let activeIndex;
-    	let aspectsMarkdown, skillsMarkdown, stuntsMarkdown, srdMarkdown, tocMarkdown;
-    	fetch("./md/Aspects.md").then(response => response.text().then(data => aspectsMarkdown = data));
-    	fetch("./md/Skills.md").then(response => response.text().then(data => skillsMarkdown = data));
-    	fetch("./md/Stunts.md").then(response => response.text().then(data => stuntsMarkdown = data));
-    	fetch("./md/Fate-Condensed-SRD-CC-BY.md").then(response => response.text().then(data => $$invalidate(2, srdMarkdown = data)));
+    	let activeSection;
+
+    	let /*aspectsMarkdown, skillsMarkdown, stuntsMarkdown, */
+    		srdMarkdown,
+    		tocMarkdown;
+
+    	/*    fetch("./md/Aspects.md").then((response) => response.text().then((data) => aspectsMarkdown = data));
+        fetch("./md/Skills.md").then((response) => response.text().then((data) => skillsMarkdown = data));
+        fetch("./md/Stunts.md").then((response) => response.text().then((data) => stuntsMarkdown = data));*/
+    	fetch("./md/Fate-Condensed-SRD-CC-BY.md").then(response => response.text().then(data => $$invalidate(3, srdMarkdown = data)));
 
     	// Special DOM elements.
     	let printOptionListElement, snackBarElement, saveOptionsListElement, tabBarElement;
 
     	function handleTabActivated(e) {
     		$$invalidate(1, activeIndex = tabBarElement.activeIndex);
+    		$$invalidate(2, activeSection = activeIndex === 0 ? "Character Sheet" : "SRD");
     	}
 
     	let disabled = "";
@@ -21557,12 +21570,12 @@ var app = (function () {
     	}
 
     	function handleLoadCharacterClicked() {
-    		$$invalidate(7, showLoadPane = true);
-    		$$invalidate(6, disabled = "disabled");
+    		$$invalidate(8, showLoadPane = true);
+    		$$invalidate(7, disabled = "disabled");
     	}
 
     	function handleNewCharacterClicked() {
-    		$$invalidate(9, character = getNewCharacter());
+    		$$invalidate(10, character = getNewCharacter());
     		$$invalidate(1, activeIndex = 0);
     		showSnackBar("Created new character.");
     	}
@@ -21579,7 +21592,7 @@ var app = (function () {
 
     				if (validateCharacter(tmpChar)) {
     					setTimeout(() => showSnackBar("Character loaded from file."), 250);
-    					$$invalidate(9, character = tmpChar);
+    					$$invalidate(10, character = tmpChar);
     					$$invalidate(1, activeIndex = 0);
     				}
     			} catch(err) {
@@ -21594,8 +21607,8 @@ var app = (function () {
     	}
 
     	function hideLoadPane() {
-    		$$invalidate(7, showLoadPane = false);
-    		$$invalidate(6, disabled = "");
+    		$$invalidate(8, showLoadPane = false);
+    		$$invalidate(7, disabled = "");
     	}
 
     	function scheduleAutosave() {
@@ -21613,7 +21626,7 @@ var app = (function () {
     	}
 
     	function showSnackBar(text) {
-    		$$invalidate(8, snackBarText = text);
+    		$$invalidate(9, snackBarText = text);
     		snackBarElement.show();
     	}
 
@@ -21626,39 +21639,39 @@ var app = (function () {
     	function mwc_tab_bar_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			tabBarElement = $$value;
-    			$$invalidate(5, tabBarElement);
+    			$$invalidate(6, tabBarElement);
     		});
     	}
 
     	function charactersheet_character_binding(value) {
     		character = value;
-    		$$invalidate(9, character);
+    		$$invalidate(10, character);
     	}
 
     	function srd_tocMarkdown_binding(value) {
     		tocMarkdown = value;
-    		$$invalidate(3, tocMarkdown);
+    		$$invalidate(4, tocMarkdown);
     	}
 
     	function srd_srdMarkdown_binding(value) {
     		srdMarkdown = value;
-    		$$invalidate(2, srdMarkdown);
+    		$$invalidate(3, srdMarkdown);
     	}
 
     	function mwc_snackbar_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			snackBarElement = $$value;
-    			$$invalidate(4, snackBarElement);
+    			$$invalidate(5, snackBarElement);
     		});
     	}
 
     	function charactersheet_character_binding_1(value) {
     		character = value;
-    		$$invalidate(9, character);
+    		$$invalidate(10, character);
     	}
 
     	$$self.$$set = $$props => {
-    		if ("name" in $$props) $$invalidate(16, name = $$props.name);
+    		if ("name" in $$props) $$invalidate(17, name = $$props.name);
     		if ("appSettings" in $$props) $$invalidate(0, appSettings = $$props.appSettings);
     	};
 
@@ -21674,9 +21687,7 @@ var app = (function () {
     		name,
     		appSettings,
     		activeIndex,
-    		aspectsMarkdown,
-    		skillsMarkdown,
-    		stuntsMarkdown,
+    		activeSection,
     		srdMarkdown,
     		tocMarkdown,
     		printOptionListElement,
@@ -21708,29 +21719,27 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("name" in $$props) $$invalidate(16, name = $$props.name);
+    		if ("name" in $$props) $$invalidate(17, name = $$props.name);
     		if ("appSettings" in $$props) $$invalidate(0, appSettings = $$props.appSettings);
     		if ("activeIndex" in $$props) $$invalidate(1, activeIndex = $$props.activeIndex);
-    		if ("aspectsMarkdown" in $$props) aspectsMarkdown = $$props.aspectsMarkdown;
-    		if ("skillsMarkdown" in $$props) skillsMarkdown = $$props.skillsMarkdown;
-    		if ("stuntsMarkdown" in $$props) stuntsMarkdown = $$props.stuntsMarkdown;
-    		if ("srdMarkdown" in $$props) $$invalidate(2, srdMarkdown = $$props.srdMarkdown);
-    		if ("tocMarkdown" in $$props) $$invalidate(3, tocMarkdown = $$props.tocMarkdown);
+    		if ("activeSection" in $$props) $$invalidate(2, activeSection = $$props.activeSection);
+    		if ("srdMarkdown" in $$props) $$invalidate(3, srdMarkdown = $$props.srdMarkdown);
+    		if ("tocMarkdown" in $$props) $$invalidate(4, tocMarkdown = $$props.tocMarkdown);
     		if ("printOptionListElement" in $$props) printOptionListElement = $$props.printOptionListElement;
-    		if ("snackBarElement" in $$props) $$invalidate(4, snackBarElement = $$props.snackBarElement);
+    		if ("snackBarElement" in $$props) $$invalidate(5, snackBarElement = $$props.snackBarElement);
     		if ("saveOptionsListElement" in $$props) saveOptionsListElement = $$props.saveOptionsListElement;
-    		if ("tabBarElement" in $$props) $$invalidate(5, tabBarElement = $$props.tabBarElement);
-    		if ("disabled" in $$props) $$invalidate(6, disabled = $$props.disabled);
-    		if ("showLoadPane" in $$props) $$invalidate(7, showLoadPane = $$props.showLoadPane);
+    		if ("tabBarElement" in $$props) $$invalidate(6, tabBarElement = $$props.tabBarElement);
+    		if ("disabled" in $$props) $$invalidate(7, disabled = $$props.disabled);
+    		if ("showLoadPane" in $$props) $$invalidate(8, showLoadPane = $$props.showLoadPane);
     		if ("firstCall" in $$props) firstCall = $$props.firstCall;
     		if ("saveAlsoDownloads" in $$props) saveAlsoDownloads = $$props.saveAlsoDownloads;
     		if ("localStorageController" in $$props) localStorageController = $$props.localStorageController;
     		if ("url" in $$props) url = $$props.url;
     		if ("basePath" in $$props) basePath = $$props.basePath;
-    		if ("snackBarText" in $$props) $$invalidate(8, snackBarText = $$props.snackBarText);
+    		if ("snackBarText" in $$props) $$invalidate(9, snackBarText = $$props.snackBarText);
     		if ("tmpChar" in $$props) tmpChar = $$props.tmpChar;
     		if ("charIsValid" in $$props) charIsValid = $$props.charIsValid;
-    		if ("character" in $$props) $$invalidate(9, character = $$props.character);
+    		if ("character" in $$props) $$invalidate(10, character = $$props.character);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -21740,6 +21749,7 @@ var app = (function () {
     	return [
     		appSettings,
     		activeIndex,
+    		activeSection,
     		srdMarkdown,
     		tocMarkdown,
     		snackBarElement,
@@ -21767,7 +21777,7 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$h, create_fragment$h, safe_not_equal, { name: 16, appSettings: 0 }, [-1, -1]);
+    		init(this, options, instance$h, create_fragment$h, safe_not_equal, { name: 17, appSettings: 0 }, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -21779,7 +21789,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*name*/ ctx[16] === undefined && !("name" in props)) {
+    		if (/*name*/ ctx[17] === undefined && !("name" in props)) {
     			console_1.warn("<App> was created without expected prop 'name'");
     		}
     	}
@@ -21804,7 +21814,7 @@ var app = (function () {
     const app = new App({
     	target: document.body,
     	props: {
-    		appSettings: { applicationName: "Fate Condensed Character Sheet" }
+    		appSettings: { applicationName: "Fate Condensed" }
     	}
     });
 
