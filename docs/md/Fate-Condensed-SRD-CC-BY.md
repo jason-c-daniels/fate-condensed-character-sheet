@@ -8,7 +8,7 @@ Refer to the licensing pages at [http://www.faterpg.com/licensing](http://www.fa
 
 This is the System Reference Document for use with the Creative Commons Attribution Unported license. **The following attribution must be provided in your text, wherever you put your own copyright, in the same size as your copyright text:**
 
-This work is based on Fate Condensed (found at http://www.faterpg.com/), a product of Evil Hat Productions, LLC, developed, authored, and edited by PK Sullivan, Lara Turner, Leonard Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
+This work is based on Fate Condensed (found at http://www.faterpg.com/), a product of Evil Hat Productions, LLC, developed, authored, and edited by PK Sullivan, Lara Turner, Leonard Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use under the [Creative Commons Attribution 3.0 Unported license](http://creativecommons.org/licenses/by/3.0/).
 
 # Credits
 
@@ -85,7 +85,7 @@ Your PC is made up of several elements:
 
 **Aspects** are short phrases that describe who your character is or what is important to them. They can relate to your character’s physical or mental qualities, history, beliefs, training, relationships, or even particularly important equipment.
 
-The first thing to know about them is: **Aspects are true**(see **page XX** for a discussion of this). In other words, how you define your character is real and true in the story you’re telling. If you write down that your character is a **Precog Sniper**, then they *are* a precog sniper. You’ve told everyone that your character sees the future and is a crack shot with a rifle.
+The first thing to know about them is: **Aspects are true** (see **page XX** for a discussion of this). In other words, how you define your character is real and true in the story you’re telling. If you write down that your character is a **Precog Sniper**, then they *are* a precog sniper. You’ve told everyone that your character sees the future and is a crack shot with a rifle.
 
 You’ll also use aspects in play to change the story. They give you permission to improve your dice rolls and establish facts about the world. Lastly, aspects can earn you **fate points** if they create complications for your character—so to make the most versatile aspects, you should aim for ones that are double-edged, working both for you and against you.
 
@@ -99,7 +99,7 @@ Your **high concept** is a broad description of the character, covering the vita
 
 #### Trouble
 
-Next is your character’s **trouble**—something that makes your character’s life more complicated. It could be a personal weakness, family entanglements, or other obligations. Pick something you’ll enjoy roleplaying!
+Next is your character’s **trouble** — something that makes your character’s life more complicated. It could be a personal weakness, family entanglements, or other obligations. Pick something you’ll enjoy roleplaying!
 
 #### Relationship
 
@@ -399,7 +399,7 @@ You may modify your dice by invoking aspects to get +2 to your roll or reroll th
 
 When you take action but the dice come up short, you don’t have to sit back and accept failure. (Though you totally can. That’s fun too.) The aspects in play give you options and opportunity to succeed.
 
-When an aspect could justifiably help your efforts, describe how it helps and spend a fate point to **invoke** it (or use a free invoke). What is and isn’t justifiable is subject to the **bogus rule**—anyone can say “that’s bogus!” to invoking an aspect. Simply put, the bogus rule is a **calibration tool** that anyone at the table may use to help the group make sure the game stays true to its vision and concept. You can use the safety tools discussed on **page XX** in a similar fashion.
+When an aspect could justifiably help your efforts, describe how it helps and spend a fate point to **invoke** it (or use a free invoke). What is and isn’t justifiable is subject to the **bogus rule** — anyone can say “that’s bogus!” to invoking an aspect. Simply put, the bogus rule is a **calibration tool** that anyone at the table may use to help the group make sure the game stays true to its vision and concept. You can use the safety tools discussed on **page XX** in a similar fashion.
 
 You have two options when your invoke looks bogus. First, you can retract your invoke and try something else, maybe a different aspect. Second, you can have a quick discussion about why you think the aspect fits. If the person still isn’t convinced, retract the invoke and move on. If they come around to your perspective, go ahead with the invoke as usual. The bogus rule is in here to help everyone at the table have a good time. Use it when something doesn’t sound right, make sense, or fit the tone. Someone invoking **Great at First Impressions** to throw a car is likely bogus. But maybe that character has a supernatural stunt that makes them incredibly strong, strong enough to plausibly throw a car, and this is their opening gambit in a fight with a horrible monster. In that case, maybe **Great at First Impressions** is plausible.
 
@@ -462,13 +462,13 @@ Just like failure, ties should move the story forward, never stymie the action. 
 
 #### Success at a minor cost
 
-The first is **success at a minor cost**—a few points of stress, story details about difficulty or complication but aren’t hindrances themselves, and a boost (**page XX**) to the enemy are all minor costs.
+The first is **success at a minor cost** — a few points of stress, story details about difficulty or complication but aren’t hindrances themselves, and a boost (**page XX**) to the enemy are all minor costs.
 
 Ethan’s first few attempts all fail. By the time he actually gets the door open, dawn has broken, and escape under cover of darkness is impossible. He got what he needed, but his situation is worse now.
 
 #### Partial Success
 
-The other way to handle a tie is **partial success**—you succeeded but only got some of what you wanted.
+The other way to handle a tie is **partial success** — you succeeded but only got some of what you wanted.
 
 Ethan can only open the safe door a crack—if the door opens more than an inch, the alarm will sound, and he can’t figure out how to disengage that. He manages to pull a couple pages of the ritual out through the narrow gap, but he’ll have to guess at the final steps.
 
@@ -697,7 +697,7 @@ You may add an important or unlikely detail to the story based on an aspect in p
 
 Aspects can be **compelled** to complicate the situation and earn fate points. To compel an aspect, the GM or a player offers a fate point to the player whose character is being compelled, and tells them why an aspect is making things more difficult or complicated. If you refuse the compel, you must spend a fate point from your own supply and describe how your character avoids the complication. Yes, this means that if you don’t have any fate points, you can’t refuse a compel!
 
-**Any aspect can be compelled**—whether it’s a character aspect, situation aspect, or consequence—but it must be something that affects the character being compelled.
+**Any aspect can be compelled** — whether it’s a character aspect, situation aspect, or consequence—but it must be something that affects the character being compelled.
 
 **Anyone can offer a compel.** The player proposing the compel must spend one of their own fate points. The GM then takes over running the compel for the affected target. The GM does not lose a fate point by offering a compel—they have a limited pool of fate points for invoking aspects, but can compel as much as they’d like.
 
@@ -713,7 +713,7 @@ When offering a compel, make sure that the complication is a course of action or
 
 “You know, curse your luck, I think that the sand in your eyes means you can’t really see anything. Your shots at the shoggoth go wild, puncturing a few barrels that are now gushing gasoline toward the fire pit.” This is a much better compel. It changes the scene, ratchets up the tension, and gives the players something new to think about.
 
-For some ideas about what does and doesn’t work as a compel, check out the discussion of types of compels found in *Fate Core System*starting on page 72 of that book, or online at: [*https://fate-srd.com/fate-core/invoking-compelling-aspects\#types-of-compels*]()
+For some ideas about what does and doesn’t work as a compel, check out the discussion of types of compels found in *Fate Core System* starting on page 72 of that book, or online at: [*https://fate-srd.com/fate-core/invoking-compelling-aspects\#types-of-compels*]()
 
 #### Events and Decisions
 
@@ -795,11 +795,11 @@ Shooting lets you attack from a distance. Ranged attacks can target enemies in a
 
 When setting the scene, the GM should think of interesting and dynamic environmental features that can constrain the action or provide opportunities to change the situation by using them. Three to five details are more than enough. Use these categories as a guide:
 
--   **Tone, mood, or weather**—darkness, lightning, and howling winds
--   **Impediments to movement**—connected by ladders, covered in slime, and filled with smoke
--   **Cover and obstructions**—vehicles, pillars, and crates
--   **Dangerous features**—crates of TNT, barrels of oil, and eldritch artifacts crackling with electricity
--   **Usable objects**—improvised weapons, statues or bookshelves to knock over, and doors to be barred
+-   **Tone, mood, or weather** — darkness, lightning, and howling winds
+-   **Impediments to movement** — connected by ladders, covered in slime, and filled with smoke
+-   **Cover and obstructions** — vehicles, pillars, and crates
+-   **Dangerous features** — crates of TNT, barrels of oil, and eldritch artifacts crackling with electricity
+-   **Usable objects** — improvised weapons, statues or bookshelves to knock over, and doors to be barred
 
 Anyone can invoke and compel these aspects, so remember to take them into account when you wrestle that cultist to the ground amid the **Caustic Slime Covering Everything**.
 
@@ -1318,7 +1318,7 @@ As mentioned on **page XX** skill lists are the first thing to consider tinkerin
 -   **Approaches:** Careful, Clever, Flashy, Forceful, Quick, Sneaky.
 -   **Aptitudes:** Athletics, Combat, Leadership, Scholarship, Subterfuge.
 -   **Attributes:** Strength, Dexterity, Toughness, Intelligence, Charm.
--   **Relationships:**Leading, Partnering, Supporting, Solo.
+-   **Relationships:** Leading, Partnering, Supporting, Solo.
 -   **Roles:** Driver, Hitter, Hacker, Gearhead, Grifter, Thief, Mastermind.
 -   **Themes:** Air, Fire, Metal, Mind, Stone, Void, Water, Wind, Wood.
 -   **Values:** Duty, Glory, Justice, Love, Power, Safety, Truth, Vengeance.
@@ -1456,44 +1456,46 @@ Dealing with a distraction should always have a clear benefit or, failing that, 
 
 Examples of Obstacles
 
-Hazards
+*Hazards*
 
 -   Great (+4) **Machine-Gun Turret**, Weapon:3
 -   Superb (+5) **Distant Sniper**, Weapon:4
 
-Blocks
+
+*Blocks*
 
 -   Fair (+2) **Chain Link Fence**, Great (+4) difficulty to remove
 -   Good (+3) **Vat of Acid**, Weapon:4, Superb (+5) difficulty to remove
 
-Distractions
 
--   **Bus Full of Civilians—****Choice:** *Will the bus plunge off the bridge?*
-    **Opposition:** Good (+3)
-    **Repercussion (leave them):** All of the civilians on the bus die.
-    **Repercussion (save them):** The villain gets away!
--   **The Glittering Gem—****Choice:** *Can you take the gem from the pedestal?*
-    **Repercussion (leave the gem):** You don’t get the (priceless) gem.
-    **Repercussion (take the gem):** You activate the traps in the temple.
+*Distractions*
+
+- **Bus Full of Civilians—** **Choice:** *Will the bus plunge off the bridge?*
+  - **Opposition:** Good (+3)
+  - **Repercussion (leave them):** All of the civilians on the bus die.
+  - **Repercussion (save them):** The villain gets away!
+- **The Glittering Gem—** **Choice:** *Can you take the gem from the pedestal?*
+  - **Repercussion (leave the gem):** You don’t get the (priceless) gem.
+  - **Repercussion (take the gem):** You activate the traps in the temple.
 
 ## Scale
 
 -----
 
-**Scale**is an optional subsystem that you can use to represent supernatural beings which operate on a level beyond the general range of capabilities of most characters in your game. Usually you don’t need to worry about the impact of scale within your game. There may be times, however, where it’s desirable to present the characters with a threat bigger than they typically face—or an opportunity for the characters to punch outside their usual weight class.
+**Scale** is an optional subsystem that you can use to represent supernatural beings which operate on a level beyond the general range of capabilities of most characters in your game. Usually you don’t need to worry about the impact of scale within your game. There may be times, however, where it’s desirable to present the characters with a threat bigger than they typically face—or an opportunity for the characters to punch outside their usual weight class.
 
 As an example—you may wish to change the list to something more suitable to your setting—we’ll present you with five potential levels of scale: Mundane, Supernatural, Otherworldly, Legendary, and Godlike.
 
 -   **Mundane** represents characters without access to supernatural power or technologies that would boost them beyond the capabilities of humans.
--   **Supernatural**represents characters who do have access to supernatural powers or technologies reaching beyond human capacity but who are still effectively human at the core.
--   **Otherworldly**represents unusual or unique characters whose powers set them apart from the normal concerns of humanity.
--   **Legendary**represents powerful spirits, entities, and alien beings to whom humanity is more of a curiosity than a threat.
+-   **Supernatural** represents characters who do have access to supernatural powers or technologies reaching beyond human capacity but who are still effectively human at the core.
+-   **Otherworldly** represents unusual or unique characters whose powers set them apart from the normal concerns of humanity.
+-   **Legendary** represents powerful spirits, entities, and alien beings to whom humanity is more of a curiosity than a threat.
 -   **Godlike** represents the universe’s mightiest forces: archangels, gods, faerie queens, living planets, and so on.
 
 When applying scale to two opposing forces or individuals, compare the sides’ levels and determine who is higher, and by how many levels. They get *one* of the following benefits on any rolled action against their lesser:
 
 -   +1 per level of difference to their action *before* the roll
--   +2 per level of difference to the result *after* the roll, *if*the roll succeeds
+-   +2 per level of difference to the result *after* the roll, *if* the roll succeeds
 -   1 additional free invoke per level of difference to the results of a successful create advantage action
 
 Frequent and rigid application of scale rules may put player characters at a distinct disadvantage. Compensate by generously affording those players opportunities to subvert scale disadvantage in clever ways. Viable options include researching a target for weaknesses, changing the venue to one where scale doesn’t apply, or altering goals so that their opponent cannot leverage their scale advantage.
@@ -1568,8 +1570,8 @@ Players may enjoy a teamwork bonus, sure—but why not give your big bad a compl
 
 There are a few ways you could implement a solo bonus. You could use more than one of these, but be careful when combining them as they’ll add up fast.
 
--   The big bad gets a **bonus to skill rolls** that’s equal to the group’s maximum potential teamwork bonus (**page XX**) — the number of PCs acting against the big bad minus one (so a +2 vs a group of 3, etc). This bonus can’t do better than double the big bad’s affected skill, though, just as with PCs (or maybe you’ll break *that***rule too).
--   The big bad may **reduce the stress**of successful attacks by the number of opposing PCs divided by two, rounded up. If you’re worried this will make the fight run too long, then hits reduced this way can’t be reduced below 1.
+-   The big bad gets a **bonus to skill rolls** that’s equal to the group’s maximum potential teamwork bonus (**page XX**) — the number of PCs acting against the big bad minus one (so a +2 vs a group of 3, etc). This bonus can’t do better than double the big bad’s affected skill, though, just as with PCs (or maybe you’ll break *that* rule too).
+-   The big bad may **reduce the stress** of successful attacks by the number of opposing PCs divided by two, rounded up. If you’re worried this will make the fight run too long, then hits reduced this way can’t be reduced below 1.
 -   The big bad has **amplified invokes**: when making a *paid* invoke of an aspect, their bonus is equal to the number of PCs they face. No such luck with free invokes, but this makes every fate point spent utterly terrifying.
 -   The big bad may **suppress invokes**: when facing two or more foes, the opposition’s invokes only provide a +1 bonus, or allow rerolls only, when used directly against the big bad. Optionally, the big bad might also remove the PCs’ ability to stack free invokes.
 
@@ -1619,7 +1621,7 @@ Choose your range of ratings carefully. Keep an eye on how likely they make a co
 
 Since late 2012, there has been only one version of Fate from Evil Hat: *Fate Core System*, the fourth edition of the system.
 
-Ah, but what about *Fate Accelerated*, the perspicacious Fate afficionado might ask? Thing is, that’s Fate Core too—it’s the same system, just with different **dial settings** (i.e., configuration options/flavors) for stress tracks, the skill list, stunts, and NPC design. Any apparent differences in the *core functions*of the system are due to accidents of parallel development and can be considered unintentional—with apologies to the rules lawyers out there! If a conflict between the designs exists, Fate Core System is the authority.
+Ah, but what about *Fate Accelerated*, the perspicacious Fate afficionado might ask? Thing is, that’s Fate Core too—it’s the same system, just with different **dial settings** (i.e., configuration options/flavors) for stress tracks, the skill list, stunts, and NPC design. Any apparent differences in the *core functions* of the system are due to accidents of parallel development and can be considered unintentional—with apologies to the rules lawyers out there! If a conflict between the designs exists, Fate Core System is the authority.
 
 These two perspectives on Fate Core come together here, in *Fate Condensed*—very literally, in fact. Condensed began as the Accelerated text, minus all of the Accelerated dial settings, replaced by Core’s. From that starting-point we applied eight years of community-play experience to refine and clarify. That effort produced *some* minor differences as noted on **page XX**, but whether you choose to play with them or without, the system is still Fate Core at the end of the day. We feel Condensed is an improvement for sure, but there are no edition wars to be had here (and please don’t try to start one). It’s all Fate Core.
 
