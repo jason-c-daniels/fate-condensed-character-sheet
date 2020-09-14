@@ -20693,7 +20693,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$e = "src/App/App.svelte";
 
-    // (288:8) {:else}
+    // (285:8) {:else}
     function create_else_block_2(ctx) {
     	let mwc_icon_button;
     	let mounted;
@@ -20705,7 +20705,7 @@ var app = (function () {
     			set_custom_element_data(mwc_icon_button, "icon", "folder_open");
     			set_custom_element_data(mwc_icon_button, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button, file$e, 288, 12, 9584);
+    			add_location(mwc_icon_button, file$e, 285, 12, 9159);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
@@ -20727,14 +20727,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(288:8) {:else}",
+    		source: "(285:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (286:8) {#if showLoadPane}
+    // (283:8) {#if showLoadPane}
     function create_if_block_3(ctx) {
     	let mwc_icon_button;
     	let mounted;
@@ -20746,7 +20746,7 @@ var app = (function () {
     			set_custom_element_data(mwc_icon_button, "icon", "cancel");
     			set_custom_element_data(mwc_icon_button, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button, file$e, 286, 12, 9463);
+    			add_location(mwc_icon_button, file$e, 283, 12, 9038);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
@@ -20768,14 +20768,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(286:8) {#if showLoadPane}",
+    		source: "(283:8) {#if showLoadPane}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (298:8) {:else}
+    // (295:8) {:else}
     function create_else_block$1(ctx) {
     	let div;
     	let current_block_type_index;
@@ -20806,14 +20806,14 @@ var app = (function () {
     			set_custom_element_data(mwc_icon_button, "icon", "close");
     			set_custom_element_data(mwc_icon_button, "slot", "dismiss");
     			set_custom_element_data(mwc_icon_button, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button, file$e, 309, 20, 10719);
+    			add_location(mwc_icon_button, file$e, 306, 20, 10294);
     			set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[9]);
     			set_custom_element_data(mwc_snackbar, "class", "svelte-1x6mkq6");
-    			add_location(mwc_snackbar, file$e, 308, 16, 10629);
+    			add_location(mwc_snackbar, file$e, 305, 16, 10204);
     			attr_dev(div, "id", "content");
     			set_style(div, "margin", "10pt");
     			attr_dev(div, "class", "svelte-1x6mkq6");
-    			add_location(div, file$e, 298, 12, 10235);
+    			add_location(div, file$e, 295, 12, 9810);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20873,14 +20873,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(298:8) {:else}",
+    		source: "(295:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (294:8) {#if (showLoadPane)}
+    // (291:8) {#if (showLoadPane)}
     function create_if_block$5(ctx) {
     	let div;
     	let dropzone;
@@ -20902,7 +20902,7 @@ var app = (function () {
     			attr_dev(div, "id", "content");
     			attr_dev(div, "class", "noprint file-loader svelte-1x6mkq6");
     			set_style(div, "height", "100%");
-    			add_location(div, file$e, 294, 12, 9993);
+    			add_location(div, file$e, 291, 12, 9568);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20929,14 +20929,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(294:8) {#if (showLoadPane)}",
+    		source: "(291:8) {#if (showLoadPane)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (306:12) {:else}
+    // (303:12) {:else}
     function create_else_block_1(ctx) {
     	let h3;
 
@@ -20945,7 +20945,7 @@ var app = (function () {
     			h3 = element("h3");
     			h3.textContent = "TBD/Coming Soon";
     			attr_dev(h3, "class", "svelte-1x6mkq6");
-    			add_location(h3, file$e, 306, 16, 10570);
+    			add_location(h3, file$e, 303, 16, 10145);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -20962,14 +20962,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(306:12) {:else}",
+    		source: "(303:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (304:40) 
+    // (301:40) 
     function create_if_block_2$1(ctx) {
     	let srd;
     	let updating_tocMarkdown;
@@ -21041,14 +21041,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(304:40) ",
+    		source: "(301:40) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (300:12) {#if activeIndex === 0}
+    // (297:12) {#if activeIndex === 0}
     function create_if_block_1$1(ctx) {
     	let div;
     	let charactersheet;
@@ -21077,7 +21077,7 @@ var app = (function () {
     			div = element("div");
     			create_component(charactersheet.$$.fragment);
     			attr_dev(div, "class", "page svelte-1x6mkq6");
-    			add_location(div, file$e, 300, 16, 10328);
+    			add_location(div, file$e, 297, 16, 9903);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -21114,7 +21114,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(300:12) {#if activeIndex === 0}",
+    		source: "(297:12) {#if activeIndex === 0}",
     		ctx
     	});
 
@@ -21235,55 +21235,55 @@ var app = (function () {
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Roboto:300,400,500");
     			attr_dev(link0, "rel", "stylesheet");
     			attr_dev(link0, "class", "svelte-1x6mkq6");
-    			add_location(link0, file$e, 268, 4, 8552);
+    			add_location(link0, file$e, 265, 4, 8127);
     			attr_dev(link1, "href", "https://fonts.googleapis.com/css?family=Material+Icons&display=block");
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "class", "svelte-1x6mkq6");
-    			add_location(link1, file$e, 269, 4, 8646);
+    			add_location(link1, file$e, 266, 4, 8221);
     			attr_dev(span, "class", "svelte-1x6mkq6");
-    			add_location(span, file$e, 278, 47, 8922);
+    			add_location(span, file$e, 275, 47, 8497);
     			set_style(div0, "display", "inline-block");
     			attr_dev(div0, "class", "svelte-1x6mkq6");
-    			add_location(div0, file$e, 278, 12, 8887);
+    			add_location(div0, file$e, 275, 12, 8462);
     			attr_dev(div1, "slot", "title");
     			attr_dev(div1, "class", "svelte-1x6mkq6");
-    			add_location(div1, file$e, 277, 8, 8856);
+    			add_location(div1, file$e, 274, 8, 8431);
     			set_custom_element_data(mwc_tab0, "label", "Character Sheet");
     			set_custom_element_data(mwc_tab0, "class", "svelte-1x6mkq6");
-    			add_location(mwc_tab0, file$e, 281, 12, 9184);
+    			add_location(mwc_tab0, file$e, 278, 12, 8759);
     			set_custom_element_data(mwc_tab1, "label", "Rules");
     			set_custom_element_data(mwc_tab1, "class", "svelte-1x6mkq6");
-    			add_location(mwc_tab1, file$e, 282, 12, 9240);
+    			add_location(mwc_tab1, file$e, 279, 12, 8815);
     			set_custom_element_data(mwc_tab_bar, "slot", "actionItems");
     			set_style(mwc_tab_bar, "display", "inline-block");
     			set_custom_element_data(mwc_tab_bar, "activeindex", /*activeIndex*/ ctx[1]);
     			set_custom_element_data(mwc_tab_bar, "class", "svelte-1x6mkq6");
-    			add_location(mwc_tab_bar, file$e, 280, 8, 9012);
+    			add_location(mwc_tab_bar, file$e, 277, 8, 8587);
     			set_custom_element_data(mwc_icon_button0, "icon", "note_add");
     			set_custom_element_data(mwc_icon_button0, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[7]);
     			set_custom_element_data(mwc_icon_button0, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button0, file$e, 284, 8, 9305);
+    			add_location(mwc_icon_button0, file$e, 281, 8, 8880);
     			set_custom_element_data(mwc_icon_button1, "icon", "save");
     			set_custom_element_data(mwc_icon_button1, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[7]);
     			set_custom_element_data(mwc_icon_button1, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button1, file$e, 290, 8, 9718);
+    			add_location(mwc_icon_button1, file$e, 287, 8, 9293);
     			set_custom_element_data(mwc_icon_button2, "icon", "print");
     			set_custom_element_data(mwc_icon_button2, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[7]);
     			set_custom_element_data(mwc_icon_button2, "class", "svelte-1x6mkq6");
-    			add_location(mwc_icon_button2, file$e, 291, 8, 9842);
+    			add_location(mwc_icon_button2, file$e, 288, 8, 9417);
     			set_style(mwc_top_app_bar_fixed, "height", "100%");
     			set_custom_element_data(mwc_top_app_bar_fixed, "class", "svelte-1x6mkq6");
-    			add_location(mwc_top_app_bar_fixed, file$e, 275, 4, 8803);
+    			add_location(mwc_top_app_bar_fixed, file$e, 272, 4, 8378);
     			attr_dev(main0, "class", "noprint svelte-1x6mkq6");
-    			add_location(main0, file$e, 273, 0, 8775);
+    			add_location(main0, file$e, 270, 0, 8350);
     			attr_dev(div2, "class", "page svelte-1x6mkq6");
-    			add_location(div2, file$e, 322, 4, 11201);
+    			add_location(div2, file$e, 319, 4, 10776);
     			attr_dev(main1, "class", "printme svelte-1x6mkq6");
     			set_style(main1, "margin", "0.5in");
-    			add_location(main1, file$e, 317, 0, 10887);
+    			add_location(main1, file$e, 314, 0, 10462);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -21462,14 +21462,7 @@ var app = (function () {
 
     	let activeIndex;
     	let activeSection;
-
-    	let /*aspectsMarkdown, skillsMarkdown, stuntsMarkdown, */
-    		srdMarkdown,
-    		tocMarkdown;
-
-    	/*    fetch("./md/Aspects.md").then((response) => response.text().then((data) => aspectsMarkdown = data));
-        fetch("./md/Skills.md").then((response) => response.text().then((data) => skillsMarkdown = data));
-        fetch("./md/Stunts.md").then((response) => response.text().then((data) => stuntsMarkdown = data));*/
+    	let srdMarkdown, tocMarkdown;
     	fetch("./md/Fate-Condensed-SRD-CC-BY.md").then(response => response.text().then(data => $$invalidate(3, srdMarkdown = data)));
 
     	// Special DOM elements.
@@ -21679,7 +21672,6 @@ var app = (function () {
     		GlobalCss,
     		CharacterSheet,
     		SRD,
-    		Markdown,
     		getNewCharacter,
     		downloadToClient: FileSaver_min,
     		Dropzone,
