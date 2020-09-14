@@ -21,13 +21,16 @@
     import Dropzone from "svelte-file-dropzone";
 
     import LocalStorageController from '../controllers/localStorageController'
+    import Markdown from "../components/shared/Markdown";
 
     export let name;
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
     let activeIndex;
     let activeSection;
-    let srdMarkdown, tocMarkdown;
+    let srdMarkdown, tocMarkdown, aboutMarkdown;
 
+    fetch("./md/About.md").then((response) => response.text().then((data) => aboutMarkdown = data));
+    fetch("./md/SRD-TOC.md").then((response) => response.text().then((data) => tocMarkdown = data));
     fetch("./md/Fate-Condensed-SRD-CC-BY.md").then((response) => response.text().then((data) => srdMarkdown = data));
 
     // Special DOM elements.
@@ -46,9 +49,9 @@
     let firstCall = true;
     let saveAlsoDownloads = true;
     let localStorageController = new LocalStorageController();
-    let url=new URL(window.location);
-    let basePath=url.origin+url.pathname;
-    let snackBarText="Replace this with a real message";
+    let url = new URL(window.location);
+    let basePath = url.origin + url.pathname;
+    let snackBarText = "Replace this with a real message";
 
     let {tmpChar, charIsValid} = doInitialCharacterLoad();
 
@@ -75,7 +78,7 @@
     }
 
     function validateCharacter(validateMe) {
-        let result=true;
+        let result = true;
         try {
 
             /* TODO: There has to be a better way.
@@ -83,28 +86,26 @@
 
             // for now try accessing things in a way that will throw an exception.
             let _ = validateMe.name.toString();
-            _ = validateMe.fate.toString() ;
-            _ = validateMe.refresh.toString() ;
-            _ = validateMe.aspects.highConcept.toString() ;
-            _ = validateMe.aspects.trouble.toString() ;
-            _ = validateMe.aspects.relationship.toString() ;
-            _ = validateMe.aspects.otherAspects[0].toString() ;
-            _ = validateMe.aspects.otherAspects[1].toString() ;
-            _ = validateMe.skills[18].name.toString() ;
-            _ = validateMe.stunts[5].name.toString() ;
-            _ = validateMe.vitals.physicalStressTaken.toString() ;
-            _ = validateMe.vitals.mentalStressTaken.toString() ;
-            _ = validateMe.vitals.consequences.mild1.toString() ;
-            _ = validateMe.vitals.consequences.moderate.toString() ;
-            _ = validateMe.vitals.consequences.severe.toString() ;
-            _ = validateMe.vitals.consequences.mild2.toString() ;
-        }
-        catch(err) {
+            _ = validateMe.fate.toString();
+            _ = validateMe.refresh.toString();
+            _ = validateMe.aspects.highConcept.toString();
+            _ = validateMe.aspects.trouble.toString();
+            _ = validateMe.aspects.relationship.toString();
+            _ = validateMe.aspects.otherAspects[0].toString();
+            _ = validateMe.aspects.otherAspects[1].toString();
+            _ = validateMe.skills[18].name.toString();
+            _ = validateMe.stunts[5].name.toString();
+            _ = validateMe.vitals.physicalStressTaken.toString();
+            _ = validateMe.vitals.mentalStressTaken.toString();
+            _ = validateMe.vitals.consequences.mild1.toString();
+            _ = validateMe.vitals.consequences.moderate.toString();
+            _ = validateMe.vitals.consequences.severe.toString();
+            _ = validateMe.vitals.consequences.mild2.toString();
+        } catch (err) {
             console.log(err);
-            setTimeout(()=> showSnackBar("Invalid data format encountered. Nothing loaded."),250);
-            result=false;
-        }
-        finally {
+            setTimeout(() => showSnackBar("Invalid data format encountered. Nothing loaded."), 250);
+            result = false;
+        } finally {
         }
         return result;
     }
@@ -115,7 +116,7 @@
         showSnackBar("Character saved to local storage.");
         if (true /*viewOptions.saveAlsoDownloads*/) {
             setTimeout(() => {
-                let charsheet=`${character.name}.fcchar`;
+                let charsheet = `${character.name}.fcchar`;
                 downloadToClient(blob, charsheet);
                 showSnackBar(`Sending file: ${charsheet}. Check your downloads folder.`);
             }, 2000);
@@ -129,7 +130,7 @@
 
     function handleNewCharacterClicked() {
         character = getNewCharacter();
-        activeIndex=0;
+        activeIndex = 0;
         showSnackBar("Created new character.");
     }
 
@@ -143,15 +144,13 @@
                 let tmpChar = JSON.parse(text);
                 if (validateCharacter(tmpChar)) {
                     setTimeout(() => showSnackBar("Character loaded from file."), 250);
-                    character=tmpChar;
-                    activeIndex=0;
+                    character = tmpChar;
+                    activeIndex = 0;
                 }
-            }
-            catch(err) {
+            } catch (err) {
                 console.log(err);
-                setTimeout(()=> showSnackBar("Invalid data format encountered. Nothing loaded."),250);
-            }
-            finally {
+                setTimeout(() => showSnackBar("Invalid data format encountered. Nothing loaded."), 250);
+            } finally {
                 hideLoadPane();
             }
         };
@@ -168,14 +167,18 @@
     }
 
     function scheduleAutosave() {
-        if (!firstCall) { return; }
+        if (!firstCall) {
+            return;
+        }
         firstCall = false;
-        if (typeof (Storage) === "undefined") { return; } // nothing to schedule since we can't get at local storage.
-        setInterval(()=>localStorageController.saveCharacter(character), 5 * 1000);
+        if (typeof (Storage) === "undefined") {
+            return;
+        } // nothing to schedule since we can't get at local storage.
+        setInterval(() => localStorageController.saveCharacter(character), 5 * 1000);
     }
 
     function showSnackBar(text) {
-        snackBarText=text;
+        snackBarText = text;
         snackBarElement.show();
     }
 </script>
@@ -199,34 +202,48 @@
         <div slot="title">
             <div style="display: inline-block"><span>{appSettings.applicationName} - {activeSection}</span></div>
         </div>
-        <mwc-tab-bar slot="actionItems" style="display: inline-block" bind:this={tabBarElement} activeIndex={activeIndex} on:MDCTabBar:activated={handleTabActivated} >
+        <mwc-tab-bar slot="actionItems" style="display: inline-block" bind:this={tabBarElement}
+                     activeIndex={activeIndex} on:MDCTabBar:activated={handleTabActivated}>
             <mwc-tab label="Character Sheet"></mwc-tab>
             <mwc-tab label="Rules"></mwc-tab>
+            <mwc-tab label="About"></mwc-tab>
         </mwc-tab-bar>
-        <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewCharacterClicked} {disabled}></mwc-icon-button>
+        <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewCharacterClicked}
+                         {disabled}></mwc-icon-button>
         {#if showLoadPane}
             <mwc-icon-button icon="cancel" slot="actionItems" on:click={hideLoadPane}></mwc-icon-button>
         {:else}
-            <mwc-icon-button icon="folder_open" slot="actionItems" on:click={handleLoadCharacterClicked}></mwc-icon-button>
+            <mwc-icon-button icon="folder_open" slot="actionItems"
+                             on:click={handleLoadCharacterClicked}></mwc-icon-button>
         {/if}
-        <mwc-icon-button icon="save" slot="actionItems" on:click={handleSaveCharacterClicked} {disabled}></mwc-icon-button>
+        <mwc-icon-button icon="save" slot="actionItems" on:click={handleSaveCharacterClicked}
+                         {disabled}></mwc-icon-button>
         <mwc-icon-button icon="print" slot="actionItems" on:click={handlePrintClicked} {disabled}></mwc-icon-button>
 
         {#if (showLoadPane)}
             <div id="content" class="noprint file-loader" style="height: 100%">
-                <Dropzone on:drop={handleFilesSelect} containerStyles="height:92vh;color:#333333; background-color:#EFEFEF;"/>
+                <Dropzone on:drop={handleFilesSelect}
+                          containerStyles="height:92vh;color:#333333; background-color:#EFEFEF;"/>
             </div>
         {:else}
             <div id="content" style="margin: 10pt;">
-            {#if activeIndex === 0}
-                <div class="page">
-                    <CharacterSheet bind:character={character}/>
-                </div>
-            {:else if activeIndex === 1}
-                <SRD bind:tocMarkdown bind:srdMarkdown />
-            {:else}
-                <h3>TBD/Coming Soon</h3>
-            {/if}
+                {#if activeIndex === 0}
+                    <div class="page">
+                        <CharacterSheet bind:character={character}/>
+                    </div>
+                {:else if activeIndex === 1}
+                    <SRD bind:tocMarkdown bind:srdMarkdown/>
+                {:else if activeIndex === 2}
+
+                        {#if aboutMarkdown}
+                            <Markdown columns="1" markdown={aboutMarkdown}/>
+                        {/if}
+
+                {:else}
+                    <div class="page">
+                        <h3>TBD/Coming Soon</h3>
+                    </div>
+                {/if}
                 <mwc-snackbar labelText="{snackBarText}" bind:this={snackBarElement}>
                     <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
                 </mwc-snackbar>
