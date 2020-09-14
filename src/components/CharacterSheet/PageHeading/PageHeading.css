@@ -1,6 +1,6 @@
 .name-input {
     font-family: 'Barlow Condensed',sans-serif;
-    width:110%;
+    width:100%;
     border:none;
     color:black;
     font-size:36pt;
@@ -21,6 +21,10 @@
 }
 
 .logo {
+    display: inline-block;
     height: 60px;
-    margin-right: 0.5in;
+    width: 145px;
+    margin-right: -3.8pt;
+    float:right;
+    z-index: 10000;
 }
