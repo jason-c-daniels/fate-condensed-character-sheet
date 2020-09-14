@@ -4197,25 +4197,6 @@ var app = (function () {
     See the License for the specific language governing permissions and
     limitations under the License.
     */
-    /**
-     * Determines whether a node is an element.
-     *
-     * @param node Node to check
-     */
-    const isNodeElement = (node) => {
-        return node.nodeType === Node.ELEMENT_NODE;
-    };
-    function findAssignedElement(slot, selector) {
-        for (const node of slot.assignedNodes({ flatten: true })) {
-            if (isNodeElement(node)) {
-                const el = node;
-                if (matches(el, selector)) {
-                    return el;
-                }
-            }
-        }
-        return null;
-    }
     function addHasRemoveClass(element) {
         return {
             addClass: (className) => {
@@ -4241,39 +4222,6 @@ var app = (function () {
      * Do event listeners suport the `passive` option?
      */
     const supportsPassiveEventListener = supportsPassive;
-    const deepActiveElementPath = (doc = window.document) => {
-        let activeElement = doc.activeElement;
-        const path = [];
-        if (!activeElement) {
-            return path;
-        }
-        while (activeElement) {
-            path.push(activeElement);
-            if (activeElement.shadowRoot) {
-                activeElement = activeElement.shadowRoot.activeElement;
-            }
-            else {
-                break;
-            }
-        }
-        return path;
-    };
-    const doesElementContainFocus = (element) => {
-        const activePath = deepActiveElementPath();
-        if (!activePath.length) {
-            return false;
-        }
-        const deepActiveElement = activePath[activePath.length - 1];
-        const focusEv = new Event('check-if-focused', { bubbles: true, composed: true });
-        let composedPath = [];
-        const listener = (ev) => {
-            composedPath = ev.composedPath();
-        };
-        document.body.addEventListener('check-if-focused', listener);
-        deepActiveElement.dispatchEvent(focusEv);
-        document.body.removeEventListener('check-if-focused', listener);
-        return composedPath.indexOf(element) !== -1;
-    };
 
     /**
     @license
@@ -9447,158 +9395,6 @@ var app = (function () {
 
     /**
      * @license
-     * Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */
-    const previousValues = new WeakMap();
-    /**
-     * For AttributeParts, sets the attribute if the value is defined and removes
-     * the attribute if the value is undefined.
-     *
-     * For other part types, this directive is a no-op.
-     */
-    const ifDefined = directive((value) => (part) => {
-        const previousValue = previousValues.get(part);
-        if (value === undefined && part instanceof AttributePart) {
-            // If the value is undefined, remove the attribute, but only if the value
-            // was previously defined.
-            if (previousValue !== undefined || !previousValues.has(part)) {
-                const name = part.committer.name;
-                part.committer.element.removeAttribute(name);
-            }
-        }
-        else if (value !== previousValue) {
-            part.setValue(value);
-        }
-        previousValues.set(part, value);
-    });
-
-    /**
-     * @license
-     * Copyright 2020 Google Inc.
-     *
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the "Software"), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     *
-     * The above copyright notice and this permission notice shall be included in
-     * all copies or substantial portions of the Software.
-     *
-     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     * THE SOFTWARE.
-     */
-    /**
-     * KEY provides normalized string values for keys.
-     */
-    var KEY = {
-        UNKNOWN: 'Unknown',
-        BACKSPACE: 'Backspace',
-        ENTER: 'Enter',
-        SPACEBAR: 'Spacebar',
-        PAGE_UP: 'PageUp',
-        PAGE_DOWN: 'PageDown',
-        END: 'End',
-        HOME: 'Home',
-        ARROW_LEFT: 'ArrowLeft',
-        ARROW_UP: 'ArrowUp',
-        ARROW_RIGHT: 'ArrowRight',
-        ARROW_DOWN: 'ArrowDown',
-        DELETE: 'Delete',
-        ESCAPE: 'Escape',
-    };
-    var normalizedKeys = new Set();
-    // IE11 has no support for new Map with iterable so we need to initialize this
-    // by hand.
-    normalizedKeys.add(KEY.BACKSPACE);
-    normalizedKeys.add(KEY.ENTER);
-    normalizedKeys.add(KEY.SPACEBAR);
-    normalizedKeys.add(KEY.PAGE_UP);
-    normalizedKeys.add(KEY.PAGE_DOWN);
-    normalizedKeys.add(KEY.END);
-    normalizedKeys.add(KEY.HOME);
-    normalizedKeys.add(KEY.ARROW_LEFT);
-    normalizedKeys.add(KEY.ARROW_UP);
-    normalizedKeys.add(KEY.ARROW_RIGHT);
-    normalizedKeys.add(KEY.ARROW_DOWN);
-    normalizedKeys.add(KEY.DELETE);
-    normalizedKeys.add(KEY.ESCAPE);
-    var KEY_CODE = {
-        BACKSPACE: 8,
-        ENTER: 13,
-        SPACEBAR: 32,
-        PAGE_UP: 33,
-        PAGE_DOWN: 34,
-        END: 35,
-        HOME: 36,
-        ARROW_LEFT: 37,
-        ARROW_UP: 38,
-        ARROW_RIGHT: 39,
-        ARROW_DOWN: 40,
-        DELETE: 46,
-        ESCAPE: 27,
-    };
-    var mappedKeyCodes = new Map();
-    // IE11 has no support for new Map with iterable so we need to initialize this
-    // by hand.
-    mappedKeyCodes.set(KEY_CODE.BACKSPACE, KEY.BACKSPACE);
-    mappedKeyCodes.set(KEY_CODE.ENTER, KEY.ENTER);
-    mappedKeyCodes.set(KEY_CODE.SPACEBAR, KEY.SPACEBAR);
-    mappedKeyCodes.set(KEY_CODE.PAGE_UP, KEY.PAGE_UP);
-    mappedKeyCodes.set(KEY_CODE.PAGE_DOWN, KEY.PAGE_DOWN);
-    mappedKeyCodes.set(KEY_CODE.END, KEY.END);
-    mappedKeyCodes.set(KEY_CODE.HOME, KEY.HOME);
-    mappedKeyCodes.set(KEY_CODE.ARROW_LEFT, KEY.ARROW_LEFT);
-    mappedKeyCodes.set(KEY_CODE.ARROW_UP, KEY.ARROW_UP);
-    mappedKeyCodes.set(KEY_CODE.ARROW_RIGHT, KEY.ARROW_RIGHT);
-    mappedKeyCodes.set(KEY_CODE.ARROW_DOWN, KEY.ARROW_DOWN);
-    mappedKeyCodes.set(KEY_CODE.DELETE, KEY.DELETE);
-    mappedKeyCodes.set(KEY_CODE.ESCAPE, KEY.ESCAPE);
-    var navigationKeys = new Set();
-    // IE11 has no support for new Set with iterable so we need to initialize this
-    // by hand.
-    navigationKeys.add(KEY.PAGE_UP);
-    navigationKeys.add(KEY.PAGE_DOWN);
-    navigationKeys.add(KEY.END);
-    navigationKeys.add(KEY.HOME);
-    navigationKeys.add(KEY.ARROW_LEFT);
-    navigationKeys.add(KEY.ARROW_UP);
-    navigationKeys.add(KEY.ARROW_RIGHT);
-    navigationKeys.add(KEY.ARROW_DOWN);
-    /**
-     * normalizeKey returns the normalized string for a navigational action.
-     */
-    function normalizeKey(evt) {
-        var key = evt.key;
-        // If the event already has a normalized key, return it
-        if (normalizedKeys.has(key)) {
-            return key;
-        }
-        // tslint:disable-next-line:deprecation
-        var mappedKey = mappedKeyCodes.get(evt.keyCode);
-        if (mappedKey) {
-            return mappedKey;
-        }
-        return KEY.UNKNOWN;
-    }
-
-    /**
-     * @license
      * Copyright 2018 Google Inc.
      *
      * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -9620,2410 +9416,11 @@ var app = (function () {
      * THE SOFTWARE.
      */
     var cssClasses$6 = {
-        LIST_ITEM_ACTIVATED_CLASS: 'mdc-list-item--activated',
-        LIST_ITEM_CLASS: 'mdc-list-item',
-        LIST_ITEM_DISABLED_CLASS: 'mdc-list-item--disabled',
-        LIST_ITEM_SELECTED_CLASS: 'mdc-list-item--selected',
-        LIST_ITEM_TEXT_CLASS: 'mdc-list-item__text',
-        LIST_ITEM_PRIMARY_TEXT_CLASS: 'mdc-list-item__primary-text',
-        ROOT: 'mdc-list',
-    };
-    var strings$7 = {
-        ACTION_EVENT: 'MDCList:action',
-        ARIA_CHECKED: 'aria-checked',
-        ARIA_CHECKED_CHECKBOX_SELECTOR: '[role="checkbox"][aria-checked="true"]',
-        ARIA_CHECKED_RADIO_SELECTOR: '[role="radio"][aria-checked="true"]',
-        ARIA_CURRENT: 'aria-current',
-        ARIA_DISABLED: 'aria-disabled',
-        ARIA_ORIENTATION: 'aria-orientation',
-        ARIA_ORIENTATION_HORIZONTAL: 'horizontal',
-        ARIA_ROLE_CHECKBOX_SELECTOR: '[role="checkbox"]',
-        ARIA_SELECTED: 'aria-selected',
-        CHECKBOX_RADIO_SELECTOR: 'input[type="checkbox"], input[type="radio"]',
-        CHECKBOX_SELECTOR: 'input[type="checkbox"]',
-        CHILD_ELEMENTS_TO_TOGGLE_TABINDEX: "\n    ." + cssClasses$6.LIST_ITEM_CLASS + " button:not(:disabled),\n    ." + cssClasses$6.LIST_ITEM_CLASS + " a\n  ",
-        FOCUSABLE_CHILD_ELEMENTS: "\n    ." + cssClasses$6.LIST_ITEM_CLASS + " button:not(:disabled),\n    ." + cssClasses$6.LIST_ITEM_CLASS + " a,\n    ." + cssClasses$6.LIST_ITEM_CLASS + " input[type=\"radio\"]:not(:disabled),\n    ." + cssClasses$6.LIST_ITEM_CLASS + " input[type=\"checkbox\"]:not(:disabled)\n  ",
-        RADIO_SELECTOR: 'input[type="radio"]',
-    };
-    var numbers$3 = {
-        UNSET_INDEX: -1,
-        TYPEAHEAD_BUFFER_CLEAR_TIMEOUT_MS: 300
-    };
-
-    /**
-     @license
-     Copyright 2020 Google Inc. All Rights Reserved.
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
-     */
-    const findIndexDiff = (oldSet, newSet) => {
-        const oldArr = Array.from(oldSet);
-        const newArr = Array.from(newSet);
-        const diff = { added: [], removed: [] };
-        const oldSorted = oldArr.sort();
-        const newSorted = newArr.sort();
-        let i = 0;
-        let j = 0;
-        while (i < oldSorted.length || j < newSorted.length) {
-            const oldVal = oldSorted[i];
-            const newVal = newSorted[j];
-            if (oldVal === newVal) {
-                i++;
-                j++;
-                continue;
-            }
-            if (oldVal !== undefined && (newVal === undefined || oldVal < newVal)) {
-                diff.removed.push(oldVal);
-                i++;
-                continue;
-            }
-            if (newVal !== undefined && (oldVal === undefined || newVal < oldVal)) {
-                diff.added.push(newVal);
-                j++;
-                continue;
-            }
-        }
-        return diff;
-    };
-    const ELEMENTS_KEY_ALLOWED_IN = ['input', 'button', 'textarea', 'select'];
-    function isIndexSet(selectedIndex) {
-        return selectedIndex instanceof Set;
-    }
-    const createSetFromIndex = (index) => {
-        const entry = index === numbers$3.UNSET_INDEX ? new Set() : index;
-        return isIndexSet(entry) ? new Set(entry) : new Set([entry]);
-    };
-    class MDCListFoundation extends MDCFoundation {
-        constructor(adapter) {
-            super(Object.assign(Object.assign({}, MDCListFoundation.defaultAdapter), adapter));
-            this.isMulti_ = false;
-            this.wrapFocus_ = false;
-            this.isVertical_ = true;
-            this.selectedIndex_ = numbers$3.UNSET_INDEX;
-            this.focusedItemIndex_ = numbers$3.UNSET_INDEX;
-            this.useActivatedClass_ = false;
-            this.ariaCurrentAttrValue_ = null;
-        }
-        static get strings() {
-            return strings$7;
-        }
-        static get numbers() {
-            return numbers$3;
-        }
-        static get defaultAdapter() {
-            return {
-                focusItemAtIndex: () => undefined,
-                getFocusedElementIndex: () => 0,
-                getListItemCount: () => 0,
-                isFocusInsideList: () => false,
-                isRootFocused: () => false,
-                notifyAction: () => undefined,
-                notifySelected: () => undefined,
-                getSelectedStateForElementIndex: () => false,
-                setDisabledStateForElementIndex: () => undefined,
-                getDisabledStateForElementIndex: () => false,
-                setSelectedStateForElementIndex: () => undefined,
-                setActivatedStateForElementIndex: () => undefined,
-                setTabIndexForElementIndex: () => undefined,
-                setAttributeForElementIndex: () => undefined,
-                getAttributeForElementIndex: () => null,
-            };
-        }
-        /**
-         * Sets the private wrapFocus_ variable.
-         */
-        setWrapFocus(value) {
-            this.wrapFocus_ = value;
-        }
-        /**
-         * Sets the private wrapFocus_ variable.
-         */
-        setMulti(value) {
-            this.isMulti_ = value;
-            const currentIndex = this.selectedIndex_;
-            if (value) {
-                // number to set
-                if (!isIndexSet(currentIndex)) {
-                    const isUnset = currentIndex === numbers$3.UNSET_INDEX;
-                    this.selectedIndex_ = isUnset ? new Set() : new Set([currentIndex]);
-                }
-            }
-            else {
-                // set to first sorted number in set
-                if (isIndexSet(currentIndex)) {
-                    if (currentIndex.size) {
-                        const vals = Array.from(currentIndex).sort();
-                        this.selectedIndex_ = vals[0];
-                    }
-                    else {
-                        this.selectedIndex_ = numbers$3.UNSET_INDEX;
-                    }
-                }
-            }
-        }
-        /**
-         * Sets the isVertical_ private variable.
-         */
-        setVerticalOrientation(value) {
-            this.isVertical_ = value;
-        }
-        /**
-         * Sets the useActivatedClass_ private variable.
-         */
-        setUseActivatedClass(useActivated) {
-            this.useActivatedClass_ = useActivated;
-        }
-        getSelectedIndex() {
-            return this.selectedIndex_;
-        }
-        setSelectedIndex(index) {
-            if (!this.isIndexValid_(index)) {
-                return;
-            }
-            if (this.isMulti_) {
-                this.setMultiSelectionAtIndex_(createSetFromIndex(index));
-            }
-            else {
-                this.setSingleSelectionAtIndex_(index);
-            }
-        }
-        /**
-         * Focus in handler for the list items.
-         */
-        handleFocusIn(_, listItemIndex) {
-            if (listItemIndex >= 0) {
-                this.adapter.setTabIndexForElementIndex(listItemIndex, 0);
-            }
-        }
-        /**
-         * Focus out handler for the list items.
-         */
-        handleFocusOut(_, listItemIndex) {
-            if (listItemIndex >= 0) {
-                this.adapter.setTabIndexForElementIndex(listItemIndex, -1);
-            }
-            /**
-             * Between Focusout & Focusin some browsers do not have focus on any
-             * element. Setting a delay to wait till the focus is moved to next element.
-             */
-            setTimeout(() => {
-                if (!this.adapter.isFocusInsideList()) {
-                    this.setTabindexToFirstSelectedItem_();
-                }
-            }, 0);
-        }
-        /**
-         * Key handler for the list.
-         */
-        handleKeydown(event, isRootListItem, listItemIndex) {
-            const isArrowLeft = normalizeKey(event) === 'ArrowLeft';
-            const isArrowUp = normalizeKey(event) === 'ArrowUp';
-            const isArrowRight = normalizeKey(event) === 'ArrowRight';
-            const isArrowDown = normalizeKey(event) === 'ArrowDown';
-            const isHome = normalizeKey(event) === 'Home';
-            const isEnd = normalizeKey(event) === 'End';
-            const isEnter = normalizeKey(event) === 'Enter';
-            const isSpace = normalizeKey(event) === 'Spacebar';
-            if (this.adapter.isRootFocused()) {
-                if (isArrowUp || isEnd) {
-                    event.preventDefault();
-                    this.focusLastElement();
-                }
-                else if (isArrowDown || isHome) {
-                    event.preventDefault();
-                    this.focusFirstElement();
-                }
-                return;
-            }
-            let currentIndex = this.adapter.getFocusedElementIndex();
-            if (currentIndex === -1) {
-                currentIndex = listItemIndex;
-                if (currentIndex < 0) {
-                    // If this event doesn't have a mdc-list-item ancestor from the
-                    // current list (not from a sublist), return early.
-                    return;
-                }
-            }
-            let nextIndex;
-            if ((this.isVertical_ && isArrowDown) ||
-                (!this.isVertical_ && isArrowRight)) {
-                this.preventDefaultEvent(event);
-                nextIndex = this.focusNextElement(currentIndex);
-            }
-            else if ((this.isVertical_ && isArrowUp) || (!this.isVertical_ && isArrowLeft)) {
-                this.preventDefaultEvent(event);
-                nextIndex = this.focusPrevElement(currentIndex);
-            }
-            else if (isHome) {
-                this.preventDefaultEvent(event);
-                nextIndex = this.focusFirstElement();
-            }
-            else if (isEnd) {
-                this.preventDefaultEvent(event);
-                nextIndex = this.focusLastElement();
-            }
-            else if (isEnter || isSpace) {
-                if (isRootListItem) {
-                    // Return early if enter key is pressed on anchor element which triggers
-                    // synthetic MouseEvent event.
-                    const target = event.target;
-                    if (target && target.tagName === 'A' && isEnter) {
-                        return;
-                    }
-                    this.preventDefaultEvent(event);
-                    this.setSelectedIndexOnAction_(currentIndex, true);
-                }
-            }
-            this.focusedItemIndex_ = currentIndex;
-            if (nextIndex !== undefined) {
-                this.setTabindexAtIndex_(nextIndex);
-                this.focusedItemIndex_ = nextIndex;
-            }
-        }
-        /**
-         * Click handler for the list.
-         */
-        handleSingleSelection(index, isInteraction, force) {
-            if (index === numbers$3.UNSET_INDEX) {
-                return;
-            }
-            this.setSelectedIndexOnAction_(index, isInteraction, force);
-            this.setTabindexAtIndex_(index);
-            this.focusedItemIndex_ = index;
-        }
-        /**
-         * Focuses the next element on the list.
-         */
-        focusNextElement(index) {
-            const count = this.adapter.getListItemCount();
-            let nextIndex = index + 1;
-            if (nextIndex >= count) {
-                if (this.wrapFocus_) {
-                    nextIndex = 0;
-                }
-                else {
-                    // Return early because last item is already focused.
-                    return index;
-                }
-            }
-            this.adapter.focusItemAtIndex(nextIndex);
-            return nextIndex;
-        }
-        /**
-         * Focuses the previous element on the list.
-         */
-        focusPrevElement(index) {
-            let prevIndex = index - 1;
-            if (prevIndex < 0) {
-                if (this.wrapFocus_) {
-                    prevIndex = this.adapter.getListItemCount() - 1;
-                }
-                else {
-                    // Return early because first item is already focused.
-                    return index;
-                }
-            }
-            this.adapter.focusItemAtIndex(prevIndex);
-            return prevIndex;
-        }
-        focusFirstElement() {
-            this.adapter.focusItemAtIndex(0);
-            return 0;
-        }
-        focusLastElement() {
-            const lastIndex = this.adapter.getListItemCount() - 1;
-            this.adapter.focusItemAtIndex(lastIndex);
-            return lastIndex;
-        }
-        /**
-         * @param itemIndex Index of the list item
-         * @param isEnabled Sets the list item to enabled or disabled.
-         */
-        setEnabled(itemIndex, isEnabled) {
-            if (!this.isIndexValid_(itemIndex)) {
-                return;
-            }
-            this.adapter.setDisabledStateForElementIndex(itemIndex, !isEnabled);
-        }
-        /**
-         * Ensures that preventDefault is only called if the containing element
-         * doesn't consume the event, and it will cause an unintended scroll.
-         */
-        preventDefaultEvent(evt) {
-            const target = evt.target;
-            const tagName = `${target.tagName}`.toLowerCase();
-            if (ELEMENTS_KEY_ALLOWED_IN.indexOf(tagName) === -1) {
-                evt.preventDefault();
-            }
-        }
-        setSingleSelectionAtIndex_(index, isInteraction = true) {
-            if (this.selectedIndex_ === index) {
-                return;
-            }
-            // unset previous
-            if (this.selectedIndex_ !== numbers$3.UNSET_INDEX) {
-                this.adapter.setSelectedStateForElementIndex(this.selectedIndex_, false);
-                if (this.useActivatedClass_) {
-                    this.adapter.setActivatedStateForElementIndex(this.selectedIndex_, false);
-                }
-            }
-            // set new
-            if (isInteraction) {
-                this.adapter.setSelectedStateForElementIndex(index, true);
-            }
-            if (this.useActivatedClass_) {
-                this.adapter.setActivatedStateForElementIndex(index, true);
-            }
-            this.setAriaForSingleSelectionAtIndex_(index);
-            this.selectedIndex_ = index;
-            this.adapter.notifySelected(index);
-        }
-        setMultiSelectionAtIndex_(newIndex, isInteraction = true) {
-            const oldIndex = createSetFromIndex(this.selectedIndex_);
-            const diff = findIndexDiff(oldIndex, newIndex);
-            if (!diff.removed.length && !diff.added.length) {
-                return;
-            }
-            for (const removed of diff.removed) {
-                if (isInteraction) {
-                    this.adapter.setSelectedStateForElementIndex(removed, false);
-                }
-                if (this.useActivatedClass_) {
-                    this.adapter.setActivatedStateForElementIndex(removed, false);
-                }
-            }
-            for (const added of diff.added) {
-                if (isInteraction) {
-                    this.adapter.setSelectedStateForElementIndex(added, true);
-                }
-                if (this.useActivatedClass_) {
-                    this.adapter.setActivatedStateForElementIndex(added, true);
-                }
-            }
-            this.selectedIndex_ = newIndex;
-            this.adapter.notifySelected(newIndex, diff);
-        }
-        /**
-         * Sets aria attribute for single selection at given index.
-         */
-        setAriaForSingleSelectionAtIndex_(index) {
-            // Detect the presence of aria-current and get the value only during list
-            // initialization when it is in unset state.
-            if (this.selectedIndex_ === numbers$3.UNSET_INDEX) {
-                this.ariaCurrentAttrValue_ =
-                    this.adapter.getAttributeForElementIndex(index, strings$7.ARIA_CURRENT);
-            }
-            const isAriaCurrent = this.ariaCurrentAttrValue_ !== null;
-            const ariaAttribute = isAriaCurrent ? strings$7.ARIA_CURRENT : strings$7.ARIA_SELECTED;
-            if (this.selectedIndex_ !== numbers$3.UNSET_INDEX) {
-                this.adapter.setAttributeForElementIndex(this.selectedIndex_, ariaAttribute, 'false');
-            }
-            const ariaAttributeValue = isAriaCurrent ? this.ariaCurrentAttrValue_ : 'true';
-            this.adapter.setAttributeForElementIndex(index, ariaAttribute, ariaAttributeValue);
-        }
-        setTabindexAtIndex_(index) {
-            if (this.focusedItemIndex_ === numbers$3.UNSET_INDEX && index !== 0) {
-                // If no list item was selected set first list item's tabindex to -1.
-                // Generally, tabindex is set to 0 on first list item of list that has no
-                // preselected items.
-                this.adapter.setTabIndexForElementIndex(0, -1);
-            }
-            else if (this.focusedItemIndex_ >= 0 && this.focusedItemIndex_ !== index) {
-                this.adapter.setTabIndexForElementIndex(this.focusedItemIndex_, -1);
-            }
-            this.adapter.setTabIndexForElementIndex(index, 0);
-        }
-        setTabindexToFirstSelectedItem_() {
-            let targetIndex = 0;
-            if (typeof this.selectedIndex_ === 'number' &&
-                this.selectedIndex_ !== numbers$3.UNSET_INDEX) {
-                targetIndex = this.selectedIndex_;
-            }
-            else if (isIndexSet(this.selectedIndex_) && this.selectedIndex_.size > 0) {
-                targetIndex = Math.min(...this.selectedIndex_);
-            }
-            this.setTabindexAtIndex_(targetIndex);
-        }
-        isIndexValid_(index) {
-            if (index instanceof Set) {
-                if (!this.isMulti_) {
-                    throw new Error('MDCListFoundation: Array of index is only supported for checkbox based list');
-                }
-                if (index.size === 0) {
-                    return true;
-                }
-                else {
-                    let isOneInRange = false;
-                    for (const entry of index) {
-                        isOneInRange = this.isIndexInRange_(entry);
-                        if (isOneInRange) {
-                            break;
-                        }
-                    }
-                    return isOneInRange;
-                }
-            }
-            else if (typeof index === 'number') {
-                if (this.isMulti_) {
-                    throw new Error('MDCListFoundation: Expected array of index for checkbox based list but got number: ' +
-                        index);
-                }
-                return index === numbers$3.UNSET_INDEX || this.isIndexInRange_(index);
-            }
-            else {
-                return false;
-            }
-        }
-        isIndexInRange_(index) {
-            const listSize = this.adapter.getListItemCount();
-            return index >= 0 && index < listSize;
-        }
-        /**
-         * Sets selected index on user action, toggles checkbox / radio based on
-         * toggleCheckbox value. User interaction should not toggle list item(s) when
-         * disabled.
-         */
-        setSelectedIndexOnAction_(index, isInteraction, force) {
-            if (this.adapter.getDisabledStateForElementIndex(index)) {
-                return;
-            }
-            let checkedIndex = index;
-            if (this.isMulti_) {
-                checkedIndex = new Set([index]);
-            }
-            if (!this.isIndexValid_(checkedIndex)) {
-                return;
-            }
-            if (this.isMulti_) {
-                this.toggleMultiAtIndex(index, force, isInteraction);
-            }
-            else {
-                if (isInteraction || force) {
-                    this.setSingleSelectionAtIndex_(index, isInteraction);
-                }
-                else {
-                    const isDeselection = this.selectedIndex_ === index;
-                    if (isDeselection) {
-                        this.setSingleSelectionAtIndex_(numbers$3.UNSET_INDEX);
-                    }
-                }
-            }
-            if (isInteraction) {
-                this.adapter.notifyAction(index);
-            }
-        }
-        toggleMultiAtIndex(index, force, isInteraction = true) {
-            let newSelectionValue = false;
-            if (force === undefined) {
-                newSelectionValue = !this.adapter.getSelectedStateForElementIndex(index);
-            }
-            else {
-                newSelectionValue = force;
-            }
-            const newSet = createSetFromIndex(this.selectedIndex_);
-            if (newSelectionValue) {
-                newSet.add(index);
-            }
-            else {
-                newSet.delete(index);
-            }
-            this.setMultiSelectionAtIndex_(newSet, isInteraction);
-        }
-    }
-
-    /**
-    @license
-    Copyright 2020 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    const isListItem = (element) => {
-        return element.hasAttribute('mwc-list-item');
-    };
-    /**
-     * @fires selected {SelectedDetail}
-     * @fires action {ActionDetail}
-     * @fires items-updated
-     */
-    class ListBase extends BaseElement {
-        constructor() {
-            super(...arguments);
-            this.mdcAdapter = null;
-            this.mdcFoundationClass = MDCListFoundation;
-            this.activatable = false;
-            this.multi = false;
-            this.wrapFocus = false;
-            this.itemRoles = null;
-            this.innerRole = null;
-            this.innerAriaLabel = null;
-            this.rootTabbable = false;
-            this.previousTabindex = null;
-            this.noninteractive = false;
-            this.items_ = [];
-        }
-        get assignedElements() {
-            const slot = this.slotElement;
-            if (slot) {
-                return slot.assignedNodes({ flatten: true }).filter(isNodeElement);
-            }
-            return [];
-        }
-        get items() {
-            return this.items_;
-        }
-        updateItems() {
-            const nodes = this.assignedElements;
-            const listItems = [];
-            for (const node of nodes) {
-                if (isListItem(node)) {
-                    listItems.push(node);
-                    node._managingList = this;
-                }
-                if (node.hasAttribute('divider') && !node.hasAttribute('role')) {
-                    node.setAttribute('role', 'separator');
-                }
-            }
-            this.items_ = listItems;
-            const selectedIndices = new Set();
-            this.items_.forEach((item, index) => {
-                if (this.itemRoles) {
-                    item.setAttribute('role', this.itemRoles);
-                }
-                else {
-                    item.removeAttribute('role');
-                }
-                if (item.selected) {
-                    selectedIndices.add(index);
-                }
-            });
-            if (this.multi) {
-                this.select(selectedIndices);
-            }
-            else {
-                const index = selectedIndices.size ? selectedIndices.entries().next().value[1] : -1;
-                this.select(index);
-            }
-            const itemsUpdatedEv = new Event('items-updated', { bubbles: true, composed: true });
-            this.dispatchEvent(itemsUpdatedEv);
-        }
-        get selected() {
-            const index = this.index;
-            if (!isIndexSet(index)) {
-                if (index === -1) {
-                    return null;
-                }
-                return this.items[index];
-            }
-            const selected = [];
-            for (const entry of index) {
-                selected.push(this.items[entry]);
-            }
-            return selected;
-        }
-        get index() {
-            if (this.mdcFoundation) {
-                return this.mdcFoundation.getSelectedIndex();
-            }
-            return -1;
-        }
-        render() {
-            const role = this.innerRole === null ? undefined : this.innerRole;
-            const ariaLabel = this.innerAriaLabel === null ? undefined : this.innerAriaLabel;
-            const tabindex = this.rootTabbable ? '0' : '-1';
-            return html `
-      <!-- @ts-ignore -->
-      <ul
-          tabindex=${tabindex}
-          role="${ifDefined(role)}"
-          aria-label="${ifDefined(ariaLabel)}"
-          class="mdc-list"
-          @keydown=${this.onKeydown}
-          @focusin=${this.onFocusIn}
-          @focusout=${this.onFocusOut}
-          @request-selected=${this.onRequestSelected}
-          @list-item-rendered=${this.onListItemConnected}>
-        <slot></slot>
-      </ul>
-    `;
-        }
-        firstUpdated() {
-            super.firstUpdated();
-            if (!this.items.length) {
-                // required because this is called before observers
-                this.mdcFoundation.setMulti(this.multi);
-                // for when children upgrade before list
-                this.layout();
-            }
-        }
-        onFocusIn(evt) {
-            if (this.mdcFoundation && this.mdcRoot) {
-                const index = this.getIndexOfTarget(evt);
-                this.mdcFoundation.handleFocusIn(evt, index);
-            }
-        }
-        onFocusOut(evt) {
-            if (this.mdcFoundation && this.mdcRoot) {
-                const index = this.getIndexOfTarget(evt);
-                this.mdcFoundation.handleFocusOut(evt, index);
-            }
-        }
-        onKeydown(evt) {
-            if (this.mdcFoundation && this.mdcRoot) {
-                const index = this.getIndexOfTarget(evt);
-                const target = evt.target;
-                const isRootListItem = isListItem(target);
-                this.mdcFoundation.handleKeydown(evt, isRootListItem, index);
-            }
-        }
-        onRequestSelected(evt) {
-            if (this.mdcFoundation) {
-                let index = this.getIndexOfTarget(evt);
-                // might happen in shady dom slowness. Recalc children
-                if (index === -1) {
-                    this.layout();
-                    index = this.getIndexOfTarget(evt);
-                    // still not found; may not be mwc-list-item. Unsupported case.
-                    if (index === -1) {
-                        return;
-                    }
-                }
-                const element = this.items[index];
-                if (element.disabled) {
-                    return;
-                }
-                const selected = evt.detail.selected;
-                const source = evt.detail.source;
-                this.mdcFoundation.handleSingleSelection(index, source === 'interaction', selected);
-                evt.stopPropagation();
-            }
-        }
-        getIndexOfTarget(evt) {
-            const elements = this.items;
-            const path = evt.composedPath();
-            for (const pathItem of path) {
-                let index = -1;
-                if (isNodeElement(pathItem) && isListItem(pathItem)) {
-                    index = elements.indexOf(pathItem);
-                }
-                if (index !== -1) {
-                    return index;
-                }
-            }
-            return -1;
-        }
-        createAdapter() {
-            this.mdcAdapter = {
-                getListItemCount: () => {
-                    if (this.mdcRoot) {
-                        return this.items.length;
-                    }
-                    return 0;
-                },
-                getFocusedElementIndex: this.getFocusedItemIndex,
-                getAttributeForElementIndex: (index, attr) => {
-                    const listElement = this.mdcRoot;
-                    if (!listElement) {
-                        return '';
-                    }
-                    const element = this.items[index];
-                    return element ? element.getAttribute(attr) : '';
-                },
-                setAttributeForElementIndex: (index, attr, val) => {
-                    if (!this.mdcRoot) {
-                        return;
-                    }
-                    const element = this.items[index];
-                    if (element) {
-                        element.setAttribute(attr, val);
-                    }
-                },
-                focusItemAtIndex: (index) => {
-                    const element = this.items[index];
-                    if (element) {
-                        element.focus();
-                    }
-                },
-                setTabIndexForElementIndex: (index, value) => {
-                    const item = this.items[index];
-                    if (item) {
-                        item.tabindex = value;
-                    }
-                },
-                notifyAction: (index) => {
-                    const init = { bubbles: true, composed: true };
-                    init.detail = { index };
-                    const ev = new CustomEvent('action', init);
-                    this.dispatchEvent(ev);
-                },
-                notifySelected: (index, diff) => {
-                    const init = { bubbles: true, composed: true };
-                    init.detail = { index, diff };
-                    const ev = new CustomEvent('selected', init);
-                    this.dispatchEvent(ev);
-                },
-                isFocusInsideList: () => {
-                    return doesElementContainFocus(this);
-                },
-                isRootFocused: () => {
-                    const mdcRoot = this.mdcRoot;
-                    const root = mdcRoot.getRootNode();
-                    return root.activeElement === mdcRoot;
-                },
-                setDisabledStateForElementIndex: (index, value) => {
-                    const item = this.items[index];
-                    if (!item) {
-                        return;
-                    }
-                    item.disabled = value;
-                },
-                getDisabledStateForElementIndex: (index) => {
-                    const item = this.items[index];
-                    if (!item) {
-                        return false;
-                    }
-                    return item.disabled;
-                },
-                setSelectedStateForElementIndex: (index, value) => {
-                    const item = this.items[index];
-                    if (!item) {
-                        return;
-                    }
-                    item.selected = value;
-                },
-                getSelectedStateForElementIndex: (index) => {
-                    const item = this.items[index];
-                    if (!item) {
-                        return false;
-                    }
-                    return item.selected;
-                },
-                setActivatedStateForElementIndex: (index, value) => {
-                    const item = this.items[index];
-                    if (!item) {
-                        return;
-                    }
-                    item.activated = value;
-                },
-            };
-            return this.mdcAdapter;
-        }
-        selectUi(index, activate = false) {
-            const item = this.items[index];
-            if (item) {
-                item.selected = true;
-                item.activated = activate;
-            }
-        }
-        deselectUi(index) {
-            const item = this.items[index];
-            if (item) {
-                item.selected = false;
-                item.activated = false;
-            }
-        }
-        select(index) {
-            if (!this.mdcFoundation) {
-                return;
-            }
-            this.mdcFoundation.setSelectedIndex(index);
-        }
-        toggle(index, force) {
-            if (this.multi) {
-                this.mdcFoundation.toggleMultiAtIndex(index, force);
-            }
-        }
-        onListItemConnected(e) {
-            const target = e.target;
-            this.layout(this.items.indexOf(target) === -1);
-        }
-        layout(updateItems = true) {
-            if (updateItems) {
-                this.updateItems();
-            }
-            const first = this.items[0];
-            for (const item of this.items) {
-                item.tabindex = -1;
-            }
-            if (first) {
-                if (this.noninteractive) {
-                    if (!this.previousTabindex) {
-                        this.previousTabindex = first;
-                    }
-                }
-                else {
-                    first.tabindex = 0;
-                }
-            }
-        }
-        getFocusedItemIndex() {
-            if (!this.mdcRoot) {
-                return -1;
-            }
-            if (!this.items.length) {
-                return -1;
-            }
-            const activeElementPath = deepActiveElementPath();
-            if (!activeElementPath.length) {
-                return -1;
-            }
-            for (let i = activeElementPath.length - 1; i >= 0; i--) {
-                const activeItem = activeElementPath[i];
-                if (isListItem(activeItem)) {
-                    return this.items.indexOf(activeItem);
-                }
-            }
-            return -1;
-        }
-        focusItemAtIndex(index) {
-            for (const item of this.items) {
-                if (item.tabindex === 0) {
-                    item.tabindex = -1;
-                    break;
-                }
-            }
-            this.items[index].tabindex = 0;
-            this.items[index].focus();
-        }
-        focus() {
-            const root = this.mdcRoot;
-            if (root) {
-                root.focus();
-            }
-        }
-        blur() {
-            const root = this.mdcRoot;
-            if (root) {
-                root.blur();
-            }
-        }
-    }
-    __decorate([
-        query('.mdc-list')
-    ], ListBase.prototype, "mdcRoot", void 0);
-    __decorate([
-        query('slot')
-    ], ListBase.prototype, "slotElement", void 0);
-    __decorate([
-        property({ type: Boolean }),
-        observer(function (value) {
-            if (this.mdcFoundation) {
-                this.mdcFoundation.setUseActivatedClass(value);
-            }
-        })
-    ], ListBase.prototype, "activatable", void 0);
-    __decorate([
-        property({ type: Boolean }),
-        observer(function (newValue, oldValue) {
-            if (this.mdcFoundation) {
-                this.mdcFoundation.setMulti(newValue);
-            }
-            if (oldValue !== undefined) {
-                this.layout();
-            }
-        })
-    ], ListBase.prototype, "multi", void 0);
-    __decorate([
-        property({ type: Boolean }),
-        observer(function (value) {
-            if (this.mdcFoundation) {
-                this.mdcFoundation.setWrapFocus(value);
-            }
-        })
-    ], ListBase.prototype, "wrapFocus", void 0);
-    __decorate([
-        property({ type: String }),
-        observer(function (_newValue, oldValue) {
-            if (oldValue !== undefined) {
-                this.updateItems();
-            }
-        })
-    ], ListBase.prototype, "itemRoles", void 0);
-    __decorate([
-        property({ type: String })
-    ], ListBase.prototype, "innerRole", void 0);
-    __decorate([
-        property({ type: String })
-    ], ListBase.prototype, "innerAriaLabel", void 0);
-    __decorate([
-        property({ type: Boolean })
-    ], ListBase.prototype, "rootTabbable", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true }),
-        observer(function (value) {
-            const slot = this.slotElement;
-            if (value && slot) {
-                const tabbable = findAssignedElement(slot, '[tabindex="0"]');
-                this.previousTabindex = tabbable;
-                if (tabbable) {
-                    tabbable.setAttribute('tabindex', '-1');
-                }
-            }
-            else if (!value && this.previousTabindex) {
-                this.previousTabindex.setAttribute('tabindex', '0');
-                this.previousTabindex = null;
-            }
-        })
-    ], ListBase.prototype, "noninteractive", void 0);
-
-    /**
-    @license
-    Copyright 2018 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    const style$a = css `@keyframes mdc-ripple-fg-radius-in{from{animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transform:translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)}to{transform:translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))}}@keyframes mdc-ripple-fg-opacity-in{from{animation-timing-function:linear;opacity:0}to{opacity:var(--mdc-ripple-fg-opacity, 0)}}@keyframes mdc-ripple-fg-opacity-out{from{animation-timing-function:linear;opacity:var(--mdc-ripple-fg-opacity, 0)}to{opacity:0}}:host{display:block}.mdc-list{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:Roboto, sans-serif;font-family:var(--mdc-typography-subtitle1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));font-size:1rem;font-size:var(--mdc-typography-subtitle1-font-size, 1rem);line-height:1.75rem;line-height:var(--mdc-typography-subtitle1-line-height, 1.75rem);font-weight:400;font-weight:var(--mdc-typography-subtitle1-font-weight, 400);letter-spacing:0.009375em;letter-spacing:var(--mdc-typography-subtitle1-letter-spacing, 0.009375em);text-decoration:inherit;text-decoration:var(--mdc-typography-subtitle1-text-decoration, inherit);text-transform:inherit;text-transform:var(--mdc-typography-subtitle1-text-transform, inherit);line-height:1.5rem;margin:0;padding:8px 0;list-style-type:none;color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));padding:var(--mdc-list-vertical-padding, 8px) 0}.mdc-list:focus{outline:none}.mdc-list-item{height:48px}.mdc-list--dense{padding-top:4px;padding-bottom:4px;font-size:.812rem}.mdc-list ::slotted([divider]){height:0;margin:0;border:none;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgba(0,0,0,.12)}.mdc-list ::slotted([divider][padded]){margin:0 var(--mdc-list-side-padding, 16px)}.mdc-list ::slotted([divider][inset]){margin-left:var(--mdc-list-inset-margin, 72px);margin-right:0;width:calc(100% - var(--mdc-list-inset-margin, 72px))}.mdc-list-group[dir=rtl] .mdc-list ::slotted([divider][inset]),[dir=rtl] .mdc-list-group .mdc-list ::slotted([divider][inset]){margin-left:0;margin-right:var(--mdc-list-inset-margin, 72px)}.mdc-list ::slotted([divider][inset][padded]){width:calc(100% - var(--mdc-list-inset-margin, 72px) - var(--mdc-list-side-padding, 16px))}.mdc-list--dense ::slotted([mwc-list-item]){height:40px}.mdc-list--dense ::slotted([mwc-list]){--mdc-list-item-graphic-size: 20px}.mdc-list--two-line.mdc-list--dense ::slotted([mwc-list-item]),.mdc-list--avatar-list.mdc-list--dense ::slotted([mwc-list-item]){height:60px}.mdc-list--avatar-list.mdc-list--dense ::slotted([mwc-list]){--mdc-list-item-graphic-size: 36px}:host([noninteractive]){pointer-events:none;cursor:default}.mdc-list--dense ::slotted(.mdc-list-item__primary-text){display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list--dense ::slotted(.mdc-list-item__primary-text)::before{display:inline-block;width:0;height:24px;content:"";vertical-align:0}.mdc-list--dense ::slotted(.mdc-list-item__primary-text)::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}`;
-
-    /**
-    @license
-    Copyright 2020 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    let List = class List extends ListBase {
-    };
-    List.styles = style$a;
-    List = __decorate([
-        customElement('mwc-list')
-    ], List);
-
-    /**
-     @license
-     Copyright 2020 Google Inc. All Rights Reserved.
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
-     */
-    /**
-     * @fires request-selected {RequestSelectedDetail}
-     * @fires list-item-rendered
-     */
-    class ListItemBase extends LitElement {
-        constructor() {
-            super(...arguments);
-            this.value = '';
-            this.group = null;
-            this.tabindex = -1;
-            this.disabled = false;
-            this.twoline = false;
-            this.activated = false;
-            this.graphic = null;
-            this.multipleGraphics = false;
-            this.hasMeta = false;
-            this.noninteractive = false;
-            this.selected = false;
-            this.shouldRenderRipple = false;
-            this._managingList = null;
-            this.boundOnClick = this.onClick.bind(this);
-            this._firstChanged = true;
-            this._skipPropRequest = false;
-            this.rippleHandlers = new RippleHandlers(() => {
-                this.shouldRenderRipple = true;
-                return this.ripple;
-            });
-            this.listeners = [
-                {
-                    target: this,
-                    eventNames: ['click'],
-                    cb: () => {
-                        this.onClick();
-                    },
-                },
-                {
-                    target: this,
-                    eventNames: ['mouseenter'],
-                    cb: this.rippleHandlers.startHover,
-                },
-                {
-                    target: this,
-                    eventNames: ['mouseleave'],
-                    cb: this.rippleHandlers.endHover,
-                },
-                {
-                    target: this,
-                    eventNames: ['focus'],
-                    cb: this.rippleHandlers.startFocus,
-                },
-                {
-                    target: this,
-                    eventNames: ['blur'],
-                    cb: this.rippleHandlers.endFocus,
-                },
-                {
-                    target: this,
-                    eventNames: ['mousedown', 'touchstart'],
-                    cb: (e) => {
-                        const name = e.type;
-                        this.onDown(name === 'mousedown' ? 'mouseup' : 'touchend', e);
-                    },
-                },
-            ];
-        }
-        get text() {
-            const textContent = this.textContent;
-            return textContent ? textContent.trim() : '';
-        }
-        render() {
-            const text = this.renderText();
-            const graphic = this.graphic ? this.renderGraphic() : html ``;
-            const meta = this.hasMeta ? this.renderMeta() : html ``;
-            return html `
-      ${this.renderRipple()}
-      ${graphic}
-      ${text}
-      ${meta}`;
-        }
-        renderRipple() {
-            if (this.shouldRenderRipple) {
-                return html `
-      <mwc-ripple
-        .activated=${this.activated}>
-      </mwc-ripple>`;
-            }
-            else if (this.activated) {
-                return html `<div class="fake-activated-ripple"></div>`;
-            }
-            else {
-                return html ``;
-            }
-        }
-        renderGraphic() {
-            const graphicClasses = {
-                multi: this.multipleGraphics,
-            };
-            return html `
-      <span class="mdc-list-item__graphic material-icons ${classMap(graphicClasses)}">
-        <slot name="graphic"></slot>
-      </span>`;
-        }
-        renderMeta() {
-            return html `
-      <span class="mdc-list-item__meta material-icons">
-        <slot name="meta"></slot>
-      </span>`;
-        }
-        renderText() {
-            const inner = this.twoline ? this.renderTwoline() : this.renderSingleLine();
-            return html `
-      <span class="mdc-list-item__text">
-        ${inner}
-      </span>`;
-        }
-        renderSingleLine() {
-            return html `<slot></slot>`;
-        }
-        renderTwoline() {
-            return html `
-      <span class="mdc-list-item__primary-text">
-        <slot></slot>
-      </span>
-      <span class="mdc-list-item__secondary-text">
-        <slot name="secondary"></slot>
-      </span>
-    `;
-        }
-        onClick() {
-            this.fireRequestSelected(!this.selected, 'interaction');
-        }
-        onDown(upName, evt) {
-            const onUp = () => {
-                window.removeEventListener(upName, onUp);
-                this.rippleHandlers.endPress();
-            };
-            window.addEventListener(upName, onUp);
-            this.rippleHandlers.startPress(evt);
-        }
-        fireRequestSelected(selected, source) {
-            if (this.noninteractive) {
-                return;
-            }
-            const customEv = new CustomEvent('request-selected', { bubbles: true, composed: true, detail: { source, selected } });
-            this.dispatchEvent(customEv);
-        }
-        connectedCallback() {
-            super.connectedCallback();
-            if (!this.noninteractive) {
-                this.setAttribute('mwc-list-item', '');
-            }
-            for (const listener of this.listeners) {
-                for (const eventName of listener.eventNames) {
-                    listener.target.addEventListener(eventName, listener.cb, { passive: true });
-                }
-            }
-        }
-        disconnectedCallback() {
-            super.disconnectedCallback();
-            for (const listener of this.listeners) {
-                for (const eventName of listener.eventNames) {
-                    listener.target.removeEventListener(eventName, listener.cb);
-                }
-            }
-            if (this._managingList) {
-                this._managingList.layout(true);
-            }
-        }
-        firstUpdated() {
-            const ev = new Event('list-item-rendered', { bubbles: true, composed: true });
-            this.dispatchEvent(ev);
-        }
-    }
-    __decorate([
-        query('slot')
-    ], ListItemBase.prototype, "slotElement", void 0);
-    __decorate([
-        queryAsync('mwc-ripple')
-    ], ListItemBase.prototype, "ripple", void 0);
-    __decorate([
-        property({ type: String })
-    ], ListItemBase.prototype, "value", void 0);
-    __decorate([
-        property({ type: String, reflect: true })
-    ], ListItemBase.prototype, "group", void 0);
-    __decorate([
-        property({ type: Number, reflect: true })
-    ], ListItemBase.prototype, "tabindex", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true }),
-        observer(function (value) {
-            if (value) {
-                this.setAttribute('aria-disabled', 'true');
-            }
-            else {
-                this.setAttribute('aria-disabled', 'false');
-            }
-        })
-    ], ListItemBase.prototype, "disabled", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true })
-    ], ListItemBase.prototype, "twoline", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true })
-    ], ListItemBase.prototype, "activated", void 0);
-    __decorate([
-        property({ type: String, reflect: true })
-    ], ListItemBase.prototype, "graphic", void 0);
-    __decorate([
-        property({ type: Boolean })
-    ], ListItemBase.prototype, "multipleGraphics", void 0);
-    __decorate([
-        property({ type: Boolean })
-    ], ListItemBase.prototype, "hasMeta", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true }),
-        observer(function (value) {
-            if (value) {
-                this.removeAttribute('aria-checked');
-                this.removeAttribute('mwc-list-item');
-                this.selected = false;
-                this.activated = false;
-                this.tabIndex = -1;
-            }
-            else {
-                this.setAttribute('mwc-list-item', '');
-            }
-        })
-    ], ListItemBase.prototype, "noninteractive", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true }),
-        observer(function (value) {
-            const role = this.getAttribute('role');
-            const isAriaSelectable = role === 'gridcell' || role === 'option' ||
-                role === 'row' || role === 'tab';
-            if (isAriaSelectable && value) {
-                this.setAttribute('aria-selected', 'true');
-            }
-            else if (isAriaSelectable) {
-                this.setAttribute('aria-selected', 'false');
-            }
-            if (this._firstChanged) {
-                this._firstChanged = false;
-                return;
-            }
-            if (this._skipPropRequest) {
-                return;
-            }
-            this.fireRequestSelected(value, 'property');
-        })
-    ], ListItemBase.prototype, "selected", void 0);
-    __decorate([
-        internalProperty()
-    ], ListItemBase.prototype, "shouldRenderRipple", void 0);
-    __decorate([
-        internalProperty()
-    ], ListItemBase.prototype, "_managingList", void 0);
-
-    /**
-    @license
-    Copyright 2018 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    const style$b = css `:host{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;height:48px;display:flex;position:relative;align-items:center;justify-content:flex-start;overflow:hidden;padding:0;padding-left:var(--mdc-list-side-padding, 16px);padding-right:var(--mdc-list-side-padding, 16px);outline:none;height:48px;color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87))}:host:focus{outline:none}:host([activated]){color:#6200ee;color:var(--mdc-theme-primary, #6200ee);--mdc-ripple-color: var(--mdc-theme-primary, #6200ee)}:host([activated]) .mdc-list-item__graphic{color:#6200ee;color:var(--mdc-theme-primary, #6200ee)}:host([activated]) .fake-activated-ripple::before{position:absolute;display:block;top:0;bottom:0;left:0;right:0;width:100%;height:100%;pointer-events:none;z-index:1;content:"";opacity:0.12;opacity:var(--mdc-ripple-activated-opacity, 0.12);background-color:#6200ee;background-color:var(--mdc-ripple-color, var(--mdc-theme-primary, #6200ee))}.mdc-list-item__graphic{flex-shrink:0;align-items:center;justify-content:center;fill:currentColor;display:inline-flex}.mdc-list-item__graphic ::slotted(*){flex-shrink:0;align-items:center;justify-content:center;fill:currentColor;width:100%;height:100%;text-align:center}.mdc-list-item__meta{width:var(--mdc-list-item-meta-size, 24px);height:var(--mdc-list-item-meta-size, 24px);margin-left:auto;margin-right:0;color:rgba(0,0,0,.38);color:var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38))}.mdc-list-item__meta.multi{width:auto}.mdc-list-item__meta ::slotted(*){width:var(--mdc-list-item-meta-size, 24px);line-height:var(--mdc-list-item-meta-size, 24px)}.mdc-list-item__meta ::slotted(.material-icons),.mdc-list-item__meta ::slotted(mwc-icon){line-height:var(--mdc-list-item-meta-size, 24px) !important}.mdc-list-item__meta ::slotted(:not(.material-icons):not(mwc-icon)){-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:Roboto, sans-serif;font-family:var(--mdc-typography-caption-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));font-size:0.75rem;font-size:var(--mdc-typography-caption-font-size, 0.75rem);line-height:1.25rem;line-height:var(--mdc-typography-caption-line-height, 1.25rem);font-weight:400;font-weight:var(--mdc-typography-caption-font-weight, 400);letter-spacing:0.0333333333em;letter-spacing:var(--mdc-typography-caption-letter-spacing, 0.0333333333em);text-decoration:inherit;text-decoration:var(--mdc-typography-caption-text-decoration, inherit);text-transform:inherit;text-transform:var(--mdc-typography-caption-text-transform, inherit)}:host[dir=rtl] .mdc-list-item__meta,[dir=rtl] :host .mdc-list-item__meta{margin-left:0;margin-right:auto}.mdc-list-item__meta ::slotted(*){width:100%;height:100%}.mdc-list-item__text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.mdc-list-item__text ::slotted([for]),.mdc-list-item__text[for]{pointer-events:none}.mdc-list-item__primary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;margin-top:0;line-height:normal;margin-bottom:-20px;display:block}.mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item__secondary-text{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:Roboto, sans-serif;font-family:var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));font-size:0.875rem;font-size:var(--mdc-typography-body2-font-size, 0.875rem);line-height:1.25rem;line-height:var(--mdc-typography-body2-line-height, 1.25rem);font-weight:400;font-weight:var(--mdc-typography-body2-font-weight, 400);letter-spacing:0.0178571429em;letter-spacing:var(--mdc-typography-body2-letter-spacing, 0.0178571429em);text-decoration:inherit;text-decoration:var(--mdc-typography-body2-text-decoration, inherit);text-transform:inherit;text-transform:var(--mdc-typography-body2-text-transform, inherit);text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;margin-top:0;line-height:normal;display:block}.mdc-list-item__secondary-text::before{display:inline-block;width:0;height:20px;content:"";vertical-align:0}.mdc-list--dense .mdc-list-item__secondary-text{font-size:inherit}* ::slotted(a),a{color:inherit;text-decoration:none}:host([twoline]){height:72px}:host([twoline]) .mdc-list-item__text{align-self:flex-start}:host([disabled]),:host([noninteractive]){cursor:default;pointer-events:none}:host([disabled]) .mdc-list-item__text ::slotted(*){opacity:.38}:host([disabled]) .mdc-list-item__text ::slotted(*),:host([disabled]) .mdc-list-item__primary-text ::slotted(*),:host([disabled]) .mdc-list-item__secondary-text ::slotted(*){color:#000;color:var(--mdc-theme-on-surface, #000)}.mdc-list-item__secondary-text ::slotted(*){color:rgba(0,0,0,.54);color:var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54))}.mdc-list-item__graphic ::slotted(*){background-color:transparent;color:rgba(0,0,0,.38);color:var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38))}.mdc-list-group__subheader ::slotted(*){color:rgba(0,0,0,.87);color:var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87))}:host([graphic=avatar]) .mdc-list-item__graphic{width:var(--mdc-list-item-graphic-size, 40px);height:var(--mdc-list-item-graphic-size, 40px)}:host([graphic=avatar]) .mdc-list-item__graphic.multi{width:auto}:host([graphic=avatar]) .mdc-list-item__graphic ::slotted(*){width:var(--mdc-list-item-graphic-size, 40px);line-height:var(--mdc-list-item-graphic-size, 40px)}:host([graphic=avatar]) .mdc-list-item__graphic ::slotted(.material-icons),:host([graphic=avatar]) .mdc-list-item__graphic ::slotted(mwc-icon){line-height:var(--mdc-list-item-graphic-size, 40px) !important}:host([graphic=avatar]) .mdc-list-item__graphic ::slotted(*){border-radius:50%}:host([graphic=avatar],[graphic=medium],[graphic=large],[graphic=control]) .mdc-list-item__graphic{margin-left:0;margin-right:var(--mdc-list-item-graphic-margin, 16px)}:host[dir=rtl] :host([graphic=avatar],[graphic=medium],[graphic=large],[graphic=control]) .mdc-list-item__graphic,[dir=rtl] :host :host([graphic=avatar],[graphic=medium],[graphic=large],[graphic=control]) .mdc-list-item__graphic{margin-left:var(--mdc-list-item-graphic-margin, 16px);margin-right:0}:host([graphic=icon]) .mdc-list-item__graphic{width:var(--mdc-list-item-graphic-size, 24px);height:var(--mdc-list-item-graphic-size, 24px);margin-left:0;margin-right:var(--mdc-list-item-graphic-margin, 32px)}:host([graphic=icon]) .mdc-list-item__graphic.multi{width:auto}:host([graphic=icon]) .mdc-list-item__graphic ::slotted(*){width:var(--mdc-list-item-graphic-size, 24px);line-height:var(--mdc-list-item-graphic-size, 24px)}:host([graphic=icon]) .mdc-list-item__graphic ::slotted(.material-icons),:host([graphic=icon]) .mdc-list-item__graphic ::slotted(mwc-icon){line-height:var(--mdc-list-item-graphic-size, 24px) !important}:host[dir=rtl] :host([graphic=icon]) .mdc-list-item__graphic,[dir=rtl] :host :host([graphic=icon]) .mdc-list-item__graphic{margin-left:var(--mdc-list-item-graphic-margin, 32px);margin-right:0}:host([graphic=avatar]:not([twoLine])),:host([graphic=icon]:not([twoLine])){height:56px}:host([graphic=medium]:not([twoLine])),:host([graphic=large]:not([twoLine])){height:72px}:host([graphic=medium]) .mdc-list-item__graphic,:host([graphic=large]) .mdc-list-item__graphic{width:var(--mdc-list-item-graphic-size, 56px);height:var(--mdc-list-item-graphic-size, 56px)}:host([graphic=medium]) .mdc-list-item__graphic.multi,:host([graphic=large]) .mdc-list-item__graphic.multi{width:auto}:host([graphic=medium]) .mdc-list-item__graphic ::slotted(*),:host([graphic=large]) .mdc-list-item__graphic ::slotted(*){width:var(--mdc-list-item-graphic-size, 56px);line-height:var(--mdc-list-item-graphic-size, 56px)}:host([graphic=medium]) .mdc-list-item__graphic ::slotted(.material-icons),:host([graphic=medium]) .mdc-list-item__graphic ::slotted(mwc-icon),:host([graphic=large]) .mdc-list-item__graphic ::slotted(.material-icons),:host([graphic=large]) .mdc-list-item__graphic ::slotted(mwc-icon){line-height:var(--mdc-list-item-graphic-size, 56px) !important}:host([graphic=large]){padding-left:0px}`;
-
-    /**
-    @license
-    Copyright 2020 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    let ListItem = class ListItem extends ListItemBase {
-    };
-    ListItem.styles = style$b;
-    ListItem = __decorate([
-        customElement('mwc-list-item')
-    ], ListItem);
-
-    /**
-    @license
-    Copyright 2018 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    /** @soyCompatible */
-    class FormElement extends BaseElement {
-        createRenderRoot() {
-            return this.attachShadow({ mode: 'open', delegatesFocus: true });
-        }
-        click() {
-            if (this.formElement) {
-                this.formElement.focus();
-                this.formElement.click();
-            }
-        }
-        setAriaLabel(label) {
-            if (this.formElement) {
-                this.formElement.setAttribute('aria-label', label);
-            }
-        }
-        firstUpdated() {
-            super.firstUpdated();
-            this.mdcRoot.addEventListener('change', (e) => {
-                this.dispatchEvent(new Event('change', e));
-            });
-        }
-    }
-
-    /** @soyCompatible */
-    class CheckboxBase extends FormElement {
-        constructor() {
-            super(...arguments);
-            this.checked = false;
-            this.indeterminate = false;
-            this.disabled = false;
-            this.value = '';
-            this.reducedTouchTarget = false;
-            this.animationClass = '';
-            this.shouldRenderRipple = false;
-            this.focused = false;
-            // MDC Foundation is unused
-            this.mdcFoundationClass = undefined;
-            this.mdcFoundation = undefined;
-            this.rippleElement = null;
-            this.rippleHandlers = new RippleHandlers(() => {
-                this.shouldRenderRipple = true;
-                this.ripple.then((v) => this.rippleElement = v);
-                return this.ripple;
-            });
-        }
-        createAdapter() {
-            return {};
-        }
-        update(changedProperties) {
-            const oldIndeterminate = changedProperties.get('indeterminate');
-            const oldChecked = changedProperties.get('checked');
-            const oldDisabled = changedProperties.get('disabled');
-            if (oldIndeterminate !== undefined || oldChecked !== undefined ||
-                oldDisabled !== undefined) {
-                const oldState = this.calculateAnimationStateName(!!oldChecked, !!oldIndeterminate, !!oldDisabled);
-                const newState = this.calculateAnimationStateName(this.checked, this.indeterminate, this.disabled);
-                this.animationClass = `${oldState}-${newState}`;
-            }
-            super.update(changedProperties);
-        }
-        calculateAnimationStateName(checked, indeterminate, disabled) {
-            if (disabled) {
-                return 'disabled';
-            }
-            else if (indeterminate) {
-                return 'indeterminate';
-            }
-            else if (checked) {
-                return 'checked';
-            }
-            else {
-                return 'unchecked';
-            }
-        }
-        // TODO(dfreedm): Make this use selected as a param after Polymer/internal#739
-        /** @soyCompatible */
-        renderRipple() {
-            const selected = this.indeterminate || this.checked;
-            return html `${this.shouldRenderRipple ? html `
-        <mwc-ripple
-          .accent="${selected}"
-          .disabled="${this.disabled}"
-          unbounded>
-        </mwc-ripple>` :
-            html ``}`;
-        }
-        /**
-         * @soyCompatible
-         * @soyAttributes checkboxAttributes: input
-         * @soyClasses checkboxClasses: .mdc-checkbox
-         */
-        render() {
-            const selected = this.indeterminate || this.checked;
-            /* eslint-disable eqeqeq */
-            // tslint:disable:triple-equals
-            /** @classMap */
-            const classes = {
-                'mdc-checkbox--disabled': this.disabled,
-                'mdc-checkbox--selected': selected,
-                'mdc-checkbox--touch': !this.reducedTouchTarget,
-                'mdc-checkbox--focused': this.focused,
-                // transition animiation classes
-                'mdc-checkbox--anim-checked-indeterminate': this.animationClass == 'checked-indeterminate',
-                'mdc-checkbox--anim-checked-unchecked': this.animationClass == 'checked-unchecked',
-                'mdc-checkbox--anim-indeterminate-checked': this.animationClass == 'indeterminate-checked',
-                'mdc-checkbox--anim-indeterminate-unchecked': this.animationClass == 'indeterminate-unchecked',
-                'mdc-checkbox--anim-unchecked-checked': this.animationClass == 'unchecked-checked',
-                'mdc-checkbox--anim-unchecked-indeterminate': this.animationClass == 'unchecked-indeterminate',
-            };
-            // tslint:enable:triple-equals
-            /* eslint-enable eqeqeq */
-            const ariaChecked = this.indeterminate ? 'mixed' : undefined;
-            return html `
-      <div class="mdc-checkbox mdc-checkbox--upgraded ${classMap(classes)}">
-        <input type="checkbox"
-              class="mdc-checkbox__native-control"
-              aria-checked="${ifDefined(ariaChecked)}"
-              data-indeterminate="${this.indeterminate ? 'true' : 'false'}"
-              ?disabled="${this.disabled}"
-              .indeterminate="${this.indeterminate}"
-              .checked="${this.checked}"
-              .value="${this.value}"
-              @change="${this._changeHandler}"
-              @focus="${this._handleFocus}"
-              @blur="${this._handleBlur}"
-              @mousedown="${this.handleRippleMouseDown}"
-              @mouseenter="${this.handleRippleMouseEnter}"
-              @mouseleave="${this.handleRippleMouseLeave}"
-              @touchstart="${this.handleRippleTouchStart}"
-              @touchend="${this.handleRippleDeactivate}"
-              @touchcancel="${this.handleRippleDeactivate}">
-        <div class="mdc-checkbox__background"
-          @animationend="${this.resetAnimationClass}">
-          <svg class="mdc-checkbox__checkmark"
-              viewBox="0 0 24 24">
-            <path class="mdc-checkbox__checkmark-path"
-                  fill="none"
-                  d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-          </svg>
-          <div class="mdc-checkbox__mixedmark"></div>
-        </div>
-        ${this.renderRipple()}
-      </div>`;
-        }
-        _handleFocus() {
-            this.focused = true;
-            this.handleRippleFocus();
-        }
-        _handleBlur() {
-            this.focused = false;
-            this.handleRippleBlur();
-        }
-        handleRippleMouseDown(event) {
-            const onUp = () => {
-                window.removeEventListener('mouseup', onUp);
-                this.handleRippleDeactivate();
-            };
-            window.addEventListener('mouseup', onUp);
-            this.rippleHandlers.startPress(event);
-        }
-        handleRippleTouchStart(event) {
-            this.rippleHandlers.startPress(event);
-        }
-        handleRippleDeactivate() {
-            this.rippleHandlers.endPress();
-        }
-        handleRippleMouseEnter() {
-            this.rippleHandlers.startHover();
-        }
-        handleRippleMouseLeave() {
-            this.rippleHandlers.endHover();
-        }
-        handleRippleFocus() {
-            this.rippleHandlers.startFocus();
-        }
-        handleRippleBlur() {
-            this.rippleHandlers.endFocus();
-        }
-        _changeHandler() {
-            this.checked = this.formElement.checked;
-            this.indeterminate = this.formElement.indeterminate;
-        }
-        resetAnimationClass() {
-            this.animationClass = '';
-        }
-        get isRippleActive() {
-            var _a;
-            return ((_a = this.rippleElement) === null || _a === void 0 ? void 0 : _a.isActive) || false;
-        }
-    }
-    __decorate([
-        query('.mdc-checkbox')
-    ], CheckboxBase.prototype, "mdcRoot", void 0);
-    __decorate([
-        query('input')
-    ], CheckboxBase.prototype, "formElement", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true })
-    ], CheckboxBase.prototype, "checked", void 0);
-    __decorate([
-        property({ type: Boolean })
-    ], CheckboxBase.prototype, "indeterminate", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true })
-    ], CheckboxBase.prototype, "disabled", void 0);
-    __decorate([
-        property({ type: String })
-    ], CheckboxBase.prototype, "value", void 0);
-    __decorate([
-        property({ type: Boolean })
-    ], CheckboxBase.prototype, "reducedTouchTarget", void 0);
-    __decorate([
-        internalProperty()
-    ], CheckboxBase.prototype, "animationClass", void 0);
-    __decorate([
-        internalProperty()
-    ], CheckboxBase.prototype, "shouldRenderRipple", void 0);
-    __decorate([
-        internalProperty()
-    ], CheckboxBase.prototype, "focused", void 0);
-    __decorate([
-        queryAsync('mwc-ripple')
-    ], CheckboxBase.prototype, "ripple", void 0);
-    __decorate([
-        eventOptions({ passive: true })
-    ], CheckboxBase.prototype, "handleRippleTouchStart", null);
-
-    /**
-    @license
-    Copyright 2018 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    const style$c = css `.mdc-touch-target-wrapper{display:inline}@keyframes mdc-checkbox-unchecked-checked-checkmark-path{0%,50%{stroke-dashoffset:29.7833385}50%{animation-timing-function:cubic-bezier(0, 0, 0.2, 1)}100%{stroke-dashoffset:0}}@keyframes mdc-checkbox-unchecked-indeterminate-mixedmark{0%,68.2%{transform:scaleX(0)}68.2%{animation-timing-function:cubic-bezier(0, 0, 0, 1)}100%{transform:scaleX(1)}}@keyframes mdc-checkbox-checked-unchecked-checkmark-path{from{animation-timing-function:cubic-bezier(0.4, 0, 1, 1);opacity:1;stroke-dashoffset:0}to{opacity:0;stroke-dashoffset:-29.7833385}}@keyframes mdc-checkbox-checked-indeterminate-checkmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(45deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-checked-checkmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(45deg);opacity:0}to{transform:rotate(360deg);opacity:1}}@keyframes mdc-checkbox-checked-indeterminate-mixedmark{from{animation-timing-function:mdc-animation-deceleration-curve-timing-function;transform:rotate(-45deg);opacity:0}to{transform:rotate(0deg);opacity:1}}@keyframes mdc-checkbox-indeterminate-checked-mixedmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(315deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-unchecked-mixedmark{0%{animation-timing-function:linear;transform:scaleX(1);opacity:1}32.8%,100%{transform:scaleX(0);opacity:0}}.mdc-checkbox{display:inline-block;position:relative;flex:0 0 18px;box-sizing:content-box;width:18px;height:18px;line-height:0;white-space:nowrap;cursor:pointer;vertical-align:bottom;padding:11px}.mdc-checkbox .mdc-checkbox__native-control:checked~.mdc-checkbox__background::before,.mdc-checkbox .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background::before,.mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]~.mdc-checkbox__background::before{background-color:#018786;background-color:var(--mdc-theme-secondary, #018786)}.mdc-checkbox.mdc-checkbox--selected .mdc-checkbox__ripple::before,.mdc-checkbox.mdc-checkbox--selected .mdc-checkbox__ripple::after{background-color:#018786;background-color:var(--mdc-theme-secondary, #018786)}.mdc-checkbox.mdc-checkbox--selected:hover .mdc-checkbox__ripple::before{opacity:.04}.mdc-checkbox.mdc-checkbox--selected.mdc-ripple-upgraded--background-focused .mdc-checkbox__ripple::before,.mdc-checkbox.mdc-checkbox--selected:not(.mdc-ripple-upgraded):focus .mdc-checkbox__ripple::before{transition-duration:75ms;opacity:.12}.mdc-checkbox.mdc-checkbox--selected:not(.mdc-ripple-upgraded) .mdc-checkbox__ripple::after{transition:opacity 150ms linear}.mdc-checkbox.mdc-checkbox--selected:not(.mdc-ripple-upgraded):active .mdc-checkbox__ripple::after{transition-duration:75ms;opacity:.12}.mdc-checkbox.mdc-checkbox--selected.mdc-ripple-upgraded{--mdc-ripple-fg-opacity: 0.12}.mdc-checkbox.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected .mdc-checkbox__ripple::before,.mdc-checkbox.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected .mdc-checkbox__ripple::after{background-color:#018786;background-color:var(--mdc-theme-secondary, #018786)}.mdc-checkbox .mdc-checkbox__background{top:11px;left:11px}.mdc-checkbox .mdc-checkbox__background::before{top:-13px;left:-13px;width:40px;height:40px}.mdc-checkbox .mdc-checkbox__native-control{top:0px;right:0px;left:0px;width:40px;height:40px}.mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{border-color:rgba(0,0,0,.54);background-color:transparent}.mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background,.mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background{border-color:#018786;border-color:var(--mdc-theme-secondary, #018786);background-color:#018786;background-color:var(--mdc-theme-secondary, #018786)}@keyframes mdc-checkbox-fade-in-background-8A000000secondary00000000secondary{0%{border-color:rgba(0,0,0,.54);background-color:transparent}50%{border-color:#018786;border-color:var(--mdc-theme-secondary, #018786);background-color:#018786;background-color:var(--mdc-theme-secondary, #018786)}}@keyframes mdc-checkbox-fade-out-background-8A000000secondary00000000secondary{0%,80%{border-color:#018786;border-color:var(--mdc-theme-secondary, #018786);background-color:#018786;background-color:var(--mdc-theme-secondary, #018786)}100%{border-color:rgba(0,0,0,.54);background-color:transparent}}.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__native-control:enabled~.mdc-checkbox__background,.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__native-control:enabled~.mdc-checkbox__background{animation-name:mdc-checkbox-fade-in-background-8A000000secondary00000000secondary}.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__native-control:enabled~.mdc-checkbox__background,.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__native-control:enabled~.mdc-checkbox__background{animation-name:mdc-checkbox-fade-out-background-8A000000secondary00000000secondary}.mdc-checkbox__native-control[disabled]:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{border-color:rgba(0,0,0,.38);background-color:transparent}.mdc-checkbox__native-control[disabled]:checked~.mdc-checkbox__background,.mdc-checkbox__native-control[disabled]:indeterminate~.mdc-checkbox__background,.mdc-checkbox__native-control[data-indeterminate=true][disabled]~.mdc-checkbox__background{border-color:transparent;background-color:rgba(0,0,0,.38)}.mdc-checkbox__native-control:enabled~.mdc-checkbox__background .mdc-checkbox__checkmark{color:#fff}.mdc-checkbox__native-control:enabled~.mdc-checkbox__background .mdc-checkbox__mixedmark{border-color:#fff}.mdc-checkbox__native-control:disabled~.mdc-checkbox__background .mdc-checkbox__checkmark{color:#fff}.mdc-checkbox__native-control:disabled~.mdc-checkbox__background .mdc-checkbox__mixedmark{border-color:#fff}@media screen and (-ms-high-contrast: active){.mdc-checkbox__native-control[disabled]:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{border-color:GrayText;background-color:transparent}.mdc-checkbox__native-control[disabled]:checked~.mdc-checkbox__background,.mdc-checkbox__native-control[disabled]:indeterminate~.mdc-checkbox__background,.mdc-checkbox__native-control[data-indeterminate=true][disabled]~.mdc-checkbox__background{border-color:GrayText;background-color:transparent}.mdc-checkbox__native-control:disabled~.mdc-checkbox__background .mdc-checkbox__checkmark{color:GrayText}.mdc-checkbox__native-control:disabled~.mdc-checkbox__background .mdc-checkbox__mixedmark{border-color:GrayText}.mdc-checkbox__mixedmark{margin:0 1px}}.mdc-checkbox--disabled{cursor:default;pointer-events:none}.mdc-checkbox__background{display:inline-flex;position:absolute;align-items:center;justify-content:center;box-sizing:border-box;width:18px;height:18px;border:2px solid currentColor;border-radius:2px;background-color:transparent;pointer-events:none;will-change:background-color,border-color;transition:background-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-checkbox__background .mdc-checkbox__background::before{background-color:#000;background-color:var(--mdc-theme-on-surface, #000)}.mdc-checkbox__checkmark{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;opacity:0;transition:opacity 180ms 0ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-checkbox--upgraded .mdc-checkbox__checkmark{opacity:1}.mdc-checkbox__checkmark-path{transition:stroke-dashoffset 180ms 0ms cubic-bezier(0.4, 0, 0.6, 1);stroke:currentColor;stroke-width:3.12px;stroke-dashoffset:29.7833385;stroke-dasharray:29.7833385}.mdc-checkbox__mixedmark{width:100%;height:0;transform:scaleX(0) rotate(0deg);border-width:1px;border-style:solid;opacity:0;transition:opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-checkbox--upgraded .mdc-checkbox__background,.mdc-checkbox--upgraded .mdc-checkbox__checkmark,.mdc-checkbox--upgraded .mdc-checkbox__checkmark-path,.mdc-checkbox--upgraded .mdc-checkbox__mixedmark{transition:none !important}.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__background,.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__background,.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background,.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background{animation-duration:180ms;animation-timing-function:linear}.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-unchecked-checked-checkmark-path 180ms linear 0s;transition:none}.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-unchecked-indeterminate-mixedmark 90ms linear 0s;transition:none}.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-checked-unchecked-checkmark-path 90ms linear 0s;transition:none}.mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__checkmark{animation:mdc-checkbox-checked-indeterminate-checkmark 90ms linear 0s;transition:none}.mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-checked-indeterminate-mixedmark 90ms linear 0s;transition:none}.mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__checkmark{animation:mdc-checkbox-indeterminate-checked-checkmark 500ms linear 0s;transition:none}.mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-checked-mixedmark 500ms linear 0s;transition:none}.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-unchecked-mixedmark 300ms linear 0s;transition:none}.mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background,.mdc-checkbox__native-control[data-indeterminate=true]~.mdc-checkbox__background{transition:border-color 90ms 0ms cubic-bezier(0, 0, 0.2, 1),background-color 90ms 0ms cubic-bezier(0, 0, 0.2, 1)}.mdc-checkbox__native-control:checked~.mdc-checkbox__background .mdc-checkbox__checkmark-path,.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background .mdc-checkbox__checkmark-path,.mdc-checkbox__native-control[data-indeterminate=true]~.mdc-checkbox__background .mdc-checkbox__checkmark-path{stroke-dashoffset:0}.mdc-checkbox__background::before{position:absolute;transform:scale(0, 0);border-radius:50%;opacity:0;pointer-events:none;content:"";will-change:opacity,transform;transition:opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-checkbox__native-control:focus~.mdc-checkbox__background::before{transform:scale(1);opacity:.12;transition:opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1),transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1)}.mdc-checkbox__native-control{position:absolute;margin:0;padding:0;opacity:0;cursor:inherit}.mdc-checkbox__native-control:disabled{cursor:default;pointer-events:none}.mdc-checkbox--touch{margin-top:4px;margin-bottom:4px;margin-right:4px;margin-left:4px}.mdc-checkbox--touch .mdc-checkbox__native-control{top:-4px;right:-4px;left:-4px;width:48px;height:48px}.mdc-checkbox__native-control:checked~.mdc-checkbox__background .mdc-checkbox__checkmark{transition:opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1),transform 180ms 0ms cubic-bezier(0, 0, 0.2, 1);opacity:1}.mdc-checkbox__native-control:checked~.mdc-checkbox__background .mdc-checkbox__mixedmark{transform:scaleX(1) rotate(-45deg)}.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background .mdc-checkbox__checkmark,.mdc-checkbox__native-control[data-indeterminate=true]~.mdc-checkbox__background .mdc-checkbox__checkmark{transform:rotate(45deg);opacity:0;transition:opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background .mdc-checkbox__mixedmark,.mdc-checkbox__native-control[data-indeterminate=true]~.mdc-checkbox__background .mdc-checkbox__mixedmark{transform:scaleX(1) rotate(0deg);opacity:1}:host{outline:none;display:inline-block}.mdc-checkbox .mdc-checkbox__native-control:focus~.mdc-checkbox__background::before{background-color:rgba(0, 0, 0, 0.54);background-color:var(--mdc-checkbox-unchecked-color, rgba(0, 0, 0, 0.54))}.mdc-checkbox .mdc-checkbox__background::before{content:none}.mdc-checkbox__native-control[disabled]:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{border-color:rgba(0, 0, 0, 0.38);border-color:var(--mdc-checkbox-disabled-color, rgba(0, 0, 0, 0.38));background-color:transparent}.mdc-checkbox__native-control[disabled]:checked~.mdc-checkbox__background,.mdc-checkbox__native-control[disabled]:indeterminate~.mdc-checkbox__background,.mdc-checkbox__native-control[data-indeterminate=true][disabled]~.mdc-checkbox__background{border-color:transparent;background-color:rgba(0, 0, 0, 0.38);background-color:var(--mdc-checkbox-disabled-color, rgba(0, 0, 0, 0.38))}.mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{border-color:rgba(0, 0, 0, 0.54);border-color:var(--mdc-checkbox-unchecked-color, rgba(0, 0, 0, 0.54));background-color:transparent}.mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background,.mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background{border-color:#018786;border-color:var(--m-checkbox-checked-color, var(--mdc-theme-secondary, #018786));background-color:#018786;background-color:var(--m-checkbox-checked-color, var(--mdc-theme-secondary, #018786))}@keyframes mdc-checkbox-fade-in-background---mdc-checkbox-unchecked-color--m-checkbox-checked-color00000000--m-checkbox-checked-color{0%{border-color:rgba(0, 0, 0, 0.54);border-color:var(--mdc-checkbox-unchecked-color, rgba(0, 0, 0, 0.54));background-color:transparent}50%{border-color:#018786;border-color:var(--m-checkbox-checked-color, var(--mdc-theme-secondary, #018786));background-color:#018786;background-color:var(--m-checkbox-checked-color, var(--mdc-theme-secondary, #018786))}}@keyframes mdc-checkbox-fade-out-background---mdc-checkbox-unchecked-color--m-checkbox-checked-color00000000--m-checkbox-checked-color{0%,80%{border-color:#018786;border-color:var(--m-checkbox-checked-color, var(--mdc-theme-secondary, #018786));background-color:#018786;background-color:var(--m-checkbox-checked-color, var(--mdc-theme-secondary, #018786))}100%{border-color:rgba(0, 0, 0, 0.54);border-color:var(--mdc-checkbox-unchecked-color, rgba(0, 0, 0, 0.54));background-color:transparent}}.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__native-control:enabled~.mdc-checkbox__background,.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__native-control:enabled~.mdc-checkbox__background{animation-name:mdc-checkbox-fade-in-background---mdc-checkbox-unchecked-color--m-checkbox-checked-color00000000--m-checkbox-checked-color}.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__native-control:enabled~.mdc-checkbox__background,.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__native-control:enabled~.mdc-checkbox__background{animation-name:mdc-checkbox-fade-out-background---mdc-checkbox-unchecked-color--m-checkbox-checked-color00000000--m-checkbox-checked-color}.mdc-checkbox__native-control:enabled~.mdc-checkbox__background .mdc-checkbox__checkmark{color:#fff;color:var(--mdc-checkbox-mark-color, #fff)}.mdc-checkbox__native-control:enabled~.mdc-checkbox__background .mdc-checkbox__mixedmark{border-color:#fff;border-color:var(--mdc-checkbox-mark-color, #fff)}.mdc-checkbox__native-control:disabled~.mdc-checkbox__background .mdc-checkbox__checkmark{color:#fff;color:var(--mdc-checkbox-mark-color, #fff)}.mdc-checkbox__native-control:disabled~.mdc-checkbox__background .mdc-checkbox__mixedmark{border-color:#fff;border-color:var(--mdc-checkbox-mark-color, #fff)}`;
-
-    /** @soyCompatible */
-    let Checkbox = class Checkbox extends CheckboxBase {
-    };
-    Checkbox.styles = style$c;
-    Checkbox = __decorate([
-        customElement('mwc-checkbox')
-    ], Checkbox);
-
-    /**
-     @license
-     Copyright 2020 Google Inc. All Rights Reserved.
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
-     */
-    class CheckListItemBase extends ListItemBase {
-        constructor() {
-            super(...arguments);
-            this.left = false;
-            this.graphic = 'control';
-        }
-        render() {
-            const checkboxClasses = {
-                'mdc-list-item__graphic': this.left,
-                'mdc-list-item__meta': !this.left,
-            };
-            const text = this.renderText();
-            const graphic = this.graphic && this.graphic !== 'control' && !this.left ?
-                this.renderGraphic() :
-                html ``;
-            const meta = this.hasMeta && this.left ? this.renderMeta() : html ``;
-            const ripple = this.renderRipple();
-            return html `
-      ${ripple}
-      ${graphic}
-      ${this.left ? '' : text}
-      <span class=${classMap(checkboxClasses)}>
-        <mwc-checkbox
-            reducedTouchTarget
-            tabindex=${this.tabindex}
-            .checked=${this.selected}
-            ?disabled=${this.disabled}
-            @change=${this.onChange}>
-        </mwc-checkbox>
-      </span>
-      ${this.left ? text : ''}
-      ${meta}`;
-        }
-        async onChange(evt) {
-            const checkbox = evt.target;
-            const changeFromProp = this.selected === checkbox.checked;
-            if (!changeFromProp) {
-                this._skipPropRequest = true;
-                this.selected = checkbox.checked;
-                await this.updateComplete;
-                this._skipPropRequest = false;
-            }
-        }
-    }
-    __decorate([
-        query('slot')
-    ], CheckListItemBase.prototype, "slotElement", void 0);
-    __decorate([
-        query('mwc-checkbox')
-    ], CheckListItemBase.prototype, "checkboxElement", void 0);
-    __decorate([
-        property({ type: Boolean })
-    ], CheckListItemBase.prototype, "left", void 0);
-    __decorate([
-        property({ type: String, reflect: true })
-    ], CheckListItemBase.prototype, "graphic", void 0);
-
-    /**
-    @license
-    Copyright 2018 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    const style$d = css `:host(:not([twoline])){height:56px}:host(:not([left])) .mdc-list-item__meta{height:40px;width:40px}`;
-
-    /**
-    @license
-    Copyright 2020 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    let CheckListItem = class CheckListItem extends CheckListItemBase {
-    };
-    CheckListItem.styles = [style$b, style$d];
-    CheckListItem = __decorate([
-        customElement('mwc-check-list-item')
-    ], CheckListItem);
-
-    /**
-     * @license
-     * Copyright 2016 Google Inc.
-     *
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the "Software"), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     *
-     * The above copyright notice and this permission notice shall be included in
-     * all copies or substantial portions of the Software.
-     *
-     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     * THE SOFTWARE.
-     */
-    var strings$8 = {
-        NATIVE_CONTROL_SELECTOR: '.mdc-radio__native-control',
-    };
-    var cssClasses$7 = {
-        DISABLED: 'mdc-radio--disabled',
-        ROOT: 'mdc-radio',
-    };
-
-    /**
-     * @license
-     * Copyright 2016 Google Inc.
-     *
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the "Software"), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     *
-     * The above copyright notice and this permission notice shall be included in
-     * all copies or substantial portions of the Software.
-     *
-     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     * THE SOFTWARE.
-     */
-    var MDCRadioFoundation = /** @class */ (function (_super) {
-        __extends(MDCRadioFoundation, _super);
-        function MDCRadioFoundation(adapter) {
-            return _super.call(this, __assign(__assign({}, MDCRadioFoundation.defaultAdapter), adapter)) || this;
-        }
-        Object.defineProperty(MDCRadioFoundation, "cssClasses", {
-            get: function () {
-                return cssClasses$7;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(MDCRadioFoundation, "strings", {
-            get: function () {
-                return strings$8;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(MDCRadioFoundation, "defaultAdapter", {
-            get: function () {
-                return {
-                    addClass: function () { return undefined; },
-                    removeClass: function () { return undefined; },
-                    setNativeControlDisabled: function () { return undefined; },
-                };
-            },
-            enumerable: true,
-            configurable: true
-        });
-        MDCRadioFoundation.prototype.setDisabled = function (disabled) {
-            var DISABLED = MDCRadioFoundation.cssClasses.DISABLED;
-            this.adapter.setNativeControlDisabled(disabled);
-            if (disabled) {
-                this.adapter.addClass(DISABLED);
-            }
-            else {
-                this.adapter.removeClass(DISABLED);
-            }
-        };
-        return MDCRadioFoundation;
-    }(MDCFoundation));
-
-    /**
-     * @license
-     *  Copyright 2020 Google Inc. All Rights Reserved.
-     *
-     * Licensed under the Apache License, Version 2.0 (the "License");
-     * you may not use this file except in compliance with the License.
-     * You may obtain a copy of the License at
-     *
-     * http://www.apache.org/licenses/LICENSE-2.0
-     *
-     *
-     *     Unless required by applicable law or agreed to in writing, software
-     * distributed under the License is distributed on an "AS IS" BASIS,
-     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     * See the License for the specific language governing permissions and
-     * limitations under the License.
-     */
-    /**
-     * Unique symbol for marking roots
-     */
-    const selectionController = Symbol('selection controller');
-    /**
-     * Set of checkable elements with added metadata
-     */
-    class SingleSelectionSet {
-        constructor() {
-            this.selected = null;
-            this.ordered = null;
-            this.set = new Set();
-        }
-    }
-    /**
-     * Controller that provides behavior similar to a native `<input type="radio">`
-     * group.
-     *
-     * Behaviors:
-     *
-     * - Selection via key navigation (currently LTR is supported)
-     * - Deselection of other grouped, checkable controls upon selection
-     * - Grouping of checkable elements by name
-     *   - Defaults grouping scope to host shadow root
-     *   - Document-wide scoping enabled
-     *
-     * Intended Usage:
-     *
-     * ```ts
-     * class MyElement extends HTMLElement {
-     *   private selectionController: SingleSelectionController | null = null;
-     *   name = "";
-     *   global = false;
-     *
-     *   private _checked = false;
-     *   set checked(checked: boolean) {
-     *     const oldVal = this._checked;
-     *     if (checked === oldVal) return;
-     *
-     *     this._checked = checked;
-     *
-     *     if (this.selectionController) {
-     *       this.selectionController.update(this)
-     *     }
-     *   }
-     *
-     *   get checked() {
-     *     return this._checked;
-     *   }
-     *
-     *   connectedCallback() {
-     *     this.selectionController = SelectionController.getController(this);
-     *     this.selectionController.register(this);
-     *     this.selectionController.update(this);
-     *   }
-     *
-     *   disconnectedCallback() {
-     *     this.selectionController!.unregister(this);
-     *     this.selectionController = null;
-     *   }
-     *
-     *   focus() {
-     *     // focus native radio element
-     *   }
-     * }
-     * ```
-     */
-    class SingleSelectionController {
-        constructor(element) {
-            this.sets = {};
-            this.focusedSet = null;
-            this.mouseIsDown = false;
-            this.updating = false;
-            element.addEventListener('keydown', (e) => {
-                this.keyDownHandler(e);
-            });
-            element.addEventListener('mousedown', () => {
-                this.mousedownHandler();
-            });
-            element.addEventListener('mouseup', () => {
-                this.mouseupHandler();
-            });
-        }
-        /**
-         * Get a controller for the given element. If no controller exists, one will
-         * be created. Defaults to getting the controller scoped to the element's root
-         * node shadow root unless `element.global` is true. Then, it will get a
-         * `window.document`-scoped controller.
-         *
-         * @param element Element from which to get / create a SelectionController. If
-         *     `element.global` is true, it gets a selection controller scoped to
-         *     `window.document`.
-         */
-        static getController(element) {
-            const useGlobal = !('global' in element) || ('global' in element && element.global);
-            const root = useGlobal ? document :
-                element.getRootNode();
-            let controller = root[selectionController];
-            if (controller === undefined) {
-                controller = new SingleSelectionController(root);
-                root[selectionController] = controller;
-            }
-            return controller;
-        }
-        keyDownHandler(e) {
-            const element = e.target;
-            if (!('checked' in element)) {
-                return;
-            }
-            if (!this.has(element)) {
-                return;
-            }
-            if (e.key == 'ArrowRight' || e.key == 'ArrowDown') {
-                this.selectNext(element);
-            }
-            else if (e.key == 'ArrowLeft' || e.key == 'ArrowUp') {
-                this.selectPrevious(element);
-            }
-        }
-        mousedownHandler() {
-            this.mouseIsDown = true;
-        }
-        mouseupHandler() {
-            this.mouseIsDown = false;
-        }
-        /**
-         * Whether or not the controller controls  the given element.
-         *
-         * @param element element to check
-         */
-        has(element) {
-            const set = this.getSet(element.name);
-            return set.set.has(element);
-        }
-        /**
-         * Selects and returns the controlled element previous to the given element in
-         * document position order. See
-         * [Node.compareDocumentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition).
-         *
-         * @param element element relative from which preceding element is fetched
-         */
-        selectPrevious(element) {
-            const order = this.getOrdered(element);
-            const i = order.indexOf(element);
-            const previous = order[i - 1] || order[order.length - 1];
-            this.select(previous);
-            return previous;
-        }
-        /**
-         * Selects and returns the controlled element next to the given element in
-         * document position order. See
-         * [Node.compareDocumentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition).
-         *
-         * @param element element relative from which following element is fetched
-         */
-        selectNext(element) {
-            const order = this.getOrdered(element);
-            const i = order.indexOf(element);
-            const next = order[i + 1] || order[0];
-            this.select(next);
-            return next;
-        }
-        select(element) {
-            element.click();
-        }
-        /**
-         * Focuses the selected element in the given element's selection set. User's
-         * mouse selection will override this focus.
-         *
-         * @param element Element from which selection set is derived and subsequently
-         *     focused.
-         */
-        focus(element) {
-            // Only manage focus state when using keyboard
-            if (this.mouseIsDown) {
-                return;
-            }
-            const set = this.getSet(element.name);
-            const currentFocusedSet = this.focusedSet;
-            this.focusedSet = set;
-            if (currentFocusedSet != set && set.selected && set.selected != element) {
-                set.selected.focus();
-            }
-        }
-        /**
-         * Returns the elements in the given element's selection set in document
-         * position order.
-         * [Node.compareDocumentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition).
-         *
-         * @param element Element from which selection set is derived and subsequently
-         *     ordered.
-         */
-        getOrdered(element) {
-            const set = this.getSet(element.name);
-            if (!set.ordered) {
-                set.ordered = Array.from(set.set);
-                set.ordered.sort((a, b) => a.compareDocumentPosition(b) == Node.DOCUMENT_POSITION_PRECEDING ?
-                    1 :
-                    0);
-            }
-            return set.ordered;
-        }
-        /**
-         * Gets the selection set of the given name and creates one if it does not yet
-         * exist.
-         *
-         * @param name Name of set
-         */
-        getSet(name) {
-            if (!this.sets[name]) {
-                this.sets[name] = new SingleSelectionSet();
-            }
-            return this.sets[name];
-        }
-        /**
-         * Register the element in the selection controller.
-         *
-         * @param element Element to register. Registers in set of `element.name`.
-         */
-        register(element) {
-            const set = this.getSet(element.name);
-            set.set.add(element);
-            set.ordered = null;
-        }
-        /**
-         * Unregister the element from selection controller.
-         *
-         * @param element Element to register. Registers in set of `element.name`.
-         */
-        unregister(element) {
-            const set = this.getSet(element.name);
-            set.set.delete(element);
-            set.ordered = null;
-            if (set.selected == element) {
-                set.selected = null;
-            }
-        }
-        /**
-         * Unselects other elements in element's set if element is checked. Noop
-         * otherwise.
-         *
-         * @param element Element from which to calculate selection controller update.
-         */
-        update(element) {
-            if (this.updating) {
-                return;
-            }
-            this.updating = true;
-            if (element.checked) {
-                const set = this.getSet(element.name);
-                for (const e of set.set) {
-                    e.checked = (e == element);
-                }
-                set.selected = element;
-            }
-            this.updating = false;
-        }
-    }
-
-    /**
-     * @fires checked
-     */
-    class RadioBase extends FormElement {
-        constructor() {
-            super(...arguments);
-            this._checked = false;
-            this.global = false;
-            this.disabled = false;
-            this.value = '';
-            this.name = '';
-            this.mdcFoundationClass = MDCRadioFoundation;
-        }
-        get checked() {
-            return this._checked;
-        }
-        /**
-         * We define our own getter/setter for `checked` because we need to track
-         * changes to it synchronously.
-         *
-         * The order in which the `checked` property is set across radio buttons
-         * within the same group is very important. However, we can't rely on
-         * UpdatingElement's `updated` callback to observe these changes (which is
-         * also what the `@observer` decorator uses), because it batches changes to
-         * all properties.
-         *
-         * Consider:
-         *
-         *   radio1.disabled = true;
-         *   radio2.checked = true;
-         *   radio1.checked = true;
-         *
-         * In this case we'd first see all changes for radio1, and then for radio2,
-         * and we couldn't tell that radio1 was the most recently checked.
-         */
-        set checked(checked) {
-            const oldValue = this._checked;
-            if (!!checked === !!oldValue) {
-                return;
-            }
-            this._checked = checked;
-            if (this.formElement) {
-                this.formElement.checked = checked;
-            }
-            if (this._selectionController !== undefined) {
-                this._selectionController.update(this);
-            }
-            this.requestUpdate('checked', oldValue);
-            // useful when unchecks self and wrapping element needs to synchronize
-            this.dispatchEvent(new Event('checked', { bubbles: true, composed: true }));
-        }
-        _handleUpdatedValue(newValue) {
-            // the observer function can't access protected fields (according to
-            // closure compiler) because it's not a method on the class, so we need this
-            // wrapper.
-            this.formElement.value = newValue;
-        }
-        connectedCallback() {
-            super.connectedCallback();
-            // Note that we must defer creating the selection controller until the
-            // element has connected, because selection controllers are keyed by the
-            // radio's shadow root. For example, if we're stamping in a lit-html map
-            // or repeat, then we'll be constructed before we're added to a root node.
-            //
-            // Also note if we aren't using native shadow DOM, then we don't technically
-            // need a SelectionController, because our inputs will share document-scoped
-            // native selection groups. However, it simplifies implementation and
-            // testing to use one in all cases. In particular, it means we correctly
-            // manage groups before the first update stamps the native input.
-            //
-            // eslint-disable-next-line @typescript-eslint/no-use-before-define
-            this._selectionController = SingleSelectionController.getController(this);
-            this._selectionController.register(this);
-            // With native <input type="radio">, when a checked radio is added to the
-            // root, then it wins. Immediately update to emulate this behavior.
-            this._selectionController.update(this);
-        }
-        disconnectedCallback() {
-            // The controller is initialized in connectedCallback, so if we are in
-            // disconnectedCallback then it must be initialized.
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            this._selectionController.unregister(this);
-            this._selectionController = undefined;
-        }
-        focus() {
-            this.focusNative();
-        }
-        focusNative() {
-            this.formElement.focus();
-        }
-        get ripple() {
-            return this.rippleElement.ripple;
-        }
-        createAdapter() {
-            return Object.assign(Object.assign({}, addHasRemoveClass(this.mdcRoot)), { setNativeControlDisabled: (disabled) => {
-                    this.formElement.disabled = disabled;
-                } });
-        }
-        _changeHandler() {
-            this.checked = this.formElement.checked;
-        }
-        _focusHandler() {
-            if (this._selectionController !== undefined) {
-                this._selectionController.focus(this);
-            }
-        }
-        _clickHandler() {
-            // Firefox has weird behavior with radios if they are not focused
-            this.formElement.focus();
-        }
-        render() {
-            return html `
-      <div class="mdc-radio" .ripple=${ripple()}>
-        <input
-          class="mdc-radio__native-control"
-          type="radio"
-          name="${this.name}"
-          .checked="${this.checked}"
-          .value="${this.value}"
-          @change="${this._changeHandler}"
-          @focus="${this._focusHandler}"
-          @click="${this._clickHandler}">
-        <div class="mdc-radio__background">
-          <div class="mdc-radio__outer-circle"></div>
-          <div class="mdc-radio__inner-circle"></div>
-        </div>
-        <div class="mdc-radio__ripple"></div>
-      </div>`;
-        }
-        firstUpdated() {
-            super.firstUpdated();
-            // We might not have been able to synchronize this from the checked setter
-            // earlier, if checked was set before the input was stamped.
-            this.formElement.checked = this.checked;
-            if (this._selectionController !== undefined) {
-                this._selectionController.update(this);
-            }
-        }
-    }
-    __decorate([
-        query('.mdc-radio')
-    ], RadioBase.prototype, "mdcRoot", void 0);
-    __decorate([
-        query('input')
-    ], RadioBase.prototype, "formElement", void 0);
-    __decorate([
-        query('.mdc-radio__ripple')
-    ], RadioBase.prototype, "rippleElement", void 0);
-    __decorate([
-        property({ type: Boolean })
-    ], RadioBase.prototype, "global", void 0);
-    __decorate([
-        property({ type: Boolean, reflect: true })
-    ], RadioBase.prototype, "checked", null);
-    __decorate([
-        property({ type: Boolean }),
-        observer(function (disabled) {
-            this.mdcFoundation.setDisabled(disabled);
-        })
-    ], RadioBase.prototype, "disabled", void 0);
-    __decorate([
-        property({ type: String }),
-        observer(function (value) {
-            this._handleUpdatedValue(value);
-        })
-    ], RadioBase.prototype, "value", void 0);
-    __decorate([
-        property({ type: String })
-    ], RadioBase.prototype, "name", void 0);
-
-    /**
-    @license
-    Copyright 2018 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    const style$e = css `.mdc-touch-target-wrapper{display:inline}.mdc-radio{padding:10px;display:inline-block;position:relative;flex:0 0 auto;box-sizing:content-box;width:20px;height:20px;cursor:pointer;will-change:opacity,transform,border-color,color}.mdc-radio .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:rgba(0,0,0,.54)}.mdc-radio .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle{border-color:#018786;border-color:var(--mdc-theme-secondary, #018786)}.mdc-radio .mdc-radio__native-control:enabled+.mdc-radio__background .mdc-radio__inner-circle{border-color:#018786;border-color:var(--mdc-theme-secondary, #018786)}.mdc-radio [aria-disabled=true] .mdc-radio__native-control:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle,.mdc-radio .mdc-radio__native-control:disabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:rgba(0,0,0,.38)}.mdc-radio [aria-disabled=true] .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle,.mdc-radio .mdc-radio__native-control:disabled:checked+.mdc-radio__background .mdc-radio__outer-circle{border-color:rgba(0,0,0,.38)}.mdc-radio [aria-disabled=true] .mdc-radio__native-control+.mdc-radio__background .mdc-radio__inner-circle,.mdc-radio .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__inner-circle{border-color:rgba(0,0,0,.38)}.mdc-radio .mdc-radio__background::before{background-color:#018786;background-color:var(--mdc-theme-secondary, #018786)}.mdc-radio .mdc-radio__background::before{top:-10px;left:-10px;width:40px;height:40px}.mdc-radio .mdc-radio__native-control{top:0px;right:0px;left:0px;width:40px;height:40px}.mdc-radio__background{display:inline-block;position:relative;box-sizing:border-box;width:20px;height:20px}.mdc-radio__background::before{position:absolute;transform:scale(0, 0);border-radius:50%;opacity:0;pointer-events:none;content:"";transition:opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1),transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-radio__outer-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;border-width:2px;border-style:solid;border-radius:50%;transition:border-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-radio__inner-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;transform:scale(0, 0);border-width:10px;border-style:solid;border-radius:50%;transition:transform 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1),border-color 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-radio__native-control{position:absolute;margin:0;padding:0;opacity:0;cursor:inherit;z-index:1}.mdc-radio--touch{margin-top:4px;margin-bottom:4px;margin-right:4px;margin-left:4px}.mdc-radio--touch .mdc-radio__native-control{top:-4px;right:-4px;left:-4px;width:48px;height:48px}.mdc-radio__native-control:checked+.mdc-radio__background,.mdc-radio__native-control:disabled+.mdc-radio__background{transition:opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1),transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1)}.mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle,.mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__outer-circle{transition:border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1)}.mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle,.mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__inner-circle{transition:transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1),border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1)}.mdc-radio--disabled{cursor:default;pointer-events:none}.mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle{transform:scale(0.5);transition:transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1),border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1)}.mdc-radio__native-control:disabled+.mdc-radio__background,[aria-disabled=true] .mdc-radio__native-control+.mdc-radio__background{cursor:default}.mdc-radio__native-control:focus+.mdc-radio__background::before{transform:scale(1);opacity:.12;transition:opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1),transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1)}@keyframes mdc-ripple-fg-radius-in{from{animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transform:translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)}to{transform:translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))}}@keyframes mdc-ripple-fg-opacity-in{from{animation-timing-function:linear;opacity:0}to{opacity:var(--mdc-ripple-fg-opacity, 0)}}@keyframes mdc-ripple-fg-opacity-out{from{animation-timing-function:linear;opacity:var(--mdc-ripple-fg-opacity, 0)}to{opacity:0}}.mdc-radio{--mdc-ripple-fg-size: 0;--mdc-ripple-left: 0;--mdc-ripple-top: 0;--mdc-ripple-fg-scale: 1;--mdc-ripple-fg-translate-end: 0;--mdc-ripple-fg-translate-start: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);will-change:transform,opacity}.mdc-radio .mdc-radio__ripple::before,.mdc-radio .mdc-radio__ripple::after{position:absolute;border-radius:50%;opacity:0;pointer-events:none;content:""}.mdc-radio .mdc-radio__ripple::before{transition:opacity 15ms linear,background-color 15ms linear;z-index:1}.mdc-radio.mdc-ripple-upgraded .mdc-radio__ripple::before{transform:scale(var(--mdc-ripple-fg-scale, 1))}.mdc-radio.mdc-ripple-upgraded .mdc-radio__ripple::after{top:0;left:0;transform:scale(0);transform-origin:center center}.mdc-radio.mdc-ripple-upgraded--unbounded .mdc-radio__ripple::after{top:var(--mdc-ripple-top, 0);left:var(--mdc-ripple-left, 0)}.mdc-radio.mdc-ripple-upgraded--foreground-activation .mdc-radio__ripple::after{animation:mdc-ripple-fg-radius-in 225ms forwards,mdc-ripple-fg-opacity-in 75ms forwards}.mdc-radio.mdc-ripple-upgraded--foreground-deactivation .mdc-radio__ripple::after{animation:mdc-ripple-fg-opacity-out 150ms;transform:translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))}.mdc-radio .mdc-radio__ripple::before,.mdc-radio .mdc-radio__ripple::after{top:calc(50% - 50%);left:calc(50% - 50%);width:100%;height:100%}.mdc-radio.mdc-ripple-upgraded .mdc-radio__ripple::before,.mdc-radio.mdc-ripple-upgraded .mdc-radio__ripple::after{top:var(--mdc-ripple-top, calc(50% - 50%));left:var(--mdc-ripple-left, calc(50% - 50%));width:var(--mdc-ripple-fg-size, 100%);height:var(--mdc-ripple-fg-size, 100%)}.mdc-radio.mdc-ripple-upgraded .mdc-radio__ripple::after{width:var(--mdc-ripple-fg-size, 100%);height:var(--mdc-ripple-fg-size, 100%)}.mdc-radio .mdc-radio__ripple::before,.mdc-radio .mdc-radio__ripple::after{background-color:#018786;background-color:var(--mdc-theme-secondary, #018786)}.mdc-radio:hover .mdc-radio__ripple::before{opacity:.04}.mdc-radio.mdc-ripple-upgraded--background-focused .mdc-radio__ripple::before,.mdc-radio:not(.mdc-ripple-upgraded):focus .mdc-radio__ripple::before{transition-duration:75ms;opacity:.12}.mdc-radio:not(.mdc-ripple-upgraded) .mdc-radio__ripple::after{transition:opacity 150ms linear}.mdc-radio:not(.mdc-ripple-upgraded):active .mdc-radio__ripple::after{transition-duration:75ms;opacity:.12}.mdc-radio.mdc-ripple-upgraded{--mdc-ripple-fg-opacity: 0.12}.mdc-radio.mdc-ripple-upgraded--background-focused .mdc-radio__background::before{content:none}.mdc-radio__ripple{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}:host{display:inline-block;outline:none}.mdc-radio{vertical-align:bottom}.mdc-radio .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unchecked-color, rgba(0, 0, 0, 0.54))}.mdc-radio [aria-disabled=true] .mdc-radio__native-control:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle,.mdc-radio .mdc-radio__native-control:disabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-color, rgba(0, 0, 0, 0.38))}.mdc-radio [aria-disabled=true] .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle,.mdc-radio .mdc-radio__native-control:disabled:checked+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-color, rgba(0, 0, 0, 0.38))}.mdc-radio [aria-disabled=true] .mdc-radio__native-control+.mdc-radio__background .mdc-radio__inner-circle,.mdc-radio .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__inner-circle{border-color:var(--mdc-radio-disabled-color, rgba(0, 0, 0, 0.38))}`;
-
-    let Radio = class Radio extends RadioBase {
-    };
-    Radio.styles = style$e;
-    Radio = __decorate([
-        customElement('mwc-radio')
-    ], Radio);
-
-    /**
-     @license
-     Copyright 2020 Google Inc. All Rights Reserved.
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
-     */
-    class RadioListItemBase extends ListItemBase {
-        constructor() {
-            super(...arguments);
-            this.left = false;
-            this.graphic = 'control';
-            this._changeFromClick = false;
-        }
-        render() {
-            const radioClasses = {
-                'mdc-list-item__graphic': this.left,
-                'mdc-list-item__meta': !this.left,
-            };
-            const text = this.renderText();
-            const graphic = this.graphic && this.graphic !== 'control' && !this.left ?
-                this.renderGraphic() :
-                html ``;
-            const meta = this.hasMeta && this.left ? this.renderMeta() : html ``;
-            const ripple = this.renderRipple();
-            return html `
-      ${ripple}
-      ${graphic}
-      ${this.left ? '' : text}
-      <mwc-radio
-          global
-          class=${classMap(radioClasses)}
-          tabindex=${this.tabindex}
-          name=${ifDefined(this.group === null ? undefined : this.group)}
-          .checked=${this.selected}
-          ?disabled=${this.disabled}
-          @checked=${this.onChange}>
-      </mwc-radio>
-      ${this.left ? text : ''}
-      ${meta}`;
-        }
-        onClick() {
-            this._changeFromClick = true;
-            super.onClick();
-        }
-        async onChange(evt) {
-            const checkbox = evt.target;
-            const changeFromProp = this.selected === checkbox.checked;
-            if (!changeFromProp) {
-                this._skipPropRequest = true;
-                this.selected = checkbox.checked;
-                await this.updateComplete;
-                this._skipPropRequest = false;
-                if (!this._changeFromClick) {
-                    this.fireRequestSelected(this.selected, 'interaction');
-                }
-            }
-            this._changeFromClick = false;
-        }
-    }
-    __decorate([
-        query('slot')
-    ], RadioListItemBase.prototype, "slotElement", void 0);
-    __decorate([
-        query('mwc-radio')
-    ], RadioListItemBase.prototype, "radioElement", void 0);
-    __decorate([
-        property({ type: Boolean })
-    ], RadioListItemBase.prototype, "left", void 0);
-    __decorate([
-        property({ type: String, reflect: true })
-    ], RadioListItemBase.prototype, "graphic", void 0);
-
-    /**
-    @license
-    Copyright 2020 Google Inc. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    */
-    let RadioListItem = class RadioListItem extends RadioListItemBase {
-    };
-    RadioListItem.styles = [style$b, style$d];
-    RadioListItem = __decorate([
-        customElement('mwc-radio-list-item')
-    ], RadioListItem);
-
-    /**
-     * @license
-     * Copyright 2018 Google Inc.
-     *
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the "Software"), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     *
-     * The above copyright notice and this permission notice shall be included in
-     * all copies or substantial portions of the Software.
-     *
-     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     * THE SOFTWARE.
-     */
-    var cssClasses$8 = {
         CLOSING: 'mdc-snackbar--closing',
         OPEN: 'mdc-snackbar--open',
         OPENING: 'mdc-snackbar--opening',
     };
-    var strings$9 = {
+    var strings$7 = {
         ACTION_SELECTOR: '.mdc-snackbar__action',
         ARIA_LIVE_LABEL_TEXT_ATTR: 'data-mdc-snackbar-label-text',
         CLOSED_EVENT: 'MDCSnackbar:closed',
@@ -12036,7 +9433,7 @@ var app = (function () {
         REASON_DISMISS: 'dismiss',
         SURFACE_SELECTOR: '.mdc-snackbar__surface',
     };
-    var numbers$4 = {
+    var numbers$3 = {
         DEFAULT_AUTO_DISMISS_TIMEOUT_MS: 5000,
         INDETERMINATE: -1,
         MAX_AUTO_DISMISS_TIMEOUT_MS: 10000,
@@ -12074,8 +9471,8 @@ var app = (function () {
      * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
      * THE SOFTWARE.
      */
-    var OPENING = cssClasses$8.OPENING, OPEN = cssClasses$8.OPEN, CLOSING = cssClasses$8.CLOSING;
-    var REASON_ACTION = strings$9.REASON_ACTION, REASON_DISMISS = strings$9.REASON_DISMISS;
+    var OPENING = cssClasses$6.OPENING, OPEN = cssClasses$6.OPEN, CLOSING = cssClasses$6.CLOSING;
+    var REASON_ACTION = strings$7.REASON_ACTION, REASON_DISMISS = strings$7.REASON_DISMISS;
     var MDCSnackbarFoundation = /** @class */ (function (_super) {
         __extends(MDCSnackbarFoundation, _super);
         function MDCSnackbarFoundation(adapter) {
@@ -12084,27 +9481,27 @@ var app = (function () {
             _this.animationFrame_ = 0;
             _this.animationTimer_ = 0;
             _this.autoDismissTimer_ = 0;
-            _this.autoDismissTimeoutMs_ = numbers$4.DEFAULT_AUTO_DISMISS_TIMEOUT_MS;
+            _this.autoDismissTimeoutMs_ = numbers$3.DEFAULT_AUTO_DISMISS_TIMEOUT_MS;
             _this.closeOnEscape_ = true;
             return _this;
         }
         Object.defineProperty(MDCSnackbarFoundation, "cssClasses", {
             get: function () {
-                return cssClasses$8;
+                return cssClasses$6;
             },
             enumerable: true,
             configurable: true
         });
         Object.defineProperty(MDCSnackbarFoundation, "strings", {
             get: function () {
-                return strings$9;
+                return strings$7;
             },
             enumerable: true,
             configurable: true
         });
         Object.defineProperty(MDCSnackbarFoundation, "numbers", {
             get: function () {
-                return numbers$4;
+                return numbers$3;
             },
             enumerable: true,
             configurable: true
@@ -12149,12 +9546,12 @@ var app = (function () {
                     var timeoutMs = _this.getTimeoutMs();
                     _this.handleAnimationTimerEnd_();
                     _this.adapter.notifyOpened();
-                    if (timeoutMs !== numbers$4.INDETERMINATE) {
+                    if (timeoutMs !== numbers$3.INDETERMINATE) {
                         _this.autoDismissTimer_ = setTimeout(function () {
                             _this.close(REASON_DISMISS);
                         }, timeoutMs);
                     }
-                }, numbers$4.SNACKBAR_ANIMATION_OPEN_TIME_MS);
+                }, numbers$3.SNACKBAR_ANIMATION_OPEN_TIME_MS);
             });
         };
         /**
@@ -12174,14 +9571,14 @@ var app = (function () {
             this.clearAutoDismissTimer_();
             this.isOpen_ = false;
             this.adapter.notifyClosing(reason);
-            this.adapter.addClass(cssClasses$8.CLOSING);
-            this.adapter.removeClass(cssClasses$8.OPEN);
-            this.adapter.removeClass(cssClasses$8.OPENING);
+            this.adapter.addClass(cssClasses$6.CLOSING);
+            this.adapter.removeClass(cssClasses$6.OPEN);
+            this.adapter.removeClass(cssClasses$6.OPENING);
             clearTimeout(this.animationTimer_);
             this.animationTimer_ = setTimeout(function () {
                 _this.handleAnimationTimerEnd_();
                 _this.adapter.notifyClosed(reason);
-            }, numbers$4.SNACKBAR_ANIMATION_CLOSE_TIME_MS);
+            }, numbers$3.SNACKBAR_ANIMATION_CLOSE_TIME_MS);
         };
         MDCSnackbarFoundation.prototype.isOpen = function () {
             return this.isOpen_;
@@ -12191,10 +9588,10 @@ var app = (function () {
         };
         MDCSnackbarFoundation.prototype.setTimeoutMs = function (timeoutMs) {
             // Use shorter variable names to make the code more readable
-            var minValue = numbers$4.MIN_AUTO_DISMISS_TIMEOUT_MS;
-            var maxValue = numbers$4.MAX_AUTO_DISMISS_TIMEOUT_MS;
-            var indeterminateValue = numbers$4.INDETERMINATE;
-            if (timeoutMs === numbers$4.INDETERMINATE || (timeoutMs <= maxValue && timeoutMs >= minValue)) {
+            var minValue = numbers$3.MIN_AUTO_DISMISS_TIMEOUT_MS;
+            var maxValue = numbers$3.MAX_AUTO_DISMISS_TIMEOUT_MS;
+            var indeterminateValue = numbers$3.INDETERMINATE;
+            if (timeoutMs === numbers$3.INDETERMINATE || (timeoutMs <= maxValue && timeoutMs >= minValue)) {
                 this.autoDismissTimeoutMs_ = timeoutMs;
             }
             else {
@@ -12225,8 +9622,8 @@ var app = (function () {
         };
         MDCSnackbarFoundation.prototype.handleAnimationTimerEnd_ = function () {
             this.animationTimer_ = 0;
-            this.adapter.removeClass(cssClasses$8.OPENING);
-            this.adapter.removeClass(cssClasses$8.CLOSING);
+            this.adapter.removeClass(cssClasses$6.OPENING);
+            this.adapter.removeClass(cssClasses$6.CLOSING);
         };
         /**
          * Runs the given logic on the next animation frame, using setTimeout to factor in Firefox reflow behavior.
@@ -12507,11 +9904,11 @@ var app = (function () {
     See the License for the specific language governing permissions and
     limitations under the License.
     */
-    const style$f = css `.mdc-snackbar{z-index:8;margin:8px;display:none;position:fixed;right:0;bottom:0;left:0;align-items:center;justify-content:center;box-sizing:border-box;pointer-events:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mdc-snackbar__surface{background-color:#333}.mdc-snackbar__label{color:rgba(255,255,255,.87)}.mdc-snackbar__surface{min-width:344px}@media(max-width: 480px),(max-width: 344px){.mdc-snackbar__surface{min-width:100%}}.mdc-snackbar__surface{max-width:672px}.mdc-snackbar__surface{box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0,0,0,.12)}.mdc-snackbar__surface{border-radius:4px;border-radius:var(--mdc-shape-small, 4px)}.mdc-snackbar--opening,.mdc-snackbar--open,.mdc-snackbar--closing{display:flex}.mdc-snackbar--leading{justify-content:flex-start}.mdc-snackbar--stacked .mdc-snackbar__label{padding-left:16px;padding-right:8px;padding-bottom:12px}[dir=rtl] .mdc-snackbar--stacked .mdc-snackbar__label,.mdc-snackbar--stacked .mdc-snackbar__label[dir=rtl]{padding-left:8px;padding-right:16px}.mdc-snackbar--stacked .mdc-snackbar__surface{flex-direction:column;align-items:flex-start}.mdc-snackbar--stacked .mdc-snackbar__actions{align-self:flex-end;margin-bottom:8px}.mdc-snackbar__surface{padding-left:0;padding-right:8px;display:flex;align-items:center;justify-content:flex-start;box-sizing:border-box;transform:scale(0.8);opacity:0}[dir=rtl] .mdc-snackbar__surface,.mdc-snackbar__surface[dir=rtl]{padding-left:8px;padding-right:0}.mdc-snackbar--open .mdc-snackbar__surface{transform:scale(1);opacity:1;pointer-events:auto;transition:opacity 150ms 0ms cubic-bezier(0, 0, 0.2, 1),transform 150ms 0ms cubic-bezier(0, 0, 0.2, 1)}.mdc-snackbar--closing .mdc-snackbar__surface{transform:scale(1);transition:opacity 75ms 0ms cubic-bezier(0.4, 0, 1, 1)}.mdc-snackbar__label{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:Roboto, sans-serif;font-family:var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));font-size:0.875rem;font-size:var(--mdc-typography-body2-font-size, 0.875rem);line-height:1.25rem;line-height:var(--mdc-typography-body2-line-height, 1.25rem);font-weight:400;font-weight:var(--mdc-typography-body2-font-weight, 400);letter-spacing:0.0178571429em;letter-spacing:var(--mdc-typography-body2-letter-spacing, 0.0178571429em);text-decoration:inherit;text-decoration:var(--mdc-typography-body2-text-decoration, inherit);text-transform:inherit;text-transform:var(--mdc-typography-body2-text-transform, inherit);padding-left:16px;padding-right:8px;width:100%;flex-grow:1;box-sizing:border-box;margin:0;padding-top:14px;padding-bottom:14px}[dir=rtl] .mdc-snackbar__label,.mdc-snackbar__label[dir=rtl]{padding-left:8px;padding-right:16px}.mdc-snackbar__label::before{display:inline;content:attr(data-mdc-snackbar-label-text)}.mdc-snackbar__actions{display:flex;flex-shrink:0;align-items:center;box-sizing:border-box}.mdc-snackbar__action:not(:disabled){color:#bb86fc}.mdc-snackbar__action::before,.mdc-snackbar__action::after{background-color:#bb86fc}.mdc-snackbar__action:hover::before{opacity:.08}.mdc-snackbar__action.mdc-ripple-upgraded--background-focused::before,.mdc-snackbar__action:not(.mdc-ripple-upgraded):focus::before{transition-duration:75ms;opacity:.24}.mdc-snackbar__action:not(.mdc-ripple-upgraded)::after{transition:opacity 150ms linear}.mdc-snackbar__action:not(.mdc-ripple-upgraded):active::after{transition-duration:75ms;opacity:.24}.mdc-snackbar__action.mdc-ripple-upgraded{--mdc-ripple-fg-opacity: 0.24}.mdc-snackbar__dismiss{color:rgba(255,255,255,.87)}.mdc-snackbar__dismiss::before,.mdc-snackbar__dismiss::after{background-color:rgba(255,255,255,.87)}.mdc-snackbar__dismiss:hover::before{opacity:.08}.mdc-snackbar__dismiss.mdc-ripple-upgraded--background-focused::before,.mdc-snackbar__dismiss:not(.mdc-ripple-upgraded):focus::before{transition-duration:75ms;opacity:.24}.mdc-snackbar__dismiss:not(.mdc-ripple-upgraded)::after{transition:opacity 150ms linear}.mdc-snackbar__dismiss:not(.mdc-ripple-upgraded):active::after{transition-duration:75ms;opacity:.24}.mdc-snackbar__dismiss.mdc-ripple-upgraded{--mdc-ripple-fg-opacity: 0.24}.mdc-snackbar__dismiss.mdc-snackbar__dismiss{width:36px;height:36px;padding:9px;font-size:18px}.mdc-snackbar__dismiss.mdc-snackbar__dismiss svg,.mdc-snackbar__dismiss.mdc-snackbar__dismiss img{width:18px;height:18px}.mdc-snackbar__action+.mdc-snackbar__dismiss{margin-left:8px;margin-right:0}[dir=rtl] .mdc-snackbar__action+.mdc-snackbar__dismiss,.mdc-snackbar__action+.mdc-snackbar__dismiss[dir=rtl]{margin-left:0;margin-right:8px}slot[name=action]::slotted(mwc-button){--mdc-theme-primary: var(--mdc-snackbar-action-color, #bb86fc)}slot[name=dismiss]::slotted(mwc-icon-button){--mdc-icon-size: 18px;--mdc-icon-button-size: 36px;color:rgba(255, 255, 255, 0.87);margin-left:8px;margin-right:0}[dir=rtl] slot[name=dismiss]::slotted(mwc-icon-button),slot[name=dismiss]::slotted(mwc-icon-button)[dir=rtl]{margin-left:0;margin-right:8px}`;
+    const style$a = css `.mdc-snackbar{z-index:8;margin:8px;display:none;position:fixed;right:0;bottom:0;left:0;align-items:center;justify-content:center;box-sizing:border-box;pointer-events:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mdc-snackbar__surface{background-color:#333}.mdc-snackbar__label{color:rgba(255,255,255,.87)}.mdc-snackbar__surface{min-width:344px}@media(max-width: 480px),(max-width: 344px){.mdc-snackbar__surface{min-width:100%}}.mdc-snackbar__surface{max-width:672px}.mdc-snackbar__surface{box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0,0,0,.12)}.mdc-snackbar__surface{border-radius:4px;border-radius:var(--mdc-shape-small, 4px)}.mdc-snackbar--opening,.mdc-snackbar--open,.mdc-snackbar--closing{display:flex}.mdc-snackbar--leading{justify-content:flex-start}.mdc-snackbar--stacked .mdc-snackbar__label{padding-left:16px;padding-right:8px;padding-bottom:12px}[dir=rtl] .mdc-snackbar--stacked .mdc-snackbar__label,.mdc-snackbar--stacked .mdc-snackbar__label[dir=rtl]{padding-left:8px;padding-right:16px}.mdc-snackbar--stacked .mdc-snackbar__surface{flex-direction:column;align-items:flex-start}.mdc-snackbar--stacked .mdc-snackbar__actions{align-self:flex-end;margin-bottom:8px}.mdc-snackbar__surface{padding-left:0;padding-right:8px;display:flex;align-items:center;justify-content:flex-start;box-sizing:border-box;transform:scale(0.8);opacity:0}[dir=rtl] .mdc-snackbar__surface,.mdc-snackbar__surface[dir=rtl]{padding-left:8px;padding-right:0}.mdc-snackbar--open .mdc-snackbar__surface{transform:scale(1);opacity:1;pointer-events:auto;transition:opacity 150ms 0ms cubic-bezier(0, 0, 0.2, 1),transform 150ms 0ms cubic-bezier(0, 0, 0.2, 1)}.mdc-snackbar--closing .mdc-snackbar__surface{transform:scale(1);transition:opacity 75ms 0ms cubic-bezier(0.4, 0, 1, 1)}.mdc-snackbar__label{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:Roboto, sans-serif;font-family:var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));font-size:0.875rem;font-size:var(--mdc-typography-body2-font-size, 0.875rem);line-height:1.25rem;line-height:var(--mdc-typography-body2-line-height, 1.25rem);font-weight:400;font-weight:var(--mdc-typography-body2-font-weight, 400);letter-spacing:0.0178571429em;letter-spacing:var(--mdc-typography-body2-letter-spacing, 0.0178571429em);text-decoration:inherit;text-decoration:var(--mdc-typography-body2-text-decoration, inherit);text-transform:inherit;text-transform:var(--mdc-typography-body2-text-transform, inherit);padding-left:16px;padding-right:8px;width:100%;flex-grow:1;box-sizing:border-box;margin:0;padding-top:14px;padding-bottom:14px}[dir=rtl] .mdc-snackbar__label,.mdc-snackbar__label[dir=rtl]{padding-left:8px;padding-right:16px}.mdc-snackbar__label::before{display:inline;content:attr(data-mdc-snackbar-label-text)}.mdc-snackbar__actions{display:flex;flex-shrink:0;align-items:center;box-sizing:border-box}.mdc-snackbar__action:not(:disabled){color:#bb86fc}.mdc-snackbar__action::before,.mdc-snackbar__action::after{background-color:#bb86fc}.mdc-snackbar__action:hover::before{opacity:.08}.mdc-snackbar__action.mdc-ripple-upgraded--background-focused::before,.mdc-snackbar__action:not(.mdc-ripple-upgraded):focus::before{transition-duration:75ms;opacity:.24}.mdc-snackbar__action:not(.mdc-ripple-upgraded)::after{transition:opacity 150ms linear}.mdc-snackbar__action:not(.mdc-ripple-upgraded):active::after{transition-duration:75ms;opacity:.24}.mdc-snackbar__action.mdc-ripple-upgraded{--mdc-ripple-fg-opacity: 0.24}.mdc-snackbar__dismiss{color:rgba(255,255,255,.87)}.mdc-snackbar__dismiss::before,.mdc-snackbar__dismiss::after{background-color:rgba(255,255,255,.87)}.mdc-snackbar__dismiss:hover::before{opacity:.08}.mdc-snackbar__dismiss.mdc-ripple-upgraded--background-focused::before,.mdc-snackbar__dismiss:not(.mdc-ripple-upgraded):focus::before{transition-duration:75ms;opacity:.24}.mdc-snackbar__dismiss:not(.mdc-ripple-upgraded)::after{transition:opacity 150ms linear}.mdc-snackbar__dismiss:not(.mdc-ripple-upgraded):active::after{transition-duration:75ms;opacity:.24}.mdc-snackbar__dismiss.mdc-ripple-upgraded{--mdc-ripple-fg-opacity: 0.24}.mdc-snackbar__dismiss.mdc-snackbar__dismiss{width:36px;height:36px;padding:9px;font-size:18px}.mdc-snackbar__dismiss.mdc-snackbar__dismiss svg,.mdc-snackbar__dismiss.mdc-snackbar__dismiss img{width:18px;height:18px}.mdc-snackbar__action+.mdc-snackbar__dismiss{margin-left:8px;margin-right:0}[dir=rtl] .mdc-snackbar__action+.mdc-snackbar__dismiss,.mdc-snackbar__action+.mdc-snackbar__dismiss[dir=rtl]{margin-left:0;margin-right:8px}slot[name=action]::slotted(mwc-button){--mdc-theme-primary: var(--mdc-snackbar-action-color, #bb86fc)}slot[name=dismiss]::slotted(mwc-icon-button){--mdc-icon-size: 18px;--mdc-icon-button-size: 36px;color:rgba(255, 255, 255, 0.87);margin-left:8px;margin-right:0}[dir=rtl] slot[name=dismiss]::slotted(mwc-icon-button),slot[name=dismiss]::slotted(mwc-icon-button)[dir=rtl]{margin-left:0;margin-right:8px}`;
 
     let Snackbar = class Snackbar extends SnackbarBase {
     };
-    Snackbar.styles = style$f;
+    Snackbar.styles = style$a;
     Snackbar = __decorate([
         customElement('mwc-snackbar')
     ], Snackbar);
@@ -13331,25 +10728,24 @@ var app = (function () {
     			div3 = element("div");
     			div2 = element("div");
     			create_component(logo.$$.fragment);
-    			attr_dev(span, "class", "name-label svelte-8c9ycp");
-    			add_location(span, file, 42, 12, 2067);
-    			attr_dev(div0, "class", "td top svelte-8c9ycp");
-    			add_location(div0, file, 41, 8, 2034);
-    			attr_dev(input, "class", "name-input svelte-8c9ycp");
-    			attr_dev(input, "maxlength", "25");
+    			attr_dev(span, "class", "name-label svelte-1l3v3pk");
+    			add_location(span, file, 42, 12, 2066);
+    			attr_dev(div0, "class", "td top svelte-1l3v3pk");
+    			add_location(div0, file, 41, 8, 2033);
+    			attr_dev(input, "class", "name-input svelte-1l3v3pk");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Please enter a name");
-    			add_location(input, file, 45, 16, 2167);
-    			attr_dev(div1, "class", "td bottom svelte-8c9ycp");
-    			add_location(div1, file, 44, 8, 2127);
-    			attr_dev(div2, "class", "logo svelte-8c9ycp");
-    			add_location(div2, file, 53, 12, 2466);
-    			attr_dev(div3, "class", "td bottom svelte-8c9ycp");
-    			add_location(div3, file, 52, 8, 2430);
+    			add_location(input, file, 45, 16, 2166);
+    			attr_dev(div1, "class", "td bottom svelte-1l3v3pk");
+    			add_location(div1, file, 44, 8, 2126);
+    			attr_dev(div2, "class", "logo svelte-1l3v3pk");
+    			add_location(div2, file, 52, 12, 2426);
+    			attr_dev(div3, "class", "td bottom svelte-1l3v3pk");
+    			add_location(div3, file, 51, 8, 2390);
     			attr_dev(div4, "class", "tr");
-    			add_location(div4, file, 40, 4, 2009);
+    			add_location(div4, file, 40, 4, 2008);
     			attr_dev(div5, "class", "table");
-    			add_location(div5, file, 39, 0, 1985);
+    			add_location(div5, file, 39, 0, 1984);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13743,12 +11139,14 @@ var app = (function () {
     	let span3;
     	let t10;
     	let textarea3;
+    	let textarea3_rows_value;
     	let t11;
     	let div4;
     	let label4;
     	let span4;
     	let t13;
     	let textarea4;
+    	let textarea4_rows_value;
     	let mounted;
     	let dispose;
 
@@ -13788,56 +11186,51 @@ var app = (function () {
     			span4.textContent = "Other Aspect";
     			t13 = space();
     			textarea4 = element("textarea");
-    			add_location(span0, file$2, 35, 8, 1932);
-    			attr_dev(label0, "class", "aspect-label svelte-p40a5n");
-    			add_location(label0, file$2, 34, 4, 1895);
+    			add_location(span0, file$2, 35, 8, 1949);
+    			attr_dev(label0, "class", "aspect-label svelte-b9zl22");
+    			add_location(label0, file$2, 34, 4, 1912);
     			attr_dev(textarea0, "placeholder", "Please describe the character concept.");
     			attr_dev(textarea0, "rows", /*rows*/ ctx[1]);
-    			attr_dev(textarea0, "maxlength", "110");
-    			attr_dev(textarea0, "class", "svelte-p40a5n");
-    			add_location(textarea0, file$2, 37, 8, 1979);
-    			attr_dev(div0, "class", "aspect svelte-p40a5n");
-    			add_location(div0, file$2, 33, 4, 1870);
-    			add_location(span1, file$2, 46, 8, 2260);
-    			attr_dev(label1, "class", "aspect-label svelte-p40a5n");
-    			add_location(label1, file$2, 45, 4, 2223);
+    			attr_dev(textarea0, "class", "svelte-b9zl22");
+    			add_location(textarea0, file$2, 37, 8, 1996);
+    			attr_dev(div0, "class", "aspect svelte-b9zl22");
+    			add_location(div0, file$2, 33, 4, 1887);
+    			add_location(span1, file$2, 45, 8, 2243);
+    			attr_dev(label1, "class", "aspect-label svelte-b9zl22");
+    			add_location(label1, file$2, 44, 4, 2206);
     			attr_dev(textarea1, "placeholder", "Please describe the character's trouble.");
     			attr_dev(textarea1, "rows", /*rows*/ ctx[1]);
-    			attr_dev(textarea1, "maxlength", "110");
-    			attr_dev(textarea1, "class", "svelte-p40a5n");
-    			add_location(textarea1, file$2, 48, 8, 2302);
-    			attr_dev(div1, "class", "aspect svelte-p40a5n");
-    			add_location(div1, file$2, 44, 4, 2198);
-    			add_location(span2, file$2, 56, 8, 2580);
-    			attr_dev(label2, "class", "aspect-label svelte-p40a5n");
-    			add_location(label2, file$2, 55, 4, 2543);
+    			attr_dev(textarea1, "class", "svelte-b9zl22");
+    			add_location(textarea1, file$2, 47, 8, 2285);
+    			attr_dev(div1, "class", "aspect svelte-b9zl22");
+    			add_location(div1, file$2, 43, 4, 2181);
+    			add_location(span2, file$2, 54, 8, 2529);
+    			attr_dev(label2, "class", "aspect-label svelte-b9zl22");
+    			add_location(label2, file$2, 53, 4, 2492);
     			attr_dev(textarea2, "placeholder", "Please describe the relationship");
     			attr_dev(textarea2, "rows", /*rows*/ ctx[1]);
-    			attr_dev(textarea2, "maxlength", "110");
-    			attr_dev(textarea2, "class", "svelte-p40a5n");
-    			add_location(textarea2, file$2, 58, 8, 2627);
-    			attr_dev(div2, "class", "aspect svelte-p40a5n");
-    			add_location(div2, file$2, 54, 4, 2518);
-    			add_location(span3, file$2, 66, 8, 2902);
-    			attr_dev(label3, "class", "aspect-label svelte-p40a5n");
-    			add_location(label3, file$2, 65, 4, 2865);
+    			attr_dev(textarea2, "class", "svelte-b9zl22");
+    			add_location(textarea2, file$2, 56, 8, 2576);
+    			attr_dev(div2, "class", "aspect svelte-b9zl22");
+    			add_location(div2, file$2, 52, 4, 2467);
+    			add_location(span3, file$2, 63, 8, 2817);
+    			attr_dev(label3, "class", "aspect-label svelte-b9zl22");
+    			add_location(label3, file$2, 62, 4, 2780);
     			attr_dev(textarea3, "placeholder", "Please describe the aspect");
-    			attr_dev(textarea3, "maxlength", "110");
-    			attr_dev(textarea3, "rows", /*rows*/ ctx[1]);
-    			attr_dev(textarea3, "class", "svelte-p40a5n");
-    			add_location(textarea3, file$2, 68, 8, 2949);
-    			attr_dev(div3, "class", "aspect svelte-p40a5n");
-    			add_location(div3, file$2, 64, 4, 2840);
-    			add_location(span4, file$2, 76, 8, 3221);
-    			attr_dev(label4, "class", "aspect-label svelte-p40a5n");
-    			add_location(label4, file$2, 75, 4, 3184);
+    			attr_dev(textarea3, "rows", textarea3_rows_value = /*rows*/ ctx[1] + 1);
+    			attr_dev(textarea3, "class", "svelte-b9zl22");
+    			add_location(textarea3, file$2, 65, 8, 2864);
+    			attr_dev(div3, "class", "aspect svelte-b9zl22");
+    			add_location(div3, file$2, 61, 4, 2755);
+    			add_location(span4, file$2, 72, 8, 3104);
+    			attr_dev(label4, "class", "aspect-label svelte-b9zl22");
+    			add_location(label4, file$2, 71, 4, 3067);
     			attr_dev(textarea4, "placeholder", "Please describe the aspect.");
-    			attr_dev(textarea4, "maxlength", "110");
-    			attr_dev(textarea4, "rows", /*rows*/ ctx[1]);
-    			attr_dev(textarea4, "class", "svelte-p40a5n");
-    			add_location(textarea4, file$2, 78, 8, 3268);
-    			attr_dev(div4, "class", "aspect svelte-p40a5n");
-    			add_location(div4, file$2, 74, 4, 3159);
+    			attr_dev(textarea4, "rows", textarea4_rows_value = /*rows*/ ctx[1] + 1);
+    			attr_dev(textarea4, "class", "svelte-b9zl22");
+    			add_location(textarea4, file$2, 74, 8, 3151);
+    			attr_dev(div4, "class", "aspect svelte-b9zl22");
+    			add_location(div4, file$2, 70, 4, 3042);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -14194,11 +11587,11 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			create_component(check.$$.fragment);
-    			add_location(div0, file$3, 101, 12, 4805);
-    			attr_dev(div1, "class", "checkmark svelte-16ulsu4");
+    			add_location(div0, file$3, 101, 12, 4811);
+    			attr_dev(div1, "class", "checkmark svelte-13f9889");
     			set_style(div1, "width", "100%");
     			set_style(div1, "height", "100%");
-    			add_location(div1, file$3, 100, 8, 4736);
+    			add_location(div1, file$3, 100, 8, 4742);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -14257,13 +11650,13 @@ var app = (function () {
     			t0 = text(/*number*/ ctx[1]);
     			t1 = space();
     			if (if_block) if_block.c();
-    			attr_dev(span, "class", "svelte-16ulsu4");
-    			add_location(span, file$3, 95, 4, 4665);
-    			attr_dev(div0, "class", "check-text svelte-16ulsu4");
+    			attr_dev(span, "class", "svelte-13f9889");
+    			add_location(span, file$3, 95, 4, 4671);
+    			attr_dev(div0, "class", "check-text svelte-13f9889");
     			set_style(div0, "width", /*css*/ ctx[2].size);
     			set_style(div0, "height", /*css*/ ctx[2].size);
-    			add_location(div0, file$3, 94, 4, 4591);
-    			attr_dev(div1, "class", "box svelte-16ulsu4");
+    			add_location(div0, file$3, 94, 4, 4597);
+    			attr_dev(div1, "class", "box svelte-13f9889");
     			set_style(div1, "color", /*css*/ ctx[2].color);
     			set_style(div1, "width", /*css*/ ctx[2].size);
     			set_style(div1, "height", /*css*/ ctx[2].size);
@@ -14271,7 +11664,7 @@ var app = (function () {
     			set_style(div1, "border-color", /*css*/ ctx[2].color);
     			set_style(div1, "border-style", "solid");
     			set_style(div1, "background-color", /*css*/ ctx[2].backgroundColor);
-    			add_location(div1, file$3, 90, 0, 4346);
+    			add_location(div1, file$3, 90, 0, 4352);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14508,8 +11901,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(checkeditem.$$.fragment);
-    			attr_dev(div, "class", "column svelte-5eyugl");
-    			add_location(div, file$4, 65, 8, 2861);
+    			attr_dev(div, "class", "column svelte-deqi8w");
+    			add_location(div, file$4, 65, 8, 2862);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14584,17 +11977,17 @@ var app = (function () {
     			t2 = space();
     			div1 = element("div");
     			span1 = element("span");
-    			attr_dev(span0, "class", "svelte-5eyugl");
-    			add_location(span0, file$4, 61, 8, 2787);
-    			attr_dev(div0, "class", "title-column stress-track-title svelte-5eyugl");
-    			add_location(div0, file$4, 60, 4, 2733);
-    			set_style(span1, "width", "1.4em");
-    			attr_dev(span1, "class", "svelte-5eyugl");
-    			add_location(span1, file$4, 70, 8, 3082);
+    			attr_dev(span0, "class", "svelte-deqi8w");
+    			add_location(span0, file$4, 61, 8, 2788);
+    			attr_dev(div0, "class", "title-column stress-track-title svelte-deqi8w");
+    			add_location(div0, file$4, 60, 4, 2734);
+    			set_style(span1, "width", "1.4rem");
+    			attr_dev(span1, "class", "svelte-deqi8w");
+    			add_location(span1, file$4, 70, 8, 3083);
     			attr_dev(div1, "class", ".last-col");
-    			add_location(div1, file$4, 69, 4, 3050);
-    			attr_dev(div2, "class", "row svelte-5eyugl");
-    			add_location(div2, file$4, 59, 0, 2711);
+    			add_location(div1, file$4, 69, 4, 3051);
+    			attr_dev(div2, "class", "row svelte-deqi8w");
+    			add_location(div2, file$4, 59, 0, 2712);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14811,22 +12204,21 @@ var app = (function () {
     			t1 = text(/*name*/ ctx[1]);
     			t2 = space();
     			textarea = element("textarea");
-    			attr_dev(div0, "class", "column svelte-e0kgkf");
-    			add_location(div0, file$5, 50, 4, 2873);
-    			add_location(span, file$5, 54, 29, 3104);
-    			attr_dev(label, "class", "title svelte-e0kgkf");
-    			add_location(label, file$5, 54, 8, 3083);
-    			attr_dev(textarea, "maxlength", "70");
+    			attr_dev(div0, "class", "column svelte-1oix8k5");
+    			add_location(div0, file$5, 50, 4, 2883);
+    			add_location(span, file$5, 54, 29, 3115);
+    			attr_dev(label, "class", "title svelte-1oix8k5");
+    			add_location(label, file$5, 54, 8, 3094);
     			attr_dev(textarea, "rows", "2");
     			attr_dev(textarea, "placeholder", "Please state the consequence");
-    			attr_dev(textarea, "class", "svelte-e0kgkf");
-    			add_location(textarea, file$5, 55, 8, 3140);
-    			attr_dev(div1, "class", "column svelte-e0kgkf");
-    			set_style(div1, "padding-left", "1em");
+    			attr_dev(textarea, "class", "svelte-1oix8k5");
+    			add_location(textarea, file$5, 55, 8, 3151);
+    			attr_dev(div1, "class", "column svelte-1oix8k5");
+    			set_style(div1, "padding-left", "1rem");
     			set_style(div1, "width", "90%");
-    			add_location(div1, file$5, 53, 4, 3017);
-    			attr_dev(div2, "class", "row consequence svelte-e0kgkf");
-    			add_location(div2, file$5, 48, 0, 2838);
+    			add_location(div1, file$5, 53, 4, 3027);
+    			attr_dev(div2, "class", "row consequence svelte-1oix8k5");
+    			add_location(div2, file$5, 48, 0, 2848);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -15620,18 +13012,18 @@ var app = (function () {
     			t2 = space();
     			input1 = element("input");
     			t3 = space();
-    			add_location(span, file$7, 72, 12, 3349);
+    			add_location(span, file$7, 72, 12, 3350);
     			attr_dev(input0, "maxlength", "2");
     			attr_dev(input0, "type", "number");
-    			attr_dev(input0, "class", "skill-value svelte-160qqlf");
+    			attr_dev(input0, "class", "skill-value svelte-1tcxa1j");
     			attr_dev(input0, "min", "0");
     			attr_dev(input0, "max", "10");
-    			add_location(input0, file$7, 73, 12, 3376);
+    			add_location(input0, file$7, 73, 12, 3377);
     			attr_dev(input1, "type", "text");
-    			attr_dev(input1, "class", "skill-name svelte-160qqlf");
-    			add_location(input1, file$7, 74, 12, 3487);
-    			attr_dev(div, "class", "skill-line svelte-160qqlf");
-    			add_location(div, file$7, 71, 8, 3312);
+    			attr_dev(input1, "class", "skill-name svelte-1tcxa1j");
+    			add_location(input1, file$7, 74, 12, 3488);
+    			attr_dev(div, "class", "skill-line svelte-1tcxa1j");
+    			add_location(div, file$7, 71, 8, 3313);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15929,17 +13321,15 @@ var app = (function () {
     			textarea = element("textarea");
     			t1 = space();
     			attr_dev(input, "type", "text");
-    			attr_dev(input, "maxlength", "40");
-    			attr_dev(input, "class", "name-input svelte-1fdmvk4");
+    			attr_dev(input, "class", "name-input svelte-xve8ee");
     			attr_dev(input, "placeholder", "Please name the stunt.");
-    			add_location(input, file$8, 46, 12, 2338);
+    			add_location(input, file$8, 46, 12, 2344);
     			attr_dev(textarea, "placeholder", "Please describe the stunt.");
-    			attr_dev(textarea, "maxlength", "130");
     			attr_dev(textarea, "rows", /*rows*/ ctx[1]);
-    			attr_dev(textarea, "class", "svelte-1fdmvk4");
-    			add_location(textarea, file$8, 47, 12, 2466);
-    			attr_dev(div, "class", "stunt svelte-1fdmvk4");
-    			add_location(div, file$8, 45, 8, 2306);
+    			attr_dev(textarea, "class", "svelte-xve8ee");
+    			add_location(textarea, file$8, 47, 12, 2457);
+    			attr_dev(div, "class", "stunt svelte-xve8ee");
+    			add_location(div, file$8, 45, 8, 2312);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -16236,37 +13626,37 @@ var app = (function () {
     			div4 = element("div");
     			input1 = element("input");
     			set_style(div0, "display", "inline-block");
-    			attr_dev(div0, "class", "svelte-n3vp5r");
+    			attr_dev(div0, "class", "svelte-62o6fq");
     			add_location(div0, file$9, 130, 4, 7240);
     			attr_dev(input0, "maxlength", "1");
-    			attr_dev(input0, "class", "circle svelte-n3vp5r");
+    			attr_dev(input0, "class", "circle svelte-62o6fq");
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "step", input0_step_value = 1);
     			attr_dev(input0, "min", input0_min_value = 0);
     			attr_dev(input0, "max", input0_max_value = 10);
     			add_location(input0, file$9, 132, 8, 7329);
-    			attr_dev(div1, "class", "refresh-points svelte-n3vp5r");
+    			attr_dev(div1, "class", "refresh-points svelte-62o6fq");
     			add_location(div1, file$9, 131, 4, 7292);
     			set_style(span0, "margin-left", "5.3em");
-    			attr_dev(span0, "class", "svelte-n3vp5r");
+    			attr_dev(span0, "class", "svelte-62o6fq");
     			add_location(span0, file$9, 143, 8, 7600);
-    			attr_dev(div2, "class", "refresh-label svelte-n3vp5r");
+    			attr_dev(div2, "class", "refresh-label svelte-62o6fq");
     			add_location(div2, file$9, 142, 4, 7564);
     			set_style(span1, "margin-right", "5.3em");
-    			attr_dev(span1, "class", "svelte-n3vp5r");
+    			attr_dev(span1, "class", "svelte-62o6fq");
     			add_location(span1, file$9, 146, 8, 7695);
-    			attr_dev(div3, "class", "fate-label svelte-n3vp5r");
+    			attr_dev(div3, "class", "fate-label svelte-62o6fq");
     			add_location(div3, file$9, 145, 4, 7662);
     			attr_dev(input1, "maxlength", "1");
-    			attr_dev(input1, "class", "circle svelte-n3vp5r");
+    			attr_dev(input1, "class", "circle svelte-62o6fq");
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "step", input1_step_value = 1);
     			attr_dev(input1, "min", input1_min_value = 0);
     			attr_dev(input1, "max", input1_max_value = 10);
     			add_location(input1, file$9, 149, 8, 7789);
-    			attr_dev(div4, "class", "fate-points svelte-n3vp5r");
+    			attr_dev(div4, "class", "fate-points svelte-62o6fq");
     			add_location(div4, file$9, 148, 4, 7755);
-    			attr_dev(div5, "class", "header svelte-n3vp5r");
+    			attr_dev(div5, "class", "header svelte-62o6fq");
     			add_location(div5, file$9, 129, 0, 7214);
     		},
     		l: function claim(nodes) {
@@ -16402,6 +13792,7 @@ var app = (function () {
     const file$a = "src/components/CharacterSheet/CharacterSheet.svelte";
 
     function create_fragment$d(ctx) {
+    	let div8;
     	let div7;
     	let pageheading;
     	let updating_name;
@@ -16543,6 +13934,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div8 = element("div");
     			div7 = element("div");
     			create_component(pageheading.$$.fragment);
     			t0 = space();
@@ -16562,29 +13954,32 @@ var app = (function () {
     			t4 = space();
     			div4 = element("div");
     			create_component(skills.$$.fragment);
-    			attr_dev(div0, "class", "td border svelte-r8wk0d");
-    			add_location(div0, file$a, 41, 12, 2028);
+    			attr_dev(div0, "class", "td border svelte-i2ri4v");
+    			add_location(div0, file$a, 37, 12, 1594);
     			attr_dev(div1, "class", "td");
     			set_style(div1, "width", "40.8%");
-    			add_location(div1, file$a, 44, 12, 2145);
+    			add_location(div1, file$a, 40, 12, 1711);
     			attr_dev(div2, "class", "tr");
-    			add_location(div2, file$a, 40, 8, 1999);
-    			attr_dev(div3, "class", "td border svelte-r8wk0d");
-    			add_location(div3, file$a, 50, 12, 2396);
+    			add_location(div2, file$a, 36, 8, 1565);
+    			attr_dev(div3, "class", "td border svelte-i2ri4v");
+    			add_location(div3, file$a, 46, 12, 1962);
     			attr_dev(div4, "class", "td");
-    			add_location(div4, file$a, 54, 12, 2608);
+    			add_location(div4, file$a, 50, 12, 2174);
     			attr_dev(div5, "class", "tr");
-    			add_location(div5, file$a, 49, 8, 2367);
+    			add_location(div5, file$a, 45, 8, 1933);
     			attr_dev(div6, "class", "table");
-    			add_location(div6, file$a, 38, 4, 1970);
-    			attr_dev(div7, "class", "character-sheet svelte-r8wk0d");
-    			add_location(div7, file$a, 36, 0, 1888);
+    			add_location(div6, file$a, 34, 4, 1536);
+    			attr_dev(div7, "class", "character-sheet svelte-i2ri4v");
+    			add_location(div7, file$a, 32, 0, 1454);
+    			attr_dev(div8, "class", "page");
+    			add_location(div8, file$a, 31, 0, 1435);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div7, anchor);
+    			insert_dev(target, div8, anchor);
+    			append_dev(div8, div7);
     			mount_component(pageheading, div7, null);
     			append_dev(div7, t0);
     			append_dev(div7, div6);
@@ -16699,7 +14094,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div7);
+    			if (detaching) detach_dev(div8);
     			destroy_component(pageheading);
     			destroy_component(aspects);
     			destroy_component(vitals);
@@ -19453,7 +16848,7 @@ var app = (function () {
     /* src/components/shared/Markdown/Markdown.svelte generated by Svelte v3.25.0 */
     const file$b = "src/components/shared/Markdown/Markdown.svelte";
 
-    // (98:0) {#if markdown}
+    // (99:0) {#if markdown}
     function create_if_block$3(ctx) {
     	let section;
     	let raw_value = marked(/*markdown*/ ctx[0]) + "";
@@ -19461,7 +16856,7 @@ var app = (function () {
 
     	let section_levels = [
     		{
-    			class: section_class_value = "" + (/*columnClass*/ ctx[2] + " page")
+    			class: section_class_value = "" + (/*columnClass*/ ctx[2] + " pageX")
     		},
     		/*props*/ ctx[1]
     	];
@@ -19476,8 +16871,8 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			set_attributes(section, section_data);
-    			toggle_class(section, "svelte-148f614", true);
-    			add_location(section, file$b, 99, 0, 3994);
+    			toggle_class(section, "svelte-14h2p2m", true);
+    			add_location(section, file$b, 100, 0, 4072);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -19486,11 +16881,11 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if (dirty & /*markdown*/ 1 && raw_value !== (raw_value = marked(/*markdown*/ ctx[0]) + "")) section.innerHTML = raw_value;
     			set_attributes(section, section_data = get_spread_update(section_levels, [
-    				dirty & /*columnClass*/ 4 && section_class_value !== (section_class_value = "" + (/*columnClass*/ ctx[2] + " page")) && { class: section_class_value },
+    				dirty & /*columnClass*/ 4 && section_class_value !== (section_class_value = "" + (/*columnClass*/ ctx[2] + " pageX")) && { class: section_class_value },
     				dirty & /*props*/ 2 && /*props*/ ctx[1]
     			]));
 
-    			toggle_class(section, "svelte-148f614", true);
+    			toggle_class(section, "svelte-14h2p2m", true);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section);
@@ -19501,7 +16896,7 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(98:0) {#if markdown}",
+    		source: "(99:0) {#if markdown}",
     		ctx
     	});
 
@@ -19699,7 +17094,7 @@ var app = (function () {
     		c: function create() {
     			mwc_icon_button = element("mwc-icon-button");
     			set_custom_element_data(mwc_icon_button, "icon", "chevron_right");
-    			add_location(mwc_icon_button, file$c, 48, 12, 2404);
+    			add_location(mwc_icon_button, file$c, 48, 12, 2409);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
@@ -19739,7 +17134,7 @@ var app = (function () {
     			mwc_icon_button = element("mwc-icon-button");
     			set_style(mwc_icon_button, "float", "right");
     			set_custom_element_data(mwc_icon_button, "icon", "chevron_left");
-    			add_location(mwc_icon_button, file$c, 46, 12, 2269);
+    			add_location(mwc_icon_button, file$c, 46, 12, 2274);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
@@ -19782,7 +17177,7 @@ var app = (function () {
     			h2.textContent = "Table of Contents";
     			t1 = space();
     			html_anchor = empty();
-    			add_location(h2, file$c, 52, 12, 2555);
+    			add_location(h2, file$c, 52, 12, 2560);
     			html_tag = new HtmlTag(html_anchor);
     		},
     		m: function mount(target, anchor) {
@@ -19813,7 +17208,7 @@ var app = (function () {
     	return block;
     }
 
-    // (58:8) {#if srdMarkdown}
+    // (58:4) {#if srdMarkdown}
     function create_if_block$4(ctx) {
     	let markdown;
     	let current;
@@ -19858,7 +17253,7 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(58:8) {#if srdMarkdown}",
+    		source: "(58:4) {#if srdMarkdown}",
     		ctx
     	});
 
@@ -19866,10 +17261,10 @@ var app = (function () {
     }
 
     function create_fragment$f(ctx) {
-    	let div0;
+    	let div;
     	let t0;
     	let t1;
-    	let div1;
+    	let if_block2_anchor;
     	let current;
 
     	function select_block_type(ctx, dirty) {
@@ -19884,28 +17279,27 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div0 = element("div");
+    			div = element("div");
     			if_block0.c();
     			t0 = space();
     			if (if_block1) if_block1.c();
     			t1 = space();
-    			div1 = element("div");
     			if (if_block2) if_block2.c();
-    			attr_dev(div0, "class", "toc svelte-lly6rf");
-    			add_location(div0, file$c, 43, 4, 2216);
-    			add_location(div1, file$c, 56, 4, 2651);
+    			if_block2_anchor = empty();
+    			attr_dev(div, "class", "toc svelte-1iwwatk");
+    			add_location(div, file$c, 43, 4, 2221);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div0, anchor);
-    			if_block0.m(div0, null);
-    			append_dev(div0, t0);
-    			if (if_block1) if_block1.m(div0, null);
+    			insert_dev(target, div, anchor);
+    			if_block0.m(div, null);
+    			append_dev(div, t0);
+    			if (if_block1) if_block1.m(div, null);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, div1, anchor);
-    			if (if_block2) if_block2.m(div1, null);
+    			if (if_block2) if_block2.m(target, anchor);
+    			insert_dev(target, if_block2_anchor, anchor);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -19917,7 +17311,7 @@ var app = (function () {
 
     				if (if_block0) {
     					if_block0.c();
-    					if_block0.m(div0, t0);
+    					if_block0.m(div, t0);
     				}
     			}
 
@@ -19927,7 +17321,7 @@ var app = (function () {
     				} else {
     					if_block1 = create_if_block_1(ctx);
     					if_block1.c();
-    					if_block1.m(div0, null);
+    					if_block1.m(div, null);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
@@ -19945,7 +17339,7 @@ var app = (function () {
     					if_block2 = create_if_block$4(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
-    					if_block2.m(div1, null);
+    					if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
     				}
     			} else if (if_block2) {
     				group_outros();
@@ -19967,12 +17361,12 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(div);
     			if_block0.d();
     			if (if_block1) if_block1.d();
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(div1);
-    			if (if_block2) if_block2.d();
+    			if (if_block2) if_block2.d(detaching);
+    			if (detaching) detach_dev(if_block2_anchor);
     		}
     	};
 
@@ -21342,7 +18736,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$e = "src/App/App.svelte";
 
-    // (292:8) {:else}
+    // (247:8) {:else}
     function create_else_block_2(ctx) {
     	let mwc_icon_button;
     	let mounted;
@@ -21353,8 +18747,7 @@ var app = (function () {
     			mwc_icon_button = element("mwc-icon-button");
     			set_custom_element_data(mwc_icon_button, "icon", "folder_open");
     			set_custom_element_data(mwc_icon_button, "slot", "actionItems");
-    			set_custom_element_data(mwc_icon_button, "class", "svelte-q41fns");
-    			add_location(mwc_icon_button, file$e, 292, 12, 12626);
+    			add_location(mwc_icon_button, file$e, 247, 12, 10304);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
@@ -21376,14 +18769,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(292:8) {:else}",
+    		source: "(247:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (290:8) {#if showLoadPane}
+    // (245:8) {#if showLoadPane}
     function create_if_block_5(ctx) {
     	let mwc_icon_button;
     	let mounted;
@@ -21394,8 +18787,7 @@ var app = (function () {
     			mwc_icon_button = element("mwc-icon-button");
     			set_custom_element_data(mwc_icon_button, "icon", "cancel");
     			set_custom_element_data(mwc_icon_button, "slot", "actionItems");
-    			set_custom_element_data(mwc_icon_button, "class", "svelte-q41fns");
-    			add_location(mwc_icon_button, file$e, 290, 12, 12505);
+    			add_location(mwc_icon_button, file$e, 245, 12, 10183);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
@@ -21417,14 +18809,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(290:8) {#if showLoadPane}",
+    		source: "(245:8) {#if showLoadPane}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (305:8) {:else}
+    // (260:8) {:else}
     function create_else_block$1(ctx) {
     	let div;
     	let current_block_type_index;
@@ -21455,15 +18847,12 @@ var app = (function () {
     			mwc_icon_button = element("mwc-icon-button");
     			set_custom_element_data(mwc_icon_button, "icon", "close");
     			set_custom_element_data(mwc_icon_button, "slot", "dismiss");
-    			set_custom_element_data(mwc_icon_button, "class", "svelte-q41fns");
-    			add_location(mwc_icon_button, file$e, 324, 20, 14144);
+    			add_location(mwc_icon_button, file$e, 277, 20, 11740);
     			set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[10]);
-    			set_custom_element_data(mwc_snackbar, "class", "svelte-q41fns");
-    			add_location(mwc_snackbar, file$e, 323, 16, 14054);
+    			add_location(mwc_snackbar, file$e, 276, 16, 11650);
     			attr_dev(div, "id", "content");
-    			set_style(div, "margin", "10pt");
-    			attr_dev(div, "class", "svelte-q41fns");
-    			add_location(div, file$e, 305, 12, 13357);
+    			set_style(div, "padding", "2rem");
+    			add_location(div, file$e, 260, 12, 11035);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -21523,14 +18912,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(305:8) {:else}",
+    		source: "(260:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (300:8) {#if (showLoadPane)}
+    // (255:8) {#if (showLoadPane)}
     function create_if_block$5(ctx) {
     	let div;
     	let dropzone;
@@ -21550,9 +18939,9 @@ var app = (function () {
     			div = element("div");
     			create_component(dropzone.$$.fragment);
     			attr_dev(div, "id", "content");
-    			attr_dev(div, "class", "noprint file-loader svelte-q41fns");
+    			attr_dev(div, "class", "noprint file-loader svelte-10bofxj");
     			set_style(div, "height", "100%");
-    			add_location(div, file$e, 300, 12, 13089);
+    			add_location(div, file$e, 255, 12, 10767);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -21579,14 +18968,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(300:8) {#if (showLoadPane)}",
+    		source: "(255:8) {#if (showLoadPane)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (319:16) {:else}
+    // (272:16) {:else}
     function create_else_block_1(ctx) {
     	let div;
     	let h3;
@@ -21596,10 +18985,9 @@ var app = (function () {
     			div = element("div");
     			h3 = element("h3");
     			h3.textContent = "TBD/Coming Soon";
-    			attr_dev(h3, "class", "svelte-q41fns");
-    			add_location(h3, file$e, 320, 24, 13964);
-    			attr_dev(div, "class", "page svelte-q41fns");
-    			add_location(div, file$e, 319, 20, 13921);
+    			add_location(h3, file$e, 273, 24, 11560);
+    			attr_dev(div, "class", "page");
+    			add_location(div, file$e, 272, 20, 11517);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -21617,14 +19005,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(319:16) {:else}",
+    		source: "(272:16) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (313:44) 
+    // (266:44) 
     function create_if_block_3(ctx) {
     	let if_block_anchor;
     	let current;
@@ -21683,14 +19071,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(313:44) ",
+    		source: "(266:44) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (311:44) 
+    // (264:44) 
     function create_if_block_2$1(ctx) {
     	let srd;
     	let updating_tocMarkdown;
@@ -21762,16 +19150,15 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(311:44) ",
+    		source: "(264:44) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (307:16) {#if activeIndex === 0}
+    // (262:16) {#if activeIndex === 0}
     function create_if_block_1$1(ctx) {
-    	let div;
     	let charactersheet;
     	let updating_character;
     	let current;
@@ -21795,14 +19182,10 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div = element("div");
     			create_component(charactersheet.$$.fragment);
-    			attr_dev(div, "class", "page svelte-q41fns");
-    			add_location(div, file$e, 307, 20, 13458);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(charactersheet, div, null);
+    			mount_component(charactersheet, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -21826,8 +19209,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(charactersheet);
+    			destroy_component(charactersheet, detaching);
     		}
     	};
 
@@ -21835,14 +19217,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(307:16) {#if activeIndex === 0}",
+    		source: "(262:16) {#if activeIndex === 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (315:24) {#if aboutMarkdown}
+    // (268:20) {#if aboutMarkdown}
     function create_if_block_4(ctx) {
     	let markdown;
     	let current;
@@ -21886,7 +19268,7 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(315:24) {#if aboutMarkdown}",
+    		source: "(268:20) {#if aboutMarkdown}",
     		ctx
     	});
 
@@ -21928,7 +19310,6 @@ var app = (function () {
     	let if_block1;
     	let t13;
     	let main1;
-    	let div2;
     	let charactersheet;
     	let updating_character;
     	let current;
@@ -22006,63 +19387,47 @@ var app = (function () {
     			if_block1.c();
     			t13 = space();
     			main1 = element("main");
-    			div2 = element("div");
     			create_component(charactersheet.$$.fragment);
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Roboto:300,400,500");
     			attr_dev(link0, "rel", "stylesheet");
-    			attr_dev(link0, "class", "svelte-q41fns");
-    			add_location(link0, file$e, 269, 4, 11503);
+    			add_location(link0, file$e, 224, 4, 9181);
     			attr_dev(link1, "href", "https://fonts.googleapis.com/css?family=Material+Icons&display=block");
     			attr_dev(link1, "rel", "stylesheet");
-    			attr_dev(link1, "class", "svelte-q41fns");
-    			add_location(link1, file$e, 270, 4, 11597);
-    			attr_dev(span, "class", "svelte-q41fns");
-    			add_location(span, file$e, 279, 47, 11873);
+    			add_location(link1, file$e, 225, 4, 9275);
+    			add_location(span, file$e, 234, 47, 9551);
     			set_style(div0, "display", "inline-block");
-    			attr_dev(div0, "class", "svelte-q41fns");
-    			add_location(div0, file$e, 279, 12, 11838);
+    			add_location(div0, file$e, 234, 12, 9516);
     			attr_dev(div1, "slot", "title");
-    			attr_dev(div1, "class", "svelte-q41fns");
-    			add_location(div1, file$e, 278, 8, 11807);
+    			add_location(div1, file$e, 233, 8, 9485);
     			set_custom_element_data(mwc_tab0, "label", "Character Sheet");
-    			set_custom_element_data(mwc_tab0, "class", "svelte-q41fns");
-    			add_location(mwc_tab0, file$e, 283, 12, 12155);
+    			add_location(mwc_tab0, file$e, 238, 12, 9833);
     			set_custom_element_data(mwc_tab1, "label", "Rules");
-    			set_custom_element_data(mwc_tab1, "class", "svelte-q41fns");
-    			add_location(mwc_tab1, file$e, 284, 12, 12211);
+    			add_location(mwc_tab1, file$e, 239, 12, 9889);
     			set_custom_element_data(mwc_tab2, "label", "About");
-    			set_custom_element_data(mwc_tab2, "class", "svelte-q41fns");
-    			add_location(mwc_tab2, file$e, 285, 12, 12257);
+    			add_location(mwc_tab2, file$e, 240, 12, 9935);
     			set_custom_element_data(mwc_tab_bar, "slot", "actionItems");
     			set_style(mwc_tab_bar, "display", "inline-block");
     			set_custom_element_data(mwc_tab_bar, "activeindex", /*activeIndex*/ ctx[1]);
-    			set_custom_element_data(mwc_tab_bar, "class", "svelte-q41fns");
-    			add_location(mwc_tab_bar, file$e, 281, 8, 11963);
+    			set_custom_element_data(mwc_tab_bar, "class", "svelte-10bofxj");
+    			add_location(mwc_tab_bar, file$e, 236, 8, 9641);
     			set_custom_element_data(mwc_icon_button0, "icon", "note_add");
     			set_custom_element_data(mwc_icon_button0, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[8]);
-    			set_custom_element_data(mwc_icon_button0, "class", "svelte-q41fns");
-    			add_location(mwc_icon_button0, file$e, 287, 8, 12322);
+    			add_location(mwc_icon_button0, file$e, 242, 8, 10000);
     			set_custom_element_data(mwc_icon_button1, "icon", "save");
     			set_custom_element_data(mwc_icon_button1, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[8]);
-    			set_custom_element_data(mwc_icon_button1, "class", "svelte-q41fns");
-    			add_location(mwc_icon_button1, file$e, 295, 8, 12789);
+    			add_location(mwc_icon_button1, file$e, 250, 8, 10467);
     			set_custom_element_data(mwc_icon_button2, "icon", "print");
     			set_custom_element_data(mwc_icon_button2, "slot", "actionItems");
     			set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[8]);
-    			set_custom_element_data(mwc_icon_button2, "class", "svelte-q41fns");
-    			add_location(mwc_icon_button2, file$e, 297, 8, 12938);
+    			add_location(mwc_icon_button2, file$e, 252, 8, 10616);
     			set_style(mwc_top_app_bar_fixed, "height", "100%");
-    			set_custom_element_data(mwc_top_app_bar_fixed, "class", "svelte-q41fns");
-    			add_location(mwc_top_app_bar_fixed, file$e, 276, 4, 11754);
-    			attr_dev(main0, "class", "noprint svelte-q41fns");
-    			add_location(main0, file$e, 274, 0, 11726);
-    			attr_dev(div2, "class", "page svelte-q41fns");
-    			add_location(div2, file$e, 337, 4, 14626);
-    			attr_dev(main1, "class", "printme svelte-q41fns");
-    			set_style(main1, "margin", "0.5in");
-    			add_location(main1, file$e, 332, 0, 14312);
+    			add_location(mwc_top_app_bar_fixed, file$e, 231, 4, 9432);
+    			attr_dev(main0, "class", "noprint svelte-10bofxj");
+    			add_location(main0, file$e, 229, 0, 9404);
+    			attr_dev(main1, "class", "printme svelte-10bofxj");
+    			add_location(main1, file$e, 285, 0, 11908);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -22101,8 +19466,7 @@ var app = (function () {
     			if_blocks[current_block_type_index].m(mwc_top_app_bar_fixed, null);
     			insert_dev(target, t13, anchor);
     			insert_dev(target, main1, anchor);
-    			append_dev(main1, div2);
-    			mount_component(charactersheet, div2, null);
+    			mount_component(charactersheet, main1, null);
     			current = true;
 
     			if (!mounted) {
