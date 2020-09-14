@@ -36,21 +36,21 @@ classes or elements, place definitions under :root */
 	--mdc-theme-text-icon-on-dark: #9f9f9f;                /* Icons on top of a dark-colored background. */
 
 	/* these used in normalize.css and through out the rest of the app*/
-	--header-primary-background-color: black;
-	--header-primary-color: white;
-	--header-alternate-color: black;
-	--header-alternate-background-color: white;
-	--text-primary-color: black;
-	--text-primary-background-color: transparent;
+	--header-primary-background-color: var(--mdc-theme-primary);
+	--header-primary-color: var(--mdc-theme-text-primary-on-dark);
+	--header-alternate-color: var(--mdc-theme-text-primary-on-background);
+	--header-alternate-background-color: var(--mdc-theme-background);
+	--text-primary-color: var(--mdc-theme-text-primary-on-background);
+	--text-primary-background-color: var(--mdc-theme-background);
 
 	--default-line-height: 1;
 
-	--link-unvisited-color: rgb(13, 70, 200);
-	--link-visited-color: rgb(38, 40, 92);
-	--input-border-color: #ccc;
-	--input-disabled-color: #ccc;
-	--button-color: #333;
-	--button-disabled-color: #999;
+	--link-unvisited-color: var(--mdc-theme-secondary);
+	--link-visited-color: var(--mdc-theme-text-hint-on-background);
+	--input-border-color: var(--mdc-theme-text-hint-on-background);
+	--input-disabled-color: var(--mdc-theme-text-disabled-on-background);
+	--button-color: var(--mdc-theme-secondary);
+	--button-disabled-color: var(--mdc-theme-text-disabled-on-light);
 	--button-background-color: #f4f4f4;
 	--button-background-color-active: #ddd;
 	--button-border-color-focus: #666;

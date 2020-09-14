@@ -15,7 +15,6 @@
     import GlobalCss from "../GlobalCss";
     import CharacterSheet from "../components/CharacterSheet";
     import SRD from "../components/SRD";
-    import Markdown from '../components/shared/Markdown';
 
     import getNewCharacter from "../model/character"
     import downloadToClient from 'file-saver';
@@ -27,10 +26,8 @@
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
     let activeIndex;
     let activeSection;
-    let /*aspectsMarkdown, skillsMarkdown, stuntsMarkdown, */srdMarkdown, tocMarkdown;
-/*    fetch("./md/Aspects.md").then((response) => response.text().then((data) => aspectsMarkdown = data));
-    fetch("./md/Skills.md").then((response) => response.text().then((data) => skillsMarkdown = data));
-    fetch("./md/Stunts.md").then((response) => response.text().then((data) => stuntsMarkdown = data));*/
+    let srdMarkdown, tocMarkdown;
+
     fetch("./md/Fate-Condensed-SRD-CC-BY.md").then((response) => response.text().then((data) => srdMarkdown = data));
 
     // Special DOM elements.
