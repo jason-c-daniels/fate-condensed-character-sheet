@@ -37,7 +37,7 @@
 
     function handleTabActivated(e) {
         activeIndex = tabBarElement.activeIndex;
-        activeSection = activeIndex === 0 ? "Character Sheet" : "Rules";
+        activeSection = activeIndex === 0 ? "Character Sheet" : activeIndex === 1 ? "Rules" : "About";
     }
 
     let disabled = "";
