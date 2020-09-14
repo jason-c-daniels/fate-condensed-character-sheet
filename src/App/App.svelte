@@ -6,10 +6,6 @@
     import '@material/mwc-tab';
     import '@material/mwc-tab-bar';
     import '@material/mwc-icon';
-    import '@material/mwc-list';
-    import '@material/mwc-list/mwc-list-item';
-    import '@material/mwc-list/mwc-check-list-item';
-    import '@material/mwc-list/mwc-radio-list-item';
     import '@material/mwc-snackbar';
 
     import GlobalCss from "../GlobalCss";

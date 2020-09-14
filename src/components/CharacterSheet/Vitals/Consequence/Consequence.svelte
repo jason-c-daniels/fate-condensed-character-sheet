@@ -18,7 +18,7 @@
     <div class="column">
         <CheckedItem css="{isExtra == "true" ? grayCss : css}" number="{value}" checked={description!=""}/>
     </div>
-    <div class="column" style="padding-left:1em; width:90%;">
+    <div class="column" style="padding-left:1rem; width:90%;">
         <label class="title"><span>{name}</span></label>
         <textarea  maxlength="70" rows=2 bind:value={description} placeholder="Please state the consequence"></textarea>
     </div>

@@ -26,6 +26,6 @@
         </div>
     {/each}
     <div class=".last-col">
-        <span style="width: 1.4em;"></span>
+        <span style="width: 1.4rem;"></span>
     </div>
 </div>

@@ -10,11 +10,11 @@
     font-weight:bold;
     font-size: var(--font-size);
     display: block;
-    padding-left: 0.15em;
+    padding-left: 0.15rem;
 }
 
 textarea {
-    padding: 0.15em;
+    padding: 0.15rem;
     font-size: var(--font-size);
     border: none;
     overflow:hidden;

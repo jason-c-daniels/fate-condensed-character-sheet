@@ -3,7 +3,7 @@
     float: left;
     /* margin: 2pt 4pt;
     padding: 2pt; */
-    width: 1.2em;
+    width: 1.2rem;
     position: relative;
 }
 /* Clear floats after the columns */
@@ -19,7 +19,7 @@
 }
 
 textarea {
-    padding: 0.15em;
+    padding: 0.15rem;
     font-size: 10pt;
     border: none;
     overflow:hidden;
