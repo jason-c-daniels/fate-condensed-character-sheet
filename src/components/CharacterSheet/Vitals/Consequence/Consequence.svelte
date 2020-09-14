@@ -20,6 +20,6 @@
     </div>
     <div class="column" style="padding-left:1rem; width:90%;">
         <label class="title"><span>{name}</span></label>
-        <textarea  maxlength="70" rows=2 bind:value={description} placeholder="Please state the consequence"></textarea>
+        <textarea  rows=2 bind:value={description} placeholder="Please state the consequence"></textarea>
     </div>
 </div>

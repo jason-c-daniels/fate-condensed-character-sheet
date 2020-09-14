@@ -247,12 +247,12 @@
 
 </main>
 
-<main class="printme" style="margin: 0.5in">
+<main class="printme">
     <!-- This section is intended for print rendering only. You may suppress the rendering of this entire section
          to HTML if you like, but you'll need to ensure it's been rendered right before the print dialog is invoked.
          (i.e. print() )
      -->
-    <div class="page">
+
         <CharacterSheet bind:character={character}/>
-    </div>
+
 </main>
