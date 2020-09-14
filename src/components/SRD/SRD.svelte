@@ -37,9 +37,9 @@
             {@html marked(tocMarkdown)}
         {/if}
     </div>
-    <div >
-        {#if srdMarkdown}
-            <Markdown markdown={srdMarkdown} columns="1" props={{style:"line-height:1.2rem;"}}/>
-        {/if}
-    </div>
+
+    {#if srdMarkdown}
+        <Markdown markdown={srdMarkdown} columns="1" props={{style:"line-height:1.2rem;"}}/>
+    {/if}
+
 

@@ -222,18 +222,16 @@
                           containerStyles="height:92vh;color:#333333; background-color:#EFEFEF;"/>
             </div>
         {:else}
-            <div id="content" style="margin: 10pt;">
+            <div id="content" style="padding:2rem;">
                 {#if activeIndex === 0}
-                    <div class="page">
-                        <CharacterSheet bind:character={character}/>
-                    </div>
+                    <CharacterSheet bind:character={character}/>
                 {:else if activeIndex === 1}
                     <SRD bind:tocMarkdown bind:srdMarkdown/>
                 {:else if activeIndex === 2}
 
-                        {#if aboutMarkdown}
-                            <Markdown columns="1" markdown={aboutMarkdown}/>
-                        {/if}
+                    {#if aboutMarkdown}
+                        <Markdown columns="1" markdown={aboutMarkdown}/>
+                    {/if}
 
                 {:else}
                     <div class="page">

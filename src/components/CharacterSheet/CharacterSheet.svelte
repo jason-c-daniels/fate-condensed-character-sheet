@@ -12,7 +12,7 @@
     export let character;
     window.scrollTo(0,0);
 </script>
-
+<div class="page">
 <div class="character-sheet">
     <PageHeading bind:name="{character.name}"/>
     <div class="table">
@@ -36,4 +36,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

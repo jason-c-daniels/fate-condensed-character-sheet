@@ -28,7 +28,7 @@
 
 {#if markdown}
 
-<section class="{columnClass} page" {...props}>
+<section class="{columnClass} pageX" {...props}>
     {@html marked(markdown)}
 </section>
 {/if}

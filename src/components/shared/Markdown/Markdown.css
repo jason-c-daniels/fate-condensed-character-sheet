@@ -8,6 +8,7 @@
 :global(p) {
     margin-bottom: 0.5rem;
     text-indent: 1.1rem;
+    line-height: 1.3rem;
 }
 
 :global(li) {
@@ -55,7 +56,7 @@ section:after {
     clear: both;
 }
 
-.page {
+.pageX {
     width: 8.5in;
     height: auto;
     padding: 0.5in;

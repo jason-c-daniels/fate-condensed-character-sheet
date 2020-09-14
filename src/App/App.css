@@ -1,54 +1,12 @@
-
 main {
     text-align: left;
     padding: 0;
     margin: 0 0;
 }
 
-@media print {
-    .noprint {
-        display: none !important;
-    }
-    .printme {
-        display: block !important;
-    }
-
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    main {
-        text-align: left;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    .page {
-        box-shadow: none !important;
-        overflow: hidden !important;
-        margin: 0 auto !important;
-        page-break-before: always;
-        width: 8.5in !important;
-        height: 11in !important;
-        padding: 0;
-    }
+.drawer-header {
+    margin-left: 16px; margin-bottom: -1em; margin-top:-1em;
 }
-
-.printme {
-    display: none;
-}
-
-.page {
-    width: 8.5in;
-    height: 11in;
-    padding: 0.5in;
-    margin: 5rem auto;
-    overflow: hidden;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 
 .file-loader div {
     display: block;
