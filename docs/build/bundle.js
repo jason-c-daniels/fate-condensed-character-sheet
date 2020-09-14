@@ -175,6 +175,16 @@ var app = (function () {
         }
         return svg ? svg_element(name) : element(name);
     }
+    function claim_text(nodes, data) {
+        for (let i = 0; i < nodes.length; i += 1) {
+            const node = nodes[i];
+            if (node.nodeType === 3) {
+                node.data = '' + data;
+                return nodes.splice(i, 1)[0];
+            }
+        }
+        return text(data);
+    }
     function set_input_value(input, value) {
         input.value = value == null ? '' : value;
     }
@@ -12562,13 +12572,86 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let svg;
-    	let path;
+    	let metadata;
+    	let rdf_RDF;
+    	let cc_Work;
+    	let dc_format;
+    	let t;
+    	let dc_type;
+    	let defs;
+    	let g1;
+    	let g0;
+    	let path0;
+    	let path1;
+    	let path2;
+    	let path3;
+    	let path4;
+    	let path5;
+    	let path6;
+    	let path7;
+    	let path8;
+    	let path9;
+    	let path10;
+    	let path11;
+    	let path12;
+    	let path13;
+    	let path14;
+    	let path15;
+    	let path16;
+    	let path17;
+    	let path18;
+    	let path19;
+    	let path20;
+    	let path21;
+    	let path22;
+    	let path23;
+    	let path24;
+    	let path25;
+    	let path26;
+    	let path27;
+    	let path28;
+    	let path29;
+    	let path30;
+    	let path31;
+    	let path32;
+    	let path33;
+    	let path34;
+    	let path35;
+    	let path36;
+    	let path37;
+    	let path38;
+    	let path39;
+    	let path40;
+    	let path41;
+    	let path42;
+    	let path43;
+    	let path44;
+    	let path45;
+    	let path46;
+    	let path47;
+    	let path48;
+    	let path49;
 
     	let svg_levels = [
+    		{ height: "199.73334" },
+    		{
+    			"xmlns:dc": "http://purl.org/dc/elements/1.1/"
+    		},
+    		{
+    			"xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    		},
+    		{
+    			"xmlns:svg": "http://www.w3.org/2000/svg"
+    		},
     		{ xmlns: "http://www.w3.org/2000/svg" },
-    		{ width: "375" },
-    		{ height: "171" },
-    		{ viewBox: "0 0 375 171" },
+    		{ viewBox: "0 0 513.70667 199.73334" },
+    		{
+    			"xmlns:cc": "http://creativecommons.org/ns#"
+    		},
+    		{ width: "513.70667" },
+    		{ "xml:space": "preserve" },
+    		{ id: "svg2" },
+    		{ version: "1.1" },
     		/*$$props*/ ctx[0]
     	];
 
@@ -12581,7 +12664,65 @@ var app = (function () {
     	return {
     		c() {
     			svg = svg_element("svg");
-    			path = svg_element("path");
+    			metadata = svg_element("metadata");
+    			rdf_RDF = svg_element("rdf:RDF");
+    			cc_Work = svg_element("cc:Work");
+    			dc_format = svg_element("dc:format");
+    			t = text("image/svg+xml");
+    			dc_type = svg_element("dc:type");
+    			defs = svg_element("defs");
+    			g1 = svg_element("g");
+    			g0 = svg_element("g");
+    			path0 = svg_element("path");
+    			path1 = svg_element("path");
+    			path2 = svg_element("path");
+    			path3 = svg_element("path");
+    			path4 = svg_element("path");
+    			path5 = svg_element("path");
+    			path6 = svg_element("path");
+    			path7 = svg_element("path");
+    			path8 = svg_element("path");
+    			path9 = svg_element("path");
+    			path10 = svg_element("path");
+    			path11 = svg_element("path");
+    			path12 = svg_element("path");
+    			path13 = svg_element("path");
+    			path14 = svg_element("path");
+    			path15 = svg_element("path");
+    			path16 = svg_element("path");
+    			path17 = svg_element("path");
+    			path18 = svg_element("path");
+    			path19 = svg_element("path");
+    			path20 = svg_element("path");
+    			path21 = svg_element("path");
+    			path22 = svg_element("path");
+    			path23 = svg_element("path");
+    			path24 = svg_element("path");
+    			path25 = svg_element("path");
+    			path26 = svg_element("path");
+    			path27 = svg_element("path");
+    			path28 = svg_element("path");
+    			path29 = svg_element("path");
+    			path30 = svg_element("path");
+    			path31 = svg_element("path");
+    			path32 = svg_element("path");
+    			path33 = svg_element("path");
+    			path34 = svg_element("path");
+    			path35 = svg_element("path");
+    			path36 = svg_element("path");
+    			path37 = svg_element("path");
+    			path38 = svg_element("path");
+    			path39 = svg_element("path");
+    			path40 = svg_element("path");
+    			path41 = svg_element("path");
+    			path42 = svg_element("path");
+    			path43 = svg_element("path");
+    			path44 = svg_element("path");
+    			path45 = svg_element("path");
+    			path46 = svg_element("path");
+    			path47 = svg_element("path");
+    			path48 = svg_element("path");
+    			path49 = svg_element("path");
     			this.h();
     		},
     		l(nodes) {
@@ -12589,34 +12730,542 @@ var app = (function () {
     				nodes,
     				"svg",
     				{
-    					xmlns: true,
-    					width: true,
     					height: true,
-    					viewBox: true
+    					"xmlns:dc": true,
+    					"xmlns:rdf": true,
+    					"xmlns:svg": true,
+    					xmlns: true,
+    					viewBox: true,
+    					"xmlns:cc": true,
+    					width: true,
+    					"xml:space": true,
+    					id: true,
+    					version: true
     				},
     				1
     			);
 
     			var svg_nodes = children(svg);
-    			path = claim_element(svg_nodes, "path", { d: true }, 1);
-    			children(path).forEach(detach);
+    			metadata = claim_element(svg_nodes, "metadata", { id: true }, 1);
+    			var metadata_nodes = children(metadata);
+    			rdf_RDF = claim_element(metadata_nodes, "rdf:RDF", {}, 1);
+    			var rdf_RDF_nodes = children(rdf_RDF);
+    			cc_Work = claim_element(rdf_RDF_nodes, "cc:Work", { "rdf:about": true }, 1);
+    			var cc_Work_nodes = children(cc_Work);
+    			dc_format = claim_element(cc_Work_nodes, "dc:format", {}, 1);
+    			var dc_format_nodes = children(dc_format);
+    			t = claim_text(dc_format_nodes, "image/svg+xml");
+    			dc_format_nodes.forEach(detach);
+    			dc_type = claim_element(cc_Work_nodes, "dc:type", { "rdf:resource": true }, 1);
+    			children(dc_type).forEach(detach);
+    			cc_Work_nodes.forEach(detach);
+    			rdf_RDF_nodes.forEach(detach);
+    			metadata_nodes.forEach(detach);
+    			defs = claim_element(svg_nodes, "defs", { id: true }, 1);
+    			children(defs).forEach(detach);
+    			g1 = claim_element(svg_nodes, "g", { transform: true, id: true }, 1);
+    			var g1_nodes = children(g1);
+    			g0 = claim_element(g1_nodes, "g", { transform: true, id: true }, 1);
+    			var g0_nodes = children(g0);
+    			path0 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path0).forEach(detach);
+    			path1 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path1).forEach(detach);
+    			path2 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path2).forEach(detach);
+    			path3 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path3).forEach(detach);
+    			path4 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path4).forEach(detach);
+    			path5 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path5).forEach(detach);
+    			path6 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path6).forEach(detach);
+    			path7 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path7).forEach(detach);
+    			path8 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path8).forEach(detach);
+    			path9 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path9).forEach(detach);
+    			path10 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path10).forEach(detach);
+    			path11 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path11).forEach(detach);
+    			path12 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path12).forEach(detach);
+    			path13 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path13).forEach(detach);
+    			path14 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path14).forEach(detach);
+    			path15 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path15).forEach(detach);
+    			path16 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path16).forEach(detach);
+    			path17 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path17).forEach(detach);
+    			path18 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path18).forEach(detach);
+    			path19 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path19).forEach(detach);
+    			path20 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path20).forEach(detach);
+    			path21 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path21).forEach(detach);
+    			path22 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path22).forEach(detach);
+    			path23 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path23).forEach(detach);
+    			path24 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path24).forEach(detach);
+    			path25 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path25).forEach(detach);
+    			path26 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path26).forEach(detach);
+    			path27 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path27).forEach(detach);
+    			path28 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path28).forEach(detach);
+    			path29 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path29).forEach(detach);
+    			path30 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path30).forEach(detach);
+    			path31 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path31).forEach(detach);
+    			path32 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path32).forEach(detach);
+    			path33 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path33).forEach(detach);
+    			path34 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path34).forEach(detach);
+    			path35 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path35).forEach(detach);
+    			path36 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path36).forEach(detach);
+    			path37 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path37).forEach(detach);
+    			path38 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path38).forEach(detach);
+    			path39 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path39).forEach(detach);
+    			path40 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path40).forEach(detach);
+    			path41 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path41).forEach(detach);
+    			path42 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path42).forEach(detach);
+    			path43 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path43).forEach(detach);
+    			path44 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path44).forEach(detach);
+    			path45 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path45).forEach(detach);
+    			path46 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path46).forEach(detach);
+    			path47 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path47).forEach(detach);
+    			path48 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path48).forEach(detach);
+    			path49 = claim_element(g0_nodes, "path", { id: true, style: true, d: true }, 1);
+    			children(path49).forEach(detach);
+    			g0_nodes.forEach(detach);
+    			g1_nodes.forEach(detach);
     			svg_nodes.forEach(detach);
     			this.h();
     		},
     		h() {
-    			attr(path, "d", "m53.07 161.987c-5.948-1.393-8.692-4.436-8.33-9.238 0.454-6.007 3.861-8.045 14.175-8.476 8.787-0.368 16.211 1.603 15.368 4.08-0.45 1.322-4.764 1.393-12.515 0.205-5.286-0.81-7.231 0.591-7.231 5.207 0 2.733 0.505 3.594 2.569 4.379 3.016 1.147 7.456 0.325 9.063-1.677 0.819-1.02 2.274-1.228 5.25-0.752 4.554 0.728 4.956 1.347 2.367 3.648-3.777 3.357-12.739 4.493-20.717 2.624zm35.876 0.057c-10.604-2.544-12.34-12.551-2.864-16.51 5.226-2.183 17.677-1.853 22.478 0.596 6.467 3.299 6.636 10.531 0.332 14.212-3.754 2.193-14.189 3.083-19.946 1.702zm13.335-5.129c1.972-1.637 1.54-6.574-0.679-7.762-3.244-1.736-8.575-1.235-10.593 0.995-5.021 5.549 5.285 11.736 11.272 6.767zm168.756 5.335c-4.531-1.186-7.5-3.034-7.5-4.668 0-2.041 8.301-2.012 10 0.035 1.685 2.03 9 2.046 9 0.019 0-0.815-1.012-1.711-2.25-1.992-1.237-0.281-4.445-0.98-7.127-1.552-6.805-1.452-8.804-2.7-8.434-5.268 0.472-3.276 4.461-4.678 13.311-4.678 7.893 0 12.449 1.279 13.254 3.721 0.525 1.592-8.857 1.747-10.433 0.172-1.307-1.307-6.456-0.827-6.206 0.578 0.098 0.55 3.188 1.507 6.867 2.127 8.511 1.434 11.017 2.772 11.017 5.883 0 1.704-0.913 2.911-3.028 4.005-3.528 1.824-14.134 2.753-18.472 1.618zm-151.5-9.132v-9l4.75 0.025c4.215 0.023 5.425 0.588 10.75 5.022l6 4.997 0.302-5.022 0.302-5.022h4.448 4.448v9 9h-4.885c-4.313 0-5.525-0.527-10.351-4.5-3.006-2.475-5.758-4.5-6.115-4.5-0.357 0-0.649 2.025-0.649 4.5v4.5h-4.5-4.5zm38-0.002v-9.165l11.931 0.334c10.239 0.286 12.33 0.631 14.75 2.434 4.057 3.022 4.436 9.001 0.789 12.432-2.451 2.305-3.445 2.49-15.047 2.8l-12.422 0.331v-9.165zm18.8 3.802c0.66-0.66 1.2-2.444 1.2-3.965 0-3.189-2.361-4.835-6.934-4.835-3.012 0-3.066 0.087-3.066 5v5h3.8c2.09 0 4.34-0.54 5-1.2zm17.2-3.8v-9h13.5c12.833 0 13.5 0.099 13.5 2 0 1.843-0.667 2-8.5 2-6.889 0-8.5 0.284-8.5 1.5 0 1.209 1.564 1.5 8.073 1.5 7.15 0 8.035 0.2 7.739 1.75-0.278 1.456-1.636 1.799-8.073 2.042-5.98 0.226-7.739 0.624-7.739 1.75 0 1.163 1.72 1.458 8.5 1.458 7.833 0 8.5 0.157 8.5 2 0 1.901-0.667 2-13.5 2h-13.5zm33 0v-9h4.768c4.24 0 5.431 0.547 10.75 4.94l5.982 4.94 0.302-4.94 0.302-4.94h4.448 4.448v9 9H252.78c-4.159 0-5.447-0.566-10.243-4.5-3.017-2.475-5.827-4.5-6.243-4.5-0.416 0-0.757 2.025-0.757 4.5v4.5h-4.5-4.5zm72 0v-9h13.573c12.388 0 13.544 0.153 13.239 1.75-0.281 1.469-1.659 1.797-8.573 2.04-6.423 0.226-8.239 0.612-8.239 1.75 0 1.15 1.592 1.46 7.5 1.46 6.833 0 7.5 0.178 7.5 2 0 1.822-0.667 2-7.5 2-6 0-7.5 0.3-7.5 1.5 0 1.216 1.611 1.5 8.5 1.5 7.833 0 8.5 0.157 8.5 2 0 1.901-0.667 2-13.5 2h-13.5zm33 0v-9l10.75 0.002c8.235 0.001 11.566 0.411 14.239 1.75 6.253 3.133 6.641 10.674 0.734 14.276-2.699 1.645-5.054 1.966-14.473 1.969l-11.25 0.003zm18.8 3.8c1.683-1.683 1.494-5.364-0.371-7.229-0.864-0.864-3.114-1.571-5-1.571h-3.429v5 5h3.8c2.09 0 4.34-0.54 5-1.2zm-306.024-33.05-0.276-15.25-15.25-0.276-15.25-0.276V96.117 84.169l15.25-0.276 15.25-0.276 0.272-19.25 0.272-19.25h41.978c23.322 0 41.978 0.389 41.978 0.875 0 1.302-9.13 23.424-10.266 24.875-0.728 0.929-6.353 1.25-21.906 1.25h-20.927l0.3 5.75 0.3 5.75 18.31 0.273 18.31 0.273-0.703 2.227c-0.387 1.225-2.551 6.603-4.81 11.951l-4.107 9.723-13.5 0.277-13.5 0.277-0.276 15.25-0.276 15.25h-15.448-15.448zm59.224 14.891c0-0.645 2.689-7.173 26.422-64.141 25.453-61.098 27.765-66.5 28.461-66.5 0.356 0 4.318 8.888 8.805 19.75 4.487 10.863 12.199 29.425 17.136 41.25 4.938 11.825 13.296 31.85 18.575 44.5 5.278 12.65 9.598 23.593 9.599 24.317 0.001 0.87-0.689 1.098-2.033 0.672-1.119-0.355-9.071-1.637-17.671-2.848l-15.636-2.203-1.167-3.469-1.167-3.469-16.544-0.274-16.544-0.274-1.568 3.92c-1.54 3.848-1.683 3.932-7.868 4.594-6.554 0.702-22.642 3.247-26.55 4.201-1.237 0.302-2.25 0.29-2.25-0.026zm62.749-35.891c-0.255-0.687-1.932-5.3-3.726-10.25-1.794-4.95-3.589-9.359-3.989-9.797-0.401-0.438-2.327 3.387-4.28 8.5-1.953 5.113-3.87 10.084-4.26 11.047-0.642 1.587 0.104 1.75 8.006 1.75 6.552 0 8.599-0.31 8.249-1.25zm52.251 2.275V71.117h-10.525c-9.987 0-10.57-0.115-11.407-2.25-0.485-1.237-2.921-7.087-5.413-13l-4.531-10.75h86.938 86.938v12.983 12.983l-24.75 0.267-24.75 0.267-0.307 4.25-0.307 4.25h23.058 23.058v11.5 11.5h-23-23v5 5h25 25v13.011 13.011l-40.25-0.261-40.25-0.261-0.263-33.75-0.263-33.75h-14.473-14.473l-0.263 33.75-0.263 33.75-15.75 0.275-15.75 0.275z");
+    			attr(dc_type, "rdf:resource", "http://purl.org/dc/dcmitype/StillImage");
+    			attr(cc_Work, "rdf:about", "");
+    			attr(metadata, "id", "metadata8");
+    			attr(defs, "id", "defs6");
+    			attr(path0, "id", "path14");
+    			set_style(path0, "fill", "#000000");
+    			set_style(path0, "fill-opacity", "1");
+    			set_style(path0, "fill-rule", "nonzero");
+    			set_style(path0, "stroke", "none");
+    			attr(path0, "d", "M 351.23,17.8398 V 343.109 H 30 v 278.528 h 321.23 v 410.503 h 922.08 L 1146.38,728.059 H 703.613 V 621.637 H 1101.96 L 985.699,343.109 H 703.613 V 17.8398 H 351.23");
+    			attr(path1, "id", "path16");
+    			set_style(path1, "fill", "#000000");
+    			set_style(path1, "fill-opacity", "1");
+    			set_style(path1, "fill-rule", "nonzero");
+    			set_style(path1, "stroke", "none");
+    			attr(path1, "d", "M 1288.32,1042.14 H 341.23 V 631.637 H 20 v -20 -258.528 -20 H 40 341.23 V 27.8398 7.83984 h 20 332.383 20 V 27.8398 333.109 h 265.426 13.324 l 5.133,12.301 107.914,258.524 11.56,27.703 h -30.02 -373.337 v 86.422 h 426.107 13.33 l 5.13,12.296 118.58,284.085 z m -30.02,-20 -118.58,-284.081 H 693.613 V 611.637 H 1086.95 L 979.039,353.109 H 693.613 V 27.8398 H 361.23 V 353.109 H 40 v 258.528 h 321.23 v 410.503 h 897.07");
+    			attr(path2, "id", "path18");
+    			set_style(path2, "fill", "#000000");
+    			set_style(path2, "fill-opacity", "1");
+    			set_style(path2, "fill-rule", "nonzero");
+    			set_style(path2, "stroke", "none");
+    			attr(path2, "d", "M 331.23,37.8398 V 363.109 H 10 v 278.528 h 321.23 v 410.503 h 922.08 L 1126.38,748.059 H 683.613 V 641.637 H 1081.96 L 965.699,363.109 H 683.613 V 37.8398 H 331.23");
+    			attr(path3, "id", "path20");
+    			set_style(path3, "fill", "#ffffff");
+    			set_style(path3, "fill-opacity", "1");
+    			set_style(path3, "fill-rule", "nonzero");
+    			set_style(path3, "stroke", "none");
+    			attr(path3, "d", "M 1268.32,1062.14 H 321.23 V 651.637 H 0 v -20 -258.528 -20 h 20 301.23 v -305.2692 -20 h 20 332.383 20 v 20 305.2692 h 265.426 13.324 l 5.133,12.301 107.914,258.524 11.56,27.703 h -30.02 -373.337 v 86.422 h 426.107 13.33 l 5.13,12.296 118.58,284.085 z m -30.02,-20 -118.58,-284.081 H 673.613 V 631.637 H 1066.95 L 959.039,373.109 H 673.613 V 47.8398 H 341.23 V 373.109 H 20 v 258.528 h 321.23 v 410.503 h 897.07");
+    			attr(path4, "id", "path22");
+    			set_style(path4, "fill", "#000000");
+    			set_style(path4, "fill-opacity", "1");
+    			set_style(path4, "fill-rule", "nonzero");
+    			set_style(path4, "stroke", "none");
+    			attr(path4, "d", "m 3815.54,979.809 v 16.742 l -3.3,-5.016 h -11.82 l -3.1,4.75 v -16.476 h -27.48 v 45.201 h -8.38 v -45.201 h -27.47 v 45.201 h -16.83 v 27.13 h 76.08 l 13.23,-20.32 13.11,20.32 h 23.27 v -72.331 h -27.31");
+    			attr(path5, "id", "path24");
+    			set_style(path5, "fill", "#ffffff");
+    			set_style(path5, "fill-opacity", "1");
+    			set_style(path5, "fill-rule", "nonzero");
+    			set_style(path5, "stroke", "none");
+    			attr(path5, "d", "m 3852.85,1062.14 h -38.71 l -5.91,-9.16 -1.8,-2.78 -1.85,2.85 -5.92,9.09 h -10.38 -20 -41.12 -20 v -20 -7.13 -20 h 16.83 v -25.201 -20 h 20 7.47 8.38 20 7.48 20 18.22 7.31 20 v 20 52.331 z m -84.57,-20 v -7.13 h -16.82 v -45.201 h -7.47 v 45.201 h -16.83 v 7.13 h 41.12 m 64.57,0 v -52.331 h -7.31 v 40.101 l -18.69,-28.37 h -1.02 l -18.51,28.37 v -40.101 h -7.48 v 52.331 h 7.98 l 18.69,-28.71 18.52,28.71 h 7.82");
+    			attr(path6, "id", "path26");
+    			set_style(path6, "fill", "#000000");
+    			set_style(path6, "fill-opacity", "1");
+    			set_style(path6, "fill-rule", "nonzero");
+    			set_style(path6, "stroke", "none");
+    			attr(path6, "d", "M 2830.21,17.8398 V 730.902 H 2538.95 V 17.8398 H 2186.57 V 730.902 H 1968.61 L 1842.55,1032.14 H 3698.2 V 730.902 h -521.3 v -72.336 h 485.79 V 398.5 H 3176.9 v -87.941 h 528.4 V 17.8398 h -875.09");
+    			attr(path7, "id", "path28");
+    			set_style(path7, "fill", "#000000");
+    			set_style(path7, "fill-opacity", "1");
+    			set_style(path7, "fill-rule", "nonzero");
+    			set_style(path7, "stroke", "none");
+    			attr(path7, "d", "M 3708.2,1042.14 H 1827.53 l 11.6,-27.72 117.69,-281.24 5.14,-12.278 h 13.31 201.3 V 27.8398 7.83984 h 20 332.38 20 V 27.8398 720.902 h 271.26 V 27.8398 7.83984 h 20 855.09 20 v 19.99996 272.7192 20 h -20 -508.4 V 388.5 h 465.79 20 v 20 240.066 20 h -20 -465.79 v 52.336 h 501.3 20 v 20 8.516 272.722 z m -20,-20 V 740.902 h -521.3 v -92.336 h 485.79 V 408.5 H 3166.9 V 300.559 h 528.4 V 27.8398 H 2840.21 V 740.902 H 2528.95 V 27.8398 H 2196.57 V 740.902 h -221.3 L 1857.58,1022.14 H 3688.2");
+    			attr(path8, "id", "path30");
+    			set_style(path8, "fill", "#000000");
+    			set_style(path8, "fill-opacity", "1");
+    			set_style(path8, "fill-rule", "nonzero");
+    			set_style(path8, "stroke", "none");
+    			attr(path8, "d", "M 2810.21,37.8398 V 750.902 H 2518.95 V 37.8398 H 2166.57 V 750.902 H 1948.61 L 1822.55,1052.14 H 3678.2 V 750.902 h -521.3 v -72.336 h 485.79 V 418.5 H 3156.9 v -87.941 h 528.4 V 37.8398 h -875.09");
+    			attr(path9, "id", "path32");
+    			set_style(path9, "fill", "#ffffff");
+    			set_style(path9, "fill-opacity", "1");
+    			set_style(path9, "fill-rule", "nonzero");
+    			set_style(path9, "stroke", "none");
+    			attr(path9, "d", "M 3688.2,1062.14 H 1807.53 l 11.6,-27.72 117.69,-281.24 5.14,-12.278 h 13.31 201.3 v -693.0622 -20 h 20 332.38 20 v 20 693.0622 h 271.26 v -693.0622 -20 h 20 855.09 20 v 20 272.7192 20 h -20 -508.4 V 408.5 h 465.79 20 v 20 240.066 20 h -20 -465.79 v 52.336 h 501.3 20 v 20 8.516 272.722 z m -20,-20 V 760.902 h -521.3 v -92.336 h 485.79 V 428.5 H 3146.9 V 320.559 h 528.4 V 47.8398 H 2820.21 V 760.902 H 2508.95 V 47.8398 H 2176.57 V 760.902 h -221.3 L 1837.58,1042.14 H 3668.2");
+    			attr(path10, "id", "path34");
+    			set_style(path10, "fill", "#000000");
+    			set_style(path10, "fill-opacity", "1");
+    			set_style(path10, "fill-rule", "nonzero");
+    			set_style(path10, "stroke", "none");
+    			attr(path10, "d", "M 1635.46,406.699 1559,609.793 1482.54,406.699 Z M 2143.3,18.0703 c -124.91,27.5899 -253.23,46.3711 -381.41,55.8086 l -6.26,0.4609 -30.15,76.5702 h -334.31 l -29.49,-76.9998 -6.31,-0.4688 C 1229.52,63.8594 1103.36,45.2383 980.398,18.0703 L 961.598,13.9219 1561.88,1452 1735.85,1032.63 2162.12,13.9102 2143.3,18.0703");
+    			attr(path11, "id", "path36");
+    			set_style(path11, "fill", "#000000");
+    			set_style(path11, "fill-opacity", "1");
+    			set_style(path11, "fill-rule", "nonzero");
+    			set_style(path11, "stroke", "none");
+    			attr(path11, "d", "m 1497,416.699 62,164.711 62.01,-164.711 z m 64.9,1061.321 -18.51,-44.35 L 959.785,35.5391 944.949,0 982.559,8.30859 C 1105.06,35.3789 1230.75,53.9297 1356.13,63.4609 l 12.62,0.961 4.54,11.8398 24.76,64.6483 h 320.62 l 25.35,-64.3787 4.6,-11.6993 12.54,-0.9218 C 1888.86,54.5 2016.7,35.7891 2141.14,8.30859 L 2178.78,0 2163.9,35.5586 1745.07,1036.51 1580.32,1433.63 Z M 1468.1,396.699 h 181.81 L 1559,638.176 1468.1,396.699 M 1561.85,1425.96 1726.62,1028.79 2145.45,27.8398 C 2020.85,55.3594 1893.04,74.25 1762.63,83.8516 l -30.34,77.0584 h -348 l -29.68,-77.4998 c -128.18,-9.75 -253.83,-28.5 -376.368,-55.5704 L 1561.85,1425.96");
+    			attr(path12, "id", "path38");
+    			set_style(path12, "fill", "#000000");
+    			set_style(path12, "fill-opacity", "1");
+    			set_style(path12, "fill-rule", "nonzero");
+    			set_style(path12, "stroke", "none");
+    			attr(path12, "d", "M 1615.46,426.699 1539,629.793 1462.54,426.699 Z M 2123.3,38.0703 c -124.91,27.5899 -253.23,46.3711 -381.41,55.8086 l -6.26,0.4609 -30.15,76.5702 h -334.31 l -29.49,-76.9998 -6.31,-0.4688 C 1209.52,83.8594 1083.36,65.2383 960.398,38.0703 L 941.598,33.9219 1541.88,1472 1715.85,1052.63 2142.12,33.9102 2123.3,38.0703");
+    			attr(path13, "id", "path40");
+    			set_style(path13, "fill", "#ffffff");
+    			set_style(path13, "fill-opacity", "1");
+    			set_style(path13, "fill-rule", "nonzero");
+    			set_style(path13, "stroke", "none");
+    			attr(path13, "d", "m 1477,436.699 62,164.711 62.01,-164.711 z m 64.9,1061.321 -18.51,-44.35 L 939.785,55.5391 924.949,20 l 37.61,8.3086 c 122.501,27.0703 248.191,45.6211 373.571,55.1523 l 12.62,0.961 4.54,11.8398 24.76,64.6483 h 320.62 l 25.35,-64.3787 4.6,-11.6993 12.54,-0.9218 C 1868.86,74.5 1996.7,55.7891 2121.14,28.3086 L 2158.78,20 2143.9,55.5586 1725.07,1056.51 1560.32,1453.63 Z M 1448.1,416.699 h 181.81 L 1539,658.176 1448.1,416.699 M 1541.85,1445.96 1706.62,1048.79 2125.45,47.8398 C 2000.85,75.3594 1873.04,94.25 1742.63,103.852 l -30.34,77.058 h -348 l -29.68,-77.5 C 1206.43,93.6602 1080.78,74.9102 958.242,47.8398 L 1541.85,1445.96");
+    			attr(path14, "id", "path42");
+    			set_style(path14, "fill", "#000000");
+    			set_style(path14, "fill-opacity", "1");
+    			set_style(path14, "fill-rule", "nonzero");
+    			set_style(path14, "stroke", "none");
+    			attr(path14, "d", "m 1938.46,1236.63 c 9.3,0 14.01,2.85 14.01,8.48 0,3.24 0,8.97 -13.76,8.97 h -5.37 v -17.45 z m -81.28,-105.68 v 188.01 h 85.61 c 53.3,0 85.13,-26.08 85.13,-69.76 0,-45 -33.08,-72.65 -86.33,-72.65 h -8.25 v -45.6 h -76.16");
+    			attr(path15, "id", "path44");
+    			set_style(path15, "fill", "#000000");
+    			set_style(path15, "fill-opacity", "1");
+    			set_style(path15, "fill-rule", "nonzero");
+    			set_style(path15, "stroke", "none");
+    			attr(path15, "d", "m 1942.79,1328.96 h -95.61 v -208.01 h 96.16 v 20 25.61 c 57.51,0.64 94.58,32.74 94.58,82.16 0,49.67 -36.46,80.24 -95.13,80.24 z m -19.45,-102.33 h 15.12 c 14.41,0 24.01,6.48 24.01,18.48 v 0.48 c 0,12.25 -8.88,18.49 -23.76,18.49 h -15.37 v -37.45 m 19.45,82.33 c 44.64,0 75.13,-19.92 75.13,-59.76 v -0.48 c 0,-40.57 -30.97,-62.17 -76.33,-62.17 h -18.25 v -45.6 h -56.16 v 168.01 h 75.61");
+    			attr(path16, "id", "path46");
+    			set_style(path16, "fill", "#000000");
+    			set_style(path16, "fill-opacity", "1");
+    			set_style(path16, "fill-rule", "nonzero");
+    			set_style(path16, "stroke", "none");
+    			attr(path16, "d", "m 2135.5,1252.88 c -16.29,0 -24.8,-13.81 -24.8,-27.44 0,-14.36 8.68,-28.41 25.28,-28.41 16.29,0 24.81,13.8 24.81,27.44 0,14.35 -8.69,28.41 -25.29,28.41 z m 0,-125.54 c -56.88,0 -101.44,42.67 -101.44,97.13 0,55.21 44.76,98.08 101.92,98.08 56.9,0 101.46,-42.66 101.46,-97.11 0,-55.22 -44.78,-98.1 -101.94,-98.1");
+    			attr(path17, "id", "path48");
+    			set_style(path17, "fill", "#000000");
+    			set_style(path17, "fill-opacity", "1");
+    			set_style(path17, "fill-rule", "nonzero");
+    			set_style(path17, "stroke", "none");
+    			attr(path17, "d", "m 2135.98,1207.03 c -10.5,0 -15.28,9.29 -15.28,17.92 0,6.52 3.09,17.93 14.8,17.93 10.5,0 15.29,-9.29 15.29,-17.93 0,-6.51 -3.1,-17.92 -14.81,-17.92 z m 0,125.52 c -62.76,0 -111.92,-47.26 -111.92,-107.6 0,-60.55 48.95,-107.61 111.44,-107.61 62.77,0 111.94,47.27 111.94,107.61 0,60.55 -48.96,107.6 -111.46,107.6 z m 0,-145.52 c 21.37,0 34.81,17.76 34.81,37.44 v 0.48 c 0,19.92 -13.69,37.93 -35.29,37.93 -21.35,0 -34.8,-17.77 -34.8,-37.44 v -0.49 c 0,-19.92 13.68,-37.92 35.28,-37.92 m 0,125.52 c 51.85,0 91.46,-38.39 91.46,-87.11 v -0.49 c 0,-48.72 -40.09,-87.61 -91.94,-87.61 -51.84,0 -91.44,38.41 -91.44,87.13 v 0.48 c 0,48.73 40.08,87.6 91.92,87.6");
+    			attr(path18, "id", "path50");
+    			set_style(path18, "fill", "#000000");
+    			set_style(path18, "fill-opacity", "1");
+    			set_style(path18, "fill-rule", "nonzero");
+    			set_style(path18, "stroke", "none");
+    			attr(path18, "d", "m 2397.49,1129.74 -22.47,63.53 -22.45,-63.53 h -63.3 l -61.45,189.22 h 80.05 l 16.88,-57.31 19.32,57.79 h 62.88 l 19.32,-57.79 16.89,57.31 h 79.08 l -61.46,-189.22 h -63.29");
+    			attr(path19, "id", "path52");
+    			set_style(path19, "fill", "#000000");
+    			set_style(path19, "fill-opacity", "1");
+    			set_style(path19, "fill-rule", "nonzero");
+    			set_style(path19, "stroke", "none");
+    			attr(path19, "d", "m 2414.16,1329.44 h -77.3 l -4.56,-13.66 -6.95,-20.78 -5.77,19.61 -4.23,14.35 h -14.96 -58.81 -27.52 l 8.49,-26.17 54.96,-169.22 4.5,-13.83 h 14.53 48.96 14.14 l 4.72,13.34 10.66,30.18 10.68,-30.18 4.72,-13.34 h 14.14 48.95 14.53 l 4.49,13.83 54.97,169.22 8.51,26.17 h -27.53 -57.84 -14.96 l -4.22,-14.34 -5.79,-19.63 -6.95,20.79 z m -14.41,-20 27.12,-81.13 23.77,80.65 h 57.84 l -54.97,-169.22 h -48.95 l -29.54,83.53 -29.52,-83.53 h -48.96 l -54.96,169.22 h 58.81 l 23.76,-80.65 27.11,81.13 h 48.49");
+    			attr(path20, "id", "path54");
+    			set_style(path20, "fill", "#000000");
+    			set_style(path20, "fill-opacity", "1");
+    			set_style(path20, "fill-rule", "nonzero");
+    			set_style(path20, "stroke", "none");
+    			attr(path20, "d", "m 2526.07,1130.95 v 188.01 h 163.29 v -66.08 h -6 v -55.85 h 7.2 v -66.08 h -164.49");
+    			attr(path21, "id", "path56");
+    			set_style(path21, "fill", "#000000");
+    			set_style(path21, "fill-opacity", "1");
+    			set_style(path21, "fill-rule", "nonzero");
+    			set_style(path21, "stroke", "none");
+    			attr(path21, "d", "m 2699.36,1328.96 h -183.29 v -208.01 h 184.49 v 20 46.08 20 h -7.2 v 35.85 h 6 v 20 46.08 z m -20,-20 v -46.08 h -88.09 v -17.04 h 82.09 v -40.57 h -82.09 v -18.24 h 89.29 v -46.08 h -144.49 v 168.01 h 143.29");
+    			attr(path22, "id", "path58");
+    			set_style(path22, "fill", "#000000");
+    			set_style(path22, "fill-opacity", "1");
+    			set_style(path22, "fill-rule", "nonzero");
+    			set_style(path22, "stroke", "none");
+    			attr(path22, "d", "m 2794.08,1239.03 c 7.69,0 11.6,2.13 11.6,6.32 0,2.3 0,6.56 -11.37,6.56 h -14.48 v -12.88 z m 14.06,-108.08 -28.31,42.89 v -42.89 h -76.16 v 188.01 h 92.09 c 30.13,0 52.87,-7.44 67.56,-22.14 12.3,-12.3 18.29,-27.65 18.29,-46.91 0,-23.44 -10.12,-42.54 -28.76,-55.11 l 43.72,-63.85 h -88.43");
+    			attr(path23, "id", "path60");
+    			set_style(path23, "fill", "#000000");
+    			set_style(path23, "fill-opacity", "1");
+    			set_style(path23, "fill-rule", "nonzero");
+    			set_style(path23, "stroke", "none");
+    			attr(path23, "d", "m 2795.76,1328.96 h -102.09 v -208.01 h 96.16 v 19.58 l 7,-10.6 5.93,-8.98 h 10.76 64.08 37.94 l -21.43,31.29 -27.64,40.37 c 16.36,14.18 25.14,33.75 25.14,56.82 0,22.53 -6.95,40.19 -21.22,54.46 -16.64,16.64 -41.74,25.07 -74.63,25.07 z m -25.93,-99.93 h 24.25 c 13.43,0 21.6,6.01 21.6,16.32 v 0.49 c 0,10.8 -8.4,16.07 -21.37,16.07 h -24.48 v -32.88 m 25.93,79.93 c 29.76,0 48.72,-7.44 60.49,-19.21 10.07,-10.07 15.36,-22.55 15.36,-39.84 v -0.48 c 0,-24.48 -12.73,-41.52 -33.13,-51.36 l 39.12,-57.12 h -64.08 l -31.69,48 h -12 v -48 h -56.16 v 168.01 h 82.09");
+    			attr(path24, "id", "path62");
+    			set_style(path24, "fill", "#000000");
+    			set_style(path24, "fill-opacity", "1");
+    			set_style(path24, "fill-rule", "nonzero");
+    			set_style(path24, "stroke", "none");
+    			attr(path24, "d", "m 2893.27,1130.95 v 188.01 h 163.29 v -66.08 h -6 v -55.85 h 7.2 v -66.08 h -164.49");
+    			attr(path25, "id", "path64");
+    			set_style(path25, "fill", "#000000");
+    			set_style(path25, "fill-opacity", "1");
+    			set_style(path25, "fill-rule", "nonzero");
+    			set_style(path25, "stroke", "none");
+    			attr(path25, "d", "m 3066.56,1328.96 h -183.29 v -208.01 h 184.49 v 20 46.08 20 h -7.2 v 35.85 h 6 v 20 46.08 z m -20,-20 v -46.08 h -88.09 v -17.04 h 82.09 v -40.57 h -82.09 v -18.24 h 89.29 v -46.08 h -144.49 v 168.01 h 143.29");
+    			attr(path26, "id", "path66");
+    			set_style(path26, "fill", "#000000");
+    			set_style(path26, "fill-opacity", "1");
+    			set_style(path26, "fill-rule", "nonzero");
+    			set_style(path26, "stroke", "none");
+    			attr(path26, "d", "m 3147.03,1199.91 c 31.61,0.24 31.61,18.07 31.61,24.8 0,7.22 0,25.05 -31.61,25.29 z m -76.17,-68.96 v 188.01 h 74.33 c 68.94,0 110.09,-34.6 110.09,-92.57 0,-59.05 -42.92,-95.44 -112.01,-95.44 h -72.41");
+    			attr(path27, "id", "path68");
+    			set_style(path27, "fill", "#000000");
+    			set_style(path27, "fill-opacity", "1");
+    			set_style(path27, "fill-rule", "nonzero");
+    			set_style(path27, "stroke", "none");
+    			attr(path27, "d", "m 3157.03,1210.81 v 28.3 c 11.61,-2.36 11.61,-8.89 11.61,-13.92 0,-5.41 0,-12.01 -11.61,-14.38 z m -11.84,118.15 h -84.33 v -208.01 h 82.41 c 75.26,0 122.01,40.22 122.01,104.97 0,63.74 -46.02,103.04 -120.09,103.04 z m -8.16,-139.05 h 9.36 c 25.69,0 42.25,10.55 42.25,34.8 v 0.48 c 0,24.24 -16.56,34.81 -42.25,34.81 h -9.36 v -70.09 m 8.16,119.05 c 66.73,0 100.09,-32.89 100.09,-82.57 v -0.47 c 0,-49.69 -34.08,-84.97 -102.01,-84.97 h -62.41 v 168.01 h 64.33");
+    			attr(path28, "id", "path70");
+    			set_style(path28, "fill", "#000000");
+    			set_style(path28, "fill-opacity", "1");
+    			set_style(path28, "fill-rule", "nonzero");
+    			set_style(path28, "stroke", "none");
+    			attr(path28, "d", "m 3426.48,1252.96 c 6.23,0 7.93,1.35 7.94,1.36 l -0.2,1.01 c -0.01,-0.01 -0.01,-0.01 -0.02,-0.01 -0.21,0 -2.19,1.15 -7.96,1.15 H 3412 v -3.51 z m 3.6,-59.53 c 5.97,0 8.22,1.54 8.45,1.92 l -0.02,1.22 c -0.22,0.36 -2.41,1.82 -8.19,1.82 H 3412 v -4.96 z m -92.81,-62.48 v 188.01 h 104.09 c 25.09,0 42.52,-5.73 54.84,-18.05 8.67,-8.67 13.25,-20.16 13.25,-33.24 0,-15.71 -6.03,-28.6 -17.33,-37.81 15.18,-9.42 22.85,-23.44 22.85,-41.88 0,-34.83 -29.27,-57.03 -74.57,-57.03 h -103.13");
+    			attr(path29, "id", "path72");
+    			set_style(path29, "fill", "#000000");
+    			set_style(path29, "fill-opacity", "1");
+    			set_style(path29, "fill-rule", "nonzero");
+    			set_style(path29, "stroke", "none");
+    			attr(path29, "d", "m 3441.36,1328.96 h -114.09 v -208.01 h 113.13 c 62.42,0 84.57,35.85 84.57,66.56 0,13.89 -3.71,30.35 -17.78,43.43 7.98,9.98 12.26,22.31 12.26,36.26 0,16.26 -5.6,30.19 -16.18,40.78 -14.32,14.31 -33.99,20.98 -61.91,20.98 z M 3402,1183.43 h 28.08 c 12.24,0 18.48,5.03 18.48,12.24 v 0.48 c 0,7.2 -6,12.24 -18.24,12.24 H 3402 v -24.96 m 0,59.53 h 24.48 c 12,0 17.76,4.08 17.76,11.51 v 0.49 c 0,7.44 -6,11.51 -18,11.51 H 3402 v -23.51 m 39.36,66 c 23.28,0 37.92,-5.28 47.77,-15.12 5.99,-6 10.32,-14.64 10.32,-26.17 v -0.47 c 0,-19.93 -12,-32.16 -30.01,-38.4 21.6,-6.25 35.53,-17.77 35.53,-40.82 v -0.47 c 0,-26.88 -22.08,-46.56 -64.57,-46.56 h -93.13 v 168.01 h 94.09");
+    			attr(path30, "id", "path74");
+    			set_style(path30, "fill", "#000000");
+    			set_style(path30, "fill-opacity", "1");
+    			set_style(path30, "fill-rule", "nonzero");
+    			set_style(path30, "stroke", "none");
+    			attr(path30, "d", "m 3567.92,1130.95 v 66.81 l -70.79,121.2 h 86.37 l 22.78,-43.66 22.97,43.66 h 85.68 l -70.84,-120.49 v -67.52 h -76.17");
+    			attr(path31, "id", "path76");
+    			set_style(path31, "fill", "#000000");
+    			set_style(path31, "fill-opacity", "1");
+    			set_style(path31, "fill-rule", "nonzero");
+    			set_style(path31, "stroke", "none");
+    			attr(path31, "d", "m 3732.41,1328.96 h -109.2 l -5.62,-10.69 -11.28,-21.42 -11.14,21.36 -5.61,10.75 h -12.12 -62.88 -34.85 l 17.57,-30.08 60.64,-103.83 v -54.1 -20 h 20 56.17 20 v 20 54.8 l 60.59,103.07 z m -34.96,-20 -63.36,-107.77 v -60.24 h -56.17 v 59.51 l -63.36,108.5 h 62.88 l 28.81,-55.2 29.04,55.2 h 62.16");
+    			attr(path32, "id", "path78");
+    			set_style(path32, "fill", "#000000");
+    			set_style(path32, "fill-opacity", "1");
+    			set_style(path32, "fill-rule", "nonzero");
+    			set_style(path32, "stroke", "none");
+    			attr(path32, "d", "m 1918.46,1256.63 c 9.3,0 14.01,2.85 14.01,8.48 0,3.24 0,8.97 -13.76,8.97 h -5.37 v -17.45 z m -81.28,-105.68 v 188.01 h 85.61 c 53.3,0 85.13,-26.08 85.13,-69.76 0,-45 -33.08,-72.65 -86.33,-72.65 h -8.25 v -45.6 h -76.16");
+    			attr(path33, "id", "path80");
+    			set_style(path33, "fill", "#ffffff");
+    			set_style(path33, "fill-opacity", "1");
+    			set_style(path33, "fill-rule", "nonzero");
+    			set_style(path33, "stroke", "none");
+    			attr(path33, "d", "m 1922.79,1348.96 h -95.61 v -208.01 h 96.16 v 20 25.61 c 57.51,0.64 94.58,32.74 94.58,82.16 0,49.67 -36.46,80.24 -95.13,80.24 z m -19.45,-102.33 h 15.12 c 14.41,0 24.01,6.48 24.01,18.48 v 0.48 c 0,12.25 -8.88,18.49 -23.76,18.49 h -15.37 v -37.45 m 19.45,82.33 c 44.64,0 75.13,-19.92 75.13,-59.76 v -0.48 c 0,-40.57 -30.97,-62.17 -76.33,-62.17 h -18.25 v -45.6 h -56.16 v 168.01 h 75.61");
+    			attr(path34, "id", "path82");
+    			set_style(path34, "fill", "#000000");
+    			set_style(path34, "fill-opacity", "1");
+    			set_style(path34, "fill-rule", "nonzero");
+    			set_style(path34, "stroke", "none");
+    			attr(path34, "d", "m 2115.5,1272.88 c -16.29,0 -24.8,-13.81 -24.8,-27.44 0,-14.36 8.68,-28.41 25.28,-28.41 16.29,0 24.81,13.8 24.81,27.44 0,14.35 -8.69,28.41 -25.29,28.41 z m 0,-125.54 c -56.88,0 -101.44,42.67 -101.44,97.13 0,55.21 44.76,98.08 101.92,98.08 56.9,0 101.46,-42.66 101.46,-97.11 0,-55.22 -44.78,-98.1 -101.94,-98.1");
+    			attr(path35, "id", "path84");
+    			set_style(path35, "fill", "#ffffff");
+    			set_style(path35, "fill-opacity", "1");
+    			set_style(path35, "fill-rule", "nonzero");
+    			set_style(path35, "stroke", "none");
+    			attr(path35, "d", "m 2115.98,1227.03 c -10.5,0 -15.28,9.29 -15.28,17.92 0,6.52 3.09,17.93 14.8,17.93 10.5,0 15.29,-9.29 15.29,-17.93 0,-6.51 -3.1,-17.92 -14.81,-17.92 z m 0,125.52 c -62.76,0 -111.92,-47.26 -111.92,-107.6 0,-60.55 48.95,-107.61 111.44,-107.61 62.77,0 111.94,47.27 111.94,107.61 0,60.55 -48.96,107.6 -111.46,107.6 z m 0,-145.52 c 21.37,0 34.81,17.76 34.81,37.44 v 0.48 c 0,19.92 -13.69,37.93 -35.29,37.93 -21.35,0 -34.8,-17.77 -34.8,-37.44 v -0.49 c 0,-19.92 13.68,-37.92 35.28,-37.92 m 0,125.52 c 51.85,0 91.46,-38.39 91.46,-87.11 v -0.49 c 0,-48.72 -40.09,-87.61 -91.94,-87.61 -51.84,0 -91.44,38.41 -91.44,87.13 v 0.48 c 0,48.73 40.08,87.6 91.92,87.6");
+    			attr(path36, "id", "path86");
+    			set_style(path36, "fill", "#000000");
+    			set_style(path36, "fill-opacity", "1");
+    			set_style(path36, "fill-rule", "nonzero");
+    			set_style(path36, "stroke", "none");
+    			attr(path36, "d", "m 2377.49,1149.74 -22.47,63.53 -22.45,-63.53 h -63.3 l -61.45,189.22 h 80.05 l 16.88,-57.31 19.32,57.79 h 62.88 l 19.32,-57.79 16.89,57.31 h 79.08 l -61.46,-189.22 h -63.29");
+    			attr(path37, "id", "path88");
+    			set_style(path37, "fill", "#ffffff");
+    			set_style(path37, "fill-opacity", "1");
+    			set_style(path37, "fill-rule", "nonzero");
+    			set_style(path37, "stroke", "none");
+    			attr(path37, "d", "m 2394.16,1349.44 h -77.3 l -4.56,-13.66 -6.95,-20.78 -5.77,19.61 -4.23,14.35 h -14.96 -58.81 -27.52 l 8.49,-26.17 54.96,-169.22 4.5,-13.83 h 14.53 48.96 14.14 l 4.72,13.34 10.66,30.18 10.68,-30.18 4.72,-13.34 h 14.14 48.95 14.53 l 4.49,13.83 54.97,169.22 8.51,26.17 h -27.53 -57.84 -14.96 l -4.22,-14.34 -5.79,-19.63 -6.95,20.79 z m -14.41,-20 27.12,-81.13 23.77,80.65 h 57.84 l -54.97,-169.22 h -48.95 l -29.54,83.53 -29.52,-83.53 h -48.96 l -54.96,169.22 h 58.81 l 23.76,-80.65 27.11,81.13 h 48.49");
+    			attr(path38, "id", "path90");
+    			set_style(path38, "fill", "#000000");
+    			set_style(path38, "fill-opacity", "1");
+    			set_style(path38, "fill-rule", "nonzero");
+    			set_style(path38, "stroke", "none");
+    			attr(path38, "d", "m 2506.07,1150.95 v 188.01 h 163.29 v -66.08 h -6 v -55.85 h 7.2 v -66.08 h -164.49");
+    			attr(path39, "id", "path92");
+    			set_style(path39, "fill", "#ffffff");
+    			set_style(path39, "fill-opacity", "1");
+    			set_style(path39, "fill-rule", "nonzero");
+    			set_style(path39, "stroke", "none");
+    			attr(path39, "d", "m 2679.36,1348.96 h -183.29 v -208.01 h 184.49 v 20 46.08 20 h -7.2 v 35.85 h 6 v 20 46.08 z m -20,-20 v -46.08 h -88.09 v -17.04 h 82.09 v -40.57 h -82.09 v -18.24 h 89.29 v -46.08 h -144.49 v 168.01 h 143.29");
+    			attr(path40, "id", "path94");
+    			set_style(path40, "fill", "#000000");
+    			set_style(path40, "fill-opacity", "1");
+    			set_style(path40, "fill-rule", "nonzero");
+    			set_style(path40, "stroke", "none");
+    			attr(path40, "d", "m 2774.08,1259.03 c 7.69,0 11.6,2.13 11.6,6.32 0,2.3 0,6.56 -11.37,6.56 h -14.48 v -12.88 z m 14.06,-108.08 -28.31,42.89 v -42.89 h -76.16 v 188.01 h 92.09 c 30.13,0 52.87,-7.44 67.56,-22.14 12.3,-12.3 18.29,-27.65 18.29,-46.91 0,-23.44 -10.12,-42.54 -28.76,-55.11 l 43.72,-63.85 h -88.43");
+    			attr(path41, "id", "path96");
+    			set_style(path41, "fill", "#ffffff");
+    			set_style(path41, "fill-opacity", "1");
+    			set_style(path41, "fill-rule", "nonzero");
+    			set_style(path41, "stroke", "none");
+    			attr(path41, "d", "m 2775.76,1348.96 h -102.09 v -208.01 h 96.16 v 19.58 l 7,-10.6 5.93,-8.98 h 10.76 64.08 37.94 l -21.43,31.29 -27.64,40.37 c 16.36,14.18 25.14,33.75 25.14,56.82 0,22.53 -6.95,40.19 -21.22,54.46 -16.64,16.64 -41.74,25.07 -74.63,25.07 z m -25.93,-99.93 h 24.25 c 13.43,0 21.6,6.01 21.6,16.32 v 0.49 c 0,10.8 -8.4,16.07 -21.37,16.07 h -24.48 v -32.88 m 25.93,79.93 c 29.76,0 48.72,-7.44 60.49,-19.21 10.07,-10.07 15.36,-22.55 15.36,-39.84 v -0.48 c 0,-24.48 -12.73,-41.52 -33.13,-51.36 l 39.12,-57.12 h -64.08 l -31.69,48 h -12 v -48 h -56.16 v 168.01 h 82.09");
+    			attr(path42, "id", "path98");
+    			set_style(path42, "fill", "#000000");
+    			set_style(path42, "fill-opacity", "1");
+    			set_style(path42, "fill-rule", "nonzero");
+    			set_style(path42, "stroke", "none");
+    			attr(path42, "d", "m 2873.27,1150.95 v 188.01 h 163.29 v -66.08 h -6 v -55.85 h 7.2 v -66.08 h -164.49");
+    			attr(path43, "id", "path100");
+    			set_style(path43, "fill", "#ffffff");
+    			set_style(path43, "fill-opacity", "1");
+    			set_style(path43, "fill-rule", "nonzero");
+    			set_style(path43, "stroke", "none");
+    			attr(path43, "d", "m 3046.56,1348.96 h -183.29 v -208.01 h 184.49 v 20 46.08 20 h -7.2 v 35.85 h 6 v 20 46.08 z m -20,-20 v -46.08 h -88.09 v -17.04 h 82.09 v -40.57 h -82.09 v -18.24 h 89.29 v -46.08 h -144.49 v 168.01 h 143.29");
+    			attr(path44, "id", "path102");
+    			set_style(path44, "fill", "#000000");
+    			set_style(path44, "fill-opacity", "1");
+    			set_style(path44, "fill-rule", "nonzero");
+    			set_style(path44, "stroke", "none");
+    			attr(path44, "d", "m 3127.03,1219.91 c 31.61,0.24 31.61,18.07 31.61,24.8 0,7.22 0,25.05 -31.61,25.29 z m -76.17,-68.96 v 188.01 h 74.33 c 68.94,0 110.09,-34.6 110.09,-92.57 0,-59.05 -42.92,-95.44 -112.01,-95.44 h -72.41");
+    			attr(path45, "id", "path104");
+    			set_style(path45, "fill", "#ffffff");
+    			set_style(path45, "fill-opacity", "1");
+    			set_style(path45, "fill-rule", "nonzero");
+    			set_style(path45, "stroke", "none");
+    			attr(path45, "d", "m 3137.03,1230.81 v 28.3 c 11.61,-2.36 11.61,-8.89 11.61,-13.92 0,-5.41 0,-12.01 -11.61,-14.38 z m -11.84,118.15 h -84.33 v -208.01 h 82.41 c 75.26,0 122.01,40.22 122.01,104.97 0,63.74 -46.02,103.04 -120.09,103.04 z m -8.16,-139.05 h 9.36 c 25.69,0 42.25,10.55 42.25,34.8 v 0.48 c 0,24.24 -16.56,34.81 -42.25,34.81 h -9.36 v -70.09 m 8.16,119.05 c 66.73,0 100.09,-32.89 100.09,-82.57 v -0.47 c 0,-49.69 -34.08,-84.97 -102.01,-84.97 h -62.41 v 168.01 h 64.33");
+    			attr(path46, "id", "path106");
+    			set_style(path46, "fill", "#000000");
+    			set_style(path46, "fill-opacity", "1");
+    			set_style(path46, "fill-rule", "nonzero");
+    			set_style(path46, "stroke", "none");
+    			attr(path46, "d", "m 3406.48,1272.96 c 6.23,0 7.93,1.35 7.94,1.36 l -0.2,1.01 c -0.01,-0.01 -0.01,-0.01 -0.02,-0.01 -0.21,0 -2.19,1.15 -7.96,1.15 H 3392 v -3.51 z m 3.6,-59.53 c 5.97,0 8.22,1.54 8.45,1.92 l -0.02,1.22 c -0.22,0.36 -2.41,1.82 -8.19,1.82 H 3392 v -4.96 z m -92.81,-62.48 v 188.01 h 104.09 c 25.09,0 42.52,-5.73 54.84,-18.05 8.67,-8.67 13.25,-20.16 13.25,-33.24 0,-15.71 -6.03,-28.6 -17.33,-37.81 15.18,-9.42 22.85,-23.44 22.85,-41.88 0,-34.83 -29.27,-57.03 -74.57,-57.03 h -103.13");
+    			attr(path47, "id", "path108");
+    			set_style(path47, "fill", "#ffffff");
+    			set_style(path47, "fill-opacity", "1");
+    			set_style(path47, "fill-rule", "nonzero");
+    			set_style(path47, "stroke", "none");
+    			attr(path47, "d", "m 3421.36,1348.96 h -114.09 v -208.01 h 113.13 c 62.42,0 84.57,35.85 84.57,66.56 0,13.89 -3.71,30.35 -17.78,43.43 7.98,9.98 12.26,22.31 12.26,36.26 0,16.26 -5.6,30.19 -16.18,40.78 -14.32,14.31 -33.99,20.98 -61.91,20.98 z M 3382,1203.43 h 28.08 c 12.24,0 18.48,5.03 18.48,12.24 v 0.48 c 0,7.2 -6,12.24 -18.24,12.24 H 3382 v -24.96 m 0,59.53 h 24.48 c 12,0 17.76,4.08 17.76,11.51 v 0.49 c 0,7.44 -6,11.51 -18,11.51 H 3382 v -23.51 m 39.36,66 c 23.28,0 37.92,-5.28 47.77,-15.12 5.99,-6 10.32,-14.64 10.32,-26.17 v -0.47 c 0,-19.93 -12,-32.16 -30.01,-38.4 21.6,-6.25 35.53,-17.77 35.53,-40.82 v -0.47 c 0,-26.88 -22.08,-46.56 -64.57,-46.56 h -93.13 v 168.01 h 94.09");
+    			attr(path48, "id", "path110");
+    			set_style(path48, "fill", "#000000");
+    			set_style(path48, "fill-opacity", "1");
+    			set_style(path48, "fill-rule", "nonzero");
+    			set_style(path48, "stroke", "none");
+    			attr(path48, "d", "m 3547.92,1150.95 v 66.81 l -70.79,121.2 h 86.37 l 22.78,-43.66 22.97,43.66 h 85.68 l -70.84,-120.49 v -67.52 h -76.17");
+    			attr(path49, "id", "path112");
+    			set_style(path49, "fill", "#ffffff");
+    			set_style(path49, "fill-opacity", "1");
+    			set_style(path49, "fill-rule", "nonzero");
+    			set_style(path49, "stroke", "none");
+    			attr(path49, "d", "m 3712.41,1348.96 h -109.2 l -5.62,-10.69 -11.28,-21.42 -11.14,21.36 -5.61,10.75 h -12.12 -62.88 -34.85 l 17.57,-30.08 60.64,-103.83 v -54.1 -20 h 20 56.17 20 v 20 54.8 l 60.59,103.07 z m -34.96,-20 -63.36,-107.77 v -60.24 h -56.17 v 59.51 l -63.36,108.5 h 62.88 l 28.81,-55.2 29.04,55.2 h 62.16");
+    			attr(g0, "transform", "scale(0.1)");
+    			attr(g0, "id", "g12");
+    			attr(g1, "transform", "matrix(1.3333333,0,0,-1.3333333,0,199.73333)");
+    			attr(g1, "id", "g10");
     			set_svg_attributes(svg, svg_data);
     		},
     		m(target, anchor) {
     			insert(target, svg, anchor);
-    			append(svg, path);
+    			append(svg, metadata);
+    			append(metadata, rdf_RDF);
+    			append(rdf_RDF, cc_Work);
+    			append(cc_Work, dc_format);
+    			append(dc_format, t);
+    			append(cc_Work, dc_type);
+    			append(svg, defs);
+    			append(svg, g1);
+    			append(g1, g0);
+    			append(g0, path0);
+    			append(g0, path1);
+    			append(g0, path2);
+    			append(g0, path3);
+    			append(g0, path4);
+    			append(g0, path5);
+    			append(g0, path6);
+    			append(g0, path7);
+    			append(g0, path8);
+    			append(g0, path9);
+    			append(g0, path10);
+    			append(g0, path11);
+    			append(g0, path12);
+    			append(g0, path13);
+    			append(g0, path14);
+    			append(g0, path15);
+    			append(g0, path16);
+    			append(g0, path17);
+    			append(g0, path18);
+    			append(g0, path19);
+    			append(g0, path20);
+    			append(g0, path21);
+    			append(g0, path22);
+    			append(g0, path23);
+    			append(g0, path24);
+    			append(g0, path25);
+    			append(g0, path26);
+    			append(g0, path27);
+    			append(g0, path28);
+    			append(g0, path29);
+    			append(g0, path30);
+    			append(g0, path31);
+    			append(g0, path32);
+    			append(g0, path33);
+    			append(g0, path34);
+    			append(g0, path35);
+    			append(g0, path36);
+    			append(g0, path37);
+    			append(g0, path38);
+    			append(g0, path39);
+    			append(g0, path40);
+    			append(g0, path41);
+    			append(g0, path42);
+    			append(g0, path43);
+    			append(g0, path44);
+    			append(g0, path45);
+    			append(g0, path46);
+    			append(g0, path47);
+    			append(g0, path48);
+    			append(g0, path49);
     		},
     		p(ctx, [dirty]) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
+    				{ height: "199.73334" },
+    				{
+    					"xmlns:dc": "http://purl.org/dc/elements/1.1/"
+    				},
+    				{
+    					"xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    				},
+    				{
+    					"xmlns:svg": "http://www.w3.org/2000/svg"
+    				},
     				{ xmlns: "http://www.w3.org/2000/svg" },
-    				{ width: "375" },
-    				{ height: "171" },
-    				{ viewBox: "0 0 375 171" },
+    				{ viewBox: "0 0 513.70667 199.73334" },
+    				{
+    					"xmlns:cc": "http://creativecommons.org/ns#"
+    				},
+    				{ width: "513.70667" },
+    				{ "xml:space": "preserve" },
+    				{ id: "svg2" },
+    				{ version: "1.1" },
     				dirty & /*$$props*/ 1 && /*$$props*/ ctx[0]
     			]));
     		},
@@ -12682,25 +13331,25 @@ var app = (function () {
     			div3 = element("div");
     			div2 = element("div");
     			create_component(logo.$$.fragment);
-    			attr_dev(span, "class", "name-label svelte-1mroyin");
-    			add_location(span, file, 37, 12, 582);
-    			attr_dev(div0, "class", "td top svelte-1mroyin");
-    			add_location(div0, file, 36, 8, 549);
-    			attr_dev(input, "class", "name-input svelte-1mroyin");
+    			attr_dev(span, "class", "name-label svelte-y9qwgh");
+    			add_location(span, file, 41, 12, 665);
+    			attr_dev(div0, "class", "td top svelte-y9qwgh");
+    			add_location(div0, file, 40, 8, 632);
+    			attr_dev(input, "class", "name-input svelte-y9qwgh");
     			attr_dev(input, "maxlength", "25");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Please enter a name");
-    			add_location(input, file, 40, 16, 682);
-    			attr_dev(div1, "class", "td bottom svelte-1mroyin");
-    			add_location(div1, file, 39, 8, 642);
-    			attr_dev(div2, "class", "logo svelte-1mroyin");
-    			add_location(div2, file, 48, 12, 981);
-    			attr_dev(div3, "class", "td bottom svelte-1mroyin");
-    			add_location(div3, file, 47, 8, 945);
+    			add_location(input, file, 44, 16, 765);
+    			attr_dev(div1, "class", "td bottom svelte-y9qwgh");
+    			add_location(div1, file, 43, 8, 725);
+    			attr_dev(div2, "class", "logo svelte-y9qwgh");
+    			add_location(div2, file, 52, 12, 1064);
+    			attr_dev(div3, "class", "td bottom svelte-y9qwgh");
+    			add_location(div3, file, 51, 8, 1028);
     			attr_dev(div4, "class", "tr");
-    			add_location(div4, file, 35, 4, 524);
+    			add_location(div4, file, 39, 4, 607);
     			attr_dev(div5, "class", "table");
-    			add_location(div5, file, 34, 0, 500);
+    			add_location(div5, file, 38, 0, 583);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
