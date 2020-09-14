@@ -1314,7 +1314,7 @@ Several published Fate-based games use conditions instead of consequences. Feel 
 
 As mentioned on **page XX** skill lists are the first thing to consider tinkering with when making your own Fate game. Our default skill setup presents a list of 19 skills arranged in a pyramid of 10. That list is also structured around a traditional notion of capabilities in various fields of action, in essence addressing the question “what can you do?” Other skill lists aren’t necessarily the same length, arranged the same way, or addressing the same question. With that said, here are some short skill lists to consider, borrow, and modify.
 
--   **Actions:**Endure, Fight, Know, Move, Notice, Pilot, Sneak, Speak, Tinker.
+-   **Actions:** Endure, Fight, Know, Move, Notice, Pilot, Sneak, Speak, Tinker.
 -   **Approaches:** Careful, Clever, Flashy, Forceful, Quick, Sneaky.
 -   **Aptitudes:** Athletics, Combat, Leadership, Scholarship, Subterfuge.
 -   **Attributes:** Strength, Dexterity, Toughness, Intelligence, Charm.
