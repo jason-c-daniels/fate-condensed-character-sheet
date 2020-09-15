@@ -1,0 +1,25 @@
+:root {
+    --font-size: 12pt;
+}
+
+.name-input {
+    font-family: 'Barlow',sans-serif;
+    width:100%;
+    border:none;
+    color:black;
+    font-weight:bold;
+    font-size: var(--font-size);
+    display: block;
+    padding-left: 0.15rem;
+}
+
+textarea {
+    padding: 0.15rem;
+    font-size: var(--font-size);
+    border: none;
+    overflow:hidden;
+    resize: none;
+    display: block;
+    width: 100%;
+    font-family: "Barlow", sans-serif;
+}
