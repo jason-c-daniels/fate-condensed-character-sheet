@@ -3,7 +3,7 @@
 </style>
 
 <script>
-    import Section from '../Section';
+    import Section from '../../shared/Section';
     export let skills=[
         {name:"Academics",value:0},
         {name:"Athletics",value:0},

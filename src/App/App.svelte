@@ -10,6 +10,7 @@
 
     import GlobalCss from "../GlobalCss";
     import CharacterSheet from "../components/CharacterSheet";
+    import SupplementalSheet from "../components/SupplementalSheet";
     import SRD from "../components/SRD";
 
     import getNewCharacter from "../model/character"
@@ -225,6 +226,10 @@
             <div id="content" style="padding:2rem;">
                 {#if activeIndex === 0}
                     <CharacterSheet bind:character={character}/>
+                    <br/>
+                    <br/>
+                <br/>
+                    <SupplementalSheet bind:character={character}/>
                 {:else if activeIndex === 1}
                     <SRD bind:tocMarkdown bind:srdMarkdown/>
                 {:else if activeIndex === 2}
@@ -253,6 +258,7 @@
          (i.e. print() )
      -->
 
-        <CharacterSheet bind:character={character}/>
+    <CharacterSheet bind:character={character}/>
+    <SupplementalSheet bind:character={character}/>
 
 </main>

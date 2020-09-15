@@ -5,7 +5,7 @@
 <script>
     import StressTrack from "./StressTrack";
     import Consequence from "./Consequence";
-    import Section from '../Section';
+    import Section from '../../shared/Section';
 
     export let vitals = {
         physicalStressTaken: 0,

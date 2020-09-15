@@ -3,7 +3,7 @@
 </style>
 
 <script>
-    import Section from '../Section';
+    import Section from '../../shared/Section';
     export let aspects={
         highConcept:"",
         trouble:"",
@@ -15,9 +15,9 @@
 
 <Section title="Aspects" indent="0.75in">
     <div class="aspect">
-    <label class="aspect-label">
-        <span>High Concept</span>
-    </label>
+        <label class="aspect-label">
+            <span>High Concept</span>
+        </label>
         <textarea placeholder="Please describe the character concept."
                   bind:value="{aspects.highConcept}"
                   rows="{rows}"
@@ -25,36 +25,36 @@
     </div>
 
     <div class="aspect">
-    <label class="aspect-label">
-        <span>Trouble</span>
-    </label>
+        <label class="aspect-label">
+            <span>Trouble</span>
+        </label>
         <textarea placeholder="Please describe the character's trouble."
                   bind:value="{aspects.trouble}"
                   rows="{rows}"
         ></textarea>
     </div>
     <div class="aspect">
-    <label class="aspect-label">
-        <span>Relationship</span>
-    </label>
+        <label class="aspect-label">
+            <span>Relationship</span>
+        </label>
         <textarea placeholder="Please describe the relationship"
                   bind:value="{aspects.relationship}"
                   rows="{rows}"
         ></textarea>
     </div>
     <div class="aspect">
-    <label class="aspect-label">
-        <span>Other Aspect</span>
-    </label>
+        <label class="aspect-label">
+            <span>Other Aspect</span>
+        </label>
         <textarea placeholder="Please describe the aspect"
                   bind:value="{aspects.otherAspects[0]}"
                   rows="{rows+1}"
         ></textarea>
     </div>
     <div class="aspect">
-    <label class="aspect-label">
-        <span>Other Aspect</span>
-    </label>
+        <label class="aspect-label">
+            <span>Other Aspect</span>
+        </label>
         <textarea placeholder="Please describe the aspect."
                   bind:value="{aspects.otherAspects[1]}"
                   rows="{rows+1}"
