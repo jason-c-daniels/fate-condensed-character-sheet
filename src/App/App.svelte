@@ -12,23 +12,22 @@
     import CharacterSheet from "../components/CharacterSheet";
     import SupplementalSheet from "../components/SupplementalSheet";
     import SRD from "../components/SRD";
+    import About from '../components/About/About.md';
 
     import getNewCharacter from "../model/character"
     import downloadToClient from 'file-saver';
     import Dropzone from "svelte-file-dropzone";
 
     import LocalStorageController from '../controllers/localStorageController'
-    import Markdown from "../components/shared/Markdown";
 
-    export let name;
     export let appSettings = {applicationName: "WARNING: Please pass appSettings from within main.js props."};
     let activeIndex;
     let activeSection;
     let srdMarkdown, tocMarkdown, aboutMarkdown;
 
     fetch("./md/About.md").then((response) => response.text().then((data) => aboutMarkdown = data));
-    fetch("./md/SRD-TOC.md").then((response) => response.text().then((data) => tocMarkdown = data));
-    fetch("./md/Fate-Condensed-SRD-CC-BY.md").then((response) => response.text().then((data) => srdMarkdown = data));
+    fetch("./md/TOC.md").then((response) => response.text().then((data) => tocMarkdown = data));
+    fetch("./md/SrdContent.md").then((response) => response.text().then((data) => srdMarkdown = data));
 
     // Special DOM elements.
     let printOptionListElement,
@@ -231,12 +230,10 @@
                 <br/>
                     <SupplementalSheet bind:character={character}/>
                 {:else if activeIndex === 1}
-                    <SRD bind:tocMarkdown bind:srdMarkdown/>
+                    <SRD />
                 {:else if activeIndex === 2}
 
-                    {#if aboutMarkdown}
-                        <Markdown columns="1" markdown={aboutMarkdown}/>
-                    {/if}
+                    <About />
 
                 {:else}
                     <div class="page">

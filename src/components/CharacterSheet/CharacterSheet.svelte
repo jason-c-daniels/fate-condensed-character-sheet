@@ -14,7 +14,7 @@
 </script>
 <div class="page">
 <div class="character-sheet">
-    <PageHeading bind:name="{character.name}"/>
+    <PageHeading bind:name="{character.name}" bind:player={character.player} bind:species={character.species} bind:role={character.role}/>
     <div class="table">
 
         <div class="tr">

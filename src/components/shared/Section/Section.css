@@ -21,6 +21,8 @@
     overflow: hidden;
     padding-top: var(--header-padding-top);
     text-transform: uppercase;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
 }
 
 .header span {

@@ -1,3 +1,5 @@
+<div>
+
 # Fate Condensed
 
 ----------------
@@ -1089,8 +1091,10 @@ Ruth wants to increase her Lore from Average (+1) to Fair (+2), but this means
     <tbody>
     <tr>
         <th colspan="2">
+        <td>
             <p>Valid</p>
-		<td></td>
+		</td>
+		<td>
         </td>
     </tr>
     <tr>
@@ -1134,7 +1138,6 @@ Ruth wants to increase her Lore from Average (+1) to Fair (+2), but this means
         <th colspan="2">
             <p>Also Valid</p>
         </th>
-		<td></td>
     </tr>
     <tr>
         <td>
@@ -1641,3 +1644,9 @@ The effort to extract the system (by Leonard Balsera and Ryan Macklin) to presen
 
 In one form or another, Fate has always been open-licensable. You can find details about licensing Fate for your projects at [http://www.faterpg.com/licensing](http://www.faterpg.com/licensing)
 
+</div>
+
+<style>
+    @import "../styles/markdown.css";
+    
+</style>

@@ -4,17 +4,11 @@
 
 <script>
     import '@material/mwc-icon-button'
-    import marked from 'marked';
-    import Markdown from '../shared/Markdown';
-    export let srdMarkdown;
-    export let tocMarkdown;
+
+    import TOC from './TOC.md'
+    import Srd from './SrdContent.md'
+
     let showToc= window.innerWidth > 15.25*6.022*16; //(inches*em/inch*px/em)
-    if (!srdMarkdown) {
-        fetch("./md/Fate-Condensed-SRD-CC-BY.md").then((response) => response.text().then((data) => srdMarkdown = data));
-    }
-    if (!tocMarkdown) {
-        fetch("./md/SRD-TOC.md").then((response) => response.text().then((data) => tocMarkdown = data));
-    }
 
     if (window.location.hash) {
         setTimeout(() => {
@@ -32,14 +26,14 @@
             <mwc-icon-button icon="chevron_right" on:click={()=> showToc=true} ></mwc-icon-button>
         {/if}
 
-        {#if tocMarkdown && showToc}
+        {#if showToc}
             <h2>Table of Contents</h2>
-            {@html marked(tocMarkdown)}
+                <TOC />
         {/if}
     </div>
+<div class="this-page">
+    <Srd />
+</div>
 
-    {#if srdMarkdown}
-        <Markdown markdown={srdMarkdown} columns="1" props={{style:"line-height:1.2rem;"}}/>
-    {/if}
 
 

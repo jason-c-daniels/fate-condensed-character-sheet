@@ -8,8 +8,10 @@ import builtins from 'rollup-plugin-node-builtins'
 import postcss from 'rollup-plugin-postcss'
 import sveltePreprocess from "svelte-preprocess";
 import svelteSVG from "rollup-plugin-svelte-svg";
+import {markdown} from "svelte-preprocess-markdown";
 
 const production = !process.env.ROLLUP_WATCH;
+
 function serve() {
 	let server;
 
@@ -41,7 +43,14 @@ export default {
 	},
 	plugins: [
 		svelte({
-			preprocess: sveltePreprocess({postcss: true}),
+			extensions: ['.svelte','.md'],
+			preprocess: [
+				markdown({
+					headerIds: true
+				}),
+				sveltePreprocess({postcss: true}),
+
+			],
 			dev: !production,
 			css: css => {
 				css.write('public/build/bundle.css');
@@ -60,7 +69,7 @@ export default {
 		}),
 		commonjs(),
 		!production && serve(),
-		//!production && livereload('public'),
+		!production && livereload('public'),
 		production && terser(),
 	],
 	watch: {

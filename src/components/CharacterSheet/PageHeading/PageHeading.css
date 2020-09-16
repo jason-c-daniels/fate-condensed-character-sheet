@@ -1,23 +1,40 @@
-.name-input {
-    font-family: 'Barlow Condensed',sans-serif;
-    width:100%;
-    border:none;
-    color:black;
-    font-size:36pt;
-    font-weight:900;
+.container {
+    margin: 0 0.75in ;
+    width: 7.5in;
+    max-width: 7.5in;
 }
 
-.top {
-    vertical-align: top;
+.container .col {
+    display: inline-block;
 }
-.bottom {
-    vertical-align: bottom;
+
+.gap {
+    padding-right:0.5rem;
+}
+
+.name-input {
+    font-family: 'Barlow Condensed',sans-serif;
+
+    border:none;
+    color:black;
+    font-size:18pt;
+    font-weight:500;
+    display: inline-block;
+    flex-grow: 10;
+    flex-shrink: 10;
+}
+#character-name {
+    font-weight: 900;
 }
 
 .name-label {
     font-family: "Gothic A1 Black",sans-serif;
-    margin-left: 0.75in;
     text-transform: uppercase;
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .logo {
@@ -26,5 +43,4 @@
     width: 145px;
     margin-right: 0.5in;
     float:right;
-    z-index: 10000;
 }

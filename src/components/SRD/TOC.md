@@ -1,4 +1,3 @@
-<!-- TOC -->
 - [Fate Condensed](#fate-condensed)
 - [Credits](#credits)
 - [Introduction](#introduction)
@@ -92,4 +91,8 @@
 - [What Version Is This?](#what-version-is-this)
    - [What Came Before](#what-came-before)
    - [Licensing](#licensing)
-<!-- /TOC -->
+
+<style>
+    @import "../styles/markdown.css";
+    
+</style>
