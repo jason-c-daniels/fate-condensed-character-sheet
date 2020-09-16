@@ -1,3 +1,5 @@
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -198,37 +200,6 @@ var app = (function () {
         const e = document.createEvent('CustomEvent');
         e.initCustomEvent(type, false, false, detail);
         return e;
-    }
-    class HtmlTag {
-        constructor(anchor = null) {
-            this.a = anchor;
-            this.e = this.n = null;
-        }
-        m(html, target, anchor = null) {
-            if (!this.e) {
-                this.e = element(target.nodeName);
-                this.t = target;
-                this.h(html);
-            }
-            this.i(anchor);
-        }
-        h(html) {
-            this.e.innerHTML = html;
-            this.n = Array.from(this.e.childNodes);
-        }
-        i(anchor) {
-            for (let i = 0; i < this.n.length; i += 1) {
-                insert(this.t, this.n[i], anchor);
-            }
-        }
-        p(html) {
-            this.d();
-            this.h(html);
-            this.i(this.a);
-        }
-        d() {
-            this.n.forEach(detach);
-        }
     }
 
     let current_component;
@@ -10694,16 +10665,30 @@ var app = (function () {
     const file = "src/components/CharacterSheet/PageHeading/PageHeading.svelte";
 
     function create_fragment$2(ctx) {
-    	let div5;
-    	let div4;
-    	let div0;
-    	let span;
-    	let t1;
-    	let div1;
-    	let input;
-    	let t2;
-    	let div3;
+    	let div7;
     	let div2;
+    	let div0;
+    	let label0;
+    	let t1;
+    	let input0;
+    	let t2;
+    	let div1;
+    	let label1;
+    	let t4;
+    	let input1;
+    	let t5;
+    	let div5;
+    	let div3;
+    	let label2;
+    	let t7;
+    	let input2;
+    	let t8;
+    	let div4;
+    	let label3;
+    	let t10;
+    	let input3;
+    	let t11;
+    	let div6;
     	let logo;
     	let current;
     	let mounted;
@@ -10716,63 +10701,151 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div5 = element("div");
-    			div4 = element("div");
-    			div0 = element("div");
-    			span = element("span");
-    			span.textContent = "Name";
-    			t1 = space();
-    			div1 = element("div");
-    			input = element("input");
-    			t2 = space();
-    			div3 = element("div");
+    			div7 = element("div");
     			div2 = element("div");
+    			div0 = element("div");
+    			label0 = element("label");
+    			label0.textContent = "Name";
+    			t1 = space();
+    			input0 = element("input");
+    			t2 = space();
+    			div1 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Player";
+    			t4 = space();
+    			input1 = element("input");
+    			t5 = space();
+    			div5 = element("div");
+    			div3 = element("div");
+    			label2 = element("label");
+    			label2.textContent = "Species";
+    			t7 = space();
+    			input2 = element("input");
+    			t8 = space();
+    			div4 = element("div");
+    			label3 = element("label");
+    			label3.textContent = "Role";
+    			t10 = space();
+    			input3 = element("input");
+    			t11 = space();
+    			div6 = element("div");
     			create_component(logo.$$.fragment);
-    			attr_dev(span, "class", "name-label svelte-9ngiyv");
-    			add_location(span, file, 41, 12, 664);
-    			attr_dev(div0, "class", "td top svelte-9ngiyv");
-    			add_location(div0, file, 40, 8, 631);
-    			attr_dev(input, "class", "name-input svelte-9ngiyv");
-    			attr_dev(input, "type", "text");
-    			attr_dev(input, "placeholder", "Please enter a name");
-    			add_location(input, file, 44, 16, 764);
-    			attr_dev(div1, "class", "td bottom svelte-9ngiyv");
-    			add_location(div1, file, 43, 8, 724);
-    			attr_dev(div2, "class", "logo svelte-9ngiyv");
-    			add_location(div2, file, 51, 12, 1024);
-    			attr_dev(div3, "class", "td bottom svelte-9ngiyv");
-    			add_location(div3, file, 50, 8, 988);
-    			attr_dev(div4, "class", "tr");
-    			add_location(div4, file, 39, 4, 606);
-    			attr_dev(div5, "class", "table");
-    			add_location(div5, file, 38, 0, 582);
+    			attr_dev(label0, "class", "name-label svelte-rlwtq9");
+    			attr_dev(label0, "for", "character-name");
+    			add_location(label0, file, 61, 12, 1069);
+    			attr_dev(input0, "id", "character-name");
+    			attr_dev(input0, "class", "name-input svelte-rlwtq9");
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "placeholder", "Character name");
+    			set_style(input0, "width", "100%");
+    			add_location(input0, file, 62, 12, 1141);
+    			attr_dev(div0, "class", "flex-row flex-item-1 bottom-line");
+    			add_location(div0, file, 60, 8, 1010);
+    			attr_dev(label1, "class", "name-label svelte-rlwtq9");
+    			attr_dev(label1, "for", "player-name");
+    			add_location(label1, file, 72, 12, 1450);
+    			attr_dev(input1, "id", "player-name");
+    			attr_dev(input1, "class", "name-input svelte-rlwtq9");
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "placeholder", "Player name");
+    			set_style(input1, "width", "100%");
+    			add_location(input1, file, 73, 12, 1521);
+    			attr_dev(div1, "class", "flex-row flex-item-1");
+    			add_location(div1, file, 71, 8, 1402);
+    			attr_dev(div2, "class", "flex-column col gap svelte-rlwtq9");
+    			set_style(div2, "width", "40%");
+    			add_location(div2, file, 59, 4, 949);
+    			attr_dev(label2, "class", "name-label svelte-rlwtq9");
+    			attr_dev(label2, "for", "species-name");
+    			add_location(label2, file, 86, 12, 1906);
+    			attr_dev(input2, "id", "species-name");
+    			attr_dev(input2, "class", "name-input svelte-rlwtq9");
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "placeholder", "Species name");
+    			set_style(input2, "width", "100%");
+    			add_location(input2, file, 87, 12, 1979);
+    			attr_dev(div3, "class", "flex-row flex-item-1 bottom-line");
+    			add_location(div3, file, 85, 8, 1847);
+    			attr_dev(label3, "class", "name-label svelte-rlwtq9");
+    			attr_dev(label3, "for", "role-name");
+    			add_location(label3, file, 97, 12, 2287);
+    			attr_dev(input3, "id", "role-name");
+    			attr_dev(input3, "class", "name-input svelte-rlwtq9");
+    			attr_dev(input3, "type", "text");
+    			attr_dev(input3, "placeholder", "Role name");
+    			set_style(input3, "width", "100%");
+    			add_location(input3, file, 98, 12, 2354);
+    			attr_dev(div4, "class", "flex-row flex-item-1");
+    			add_location(div4, file, 96, 8, 2239);
+    			attr_dev(div5, "class", "flex-column col gap svelte-rlwtq9");
+    			set_style(div5, "width", "30%");
+    			add_location(div5, file, 84, 4, 1786);
+    			attr_dev(div6, "class", "logo col svelte-rlwtq9");
+    			add_location(div6, file, 107, 4, 2611);
+    			attr_dev(div7, "class", "container svelte-rlwtq9");
+    			add_location(div7, file, 58, 0, 920);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div5, anchor);
+    			insert_dev(target, div7, anchor);
+    			append_dev(div7, div2);
+    			append_dev(div2, div0);
+    			append_dev(div0, label0);
+    			append_dev(div0, t1);
+    			append_dev(div0, input0);
+    			set_input_value(input0, /*name*/ ctx[0]);
+    			append_dev(div2, t2);
+    			append_dev(div2, div1);
+    			append_dev(div1, label1);
+    			append_dev(div1, t4);
+    			append_dev(div1, input1);
+    			set_input_value(input1, /*player*/ ctx[1]);
+    			append_dev(div7, t5);
+    			append_dev(div7, div5);
+    			append_dev(div5, div3);
+    			append_dev(div3, label2);
+    			append_dev(div3, t7);
+    			append_dev(div3, input2);
+    			set_input_value(input2, /*species*/ ctx[3]);
+    			append_dev(div5, t8);
     			append_dev(div5, div4);
-    			append_dev(div4, div0);
-    			append_dev(div0, span);
-    			append_dev(div4, t1);
-    			append_dev(div4, div1);
-    			append_dev(div1, input);
-    			set_input_value(input, /*name*/ ctx[0]);
-    			append_dev(div4, t2);
-    			append_dev(div4, div3);
-    			append_dev(div3, div2);
-    			mount_component(logo, div2, null);
+    			append_dev(div4, label3);
+    			append_dev(div4, t10);
+    			append_dev(div4, input3);
+    			set_input_value(input3, /*role*/ ctx[2]);
+    			append_dev(div7, t11);
+    			append_dev(div7, div6);
+    			mount_component(logo, div6, null);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[1]);
+    				dispose = [
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[4]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[5]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[6]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[7])
+    				];
+
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*name*/ 1 && input.value !== /*name*/ ctx[0]) {
-    				set_input_value(input, /*name*/ ctx[0]);
+    			if (dirty & /*name*/ 1 && input0.value !== /*name*/ ctx[0]) {
+    				set_input_value(input0, /*name*/ ctx[0]);
+    			}
+
+    			if (dirty & /*player*/ 2 && input1.value !== /*player*/ ctx[1]) {
+    				set_input_value(input1, /*player*/ ctx[1]);
+    			}
+
+    			if (dirty & /*species*/ 8 && input2.value !== /*species*/ ctx[3]) {
+    				set_input_value(input2, /*species*/ ctx[3]);
+    			}
+
+    			if (dirty & /*role*/ 4 && input3.value !== /*role*/ ctx[2]) {
+    				set_input_value(input3, /*role*/ ctx[2]);
     			}
     		},
     		i: function intro(local) {
@@ -10785,10 +10858,10 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div5);
+    			if (detaching) detach_dev(div7);
     			destroy_component(logo);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -10807,38 +10880,71 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("PageHeading", slots, []);
     	let { name = "" } = $$props;
-    	const writable_props = ["name"];
+    	let { player = "" } = $$props;
+    	let { role = "" } = $$props;
+    	let { species = "" } = $$props;
+    	const writable_props = ["name", "player", "role", "species"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<PageHeading> was created with unknown prop '${key}'`);
     	});
 
-    	function input_input_handler() {
+    	function input0_input_handler() {
     		name = this.value;
     		$$invalidate(0, name);
     	}
 
+    	function input1_input_handler() {
+    		player = this.value;
+    		$$invalidate(1, player);
+    	}
+
+    	function input2_input_handler() {
+    		species = this.value;
+    		$$invalidate(3, species);
+    	}
+
+    	function input3_input_handler() {
+    		role = this.value;
+    		$$invalidate(2, role);
+    	}
+
     	$$self.$$set = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("player" in $$props) $$invalidate(1, player = $$props.player);
+    		if ("role" in $$props) $$invalidate(2, role = $$props.role);
+    		if ("species" in $$props) $$invalidate(3, species = $$props.species);
     	};
 
-    	$$self.$capture_state = () => ({ Logo, name });
+    	$$self.$capture_state = () => ({ Logo, name, player, role, species });
 
     	$$self.$inject_state = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("player" in $$props) $$invalidate(1, player = $$props.player);
+    		if ("role" in $$props) $$invalidate(2, role = $$props.role);
+    		if ("species" in $$props) $$invalidate(3, species = $$props.species);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, input_input_handler];
+    	return [
+    		name,
+    		player,
+    		role,
+    		species,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler
+    	];
     }
 
     class PageHeading extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { name: 0 });
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { name: 0, player: 1, role: 2, species: 3 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -10855,13 +10961,37 @@ var app = (function () {
     	set name(value) {
     		throw new Error("<PageHeading>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get player() {
+    		throw new Error("<PageHeading>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set player(value) {
+    		throw new Error("<PageHeading>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get role() {
+    		throw new Error("<PageHeading>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set role(value) {
+    		throw new Error("<PageHeading>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get species() {
+    		throw new Error("<PageHeading>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set species(value) {
+    		throw new Error("<PageHeading>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src/components/shared/Section/Section.svelte generated by Svelte v3.25.0 */
 
     const file$1 = "src/components/shared/Section/Section.svelte";
 
-    // (59:8) {#if (hint != "")}
+    // (61:8) {#if (hint != "")}
     function create_if_block(ctx) {
     	let span;
     	let t;
@@ -10870,8 +11000,8 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			t = text(/*hint*/ ctx[1]);
-    			attr_dev(span, "class", "hint svelte-bx5ski");
-    			add_location(span, file$1, 59, 12, 1304);
+    			attr_dev(span, "class", "hint svelte-17wg7xq");
+    			add_location(span, file$1, 61, 12, 1368);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -10889,7 +11019,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(59:8) {#if (hint != \\\"\\\")}",
+    		source: "(61:8) {#if (hint != \\\"\\\")}",
     		ctx
     	});
 
@@ -10926,17 +11056,17 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t2 = space();
     			if (default_slot) default_slot.c();
-    			attr_dev(span, "class", "svelte-bx5ski");
-    			add_location(span, file$1, 55, 8, 1176);
-    			attr_dev(div0, "class", "header svelte-bx5ski");
+    			attr_dev(span, "class", "svelte-17wg7xq");
+    			add_location(span, file$1, 57, 8, 1240);
+    			attr_dev(div0, "class", "header svelte-17wg7xq");
     			set_style(div0, "padding-left", /*indent*/ ctx[2]);
-    			add_location(div0, file$1, 54, 4, 1117);
-    			attr_dev(div1, "class", "content svelte-bx5ski");
+    			add_location(div0, file$1, 56, 4, 1181);
+    			attr_dev(div1, "class", "content svelte-17wg7xq");
     			set_style(div1, "padding-left", /*indent*/ ctx[2]);
-    			add_location(div1, file$1, 57, 4, 1213);
+    			add_location(div1, file$1, 59, 4, 1277);
     			set_attributes(div2, div2_data);
-    			toggle_class(div2, "svelte-bx5ski", true);
-    			add_location(div2, file$1, 53, 0, 1080);
+    			toggle_class(div2, "svelte-17wg7xq", true);
+    			add_location(div2, file$1, 55, 0, 1144);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10988,7 +11118,7 @@ var app = (function () {
     			}
 
     			set_attributes(div2, div2_data = get_spread_update(div2_levels, [{ class: "section" }, dirty & /*props*/ 8 && /*props*/ ctx[3]]));
-    			toggle_class(div2, "svelte-bx5ski", true);
+    			toggle_class(div2, "svelte-17wg7xq", true);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -13957,6 +14087,9 @@ var app = (function () {
     	let div7;
     	let pageheading;
     	let updating_name;
+    	let updating_player;
+    	let updating_species;
+    	let updating_role;
     	let t0;
     	let div6;
     	let div2;
@@ -13988,17 +14121,44 @@ var app = (function () {
     		/*pageheading_name_binding*/ ctx[1].call(null, value);
     	}
 
+    	function pageheading_player_binding(value) {
+    		/*pageheading_player_binding*/ ctx[2].call(null, value);
+    	}
+
+    	function pageheading_species_binding(value) {
+    		/*pageheading_species_binding*/ ctx[3].call(null, value);
+    	}
+
+    	function pageheading_role_binding(value) {
+    		/*pageheading_role_binding*/ ctx[4].call(null, value);
+    	}
+
     	let pageheading_props = {};
 
     	if (/*character*/ ctx[0].name !== void 0) {
     		pageheading_props.name = /*character*/ ctx[0].name;
     	}
 
+    	if (/*character*/ ctx[0].player !== void 0) {
+    		pageheading_props.player = /*character*/ ctx[0].player;
+    	}
+
+    	if (/*character*/ ctx[0].species !== void 0) {
+    		pageheading_props.species = /*character*/ ctx[0].species;
+    	}
+
+    	if (/*character*/ ctx[0].role !== void 0) {
+    		pageheading_props.role = /*character*/ ctx[0].role;
+    	}
+
     	pageheading = new PageHeading({ props: pageheading_props, $$inline: true });
     	binding_callbacks.push(() => bind(pageheading, "name", pageheading_name_binding));
+    	binding_callbacks.push(() => bind(pageheading, "player", pageheading_player_binding));
+    	binding_callbacks.push(() => bind(pageheading, "species", pageheading_species_binding));
+    	binding_callbacks.push(() => bind(pageheading, "role", pageheading_role_binding));
 
     	function aspects_aspects_binding(value) {
-    		/*aspects_aspects_binding*/ ctx[2].call(null, value);
+    		/*aspects_aspects_binding*/ ctx[5].call(null, value);
     	}
 
     	let aspects_props = {};
@@ -14011,15 +14171,15 @@ var app = (function () {
     	binding_callbacks.push(() => bind(aspects, "aspects", aspects_aspects_binding));
 
     	function vitals_vitals_binding(value) {
-    		/*vitals_vitals_binding*/ ctx[3].call(null, value);
+    		/*vitals_vitals_binding*/ ctx[6].call(null, value);
     	}
 
     	function vitals_will_binding(value) {
-    		/*vitals_will_binding*/ ctx[4].call(null, value);
+    		/*vitals_will_binding*/ ctx[7].call(null, value);
     	}
 
     	function vitals_physique_binding(value) {
-    		/*vitals_physique_binding*/ ctx[5].call(null, value);
+    		/*vitals_physique_binding*/ ctx[8].call(null, value);
     	}
 
     	let vitals_props = {};
@@ -14042,7 +14202,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(vitals, "physique", vitals_physique_binding));
 
     	function stunts_stunts_binding(value) {
-    		/*stunts_stunts_binding*/ ctx[6].call(null, value);
+    		/*stunts_stunts_binding*/ ctx[9].call(null, value);
     	}
 
     	let stunts_props = {};
@@ -14055,11 +14215,11 @@ var app = (function () {
     	binding_callbacks.push(() => bind(stunts, "stunts", stunts_stunts_binding));
 
     	function refreshandfate_fate_binding(value) {
-    		/*refreshandfate_fate_binding*/ ctx[7].call(null, value);
+    		/*refreshandfate_fate_binding*/ ctx[10].call(null, value);
     	}
 
     	function refreshandfate_refresh_binding(value) {
-    		/*refreshandfate_refresh_binding*/ ctx[8].call(null, value);
+    		/*refreshandfate_refresh_binding*/ ctx[11].call(null, value);
     	}
 
     	let refreshandfate_props = {};
@@ -14081,7 +14241,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(refreshandfate, "refresh", refreshandfate_refresh_binding));
 
     	function skills_skills_binding(value) {
-    		/*skills_skills_binding*/ ctx[9].call(null, value);
+    		/*skills_skills_binding*/ ctx[12].call(null, value);
     	}
 
     	let skills_props = {};
@@ -14116,20 +14276,20 @@ var app = (function () {
     			div4 = element("div");
     			create_component(skills.$$.fragment);
     			attr_dev(div0, "class", "td border svelte-130ub68");
-    			add_location(div0, file$a, 33, 12, 733);
+    			add_location(div0, file$a, 33, 12, 824);
     			attr_dev(div1, "class", "td");
     			set_style(div1, "width", "40.8%");
-    			add_location(div1, file$a, 36, 12, 850);
+    			add_location(div1, file$a, 36, 12, 941);
     			attr_dev(div2, "class", "tr");
-    			add_location(div2, file$a, 32, 8, 704);
+    			add_location(div2, file$a, 32, 8, 795);
     			attr_dev(div3, "class", "td border svelte-130ub68");
-    			add_location(div3, file$a, 42, 12, 1101);
+    			add_location(div3, file$a, 42, 12, 1192);
     			attr_dev(div4, "class", "td");
-    			add_location(div4, file$a, 46, 12, 1313);
+    			add_location(div4, file$a, 46, 12, 1404);
     			attr_dev(div5, "class", "tr");
-    			add_location(div5, file$a, 41, 8, 1072);
+    			add_location(div5, file$a, 41, 8, 1163);
     			attr_dev(div6, "class", "table");
-    			add_location(div6, file$a, 30, 4, 675);
+    			add_location(div6, file$a, 30, 4, 766);
     			attr_dev(div7, "class", "character-sheet svelte-130ub68");
     			add_location(div7, file$a, 28, 0, 593);
     			attr_dev(div8, "class", "page");
@@ -14168,6 +14328,24 @@ var app = (function () {
     				updating_name = true;
     				pageheading_changes.name = /*character*/ ctx[0].name;
     				add_flush_callback(() => updating_name = false);
+    			}
+
+    			if (!updating_player && dirty & /*character*/ 1) {
+    				updating_player = true;
+    				pageheading_changes.player = /*character*/ ctx[0].player;
+    				add_flush_callback(() => updating_player = false);
+    			}
+
+    			if (!updating_species && dirty & /*character*/ 1) {
+    				updating_species = true;
+    				pageheading_changes.species = /*character*/ ctx[0].species;
+    				add_flush_callback(() => updating_species = false);
+    			}
+
+    			if (!updating_role && dirty & /*character*/ 1) {
+    				updating_role = true;
+    				pageheading_changes.role = /*character*/ ctx[0].role;
+    				add_flush_callback(() => updating_role = false);
     			}
 
     			pageheading.$set(pageheading_changes);
@@ -14292,6 +14470,21 @@ var app = (function () {
     		$$invalidate(0, character);
     	}
 
+    	function pageheading_player_binding(value) {
+    		character.player = value;
+    		$$invalidate(0, character);
+    	}
+
+    	function pageheading_species_binding(value) {
+    		character.species = value;
+    		$$invalidate(0, character);
+    	}
+
+    	function pageheading_role_binding(value) {
+    		character.role = value;
+    		$$invalidate(0, character);
+    	}
+
     	function aspects_aspects_binding(value) {
     		character.aspects = value;
     		$$invalidate(0, character);
@@ -14357,6 +14550,9 @@ var app = (function () {
     	return [
     		character,
     		pageheading_name_binding,
+    		pageheading_player_binding,
+    		pageheading_species_binding,
+    		pageheading_role_binding,
     		aspects_aspects_binding,
     		vitals_vitals_binding,
     		vitals_will_binding,
@@ -15199,6 +15395,9 @@ var app = (function () {
     	let div4;
     	let pageheading;
     	let updating_name;
+    	let updating_player;
+    	let updating_species;
+    	let updating_role;
     	let t0;
     	let div3;
     	let div2;
@@ -15215,17 +15414,44 @@ var app = (function () {
     		/*pageheading_name_binding*/ ctx[1].call(null, value);
     	}
 
+    	function pageheading_player_binding(value) {
+    		/*pageheading_player_binding*/ ctx[2].call(null, value);
+    	}
+
+    	function pageheading_species_binding(value) {
+    		/*pageheading_species_binding*/ ctx[3].call(null, value);
+    	}
+
+    	function pageheading_role_binding(value) {
+    		/*pageheading_role_binding*/ ctx[4].call(null, value);
+    	}
+
     	let pageheading_props = {};
 
     	if (/*character*/ ctx[0].name !== void 0) {
     		pageheading_props.name = /*character*/ ctx[0].name;
     	}
 
+    	if (/*character*/ ctx[0].player !== void 0) {
+    		pageheading_props.player = /*character*/ ctx[0].player;
+    	}
+
+    	if (/*character*/ ctx[0].species !== void 0) {
+    		pageheading_props.species = /*character*/ ctx[0].species;
+    	}
+
+    	if (/*character*/ ctx[0].role !== void 0) {
+    		pageheading_props.role = /*character*/ ctx[0].role;
+    	}
+
     	pageheading = new PageHeading({ props: pageheading_props, $$inline: true });
     	binding_callbacks.push(() => bind(pageheading, "name", pageheading_name_binding));
+    	binding_callbacks.push(() => bind(pageheading, "player", pageheading_player_binding));
+    	binding_callbacks.push(() => bind(pageheading, "species", pageheading_species_binding));
+    	binding_callbacks.push(() => bind(pageheading, "role", pageheading_role_binding));
 
     	function aspects_aspects_binding(value) {
-    		/*aspects_aspects_binding*/ ctx[2].call(null, value);
+    		/*aspects_aspects_binding*/ ctx[5].call(null, value);
     	}
 
     	let aspects_props = {};
@@ -15238,7 +15464,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(aspects, "aspects", aspects_aspects_binding));
 
     	function stunts_stunts_binding(value) {
-    		/*stunts_stunts_binding*/ ctx[3].call(null, value);
+    		/*stunts_stunts_binding*/ ctx[6].call(null, value);
     	}
 
     	let stunts_props = {};
@@ -15265,13 +15491,13 @@ var app = (function () {
     			create_component(stunts.$$.fragment);
     			attr_dev(div0, "class", "td border svelte-zj5oo");
     			set_style(div0, "width", "50%");
-    			add_location(div0, file$c, 33, 16, 707);
+    			add_location(div0, file$c, 33, 16, 798);
     			attr_dev(div1, "class", "td ");
-    			add_location(div1, file$c, 36, 16, 854);
+    			add_location(div1, file$c, 36, 16, 945);
     			attr_dev(div2, "class", "tr");
-    			add_location(div2, file$c, 32, 12, 674);
+    			add_location(div2, file$c, 32, 12, 765);
     			attr_dev(div3, "class", "table");
-    			add_location(div3, file$c, 30, 8, 641);
+    			add_location(div3, file$c, 30, 8, 732);
     			attr_dev(div4, "class", "supplemental-sheet svelte-zj5oo");
     			add_location(div4, file$c, 28, 4, 548);
     			attr_dev(div5, "class", "page");
@@ -15301,6 +15527,24 @@ var app = (function () {
     				updating_name = true;
     				pageheading_changes.name = /*character*/ ctx[0].name;
     				add_flush_callback(() => updating_name = false);
+    			}
+
+    			if (!updating_player && dirty & /*character*/ 1) {
+    				updating_player = true;
+    				pageheading_changes.player = /*character*/ ctx[0].player;
+    				add_flush_callback(() => updating_player = false);
+    			}
+
+    			if (!updating_species && dirty & /*character*/ 1) {
+    				updating_species = true;
+    				pageheading_changes.species = /*character*/ ctx[0].species;
+    				add_flush_callback(() => updating_species = false);
+    			}
+
+    			if (!updating_role && dirty & /*character*/ 1) {
+    				updating_role = true;
+    				pageheading_changes.role = /*character*/ ctx[0].role;
+    				add_flush_callback(() => updating_role = false);
     			}
 
     			pageheading.$set(pageheading_changes);
@@ -15370,6 +15614,21 @@ var app = (function () {
     		$$invalidate(0, character);
     	}
 
+    	function pageheading_player_binding(value) {
+    		character.player = value;
+    		$$invalidate(0, character);
+    	}
+
+    	function pageheading_species_binding(value) {
+    		character.species = value;
+    		$$invalidate(0, character);
+    	}
+
+    	function pageheading_role_binding(value) {
+    		character.role = value;
+    		$$invalidate(0, character);
+    	}
+
     	function aspects_aspects_binding(value) {
     		character.aspects = value;
     		$$invalidate(0, character);
@@ -15403,6 +15662,9 @@ var app = (function () {
     	return [
     		character,
     		pageheading_name_binding,
+    		pageheading_player_binding,
+    		pageheading_species_binding,
+    		pageheading_role_binding,
     		aspects_aspects_binding,
     		stunts_stunts_binding
     	];
@@ -15430,2708 +15692,1465 @@ var app = (function () {
     	}
     }
 
-    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+    /* src/components/SRD/TOC.md generated by Svelte v3.25.0 */
 
-    function unwrapExports (x) {
-    	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-    }
-
-    function createCommonjsModule(fn, module) {
-    	return module = { exports: {} }, fn(module, module.exports), module.exports;
-    }
-
-    var marked = createCommonjsModule(function (module, exports) {
-    /**
-     * marked - a markdown parser
-     * Copyright (c) 2011-2020, Christopher Jeffrey. (MIT Licensed)
-     * https://github.com/markedjs/marked
-     */
-
-    /**
-     * DO NOT EDIT THIS FILE
-     * The code in this file is generated from files in ./src/
-     */
-
-    (function (global, factory) {
-       module.exports = factory() ;
-    }(commonjsGlobal, (function () {
-      function _defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-          var descriptor = props[i];
-          descriptor.enumerable = descriptor.enumerable || false;
-          descriptor.configurable = true;
-          if ("value" in descriptor) descriptor.writable = true;
-          Object.defineProperty(target, descriptor.key, descriptor);
-        }
-      }
-
-      function _createClass(Constructor, protoProps, staticProps) {
-        if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-        if (staticProps) _defineProperties(Constructor, staticProps);
-        return Constructor;
-      }
-
-      function _unsupportedIterableToArray(o, minLen) {
-        if (!o) return;
-        if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-        var n = Object.prototype.toString.call(o).slice(8, -1);
-        if (n === "Object" && o.constructor) n = o.constructor.name;
-        if (n === "Map" || n === "Set") return Array.from(o);
-        if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-      }
-
-      function _arrayLikeToArray(arr, len) {
-        if (len == null || len > arr.length) len = arr.length;
-
-        for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-        return arr2;
-      }
-
-      function _createForOfIteratorHelperLoose(o, allowArrayLike) {
-        var it;
-
-        if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
-          if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
-            if (it) o = it;
-            var i = 0;
-            return function () {
-              if (i >= o.length) return {
-                done: true
-              };
-              return {
-                done: false,
-                value: o[i++]
-              };
-            };
-          }
-
-          throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-        }
-
-        it = o[Symbol.iterator]();
-        return it.next.bind(it);
-      }
-
-      function createCommonjsModule(fn, module) {
-      	return module = { exports: {} }, fn(module, module.exports), module.exports;
-      }
-
-      var defaults = createCommonjsModule(function (module) {
-        function getDefaults() {
-          return {
-            baseUrl: null,
-            breaks: false,
-            gfm: true,
-            headerIds: true,
-            headerPrefix: '',
-            highlight: null,
-            langPrefix: 'language-',
-            mangle: true,
-            pedantic: false,
-            renderer: null,
-            sanitize: false,
-            sanitizer: null,
-            silent: false,
-            smartLists: false,
-            smartypants: false,
-            tokenizer: null,
-            walkTokens: null,
-            xhtml: false
-          };
-        }
-
-        function changeDefaults(newDefaults) {
-          module.exports.defaults = newDefaults;
-        }
-
-        module.exports = {
-          defaults: getDefaults(),
-          getDefaults: getDefaults,
-          changeDefaults: changeDefaults
-        };
-      });
-      var defaults_1 = defaults.defaults;
-      var defaults_2 = defaults.getDefaults;
-      var defaults_3 = defaults.changeDefaults;
-
-      /**
-       * Helpers
-       */
-      var escapeTest = /[&<>"']/;
-      var escapeReplace = /[&<>"']/g;
-      var escapeTestNoEncode = /[<>"']|&(?!#?\w+;)/;
-      var escapeReplaceNoEncode = /[<>"']|&(?!#?\w+;)/g;
-      var escapeReplacements = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-      };
-
-      var getEscapeReplacement = function getEscapeReplacement(ch) {
-        return escapeReplacements[ch];
-      };
-
-      function escape(html, encode) {
-        if (encode) {
-          if (escapeTest.test(html)) {
-            return html.replace(escapeReplace, getEscapeReplacement);
-          }
-        } else {
-          if (escapeTestNoEncode.test(html)) {
-            return html.replace(escapeReplaceNoEncode, getEscapeReplacement);
-          }
-        }
-
-        return html;
-      }
-
-      var unescapeTest = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig;
-
-      function unescape(html) {
-        // explicitly match decimal, hex, and named HTML entities
-        return html.replace(unescapeTest, function (_, n) {
-          n = n.toLowerCase();
-          if (n === 'colon') return ':';
-
-          if (n.charAt(0) === '#') {
-            return n.charAt(1) === 'x' ? String.fromCharCode(parseInt(n.substring(2), 16)) : String.fromCharCode(+n.substring(1));
-          }
-
-          return '';
-        });
-      }
-
-      var caret = /(^|[^\[])\^/g;
-
-      function edit(regex, opt) {
-        regex = regex.source || regex;
-        opt = opt || '';
-        var obj = {
-          replace: function replace(name, val) {
-            val = val.source || val;
-            val = val.replace(caret, '$1');
-            regex = regex.replace(name, val);
-            return obj;
-          },
-          getRegex: function getRegex() {
-            return new RegExp(regex, opt);
-          }
-        };
-        return obj;
-      }
-
-      var nonWordAndColonTest = /[^\w:]/g;
-      var originIndependentUrl = /^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;
-
-      function cleanUrl(sanitize, base, href) {
-        if (sanitize) {
-          var prot;
-
-          try {
-            prot = decodeURIComponent(unescape(href)).replace(nonWordAndColonTest, '').toLowerCase();
-          } catch (e) {
-            return null;
-          }
-
-          if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0 || prot.indexOf('data:') === 0) {
-            return null;
-          }
-        }
-
-        if (base && !originIndependentUrl.test(href)) {
-          href = resolveUrl(base, href);
-        }
-
-        try {
-          href = encodeURI(href).replace(/%25/g, '%');
-        } catch (e) {
-          return null;
-        }
-
-        return href;
-      }
-
-      var baseUrls = {};
-      var justDomain = /^[^:]+:\/*[^/]*$/;
-      var protocol = /^([^:]+:)[\s\S]*$/;
-      var domain = /^([^:]+:\/*[^/]*)[\s\S]*$/;
-
-      function resolveUrl(base, href) {
-        if (!baseUrls[' ' + base]) {
-          // we can ignore everything in base after the last slash of its path component,
-          // but we might need to add _that_
-          // https://tools.ietf.org/html/rfc3986#section-3
-          if (justDomain.test(base)) {
-            baseUrls[' ' + base] = base + '/';
-          } else {
-            baseUrls[' ' + base] = rtrim(base, '/', true);
-          }
-        }
-
-        base = baseUrls[' ' + base];
-        var relativeBase = base.indexOf(':') === -1;
-
-        if (href.substring(0, 2) === '//') {
-          if (relativeBase) {
-            return href;
-          }
-
-          return base.replace(protocol, '$1') + href;
-        } else if (href.charAt(0) === '/') {
-          if (relativeBase) {
-            return href;
-          }
-
-          return base.replace(domain, '$1') + href;
-        } else {
-          return base + href;
-        }
-      }
-
-      var noopTest = {
-        exec: function noopTest() {}
-      };
-
-      function merge(obj) {
-        var i = 1,
-            target,
-            key;
-
-        for (; i < arguments.length; i++) {
-          target = arguments[i];
-
-          for (key in target) {
-            if (Object.prototype.hasOwnProperty.call(target, key)) {
-              obj[key] = target[key];
-            }
-          }
-        }
-
-        return obj;
-      }
-
-      function splitCells(tableRow, count) {
-        // ensure that every cell-delimiting pipe has a space
-        // before it to distinguish it from an escaped pipe
-        var row = tableRow.replace(/\|/g, function (match, offset, str) {
-          var escaped = false,
-              curr = offset;
-
-          while (--curr >= 0 && str[curr] === '\\') {
-            escaped = !escaped;
-          }
-
-          if (escaped) {
-            // odd number of slashes means | is escaped
-            // so we leave it alone
-            return '|';
-          } else {
-            // add space before unescaped |
-            return ' |';
-          }
-        }),
-            cells = row.split(/ \|/);
-        var i = 0;
-
-        if (cells.length > count) {
-          cells.splice(count);
-        } else {
-          while (cells.length < count) {
-            cells.push('');
-          }
-        }
-
-        for (; i < cells.length; i++) {
-          // leading or trailing whitespace is ignored per the gfm spec
-          cells[i] = cells[i].trim().replace(/\\\|/g, '|');
-        }
-
-        return cells;
-      } // Remove trailing 'c's. Equivalent to str.replace(/c*$/, '').
-      // /c*$/ is vulnerable to REDOS.
-      // invert: Remove suffix of non-c chars instead. Default falsey.
-
-
-      function rtrim(str, c, invert) {
-        var l = str.length;
-
-        if (l === 0) {
-          return '';
-        } // Length of suffix matching the invert condition.
-
-
-        var suffLen = 0; // Step left until we fail to match the invert condition.
-
-        while (suffLen < l) {
-          var currChar = str.charAt(l - suffLen - 1);
-
-          if (currChar === c && !invert) {
-            suffLen++;
-          } else if (currChar !== c && invert) {
-            suffLen++;
-          } else {
-            break;
-          }
-        }
-
-        return str.substr(0, l - suffLen);
-      }
-
-      function findClosingBracket(str, b) {
-        if (str.indexOf(b[1]) === -1) {
-          return -1;
-        }
-
-        var l = str.length;
-        var level = 0,
-            i = 0;
-
-        for (; i < l; i++) {
-          if (str[i] === '\\') {
-            i++;
-          } else if (str[i] === b[0]) {
-            level++;
-          } else if (str[i] === b[1]) {
-            level--;
-
-            if (level < 0) {
-              return i;
-            }
-          }
-        }
-
-        return -1;
-      }
-
-      function checkSanitizeDeprecation(opt) {
-        if (opt && opt.sanitize && !opt.silent) {
-          console.warn('marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options');
-        }
-      }
-
-      var helpers = {
-        escape: escape,
-        unescape: unescape,
-        edit: edit,
-        cleanUrl: cleanUrl,
-        resolveUrl: resolveUrl,
-        noopTest: noopTest,
-        merge: merge,
-        splitCells: splitCells,
-        rtrim: rtrim,
-        findClosingBracket: findClosingBracket,
-        checkSanitizeDeprecation: checkSanitizeDeprecation
-      };
-
-      var defaults$1 = defaults.defaults;
-      var rtrim$1 = helpers.rtrim,
-          splitCells$1 = helpers.splitCells,
-          _escape = helpers.escape,
-          findClosingBracket$1 = helpers.findClosingBracket;
-
-      function outputLink(cap, link, raw) {
-        var href = link.href;
-        var title = link.title ? _escape(link.title) : null;
-        var text = cap[1].replace(/\\([\[\]])/g, '$1');
-
-        if (cap[0].charAt(0) !== '!') {
-          return {
-            type: 'link',
-            raw: raw,
-            href: href,
-            title: title,
-            text: text
-          };
-        } else {
-          return {
-            type: 'image',
-            raw: raw,
-            href: href,
-            title: title,
-            text: _escape(text)
-          };
-        }
-      }
-
-      function indentCodeCompensation(raw, text) {
-        var matchIndentToCode = raw.match(/^(\s+)(?:```)/);
-
-        if (matchIndentToCode === null) {
-          return text;
-        }
-
-        var indentToCode = matchIndentToCode[1];
-        return text.split('\n').map(function (node) {
-          var matchIndentInNode = node.match(/^\s+/);
-
-          if (matchIndentInNode === null) {
-            return node;
-          }
-
-          var indentInNode = matchIndentInNode[0];
-
-          if (indentInNode.length >= indentToCode.length) {
-            return node.slice(indentToCode.length);
-          }
-
-          return node;
-        }).join('\n');
-      }
-      /**
-       * Tokenizer
-       */
-
-
-      var Tokenizer_1 = /*#__PURE__*/function () {
-        function Tokenizer(options) {
-          this.options = options || defaults$1;
-        }
-
-        var _proto = Tokenizer.prototype;
-
-        _proto.space = function space(src) {
-          var cap = this.rules.block.newline.exec(src);
-
-          if (cap) {
-            if (cap[0].length > 1) {
-              return {
-                type: 'space',
-                raw: cap[0]
-              };
-            }
-
-            return {
-              raw: '\n'
-            };
-          }
-        };
-
-        _proto.code = function code(src, tokens) {
-          var cap = this.rules.block.code.exec(src);
-
-          if (cap) {
-            var lastToken = tokens[tokens.length - 1]; // An indented code block cannot interrupt a paragraph.
-
-            if (lastToken && lastToken.type === 'paragraph') {
-              return {
-                raw: cap[0],
-                text: cap[0].trimRight()
-              };
-            }
-
-            var text = cap[0].replace(/^ {4}/gm, '');
-            return {
-              type: 'code',
-              raw: cap[0],
-              codeBlockStyle: 'indented',
-              text: !this.options.pedantic ? rtrim$1(text, '\n') : text
-            };
-          }
-        };
-
-        _proto.fences = function fences(src) {
-          var cap = this.rules.block.fences.exec(src);
-
-          if (cap) {
-            var raw = cap[0];
-            var text = indentCodeCompensation(raw, cap[3] || '');
-            return {
-              type: 'code',
-              raw: raw,
-              lang: cap[2] ? cap[2].trim() : cap[2],
-              text: text
-            };
-          }
-        };
-
-        _proto.heading = function heading(src) {
-          var cap = this.rules.block.heading.exec(src);
-
-          if (cap) {
-            return {
-              type: 'heading',
-              raw: cap[0],
-              depth: cap[1].length,
-              text: cap[2]
-            };
-          }
-        };
-
-        _proto.nptable = function nptable(src) {
-          var cap = this.rules.block.nptable.exec(src);
-
-          if (cap) {
-            var item = {
-              type: 'table',
-              header: splitCells$1(cap[1].replace(/^ *| *\| *$/g, '')),
-              align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
-              cells: cap[3] ? cap[3].replace(/\n$/, '').split('\n') : [],
-              raw: cap[0]
-            };
-
-            if (item.header.length === item.align.length) {
-              var l = item.align.length;
-              var i;
-
-              for (i = 0; i < l; i++) {
-                if (/^ *-+: *$/.test(item.align[i])) {
-                  item.align[i] = 'right';
-                } else if (/^ *:-+: *$/.test(item.align[i])) {
-                  item.align[i] = 'center';
-                } else if (/^ *:-+ *$/.test(item.align[i])) {
-                  item.align[i] = 'left';
-                } else {
-                  item.align[i] = null;
-                }
-              }
-
-              l = item.cells.length;
-
-              for (i = 0; i < l; i++) {
-                item.cells[i] = splitCells$1(item.cells[i], item.header.length);
-              }
-
-              return item;
-            }
-          }
-        };
-
-        _proto.hr = function hr(src) {
-          var cap = this.rules.block.hr.exec(src);
-
-          if (cap) {
-            return {
-              type: 'hr',
-              raw: cap[0]
-            };
-          }
-        };
-
-        _proto.blockquote = function blockquote(src) {
-          var cap = this.rules.block.blockquote.exec(src);
-
-          if (cap) {
-            var text = cap[0].replace(/^ *> ?/gm, '');
-            return {
-              type: 'blockquote',
-              raw: cap[0],
-              text: text
-            };
-          }
-        };
-
-        _proto.list = function list(src) {
-          var cap = this.rules.block.list.exec(src);
-
-          if (cap) {
-            var raw = cap[0];
-            var bull = cap[2];
-            var isordered = bull.length > 1;
-            var isparen = bull[bull.length - 1] === ')';
-            var list = {
-              type: 'list',
-              raw: raw,
-              ordered: isordered,
-              start: isordered ? +bull.slice(0, -1) : '',
-              loose: false,
-              items: []
-            }; // Get each top-level item.
-
-            var itemMatch = cap[0].match(this.rules.block.item);
-            var next = false,
-                item,
-                space,
-                b,
-                addBack,
-                loose,
-                istask,
-                ischecked;
-            var l = itemMatch.length;
-
-            for (var i = 0; i < l; i++) {
-              item = itemMatch[i];
-              raw = item; // Remove the list item's bullet
-              // so it is seen as the next token.
-
-              space = item.length;
-              item = item.replace(/^ *([*+-]|\d+[.)]) */, ''); // Outdent whatever the
-              // list item contains. Hacky.
-
-              if (~item.indexOf('\n ')) {
-                space -= item.length;
-                item = !this.options.pedantic ? item.replace(new RegExp('^ {1,' + space + '}', 'gm'), '') : item.replace(/^ {1,4}/gm, '');
-              } // Determine whether the next list item belongs here.
-              // Backpedal if it does not belong in this list.
-
-
-              if (i !== l - 1) {
-                b = this.rules.block.bullet.exec(itemMatch[i + 1])[0];
-
-                if (isordered ? b.length === 1 || !isparen && b[b.length - 1] === ')' : b.length > 1 || this.options.smartLists && b !== bull) {
-                  addBack = itemMatch.slice(i + 1).join('\n');
-                  list.raw = list.raw.substring(0, list.raw.length - addBack.length);
-                  i = l - 1;
-                }
-              } // Determine whether item is loose or not.
-              // Use: /(^|\n)(?! )[^\n]+\n\n(?!\s*$)/
-              // for discount behavior.
-
-
-              loose = next || /\n\n(?!\s*$)/.test(item);
-
-              if (i !== l - 1) {
-                next = item.charAt(item.length - 1) === '\n';
-                if (!loose) loose = next;
-              }
-
-              if (loose) {
-                list.loose = true;
-              } // Check for task list items
-
-
-              istask = /^\[[ xX]\] /.test(item);
-              ischecked = undefined;
-
-              if (istask) {
-                ischecked = item[1] !== ' ';
-                item = item.replace(/^\[[ xX]\] +/, '');
-              }
-
-              list.items.push({
-                type: 'list_item',
-                raw: raw,
-                task: istask,
-                checked: ischecked,
-                loose: loose,
-                text: item
-              });
-            }
-
-            return list;
-          }
-        };
-
-        _proto.html = function html(src) {
-          var cap = this.rules.block.html.exec(src);
-
-          if (cap) {
-            return {
-              type: this.options.sanitize ? 'paragraph' : 'html',
-              raw: cap[0],
-              pre: !this.options.sanitizer && (cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style'),
-              text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : _escape(cap[0]) : cap[0]
-            };
-          }
-        };
-
-        _proto.def = function def(src) {
-          var cap = this.rules.block.def.exec(src);
-
-          if (cap) {
-            if (cap[3]) cap[3] = cap[3].substring(1, cap[3].length - 1);
-            var tag = cap[1].toLowerCase().replace(/\s+/g, ' ');
-            return {
-              tag: tag,
-              raw: cap[0],
-              href: cap[2],
-              title: cap[3]
-            };
-          }
-        };
-
-        _proto.table = function table(src) {
-          var cap = this.rules.block.table.exec(src);
-
-          if (cap) {
-            var item = {
-              type: 'table',
-              header: splitCells$1(cap[1].replace(/^ *| *\| *$/g, '')),
-              align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
-              cells: cap[3] ? cap[3].replace(/\n$/, '').split('\n') : []
-            };
-
-            if (item.header.length === item.align.length) {
-              item.raw = cap[0];
-              var l = item.align.length;
-              var i;
-
-              for (i = 0; i < l; i++) {
-                if (/^ *-+: *$/.test(item.align[i])) {
-                  item.align[i] = 'right';
-                } else if (/^ *:-+: *$/.test(item.align[i])) {
-                  item.align[i] = 'center';
-                } else if (/^ *:-+ *$/.test(item.align[i])) {
-                  item.align[i] = 'left';
-                } else {
-                  item.align[i] = null;
-                }
-              }
-
-              l = item.cells.length;
-
-              for (i = 0; i < l; i++) {
-                item.cells[i] = splitCells$1(item.cells[i].replace(/^ *\| *| *\| *$/g, ''), item.header.length);
-              }
-
-              return item;
-            }
-          }
-        };
-
-        _proto.lheading = function lheading(src) {
-          var cap = this.rules.block.lheading.exec(src);
-
-          if (cap) {
-            return {
-              type: 'heading',
-              raw: cap[0],
-              depth: cap[2].charAt(0) === '=' ? 1 : 2,
-              text: cap[1]
-            };
-          }
-        };
-
-        _proto.paragraph = function paragraph(src) {
-          var cap = this.rules.block.paragraph.exec(src);
-
-          if (cap) {
-            return {
-              type: 'paragraph',
-              raw: cap[0],
-              text: cap[1].charAt(cap[1].length - 1) === '\n' ? cap[1].slice(0, -1) : cap[1]
-            };
-          }
-        };
-
-        _proto.text = function text(src, tokens) {
-          var cap = this.rules.block.text.exec(src);
-
-          if (cap) {
-            var lastToken = tokens[tokens.length - 1];
-
-            if (lastToken && lastToken.type === 'text') {
-              return {
-                raw: cap[0],
-                text: cap[0]
-              };
-            }
-
-            return {
-              type: 'text',
-              raw: cap[0],
-              text: cap[0]
-            };
-          }
-        };
-
-        _proto.escape = function escape(src) {
-          var cap = this.rules.inline.escape.exec(src);
-
-          if (cap) {
-            return {
-              type: 'escape',
-              raw: cap[0],
-              text: _escape(cap[1])
-            };
-          }
-        };
-
-        _proto.tag = function tag(src, inLink, inRawBlock) {
-          var cap = this.rules.inline.tag.exec(src);
-
-          if (cap) {
-            if (!inLink && /^<a /i.test(cap[0])) {
-              inLink = true;
-            } else if (inLink && /^<\/a>/i.test(cap[0])) {
-              inLink = false;
-            }
-
-            if (!inRawBlock && /^<(pre|code|kbd|script)(\s|>)/i.test(cap[0])) {
-              inRawBlock = true;
-            } else if (inRawBlock && /^<\/(pre|code|kbd|script)(\s|>)/i.test(cap[0])) {
-              inRawBlock = false;
-            }
-
-            return {
-              type: this.options.sanitize ? 'text' : 'html',
-              raw: cap[0],
-              inLink: inLink,
-              inRawBlock: inRawBlock,
-              text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : _escape(cap[0]) : cap[0]
-            };
-          }
-        };
-
-        _proto.link = function link(src) {
-          var cap = this.rules.inline.link.exec(src);
-
-          if (cap) {
-            var lastParenIndex = findClosingBracket$1(cap[2], '()');
-
-            if (lastParenIndex > -1) {
-              var start = cap[0].indexOf('!') === 0 ? 5 : 4;
-              var linkLen = start + cap[1].length + lastParenIndex;
-              cap[2] = cap[2].substring(0, lastParenIndex);
-              cap[0] = cap[0].substring(0, linkLen).trim();
-              cap[3] = '';
-            }
-
-            var href = cap[2];
-            var title = '';
-
-            if (this.options.pedantic) {
-              var link = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(href);
-
-              if (link) {
-                href = link[1];
-                title = link[3];
-              } else {
-                title = '';
-              }
-            } else {
-              title = cap[3] ? cap[3].slice(1, -1) : '';
-            }
-
-            href = href.trim().replace(/^<([\s\S]*)>$/, '$1');
-            var token = outputLink(cap, {
-              href: href ? href.replace(this.rules.inline._escapes, '$1') : href,
-              title: title ? title.replace(this.rules.inline._escapes, '$1') : title
-            }, cap[0]);
-            return token;
-          }
-        };
-
-        _proto.reflink = function reflink(src, links) {
-          var cap;
-
-          if ((cap = this.rules.inline.reflink.exec(src)) || (cap = this.rules.inline.nolink.exec(src))) {
-            var link = (cap[2] || cap[1]).replace(/\s+/g, ' ');
-            link = links[link.toLowerCase()];
-
-            if (!link || !link.href) {
-              var text = cap[0].charAt(0);
-              return {
-                type: 'text',
-                raw: text,
-                text: text
-              };
-            }
-
-            var token = outputLink(cap, link, cap[0]);
-            return token;
-          }
-        };
-
-        _proto.strong = function strong(src, maskedSrc, prevChar) {
-          if (prevChar === void 0) {
-            prevChar = '';
-          }
-
-          var match = this.rules.inline.strong.start.exec(src);
-
-          if (match && (!match[1] || match[1] && (prevChar === '' || this.rules.inline.punctuation.exec(prevChar)))) {
-            maskedSrc = maskedSrc.slice(-1 * src.length);
-            var endReg = match[0] === '**' ? this.rules.inline.strong.endAst : this.rules.inline.strong.endUnd;
-            endReg.lastIndex = 0;
-            var cap;
-
-            while ((match = endReg.exec(maskedSrc)) != null) {
-              cap = this.rules.inline.strong.middle.exec(maskedSrc.slice(0, match.index + 3));
-
-              if (cap) {
-                return {
-                  type: 'strong',
-                  raw: src.slice(0, cap[0].length),
-                  text: src.slice(2, cap[0].length - 2)
-                };
-              }
-            }
-          }
-        };
-
-        _proto.em = function em(src, maskedSrc, prevChar) {
-          if (prevChar === void 0) {
-            prevChar = '';
-          }
-
-          var match = this.rules.inline.em.start.exec(src);
-
-          if (match && (!match[1] || match[1] && (prevChar === '' || this.rules.inline.punctuation.exec(prevChar)))) {
-            maskedSrc = maskedSrc.slice(-1 * src.length);
-            var endReg = match[0] === '*' ? this.rules.inline.em.endAst : this.rules.inline.em.endUnd;
-            endReg.lastIndex = 0;
-            var cap;
-
-            while ((match = endReg.exec(maskedSrc)) != null) {
-              cap = this.rules.inline.em.middle.exec(maskedSrc.slice(0, match.index + 2));
-
-              if (cap) {
-                return {
-                  type: 'em',
-                  raw: src.slice(0, cap[0].length),
-                  text: src.slice(1, cap[0].length - 1)
-                };
-              }
-            }
-          }
-        };
-
-        _proto.codespan = function codespan(src) {
-          var cap = this.rules.inline.code.exec(src);
-
-          if (cap) {
-            var text = cap[2].replace(/\n/g, ' ');
-            var hasNonSpaceChars = /[^ ]/.test(text);
-            var hasSpaceCharsOnBothEnds = text.startsWith(' ') && text.endsWith(' ');
-
-            if (hasNonSpaceChars && hasSpaceCharsOnBothEnds) {
-              text = text.substring(1, text.length - 1);
-            }
-
-            text = _escape(text, true);
-            return {
-              type: 'codespan',
-              raw: cap[0],
-              text: text
-            };
-          }
-        };
-
-        _proto.br = function br(src) {
-          var cap = this.rules.inline.br.exec(src);
-
-          if (cap) {
-            return {
-              type: 'br',
-              raw: cap[0]
-            };
-          }
-        };
-
-        _proto.del = function del(src) {
-          var cap = this.rules.inline.del.exec(src);
-
-          if (cap) {
-            return {
-              type: 'del',
-              raw: cap[0],
-              text: cap[1]
-            };
-          }
-        };
-
-        _proto.autolink = function autolink(src, mangle) {
-          var cap = this.rules.inline.autolink.exec(src);
-
-          if (cap) {
-            var text, href;
-
-            if (cap[2] === '@') {
-              text = _escape(this.options.mangle ? mangle(cap[1]) : cap[1]);
-              href = 'mailto:' + text;
-            } else {
-              text = _escape(cap[1]);
-              href = text;
-            }
-
-            return {
-              type: 'link',
-              raw: cap[0],
-              text: text,
-              href: href,
-              tokens: [{
-                type: 'text',
-                raw: text,
-                text: text
-              }]
-            };
-          }
-        };
-
-        _proto.url = function url(src, mangle) {
-          var cap;
-
-          if (cap = this.rules.inline.url.exec(src)) {
-            var text, href;
-
-            if (cap[2] === '@') {
-              text = _escape(this.options.mangle ? mangle(cap[0]) : cap[0]);
-              href = 'mailto:' + text;
-            } else {
-              // do extended autolink path validation
-              var prevCapZero;
-
-              do {
-                prevCapZero = cap[0];
-                cap[0] = this.rules.inline._backpedal.exec(cap[0])[0];
-              } while (prevCapZero !== cap[0]);
-
-              text = _escape(cap[0]);
-
-              if (cap[1] === 'www.') {
-                href = 'http://' + text;
-              } else {
-                href = text;
-              }
-            }
-
-            return {
-              type: 'link',
-              raw: cap[0],
-              text: text,
-              href: href,
-              tokens: [{
-                type: 'text',
-                raw: text,
-                text: text
-              }]
-            };
-          }
-        };
-
-        _proto.inlineText = function inlineText(src, inRawBlock, smartypants) {
-          var cap = this.rules.inline.text.exec(src);
-
-          if (cap) {
-            var text;
-
-            if (inRawBlock) {
-              text = this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : _escape(cap[0]) : cap[0];
-            } else {
-              text = _escape(this.options.smartypants ? smartypants(cap[0]) : cap[0]);
-            }
-
-            return {
-              type: 'text',
-              raw: cap[0],
-              text: text
-            };
-          }
-        };
-
-        return Tokenizer;
-      }();
-
-      var noopTest$1 = helpers.noopTest,
-          edit$1 = helpers.edit,
-          merge$1 = helpers.merge;
-      /**
-       * Block-Level Grammar
-       */
-
-      var block = {
-        newline: /^\n+/,
-        code: /^( {4}[^\n]+\n*)+/,
-        fences: /^ {0,3}(`{3,}(?=[^`\n]*\n)|~{3,})([^\n]*)\n(?:|([\s\S]*?)\n)(?: {0,3}\1[~`]* *(?:\n+|$)|$)/,
-        hr: /^ {0,3}((?:- *){3,}|(?:_ *){3,}|(?:\* *){3,})(?:\n+|$)/,
-        heading: /^ {0,3}(#{1,6}) +([^\n]*?)(?: +#+)? *(?:\n+|$)/,
-        blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
-        list: /^( {0,3})(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
-        html: '^ {0,3}(?:' // optional indentation
-        + '<(script|pre|style)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)' // (1)
-        + '|comment[^\\n]*(\\n+|$)' // (2)
-        + '|<\\?[\\s\\S]*?\\?>\\n*' // (3)
-        + '|<![A-Z][\\s\\S]*?>\\n*' // (4)
-        + '|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>\\n*' // (5)
-        + '|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:\\n{2,}|$)' // (6)
-        + '|<(?!script|pre|style)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)' // (7) open tag
-        + '|</(?!script|pre|style)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)' // (7) closing tag
-        + ')',
-        def: /^ {0,3}\[(label)\]: *\n? *<?([^\s>]+)>?(?:(?: +\n? *| *\n *)(title))? *(?:\n+|$)/,
-        nptable: noopTest$1,
-        table: noopTest$1,
-        lheading: /^([^\n]+)\n {0,3}(=+|-+) *(?:\n+|$)/,
-        // regex template, placeholders will be replaced according to different paragraph
-        // interruption rules of commonmark and the original markdown spec:
-        _paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html)[^\n]+)*)/,
-        text: /^[^\n]+/
-      };
-      block._label = /(?!\s*\])(?:\\[\[\]]|[^\[\]])+/;
-      block._title = /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/;
-      block.def = edit$1(block.def).replace('label', block._label).replace('title', block._title).getRegex();
-      block.bullet = /(?:[*+-]|\d{1,9}[.)])/;
-      block.item = /^( *)(bull) ?[^\n]*(?:\n(?!\1bull ?)[^\n]*)*/;
-      block.item = edit$1(block.item, 'gm').replace(/bull/g, block.bullet).getRegex();
-      block.list = edit$1(block.list).replace(/bull/g, block.bullet).replace('hr', '\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))').replace('def', '\\n+(?=' + block.def.source + ')').getRegex();
-      block._tag = 'address|article|aside|base|basefont|blockquote|body|caption' + '|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption' + '|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe' + '|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option' + '|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr' + '|track|ul';
-      block._comment = /<!--(?!-?>)[\s\S]*?-->/;
-      block.html = edit$1(block.html, 'i').replace('comment', block._comment).replace('tag', block._tag).replace('attribute', / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
-      block.paragraph = edit$1(block._paragraph).replace('hr', block.hr).replace('heading', ' {0,3}#{1,6} ').replace('|lheading', '') // setex headings don't interrupt commonmark paragraphs
-      .replace('blockquote', ' {0,3}>').replace('fences', ' {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n').replace('list', ' {0,3}(?:[*+-]|1[.)]) ') // only lists starting from 1 can interrupt
-      .replace('html', '</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)').replace('tag', block._tag) // pars can be interrupted by type (6) html blocks
-      .getRegex();
-      block.blockquote = edit$1(block.blockquote).replace('paragraph', block.paragraph).getRegex();
-      /**
-       * Normal Block Grammar
-       */
-
-      block.normal = merge$1({}, block);
-      /**
-       * GFM Block Grammar
-       */
-
-      block.gfm = merge$1({}, block.normal, {
-        nptable: '^ *([^|\\n ].*\\|.*)\\n' // Header
-        + ' *([-:]+ *\\|[-| :]*)' // Align
-        + '(?:\\n((?:(?!\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)',
-        // Cells
-        table: '^ *\\|(.+)\\n' // Header
-        + ' *\\|?( *[-:]+[-| :]*)' // Align
-        + '(?:\\n *((?:(?!\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)' // Cells
-
-      });
-      block.gfm.nptable = edit$1(block.gfm.nptable).replace('hr', block.hr).replace('heading', ' {0,3}#{1,6} ').replace('blockquote', ' {0,3}>').replace('code', ' {4}[^\\n]').replace('fences', ' {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n').replace('list', ' {0,3}(?:[*+-]|1[.)]) ') // only lists starting from 1 can interrupt
-      .replace('html', '</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)').replace('tag', block._tag) // tables can be interrupted by type (6) html blocks
-      .getRegex();
-      block.gfm.table = edit$1(block.gfm.table).replace('hr', block.hr).replace('heading', ' {0,3}#{1,6} ').replace('blockquote', ' {0,3}>').replace('code', ' {4}[^\\n]').replace('fences', ' {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n').replace('list', ' {0,3}(?:[*+-]|1[.)]) ') // only lists starting from 1 can interrupt
-      .replace('html', '</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)').replace('tag', block._tag) // tables can be interrupted by type (6) html blocks
-      .getRegex();
-      /**
-       * Pedantic grammar (original John Gruber's loose markdown specification)
-       */
-
-      block.pedantic = merge$1({}, block.normal, {
-        html: edit$1('^ *(?:comment *(?:\\n|\\s*$)' + '|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)' // closed tag
-        + '|<tag(?:"[^"]*"|\'[^\']*\'|\\s[^\'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))').replace('comment', block._comment).replace(/tag/g, '(?!(?:' + 'a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub' + '|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)' + '\\b)\\w+(?!:|[^\\w\\s@]*@)\\b').getRegex(),
-        def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
-        heading: /^ *(#{1,6}) *([^\n]+?) *(?:#+ *)?(?:\n+|$)/,
-        fences: noopTest$1,
-        // fences not supported
-        paragraph: edit$1(block.normal._paragraph).replace('hr', block.hr).replace('heading', ' *#{1,6} *[^\n]').replace('lheading', block.lheading).replace('blockquote', ' {0,3}>').replace('|fences', '').replace('|list', '').replace('|html', '').getRegex()
-      });
-      /**
-       * Inline-Level Grammar
-       */
-
-      var inline = {
-        escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
-        autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
-        url: noopTest$1,
-        tag: '^comment' + '|^</[a-zA-Z][\\w:-]*\\s*>' // self-closing tag
-        + '|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>' // open tag
-        + '|^<\\?[\\s\\S]*?\\?>' // processing instruction, e.g. <?php ?>
-        + '|^<![a-zA-Z]+\\s[\\s\\S]*?>' // declaration, e.g. <!DOCTYPE html>
-        + '|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>',
-        // CDATA section
-        link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
-        reflink: /^!?\[(label)\]\[(?!\s*\])((?:\\[\[\]]?|[^\[\]\\])+)\]/,
-        nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/,
-        reflinkSearch: 'reflink|nolink(?!\\()',
-        strong: {
-          start: /^(?:(\*\*(?=[*punctuation]))|\*\*)(?![\s])|__/,
-          // (1) returns if starts w/ punctuation
-          middle: /^\*\*(?:(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)|\*(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)*?\*)+?\*\*$|^__(?![\s])((?:(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)|_(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)*?_)+?)__$/,
-          endAst: /[^punctuation\s]\*\*(?!\*)|[punctuation]\*\*(?!\*)(?:(?=[punctuation\s]|$))/,
-          // last char can't be punct, or final * must also be followed by punct (or endline)
-          endUnd: /[^\s]__(?!_)(?:(?=[punctuation\s])|$)/ // last char can't be a space, and final _ must preceed punct or \s (or endline)
-
-        },
-        em: {
-          start: /^(?:(\*(?=[punctuation]))|\*)(?![*\s])|_/,
-          // (1) returns if starts w/ punctuation
-          middle: /^\*(?:(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)|\*(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)*?\*)+?\*$|^_(?![_\s])(?:(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)|_(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)*?_)+?_$/,
-          endAst: /[^punctuation\s]\*(?!\*)|[punctuation]\*(?!\*)(?:(?=[punctuation\s]|$))/,
-          // last char can't be punct, or final * must also be followed by punct (or endline)
-          endUnd: /[^\s]_(?!_)(?:(?=[punctuation\s])|$)/ // last char can't be a space, and final _ must preceed punct or \s (or endline)
-
-        },
-        code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
-        br: /^( {2,}|\\)\n(?!\s*$)/,
-        del: noopTest$1,
-        text: /^(`+|[^`])(?:[\s\S]*?(?:(?=[\\<!\[`*]|\b_|$)|[^ ](?= {2,}\n))|(?= {2,}\n))/,
-        punctuation: /^([\s*punctuation])/
-      }; // list of punctuation marks from common mark spec
-      // without * and _ to workaround cases with double emphasis
-
-      inline._punctuation = '!"#$%&\'()+\\-.,/:;<=>?@\\[\\]`^{|}~';
-      inline.punctuation = edit$1(inline.punctuation).replace(/punctuation/g, inline._punctuation).getRegex(); // sequences em should skip over [title](link), `code`, <html>
-
-      inline._blockSkip = '\\[[^\\]]*?\\]\\([^\\)]*?\\)|`[^`]*?`|<[^>]*?>';
-      inline._overlapSkip = '__[^_]*?__|\\*\\*\\[^\\*\\]*?\\*\\*';
-      inline.em.start = edit$1(inline.em.start).replace(/punctuation/g, inline._punctuation).getRegex();
-      inline.em.middle = edit$1(inline.em.middle).replace(/punctuation/g, inline._punctuation).replace(/overlapSkip/g, inline._overlapSkip).getRegex();
-      inline.em.endAst = edit$1(inline.em.endAst, 'g').replace(/punctuation/g, inline._punctuation).getRegex();
-      inline.em.endUnd = edit$1(inline.em.endUnd, 'g').replace(/punctuation/g, inline._punctuation).getRegex();
-      inline.strong.start = edit$1(inline.strong.start).replace(/punctuation/g, inline._punctuation).getRegex();
-      inline.strong.middle = edit$1(inline.strong.middle).replace(/punctuation/g, inline._punctuation).replace(/blockSkip/g, inline._blockSkip).getRegex();
-      inline.strong.endAst = edit$1(inline.strong.endAst, 'g').replace(/punctuation/g, inline._punctuation).getRegex();
-      inline.strong.endUnd = edit$1(inline.strong.endUnd, 'g').replace(/punctuation/g, inline._punctuation).getRegex();
-      inline.blockSkip = edit$1(inline._blockSkip, 'g').getRegex();
-      inline.overlapSkip = edit$1(inline._overlapSkip, 'g').getRegex();
-      inline._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g;
-      inline._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/;
-      inline._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;
-      inline.autolink = edit$1(inline.autolink).replace('scheme', inline._scheme).replace('email', inline._email).getRegex();
-      inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;
-      inline.tag = edit$1(inline.tag).replace('comment', block._comment).replace('attribute', inline._attribute).getRegex();
-      inline._label = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
-      inline._href = /<(?:\\[<>]?|[^\s<>\\])*>|[^\s\x00-\x1f]*/;
-      inline._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/;
-      inline.link = edit$1(inline.link).replace('label', inline._label).replace('href', inline._href).replace('title', inline._title).getRegex();
-      inline.reflink = edit$1(inline.reflink).replace('label', inline._label).getRegex();
-      inline.reflinkSearch = edit$1(inline.reflinkSearch, 'g').replace('reflink', inline.reflink).replace('nolink', inline.nolink).getRegex();
-      /**
-       * Normal Inline Grammar
-       */
-
-      inline.normal = merge$1({}, inline);
-      /**
-       * Pedantic Inline Grammar
-       */
-
-      inline.pedantic = merge$1({}, inline.normal, {
-        strong: {
-          start: /^__|\*\*/,
-          middle: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
-          endAst: /\*\*(?!\*)/g,
-          endUnd: /__(?!_)/g
-        },
-        em: {
-          start: /^_|\*/,
-          middle: /^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/,
-          endAst: /\*(?!\*)/g,
-          endUnd: /_(?!_)/g
-        },
-        link: edit$1(/^!?\[(label)\]\((.*?)\)/).replace('label', inline._label).getRegex(),
-        reflink: edit$1(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace('label', inline._label).getRegex()
-      });
-      /**
-       * GFM Inline Grammar
-       */
-
-      inline.gfm = merge$1({}, inline.normal, {
-        escape: edit$1(inline.escape).replace('])', '~|])').getRegex(),
-        _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,
-        url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
-        _backpedal: /(?:[^?!.,:;*_~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_~)]+(?!$))+/,
-        del: /^~+(?=\S)([\s\S]*?\S)~+/,
-        text: /^(`+|[^`])(?:[\s\S]*?(?:(?=[\\<!\[`*~]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@))|(?= {2,}\n|[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@))/
-      });
-      inline.gfm.url = edit$1(inline.gfm.url, 'i').replace('email', inline.gfm._extended_email).getRegex();
-      /**
-       * GFM + Line Breaks Inline Grammar
-       */
-
-      inline.breaks = merge$1({}, inline.gfm, {
-        br: edit$1(inline.br).replace('{2,}', '*').getRegex(),
-        text: edit$1(inline.gfm.text).replace('\\b_', '\\b_| {2,}\\n').replace(/\{2,\}/g, '*').getRegex()
-      });
-      var rules = {
-        block: block,
-        inline: inline
-      };
-
-      var defaults$2 = defaults.defaults;
-      var block$1 = rules.block,
-          inline$1 = rules.inline;
-      /**
-       * smartypants text replacement
-       */
-
-      function smartypants(text) {
-        return text // em-dashes
-        .replace(/---/g, "\u2014") // en-dashes
-        .replace(/--/g, "\u2013") // opening singles
-        .replace(/(^|[-\u2014/(\[{"\s])'/g, "$1\u2018") // closing singles & apostrophes
-        .replace(/'/g, "\u2019") // opening doubles
-        .replace(/(^|[-\u2014/(\[{\u2018\s])"/g, "$1\u201C") // closing doubles
-        .replace(/"/g, "\u201D") // ellipses
-        .replace(/\.{3}/g, "\u2026");
-      }
-      /**
-       * mangle email addresses
-       */
-
-
-      function mangle(text) {
-        var out = '',
-            i,
-            ch;
-        var l = text.length;
-
-        for (i = 0; i < l; i++) {
-          ch = text.charCodeAt(i);
-
-          if (Math.random() > 0.5) {
-            ch = 'x' + ch.toString(16);
-          }
-
-          out += '&#' + ch + ';';
-        }
-
-        return out;
-      }
-      /**
-       * Block Lexer
-       */
-
-
-      var Lexer_1 = /*#__PURE__*/function () {
-        function Lexer(options) {
-          this.tokens = [];
-          this.tokens.links = Object.create(null);
-          this.options = options || defaults$2;
-          this.options.tokenizer = this.options.tokenizer || new Tokenizer_1();
-          this.tokenizer = this.options.tokenizer;
-          this.tokenizer.options = this.options;
-          var rules = {
-            block: block$1.normal,
-            inline: inline$1.normal
-          };
-
-          if (this.options.pedantic) {
-            rules.block = block$1.pedantic;
-            rules.inline = inline$1.pedantic;
-          } else if (this.options.gfm) {
-            rules.block = block$1.gfm;
-
-            if (this.options.breaks) {
-              rules.inline = inline$1.breaks;
-            } else {
-              rules.inline = inline$1.gfm;
-            }
-          }
-
-          this.tokenizer.rules = rules;
-        }
-        /**
-         * Expose Rules
-         */
-
-
-        /**
-         * Static Lex Method
-         */
-        Lexer.lex = function lex(src, options) {
-          var lexer = new Lexer(options);
-          return lexer.lex(src);
-        }
-        /**
-         * Preprocessing
-         */
-        ;
-
-        var _proto = Lexer.prototype;
-
-        _proto.lex = function lex(src) {
-          src = src.replace(/\r\n|\r/g, '\n').replace(/\t/g, '    ');
-          this.blockTokens(src, this.tokens, true);
-          this.inline(this.tokens);
-          return this.tokens;
-        }
-        /**
-         * Lexing
-         */
-        ;
-
-        _proto.blockTokens = function blockTokens(src, tokens, top) {
-          if (tokens === void 0) {
-            tokens = [];
-          }
-
-          if (top === void 0) {
-            top = true;
-          }
-
-          src = src.replace(/^ +$/gm, '');
-          var token, i, l, lastToken;
-
-          while (src) {
-            // newline
-            if (token = this.tokenizer.space(src)) {
-              src = src.substring(token.raw.length);
-
-              if (token.type) {
-                tokens.push(token);
-              }
-
-              continue;
-            } // code
-
-
-            if (token = this.tokenizer.code(src, tokens)) {
-              src = src.substring(token.raw.length);
-
-              if (token.type) {
-                tokens.push(token);
-              } else {
-                lastToken = tokens[tokens.length - 1];
-                lastToken.raw += '\n' + token.raw;
-                lastToken.text += '\n' + token.text;
-              }
-
-              continue;
-            } // fences
-
-
-            if (token = this.tokenizer.fences(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // heading
-
-
-            if (token = this.tokenizer.heading(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // table no leading pipe (gfm)
-
-
-            if (token = this.tokenizer.nptable(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // hr
-
-
-            if (token = this.tokenizer.hr(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // blockquote
-
-
-            if (token = this.tokenizer.blockquote(src)) {
-              src = src.substring(token.raw.length);
-              token.tokens = this.blockTokens(token.text, [], top);
-              tokens.push(token);
-              continue;
-            } // list
-
-
-            if (token = this.tokenizer.list(src)) {
-              src = src.substring(token.raw.length);
-              l = token.items.length;
-
-              for (i = 0; i < l; i++) {
-                token.items[i].tokens = this.blockTokens(token.items[i].text, [], false);
-              }
-
-              tokens.push(token);
-              continue;
-            } // html
-
-
-            if (token = this.tokenizer.html(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // def
-
-
-            if (top && (token = this.tokenizer.def(src))) {
-              src = src.substring(token.raw.length);
-
-              if (!this.tokens.links[token.tag]) {
-                this.tokens.links[token.tag] = {
-                  href: token.href,
-                  title: token.title
-                };
-              }
-
-              continue;
-            } // table (gfm)
-
-
-            if (token = this.tokenizer.table(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // lheading
-
-
-            if (token = this.tokenizer.lheading(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // top-level paragraph
-
-
-            if (top && (token = this.tokenizer.paragraph(src))) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // text
-
-
-            if (token = this.tokenizer.text(src, tokens)) {
-              src = src.substring(token.raw.length);
-
-              if (token.type) {
-                tokens.push(token);
-              } else {
-                lastToken = tokens[tokens.length - 1];
-                lastToken.raw += '\n' + token.raw;
-                lastToken.text += '\n' + token.text;
-              }
-
-              continue;
-            }
-
-            if (src) {
-              var errMsg = 'Infinite loop on byte: ' + src.charCodeAt(0);
-
-              if (this.options.silent) {
-                console.error(errMsg);
-                break;
-              } else {
-                throw new Error(errMsg);
-              }
-            }
-          }
-
-          return tokens;
-        };
-
-        _proto.inline = function inline(tokens) {
-          var i, j, k, l2, row, token;
-          var l = tokens.length;
-
-          for (i = 0; i < l; i++) {
-            token = tokens[i];
-
-            switch (token.type) {
-              case 'paragraph':
-              case 'text':
-              case 'heading':
-                {
-                  token.tokens = [];
-                  this.inlineTokens(token.text, token.tokens);
-                  break;
-                }
-
-              case 'table':
-                {
-                  token.tokens = {
-                    header: [],
-                    cells: []
-                  }; // header
-
-                  l2 = token.header.length;
-
-                  for (j = 0; j < l2; j++) {
-                    token.tokens.header[j] = [];
-                    this.inlineTokens(token.header[j], token.tokens.header[j]);
-                  } // cells
-
-
-                  l2 = token.cells.length;
-
-                  for (j = 0; j < l2; j++) {
-                    row = token.cells[j];
-                    token.tokens.cells[j] = [];
-
-                    for (k = 0; k < row.length; k++) {
-                      token.tokens.cells[j][k] = [];
-                      this.inlineTokens(row[k], token.tokens.cells[j][k]);
-                    }
-                  }
-
-                  break;
-                }
-
-              case 'blockquote':
-                {
-                  this.inline(token.tokens);
-                  break;
-                }
-
-              case 'list':
-                {
-                  l2 = token.items.length;
-
-                  for (j = 0; j < l2; j++) {
-                    this.inline(token.items[j].tokens);
-                  }
-
-                  break;
-                }
-            }
-          }
-
-          return tokens;
-        }
-        /**
-         * Lexing/Compiling
-         */
-        ;
-
-        _proto.inlineTokens = function inlineTokens(src, tokens, inLink, inRawBlock, prevChar) {
-          if (tokens === void 0) {
-            tokens = [];
-          }
-
-          if (inLink === void 0) {
-            inLink = false;
-          }
-
-          if (inRawBlock === void 0) {
-            inRawBlock = false;
-          }
-
-          if (prevChar === void 0) {
-            prevChar = '';
-          }
-
-          var token; // String with links masked to avoid interference with em and strong
-
-          var maskedSrc = src;
-          var match; // Mask out reflinks
-
-          if (this.tokens.links) {
-            var links = Object.keys(this.tokens.links);
-
-            if (links.length > 0) {
-              while ((match = this.tokenizer.rules.inline.reflinkSearch.exec(maskedSrc)) != null) {
-                if (links.includes(match[0].slice(match[0].lastIndexOf('[') + 1, -1))) {
-                  maskedSrc = maskedSrc.slice(0, match.index) + '[' + 'a'.repeat(match[0].length - 2) + ']' + maskedSrc.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex);
-                }
-              }
-            }
-          } // Mask out other blocks
-
-
-          while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
-            maskedSrc = maskedSrc.slice(0, match.index) + '[' + 'a'.repeat(match[0].length - 2) + ']' + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
-          }
-
-          while (src) {
-            // escape
-            if (token = this.tokenizer.escape(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // tag
-
-
-            if (token = this.tokenizer.tag(src, inLink, inRawBlock)) {
-              src = src.substring(token.raw.length);
-              inLink = token.inLink;
-              inRawBlock = token.inRawBlock;
-              tokens.push(token);
-              continue;
-            } // link
-
-
-            if (token = this.tokenizer.link(src)) {
-              src = src.substring(token.raw.length);
-
-              if (token.type === 'link') {
-                token.tokens = this.inlineTokens(token.text, [], true, inRawBlock);
-              }
-
-              tokens.push(token);
-              continue;
-            } // reflink, nolink
-
-
-            if (token = this.tokenizer.reflink(src, this.tokens.links)) {
-              src = src.substring(token.raw.length);
-
-              if (token.type === 'link') {
-                token.tokens = this.inlineTokens(token.text, [], true, inRawBlock);
-              }
-
-              tokens.push(token);
-              continue;
-            } // strong
-
-
-            if (token = this.tokenizer.strong(src, maskedSrc, prevChar)) {
-              src = src.substring(token.raw.length);
-              token.tokens = this.inlineTokens(token.text, [], inLink, inRawBlock);
-              tokens.push(token);
-              continue;
-            } // em
-
-
-            if (token = this.tokenizer.em(src, maskedSrc, prevChar)) {
-              src = src.substring(token.raw.length);
-              token.tokens = this.inlineTokens(token.text, [], inLink, inRawBlock);
-              tokens.push(token);
-              continue;
-            } // code
-
-
-            if (token = this.tokenizer.codespan(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // br
-
-
-            if (token = this.tokenizer.br(src)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // del (gfm)
-
-
-            if (token = this.tokenizer.del(src)) {
-              src = src.substring(token.raw.length);
-              token.tokens = this.inlineTokens(token.text, [], inLink, inRawBlock);
-              tokens.push(token);
-              continue;
-            } // autolink
-
-
-            if (token = this.tokenizer.autolink(src, mangle)) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // url (gfm)
-
-
-            if (!inLink && (token = this.tokenizer.url(src, mangle))) {
-              src = src.substring(token.raw.length);
-              tokens.push(token);
-              continue;
-            } // text
-
-
-            if (token = this.tokenizer.inlineText(src, inRawBlock, smartypants)) {
-              src = src.substring(token.raw.length);
-              prevChar = token.raw.slice(-1);
-              tokens.push(token);
-              continue;
-            }
-
-            if (src) {
-              var errMsg = 'Infinite loop on byte: ' + src.charCodeAt(0);
-
-              if (this.options.silent) {
-                console.error(errMsg);
-                break;
-              } else {
-                throw new Error(errMsg);
-              }
-            }
-          }
-
-          return tokens;
-        };
-
-        _createClass(Lexer, null, [{
-          key: "rules",
-          get: function get() {
-            return {
-              block: block$1,
-              inline: inline$1
-            };
-          }
-        }]);
-
-        return Lexer;
-      }();
-
-      var defaults$3 = defaults.defaults;
-      var cleanUrl$1 = helpers.cleanUrl,
-          escape$1 = helpers.escape;
-      /**
-       * Renderer
-       */
-
-      var Renderer_1 = /*#__PURE__*/function () {
-        function Renderer(options) {
-          this.options = options || defaults$3;
-        }
-
-        var _proto = Renderer.prototype;
-
-        _proto.code = function code(_code, infostring, escaped) {
-          var lang = (infostring || '').match(/\S*/)[0];
-
-          if (this.options.highlight) {
-            var out = this.options.highlight(_code, lang);
-
-            if (out != null && out !== _code) {
-              escaped = true;
-              _code = out;
-            }
-          }
-
-          if (!lang) {
-            return '<pre><code>' + (escaped ? _code : escape$1(_code, true)) + '</code></pre>\n';
-          }
-
-          return '<pre><code class="' + this.options.langPrefix + escape$1(lang, true) + '">' + (escaped ? _code : escape$1(_code, true)) + '</code></pre>\n';
-        };
-
-        _proto.blockquote = function blockquote(quote) {
-          return '<blockquote>\n' + quote + '</blockquote>\n';
-        };
-
-        _proto.html = function html(_html) {
-          return _html;
-        };
-
-        _proto.heading = function heading(text, level, raw, slugger) {
-          if (this.options.headerIds) {
-            return '<h' + level + ' id="' + this.options.headerPrefix + slugger.slug(raw) + '">' + text + '</h' + level + '>\n';
-          } // ignore IDs
-
-
-          return '<h' + level + '>' + text + '</h' + level + '>\n';
-        };
-
-        _proto.hr = function hr() {
-          return this.options.xhtml ? '<hr/>\n' : '<hr>\n';
-        };
-
-        _proto.list = function list(body, ordered, start) {
-          var type = ordered ? 'ol' : 'ul',
-              startatt = ordered && start !== 1 ? ' start="' + start + '"' : '';
-          return '<' + type + startatt + '>\n' + body + '</' + type + '>\n';
-        };
-
-        _proto.listitem = function listitem(text) {
-          return '<li>' + text + '</li>\n';
-        };
-
-        _proto.checkbox = function checkbox(checked) {
-          return '<input ' + (checked ? 'checked="" ' : '') + 'disabled="" type="checkbox"' + (this.options.xhtml ? ' /' : '') + '> ';
-        };
-
-        _proto.paragraph = function paragraph(text) {
-          return '<p>' + text + '</p>\n';
-        };
-
-        _proto.table = function table(header, body) {
-          if (body) body = '<tbody>' + body + '</tbody>';
-          return '<table>\n' + '<thead>\n' + header + '</thead>\n' + body + '</table>\n';
-        };
-
-        _proto.tablerow = function tablerow(content) {
-          return '<tr>\n' + content + '</tr>\n';
-        };
-
-        _proto.tablecell = function tablecell(content, flags) {
-          var type = flags.header ? 'th' : 'td';
-          var tag = flags.align ? '<' + type + ' align="' + flags.align + '">' : '<' + type + '>';
-          return tag + content + '</' + type + '>\n';
-        } // span level renderer
-        ;
-
-        _proto.strong = function strong(text) {
-          return '<strong>' + text + '</strong>';
-        };
-
-        _proto.em = function em(text) {
-          return '<em>' + text + '</em>';
-        };
-
-        _proto.codespan = function codespan(text) {
-          return '<code>' + text + '</code>';
-        };
-
-        _proto.br = function br() {
-          return this.options.xhtml ? '<br/>' : '<br>';
-        };
-
-        _proto.del = function del(text) {
-          return '<del>' + text + '</del>';
-        };
-
-        _proto.link = function link(href, title, text) {
-          href = cleanUrl$1(this.options.sanitize, this.options.baseUrl, href);
-
-          if (href === null) {
-            return text;
-          }
-
-          var out = '<a href="' + escape$1(href) + '"';
-
-          if (title) {
-            out += ' title="' + title + '"';
-          }
-
-          out += '>' + text + '</a>';
-          return out;
-        };
-
-        _proto.image = function image(href, title, text) {
-          href = cleanUrl$1(this.options.sanitize, this.options.baseUrl, href);
-
-          if (href === null) {
-            return text;
-          }
-
-          var out = '<img src="' + href + '" alt="' + text + '"';
-
-          if (title) {
-            out += ' title="' + title + '"';
-          }
-
-          out += this.options.xhtml ? '/>' : '>';
-          return out;
-        };
-
-        _proto.text = function text(_text) {
-          return _text;
-        };
-
-        return Renderer;
-      }();
-
-      /**
-       * TextRenderer
-       * returns only the textual part of the token
-       */
-      var TextRenderer_1 = /*#__PURE__*/function () {
-        function TextRenderer() {}
-
-        var _proto = TextRenderer.prototype;
-
-        // no need for block level renderers
-        _proto.strong = function strong(text) {
-          return text;
-        };
-
-        _proto.em = function em(text) {
-          return text;
-        };
-
-        _proto.codespan = function codespan(text) {
-          return text;
-        };
-
-        _proto.del = function del(text) {
-          return text;
-        };
-
-        _proto.html = function html(text) {
-          return text;
-        };
-
-        _proto.text = function text(_text) {
-          return _text;
-        };
-
-        _proto.link = function link(href, title, text) {
-          return '' + text;
-        };
-
-        _proto.image = function image(href, title, text) {
-          return '' + text;
-        };
-
-        _proto.br = function br() {
-          return '';
-        };
-
-        return TextRenderer;
-      }();
-
-      /**
-       * Slugger generates header id
-       */
-      var Slugger_1 = /*#__PURE__*/function () {
-        function Slugger() {
-          this.seen = {};
-        }
-        /**
-         * Convert string to unique id
-         */
-
-
-        var _proto = Slugger.prototype;
-
-        _proto.slug = function slug(value) {
-          var slug = value.toLowerCase().trim() // remove html tags
-          .replace(/<[!\/a-z].*?>/ig, '') // remove unwanted chars
-          .replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, '').replace(/\s/g, '-');
-
-          if (this.seen.hasOwnProperty(slug)) {
-            var originalSlug = slug;
-
-            do {
-              this.seen[originalSlug]++;
-              slug = originalSlug + '-' + this.seen[originalSlug];
-            } while (this.seen.hasOwnProperty(slug));
-          }
-
-          this.seen[slug] = 0;
-          return slug;
-        };
-
-        return Slugger;
-      }();
-
-      var defaults$4 = defaults.defaults;
-      var unescape$1 = helpers.unescape;
-      /**
-       * Parsing & Compiling
-       */
-
-      var Parser_1 = /*#__PURE__*/function () {
-        function Parser(options) {
-          this.options = options || defaults$4;
-          this.options.renderer = this.options.renderer || new Renderer_1();
-          this.renderer = this.options.renderer;
-          this.renderer.options = this.options;
-          this.textRenderer = new TextRenderer_1();
-          this.slugger = new Slugger_1();
-        }
-        /**
-         * Static Parse Method
-         */
-
-
-        Parser.parse = function parse(tokens, options) {
-          var parser = new Parser(options);
-          return parser.parse(tokens);
-        }
-        /**
-         * Parse Loop
-         */
-        ;
-
-        var _proto = Parser.prototype;
-
-        _proto.parse = function parse(tokens, top) {
-          if (top === void 0) {
-            top = true;
-          }
-
-          var out = '',
-              i,
-              j,
-              k,
-              l2,
-              l3,
-              row,
-              cell,
-              header,
-              body,
-              token,
-              ordered,
-              start,
-              loose,
-              itemBody,
-              item,
-              checked,
-              task,
-              checkbox;
-          var l = tokens.length;
-
-          for (i = 0; i < l; i++) {
-            token = tokens[i];
-
-            switch (token.type) {
-              case 'space':
-                {
-                  continue;
-                }
-
-              case 'hr':
-                {
-                  out += this.renderer.hr();
-                  continue;
-                }
-
-              case 'heading':
-                {
-                  out += this.renderer.heading(this.parseInline(token.tokens), token.depth, unescape$1(this.parseInline(token.tokens, this.textRenderer)), this.slugger);
-                  continue;
-                }
-
-              case 'code':
-                {
-                  out += this.renderer.code(token.text, token.lang, token.escaped);
-                  continue;
-                }
-
-              case 'table':
-                {
-                  header = ''; // header
-
-                  cell = '';
-                  l2 = token.header.length;
-
-                  for (j = 0; j < l2; j++) {
-                    cell += this.renderer.tablecell(this.parseInline(token.tokens.header[j]), {
-                      header: true,
-                      align: token.align[j]
-                    });
-                  }
-
-                  header += this.renderer.tablerow(cell);
-                  body = '';
-                  l2 = token.cells.length;
-
-                  for (j = 0; j < l2; j++) {
-                    row = token.tokens.cells[j];
-                    cell = '';
-                    l3 = row.length;
-
-                    for (k = 0; k < l3; k++) {
-                      cell += this.renderer.tablecell(this.parseInline(row[k]), {
-                        header: false,
-                        align: token.align[k]
-                      });
-                    }
-
-                    body += this.renderer.tablerow(cell);
-                  }
-
-                  out += this.renderer.table(header, body);
-                  continue;
-                }
-
-              case 'blockquote':
-                {
-                  body = this.parse(token.tokens);
-                  out += this.renderer.blockquote(body);
-                  continue;
-                }
-
-              case 'list':
-                {
-                  ordered = token.ordered;
-                  start = token.start;
-                  loose = token.loose;
-                  l2 = token.items.length;
-                  body = '';
-
-                  for (j = 0; j < l2; j++) {
-                    item = token.items[j];
-                    checked = item.checked;
-                    task = item.task;
-                    itemBody = '';
-
-                    if (item.task) {
-                      checkbox = this.renderer.checkbox(checked);
-
-                      if (loose) {
-                        if (item.tokens.length > 0 && item.tokens[0].type === 'text') {
-                          item.tokens[0].text = checkbox + ' ' + item.tokens[0].text;
-
-                          if (item.tokens[0].tokens && item.tokens[0].tokens.length > 0 && item.tokens[0].tokens[0].type === 'text') {
-                            item.tokens[0].tokens[0].text = checkbox + ' ' + item.tokens[0].tokens[0].text;
-                          }
-                        } else {
-                          item.tokens.unshift({
-                            type: 'text',
-                            text: checkbox
-                          });
-                        }
-                      } else {
-                        itemBody += checkbox;
-                      }
-                    }
-
-                    itemBody += this.parse(item.tokens, loose);
-                    body += this.renderer.listitem(itemBody, task, checked);
-                  }
-
-                  out += this.renderer.list(body, ordered, start);
-                  continue;
-                }
-
-              case 'html':
-                {
-                  // TODO parse inline content if parameter markdown=1
-                  out += this.renderer.html(token.text);
-                  continue;
-                }
-
-              case 'paragraph':
-                {
-                  out += this.renderer.paragraph(this.parseInline(token.tokens));
-                  continue;
-                }
-
-              case 'text':
-                {
-                  body = token.tokens ? this.parseInline(token.tokens) : token.text;
-
-                  while (i + 1 < l && tokens[i + 1].type === 'text') {
-                    token = tokens[++i];
-                    body += '\n' + (token.tokens ? this.parseInline(token.tokens) : token.text);
-                  }
-
-                  out += top ? this.renderer.paragraph(body) : body;
-                  continue;
-                }
-
-              default:
-                {
-                  var errMsg = 'Token with "' + token.type + '" type was not found.';
-
-                  if (this.options.silent) {
-                    console.error(errMsg);
-                    return;
-                  } else {
-                    throw new Error(errMsg);
-                  }
-                }
-            }
-          }
-
-          return out;
-        }
-        /**
-         * Parse Inline Tokens
-         */
-        ;
-
-        _proto.parseInline = function parseInline(tokens, renderer) {
-          renderer = renderer || this.renderer;
-          var out = '',
-              i,
-              token;
-          var l = tokens.length;
-
-          for (i = 0; i < l; i++) {
-            token = tokens[i];
-
-            switch (token.type) {
-              case 'escape':
-                {
-                  out += renderer.text(token.text);
-                  break;
-                }
-
-              case 'html':
-                {
-                  out += renderer.html(token.text);
-                  break;
-                }
-
-              case 'link':
-                {
-                  out += renderer.link(token.href, token.title, this.parseInline(token.tokens, renderer));
-                  break;
-                }
-
-              case 'image':
-                {
-                  out += renderer.image(token.href, token.title, token.text);
-                  break;
-                }
-
-              case 'strong':
-                {
-                  out += renderer.strong(this.parseInline(token.tokens, renderer));
-                  break;
-                }
-
-              case 'em':
-                {
-                  out += renderer.em(this.parseInline(token.tokens, renderer));
-                  break;
-                }
-
-              case 'codespan':
-                {
-                  out += renderer.codespan(token.text);
-                  break;
-                }
-
-              case 'br':
-                {
-                  out += renderer.br();
-                  break;
-                }
-
-              case 'del':
-                {
-                  out += renderer.del(this.parseInline(token.tokens, renderer));
-                  break;
-                }
-
-              case 'text':
-                {
-                  out += renderer.text(token.text);
-                  break;
-                }
-
-              default:
-                {
-                  var errMsg = 'Token with "' + token.type + '" type was not found.';
-
-                  if (this.options.silent) {
-                    console.error(errMsg);
-                    return;
-                  } else {
-                    throw new Error(errMsg);
-                  }
-                }
-            }
-          }
-
-          return out;
-        };
-
-        return Parser;
-      }();
-
-      var merge$2 = helpers.merge,
-          checkSanitizeDeprecation$1 = helpers.checkSanitizeDeprecation,
-          escape$2 = helpers.escape;
-      var getDefaults = defaults.getDefaults,
-          changeDefaults = defaults.changeDefaults,
-          defaults$5 = defaults.defaults;
-      /**
-       * Marked
-       */
-
-      function marked(src, opt, callback) {
-        // throw error in case of non string input
-        if (typeof src === 'undefined' || src === null) {
-          throw new Error('marked(): input parameter is undefined or null');
-        }
-
-        if (typeof src !== 'string') {
-          throw new Error('marked(): input parameter is of type ' + Object.prototype.toString.call(src) + ', string expected');
-        }
-
-        if (typeof opt === 'function') {
-          callback = opt;
-          opt = null;
-        }
-
-        opt = merge$2({}, marked.defaults, opt || {});
-        checkSanitizeDeprecation$1(opt);
-
-        if (callback) {
-          var highlight = opt.highlight;
-          var tokens;
-
-          try {
-            tokens = Lexer_1.lex(src, opt);
-          } catch (e) {
-            return callback(e);
-          }
-
-          var done = function done(err) {
-            var out;
-
-            if (!err) {
-              try {
-                out = Parser_1.parse(tokens, opt);
-              } catch (e) {
-                err = e;
-              }
-            }
-
-            opt.highlight = highlight;
-            return err ? callback(err) : callback(null, out);
-          };
-
-          if (!highlight || highlight.length < 3) {
-            return done();
-          }
-
-          delete opt.highlight;
-          if (!tokens.length) return done();
-          var pending = 0;
-          marked.walkTokens(tokens, function (token) {
-            if (token.type === 'code') {
-              pending++;
-              setTimeout(function () {
-                highlight(token.text, token.lang, function (err, code) {
-                  if (err) {
-                    return done(err);
-                  }
-
-                  if (code != null && code !== token.text) {
-                    token.text = code;
-                    token.escaped = true;
-                  }
-
-                  pending--;
-
-                  if (pending === 0) {
-                    done();
-                  }
-                });
-              }, 0);
-            }
-          });
-
-          if (pending === 0) {
-            done();
-          }
-
-          return;
-        }
-
-        try {
-          var _tokens = Lexer_1.lex(src, opt);
-
-          if (opt.walkTokens) {
-            marked.walkTokens(_tokens, opt.walkTokens);
-          }
-
-          return Parser_1.parse(_tokens, opt);
-        } catch (e) {
-          e.message += '\nPlease report this to https://github.com/markedjs/marked.';
-
-          if (opt.silent) {
-            return '<p>An error occurred:</p><pre>' + escape$2(e.message + '', true) + '</pre>';
-          }
-
-          throw e;
-        }
-      }
-      /**
-       * Options
-       */
-
-
-      marked.options = marked.setOptions = function (opt) {
-        merge$2(marked.defaults, opt);
-        changeDefaults(marked.defaults);
-        return marked;
-      };
-
-      marked.getDefaults = getDefaults;
-      marked.defaults = defaults$5;
-      /**
-       * Use Extension
-       */
-
-      marked.use = function (extension) {
-        var opts = merge$2({}, extension);
-
-        if (extension.renderer) {
-          (function () {
-            var renderer = marked.defaults.renderer || new Renderer_1();
-
-            var _loop = function _loop(prop) {
-              var prevRenderer = renderer[prop];
-
-              renderer[prop] = function () {
-                for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-                  args[_key] = arguments[_key];
-                }
-
-                var ret = extension.renderer[prop].apply(renderer, args);
-
-                if (ret === false) {
-                  ret = prevRenderer.apply(renderer, args);
-                }
-
-                return ret;
-              };
-            };
-
-            for (var prop in extension.renderer) {
-              _loop(prop);
-            }
-
-            opts.renderer = renderer;
-          })();
-        }
-
-        if (extension.tokenizer) {
-          (function () {
-            var tokenizer = marked.defaults.tokenizer || new Tokenizer_1();
-
-            var _loop2 = function _loop2(prop) {
-              var prevTokenizer = tokenizer[prop];
-
-              tokenizer[prop] = function () {
-                for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-                  args[_key2] = arguments[_key2];
-                }
-
-                var ret = extension.tokenizer[prop].apply(tokenizer, args);
-
-                if (ret === false) {
-                  ret = prevTokenizer.apply(tokenizer, args);
-                }
-
-                return ret;
-              };
-            };
-
-            for (var prop in extension.tokenizer) {
-              _loop2(prop);
-            }
-
-            opts.tokenizer = tokenizer;
-          })();
-        }
-
-        if (extension.walkTokens) {
-          var walkTokens = marked.defaults.walkTokens;
-
-          opts.walkTokens = function (token) {
-            extension.walkTokens(token);
-
-            if (walkTokens) {
-              walkTokens(token);
-            }
-          };
-        }
-
-        marked.setOptions(opts);
-      };
-      /**
-       * Run callback for every token
-       */
-
-
-      marked.walkTokens = function (tokens, callback) {
-        for (var _iterator = _createForOfIteratorHelperLoose(tokens), _step; !(_step = _iterator()).done;) {
-          var token = _step.value;
-          callback(token);
-
-          switch (token.type) {
-            case 'table':
-              {
-                for (var _iterator2 = _createForOfIteratorHelperLoose(token.tokens.header), _step2; !(_step2 = _iterator2()).done;) {
-                  var cell = _step2.value;
-                  marked.walkTokens(cell, callback);
-                }
-
-                for (var _iterator3 = _createForOfIteratorHelperLoose(token.tokens.cells), _step3; !(_step3 = _iterator3()).done;) {
-                  var row = _step3.value;
-
-                  for (var _iterator4 = _createForOfIteratorHelperLoose(row), _step4; !(_step4 = _iterator4()).done;) {
-                    var _cell = _step4.value;
-                    marked.walkTokens(_cell, callback);
-                  }
-                }
-
-                break;
-              }
-
-            case 'list':
-              {
-                marked.walkTokens(token.items, callback);
-                break;
-              }
-
-            default:
-              {
-                if (token.tokens) {
-                  marked.walkTokens(token.tokens, callback);
-                }
-              }
-          }
-        }
-      };
-      /**
-       * Expose
-       */
-
-
-      marked.Parser = Parser_1;
-      marked.parser = Parser_1.parse;
-      marked.Renderer = Renderer_1;
-      marked.TextRenderer = TextRenderer_1;
-      marked.Lexer = Lexer_1;
-      marked.lexer = Lexer_1.lex;
-      marked.Tokenizer = Tokenizer_1;
-      marked.Slugger = Slugger_1;
-      marked.parse = marked;
-      var marked_1 = marked;
-
-      return marked_1;
-
-    })));
-    });
-
-    /* src/components/shared/Markdown/Markdown.svelte generated by Svelte v3.25.0 */
-    const file$d = "src/components/shared/Markdown/Markdown.svelte";
-
-    // (98:0) {#if markdown}
-    function create_if_block$3(ctx) {
-    	let section;
-    	let raw_value = marked(/*markdown*/ ctx[0]) + "";
-    	let section_class_value;
-
-    	let section_levels = [
-    		{
-    			class: section_class_value = "" + (/*columnClass*/ ctx[2] + " pageX")
-    		},
-    		/*props*/ ctx[1]
-    	];
-
-    	let section_data = {};
-
-    	for (let i = 0; i < section_levels.length; i += 1) {
-    		section_data = assign(section_data, section_levels[i]);
-    	}
-
-    	const block = {
-    		c: function create() {
-    			section = element("section");
-    			set_attributes(section, section_data);
-    			toggle_class(section, "svelte-ueebsl", true);
-    			add_location(section, file$d, 99, 0, 1734);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, section, anchor);
-    			section.innerHTML = raw_value;
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*markdown*/ 1 && raw_value !== (raw_value = marked(/*markdown*/ ctx[0]) + "")) section.innerHTML = raw_value;
-    			set_attributes(section, section_data = get_spread_update(section_levels, [
-    				dirty & /*columnClass*/ 4 && section_class_value !== (section_class_value = "" + (/*columnClass*/ ctx[2] + " pageX")) && { class: section_class_value },
-    				dirty & /*props*/ 2 && /*props*/ ctx[1]
-    			]));
-
-    			toggle_class(section, "svelte-ueebsl", true);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$3.name,
-    		type: "if",
-    		source: "(98:0) {#if markdown}",
-    		ctx
-    	});
-
-    	return block;
-    }
+    const file$d = "src/components/SRD/TOC.md";
 
     function create_fragment$j(ctx) {
-    	let if_block_anchor;
-    	let if_block = /*markdown*/ ctx[0] && create_if_block$3(ctx);
+    	let ul20;
+    	let li0;
+    	let a0;
+    	let t1;
+    	let li1;
+    	let a1;
+    	let t3;
+    	let li2;
+    	let a2;
+    	let t5;
+    	let li12;
+    	let a3;
+    	let ul1;
+    	let li3;
+    	let a4;
+    	let t8;
+    	let li11;
+    	let a5;
+    	let ul0;
+    	let li4;
+    	let a6;
+    	let t11;
+    	let li5;
+    	let a7;
+    	let t13;
+    	let li6;
+    	let a8;
+    	let t15;
+    	let li7;
+    	let a9;
+    	let t17;
+    	let li8;
+    	let a10;
+    	let t19;
+    	let li9;
+    	let a11;
+    	let t21;
+    	let li10;
+    	let a12;
+    	let t23;
+    	let li27;
+    	let a13;
+    	let ul5;
+    	let li13;
+    	let a14;
+    	let t26;
+    	let li16;
+    	let a15;
+    	let ul2;
+    	let li14;
+    	let a16;
+    	let t29;
+    	let li15;
+    	let a17;
+    	let t31;
+    	let li21;
+    	let a18;
+    	let ul3;
+    	let li17;
+    	let a19;
+    	let t34;
+    	let li18;
+    	let a20;
+    	let t36;
+    	let li19;
+    	let a21;
+    	let t38;
+    	let li20;
+    	let a22;
+    	let t40;
+    	let li26;
+    	let a23;
+    	let ul4;
+    	let li22;
+    	let a24;
+    	let t43;
+    	let li23;
+    	let a25;
+    	let t45;
+    	let li24;
+    	let a26;
+    	let t47;
+    	let li25;
+    	let a27;
+    	let t49;
+    	let li40;
+    	let a28;
+    	let ul8;
+    	let li28;
+    	let a29;
+    	let t52;
+    	let li33;
+    	let a30;
+    	let ul6;
+    	let li29;
+    	let a31;
+    	let t55;
+    	let li30;
+    	let a32;
+    	let t57;
+    	let li31;
+    	let a33;
+    	let t59;
+    	let li32;
+    	let a34;
+    	let t61;
+    	let li37;
+    	let a35;
+    	let ul7;
+    	let li34;
+    	let a36;
+    	let t64;
+    	let li35;
+    	let a37;
+    	let t66;
+    	let t67;
+    	let li36;
+    	let a38;
+    	let t69;
+    	let li38;
+    	let a39;
+    	let t71;
+    	let li39;
+    	let a40;
+    	let t73;
+    	let li52;
+    	let a41;
+    	let ul11;
+    	let li44;
+    	let a42;
+    	let ul9;
+    	let li41;
+    	let a43;
+    	let t77;
+    	let li42;
+    	let a44;
+    	let t79;
+    	let li43;
+    	let a45;
+    	let t81;
+    	let li45;
+    	let a46;
+    	let t83;
+    	let li46;
+    	let a47;
+    	let t85;
+    	let li47;
+    	let a48;
+    	let t87;
+    	let li51;
+    	let a49;
+    	let ul10;
+    	let li48;
+    	let a50;
+    	let t90;
+    	let li49;
+    	let a51;
+    	let t92;
+    	let li50;
+    	let a52;
+    	let t94;
+    	let li56;
+    	let a53;
+    	let ul12;
+    	let li53;
+    	let a54;
+    	let t97;
+    	let li54;
+    	let a55;
+    	let t99;
+    	let li55;
+    	let a56;
+    	let t101;
+    	let li64;
+    	let a57;
+    	let ul14;
+    	let li57;
+    	let a58;
+    	let t104;
+    	let li61;
+    	let a59;
+    	let ul13;
+    	let li58;
+    	let a60;
+    	let t107;
+    	let li59;
+    	let a61;
+    	let t109;
+    	let li60;
+    	let a62;
+    	let t111;
+    	let li62;
+    	let a63;
+    	let t113;
+    	let li63;
+    	let a64;
+    	let t115;
+    	let li89;
+    	let a65;
+    	let ul18;
+    	let li67;
+    	let a66;
+    	let ul15;
+    	let li65;
+    	let a67;
+    	let t119;
+    	let li66;
+    	let a68;
+    	let t121;
+    	let li68;
+    	let a69;
+    	let t123;
+    	let li69;
+    	let a70;
+    	let t125;
+    	let li70;
+    	let a71;
+    	let t127;
+    	let li71;
+    	let a72;
+    	let t129;
+    	let li72;
+    	let a73;
+    	let t131;
+    	let li73;
+    	let a74;
+    	let t133;
+    	let li77;
+    	let a75;
+    	let ul16;
+    	let li74;
+    	let a76;
+    	let t136;
+    	let li75;
+    	let a77;
+    	let t138;
+    	let li76;
+    	let a78;
+    	let t140;
+    	let li78;
+    	let a79;
+    	let t142;
+    	let li79;
+    	let a80;
+    	let t144;
+    	let li86;
+    	let a81;
+    	let ul17;
+    	let li80;
+    	let a82;
+    	let t147;
+    	let li81;
+    	let a83;
+    	let t149;
+    	let li82;
+    	let a84;
+    	let t151;
+    	let li83;
+    	let a85;
+    	let t153;
+    	let li84;
+    	let a86;
+    	let t155;
+    	let li85;
+    	let a87;
+    	let t157;
+    	let li87;
+    	let a88;
+    	let t159;
+    	let li88;
+    	let a89;
+    	let t161;
+    	let li92;
+    	let a90;
+    	let ul19;
+    	let li90;
+    	let a91;
+    	let t164;
+    	let li91;
+    	let a92;
 
     	const block = {
     		c: function create() {
-    			if (if_block) if_block.c();
-    			if_block_anchor = empty();
+    			ul20 = element("ul");
+    			li0 = element("li");
+    			a0 = element("a");
+    			a0.textContent = "Fate Condensed";
+    			t1 = space();
+    			li1 = element("li");
+    			a1 = element("a");
+    			a1.textContent = "Credits";
+    			t3 = space();
+    			li2 = element("li");
+    			a2 = element("a");
+    			a2.textContent = "Introduction";
+    			t5 = space();
+    			li12 = element("li");
+    			a3 = element("a");
+    			a3.textContent = "Getting Started";
+    			ul1 = element("ul");
+    			li3 = element("li");
+    			a4 = element("a");
+    			a4.textContent = "Define Your Setting";
+    			t8 = space();
+    			li11 = element("li");
+    			a5 = element("a");
+    			a5.textContent = "Create Your Characters";
+    			ul0 = element("ul");
+    			li4 = element("li");
+    			a6 = element("a");
+    			a6.textContent = "Who Are You?";
+    			t11 = space();
+    			li5 = element("li");
+    			a7 = element("a");
+    			a7.textContent = "Aspects";
+    			t13 = space();
+    			li6 = element("li");
+    			a8 = element("a");
+    			a8.textContent = "Skills";
+    			t15 = space();
+    			li7 = element("li");
+    			a9 = element("a");
+    			a9.textContent = "Refresh";
+    			t17 = space();
+    			li8 = element("li");
+    			a10 = element("a");
+    			a10.textContent = "Stunts";
+    			t19 = space();
+    			li9 = element("li");
+    			a11 = element("a");
+    			a11.textContent = "Stress and Consequences";
+    			t21 = space();
+    			li10 = element("li");
+    			a12 = element("a");
+    			a12.textContent = "Finishing Touches";
+    			t23 = space();
+    			li27 = element("li");
+    			a13 = element("a");
+    			a13.textContent = "Taking Action, Rolling the Dice";
+    			ul5 = element("ul");
+    			li13 = element("li");
+    			a14 = element("a");
+    			a14.textContent = "Difficulty and Opposition";
+    			t26 = space();
+    			li16 = element("li");
+    			a15 = element("a");
+    			a15.textContent = "Modifying the Dice";
+    			ul2 = element("ul");
+    			li14 = element("li");
+    			a16 = element("a");
+    			a16.textContent = "Invoking Aspects";
+    			t29 = space();
+    			li15 = element("li");
+    			a17 = element("a");
+    			a17.textContent = "Using Stunts";
+    			t31 = space();
+    			li21 = element("li");
+    			a18 = element("a");
+    			a18.textContent = "Outcomes";
+    			ul3 = element("ul");
+    			li17 = element("li");
+    			a19 = element("a");
+    			a19.textContent = "Failure";
+    			t34 = space();
+    			li18 = element("li");
+    			a20 = element("a");
+    			a20.textContent = "Tie";
+    			t36 = space();
+    			li19 = element("li");
+    			a21 = element("a");
+    			a21.textContent = "Success";
+    			t38 = space();
+    			li20 = element("li");
+    			a22 = element("a");
+    			a22.textContent = "Success with Style";
+    			t40 = space();
+    			li26 = element("li");
+    			a23 = element("a");
+    			a23.textContent = "Actions";
+    			ul4 = element("ul");
+    			li22 = element("li");
+    			a24 = element("a");
+    			a24.textContent = "Overcome";
+    			t43 = space();
+    			li23 = element("li");
+    			a25 = element("a");
+    			a25.textContent = "Create an Advantage";
+    			t45 = space();
+    			li24 = element("li");
+    			a26 = element("a");
+    			a26.textContent = "Attack";
+    			t47 = space();
+    			li25 = element("li");
+    			a27 = element("a");
+    			a27.textContent = "Defend";
+    			t49 = space();
+    			li40 = element("li");
+    			a28 = element("a");
+    			a28.textContent = "Aspects and Fate Points";
+    			ul8 = element("ul");
+    			li28 = element("li");
+    			a29 = element("a");
+    			a29.textContent = "Aspects Are Always True";
+    			t52 = space();
+    			li33 = element("li");
+    			a30 = element("a");
+    			a30.textContent = "What Kinds of Aspects Are There?";
+    			ul6 = element("ul");
+    			li29 = element("li");
+    			a31 = element("a");
+    			a31.textContent = "Character Aspects";
+    			t55 = space();
+    			li30 = element("li");
+    			a32 = element("a");
+    			a32.textContent = "Situation Aspects";
+    			t57 = space();
+    			li31 = element("li");
+    			a33 = element("a");
+    			a33.textContent = "Consequences";
+    			t59 = space();
+    			li32 = element("li");
+    			a34 = element("a");
+    			a34.textContent = "Boosts";
+    			t61 = space();
+    			li37 = element("li");
+    			a35 = element("a");
+    			a35.textContent = "What Can I Do with Aspects?";
+    			ul7 = element("ul");
+    			li34 = element("li");
+    			a36 = element("a");
+    			a36.textContent = "Earning Fate Points";
+    			t64 = space();
+    			li35 = element("li");
+    			a37 = element("a");
+    			a37.textContent = "Invokes";
+    			t66 = text(")");
+    			t67 = space();
+    			li36 = element("li");
+    			a38 = element("a");
+    			a38.textContent = "Compels";
+    			t69 = space();
+    			li38 = element("li");
+    			a39 = element("a");
+    			a39.textContent = "How Can I Add and Remove Aspects?";
+    			t71 = space();
+    			li39 = element("li");
+    			a40 = element("a");
+    			a40.textContent = "Other Kinds of Aspects";
+    			t73 = space();
+    			li52 = element("li");
+    			a41 = element("a");
+    			a41.textContent = "Challenges, Conflicts, and Contests";
+    			ul11 = element("ul");
+    			li44 = element("li");
+    			a42 = element("a");
+    			a42.textContent = "Setting Up Scenes";
+    			ul9 = element("ul");
+    			li41 = element("li");
+    			a43 = element("a");
+    			a43.textContent = "Zones";
+    			t77 = space();
+    			li42 = element("li");
+    			a44 = element("a");
+    			a44.textContent = "Situation Aspects";
+    			t79 = space();
+    			li43 = element("li");
+    			a45 = element("a");
+    			a45.textContent = "Turn Order";
+    			t81 = space();
+    			li45 = element("li");
+    			a46 = element("a");
+    			a46.textContent = "Teamwork";
+    			t83 = space();
+    			li46 = element("li");
+    			a47 = element("a");
+    			a47.textContent = "Challenges";
+    			t85 = space();
+    			li47 = element("li");
+    			a48 = element("a");
+    			a48.textContent = "Contests";
+    			t87 = space();
+    			li51 = element("li");
+    			a49 = element("a");
+    			a49.textContent = "Conflicts";
+    			ul10 = element("ul");
+    			li48 = element("li");
+    			a50 = element("a");
+    			a50.textContent = "Taking Harm";
+    			t90 = space();
+    			li49 = element("li");
+    			a51 = element("a");
+    			a51.textContent = "Ending a Conflict";
+    			t92 = space();
+    			li50 = element("li");
+    			a52 = element("a");
+    			a52.textContent = "Recovering from Conflicts";
+    			t94 = space();
+    			li56 = element("li");
+    			a53 = element("a");
+    			a53.textContent = "Advancement";
+    			ul12 = element("ul");
+    			li53 = element("li");
+    			a54 = element("a");
+    			a54.textContent = "Milestones";
+    			t97 = space();
+    			li54 = element("li");
+    			a55 = element("a");
+    			a55.textContent = "Breakthroughs";
+    			t99 = space();
+    			li55 = element("li");
+    			a56 = element("a");
+    			a56.textContent = "Sessions and Arcs";
+    			t101 = space();
+    			li64 = element("li");
+    			a57 = element("a");
+    			a57.textContent = "Being the Game Master";
+    			ul14 = element("ul");
+    			li57 = element("li");
+    			a58 = element("a");
+    			a58.textContent = "Setting Difficulty and Opposition";
+    			t104 = space();
+    			li61 = element("li");
+    			a59 = element("a");
+    			a59.textContent = "NPCs";
+    			ul13 = element("ul");
+    			li58 = element("li");
+    			a60 = element("a");
+    			a60.textContent = "Major NPCs";
+    			t107 = space();
+    			li59 = element("li");
+    			a61 = element("a");
+    			a61.textContent = "Minor NPCs";
+    			t109 = space();
+    			li60 = element("li");
+    			a62 = element("a");
+    			a62.textContent = "Monsters, Big Bads, and Other Threats";
+    			t111 = space();
+    			li62 = element("li");
+    			a63 = element("a");
+    			a63.textContent = "Your Fate Points";
+    			t113 = space();
+    			li63 = element("li");
+    			a64 = element("a");
+    			a64.textContent = "Safety Tools";
+    			t115 = space();
+    			li89 = element("li");
+    			a65 = element("a");
+    			a65.textContent = "Optional Rules";
+    			ul18 = element("ul");
+    			li67 = element("li");
+    			a66 = element("a");
+    			a66.textContent = "Conditions";
+    			ul15 = element("ul");
+    			li65 = element("li");
+    			a67 = element("a");
+    			a67.textContent = "Moving Conditions Further Apart";
+    			t119 = space();
+    			li66 = element("li");
+    			a68 = element("a");
+    			a68.textContent = "Other Versions of Conditions";
+    			t121 = space();
+    			li68 = element("li");
+    			a69 = element("a");
+    			a69.textContent = "Changing the Skill List";
+    			t123 = space();
+    			li69 = element("li");
+    			a70 = element("a");
+    			a70.textContent = "Character Creation As You Play";
+    			t125 = space();
+    			li70 = element("li");
+    			a71 = element("a");
+    			a71.textContent = "Countdowns";
+    			t127 = space();
+    			li71 = element("li");
+    			a72 = element("a");
+    			a72.textContent = "Extreme Consequences";
+    			t129 = space();
+    			li72 = element("li");
+    			a73 = element("a");
+    			a73.textContent = "Faster Contests";
+    			t131 = space();
+    			li73 = element("li");
+    			a74 = element("a");
+    			a74.textContent = "Full Defense";
+    			t133 = space();
+    			li77 = element("li");
+    			a75 = element("a");
+    			a75.textContent = "Obstacles";
+    			ul16 = element("ul");
+    			li74 = element("li");
+    			a76 = element("a");
+    			a76.textContent = "Hazards";
+    			t136 = space();
+    			li75 = element("li");
+    			a77 = element("a");
+    			a77.textContent = "Blocks";
+    			t138 = space();
+    			li76 = element("li");
+    			a78 = element("a");
+    			a78.textContent = "Distractions";
+    			t140 = space();
+    			li78 = element("li");
+    			a79 = element("a");
+    			a79.textContent = "Scale";
+    			t142 = space();
+    			li79 = element("li");
+    			a80 = element("a");
+    			a80.textContent = "Time Shifts";
+    			t144 = space();
+    			li86 = element("li");
+    			a81 = element("a");
+    			a81.textContent = "Ways to Break the Rules for Big Bads";
+    			ul17 = element("ul");
+    			li80 = element("li");
+    			a82 = element("a");
+    			a82.textContent = "Challenge or Contest Immunity";
+    			t147 = space();
+    			li81 = element("li");
+    			a83 = element("a");
+    			a83.textContent = "Expendable Minion Armor";
+    			t149 = space();
+    			li82 = element("li");
+    			a84 = element("a");
+    			a84.textContent = "Reveal True Form";
+    			t151 = space();
+    			li83 = element("li");
+    			a85 = element("a");
+    			a85.textContent = "Scale Things Up";
+    			t153 = space();
+    			li84 = element("li");
+    			a86 = element("a");
+    			a86.textContent = "Solo Bonus";
+    			t155 = space();
+    			li85 = element("li");
+    			a87 = element("a");
+    			a87.textContent = "The Threat is a Map (or a Hive of Characters)";
+    			t157 = space();
+    			li87 = element("li");
+    			a88 = element("a");
+    			a88.textContent = "Ways to Handle Multiple Targets";
+    			t159 = space();
+    			li88 = element("li");
+    			a89 = element("a");
+    			a89.textContent = "Weapon and Armor Ratings";
+    			t161 = space();
+    			li92 = element("li");
+    			a90 = element("a");
+    			a90.textContent = "What Version Is This?";
+    			ul19 = element("ul");
+    			li90 = element("li");
+    			a91 = element("a");
+    			a91.textContent = "What Came Before";
+    			t164 = space();
+    			li91 = element("li");
+    			a92 = element("a");
+    			a92.textContent = "Licensing";
+    			attr_dev(a0, "href", "#fate-condensed");
+    			attr_dev(a0, "class", "svelte-14a6qz4");
+    			add_location(a0, file$d, 1, 4, 9);
+    			attr_dev(li0, "class", "svelte-14a6qz4");
+    			add_location(li0, file$d, 1, 0, 5);
+    			attr_dev(a1, "href", "#credits");
+    			attr_dev(a1, "class", "svelte-14a6qz4");
+    			add_location(a1, file$d, 2, 4, 63);
+    			attr_dev(li1, "class", "svelte-14a6qz4");
+    			add_location(li1, file$d, 2, 0, 59);
+    			attr_dev(a2, "href", "#introduction");
+    			attr_dev(a2, "class", "svelte-14a6qz4");
+    			add_location(a2, file$d, 3, 4, 103);
+    			attr_dev(li2, "class", "svelte-14a6qz4");
+    			add_location(li2, file$d, 3, 0, 99);
+    			attr_dev(a3, "href", "#getting-started");
+    			attr_dev(a3, "class", "svelte-14a6qz4");
+    			add_location(a3, file$d, 4, 4, 153);
+    			attr_dev(a4, "href", "#define-your-setting");
+    			attr_dev(a4, "class", "svelte-14a6qz4");
+    			add_location(a4, file$d, 5, 4, 208);
+    			attr_dev(li3, "class", "svelte-14a6qz4");
+    			add_location(li3, file$d, 5, 0, 204);
+    			attr_dev(a5, "href", "#create-your-characters");
+    			attr_dev(a5, "class", "svelte-14a6qz4");
+    			add_location(a5, file$d, 6, 4, 272);
+    			attr_dev(a6, "href", "#who-are-you");
+    			attr_dev(a6, "class", "svelte-14a6qz4");
+    			add_location(a6, file$d, 7, 4, 341);
+    			attr_dev(li4, "class", "svelte-14a6qz4");
+    			add_location(li4, file$d, 7, 0, 337);
+    			attr_dev(a7, "href", "#aspects");
+    			attr_dev(a7, "class", "svelte-14a6qz4");
+    			add_location(a7, file$d, 8, 4, 390);
+    			attr_dev(li5, "class", "svelte-14a6qz4");
+    			add_location(li5, file$d, 8, 0, 386);
+    			attr_dev(a8, "href", "#skills");
+    			attr_dev(a8, "class", "svelte-14a6qz4");
+    			add_location(a8, file$d, 9, 4, 430);
+    			attr_dev(li6, "class", "svelte-14a6qz4");
+    			add_location(li6, file$d, 9, 0, 426);
+    			attr_dev(a9, "href", "#refresh");
+    			attr_dev(a9, "class", "svelte-14a6qz4");
+    			add_location(a9, file$d, 10, 4, 468);
+    			attr_dev(li7, "class", "svelte-14a6qz4");
+    			add_location(li7, file$d, 10, 0, 464);
+    			attr_dev(a10, "href", "#stunts");
+    			attr_dev(a10, "class", "svelte-14a6qz4");
+    			add_location(a10, file$d, 11, 4, 508);
+    			attr_dev(li8, "class", "svelte-14a6qz4");
+    			add_location(li8, file$d, 11, 0, 504);
+    			attr_dev(a11, "href", "#stress-and-consequences");
+    			attr_dev(a11, "class", "svelte-14a6qz4");
+    			add_location(a11, file$d, 12, 4, 546);
+    			attr_dev(li9, "class", "svelte-14a6qz4");
+    			add_location(li9, file$d, 12, 0, 542);
+    			attr_dev(a12, "href", "#finishing-touches");
+    			attr_dev(a12, "class", "svelte-14a6qz4");
+    			add_location(a12, file$d, 13, 4, 618);
+    			attr_dev(li10, "class", "svelte-14a6qz4");
+    			add_location(li10, file$d, 13, 0, 614);
+    			attr_dev(ul0, "class", "svelte-14a6qz4");
+    			add_location(ul0, file$d, 6, 64, 332);
+    			attr_dev(li11, "class", "svelte-14a6qz4");
+    			add_location(li11, file$d, 6, 0, 268);
+    			attr_dev(ul1, "class", "svelte-14a6qz4");
+    			add_location(ul1, file$d, 4, 50, 199);
+    			attr_dev(li12, "class", "svelte-14a6qz4");
+    			add_location(li12, file$d, 4, 0, 149);
+    			attr_dev(a13, "href", "#taking-action-rolling-the-dice");
+    			attr_dev(a13, "class", "svelte-14a6qz4");
+    			add_location(a13, file$d, 18, 4, 702);
+    			attr_dev(a14, "href", "#difficulty-and-opposition");
+    			attr_dev(a14, "class", "svelte-14a6qz4");
+    			add_location(a14, file$d, 19, 4, 788);
+    			attr_dev(li13, "class", "svelte-14a6qz4");
+    			add_location(li13, file$d, 19, 0, 784);
+    			attr_dev(a15, "href", "#modifying-the-dice");
+    			attr_dev(a15, "class", "svelte-14a6qz4");
+    			add_location(a15, file$d, 20, 4, 864);
+    			attr_dev(a16, "href", "#invoking-aspects");
+    			attr_dev(a16, "class", "svelte-14a6qz4");
+    			add_location(a16, file$d, 21, 4, 925);
+    			attr_dev(li14, "class", "svelte-14a6qz4");
+    			add_location(li14, file$d, 21, 0, 921);
+    			attr_dev(a17, "href", "#using-stunts");
+    			attr_dev(a17, "class", "svelte-14a6qz4");
+    			add_location(a17, file$d, 22, 4, 983);
+    			attr_dev(li15, "class", "svelte-14a6qz4");
+    			add_location(li15, file$d, 22, 0, 979);
+    			attr_dev(ul2, "class", "svelte-14a6qz4");
+    			add_location(ul2, file$d, 20, 56, 916);
+    			attr_dev(li16, "class", "svelte-14a6qz4");
+    			add_location(li16, file$d, 20, 0, 860);
+    			attr_dev(a18, "href", "#outcomes");
+    			attr_dev(a18, "class", "svelte-14a6qz4");
+    			add_location(a18, file$d, 25, 4, 1045);
+    			attr_dev(a19, "href", "#failure");
+    			attr_dev(a19, "class", "svelte-14a6qz4");
+    			add_location(a19, file$d, 26, 4, 1086);
+    			attr_dev(li17, "class", "svelte-14a6qz4");
+    			add_location(li17, file$d, 26, 0, 1082);
+    			attr_dev(a20, "href", "#tie");
+    			attr_dev(a20, "class", "svelte-14a6qz4");
+    			add_location(a20, file$d, 27, 4, 1126);
+    			attr_dev(li18, "class", "svelte-14a6qz4");
+    			add_location(li18, file$d, 27, 0, 1122);
+    			attr_dev(a21, "href", "#success");
+    			attr_dev(a21, "class", "svelte-14a6qz4");
+    			add_location(a21, file$d, 28, 4, 1158);
+    			attr_dev(li19, "class", "svelte-14a6qz4");
+    			add_location(li19, file$d, 28, 0, 1154);
+    			attr_dev(a22, "href", "#success-with-style");
+    			attr_dev(a22, "class", "svelte-14a6qz4");
+    			add_location(a22, file$d, 29, 4, 1198);
+    			attr_dev(li20, "class", "svelte-14a6qz4");
+    			add_location(li20, file$d, 29, 0, 1194);
+    			attr_dev(ul3, "class", "svelte-14a6qz4");
+    			add_location(ul3, file$d, 25, 36, 1077);
+    			attr_dev(li21, "class", "svelte-14a6qz4");
+    			add_location(li21, file$d, 25, 0, 1041);
+    			attr_dev(a23, "href", "#actions");
+    			attr_dev(a23, "class", "svelte-14a6qz4");
+    			add_location(a23, file$d, 32, 4, 1272);
+    			attr_dev(a24, "href", "#overcome");
+    			attr_dev(a24, "class", "svelte-14a6qz4");
+    			add_location(a24, file$d, 33, 4, 1311);
+    			attr_dev(li22, "class", "svelte-14a6qz4");
+    			add_location(li22, file$d, 33, 0, 1307);
+    			attr_dev(a25, "href", "#create-an-advantage");
+    			attr_dev(a25, "class", "svelte-14a6qz4");
+    			add_location(a25, file$d, 34, 4, 1353);
+    			attr_dev(li23, "class", "svelte-14a6qz4");
+    			add_location(li23, file$d, 34, 0, 1349);
+    			attr_dev(a26, "href", "#attack");
+    			attr_dev(a26, "class", "svelte-14a6qz4");
+    			add_location(a26, file$d, 35, 4, 1417);
+    			attr_dev(li24, "class", "svelte-14a6qz4");
+    			add_location(li24, file$d, 35, 0, 1413);
+    			attr_dev(a27, "href", "#defend");
+    			attr_dev(a27, "class", "svelte-14a6qz4");
+    			add_location(a27, file$d, 36, 4, 1455);
+    			attr_dev(li25, "class", "svelte-14a6qz4");
+    			add_location(li25, file$d, 36, 0, 1451);
+    			attr_dev(ul4, "class", "svelte-14a6qz4");
+    			add_location(ul4, file$d, 32, 34, 1302);
+    			attr_dev(li26, "class", "svelte-14a6qz4");
+    			add_location(li26, file$d, 32, 0, 1268);
+    			attr_dev(ul5, "class", "svelte-14a6qz4");
+    			add_location(ul5, file$d, 18, 81, 779);
+    			attr_dev(li27, "class", "svelte-14a6qz4");
+    			add_location(li27, file$d, 18, 0, 698);
+    			attr_dev(a28, "href", "#aspects-and-fate-points");
+    			attr_dev(a28, "class", "svelte-14a6qz4");
+    			add_location(a28, file$d, 41, 4, 1517);
+    			attr_dev(a29, "href", "#aspects-are-always-true");
+    			attr_dev(a29, "class", "svelte-14a6qz4");
+    			add_location(a29, file$d, 42, 4, 1588);
+    			attr_dev(li28, "class", "svelte-14a6qz4");
+    			add_location(li28, file$d, 42, 0, 1584);
+    			attr_dev(a30, "href", "#what-kinds-of-aspects-are-there");
+    			attr_dev(a30, "class", "svelte-14a6qz4");
+    			add_location(a30, file$d, 43, 4, 1660);
+    			attr_dev(a31, "href", "#character-aspects");
+    			attr_dev(a31, "class", "svelte-14a6qz4");
+    			add_location(a31, file$d, 44, 4, 1748);
+    			attr_dev(li29, "class", "svelte-14a6qz4");
+    			add_location(li29, file$d, 44, 0, 1744);
+    			attr_dev(a32, "href", "#situation-aspects");
+    			attr_dev(a32, "class", "svelte-14a6qz4");
+    			add_location(a32, file$d, 45, 4, 1808);
+    			attr_dev(li30, "class", "svelte-14a6qz4");
+    			add_location(li30, file$d, 45, 0, 1804);
+    			attr_dev(a33, "href", "#consequences");
+    			attr_dev(a33, "class", "svelte-14a6qz4");
+    			add_location(a33, file$d, 46, 4, 1868);
+    			attr_dev(li31, "class", "svelte-14a6qz4");
+    			add_location(li31, file$d, 46, 0, 1864);
+    			attr_dev(a34, "href", "#boosts");
+    			attr_dev(a34, "class", "svelte-14a6qz4");
+    			add_location(a34, file$d, 47, 4, 1918);
+    			attr_dev(li32, "class", "svelte-14a6qz4");
+    			add_location(li32, file$d, 47, 0, 1914);
+    			attr_dev(ul6, "class", "svelte-14a6qz4");
+    			add_location(ul6, file$d, 43, 83, 1739);
+    			attr_dev(li33, "class", "svelte-14a6qz4");
+    			add_location(li33, file$d, 43, 0, 1656);
+    			attr_dev(a35, "href", "#what-can-i-do-with-aspects");
+    			attr_dev(a35, "class", "svelte-14a6qz4");
+    			add_location(a35, file$d, 50, 4, 1968);
+    			attr_dev(a36, "href", "#earning-fate-points");
+    			attr_dev(a36, "class", "svelte-14a6qz4");
+    			add_location(a36, file$d, 51, 4, 2046);
+    			attr_dev(li34, "class", "svelte-14a6qz4");
+    			add_location(li34, file$d, 51, 0, 2042);
+    			attr_dev(a37, "href", "#invokes");
+    			attr_dev(a37, "class", "svelte-14a6qz4");
+    			add_location(a37, file$d, 52, 4, 2110);
+    			attr_dev(li35, "class", "svelte-14a6qz4");
+    			add_location(li35, file$d, 52, 0, 2106);
+    			attr_dev(a38, "href", "#compels");
+    			attr_dev(a38, "class", "svelte-14a6qz4");
+    			add_location(a38, file$d, 53, 4, 2151);
+    			attr_dev(li36, "class", "svelte-14a6qz4");
+    			add_location(li36, file$d, 53, 0, 2147);
+    			attr_dev(ul7, "class", "svelte-14a6qz4");
+    			add_location(ul7, file$d, 50, 73, 2037);
+    			attr_dev(li37, "class", "svelte-14a6qz4");
+    			add_location(li37, file$d, 50, 0, 1964);
+    			attr_dev(a39, "href", "#how-can-i-add-and-remove-aspects");
+    			attr_dev(a39, "class", "svelte-14a6qz4");
+    			add_location(a39, file$d, 56, 4, 2203);
+    			attr_dev(li38, "class", "svelte-14a6qz4");
+    			add_location(li38, file$d, 56, 0, 2199);
+    			attr_dev(a40, "href", "#other-kinds-of-aspects");
+    			attr_dev(a40, "class", "svelte-14a6qz4");
+    			add_location(a40, file$d, 57, 4, 2294);
+    			attr_dev(li39, "class", "svelte-14a6qz4");
+    			add_location(li39, file$d, 57, 0, 2290);
+    			attr_dev(ul8, "class", "svelte-14a6qz4");
+    			add_location(ul8, file$d, 41, 66, 1579);
+    			attr_dev(li40, "class", "svelte-14a6qz4");
+    			add_location(li40, file$d, 41, 0, 1513);
+    			attr_dev(a41, "href", "#challenges-conflicts-and-contests");
+    			attr_dev(a41, "class", "svelte-14a6qz4");
+    			add_location(a41, file$d, 60, 4, 2376);
+    			attr_dev(a42, "href", "#setting-up-scenes");
+    			attr_dev(a42, "class", "svelte-14a6qz4");
+    			add_location(a42, file$d, 61, 4, 2469);
+    			attr_dev(a43, "href", "#zones");
+    			attr_dev(a43, "class", "svelte-14a6qz4");
+    			add_location(a43, file$d, 62, 4, 2528);
+    			attr_dev(li41, "class", "svelte-14a6qz4");
+    			add_location(li41, file$d, 62, 0, 2524);
+    			attr_dev(a44, "href", "#situation-aspects-1");
+    			attr_dev(a44, "class", "svelte-14a6qz4");
+    			add_location(a44, file$d, 63, 4, 2564);
+    			attr_dev(li42, "class", "svelte-14a6qz4");
+    			add_location(li42, file$d, 63, 0, 2560);
+    			attr_dev(a45, "href", "#turn-order");
+    			attr_dev(a45, "class", "svelte-14a6qz4");
+    			add_location(a45, file$d, 64, 4, 2626);
+    			attr_dev(li43, "class", "svelte-14a6qz4");
+    			add_location(li43, file$d, 64, 0, 2622);
+    			attr_dev(ul9, "class", "svelte-14a6qz4");
+    			add_location(ul9, file$d, 61, 54, 2519);
+    			attr_dev(li44, "class", "svelte-14a6qz4");
+    			add_location(li44, file$d, 61, 0, 2465);
+    			attr_dev(a46, "href", "#teamwork");
+    			attr_dev(a46, "class", "svelte-14a6qz4");
+    			add_location(a46, file$d, 67, 4, 2684);
+    			attr_dev(li45, "class", "svelte-14a6qz4");
+    			add_location(li45, file$d, 67, 0, 2680);
+    			attr_dev(a47, "href", "#challenges");
+    			attr_dev(a47, "class", "svelte-14a6qz4");
+    			add_location(a47, file$d, 68, 4, 2726);
+    			attr_dev(li46, "class", "svelte-14a6qz4");
+    			add_location(li46, file$d, 68, 0, 2722);
+    			attr_dev(a48, "href", "#contests");
+    			attr_dev(a48, "class", "svelte-14a6qz4");
+    			add_location(a48, file$d, 69, 4, 2772);
+    			attr_dev(li47, "class", "svelte-14a6qz4");
+    			add_location(li47, file$d, 69, 0, 2768);
+    			attr_dev(a49, "href", "#conflicts");
+    			attr_dev(a49, "class", "svelte-14a6qz4");
+    			add_location(a49, file$d, 70, 4, 2814);
+    			attr_dev(a50, "href", "#taking-harm");
+    			attr_dev(a50, "class", "svelte-14a6qz4");
+    			add_location(a50, file$d, 71, 4, 2857);
+    			attr_dev(li48, "class", "svelte-14a6qz4");
+    			add_location(li48, file$d, 71, 0, 2853);
+    			attr_dev(a51, "href", "#ending-a-conflict");
+    			attr_dev(a51, "class", "svelte-14a6qz4");
+    			add_location(a51, file$d, 72, 4, 2905);
+    			attr_dev(li49, "class", "svelte-14a6qz4");
+    			add_location(li49, file$d, 72, 0, 2901);
+    			attr_dev(a52, "href", "#recovering-from-conflicts");
+    			attr_dev(a52, "class", "svelte-14a6qz4");
+    			add_location(a52, file$d, 73, 4, 2965);
+    			attr_dev(li50, "class", "svelte-14a6qz4");
+    			add_location(li50, file$d, 73, 0, 2961);
+    			attr_dev(ul10, "class", "svelte-14a6qz4");
+    			add_location(ul10, file$d, 70, 38, 2848);
+    			attr_dev(li51, "class", "svelte-14a6qz4");
+    			add_location(li51, file$d, 70, 0, 2810);
+    			attr_dev(ul11, "class", "svelte-14a6qz4");
+    			add_location(ul11, file$d, 60, 88, 2460);
+    			attr_dev(li52, "class", "svelte-14a6qz4");
+    			add_location(li52, file$d, 60, 0, 2372);
+    			attr_dev(a53, "href", "#advancement");
+    			attr_dev(a53, "class", "svelte-14a6qz4");
+    			add_location(a53, file$d, 78, 4, 3065);
+    			attr_dev(a54, "href", "#milestones");
+    			attr_dev(a54, "class", "svelte-14a6qz4");
+    			add_location(a54, file$d, 79, 4, 3112);
+    			attr_dev(li53, "class", "svelte-14a6qz4");
+    			add_location(li53, file$d, 79, 0, 3108);
+    			attr_dev(a55, "href", "#breakthroughs");
+    			attr_dev(a55, "class", "svelte-14a6qz4");
+    			add_location(a55, file$d, 80, 4, 3158);
+    			attr_dev(li54, "class", "svelte-14a6qz4");
+    			add_location(li54, file$d, 80, 0, 3154);
+    			attr_dev(a56, "href", "#sessions-and-arcs");
+    			attr_dev(a56, "class", "svelte-14a6qz4");
+    			add_location(a56, file$d, 81, 4, 3210);
+    			attr_dev(li55, "class", "svelte-14a6qz4");
+    			add_location(li55, file$d, 81, 0, 3206);
+    			attr_dev(ul12, "class", "svelte-14a6qz4");
+    			add_location(ul12, file$d, 78, 42, 3103);
+    			attr_dev(li56, "class", "svelte-14a6qz4");
+    			add_location(li56, file$d, 78, 0, 3061);
+    			attr_dev(a57, "href", "#being-the-game-master");
+    			attr_dev(a57, "class", "svelte-14a6qz4");
+    			add_location(a57, file$d, 84, 4, 3282);
+    			attr_dev(a58, "href", "#setting-difficulty-and-opposition");
+    			attr_dev(a58, "class", "svelte-14a6qz4");
+    			add_location(a58, file$d, 85, 4, 3349);
+    			attr_dev(li57, "class", "svelte-14a6qz4");
+    			add_location(li57, file$d, 85, 0, 3345);
+    			attr_dev(a59, "href", "#npcs");
+    			attr_dev(a59, "class", "svelte-14a6qz4");
+    			add_location(a59, file$d, 86, 4, 3441);
+    			attr_dev(a60, "href", "#major-npcs");
+    			attr_dev(a60, "class", "svelte-14a6qz4");
+    			add_location(a60, file$d, 87, 4, 3474);
+    			attr_dev(li58, "class", "svelte-14a6qz4");
+    			add_location(li58, file$d, 87, 0, 3470);
+    			attr_dev(a61, "href", "#minor-npcs");
+    			attr_dev(a61, "class", "svelte-14a6qz4");
+    			add_location(a61, file$d, 88, 4, 3520);
+    			attr_dev(li59, "class", "svelte-14a6qz4");
+    			add_location(li59, file$d, 88, 0, 3516);
+    			attr_dev(a62, "href", "#monsters-big-bads-and-other-threats");
+    			attr_dev(a62, "class", "svelte-14a6qz4");
+    			add_location(a62, file$d, 89, 4, 3566);
+    			attr_dev(li60, "class", "svelte-14a6qz4");
+    			add_location(li60, file$d, 89, 0, 3562);
+    			attr_dev(ul13, "class", "svelte-14a6qz4");
+    			add_location(ul13, file$d, 86, 28, 3465);
+    			attr_dev(li61, "class", "svelte-14a6qz4");
+    			add_location(li61, file$d, 86, 0, 3437);
+    			attr_dev(a63, "href", "#your-fate-points");
+    			attr_dev(a63, "class", "svelte-14a6qz4");
+    			add_location(a63, file$d, 92, 4, 3676);
+    			attr_dev(li62, "class", "svelte-14a6qz4");
+    			add_location(li62, file$d, 92, 0, 3672);
+    			attr_dev(a64, "href", "#safety-tools");
+    			attr_dev(a64, "class", "svelte-14a6qz4");
+    			add_location(a64, file$d, 93, 4, 3734);
+    			attr_dev(li63, "class", "svelte-14a6qz4");
+    			add_location(li63, file$d, 93, 0, 3730);
+    			attr_dev(ul14, "class", "svelte-14a6qz4");
+    			add_location(ul14, file$d, 84, 62, 3340);
+    			attr_dev(li64, "class", "svelte-14a6qz4");
+    			add_location(li64, file$d, 84, 0, 3278);
+    			attr_dev(a65, "href", "#optional-rules");
+    			attr_dev(a65, "class", "svelte-14a6qz4");
+    			add_location(a65, file$d, 96, 4, 3796);
+    			attr_dev(a66, "href", "#conditions");
+    			attr_dev(a66, "class", "svelte-14a6qz4");
+    			add_location(a66, file$d, 97, 4, 3849);
+    			attr_dev(a67, "href", "#moving-conditions-further-apart");
+    			attr_dev(a67, "class", "svelte-14a6qz4");
+    			add_location(a67, file$d, 98, 4, 3894);
+    			attr_dev(li65, "class", "svelte-14a6qz4");
+    			add_location(li65, file$d, 98, 0, 3890);
+    			attr_dev(a68, "href", "#other-versions-of-conditions");
+    			attr_dev(a68, "class", "svelte-14a6qz4");
+    			add_location(a68, file$d, 99, 4, 3982);
+    			attr_dev(li66, "class", "svelte-14a6qz4");
+    			add_location(li66, file$d, 99, 0, 3978);
+    			attr_dev(ul15, "class", "svelte-14a6qz4");
+    			add_location(ul15, file$d, 97, 40, 3885);
+    			attr_dev(li67, "class", "svelte-14a6qz4");
+    			add_location(li67, file$d, 97, 0, 3845);
+    			attr_dev(a69, "href", "#changing-the-skill-list");
+    			attr_dev(a69, "class", "svelte-14a6qz4");
+    			add_location(a69, file$d, 102, 4, 4076);
+    			attr_dev(li68, "class", "svelte-14a6qz4");
+    			add_location(li68, file$d, 102, 0, 4072);
+    			attr_dev(a70, "href", "#character-creation-as-you-play");
+    			attr_dev(a70, "class", "svelte-14a6qz4");
+    			add_location(a70, file$d, 103, 4, 4148);
+    			attr_dev(li69, "class", "svelte-14a6qz4");
+    			add_location(li69, file$d, 103, 0, 4144);
+    			attr_dev(a71, "href", "#countdowns");
+    			attr_dev(a71, "class", "svelte-14a6qz4");
+    			add_location(a71, file$d, 104, 4, 4234);
+    			attr_dev(li70, "class", "svelte-14a6qz4");
+    			add_location(li70, file$d, 104, 0, 4230);
+    			attr_dev(a72, "href", "#extreme-consequences");
+    			attr_dev(a72, "class", "svelte-14a6qz4");
+    			add_location(a72, file$d, 105, 4, 4280);
+    			attr_dev(li71, "class", "svelte-14a6qz4");
+    			add_location(li71, file$d, 105, 0, 4276);
+    			attr_dev(a73, "href", "#faster-contests");
+    			attr_dev(a73, "class", "svelte-14a6qz4");
+    			add_location(a73, file$d, 106, 4, 4346);
+    			attr_dev(li72, "class", "svelte-14a6qz4");
+    			add_location(li72, file$d, 106, 0, 4342);
+    			attr_dev(a74, "href", "#full-defense");
+    			attr_dev(a74, "class", "svelte-14a6qz4");
+    			add_location(a74, file$d, 107, 4, 4402);
+    			attr_dev(li73, "class", "svelte-14a6qz4");
+    			add_location(li73, file$d, 107, 0, 4398);
+    			attr_dev(a75, "href", "#obstacles");
+    			attr_dev(a75, "class", "svelte-14a6qz4");
+    			add_location(a75, file$d, 108, 4, 4452);
+    			attr_dev(a76, "href", "#hazards");
+    			attr_dev(a76, "class", "svelte-14a6qz4");
+    			add_location(a76, file$d, 109, 4, 4495);
+    			attr_dev(li74, "class", "svelte-14a6qz4");
+    			add_location(li74, file$d, 109, 0, 4491);
+    			attr_dev(a77, "href", "#blocks");
+    			attr_dev(a77, "class", "svelte-14a6qz4");
+    			add_location(a77, file$d, 110, 4, 4535);
+    			attr_dev(li75, "class", "svelte-14a6qz4");
+    			add_location(li75, file$d, 110, 0, 4531);
+    			attr_dev(a78, "href", "#distractions");
+    			attr_dev(a78, "class", "svelte-14a6qz4");
+    			add_location(a78, file$d, 111, 4, 4573);
+    			attr_dev(li76, "class", "svelte-14a6qz4");
+    			add_location(li76, file$d, 111, 0, 4569);
+    			attr_dev(ul16, "class", "svelte-14a6qz4");
+    			add_location(ul16, file$d, 108, 38, 4486);
+    			attr_dev(li77, "class", "svelte-14a6qz4");
+    			add_location(li77, file$d, 108, 0, 4448);
+    			attr_dev(a79, "href", "#scale");
+    			attr_dev(a79, "class", "svelte-14a6qz4");
+    			add_location(a79, file$d, 114, 4, 4635);
+    			attr_dev(li78, "class", "svelte-14a6qz4");
+    			add_location(li78, file$d, 114, 0, 4631);
+    			attr_dev(a80, "href", "#time-shifts");
+    			attr_dev(a80, "class", "svelte-14a6qz4");
+    			add_location(a80, file$d, 115, 4, 4671);
+    			attr_dev(li79, "class", "svelte-14a6qz4");
+    			add_location(li79, file$d, 115, 0, 4667);
+    			attr_dev(a81, "href", "#ways-to-break-the-rules-for-big-bads");
+    			attr_dev(a81, "class", "svelte-14a6qz4");
+    			add_location(a81, file$d, 116, 4, 4719);
+    			attr_dev(a82, "href", "#challenge-or-contest-immunity");
+    			attr_dev(a82, "class", "svelte-14a6qz4");
+    			add_location(a82, file$d, 117, 4, 4816);
+    			attr_dev(li80, "class", "svelte-14a6qz4");
+    			add_location(li80, file$d, 117, 0, 4812);
+    			attr_dev(a83, "href", "#expendable-minion-armor");
+    			attr_dev(a83, "class", "svelte-14a6qz4");
+    			add_location(a83, file$d, 118, 4, 4900);
+    			attr_dev(li81, "class", "svelte-14a6qz4");
+    			add_location(li81, file$d, 118, 0, 4896);
+    			attr_dev(a84, "href", "#reveal-true-form");
+    			attr_dev(a84, "class", "svelte-14a6qz4");
+    			add_location(a84, file$d, 119, 4, 4972);
+    			attr_dev(li82, "class", "svelte-14a6qz4");
+    			add_location(li82, file$d, 119, 0, 4968);
+    			attr_dev(a85, "href", "#scale-things-up");
+    			attr_dev(a85, "class", "svelte-14a6qz4");
+    			add_location(a85, file$d, 120, 4, 5030);
+    			attr_dev(li83, "class", "svelte-14a6qz4");
+    			add_location(li83, file$d, 120, 0, 5026);
+    			attr_dev(a86, "href", "#solo-bonus");
+    			attr_dev(a86, "class", "svelte-14a6qz4");
+    			add_location(a86, file$d, 121, 4, 5086);
+    			attr_dev(li84, "class", "svelte-14a6qz4");
+    			add_location(li84, file$d, 121, 0, 5082);
+    			attr_dev(a87, "href", "#the-threat-is-a-map-or-a-hive-of-characters");
+    			attr_dev(a87, "class", "svelte-14a6qz4");
+    			add_location(a87, file$d, 122, 4, 5132);
+    			attr_dev(li85, "class", "svelte-14a6qz4");
+    			add_location(li85, file$d, 122, 0, 5128);
+    			attr_dev(ul17, "class", "svelte-14a6qz4");
+    			add_location(ul17, file$d, 116, 92, 4807);
+    			attr_dev(li86, "class", "svelte-14a6qz4");
+    			add_location(li86, file$d, 116, 0, 4715);
+    			attr_dev(a88, "href", "#ways-to-handle-multiple-targets");
+    			attr_dev(a88, "class", "svelte-14a6qz4");
+    			add_location(a88, file$d, 125, 4, 5258);
+    			attr_dev(li87, "class", "svelte-14a6qz4");
+    			add_location(li87, file$d, 125, 0, 5254);
+    			attr_dev(a89, "href", "#weapon-and-armor-ratings");
+    			attr_dev(a89, "class", "svelte-14a6qz4");
+    			add_location(a89, file$d, 126, 4, 5346);
+    			attr_dev(li88, "class", "svelte-14a6qz4");
+    			add_location(li88, file$d, 126, 0, 5342);
+    			attr_dev(ul18, "class", "svelte-14a6qz4");
+    			add_location(ul18, file$d, 96, 48, 3840);
+    			attr_dev(li89, "class", "svelte-14a6qz4");
+    			add_location(li89, file$d, 96, 0, 3792);
+    			attr_dev(a90, "href", "#what-version-is-this");
+    			attr_dev(a90, "class", "svelte-14a6qz4");
+    			add_location(a90, file$d, 129, 4, 5432);
+    			attr_dev(a91, "href", "#what-came-before");
+    			attr_dev(a91, "class", "svelte-14a6qz4");
+    			add_location(a91, file$d, 130, 4, 5498);
+    			attr_dev(li90, "class", "svelte-14a6qz4");
+    			add_location(li90, file$d, 130, 0, 5494);
+    			attr_dev(a92, "href", "#licensing");
+    			attr_dev(a92, "class", "svelte-14a6qz4");
+    			add_location(a92, file$d, 131, 4, 5556);
+    			attr_dev(li91, "class", "svelte-14a6qz4");
+    			add_location(li91, file$d, 131, 0, 5552);
+    			attr_dev(ul19, "class", "svelte-14a6qz4");
+    			add_location(ul19, file$d, 129, 61, 5489);
+    			attr_dev(li92, "class", "svelte-14a6qz4");
+    			add_location(li92, file$d, 129, 0, 5428);
+    			attr_dev(ul20, "class", "svelte-14a6qz4");
+    			add_location(ul20, file$d, 0, 0, 0);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, if_block_anchor, anchor);
+    			insert_dev(target, ul20, anchor);
+    			append_dev(ul20, li0);
+    			append_dev(li0, a0);
+    			append_dev(ul20, t1);
+    			append_dev(ul20, li1);
+    			append_dev(li1, a1);
+    			append_dev(ul20, t3);
+    			append_dev(ul20, li2);
+    			append_dev(li2, a2);
+    			append_dev(ul20, t5);
+    			append_dev(ul20, li12);
+    			append_dev(li12, a3);
+    			append_dev(li12, ul1);
+    			append_dev(ul1, li3);
+    			append_dev(li3, a4);
+    			append_dev(ul1, t8);
+    			append_dev(ul1, li11);
+    			append_dev(li11, a5);
+    			append_dev(li11, ul0);
+    			append_dev(ul0, li4);
+    			append_dev(li4, a6);
+    			append_dev(ul0, t11);
+    			append_dev(ul0, li5);
+    			append_dev(li5, a7);
+    			append_dev(ul0, t13);
+    			append_dev(ul0, li6);
+    			append_dev(li6, a8);
+    			append_dev(ul0, t15);
+    			append_dev(ul0, li7);
+    			append_dev(li7, a9);
+    			append_dev(ul0, t17);
+    			append_dev(ul0, li8);
+    			append_dev(li8, a10);
+    			append_dev(ul0, t19);
+    			append_dev(ul0, li9);
+    			append_dev(li9, a11);
+    			append_dev(ul0, t21);
+    			append_dev(ul0, li10);
+    			append_dev(li10, a12);
+    			append_dev(ul20, t23);
+    			append_dev(ul20, li27);
+    			append_dev(li27, a13);
+    			append_dev(li27, ul5);
+    			append_dev(ul5, li13);
+    			append_dev(li13, a14);
+    			append_dev(ul5, t26);
+    			append_dev(ul5, li16);
+    			append_dev(li16, a15);
+    			append_dev(li16, ul2);
+    			append_dev(ul2, li14);
+    			append_dev(li14, a16);
+    			append_dev(ul2, t29);
+    			append_dev(ul2, li15);
+    			append_dev(li15, a17);
+    			append_dev(ul5, t31);
+    			append_dev(ul5, li21);
+    			append_dev(li21, a18);
+    			append_dev(li21, ul3);
+    			append_dev(ul3, li17);
+    			append_dev(li17, a19);
+    			append_dev(ul3, t34);
+    			append_dev(ul3, li18);
+    			append_dev(li18, a20);
+    			append_dev(ul3, t36);
+    			append_dev(ul3, li19);
+    			append_dev(li19, a21);
+    			append_dev(ul3, t38);
+    			append_dev(ul3, li20);
+    			append_dev(li20, a22);
+    			append_dev(ul5, t40);
+    			append_dev(ul5, li26);
+    			append_dev(li26, a23);
+    			append_dev(li26, ul4);
+    			append_dev(ul4, li22);
+    			append_dev(li22, a24);
+    			append_dev(ul4, t43);
+    			append_dev(ul4, li23);
+    			append_dev(li23, a25);
+    			append_dev(ul4, t45);
+    			append_dev(ul4, li24);
+    			append_dev(li24, a26);
+    			append_dev(ul4, t47);
+    			append_dev(ul4, li25);
+    			append_dev(li25, a27);
+    			append_dev(ul20, t49);
+    			append_dev(ul20, li40);
+    			append_dev(li40, a28);
+    			append_dev(li40, ul8);
+    			append_dev(ul8, li28);
+    			append_dev(li28, a29);
+    			append_dev(ul8, t52);
+    			append_dev(ul8, li33);
+    			append_dev(li33, a30);
+    			append_dev(li33, ul6);
+    			append_dev(ul6, li29);
+    			append_dev(li29, a31);
+    			append_dev(ul6, t55);
+    			append_dev(ul6, li30);
+    			append_dev(li30, a32);
+    			append_dev(ul6, t57);
+    			append_dev(ul6, li31);
+    			append_dev(li31, a33);
+    			append_dev(ul6, t59);
+    			append_dev(ul6, li32);
+    			append_dev(li32, a34);
+    			append_dev(ul8, t61);
+    			append_dev(ul8, li37);
+    			append_dev(li37, a35);
+    			append_dev(li37, ul7);
+    			append_dev(ul7, li34);
+    			append_dev(li34, a36);
+    			append_dev(ul7, t64);
+    			append_dev(ul7, li35);
+    			append_dev(li35, a37);
+    			append_dev(li35, t66);
+    			append_dev(ul7, t67);
+    			append_dev(ul7, li36);
+    			append_dev(li36, a38);
+    			append_dev(ul8, t69);
+    			append_dev(ul8, li38);
+    			append_dev(li38, a39);
+    			append_dev(ul8, t71);
+    			append_dev(ul8, li39);
+    			append_dev(li39, a40);
+    			append_dev(ul20, t73);
+    			append_dev(ul20, li52);
+    			append_dev(li52, a41);
+    			append_dev(li52, ul11);
+    			append_dev(ul11, li44);
+    			append_dev(li44, a42);
+    			append_dev(li44, ul9);
+    			append_dev(ul9, li41);
+    			append_dev(li41, a43);
+    			append_dev(ul9, t77);
+    			append_dev(ul9, li42);
+    			append_dev(li42, a44);
+    			append_dev(ul9, t79);
+    			append_dev(ul9, li43);
+    			append_dev(li43, a45);
+    			append_dev(ul11, t81);
+    			append_dev(ul11, li45);
+    			append_dev(li45, a46);
+    			append_dev(ul11, t83);
+    			append_dev(ul11, li46);
+    			append_dev(li46, a47);
+    			append_dev(ul11, t85);
+    			append_dev(ul11, li47);
+    			append_dev(li47, a48);
+    			append_dev(ul11, t87);
+    			append_dev(ul11, li51);
+    			append_dev(li51, a49);
+    			append_dev(li51, ul10);
+    			append_dev(ul10, li48);
+    			append_dev(li48, a50);
+    			append_dev(ul10, t90);
+    			append_dev(ul10, li49);
+    			append_dev(li49, a51);
+    			append_dev(ul10, t92);
+    			append_dev(ul10, li50);
+    			append_dev(li50, a52);
+    			append_dev(ul20, t94);
+    			append_dev(ul20, li56);
+    			append_dev(li56, a53);
+    			append_dev(li56, ul12);
+    			append_dev(ul12, li53);
+    			append_dev(li53, a54);
+    			append_dev(ul12, t97);
+    			append_dev(ul12, li54);
+    			append_dev(li54, a55);
+    			append_dev(ul12, t99);
+    			append_dev(ul12, li55);
+    			append_dev(li55, a56);
+    			append_dev(ul20, t101);
+    			append_dev(ul20, li64);
+    			append_dev(li64, a57);
+    			append_dev(li64, ul14);
+    			append_dev(ul14, li57);
+    			append_dev(li57, a58);
+    			append_dev(ul14, t104);
+    			append_dev(ul14, li61);
+    			append_dev(li61, a59);
+    			append_dev(li61, ul13);
+    			append_dev(ul13, li58);
+    			append_dev(li58, a60);
+    			append_dev(ul13, t107);
+    			append_dev(ul13, li59);
+    			append_dev(li59, a61);
+    			append_dev(ul13, t109);
+    			append_dev(ul13, li60);
+    			append_dev(li60, a62);
+    			append_dev(ul14, t111);
+    			append_dev(ul14, li62);
+    			append_dev(li62, a63);
+    			append_dev(ul14, t113);
+    			append_dev(ul14, li63);
+    			append_dev(li63, a64);
+    			append_dev(ul20, t115);
+    			append_dev(ul20, li89);
+    			append_dev(li89, a65);
+    			append_dev(li89, ul18);
+    			append_dev(ul18, li67);
+    			append_dev(li67, a66);
+    			append_dev(li67, ul15);
+    			append_dev(ul15, li65);
+    			append_dev(li65, a67);
+    			append_dev(ul15, t119);
+    			append_dev(ul15, li66);
+    			append_dev(li66, a68);
+    			append_dev(ul18, t121);
+    			append_dev(ul18, li68);
+    			append_dev(li68, a69);
+    			append_dev(ul18, t123);
+    			append_dev(ul18, li69);
+    			append_dev(li69, a70);
+    			append_dev(ul18, t125);
+    			append_dev(ul18, li70);
+    			append_dev(li70, a71);
+    			append_dev(ul18, t127);
+    			append_dev(ul18, li71);
+    			append_dev(li71, a72);
+    			append_dev(ul18, t129);
+    			append_dev(ul18, li72);
+    			append_dev(li72, a73);
+    			append_dev(ul18, t131);
+    			append_dev(ul18, li73);
+    			append_dev(li73, a74);
+    			append_dev(ul18, t133);
+    			append_dev(ul18, li77);
+    			append_dev(li77, a75);
+    			append_dev(li77, ul16);
+    			append_dev(ul16, li74);
+    			append_dev(li74, a76);
+    			append_dev(ul16, t136);
+    			append_dev(ul16, li75);
+    			append_dev(li75, a77);
+    			append_dev(ul16, t138);
+    			append_dev(ul16, li76);
+    			append_dev(li76, a78);
+    			append_dev(ul18, t140);
+    			append_dev(ul18, li78);
+    			append_dev(li78, a79);
+    			append_dev(ul18, t142);
+    			append_dev(ul18, li79);
+    			append_dev(li79, a80);
+    			append_dev(ul18, t144);
+    			append_dev(ul18, li86);
+    			append_dev(li86, a81);
+    			append_dev(li86, ul17);
+    			append_dev(ul17, li80);
+    			append_dev(li80, a82);
+    			append_dev(ul17, t147);
+    			append_dev(ul17, li81);
+    			append_dev(li81, a83);
+    			append_dev(ul17, t149);
+    			append_dev(ul17, li82);
+    			append_dev(li82, a84);
+    			append_dev(ul17, t151);
+    			append_dev(ul17, li83);
+    			append_dev(li83, a85);
+    			append_dev(ul17, t153);
+    			append_dev(ul17, li84);
+    			append_dev(li84, a86);
+    			append_dev(ul17, t155);
+    			append_dev(ul17, li85);
+    			append_dev(li85, a87);
+    			append_dev(ul18, t157);
+    			append_dev(ul18, li87);
+    			append_dev(li87, a88);
+    			append_dev(ul18, t159);
+    			append_dev(ul18, li88);
+    			append_dev(li88, a89);
+    			append_dev(ul20, t161);
+    			append_dev(ul20, li92);
+    			append_dev(li92, a90);
+    			append_dev(li92, ul19);
+    			append_dev(ul19, li90);
+    			append_dev(li90, a91);
+    			append_dev(ul19, t164);
+    			append_dev(ul19, li91);
+    			append_dev(li91, a92);
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (/*markdown*/ ctx[0]) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
-    				} else {
-    					if_block = create_if_block$3(ctx);
-    					if_block.c();
-    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
-    				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
-    			}
-    		},
+    		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (if_block) if_block.d(detaching);
-    			if (detaching) detach_dev(if_block_anchor);
+    			if (detaching) detach_dev(ul20);
     		}
     	};
 
@@ -18146,139 +17165,13752 @@ var app = (function () {
     	return block;
     }
 
+    const META = {};
+
     function instance$j($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Markdown", slots, []);
-    	let { markdownFile } = $$props;
-    	let { markdown } = $$props;
-
-    	if (!markdown) {
-    		fetch(markdownFile).then(response => response.text().then(data => $$invalidate(0, markdown = data)));
-    	}
-
-    	let { props = {} } = $$props;
-    	let { columns = 2 } = $$props;
-    	let columnClass = "two-column-content";
-
-    	let lookup = {
-    		1: "single-column-content",
-    		2: "two-column-content",
-    		3: "three-column-content",
-    		4: "four-column-content",
-    		"not-found": "two-column-content"
-    	};
-
-    	if (columns in lookup) {
-    		columnClass = lookup[columns];
-    	}
-
-    	window.scrollTo(0, 0);
-    	const writable_props = ["markdownFile", "markdown", "props", "columns"];
+    	validate_slots("TOC", slots, []);
+    	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Markdown> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<TOC> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$$set = $$props => {
-    		if ("markdownFile" in $$props) $$invalidate(3, markdownFile = $$props.markdownFile);
-    		if ("markdown" in $$props) $$invalidate(0, markdown = $$props.markdown);
-    		if ("props" in $$props) $$invalidate(1, props = $$props.props);
-    		if ("columns" in $$props) $$invalidate(4, columns = $$props.columns);
-    	};
-
-    	$$self.$capture_state = () => ({
-    		marked,
-    		markdownFile,
-    		markdown,
-    		props,
-    		columns,
-    		columnClass,
-    		lookup
-    	});
-
-    	$$self.$inject_state = $$props => {
-    		if ("markdownFile" in $$props) $$invalidate(3, markdownFile = $$props.markdownFile);
-    		if ("markdown" in $$props) $$invalidate(0, markdown = $$props.markdown);
-    		if ("props" in $$props) $$invalidate(1, props = $$props.props);
-    		if ("columns" in $$props) $$invalidate(4, columns = $$props.columns);
-    		if ("columnClass" in $$props) $$invalidate(2, columnClass = $$props.columnClass);
-    		if ("lookup" in $$props) lookup = $$props.lookup;
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [markdown, props, columnClass, markdownFile, columns];
+    	$$self.$capture_state = () => ({ META });
+    	return [];
     }
 
-    class Markdown extends SvelteComponentDev {
+    class TOC extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-
-    		init(this, options, instance$j, create_fragment$j, safe_not_equal, {
-    			markdownFile: 3,
-    			markdown: 0,
-    			props: 1,
-    			columns: 4
-    		});
+    		init(this, options, instance$j, create_fragment$j, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "Markdown",
+    			tagName: "TOC",
     			options,
     			id: create_fragment$j.name
     		});
+    	}
+    }
 
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
+    /* src/components/SRD/SrdContent.md generated by Svelte v3.25.0 */
 
-    		if (/*markdownFile*/ ctx[3] === undefined && !("markdownFile" in props)) {
-    			console.warn("<Markdown> was created without expected prop 'markdownFile'");
+    const file$e = "src/components/SRD/SrdContent.md";
+
+    function create_fragment$k(ctx) {
+    	let div;
+    	let h10;
+    	let t1;
+    	let hr0;
+    	let t2;
+    	let p0;
+    	let t4;
+    	let p1;
+    	let t5;
+    	let a0;
+    	let t7;
+    	let t8;
+    	let p2;
+    	let t9;
+    	let strong0;
+    	let t11;
+    	let p3;
+    	let t12;
+    	let a1;
+    	let t14;
+    	let a2;
+    	let t16;
+    	let t17;
+    	let h11;
+    	let t19;
+    	let hr1;
+    	let t20;
+    	let p4;
+    	let t22;
+    	let p5;
+    	let t24;
+    	let p6;
+    	let t26;
+    	let p7;
+    	let t28;
+    	let p8;
+    	let t30;
+    	let h12;
+    	let t32;
+    	let hr2;
+    	let t33;
+    	let p9;
+    	let t34;
+    	let em0;
+    	let t36;
+    	let em1;
+    	let t38;
+    	let t39;
+    	let p10;
+    	let t40;
+    	let em2;
+    	let t42;
+    	let t43;
+    	let h20;
+    	let t45;
+    	let hr3;
+    	let t46;
+    	let p11;
+    	let t47;
+    	let em3;
+    	let t49;
+    	let em4;
+    	let t51;
+    	let t52;
+    	let p12;
+    	let em5;
+    	let t54;
+    	let strong1;
+    	let t56;
+    	let strong2;
+    	let t58;
+    	let t59;
+    	let h30;
+    	let t61;
+    	let p13;
+    	let t62;
+    	let em6;
+    	let t64;
+    	let t65;
+    	let ul0;
+    	let li0;
+    	let t66;
+    	let strong3;
+    	let t68;
+    	let t69;
+    	let li1;
+    	let t70;
+    	let strong4;
+    	let t72;
+    	let t73;
+    	let li2;
+    	let t74;
+    	let strong5;
+    	let t76;
+    	let t77;
+    	let li3;
+    	let t78;
+    	let strong6;
+    	let t80;
+    	let strong7;
+    	let t82;
+    	let t83;
+    	let li4;
+    	let t84;
+    	let strong8;
+    	let t86;
+    	let t87;
+    	let li5;
+    	let t88;
+    	let strong9;
+    	let t90;
+    	let strong10;
+    	let t92;
+    	let t93;
+    	let h13;
+    	let t95;
+    	let hr4;
+    	let t96;
+    	let h21;
+    	let t98;
+    	let hr5;
+    	let t99;
+    	let p14;
+    	let t101;
+    	let p15;
+    	let t103;
+    	let h22;
+    	let t105;
+    	let hr6;
+    	let t106;
+    	let h31;
+    	let t108;
+    	let p16;
+    	let t110;
+    	let p17;
+    	let t112;
+    	let ul1;
+    	let li6;
+    	let strong11;
+    	let t114;
+    	let t115;
+    	let li7;
+    	let strong12;
+    	let t117;
+    	let t118;
+    	let li8;
+    	let strong13;
+    	let t120;
+    	let t121;
+    	let li9;
+    	let strong14;
+    	let t123;
+    	let t124;
+    	let li10;
+    	let strong15;
+    	let t126;
+    	let t127;
+    	let li11;
+    	let strong16;
+    	let t129;
+    	let t130;
+    	let li12;
+    	let strong17;
+    	let t132;
+    	let t133;
+    	let h32;
+    	let t135;
+    	let p18;
+    	let strong18;
+    	let t137;
+    	let t138;
+    	let p19;
+    	let t139;
+    	let strong19;
+    	let t141;
+    	let strong20;
+    	let t143;
+    	let strong21;
+    	let t145;
+    	let em7;
+    	let t147;
+    	let t148;
+    	let p20;
+    	let t149;
+    	let strong22;
+    	let t151;
+    	let t152;
+    	let p21;
+    	let t153;
+    	let em8;
+    	let t155;
+    	let strong23;
+    	let t157;
+    	let t158;
+    	let p22;
+    	let strong24;
+    	let t160;
+    	let t161;
+    	let h40;
+    	let t163;
+    	let p23;
+    	let t164;
+    	let strong25;
+    	let t166;
+    	let t167;
+    	let h41;
+    	let t169;
+    	let p24;
+    	let t170;
+    	let strong26;
+    	let t172;
+    	let t173;
+    	let h42;
+    	let t175;
+    	let p25;
+    	let t176;
+    	let strong27;
+    	let t178;
+    	let t179;
+    	let p26;
+    	let t181;
+    	let p27;
+    	let t183;
+    	let h43;
+    	let t185;
+    	let p28;
+    	let t187;
+    	let h33;
+    	let t189;
+    	let p29;
+    	let t190;
+    	let strong28;
+    	let t192;
+    	let t193;
+    	let p30;
+    	let t194;
+    	let strong29;
+    	let t196;
+    	let t197;
+    	let p31;
+    	let t199;
+    	let ul2;
+    	let li13;
+    	let t201;
+    	let li14;
+    	let t203;
+    	let li15;
+    	let t205;
+    	let li16;
+    	let t207;
+    	let li17;
+    	let t209;
+    	let h44;
+    	let t211;
+    	let p32;
+    	let t212;
+    	let em9;
+    	let t214;
+    	let t215;
+    	let table0;
+    	let col0;
+    	let t216;
+    	let col1;
+    	let t217;
+    	let tbody0;
+    	let tr0;
+    	let th0;
+    	let p33;
+    	let t219;
+    	let th1;
+    	let p34;
+    	let t221;
+    	let tr1;
+    	let td0;
+    	let p35;
+    	let t223;
+    	let td1;
+    	let p36;
+    	let t225;
+    	let tr2;
+    	let td2;
+    	let p37;
+    	let t227;
+    	let td3;
+    	let p38;
+    	let t229;
+    	let tr3;
+    	let td4;
+    	let p39;
+    	let t231;
+    	let td5;
+    	let p40;
+    	let t233;
+    	let tr4;
+    	let td6;
+    	let p41;
+    	let t235;
+    	let td7;
+    	let p42;
+    	let t237;
+    	let tr5;
+    	let td8;
+    	let p43;
+    	let t239;
+    	let td9;
+    	let p44;
+    	let t241;
+    	let tr6;
+    	let td10;
+    	let p45;
+    	let t243;
+    	let td11;
+    	let p46;
+    	let t245;
+    	let tr7;
+    	let td12;
+    	let p47;
+    	let t247;
+    	let td13;
+    	let p48;
+    	let t249;
+    	let tr8;
+    	let td14;
+    	let p49;
+    	let t251;
+    	let td15;
+    	let p50;
+    	let t253;
+    	let tr9;
+    	let td16;
+    	let p51;
+    	let t255;
+    	let td17;
+    	let p52;
+    	let t257;
+    	let tr10;
+    	let td18;
+    	let p53;
+    	let t259;
+    	let td19;
+    	let p54;
+    	let t261;
+    	let tr11;
+    	let td20;
+    	let p55;
+    	let t263;
+    	let td21;
+    	let p56;
+    	let t265;
+    	let tr12;
+    	let td22;
+    	let p57;
+    	let t267;
+    	let td23;
+    	let p58;
+    	let t269;
+    	let tr13;
+    	let td24;
+    	let p59;
+    	let t271;
+    	let td25;
+    	let p60;
+    	let t273;
+    	let h45;
+    	let t275;
+    	let p61;
+    	let t276;
+    	let br0;
+    	let t277;
+    	let br1;
+    	let t278;
+    	let table1;
+    	let thead;
+    	let tr14;
+    	let th2;
+    	let t279;
+    	let th3;
+    	let t280;
+    	let th4;
+    	let t281;
+    	let th5;
+    	let t282;
+    	let tbody1;
+    	let tr15;
+    	let td26;
+    	let strong30;
+    	let t284;
+    	let td27;
+    	let strong31;
+    	let t286;
+    	let td28;
+    	let strong32;
+    	let t288;
+    	let td29;
+    	let strong33;
+    	let t290;
+    	let tr16;
+    	let td30;
+    	let strong34;
+    	let t292;
+    	let td31;
+    	let strong35;
+    	let t294;
+    	let td32;
+    	let strong36;
+    	let t296;
+    	let td33;
+    	let strong37;
+    	let t298;
+    	let tr17;
+    	let td34;
+    	let strong38;
+    	let t300;
+    	let td35;
+    	let strong39;
+    	let t302;
+    	let td36;
+    	let strong40;
+    	let t304;
+    	let td37;
+    	let strong41;
+    	let t306;
+    	let tr18;
+    	let td38;
+    	let strong42;
+    	let t308;
+    	let td39;
+    	let strong43;
+    	let t310;
+    	let td40;
+    	let strong44;
+    	let t312;
+    	let td41;
+    	let strong45;
+    	let t314;
+    	let tr19;
+    	let td42;
+    	let strong46;
+    	let t316;
+    	let td43;
+    	let strong47;
+    	let t318;
+    	let td44;
+    	let strong48;
+    	let t320;
+    	let td45;
+    	let t321;
+    	let br2;
+    	let t322;
+    	let br3;
+    	let t323;
+    	let br4;
+    	let t324;
+    	let p62;
+    	let strong49;
+    	let t326;
+    	let t327;
+    	let p63;
+    	let strong50;
+    	let t329;
+    	let t330;
+    	let p64;
+    	let strong51;
+    	let t332;
+    	let t333;
+    	let p65;
+    	let strong52;
+    	let t335;
+    	let t336;
+    	let p66;
+    	let strong53;
+    	let t338;
+    	let t339;
+    	let p67;
+    	let strong54;
+    	let t341;
+    	let t342;
+    	let p68;
+    	let strong55;
+    	let t344;
+    	let t345;
+    	let p69;
+    	let strong56;
+    	let t347;
+    	let t348;
+    	let p70;
+    	let strong57;
+    	let t350;
+    	let t351;
+    	let p71;
+    	let strong58;
+    	let t353;
+    	let t354;
+    	let p72;
+    	let strong59;
+    	let t356;
+    	let t357;
+    	let p73;
+    	let strong60;
+    	let t359;
+    	let t360;
+    	let p74;
+    	let strong61;
+    	let t362;
+    	let strong62;
+    	let t364;
+    	let t365;
+    	let p75;
+    	let strong63;
+    	let t367;
+    	let t368;
+    	let p76;
+    	let strong64;
+    	let t370;
+    	let t371;
+    	let p77;
+    	let strong65;
+    	let t373;
+    	let t374;
+    	let p78;
+    	let strong66;
+    	let t376;
+    	let t377;
+    	let p79;
+    	let strong67;
+    	let t379;
+    	let t380;
+    	let p80;
+    	let strong68;
+    	let t382;
+    	let strong69;
+    	let t384;
+    	let t385;
+    	let h46;
+    	let t387;
+    	let p81;
+    	let t389;
+    	let ul3;
+    	let li18;
+    	let t391;
+    	let li19;
+    	let t392;
+    	let em10;
+    	let t394;
+    	let t395;
+    	let li20;
+    	let t397;
+    	let li21;
+    	let t399;
+    	let p82;
+    	let t401;
+    	let p83;
+    	let t402;
+    	let strong70;
+    	let t404;
+    	let h34;
+    	let t406;
+    	let p84;
+    	let t407;
+    	let strong71;
+    	let t409;
+    	let strong72;
+    	let t411;
+    	let strong73;
+    	let t413;
+    	let t414;
+    	let p85;
+    	let t416;
+    	let p86;
+    	let t418;
+    	let h35;
+    	let t420;
+    	let p87;
+    	let t421;
+    	let strong74;
+    	let t423;
+    	let t424;
+    	let p88;
+    	let t426;
+    	let h47;
+    	let t428;
+    	let p89;
+    	let t430;
+    	let p90;
+    	let strong75;
+    	let t432;
+    	let strong76;
+    	let t434;
+    	let strong77;
+    	let t436;
+    	let t437;
+    	let p91;
+    	let t439;
+    	let p92;
+    	let t440;
+    	let strong78;
+    	let t442;
+    	let strong79;
+    	let t444;
+    	let strong80;
+    	let t446;
+    	let strong81;
+    	let t448;
+    	let t449;
+    	let p93;
+    	let strong82;
+    	let t451;
+    	let strong83;
+    	let t453;
+    	let strong84;
+    	let t455;
+    	let strong85;
+    	let t457;
+    	let strong86;
+    	let t459;
+    	let strong87;
+    	let t461;
+    	let t462;
+    	let p94;
+    	let strong88;
+    	let t464;
+    	let strong89;
+    	let t466;
+    	let t467;
+    	let ul4;
+    	let li22;
+    	let strong90;
+    	let t469;
+    	let t470;
+    	let li23;
+    	let t472;
+    	let li24;
+    	let strong91;
+    	let t474;
+    	let t475;
+    	let li25;
+    	let strong92;
+    	let t477;
+    	let strong93;
+    	let t479;
+    	let t480;
+    	let li26;
+    	let strong94;
+    	let t482;
+    	let t483;
+    	let p95;
+    	let t485;
+    	let p96;
+    	let t486;
+    	let strong95;
+    	let t488;
+    	let strong96;
+    	let t490;
+    	let strong97;
+    	let t492;
+    	let t493;
+    	let p97;
+    	let strong98;
+    	let t495;
+    	let strong99;
+    	let t497;
+    	let strong100;
+    	let t499;
+    	let strong101;
+    	let t501;
+    	let t502;
+    	let h36;
+    	let t504;
+    	let p98;
+    	let strong102;
+    	let t506;
+    	let strong103;
+    	let t508;
+    	let t509;
+    	let p99;
+    	let t511;
+    	let table2;
+    	let col2;
+    	let t512;
+    	let col3;
+    	let t513;
+    	let tbody2;
+    	let tr20;
+    	let th6;
+    	let p100;
+    	let t515;
+    	let th7;
+    	let p101;
+    	let t517;
+    	let tr21;
+    	let td46;
+    	let p102;
+    	let t519;
+    	let td47;
+    	let p103;
+    	let strong104;
+    	let t521;
+    	let tr22;
+    	let td48;
+    	let p104;
+    	let t523;
+    	let td49;
+    	let p105;
+    	let strong105;
+    	let t525;
+    	let tr23;
+    	let td50;
+    	let p106;
+    	let t527;
+    	let td51;
+    	let p107;
+    	let strong106;
+    	let t529;
+    	let tr24;
+    	let td52;
+    	let p108;
+    	let t531;
+    	let td53;
+    	let p109;
+    	let strong107;
+    	let t533;
+    	let t534;
+    	let p110;
+    	let t535;
+    	let em11;
+    	let t537;
+    	let strong108;
+    	let t539;
+    	let t540;
+    	let h48;
+    	let t542;
+    	let p111;
+    	let t543;
+    	let em12;
+    	let t545;
+    	let em13;
+    	let t547;
+    	let em14;
+    	let t549;
+    	let t550;
+    	let p112;
+    	let t552;
+    	let ul5;
+    	let li27;
+    	let t553;
+    	let strong109;
+    	let t555;
+    	let t556;
+    	let li28;
+    	let t557;
+    	let em15;
+    	let t559;
+    	let t560;
+    	let li29;
+    	let t561;
+    	let strong110;
+    	let t563;
+    	let strong111;
+    	let t565;
+    	let strong112;
+    	let t567;
+    	let t568;
+    	let h37;
+    	let t570;
+    	let p113;
+    	let t572;
+    	let h14;
+    	let t574;
+    	let hr7;
+    	let t575;
+    	let p114;
+    	let t576;
+    	let em16;
+    	let t578;
+    	let strong113;
+    	let t580;
+    	let t581;
+    	let p115;
+    	let t582;
+    	let strong114;
+    	let t584;
+    	let em17;
+    	let t586;
+    	let t587;
+    	let p116;
+    	let t589;
+    	let p117;
+    	let t591;
+    	let ul6;
+    	let li30;
+    	let t593;
+    	let li31;
+    	let t595;
+    	let li32;
+    	let t597;
+    	let p118;
+    	let t599;
+    	let p119;
+    	let t601;
+    	let ol;
+    	let li33;
+    	let t602;
+    	let em18;
+    	let t604;
+    	let t605;
+    	let li34;
+    	let t607;
+    	let li35;
+    	let t609;
+    	let li36;
+    	let t611;
+    	let li37;
+    	let t612;
+    	let strong115;
+    	let t614;
+    	let strong116;
+    	let t616;
+    	let t617;
+    	let li38;
+    	let t618;
+    	let strong117;
+    	let t620;
+    	let t621;
+    	let h23;
+    	let t623;
+    	let hr8;
+    	let t624;
+    	let p120;
+    	let t625;
+    	let strong118;
+    	let t627;
+    	let t628;
+    	let p121;
+    	let t629;
+    	let strong119;
+    	let t631;
+    	let strong120;
+    	let t633;
+    	let t634;
+    	let p122;
+    	let t635;
+    	let em19;
+    	let t637;
+    	let em20;
+    	let t639;
+    	let t640;
+    	let h24;
+    	let t642;
+    	let hr9;
+    	let t643;
+    	let p123;
+    	let t644;
+    	let strong121;
+    	let t646;
+    	let t647;
+    	let h38;
+    	let t649;
+    	let p124;
+    	let t651;
+    	let p125;
+    	let t652;
+    	let strong122;
+    	let t654;
+    	let strong123;
+    	let t656;
+    	let strong124;
+    	let t658;
+    	let strong125;
+    	let t660;
+    	let t661;
+    	let p126;
+    	let t662;
+    	let strong126;
+    	let t664;
+    	let strong127;
+    	let t666;
+    	let t667;
+    	let p127;
+    	let t668;
+    	let strong128;
+    	let t670;
+    	let strong129;
+    	let t672;
+    	let em21;
+    	let t674;
+    	let t675;
+    	let p128;
+    	let t676;
+    	let strong130;
+    	let t678;
+    	let t679;
+    	let h39;
+    	let t681;
+    	let p129;
+    	let t682;
+    	let strong131;
+    	let t684;
+    	let t685;
+    	let p130;
+    	let t687;
+    	let h25;
+    	let t689;
+    	let hr10;
+    	let t690;
+    	let p131;
+    	let t691;
+    	let strong132;
+    	let t693;
+    	let t694;
+    	let ul7;
+    	let li39;
+    	let t695;
+    	let strong133;
+    	let t697;
+    	let t698;
+    	let li40;
+    	let t699;
+    	let strong134;
+    	let t701;
+    	let t702;
+    	let li41;
+    	let t703;
+    	let strong135;
+    	let t705;
+    	let t706;
+    	let li42;
+    	let t707;
+    	let strong136;
+    	let t709;
+    	let t710;
+    	let p132;
+    	let t711;
+    	let strong137;
+    	let t713;
+    	let t714;
+    	let p133;
+    	let t716;
+    	let h310;
+    	let t718;
+    	let p134;
+    	let t720;
+    	let p135;
+    	let t722;
+    	let h49;
+    	let t724;
+    	let p136;
+    	let t725;
+    	let strong138;
+    	let t727;
+    	let t728;
+    	let p137;
+    	let t730;
+    	let h410;
+    	let t732;
+    	let p138;
+    	let t733;
+    	let strong139;
+    	let t735;
+    	let t736;
+    	let p139;
+    	let t738;
+    	let h411;
+    	let t740;
+    	let p140;
+    	let t741;
+    	let strong140;
+    	let t743;
+    	let t744;
+    	let p141;
+    	let t745;
+    	let strong141;
+    	let t747;
+    	let t748;
+    	let p142;
+    	let t750;
+    	let h311;
+    	let t752;
+    	let p143;
+    	let t754;
+    	let p144;
+    	let t756;
+    	let h412;
+    	let t758;
+    	let p145;
+    	let t759;
+    	let strong142;
+    	let t761;
+    	let strong143;
+    	let t763;
+    	let t764;
+    	let p146;
+    	let t766;
+    	let h413;
+    	let t768;
+    	let p147;
+    	let t769;
+    	let strong144;
+    	let t771;
+    	let t772;
+    	let p148;
+    	let t774;
+    	let h312;
+    	let t776;
+    	let p149;
+    	let t778;
+    	let p150;
+    	let t780;
+    	let p151;
+    	let t782;
+    	let h414;
+    	let t784;
+    	let p152;
+    	let t785;
+    	let em22;
+    	let t787;
+    	let em23;
+    	let t789;
+    	let t790;
+    	let h313;
+    	let t792;
+    	let p153;
+    	let t794;
+    	let p154;
+    	let t796;
+    	let p155;
+    	let t798;
+    	let h26;
+    	let t800;
+    	let hr11;
+    	let t801;
+    	let p156;
+    	let t803;
+    	let ul8;
+    	let li43;
+    	let strong145;
+    	let t805;
+    	let t806;
+    	let li44;
+    	let strong146;
+    	let t808;
+    	let t809;
+    	let li45;
+    	let strong147;
+    	let t811;
+    	let t812;
+    	let li46;
+    	let strong148;
+    	let t814;
+    	let t815;
+    	let h314;
+    	let t817;
+    	let p157;
+    	let t819;
+    	let p158;
+    	let t820;
+    	let strong149;
+    	let t822;
+    	let t823;
+    	let p159;
+    	let t825;
+    	let p160;
+    	let t827;
+    	let ul9;
+    	let li47;
+    	let p161;
+    	let strong150;
+    	let t829;
+    	let strong151;
+    	let t831;
+    	let t832;
+    	let li48;
+    	let p162;
+    	let strong152;
+    	let t834;
+    	let strong153;
+    	let t836;
+    	let strong154;
+    	let t838;
+    	let t839;
+    	let li49;
+    	let p163;
+    	let strong155;
+    	let t841;
+    	let t842;
+    	let li50;
+    	let p164;
+    	let strong156;
+    	let t844;
+    	let t845;
+    	let p165;
+    	let t847;
+    	let p166;
+    	let t849;
+    	let h315;
+    	let t851;
+    	let p167;
+    	let t853;
+    	let p168;
+    	let t854;
+    	let strong157;
+    	let t856;
+    	let t857;
+    	let p169;
+    	let t858;
+    	let strong158;
+    	let t860;
+    	let strong159;
+    	let t862;
+    	let strong160;
+    	let t864;
+    	let strong161;
+    	let t866;
+    	let t867;
+    	let p170;
+    	let t869;
+    	let p171;
+    	let t871;
+    	let ul10;
+    	let li51;
+    	let p172;
+    	let strong162;
+    	let t873;
+    	let strong163;
+    	let t875;
+    	let t876;
+    	let li52;
+    	let p173;
+    	let strong164;
+    	let t878;
+    	let strong165;
+    	let t880;
+    	let t881;
+    	let li53;
+    	let p174;
+    	let strong166;
+    	let t883;
+    	let t884;
+    	let li54;
+    	let p175;
+    	let strong167;
+    	let t886;
+    	let em24;
+    	let t888;
+    	let t889;
+    	let p176;
+    	let t891;
+    	let ul11;
+    	let li55;
+    	let p177;
+    	let strong168;
+    	let t893;
+    	let t894;
+    	let li56;
+    	let p178;
+    	let strong169;
+    	let t896;
+    	let t897;
+    	let li57;
+    	let p179;
+    	let strong170;
+    	let t899;
+    	let t900;
+    	let li58;
+    	let p180;
+    	let strong171;
+    	let t902;
+    	let t903;
+    	let p181;
+    	let t905;
+    	let p182;
+    	let t907;
+    	let p183;
+    	let t908;
+    	let strong172;
+    	let t910;
+    	let t911;
+    	let h316;
+    	let t913;
+    	let p184;
+    	let t915;
+    	let p185;
+    	let t916;
+    	let strong173;
+    	let t918;
+    	let t919;
+    	let p186;
+    	let t921;
+    	let p187;
+    	let t923;
+    	let ul12;
+    	let li59;
+    	let p188;
+    	let strong174;
+    	let t925;
+    	let t926;
+    	let li60;
+    	let p189;
+    	let strong175;
+    	let t928;
+    	let strong176;
+    	let t930;
+    	let t931;
+    	let li61;
+    	let p190;
+    	let strong177;
+    	let t933;
+    	let strong178;
+    	let t935;
+    	let t936;
+    	let li62;
+    	let p191;
+    	let strong179;
+    	let t938;
+    	let t939;
+    	let p192;
+    	let t941;
+    	let h317;
+    	let t943;
+    	let p193;
+    	let t945;
+    	let p194;
+    	let t946;
+    	let strong180;
+    	let t948;
+    	let t949;
+    	let p195;
+    	let t950;
+    	let em25;
+    	let t952;
+    	let t953;
+    	let p196;
+    	let t955;
+    	let ul13;
+    	let li63;
+    	let p197;
+    	let strong181;
+    	let t957;
+    	let strong182;
+    	let t959;
+    	let strong183;
+    	let t961;
+    	let t962;
+    	let li64;
+    	let p198;
+    	let strong184;
+    	let t964;
+    	let t965;
+    	let li65;
+    	let p199;
+    	let strong185;
+    	let t967;
+    	let t968;
+    	let li66;
+    	let p200;
+    	let strong186;
+    	let t970;
+    	let t971;
+    	let p201;
+    	let t973;
+    	let p202;
+    	let t975;
+    	let h415;
+    	let t977;
+    	let p203;
+    	let t979;
+    	let ul14;
+    	let li67;
+    	let t981;
+    	let li68;
+    	let t983;
+    	let li69;
+    	let t985;
+    	let li70;
+    	let t987;
+    	let li71;
+    	let t989;
+    	let p204;
+    	let t991;
+    	let h15;
+    	let t993;
+    	let hr12;
+    	let t994;
+    	let p205;
+    	let t995;
+    	let strong187;
+    	let t997;
+    	let strong188;
+    	let t999;
+    	let strong189;
+    	let t1001;
+    	let strong190;
+    	let t1003;
+    	let t1004;
+    	let h27;
+    	let t1006;
+    	let hr13;
+    	let t1007;
+    	let p206;
+    	let t1008;
+    	let strong191;
+    	let t1010;
+    	let strong192;
+    	let t1012;
+    	let strong193;
+    	let t1014;
+    	let em26;
+    	let t1016;
+    	let t1017;
+    	let p207;
+    	let t1018;
+    	let strong194;
+    	let t1020;
+    	let strong195;
+    	let t1022;
+    	let strong196;
+    	let t1024;
+    	let strong197;
+    	let t1026;
+    	let strong198;
+    	let t1028;
+    	let t1029;
+    	let p208;
+    	let t1030;
+    	let strong199;
+    	let t1032;
+    	let p209;
+    	let t1033;
+    	let em27;
+    	let t1035;
+    	let strong200;
+    	let t1037;
+    	let em28;
+    	let t1039;
+    	let strong201;
+    	let t1041;
+    	let strong202;
+    	let t1043;
+    	let t1044;
+    	let h28;
+    	let t1046;
+    	let hr14;
+    	let t1047;
+    	let p210;
+    	let t1048;
+    	let strong203;
+    	let t1050;
+    	let t1051;
+    	let h318;
+    	let t1053;
+    	let p211;
+    	let t1054;
+    	let strong204;
+    	let t1056;
+    	let t1057;
+    	let p212;
+    	let strong205;
+    	let t1059;
+    	let strong206;
+    	let t1061;
+    	let h319;
+    	let t1063;
+    	let p213;
+    	let t1065;
+    	let p214;
+    	let strong207;
+    	let t1067;
+    	let strong208;
+    	let t1069;
+    	let h320;
+    	let t1071;
+    	let p215;
+    	let t1072;
+    	let strong209;
+    	let t1074;
+    	let t1075;
+    	let p216;
+    	let strong210;
+    	let t1077;
+    	let strong211;
+    	let t1079;
+    	let h321;
+    	let t1081;
+    	let p217;
+    	let t1082;
+    	let strong212;
+    	let t1084;
+    	let t1085;
+    	let p218;
+    	let strong213;
+    	let t1087;
+    	let strong214;
+    	let t1089;
+    	let h29;
+    	let t1091;
+    	let hr15;
+    	let t1092;
+    	let h322;
+    	let t1094;
+    	let p219;
+    	let t1095;
+    	let strong215;
+    	let t1097;
+    	let strong216;
+    	let t1099;
+    	let strong217;
+    	let t1101;
+    	let strong218;
+    	let t1103;
+    	let t1104;
+    	let p220;
+    	let t1105;
+    	let strong219;
+    	let t1107;
+    	let strong220;
+    	let t1109;
+    	let t1110;
+    	let h323;
+    	let t1112;
+    	let p221;
+    	let t1113;
+    	let strong221;
+    	let t1115;
+    	let strong222;
+    	let t1117;
+    	let strong223;
+    	let t1119;
+    	let t1120;
+    	let p222;
+    	let t1121;
+    	let em29;
+    	let t1123;
+    	let strong224;
+    	let t1125;
+    	let t1126;
+    	let h416;
+    	let t1128;
+    	let p223;
+    	let t1130;
+    	let p224;
+    	let t1131;
+    	let strong225;
+    	let t1133;
+    	let t1134;
+    	let h417;
+    	let t1136;
+    	let p225;
+    	let t1137;
+    	let em30;
+    	let t1139;
+    	let strong226;
+    	let t1141;
+    	let strong227;
+    	let t1143;
+    	let t1144;
+    	let h418;
+    	let t1146;
+    	let p226;
+    	let t1147;
+    	let strong228;
+    	let t1149;
+    	let t1150;
+    	let h324;
+    	let t1152;
+    	let p227;
+    	let t1153;
+    	let strong229;
+    	let t1155;
+    	let t1156;
+    	let p228;
+    	let strong230;
+    	let t1158;
+    	let t1159;
+    	let p229;
+    	let strong231;
+    	let t1161;
+    	let t1162;
+    	let p230;
+    	let strong232;
+    	let t1164;
+    	let strong233;
+    	let t1166;
+    	let t1167;
+    	let p231;
+    	let strong234;
+    	let t1169;
+    	let t1170;
+    	let h419;
+    	let t1172;
+    	let p232;
+    	let t1174;
+    	let p233;
+    	let t1176;
+    	let p234;
+    	let t1178;
+    	let p235;
+    	let t1179;
+    	let em31;
+    	let t1181;
+    	let a3;
+    	let em32;
+    	let t1183;
+    	let h420;
+    	let t1185;
+    	let p236;
+    	let t1186;
+    	let strong235;
+    	let t1188;
+    	let strong236;
+    	let t1190;
+    	let t1191;
+    	let p237;
+    	let t1193;
+    	let p238;
+    	let t1195;
+    	let p239;
+    	let t1197;
+    	let h421;
+    	let t1199;
+    	let p240;
+    	let t1201;
+    	let p241;
+    	let t1202;
+    	let em33;
+    	let t1204;
+    	let t1205;
+    	let p242;
+    	let t1206;
+    	let em34;
+    	let t1208;
+    	let t1209;
+    	let p243;
+    	let t1210;
+    	let em35;
+    	let t1212;
+    	let t1213;
+    	let p244;
+    	let t1215;
+    	let h210;
+    	let t1217;
+    	let hr16;
+    	let t1218;
+    	let p245;
+    	let t1219;
+    	let strong237;
+    	let t1221;
+    	let t1222;
+    	let p246;
+    	let t1223;
+    	let strong238;
+    	let t1225;
+    	let strong239;
+    	let t1227;
+    	let strong240;
+    	let t1229;
+    	let t1230;
+    	let p247;
+    	let t1231;
+    	let strong241;
+    	let t1233;
+    	let t1234;
+    	let h211;
+    	let t1236;
+    	let hr17;
+    	let t1237;
+    	let p248;
+    	let t1238;
+    	let strong242;
+    	let t1240;
+    	let t1241;
+    	let p249;
+    	let strong243;
+    	let t1243;
+    	let t1244;
+    	let p250;
+    	let strong244;
+    	let t1246;
+    	let t1247;
+    	let p251;
+    	let strong245;
+    	let t1249;
+    	let t1250;
+    	let p252;
+    	let strong246;
+    	let t1252;
+    	let strong247;
+    	let t1254;
+    	let t1255;
+    	let h16;
+    	let t1257;
+    	let hr18;
+    	let t1258;
+    	let p253;
+    	let t1259;
+    	let strong248;
+    	let t1261;
+    	let strong249;
+    	let t1263;
+    	let strong250;
+    	let t1265;
+    	let t1266;
+    	let ul15;
+    	let li72;
+    	let strong251;
+    	let t1268;
+    	let t1269;
+    	let li73;
+    	let strong252;
+    	let t1271;
+    	let t1272;
+    	let li74;
+    	let strong253;
+    	let t1274;
+    	let t1275;
+    	let h212;
+    	let t1277;
+    	let hr19;
+    	let t1278;
+    	let p254;
+    	let t1280;
+    	let h325;
+    	let t1282;
+    	let p255;
+    	let strong254;
+    	let t1284;
+    	let t1285;
+    	let p256;
+    	let t1287;
+    	let p257;
+    	let strong255;
+    	let t1289;
+    	let t1290;
+    	let p258;
+    	let t1291;
+    	let strong256;
+    	let t1293;
+    	let strong257;
+    	let t1295;
+    	let em36;
+    	let t1297;
+    	let t1298;
+    	let p259;
+    	let t1300;
+    	let p260;
+    	let t1302;
+    	let h326;
+    	let t1304;
+    	let p261;
+    	let t1306;
+    	let ul16;
+    	let li75;
+    	let strong258;
+    	let t1308;
+    	let t1309;
+    	let li76;
+    	let strong259;
+    	let t1311;
+    	let t1312;
+    	let li77;
+    	let strong260;
+    	let t1314;
+    	let t1315;
+    	let li78;
+    	let strong261;
+    	let t1317;
+    	let t1318;
+    	let li79;
+    	let strong262;
+    	let t1320;
+    	let t1321;
+    	let p262;
+    	let t1322;
+    	let strong263;
+    	let t1324;
+    	let t1325;
+    	let p263;
+    	let t1326;
+    	let strong264;
+    	let t1328;
+    	let strong265;
+    	let t1330;
+    	let t1331;
+    	let h422;
+    	let t1333;
+    	let p264;
+    	let t1335;
+    	let h423;
+    	let t1337;
+    	let p265;
+    	let t1338;
+    	let strong266;
+    	let t1340;
+    	let t1341;
+    	let h327;
+    	let t1343;
+    	let p266;
+    	let t1344;
+    	let strong267;
+    	let t1346;
+    	let strong268;
+    	let t1348;
+    	let t1349;
+    	let p267;
+    	let t1351;
+    	let p268;
+    	let t1352;
+    	let strong269;
+    	let t1354;
+    	let strong270;
+    	let t1356;
+    	let t1357;
+    	let p269;
+    	let t1359;
+    	let p270;
+    	let t1360;
+    	let a4;
+    	let t1362;
+    	let h213;
+    	let t1364;
+    	let hr20;
+    	let t1365;
+    	let p271;
+    	let t1367;
+    	let p272;
+    	let t1369;
+    	let p273;
+    	let t1371;
+    	let h214;
+    	let t1373;
+    	let hr21;
+    	let t1374;
+    	let p274;
+    	let t1376;
+    	let p275;
+    	let t1377;
+    	let strong271;
+    	let t1379;
+    	let t1380;
+    	let p276;
+    	let t1382;
+    	let p277;
+    	let t1384;
+    	let p278;
+    	let t1386;
+    	let h215;
+    	let t1388;
+    	let hr22;
+    	let t1389;
+    	let p279;
+    	let t1390;
+    	let strong272;
+    	let t1392;
+    	let em37;
+    	let t1394;
+    	let t1395;
+    	let p280;
+    	let t1396;
+    	let em38;
+    	let t1398;
+    	let strong273;
+    	let t1400;
+    	let t1401;
+    	let p281;
+    	let t1403;
+    	let p282;
+    	let t1404;
+    	let strong274;
+    	let t1406;
+    	let strong275;
+    	let t1408;
+    	let t1409;
+    	let p283;
+    	let t1410;
+    	let strong276;
+    	let t1412;
+    	let t1413;
+    	let p284;
+    	let t1415;
+    	let h328;
+    	let t1417;
+    	let p285;
+    	let t1418;
+    	let strong277;
+    	let t1420;
+    	let t1421;
+    	let h216;
+    	let t1423;
+    	let hr23;
+    	let t1424;
+    	let p286;
+    	let t1425;
+    	let strong278;
+    	let t1427;
+    	let t1428;
+    	let p287;
+    	let t1429;
+    	let em39;
+    	let t1431;
+    	let t1432;
+    	let p288;
+    	let t1434;
+    	let p289;
+    	let t1435;
+    	let strong279;
+    	let t1437;
+    	let em40;
+    	let t1439;
+    	let t1440;
+    	let h329;
+    	let t1442;
+    	let p290;
+    	let t1444;
+    	let p291;
+    	let t1445;
+    	let strong280;
+    	let t1447;
+    	let strong281;
+    	let t1449;
+    	let t1450;
+    	let p292;
+    	let t1452;
+    	let h424;
+    	let t1454;
+    	let p293;
+    	let t1455;
+    	let strong282;
+    	let t1457;
+    	let em41;
+    	let t1459;
+    	let t1460;
+    	let p294;
+    	let t1461;
+    	let strong283;
+    	let t1463;
+    	let t1464;
+    	let p295;
+    	let t1466;
+    	let h425;
+    	let t1468;
+    	let p296;
+    	let strong284;
+    	let t1470;
+    	let t1471;
+    	let p297;
+    	let t1472;
+    	let strong285;
+    	let t1474;
+    	let strong286;
+    	let t1476;
+    	let strong287;
+    	let t1478;
+    	let t1479;
+    	let p298;
+    	let t1480;
+    	let em42;
+    	let t1482;
+    	let t1483;
+    	let p299;
+    	let t1485;
+    	let p300;
+    	let t1487;
+    	let p301;
+    	let t1488;
+    	let strong288;
+    	let t1490;
+    	let strong289;
+    	let t1492;
+    	let t1493;
+    	let p302;
+    	let t1494;
+    	let strong290;
+    	let t1496;
+    	let strong291;
+    	let t1498;
+    	let t1499;
+    	let h426;
+    	let t1501;
+    	let p303;
+    	let t1502;
+    	let strong292;
+    	let t1504;
+    	let t1505;
+    	let p304;
+    	let t1507;
+    	let p305;
+    	let t1509;
+    	let p306;
+    	let t1511;
+    	let p307;
+    	let t1513;
+    	let p308;
+    	let t1515;
+    	let h427;
+    	let t1517;
+    	let p309;
+    	let t1518;
+    	let strong293;
+    	let t1520;
+    	let strong294;
+    	let t1522;
+    	let t1523;
+    	let p310;
+    	let t1524;
+    	let em43;
+    	let t1526;
+    	let t1527;
+    	let p311;
+    	let t1528;
+    	let em44;
+    	let t1530;
+    	let t1531;
+    	let p312;
+    	let t1533;
+    	let p313;
+    	let t1535;
+    	let p314;
+    	let t1537;
+    	let h330;
+    	let t1539;
+    	let p315;
+    	let t1540;
+    	let strong295;
+    	let t1542;
+    	let strong296;
+    	let t1544;
+    	let t1545;
+    	let h331;
+    	let t1547;
+    	let p316;
+    	let t1549;
+    	let p317;
+    	let t1550;
+    	let strong297;
+    	let t1552;
+    	let t1553;
+    	let p318;
+    	let t1554;
+    	let strong298;
+    	let t1556;
+    	let strong299;
+    	let t1558;
+    	let t1559;
+    	let p319;
+    	let t1561;
+    	let ul17;
+    	let li80;
+    	let strong300;
+    	let t1563;
+    	let t1564;
+    	let li81;
+    	let strong301;
+    	let t1566;
+    	let t1567;
+    	let li82;
+    	let strong302;
+    	let t1569;
+    	let strong303;
+    	let t1571;
+    	let t1572;
+    	let h17;
+    	let t1574;
+    	let hr24;
+    	let t1575;
+    	let p320;
+    	let t1576;
+    	let strong304;
+    	let t1578;
+    	let strong305;
+    	let t1580;
+    	let strong306;
+    	let t1582;
+    	let t1583;
+    	let h217;
+    	let t1585;
+    	let hr25;
+    	let t1586;
+    	let p321;
+    	let t1588;
+    	let p322;
+    	let t1590;
+    	let ul18;
+    	let li83;
+    	let t1592;
+    	let li84;
+    	let t1594;
+    	let li85;
+    	let t1596;
+    	let li86;
+    	let t1598;
+    	let h218;
+    	let t1600;
+    	let hr26;
+    	let t1601;
+    	let p323;
+    	let t1602;
+    	let em45;
+    	let t1604;
+    	let t1605;
+    	let ul19;
+    	let li87;
+    	let t1607;
+    	let li88;
+    	let t1609;
+    	let li89;
+    	let t1611;
+    	let p324;
+    	let t1613;
+    	let ul20;
+    	let li90;
+    	let t1615;
+    	let li91;
+    	let t1617;
+    	let h332;
+    	let t1619;
+    	let p325;
+    	let t1621;
+    	let p326;
+    	let t1623;
+    	let table3;
+    	let tbody3;
+    	let tr25;
+    	let th8;
+    	let p327;
+    	let t1625;
+    	let td54;
+    	let t1626;
+    	let tr26;
+    	let td55;
+    	let p328;
+    	let t1628;
+    	let td56;
+    	let p329;
+    	let dice0;
+    	let t1630;
+    	let tr27;
+    	let td57;
+    	let p330;
+    	let t1632;
+    	let td58;
+    	let p331;
+    	let dice1;
+    	let t1634;
+    	let tr28;
+    	let td59;
+    	let p332;
+    	let t1636;
+    	let td60;
+    	let p333;
+    	let dice2;
+    	let t1638;
+    	let tr29;
+    	let td61;
+    	let p334;
+    	let t1640;
+    	let td62;
+    	let p335;
+    	let dice3;
+    	let t1642;
+    	let table4;
+    	let tbody4;
+    	let tr30;
+    	let th9;
+    	let p336;
+    	let t1644;
+    	let td63;
+    	let t1645;
+    	let tr31;
+    	let td64;
+    	let p337;
+    	let t1647;
+    	let td65;
+    	let p338;
+    	let dice4;
+    	let t1649;
+    	let tr32;
+    	let td66;
+    	let p339;
+    	let t1651;
+    	let td67;
+    	let p340;
+    	let dice5;
+    	let t1653;
+    	let tr33;
+    	let td68;
+    	let p341;
+    	let t1655;
+    	let td69;
+    	let p342;
+    	let dice6;
+    	let t1657;
+    	let tr34;
+    	let td70;
+    	let p343;
+    	let t1659;
+    	let td71;
+    	let p344;
+    	let dice7;
+    	let t1661;
+    	let table5;
+    	let tbody5;
+    	let tr35;
+    	let th10;
+    	let td72;
+    	let p345;
+    	let t1663;
+    	let td73;
+    	let t1664;
+    	let tr36;
+    	let td74;
+    	let p346;
+    	let t1666;
+    	let td75;
+    	let p347;
+    	let dice8;
+    	let t1668;
+    	let tr37;
+    	let td76;
+    	let p348;
+    	let t1670;
+    	let td77;
+    	let p349;
+    	let dice9;
+    	let t1672;
+    	let tr38;
+    	let td78;
+    	let p350;
+    	let t1674;
+    	let td79;
+    	let p351;
+    	let dice10;
+    	let t1676;
+    	let tr39;
+    	let td80;
+    	let p352;
+    	let t1678;
+    	let td81;
+    	let p353;
+    	let dice11;
+    	let t1680;
+    	let table6;
+    	let tbody6;
+    	let tr40;
+    	let th11;
+    	let p354;
+    	let t1682;
+    	let tr41;
+    	let td82;
+    	let p355;
+    	let t1684;
+    	let td83;
+    	let p356;
+    	let dice12;
+    	let t1686;
+    	let tr42;
+    	let td84;
+    	let p357;
+    	let t1688;
+    	let td85;
+    	let p358;
+    	let dice13;
+    	let t1690;
+    	let tr43;
+    	let td86;
+    	let p359;
+    	let t1692;
+    	let td87;
+    	let p360;
+    	let dice14;
+    	let t1694;
+    	let tr44;
+    	let td88;
+    	let p361;
+    	let t1696;
+    	let td89;
+    	let p362;
+    	let dice15;
+    	let t1698;
+    	let h219;
+    	let t1700;
+    	let hr27;
+    	let t1701;
+    	let p363;
+    	let t1703;
+    	let p364;
+    	let t1704;
+    	let strong307;
+    	let t1706;
+    	let t1707;
+    	let p365;
+    	let t1708;
+    	let strong308;
+    	let t1710;
+    	let t1711;
+    	let p366;
+    	let t1713;
+    	let h18;
+    	let t1715;
+    	let hr28;
+    	let t1716;
+    	let p367;
+    	let t1717;
+    	let em46;
+    	let t1719;
+    	let t1720;
+    	let ul21;
+    	let li92;
+    	let strong309;
+    	let t1722;
+    	let t1723;
+    	let li93;
+    	let strong310;
+    	let t1725;
+    	let t1726;
+    	let li94;
+    	let strong311;
+    	let t1728;
+    	let t1729;
+    	let li95;
+    	let strong312;
+    	let t1731;
+    	let t1732;
+    	let li96;
+    	let strong313;
+    	let t1734;
+    	let t1735;
+    	let li97;
+    	let strong314;
+    	let t1737;
+    	let t1738;
+    	let li98;
+    	let strong315;
+    	let t1740;
+    	let t1741;
+    	let li99;
+    	let strong316;
+    	let t1743;
+    	let t1744;
+    	let li100;
+    	let strong317;
+    	let t1746;
+    	let t1747;
+    	let h220;
+    	let t1749;
+    	let hr29;
+    	let t1750;
+    	let p368;
+    	let t1751;
+    	let strong318;
+    	let t1753;
+    	let strong319;
+    	let t1755;
+    	let t1756;
+    	let p369;
+    	let t1757;
+    	let strong320;
+    	let t1759;
+    	let t1760;
+    	let ul22;
+    	let li101;
+    	let strong321;
+    	let t1762;
+    	let t1763;
+    	let li102;
+    	let strong322;
+    	let t1765;
+    	let t1766;
+    	let li103;
+    	let strong323;
+    	let t1768;
+    	let t1769;
+    	let p370;
+    	let t1770;
+    	let strong324;
+    	let t1772;
+    	let t1773;
+    	let p371;
+    	let t1775;
+    	let p372;
+    	let t1777;
+    	let p373;
+    	let t1778;
+    	let strong325;
+    	let t1780;
+    	let t1781;
+    	let p374;
+    	let t1783;
+    	let p375;
+    	let t1784;
+    	let em47;
+    	let t1786;
+    	let a5;
+    	let em48;
+    	let t1788;
+    	let h221;
+    	let t1790;
+    	let hr30;
+    	let t1791;
+    	let p376;
+    	let t1793;
+    	let h333;
+    	let t1795;
+    	let p377;
+    	let t1797;
+    	let p378;
+    	let t1798;
+    	let em49;
+    	let t1800;
+    	let strong326;
+    	let t1802;
+    	let t1803;
+    	let h334;
+    	let t1805;
+    	let p379;
+    	let t1807;
+    	let p380;
+    	let t1808;
+    	let strong327;
+    	let t1810;
+    	let strong328;
+    	let t1812;
+    	let strong329;
+    	let t1814;
+    	let t1815;
+    	let p381;
+    	let t1817;
+    	let p382;
+    	let t1819;
+    	let p383;
+    	let t1821;
+    	let h335;
+    	let t1823;
+    	let p384;
+    	let t1825;
+    	let h222;
+    	let t1827;
+    	let hr31;
+    	let t1828;
+    	let p385;
+    	let t1829;
+    	let strong330;
+    	let t1831;
+    	let strong331;
+    	let t1833;
+    	let t1834;
+    	let p386;
+    	let t1836;
+    	let p387;
+    	let t1838;
+    	let p388;
+    	let t1839;
+    	let em50;
+    	let t1841;
+    	let t1842;
+    	let h223;
+    	let t1844;
+    	let hr32;
+    	let t1845;
+    	let p389;
+    	let t1847;
+    	let ul23;
+    	let li104;
+    	let strong332;
+    	let t1849;
+    	let a6;
+    	let t1851;
+    	let li105;
+    	let strong333;
+    	let t1853;
+    	let a7;
+    	let t1855;
+    	let p390;
+    	let t1856;
+    	let strong334;
+    	let t1858;
+    	let t1859;
+    	let h19;
+    	let t1861;
+    	let hr33;
+    	let t1862;
+    	let p391;
+    	let t1864;
+    	let h224;
+    	let t1866;
+    	let hr34;
+    	let t1867;
+    	let p392;
+    	let strong335;
+    	let t1869;
+    	let t1870;
+    	let p393;
+    	let t1871;
+    	let em51;
+    	let t1873;
+    	let t1874;
+    	let p394;
+    	let strong336;
+    	let t1876;
+    	let strong337;
+    	let t1878;
+    	let strong338;
+    	let t1880;
+    	let strong339;
+    	let t1882;
+    	let strong340;
+    	let t1884;
+    	let strong341;
+    	let t1886;
+    	let strong342;
+    	let t1888;
+    	let strong343;
+    	let t1890;
+    	let strong344;
+    	let t1892;
+    	let strong345;
+    	let t1894;
+    	let strong346;
+    	let t1896;
+    	let strong347;
+    	let t1898;
+    	let t1899;
+    	let p395;
+    	let t1901;
+    	let p396;
+    	let t1903;
+    	let p397;
+    	let t1904;
+    	let strong348;
+    	let t1906;
+    	let strong349;
+    	let t1908;
+    	let t1909;
+    	let h336;
+    	let t1911;
+    	let p398;
+    	let t1912;
+    	let strong350;
+    	let t1914;
+    	let strong351;
+    	let t1916;
+    	let strong352;
+    	let t1918;
+    	let strong353;
+    	let t1920;
+    	let t1921;
+    	let p399;
+    	let t1922;
+    	let strong354;
+    	let t1924;
+    	let strong355;
+    	let t1926;
+    	let t1927;
+    	let h337;
+    	let t1929;
+    	let p400;
+    	let t1931;
+    	let h225;
+    	let t1933;
+    	let hr35;
+    	let t1934;
+    	let p401;
+    	let t1935;
+    	let strong356;
+    	let t1937;
+    	let t1938;
+    	let ul24;
+    	let li106;
+    	let strong357;
+    	let t1940;
+    	let t1941;
+    	let li107;
+    	let strong358;
+    	let t1943;
+    	let t1944;
+    	let li108;
+    	let strong359;
+    	let t1946;
+    	let t1947;
+    	let li109;
+    	let strong360;
+    	let t1949;
+    	let t1950;
+    	let li110;
+    	let strong361;
+    	let t1952;
+    	let t1953;
+    	let li111;
+    	let strong362;
+    	let t1955;
+    	let t1956;
+    	let li112;
+    	let strong363;
+    	let t1958;
+    	let t1959;
+    	let li113;
+    	let strong364;
+    	let t1961;
+    	let t1962;
+    	let p402;
+    	let t1964;
+    	let p403;
+    	let strong365;
+    	let t1966;
+    	let strong366;
+    	let t1968;
+    	let t1969;
+    	let p404;
+    	let strong367;
+    	let t1971;
+    	let ul25;
+    	let li114;
+    	let strong368;
+    	let t1973;
+    	let em52;
+    	let t1975;
+    	let t1976;
+    	let li115;
+    	let strong369;
+    	let t1978;
+    	let t1979;
+    	let li116;
+    	let strong370;
+    	let t1981;
+    	let t1982;
+    	let p405;
+    	let strong371;
+    	let t1984;
+    	let t1985;
+    	let p406;
+    	let strong372;
+    	let t1987;
+    	let t1988;
+    	let h226;
+    	let t1990;
+    	let hr36;
+    	let t1991;
+    	let p407;
+    	let t1992;
+    	let em53;
+    	let t1994;
+    	let t1995;
+    	let p408;
+    	let t1997;
+    	let h227;
+    	let t1999;
+    	let hr37;
+    	let t2000;
+    	let p409;
+    	let t2002;
+    	let p410;
+    	let t2004;
+    	let p411;
+    	let t2005;
+    	let strong373;
+    	let t2007;
+    	let t2008;
+    	let p412;
+    	let t2009;
+    	let strong374;
+    	let t2011;
+    	let t2012;
+    	let p413;
+    	let t2013;
+    	let strong375;
+    	let t2015;
+    	let t2016;
+    	let p414;
+    	let t2018;
+    	let p415;
+    	let t2020;
+    	let h228;
+    	let t2022;
+    	let hr38;
+    	let t2023;
+    	let p416;
+    	let t2025;
+    	let p417;
+    	let t2026;
+    	let strong376;
+    	let t2028;
+    	let t2029;
+    	let p418;
+    	let t2031;
+    	let p419;
+    	let t2033;
+    	let h229;
+    	let t2035;
+    	let hr39;
+    	let t2036;
+    	let p420;
+    	let t2038;
+    	let ul26;
+    	let li117;
+    	let t2039;
+    	let strong377;
+    	let t2041;
+    	let t2042;
+    	let li118;
+    	let t2043;
+    	let strong378;
+    	let t2045;
+    	let t2046;
+    	let li119;
+    	let t2048;
+    	let h230;
+    	let t2050;
+    	let hr40;
+    	let t2051;
+    	let p421;
+    	let t2052;
+    	let strong379;
+    	let t2054;
+    	let t2055;
+    	let p422;
+    	let t2056;
+    	let strong380;
+    	let t2058;
+    	let t2059;
+    	let p423;
+    	let strong381;
+    	let t2061;
+    	let t2062;
+    	let p424;
+    	let t2063;
+    	let strong382;
+    	let t2065;
+    	let t2066;
+    	let h231;
+    	let t2068;
+    	let hr41;
+    	let t2069;
+    	let p425;
+    	let t2070;
+    	let strong383;
+    	let t2072;
+    	let t2073;
+    	let p426;
+    	let t2075;
+    	let p427;
+    	let t2076;
+    	let em54;
+    	let t2078;
+    	let t2079;
+    	let p428;
+    	let t2081;
+    	let h338;
+    	let t2083;
+    	let p429;
+    	let t2084;
+    	let strong384;
+    	let t2086;
+    	let strong385;
+    	let t2088;
+    	let t2089;
+    	let p430;
+    	let t2091;
+    	let p431;
+    	let t2092;
+    	let em55;
+    	let t2094;
+    	let t2095;
+    	let p432;
+    	let t2097;
+    	let p433;
+    	let t2099;
+    	let h339;
+    	let t2101;
+    	let p434;
+    	let t2102;
+    	let strong386;
+    	let t2104;
+    	let em56;
+    	let t2106;
+    	let t2107;
+    	let p435;
+    	let t2109;
+    	let p436;
+    	let t2110;
+    	let strong387;
+    	let t2112;
+    	let strong388;
+    	let t2114;
+    	let strong389;
+    	let t2116;
+    	let t2117;
+    	let p437;
+    	let t2119;
+    	let p438;
+    	let t2121;
+    	let p439;
+    	let t2122;
+    	let strong390;
+    	let t2124;
+    	let strong391;
+    	let t2126;
+    	let em57;
+    	let t2128;
+    	let t2129;
+    	let p440;
+    	let t2131;
+    	let p441;
+    	let t2133;
+    	let p442;
+    	let t2135;
+    	let h340;
+    	let t2137;
+    	let p443;
+    	let t2138;
+    	let strong392;
+    	let t2140;
+    	let t2141;
+    	let ul27;
+    	let li120;
+    	let t2142;
+    	let strong393;
+    	let t2144;
+    	let t2145;
+    	let li121;
+    	let t2146;
+    	let strong394;
+    	let t2148;
+    	let t2149;
+    	let li122;
+    	let t2150;
+    	let strong395;
+    	let t2152;
+    	let em58;
+    	let t2154;
+    	let t2155;
+    	let li123;
+    	let t2156;
+    	let strong396;
+    	let t2158;
+    	let t2159;
+    	let p444;
+    	let t2161;
+    	let p445;
+    	let t2163;
+    	let p446;
+    	let t2165;
+    	let p447;
+    	let em59;
+    	let t2167;
+    	let ul28;
+    	let li124;
+    	let t2168;
+    	let strong397;
+    	let t2170;
+    	let t2171;
+    	let li125;
+    	let t2172;
+    	let strong398;
+    	let t2174;
+    	let t2175;
+    	let p448;
+    	let em60;
+    	let t2177;
+    	let ul29;
+    	let li126;
+    	let t2178;
+    	let strong399;
+    	let t2180;
+    	let t2181;
+    	let li127;
+    	let t2182;
+    	let strong400;
+    	let t2184;
+    	let t2185;
+    	let p449;
+    	let em61;
+    	let t2187;
+    	let ul32;
+    	let li131;
+    	let strong401;
+    	let t2189;
+    	let strong402;
+    	let t2191;
+    	let em62;
+    	let ul30;
+    	let li128;
+    	let strong403;
+    	let t2194;
+    	let t2195;
+    	let li129;
+    	let strong404;
+    	let t2197;
+    	let t2198;
+    	let li130;
+    	let strong405;
+    	let t2200;
+    	let t2201;
+    	let li134;
+    	let strong406;
+    	let t2203;
+    	let strong407;
+    	let t2205;
+    	let em63;
+    	let ul31;
+    	let li132;
+    	let strong408;
+    	let t2208;
+    	let t2209;
+    	let li133;
+    	let strong409;
+    	let t2211;
+    	let t2212;
+    	let h232;
+    	let t2214;
+    	let hr42;
+    	let t2215;
+    	let p450;
+    	let strong410;
+    	let t2217;
+    	let t2218;
+    	let p451;
+    	let t2220;
+    	let ul33;
+    	let li135;
+    	let strong411;
+    	let t2222;
+    	let t2223;
+    	let li136;
+    	let strong412;
+    	let t2225;
+    	let t2226;
+    	let li137;
+    	let strong413;
+    	let t2228;
+    	let t2229;
+    	let li138;
+    	let strong414;
+    	let t2231;
+    	let t2232;
+    	let li139;
+    	let strong415;
+    	let t2234;
+    	let t2235;
+    	let p452;
+    	let t2236;
+    	let em64;
+    	let t2238;
+    	let t2239;
+    	let ul34;
+    	let li140;
+    	let t2240;
+    	let em65;
+    	let t2242;
+    	let t2243;
+    	let li141;
+    	let t2244;
+    	let em66;
+    	let t2246;
+    	let em67;
+    	let t2248;
+    	let t2249;
+    	let li142;
+    	let t2251;
+    	let p453;
+    	let t2253;
+    	let h341;
+    	let t2255;
+    	let p454;
+    	let t2256;
+    	let strong416;
+    	let t2258;
+    	let t2259;
+    	let h428;
+    	let t2261;
+    	let p455;
+    	let t2262;
+    	let em68;
+    	let t2264;
+    	let t2265;
+    	let p456;
+    	let t2266;
+    	let em69;
+    	let t2268;
+    	let strong417;
+    	let t2270;
+    	let t2271;
+    	let p457;
+    	let t2272;
+    	let em70;
+    	let t2274;
+    	let t2275;
+    	let p458;
+    	let em71;
+    	let t2277;
+    	let t2278;
+    	let h233;
+    	let t2280;
+    	let hr43;
+    	let t2281;
+    	let p459;
+    	let t2283;
+    	let p460;
+    	let t2285;
+    	let p461;
+    	let t2287;
+    	let p462;
+    	let t2289;
+    	let p463;
+    	let t2291;
+    	let h234;
+    	let t2293;
+    	let hr44;
+    	let t2294;
+    	let p464;
+    	let t2295;
+    	let strong418;
+    	let t2297;
+    	let t2298;
+    	let p465;
+    	let t2299;
+    	let strong419;
+    	let t2301;
+    	let t2302;
+    	let h342;
+    	let t2304;
+    	let p466;
+    	let t2306;
+    	let p467;
+    	let t2307;
+    	let strong420;
+    	let t2309;
+    	let t2310;
+    	let p468;
+    	let t2311;
+    	let strong421;
+    	let t2313;
+    	let t2314;
+    	let h343;
+    	let t2316;
+    	let p469;
+    	let t2318;
+    	let p470;
+    	let t2319;
+    	let strong422;
+    	let t2321;
+    	let t2322;
+    	let p471;
+    	let t2323;
+    	let em72;
+    	let t2325;
+    	let t2326;
+    	let h344;
+    	let t2328;
+    	let p472;
+    	let t2330;
+    	let p473;
+    	let t2331;
+    	let strong423;
+    	let t2333;
+    	let em73;
+    	let t2335;
+    	let t2336;
+    	let p474;
+    	let t2338;
+    	let h345;
+    	let t2340;
+    	let p475;
+    	let t2341;
+    	let strong424;
+    	let t2343;
+    	let strong425;
+    	let t2345;
+    	let t2346;
+    	let h346;
+    	let t2348;
+    	let p476;
+    	let t2349;
+    	let strong426;
+    	let t2351;
+    	let t2352;
+    	let p477;
+    	let t2354;
+    	let ul35;
+    	let li143;
+    	let t2355;
+    	let strong427;
+    	let t2357;
+    	let strong428;
+    	let t2359;
+    	let em74;
+    	let t2361;
+    	let t2362;
+    	let li144;
+    	let t2363;
+    	let strong429;
+    	let t2365;
+    	let t2366;
+    	let li145;
+    	let t2367;
+    	let strong430;
+    	let t2369;
+    	let em75;
+    	let t2371;
+    	let t2372;
+    	let li146;
+    	let t2373;
+    	let strong431;
+    	let t2375;
+    	let t2376;
+    	let h347;
+    	let t2378;
+    	let p478;
+    	let t2379;
+    	let strong432;
+    	let t2381;
+    	let strong433;
+    	let t2383;
+    	let t2384;
+    	let p479;
+    	let t2386;
+    	let p480;
+    	let t2387;
+    	let strong434;
+    	let t2389;
+    	let strong435;
+    	let t2391;
+    	let t2392;
+    	let p481;
+    	let t2394;
+    	let h235;
+    	let t2396;
+    	let hr45;
+    	let t2397;
+    	let p482;
+    	let t2399;
+    	let p483;
+    	let t2400;
+    	let strong436;
+    	let t2402;
+    	let t2403;
+    	let p484;
+    	let t2405;
+    	let p485;
+    	let t2406;
+    	let strong437;
+    	let t2408;
+    	let t2409;
+    	let p486;
+    	let t2410;
+    	let strong438;
+    	let t2412;
+    	let t2413;
+    	let p487;
+    	let t2415;
+    	let p488;
+    	let t2417;
+    	let h236;
+    	let t2419;
+    	let hr46;
+    	let t2420;
+    	let p489;
+    	let t2422;
+    	let p490;
+    	let t2423;
+    	let strong439;
+    	let t2425;
+    	let em76;
+    	let t2427;
+    	let t2428;
+    	let p491;
+    	let t2429;
+    	let strong440;
+    	let t2431;
+    	let t2432;
+    	let p492;
+    	let t2434;
+    	let h110;
+    	let t2436;
+    	let hr47;
+    	let t2437;
+    	let p493;
+    	let t2438;
+    	let em77;
+    	let t2440;
+    	let t2441;
+    	let p494;
+    	let t2442;
+    	let em78;
+    	let t2444;
+    	let strong441;
+    	let t2446;
+    	let em79;
+    	let t2448;
+    	let t2449;
+    	let p495;
+    	let t2450;
+    	let em80;
+    	let t2452;
+    	let em81;
+    	let t2454;
+    	let strong442;
+    	let t2456;
+    	let t2457;
+    	let h237;
+    	let t2459;
+    	let hr48;
+    	let t2460;
+    	let p496;
+    	let t2462;
+    	let p497;
+    	let t2463;
+    	let em82;
+    	let t2465;
+    	let em83;
+    	let t2467;
+    	let t2468;
+    	let p498;
+    	let t2470;
+    	let h238;
+    	let t2472;
+    	let hr49;
+    	let t2473;
+    	let p499;
+    	let t2474;
+    	let a8;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h10 = element("h1");
+    			h10.textContent = "Fate Condensed";
+    			t1 = space();
+    			hr0 = element("hr");
+    			t2 = space();
+    			p0 = element("p");
+    			p0.textContent = "Fate Condensed ©2020 Evil Hat Productions, LLC.";
+    			t4 = space();
+    			p1 = element("p");
+    			t5 = text("Refer to the licensing pages at ");
+    			a0 = element("a");
+    			a0.textContent = "http://www.faterpg.com/licensing";
+    			t7 = text(" for details.");
+    			t8 = space();
+    			p2 = element("p");
+    			t9 = text("This is the System Reference Document for use with the Creative Commons Attribution Unported license. ");
+    			strong0 = element("strong");
+    			strong0.textContent = "The following attribution must be provided in your text, wherever you put your own copyright, in the same size as your copyright text:";
+    			t11 = space();
+    			p3 = element("p");
+    			t12 = text("This work is based on Fate Condensed (found at ");
+    			a1 = element("a");
+    			a1.textContent = "http://www.faterpg.com/";
+    			t14 = text("), a product of Evil Hat Productions, LLC, developed, authored, and edited by PK Sullivan, Lara Turner, Leonard Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use under the ");
+    			a2 = element("a");
+    			a2.textContent = "Creative Commons Attribution 3.0 Unported license";
+    			t16 = text(".");
+    			t17 = space();
+    			h11 = element("h1");
+    			h11.textContent = "Credits";
+    			t19 = space();
+    			hr1 = element("hr");
+    			t20 = space();
+    			p4 = element("p");
+    			p4.textContent = "Fate Condensed by PK Sullivan, Lara Turner, and Fred Hicks. Additional development by Richard Bellingham, Robert Hanz, and Sophie Lagacé.";
+    			t22 = space();
+    			p5 = element("p");
+    			p5.textContent = "Based on prior works by Rob Donoghue, Fred Hicks, Leonard Balsera, Ryan Macklin, Clark Valentine, Mike Olson, Brian Engard, and Sophie Lagacé.";
+    			t24 = space();
+    			p6 = element("p");
+    			p6.textContent = "Based on Fate Core System by Leonard Balsera, Brian Engard, Jeremy Keller, Ryan Macklin, and Mike Olson and Fate Accelerated Edition by Clark Valentine.";
+    			t26 = space();
+    			p7 = element("p");
+    			p7.textContent = "Turn order system based on “Accidentally Designing Marvel’s Action Order System,” written by Fred Hicks and describing a variation on a method originally devised by Leonard Balsera.";
+    			t28 = space();
+    			p8 = element("p");
+    			p8.textContent = "Portions of this work are based on Fateful Concepts: Hacking Contests by Ryan Macklin, licensed for our use under the Creative Commons Attribution 3.0 Unported license.";
+    			t30 = space();
+    			h12 = element("h1");
+    			h12.textContent = "Introduction";
+    			t32 = space();
+    			hr2 = element("hr");
+    			t33 = space();
+    			p9 = element("p");
+    			t34 = text("This is ");
+    			em0 = element("em");
+    			em0.textContent = "Fate Condensed";
+    			t36 = text(", a version of ");
+    			em1 = element("em");
+    			em1.textContent = "Fate Core System";
+    			t38 = text(" in as compact a form as we can manage. It is a complete roleplaying game; while other books might enhance your use of it, you don’t need any other book to play.");
+    			t39 = space();
+    			p10 = element("p");
+    			t40 = text("On that note, let’s get into what you ");
+    			em2 = element("em");
+    			em2.textContent = "do";
+    			t42 = text(" need!");
+    			t43 = space();
+    			h20 = element("h2");
+    			h20.textContent = "What Do I Need to Play?";
+    			t45 = space();
+    			hr3 = element("hr");
+    			t46 = space();
+    			p11 = element("p");
+    			t47 = text("To play ");
+    			em3 = element("em");
+    			em3.textContent = "Fate Condensed";
+    			t49 = text(" you’ll need two to six friends with one acting as Game Master (GM), some dice, some tokens, writing implements, paper, and something to write short notes on (");
+    			em4 = element("em");
+    			em4.textContent = "e.g.,";
+    			t51 = text(" small “sticky notes”).");
+    			t52 = space();
+    			p12 = element("p");
+    			em5 = element("em");
+    			em5.textContent = "Fate Condensed";
+    			t54 = text(" uses ");
+    			strong1 = element("strong");
+    			strong1.textContent = "Fate Dice™";
+    			t56 = text(" when characters take action. Fate dice are six-sided dice with two [0] sides, two [+] sides, and two [-] sides. One set of four dice will work fine, but one set per player is ideal. Other alternatives exist, such as using standard six-sided dice (1-2 = [-], 3-4 = [0], 5-6 = [+]), or the ");
+    			strong2 = element("strong");
+    			strong2.textContent = "Deck of Fate";
+    			t58 = text(", which uses cards instead of dice. We use the word “roll” throughout the text for simplicity.");
+    			t59 = space();
+    			h30 = element("h3");
+    			h30.textContent = "For Veterans: Changes From Fate Core";
+    			t61 = space();
+    			p13 = element("p");
+    			t62 = text("Condensing the gist of a system from nearly 300 pages down to about 50 pages of text does lead to a few changes. As of this writing it has also been eight years since ");
+    			em6 = element("em");
+    			em6.textContent = "Fate Core System";
+    			t64 = text(" was created, so a little iteration of the design is to be expected. In particular, we highlight the following:");
+    			t65 = space();
+    			ul0 = element("ul");
+    			li0 = element("li");
+    			t66 = text("We’ve shifted over to one-point stress boxes to help reduce confusion (");
+    			strong3 = element("strong");
+    			strong3.textContent = "page XX";
+    			t68 = text(").");
+    			t69 = space();
+    			li1 = element("li");
+    			t70 = text("“Balsera Style” initiative (also known as “elective action order” or “popcorn initiative”) is the default rather than using skills to determine turn order (");
+    			strong4 = element("strong");
+    			strong4.textContent = "page XX";
+    			t72 = text(").");
+    			t73 = space();
+    			li2 = element("li");
+    			t74 = text("Advancement functions a little differently; we’ve eliminated significant milestones and finessed major ones (as breakthroughs) to compensate (");
+    			strong5 = element("strong");
+    			strong5.textContent = "page XX";
+    			t76 = text(").");
+    			t77 = space();
+    			li3 = element("li");
+    			t78 = text("We’ve removed the notion of active opposition as separate from the defend action (");
+    			strong6 = element("strong");
+    			strong6.textContent = "page XX";
+    			t80 = text("). This has a few minor ripple effects, particularly overcome’s tie result (");
+    			strong7 = element("strong");
+    			strong7.textContent = "page XX";
+    			t82 = text(").");
+    			t83 = space();
+    			li4 = element("li");
+    			t84 = text("Create an Advantage has been tweaked to offer better clarity and agency around the discovery of existing unknown aspects (");
+    			strong8 = element("strong");
+    			strong8.textContent = "page XX";
+    			t86 = text(").");
+    			t87 = space();
+    			li5 = element("li");
+    			t88 = text("Full defense is presented as optional and has been altered a bit to accommodate the expanded scope of the defend action (");
+    			strong9 = element("strong");
+    			strong9.textContent = "page XX";
+    			t90 = text("). Other standard rules options are presented as well, starting on ");
+    			strong10 = element("strong");
+    			strong10.textContent = "page XX";
+    			t92 = text(".");
+    			t93 = space();
+    			h13 = element("h1");
+    			h13.textContent = "Getting Started";
+    			t95 = space();
+    			hr4 = element("hr");
+    			t96 = space();
+    			h21 = element("h2");
+    			h21.textContent = "Define Your Setting";
+    			t98 = space();
+    			hr5 = element("hr");
+    			t99 = space();
+    			p14 = element("p");
+    			p14.textContent = "Any game of Fate starts with defining your setting. This might be a concept your GM is bringing to the table, a popular media property the players are familiar with, or a collaborative world-building exercise involving everyone at the table. The setting discussion may be quick and light on detail, or may involve a detailed full session with the whole group, or anything in between.";
+    			t101 = space();
+    			p15 = element("p");
+    			p15.textContent = "Your choice of setting forms the basis of the table’s consensus about what is true, and what is acceptable in play and in character concepts. If your setting doesn’t have flying people in it, then a player deciding to make a flying-person character doesn’t pass muster. If your world involves shadowy organizations and deep conspiracies, players may expect story-lines free of clear-cut good-and-evil conflicts and devoid of farcical murder-clowns. It’s up to you!";
+    			t103 = space();
+    			h22 = element("h2");
+    			h22.textContent = "Create Your Characters";
+    			t105 = space();
+    			hr6 = element("hr");
+    			t106 = space();
+    			h31 = element("h3");
+    			h31.textContent = "Who Are You?";
+    			t108 = space();
+    			p16 = element("p");
+    			p16.textContent = "Once you’ve decided on a setting, it’s time for the players to make characters—also called PCs. Each player takes on the role of one of the heroes of your story, controlling all their actions. You get to build the character you want to see in the world. Keep in mind that Fate characters are competent, dramatic, and willing to engage with the adventures ahead.";
+    			t110 = space();
+    			p17 = element("p");
+    			p17.textContent = "Your PC is made up of several elements:";
+    			t112 = space();
+    			ul1 = element("ul");
+    			li6 = element("li");
+    			strong11 = element("strong");
+    			strong11.textContent = "Aspects:";
+    			t114 = text(" phrases describing who your hero is");
+    			t115 = space();
+    			li7 = element("li");
+    			strong12 = element("strong");
+    			strong12.textContent = "Skills:";
+    			t117 = text(" your hero’s areas of relative expertise");
+    			t118 = space();
+    			li8 = element("li");
+    			strong13 = element("strong");
+    			strong13.textContent = "Stunts:";
+    			t120 = text(" remarkable things your hero does");
+    			t121 = space();
+    			li9 = element("li");
+    			strong14 = element("strong");
+    			strong14.textContent = "Stress:";
+    			t123 = text(" your hero’s ability to keep calm and carry on");
+    			t124 = space();
+    			li10 = element("li");
+    			strong15 = element("strong");
+    			strong15.textContent = "Consequences:";
+    			t126 = text(" the wounds, physical and mental, your hero can endure");
+    			t127 = space();
+    			li11 = element("li");
+    			strong16 = element("strong");
+    			strong16.textContent = "Refresh:";
+    			t129 = text(" a measure of your hero’s narrative agency");
+    			t130 = space();
+    			li12 = element("li");
+    			strong17 = element("strong");
+    			strong17.textContent = "Finishing Touches:";
+    			t132 = text(" your hero’s personal details");
+    			t133 = space();
+    			h32 = element("h3");
+    			h32.textContent = "Aspects";
+    			t135 = space();
+    			p18 = element("p");
+    			strong18 = element("strong");
+    			strong18.textContent = "Aspects";
+    			t137 = text(" are short phrases that describe who your character is or what is important to them. They can relate to your character’s physical or mental qualities, history, beliefs, training, relationships, or even particularly important equipment.");
+    			t138 = space();
+    			p19 = element("p");
+    			t139 = text("The first thing to know about them is: ");
+    			strong19 = element("strong");
+    			strong19.textContent = "Aspects are true";
+    			t141 = text(" (see ");
+    			strong20 = element("strong");
+    			strong20.textContent = "page XX";
+    			t143 = text(" for a discussion of this). In other words, how you define your character is real and true in the story you’re telling. If you write down that your character is a ");
+    			strong21 = element("strong");
+    			strong21.textContent = "Precog Sniper";
+    			t145 = text(", then they ");
+    			em7 = element("em");
+    			em7.textContent = "are";
+    			t147 = text(" a precog sniper. You’ve told everyone that your character sees the future and is a crack shot with a rifle.");
+    			t148 = space();
+    			p20 = element("p");
+    			t149 = text("You’ll also use aspects in play to change the story. They give you permission to improve your dice rolls and establish facts about the world. Lastly, aspects can earn you ");
+    			strong22 = element("strong");
+    			strong22.textContent = "fate points";
+    			t151 = text(" if they create complications for your character—so to make the most versatile aspects, you should aim for ones that are double-edged, working both for you and against you.");
+    			t152 = space();
+    			p21 = element("p");
+    			t153 = text("To learn more about aspects and what makes a good one, consider reading some of ");
+    			em8 = element("em");
+    			em8.textContent = "Aspects and Fate Points";
+    			t155 = text(" (");
+    			strong23 = element("strong");
+    			strong23.textContent = "page XX";
+    			t157 = text(").");
+    			t158 = space();
+    			p22 = element("p");
+    			strong24 = element("strong");
+    			strong24.textContent = "To begin, you’ll give your character five aspects";
+    			t160 = text(": a high concept, a trouble, a relationship, and two free aspects. Start with the high concept and go from there.");
+    			t161 = space();
+    			h40 = element("h4");
+    			h40.textContent = "High Concept";
+    			t163 = space();
+    			p23 = element("p");
+    			t164 = text("Your ");
+    			strong25 = element("strong");
+    			strong25.textContent = "high concept";
+    			t166 = text(" is a broad description of the character, covering the vital bits. It’s how you would open your pitch for the character when telling a friend about them.");
+    			t167 = space();
+    			h41 = element("h4");
+    			h41.textContent = "Trouble";
+    			t169 = space();
+    			p24 = element("p");
+    			t170 = text("Next is your character’s ");
+    			strong26 = element("strong");
+    			strong26.textContent = "trouble";
+    			t172 = text(" — something that makes your character’s life more complicated. It could be a personal weakness, family entanglements, or other obligations. Pick something you’ll enjoy roleplaying!");
+    			t173 = space();
+    			h42 = element("h4");
+    			h42.textContent = "Relationship";
+    			t175 = space();
+    			p25 = element("p");
+    			t176 = text("Your ");
+    			strong27 = element("strong");
+    			strong27.textContent = "relationship";
+    			t178 = text(" describes a connection with another PC. They may already know one another, or have just met.");
+    			t179 = space();
+    			p26 = element("p");
+    			p26.textContent = "Good relationship aspects should introduce or hint at conflict, or at least an imbalance that gives the relationship a little momentum. This doesn’t mean they are openly antagonistic, but they shouldn’t be all roses either.";
+    			t181 = space();
+    			p27 = element("p");
+    			p27.textContent = "If you wish, you can wait to write down relationship aspects until everyone has more or less completed their characters.";
+    			t183 = space();
+    			h43 = element("h4");
+    			h43.textContent = "Free Aspects";
+    			t185 = space();
+    			p28 = element("p");
+    			p28.textContent = "You can make your character’s last two aspects anything you want—there are no restrictions beyond the obligation to fit the setting. Choose anything which you think will make your character more interesting, more fun to play, or better connected to the world they occupy.";
+    			t187 = space();
+    			h33 = element("h3");
+    			h33.textContent = "Skills";
+    			t189 = space();
+    			p29 = element("p");
+    			t190 = text("While aspects define who your character is, ");
+    			strong28 = element("strong");
+    			strong28.textContent = "skills";
+    			t192 = text(" show what they can do. Each skill describes a broad activity your character might have learned through study and practice or simply have an innate talent for. A character with Burglary is capable, to some degree, at all manner of crime relating to the fine art of burgling—casing a joint, bypassing security, pick-pocketing, and lock-picking.");
+    			t193 = space();
+    			p30 = element("p");
+    			t194 = text("Each skill has a ");
+    			strong29 = element("strong");
+    			strong29.textContent = "rating";
+    			t196 = text(". The higher the rating, the better the character is at the skill. As a whole, your character’s skills will show you what actions they are built for, which ones they’ll get by on, and which aren’t their forte.");
+    			t197 = space();
+    			p31 = element("p");
+    			p31.textContent = "You’ll choose your character’s skill ratings, arranged in a pyramid with the highest-rated skill at Great (+4), as follows:";
+    			t199 = space();
+    			ul2 = element("ul");
+    			li13 = element("li");
+    			li13.textContent = "One Great (+4) skill";
+    			t201 = space();
+    			li14 = element("li");
+    			li14.textContent = "Two Good (+3) skills";
+    			t203 = space();
+    			li15 = element("li");
+    			li15.textContent = "Three Fair (+2) skills";
+    			t205 = space();
+    			li16 = element("li");
+    			li16.textContent = "Four Average (+1) skills";
+    			t207 = space();
+    			li17 = element("li");
+    			li17.textContent = "All other skills at Mediocre (+0)";
+    			t209 = space();
+    			h44 = element("h4");
+    			h44.textContent = "The Adjective Ladder";
+    			t211 = space();
+    			p32 = element("p");
+    			t212 = text("In ");
+    			em9 = element("em");
+    			em9.textContent = "Fate Condensed";
+    			t214 = text(", and Fate in general, all ratings are organized into a ladder of adjectives, shown here.");
+    			t215 = space();
+    			table0 = element("table");
+    			col0 = element("col");
+    			t216 = space();
+    			col1 = element("col");
+    			t217 = space();
+    			tbody0 = element("tbody");
+    			tr0 = element("tr");
+    			th0 = element("th");
+    			p33 = element("p");
+    			p33.textContent = "Rating";
+    			t219 = space();
+    			th1 = element("th");
+    			p34 = element("p");
+    			p34.textContent = "Adjective";
+    			t221 = space();
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			p35 = element("p");
+    			p35.textContent = "+8";
+    			t223 = space();
+    			td1 = element("td");
+    			p36 = element("p");
+    			p36.textContent = "Legendary";
+    			t225 = space();
+    			tr2 = element("tr");
+    			td2 = element("td");
+    			p37 = element("p");
+    			p37.textContent = "+7";
+    			t227 = space();
+    			td3 = element("td");
+    			p38 = element("p");
+    			p38.textContent = "Epic";
+    			t229 = space();
+    			tr3 = element("tr");
+    			td4 = element("td");
+    			p39 = element("p");
+    			p39.textContent = "+6";
+    			t231 = space();
+    			td5 = element("td");
+    			p40 = element("p");
+    			p40.textContent = "Fantastic";
+    			t233 = space();
+    			tr4 = element("tr");
+    			td6 = element("td");
+    			p41 = element("p");
+    			p41.textContent = "+5";
+    			t235 = space();
+    			td7 = element("td");
+    			p42 = element("p");
+    			p42.textContent = "Superb";
+    			t237 = space();
+    			tr5 = element("tr");
+    			td8 = element("td");
+    			p43 = element("p");
+    			p43.textContent = "+4";
+    			t239 = space();
+    			td9 = element("td");
+    			p44 = element("p");
+    			p44.textContent = "Great";
+    			t241 = space();
+    			tr6 = element("tr");
+    			td10 = element("td");
+    			p45 = element("p");
+    			p45.textContent = "+3";
+    			t243 = space();
+    			td11 = element("td");
+    			p46 = element("p");
+    			p46.textContent = "Good";
+    			t245 = space();
+    			tr7 = element("tr");
+    			td12 = element("td");
+    			p47 = element("p");
+    			p47.textContent = "+2";
+    			t247 = space();
+    			td13 = element("td");
+    			p48 = element("p");
+    			p48.textContent = "Fair";
+    			t249 = space();
+    			tr8 = element("tr");
+    			td14 = element("td");
+    			p49 = element("p");
+    			p49.textContent = "+1";
+    			t251 = space();
+    			td15 = element("td");
+    			p50 = element("p");
+    			p50.textContent = "Average";
+    			t253 = space();
+    			tr9 = element("tr");
+    			td16 = element("td");
+    			p51 = element("p");
+    			p51.textContent = "+0";
+    			t255 = space();
+    			td17 = element("td");
+    			p52 = element("p");
+    			p52.textContent = "Mediocre";
+    			t257 = space();
+    			tr10 = element("tr");
+    			td18 = element("td");
+    			p53 = element("p");
+    			p53.textContent = "-1";
+    			t259 = space();
+    			td19 = element("td");
+    			p54 = element("p");
+    			p54.textContent = "Poor";
+    			t261 = space();
+    			tr11 = element("tr");
+    			td20 = element("td");
+    			p55 = element("p");
+    			p55.textContent = "-2";
+    			t263 = space();
+    			td21 = element("td");
+    			p56 = element("p");
+    			p56.textContent = "Terrible";
+    			t265 = space();
+    			tr12 = element("tr");
+    			td22 = element("td");
+    			p57 = element("p");
+    			p57.textContent = "-3";
+    			t267 = space();
+    			td23 = element("td");
+    			p58 = element("p");
+    			p58.textContent = "Catastrophic";
+    			t269 = space();
+    			tr13 = element("tr");
+    			td24 = element("td");
+    			p59 = element("p");
+    			p59.textContent = "-4";
+    			t271 = space();
+    			td25 = element("td");
+    			p60 = element("p");
+    			p60.textContent = "Horrifying";
+    			t273 = space();
+    			h45 = element("h4");
+    			h45.textContent = "Skill List";
+    			t275 = space();
+    			p61 = element("p");
+    			t276 = text("Descriptions for these skills are found below.\n");
+    			br0 = element("br");
+    			t277 = space();
+    			br1 = element("br");
+    			t278 = space();
+    			table1 = element("table");
+    			thead = element("thead");
+    			tr14 = element("tr");
+    			th2 = element("th");
+    			t279 = space();
+    			th3 = element("th");
+    			t280 = space();
+    			th4 = element("th");
+    			t281 = space();
+    			th5 = element("th");
+    			t282 = space();
+    			tbody1 = element("tbody");
+    			tr15 = element("tr");
+    			td26 = element("td");
+    			strong30 = element("strong");
+    			strong30.textContent = "Academics";
+    			t284 = space();
+    			td27 = element("td");
+    			strong31 = element("strong");
+    			strong31.textContent = "Deceive";
+    			t286 = space();
+    			td28 = element("td");
+    			strong32 = element("strong");
+    			strong32.textContent = "Lore";
+    			t288 = space();
+    			td29 = element("td");
+    			strong33 = element("strong");
+    			strong33.textContent = "Resources";
+    			t290 = space();
+    			tr16 = element("tr");
+    			td30 = element("td");
+    			strong34 = element("strong");
+    			strong34.textContent = "Athletics";
+    			t292 = space();
+    			td31 = element("td");
+    			strong35 = element("strong");
+    			strong35.textContent = "Drive";
+    			t294 = space();
+    			td32 = element("td");
+    			strong36 = element("strong");
+    			strong36.textContent = "Notice";
+    			t296 = space();
+    			td33 = element("td");
+    			strong37 = element("strong");
+    			strong37.textContent = "Shoot";
+    			t298 = space();
+    			tr17 = element("tr");
+    			td34 = element("td");
+    			strong38 = element("strong");
+    			strong38.textContent = "Burglary";
+    			t300 = space();
+    			td35 = element("td");
+    			strong39 = element("strong");
+    			strong39.textContent = "Empathy";
+    			t302 = space();
+    			td36 = element("td");
+    			strong40 = element("strong");
+    			strong40.textContent = "Physique";
+    			t304 = space();
+    			td37 = element("td");
+    			strong41 = element("strong");
+    			strong41.textContent = "Stealth";
+    			t306 = space();
+    			tr18 = element("tr");
+    			td38 = element("td");
+    			strong42 = element("strong");
+    			strong42.textContent = "Contacts";
+    			t308 = space();
+    			td39 = element("td");
+    			strong43 = element("strong");
+    			strong43.textContent = "Fight";
+    			t310 = space();
+    			td40 = element("td");
+    			strong44 = element("strong");
+    			strong44.textContent = "Provoke";
+    			t312 = space();
+    			td41 = element("td");
+    			strong45 = element("strong");
+    			strong45.textContent = "Will";
+    			t314 = space();
+    			tr19 = element("tr");
+    			td42 = element("td");
+    			strong46 = element("strong");
+    			strong46.textContent = "Crafts";
+    			t316 = space();
+    			td43 = element("td");
+    			strong47 = element("strong");
+    			strong47.textContent = "Investigate";
+    			t318 = space();
+    			td44 = element("td");
+    			strong48 = element("strong");
+    			strong48.textContent = "Rapport";
+    			t320 = space();
+    			td45 = element("td");
+    			t321 = space();
+    			br2 = element("br");
+    			t322 = space();
+    			br3 = element("br");
+    			t323 = space();
+    			br4 = element("br");
+    			t324 = space();
+    			p62 = element("p");
+    			strong49 = element("strong");
+    			strong49.textContent = "Academics:";
+    			t326 = text(" Mundane, everyday human knowledge and education, including history, sciences, and medicine. Academics stunts often refer to specialized areas of knowledge and medical skills.");
+    			t327 = space();
+    			p63 = element("p");
+    			strong50 = element("strong");
+    			strong50.textContent = "Athletics:";
+    			t329 = text(" A measurement of physical potential. Athletics stunts focus on movement—running, jumping, parkour—and dodging attacks.");
+    			t330 = space();
+    			p64 = element("p");
+    			strong51 = element("strong");
+    			strong51.textContent = "Burglary:";
+    			t332 = text(" Knowledge of and ability to bypass security systems, pick pockets, and generally commit crimes. Burglary stunts give bonuses to the various stages of committing a crime, from the planning to the execution and escape.");
+    			t333 = space();
+    			p65 = element("p");
+    			strong52 = element("strong");
+    			strong52.textContent = "Contacts:";
+    			t335 = text(" Knowledge of the right people and connections that can help you. Contacts stunts give you ready allies and an information network wherever you go in the world.");
+    			t336 = space();
+    			p66 = element("p");
+    			strong53 = element("strong");
+    			strong53.textContent = "Crafts:";
+    			t338 = text(" Ability to make or break machinery, build contraptions, and pull off MacGyver-esque feats of ingenuity. Crafts stunts let you have the gizmo on hand, give bonuses to building and breaking things, and provide justification for using Crafts in place of skills like Burglary or Academics under certain circumstances.");
+    			t339 = space();
+    			p67 = element("p");
+    			strong54 = element("strong");
+    			strong54.textContent = "Deceive:";
+    			t341 = text(" Ability to lie and cheat convincingly and with aplomb. Deceive stunts might improve your ability to tell a particular breed of lie or help invent false identities.");
+    			t342 = space();
+    			p68 = element("p");
+    			strong55 = element("strong");
+    			strong55.textContent = "Drive:";
+    			t344 = text(" Controlling vehicles under the most grueling circumstances, pulling wicked maneuvers, and simply getting the most out of your ride. Drive stunts can be signature maneuvers, a special vehicle of your own, or the ability to use Drive in place of a skill like Burglary or Academics under certain circumstances.");
+    			t345 = space();
+    			p69 = element("p");
+    			strong56 = element("strong");
+    			strong56.textContent = "Empathy:";
+    			t347 = text(" Ability to accurately judge someone’s mood and intentions. Empathy stunts can be about judging a crowd, picking up on lies, or helping others recover from mental consequences.");
+    			t348 = space();
+    			p70 = element("p");
+    			strong57 = element("strong");
+    			strong57.textContent = "Fight:";
+    			t350 = text(" Ability to excel at hand-to-hand combat, whether with weapons or fists. Fight stunts include signature weapons and special techniques.");
+    			t351 = space();
+    			p71 = element("p");
+    			strong58 = element("strong");
+    			strong58.textContent = "Investigate:";
+    			t353 = text(" Deliberate, careful study and puzzling out mysteries. Use this to piece together clues or reconstruct a crime scene. Investigate stunts help you form brilliant deductions or piece together information more quickly.");
+    			t354 = space();
+    			p72 = element("p");
+    			strong59 = element("strong");
+    			strong59.textContent = "Lore:";
+    			t356 = text(" Specialized, arcane knowledge that falls outside of the scope of Academics, including supernatural topics of one sort or another. This is where the weird stuff happens. Lore stunts often support practical applications of your arcane knowledge, such as casting spells. Some settings may remove Lore, replace it with a different skill, or combine it with Academics.");
+    			t357 = space();
+    			p73 = element("p");
+    			strong60 = element("strong");
+    			strong60.textContent = "Notice:";
+    			t359 = text(" Ability to pick up details in the moment, spot trouble before it happens, and generally be perceptive. It contrasts Investigate, which is for slow, deliberate observation. Notice stunts sharpen your senses, improve your reaction time, or make you harder to sneak up on.");
+    			t360 = space();
+    			p74 = element("p");
+    			strong61 = element("strong");
+    			strong61.textContent = "Physique:";
+    			t362 = text(" Raw power and durability. Physique stunts let you perform superhuman feats of strength, throw your weight around while wrestling, and shrug off physical consequences. In addition, a high Physique rating gives you more physical stress or consequence slots (");
+    			strong62 = element("strong");
+    			strong62.textContent = "page XX";
+    			t364 = text(").");
+    			t365 = space();
+    			p75 = element("p");
+    			strong63 = element("strong");
+    			strong63.textContent = "Provoke:";
+    			t367 = text(" Ability to push people to act the way you want them to. It’s coarse and manipulative, not a positive interaction. Provoke stunts let you push opponents into foolhardy action, draw aggression toward you, or scare enemies (assuming they can feel fear).");
+    			t368 = space();
+    			p76 = element("p");
+    			strong64 = element("strong");
+    			strong64.textContent = "Rapport:";
+    			t370 = text(" Building connections with others and working together. Where Provoke is manipulation, Rapport is sincerity, trust, and goodwill. Rapport stunts let you sway the crowd, improve relationships, or build contacts.");
+    			t371 = space();
+    			p77 = element("p");
+    			strong65 = element("strong");
+    			strong65.textContent = "Resources:";
+    			t373 = text(" Access to material things, not just money or direct ownership. It might reflect your ability to borrow from friends or dip into an organization’s armory. Resources stunts let you use Resources in place of Rapport or Contacts or give you extra free invokes when you pay for the best.");
+    			t374 = space();
+    			p78 = element("p");
+    			strong66 = element("strong");
+    			strong66.textContent = "Shoot:";
+    			t376 = text(" All forms of ranged combat, whether guns, throwing knives, or bow and arrow. Shoot stunts let you make called shots, quick-draw, or always have a gun handy.");
+    			t377 = space();
+    			p79 = element("p");
+    			strong67 = element("strong");
+    			strong67.textContent = "Stealth:";
+    			t379 = text(" Staying unseen or unheard and escaping when you need to hide. Stealth stunts let you vanish in plain sight, blend into crowds, or advance through shadows unseen.");
+    			t380 = space();
+    			p80 = element("p");
+    			strong68 = element("strong");
+    			strong68.textContent = "Will:";
+    			t382 = text(" Mental fortitude, the ability to overcome temptation and to withstand trauma. Will stunts let you ignore mental consequences, withstand the mental agony of strange powers, and hold steady against enemies who provoke you. In addition, a high Will rating gives you more mental stress or consequence slots (");
+    			strong69 = element("strong");
+    			strong69.textContent = "page XX";
+    			t384 = text(").");
+    			t385 = space();
+    			h46 = element("h4");
+    			h46.textContent = "Alternative Skill Lists";
+    			t387 = space();
+    			p81 = element("p");
+    			p81.textContent = "When building your own implementation of Fate, the first thing to think about is whether or not you’ll keep the same skill list. Often you can work with the one given, combining, changing, or splitting apart a few of the skills given. But it’s possible that the granularity of the default example skill list we’ve given above isn’t to your liking. Here are some things to think about.";
+    			t389 = space();
+    			ul3 = element("ul");
+    			li18 = element("li");
+    			li18.textContent = "The default skill list has 19 skills in it, and players rate their characters above the Mediocre (+0) default in 10 of them. If you change the number of skills, you may want to change how the ratings are allocated.";
+    			t391 = space();
+    			li19 = element("li");
+    			t392 = text("Our default skills are focused on answering the question “what can you do?”—but your list doesn’t need to follow in line with that. You might want a list focused on “What do you believe?”, the question “How do you do things?” (as with approaches in ");
+    			em10 = element("em");
+    			em10.textContent = "Fate Accelerated";
+    			t394 = text("), job-roles in a crew of grifters and thieves, and so on.");
+    			t395 = space();
+    			li20 = element("li");
+    			li20.textContent = "Skill ratings in Fate are structured to support character niches. That’s why, in the default, players start with a “pyramid” shape. Make sure niche protection is possible in whatever new list you create.";
+    			t397 = space();
+    			li21 = element("li");
+    			li21.textContent = "The best starting skill should come in around Great (+4). You can alter this up or down as you see fit, but make sure to keep an eye on what that means for the difficulty and opposing skill ratings your PCs will face.";
+    			t399 = space();
+    			p82 = element("p");
+    			p82.textContent = "Fred decides he wants to do a space-faring Fate game with a shorter skill list that’s focused on action-words. He settles on this 9-item skill list: Fight, Know, Move, Notice, Pilot, Sneak, Speak, Tinker, and Will. He also likes the idea of a “diamond” shape for skill ratings rather than a pyramid, so he has players rate their starting skills as follows: 1 at Great (+4), 2 at Good (+3), 3 at Fair (+2), 2 at Average (+1), and 1 at Mediocre (+0). His PCs will have a lot of overlap and core competencies due to the fat middle of his diamond, while still enjoying some niche protections at the top of the diamond’s “point.”";
+    			t401 = space();
+    			p83 = element("p");
+    			t402 = text("If you’re considering making your own skill list for your game and are looking for some ideas to kick-start your imagination, see ");
+    			strong70 = element("strong");
+    			strong70.textContent = "page XX.";
+    			t404 = space();
+    			h34 = element("h3");
+    			h34.textContent = "Refresh";
+    			t406 = space();
+    			p84 = element("p");
+    			t407 = text("Your ");
+    			strong71 = element("strong");
+    			strong71.textContent = "refresh";
+    			t409 = text(" is the minimum number of ");
+    			strong72 = element("strong");
+    			strong72.textContent = "fate points";
+    			t411 = text(" (");
+    			strong73 = element("strong");
+    			strong73.textContent = "page XX";
+    			t413 = text(") your character begins with at the start of each session. Your character begins with a refresh of 3.");
+    			t414 = space();
+    			p85 = element("p");
+    			p85.textContent = "Each session, you start with fate points at least equal to your refresh. Be sure to keep track of the fate points you have left at the end of each session of play—if you have more fate points than your refresh, you’ll start the next session with the fate points you ended this session with.";
+    			t416 = space();
+    			p86 = element("p");
+    			p86.textContent = "Charles earned a lot of fate points during today’s session, ending it with 5 fate points. His refresh is 2, so Charles will start the next session with 5 fate points. But Ethan ends the same session with just one fate point. His refresh is 3, so he’ll begin the next session with 3 fate points, not just the one he had left over.";
+    			t418 = space();
+    			h35 = element("h3");
+    			h35.textContent = "Stunts";
+    			t420 = space();
+    			p87 = element("p");
+    			t421 = text("While every character has access to all the skills—even if they are Mediocre (+0) at most of them—your character has some unique ");
+    			strong74 = element("strong");
+    			strong74.textContent = "stunts";
+    			t423 = text(". Stunts are the cool techniques, tricks, or bits of equipment that make your character unique and interesting. Where skills are about a character’s broad competencies, stunts are about specific areas of excellence; most of them give you a bonus in particular circumstances or let you do something that other characters simply can’t.");
+    			t424 = space();
+    			p88 = element("p");
+    			p88.textContent = "Your character begins with three free stunt slots. You don’t have to define them all right away, and may fill them in as you play. You may purchase more stunts by spending 1 refresh each, to a minimum of 1 refresh.";
+    			t426 = space();
+    			h47 = element("h4");
+    			h47.textContent = "Writing Stunts";
+    			t428 = space();
+    			p89 = element("p");
+    			p89.textContent = "You write your own stunts when building a character. Broadly, there are two types of stunts.";
+    			t430 = space();
+    			p90 = element("p");
+    			strong75 = element("strong");
+    			strong75.textContent = "Bonus-granting stunts:";
+    			t432 = text(" The first type of stunt ");
+    			strong76 = element("strong");
+    			strong76.textContent = "gives you a +2 bonus";
+    			t434 = text(" when you use a named skill within certain parameters, usually limited to a specific type of action (");
+    			strong77 = element("strong");
+    			strong77.textContent = "page XX";
+    			t436 = text(") and type of narrative circumstance.");
+    			t437 = space();
+    			p91 = element("p");
+    			p91.textContent = "Write this type of stunt as follows:";
+    			t439 = space();
+    			p92 = element("p");
+    			t440 = text("Because I ");
+    			strong78 = element("strong");
+    			strong78.textContent = "[describe how you are amazing or have a cool bit of gear]";
+    			t442 = text(", I get a +2 when I use ");
+    			strong79 = element("strong");
+    			strong79.textContent = "[pick a skill]";
+    			t444 = text(" to ");
+    			strong80 = element("strong");
+    			strong80.textContent = "[pick one: overcome, create an advantage, attack, defend]";
+    			t446 = text(" when ");
+    			strong81 = element("strong");
+    			strong81.textContent = "[describe a circumstance]";
+    			t448 = text(".");
+    			t449 = space();
+    			p93 = element("p");
+    			strong82 = element("strong");
+    			strong82.textContent = "Example Bonus-Granting Stunt:";
+    			t451 = text(" Because I am ");
+    			strong83 = element("strong");
+    			strong83.textContent = "a military-trained sniper";
+    			t453 = text(", I get a +2 when I use ");
+    			strong84 = element("strong");
+    			strong84.textContent = "Shoot";
+    			t455 = text(" to ");
+    			strong85 = element("strong");
+    			strong85.textContent = "attack";
+    			t457 = text(" when ");
+    			strong86 = element("strong");
+    			strong86.textContent = "I have a target";
+    			t459 = space();
+    			strong87 = element("strong");
+    			strong87.textContent = "In My Sights";
+    			t461 = text(".");
+    			t462 = space();
+    			p94 = element("p");
+    			strong88 = element("strong");
+    			strong88.textContent = "Rule-changing stunts:";
+    			t464 = text(" The second type of stunt ");
+    			strong89 = element("strong");
+    			strong89.textContent = "changes the rules of the game";
+    			t466 = text(". This is a broad category that includes, but is not limited to, the following:");
+    			t467 = space();
+    			ul4 = element("ul");
+    			li22 = element("li");
+    			strong90 = element("strong");
+    			strong90.textContent = "Swapping which skills are used in a given situation.";
+    			t469 = text(" For instance, a researcher might use Academics to perform a ritual, while anyone else would use Lore.");
+    			t470 = space();
+    			li23 = element("li");
+    			li23.textContent = "**Using an action with a skill that isn’t normally used with it.**For instance, allowing a character to use Stealth to backstab an opponent from the shadows (which would typically be a use of Fight).";
+    			t472 = space();
+    			li24 = element("li");
+    			strong91 = element("strong");
+    			strong91.textContent = "Giving a character a different kind of bonus to skills that’s roughly equivalent to a +2.";
+    			t474 = text(" For instance, when a skilled orator creates an advantage with Rapport, it gets an extra free invoke.");
+    			t475 = space();
+    			li25 = element("li");
+    			strong92 = element("strong");
+    			strong92.textContent = "Allowing a character to declare a minor fact is always true.";
+    			t477 = text(" For instance, a survivalist always has survival items like matches on their person, even under unlikely circumstances. This type of stunt establishes that you do not need to invoke for story details (");
+    			strong93 = element("strong");
+    			strong93.textContent = "page XX";
+    			t479 = text(") for the given fact.");
+    			t480 = space();
+    			li26 = element("li");
+    			strong94 = element("strong");
+    			strong94.textContent = "Allowing a character to make a specific rules exception.";
+    			t482 = text(" For instance, a character might have two more stress boxes or another mild consequence slot.");
+    			t483 = space();
+    			p95 = element("p");
+    			p95.textContent = "Write this type of stunt as follows:";
+    			t485 = space();
+    			p96 = element("p");
+    			t486 = text("Because I ");
+    			strong95 = element("strong");
+    			strong95.textContent = "[describe how you are amazing or have a cool bit of gear]";
+    			t488 = text(", I can ");
+    			strong96 = element("strong");
+    			strong96.textContent = "[describe your amazing feat]";
+    			t490 = text(", but only ");
+    			strong97 = element("strong");
+    			strong97.textContent = "[describe a circumstance or limitation]";
+    			t492 = text(".");
+    			t493 = space();
+    			p97 = element("p");
+    			strong98 = element("strong");
+    			strong98.textContent = "Example Rule-Changing Stunt:";
+    			t495 = text(" Because I ");
+    			strong99 = element("strong");
+    			strong99.textContent = "don’t believe in magic";
+    			t497 = text(", I can ");
+    			strong100 = element("strong");
+    			strong100.textContent = "ignore the effects of a supernatural ability";
+    			t499 = text(", but only ");
+    			strong101 = element("strong");
+    			strong101.textContent = "once per game session";
+    			t501 = text(".");
+    			t502 = space();
+    			h36 = element("h3");
+    			h36.textContent = "Stress and Consequences";
+    			t504 = space();
+    			p98 = element("p");
+    			strong102 = element("strong");
+    			strong102.textContent = "Stress";
+    			t506 = text(" and ");
+    			strong103 = element("strong");
+    			strong103.textContent = "consequences";
+    			t508 = text(" are how your character withstands the mental and physical toll of their adventures. Characters have at least three one-point boxes for physical stress and at least three one-point boxes for mental stress. They also get one slot each for mild, moderate, and severe consequences.");
+    			t509 = space();
+    			p99 = element("p");
+    			p99.textContent = "Your rating in Physique affects how many total physical stress boxes you have. Will does the same for your mental stress. Refer to the following table:";
+    			t511 = space();
+    			table2 = element("table");
+    			col2 = element("col");
+    			t512 = space();
+    			col3 = element("col");
+    			t513 = space();
+    			tbody2 = element("tbody");
+    			tr20 = element("tr");
+    			th6 = element("th");
+    			p100 = element("p");
+    			p100.textContent = "Physique/Will";
+    			t515 = space();
+    			th7 = element("th");
+    			p101 = element("p");
+    			p101.textContent = "Physical/Mental Stress";
+    			t517 = space();
+    			tr21 = element("tr");
+    			td46 = element("td");
+    			p102 = element("p");
+    			p102.textContent = "Mediocre (+0)";
+    			t519 = space();
+    			td47 = element("td");
+    			p103 = element("p");
+    			strong104 = element("strong");
+    			strong104.textContent = "[1][1][1]";
+    			t521 = space();
+    			tr22 = element("tr");
+    			td48 = element("td");
+    			p104 = element("p");
+    			p104.textContent = "Average (+1) or Fair (+2)";
+    			t523 = space();
+    			td49 = element("td");
+    			p105 = element("p");
+    			strong105 = element("strong");
+    			strong105.textContent = "[1][1][1] [1]";
+    			t525 = space();
+    			tr23 = element("tr");
+    			td50 = element("td");
+    			p106 = element("p");
+    			p106.textContent = "Good (+3) or Great (+4)";
+    			t527 = space();
+    			td51 = element("td");
+    			p107 = element("p");
+    			strong106 = element("strong");
+    			strong106.textContent = "[1][1][1] [1][1][1]";
+    			t529 = space();
+    			tr24 = element("tr");
+    			td52 = element("td");
+    			p108 = element("p");
+    			p108.textContent = "Superb (+5) and higher";
+    			t531 = space();
+    			td53 = element("td");
+    			p109 = element("p");
+    			strong107 = element("strong");
+    			strong107.textContent = "[1][1][1] [1][1][1]";
+    			t533 = text(" and a second mild consequence slot specifically for physical or mental hits");
+    			t534 = space();
+    			p110 = element("p");
+    			t535 = text("You’ll learn how stress and consequences work during play in ");
+    			em11 = element("em");
+    			em11.textContent = "“Taking Harm”";
+    			t537 = text(" (");
+    			strong108 = element("strong");
+    			strong108.textContent = "page XX";
+    			t539 = text(").");
+    			t540 = space();
+    			h48 = element("h4");
+    			h48.textContent = "Hang on, that’s not what I remember!";
+    			t542 = space();
+    			p111 = element("p");
+    			t543 = text("In ");
+    			em12 = element("em");
+    			em12.textContent = "Fate Condensed";
+    			t545 = text(", we’re using only one-point stress boxes. ");
+    			em13 = element("em");
+    			em13.textContent = "Fate Core System";
+    			t547 = text(" and ");
+    			em14 = element("em");
+    			em14.textContent = "Fate Accelerated";
+    			t549 = text(" both use a series of escalating-value boxes (one 1-point box, one 2-point box, etc). You can use that style of stress box if you like; for this version we decided to stick with one-point boxes because it’s simple—with the other method, folks can get confused just a little more easily.");
+    			t550 = space();
+    			p112 = element("p");
+    			p112.textContent = "There are a few other angles on this style that you’ll want to keep in mind.";
+    			t552 = space();
+    			ul5 = element("ul");
+    			li27 = element("li");
+    			t553 = text("As you’ll see on ");
+    			strong109 = element("strong");
+    			strong109.textContent = "page XX";
+    			t555 = text(", with 1-point boxes you may mark as many of them as you want when you get hit (the escalating-value style of Fate Core, meanwhile, has a “you can only mark one box per hit” proviso).");
+    			t556 = space();
+    			li28 = element("li");
+    			t557 = text("This style goes with the Fate Core notion of separate Physical and Mental stress tracks, instead of a single unified track as with Fate Accelerated. If you’re inclined towards a unified track, add three more boxes to make up for it, and use the ");
+    			em15 = element("em");
+    			em15.textContent = "higher";
+    			t559 = text(" of Physique or Will to lengthen it as indicated.");
+    			t560 = space();
+    			li29 = element("li");
+    			t561 = text("Three points of stress absorption on one track is not a lot! If characters end up feeling a little fragile in play, you may want to add one or two boxes to the default quantity. It’s all about how fast the consequences hit. (With the older style, a ");
+    			strong110 = element("strong");
+    			strong110.textContent = "[1][2]";
+    			t563 = text(" track absorbs 2 to 3 stress, ");
+    			strong111 = element("strong");
+    			strong111.textContent = "[1][2][3]";
+    			t565 = text(" = 3 to 6, ");
+    			strong112 = element("strong");
+    			strong112.textContent = "[1][2][3][4]";
+    			t567 = text(" = 4 to 10.)");
+    			t568 = space();
+    			h37 = element("h3");
+    			h37.textContent = "Finishing Touches";
+    			t570 = space();
+    			p113 = element("p");
+    			p113.textContent = "Give your character a name and description, and discuss their history with the other players. If you haven’t written down a relationship aspect yet, do so now.";
+    			t572 = space();
+    			h14 = element("h1");
+    			h14.textContent = "Taking Action, Rolling the Dice";
+    			t574 = space();
+    			hr7 = element("hr");
+    			t575 = space();
+    			p114 = element("p");
+    			t576 = text("In a game of ");
+    			em16 = element("em");
+    			em16.textContent = "Fate Condensed";
+    			t578 = text(", you will control the actions of the character you created, contributing to the story you are all telling together. In general, the GM will narrate the world and the actions of non-player characters (");
+    			strong113 = element("strong");
+    			strong113.textContent = "NPCs";
+    			t580 = text("), and the other players will narrate their individual PCs’ actions.");
+    			t581 = space();
+    			p115 = element("p");
+    			t582 = text("To act, follow the principle of ");
+    			strong114 = element("strong");
+    			strong114.textContent = "fiction first";
+    			t584 = text(": say what your character is trying to do, ");
+    			em17 = element("em");
+    			em17.textContent = "then";
+    			t586 = text(" figure out how you’ll do that in the system. Your character’s aspects inform what they can attempt and help set the context for interpreting the results. Most people couldn’t even try to perform emergency surgery on a disemboweled ally, but with an aspect establishing a medical background, you can try. Without that aspect you might at best buy a few moments for some last words. When in doubt, check with your GM and the table.");
+    			t587 = space();
+    			p116 = element("p");
+    			p116.textContent = "How do you know if you’re successful? Often, your character will simply succeed, because the action isn’t hard and nobody’s trying to stop you. But in difficult or unpredictable situations, you’ll break out the dice to find out what happens.";
+    			t589 = space();
+    			p117 = element("p");
+    			p117.textContent = "When a character wants to take an action, the group should think about these questions:";
+    			t591 = space();
+    			ul6 = element("ul");
+    			li30 = element("li");
+    			li30.textContent = "What’s stopping this from happening?";
+    			t593 = space();
+    			li31 = element("li");
+    			li31.textContent = "What could go wrong?";
+    			t595 = space();
+    			li32 = element("li");
+    			li32.textContent = "How is it interesting when it does go wrong?";
+    			t597 = space();
+    			p118 = element("p");
+    			p118.textContent = "If no one has good answers to all of these questions, it simply happens. Driving to the airport doesn’t require a roll of the dice. Racing down the highway to a waiting plane while being pursued by cybernetically enhanced beasts from another world, on the other hand, is a perfect time to roll the dice.";
+    			t599 = space();
+    			p119 = element("p");
+    			p119.textContent = "Whenever you take action, follow these steps:";
+    			t601 = space();
+    			ol = element("ol");
+    			li33 = element("li");
+    			t602 = text("Fiction first: Describe what you’re trying to do, ");
+    			em18 = element("em");
+    			em18.textContent = "then";
+    			t604 = text(" choose the skill and action that fits.");
+    			t605 = space();
+    			li34 = element("li");
+    			li34.textContent = "Roll four dice.";
+    			t607 = space();
+    			li35 = element("li");
+    			li35.textContent = "Add up the symbols on the dice: a [+] is +1, [-] is -1, and [0] is 0. This will give you a dice result of -4 to 4.";
+    			t609 = space();
+    			li36 = element("li");
+    			li36.textContent = "Add the dice result to your skill rating.";
+    			t611 = space();
+    			li37 = element("li");
+    			t612 = text("Modify the dice by invoking aspects (");
+    			strong115 = element("strong");
+    			strong115.textContent = "page XX";
+    			t614 = text(") and using stunts (");
+    			strong116 = element("strong");
+    			strong116.textContent = "page XX";
+    			t616 = text(").");
+    			t617 = space();
+    			li38 = element("li");
+    			t618 = text("Declare your total result, called your ");
+    			strong117 = element("strong");
+    			strong117.textContent = "effort";
+    			t620 = text(".");
+    			t621 = space();
+    			h23 = element("h2");
+    			h23.textContent = "Difficulty and Opposition";
+    			t623 = space();
+    			hr8 = element("hr");
+    			t624 = space();
+    			p120 = element("p");
+    			t625 = text("If the character’s action faces a fixed obstacle or otherwise tries to alter the world rather than a character or creature, their action faces a static ");
+    			strong118 = element("strong");
+    			strong118.textContent = "difficulty";
+    			t627 = text(" rating. These actions include picking locks, barring doors, and tactically assessing an enemy camp. The GM may decide that the presence of certain aspects (on the character, the scene, or something else) justifies changing the difficulty.");
+    			t628 = space();
+    			p121 = element("p");
+    			t629 = text("At other times, an enemy will provide ");
+    			strong119 = element("strong");
+    			strong119.textContent = "opposition";
+    			t631 = text(" against the character’s action by using a defend action (");
+    			strong120 = element("strong");
+    			strong120.textContent = "page XX";
+    			t633 = text("). In these cases, the GM will also roll the dice and follow the same rules as in the previous section, using any skills, stunts, or aspects the enemy has. Any time you roll to attack an enemy or to create an advantage directly against them, the enemy will roll to defend against it.");
+    			t634 = space();
+    			p122 = element("p");
+    			t635 = text("Opposition can take many forms. Struggling with a cultist over the ritual dagger has a clear opponent. Or you might be opposed by the power of an ancient ritual that must be overcome to save the world. Cracking the safe in the First Metropolitan Bank to access the safe deposit boxes is a challenge with risk of discovery, but it’s up to the GM if you’re rolling against ");
+    			em19 = element("em");
+    			em19.textContent = "opposition";
+    			t637 = text(" from the patrolling guards or the ");
+    			em20 = element("em");
+    			em20.textContent = "difficulty";
+    			t639 = text(" presented by the safe itself.");
+    			t640 = space();
+    			h24 = element("h2");
+    			h24.textContent = "Modifying the Dice";
+    			t642 = space();
+    			hr9 = element("hr");
+    			t643 = space();
+    			p123 = element("p");
+    			t644 = text("You may modify your dice by invoking aspects to get +2 to your roll or reroll the dice. Some stunts also give you a bonus. You may also invoke aspects to support an ally (");
+    			strong121 = element("strong");
+    			strong121.textContent = "page XX";
+    			t646 = text(") or to increase the difficulty an enemy faces.");
+    			t647 = space();
+    			h38 = element("h3");
+    			h38.textContent = "Invoking Aspects";
+    			t649 = space();
+    			p124 = element("p");
+    			p124.textContent = "When you take action but the dice come up short, you don’t have to sit back and accept failure. (Though you totally can. That’s fun too.) The aspects in play give you options and opportunity to succeed.";
+    			t651 = space();
+    			p125 = element("p");
+    			t652 = text("When an aspect could justifiably help your efforts, describe how it helps and spend a fate point to ");
+    			strong122 = element("strong");
+    			strong122.textContent = "invoke";
+    			t654 = text(" it (or use a free invoke). What is and isn’t justifiable is subject to the ");
+    			strong123 = element("strong");
+    			strong123.textContent = "bogus rule";
+    			t656 = text(" — anyone can say “that’s bogus!” to invoking an aspect. Simply put, the bogus rule is a ");
+    			strong124 = element("strong");
+    			strong124.textContent = "calibration tool";
+    			t658 = text(" that anyone at the table may use to help the group make sure the game stays true to its vision and concept. You can use the safety tools discussed on ");
+    			strong125 = element("strong");
+    			strong125.textContent = "page XX";
+    			t660 = text(" in a similar fashion.");
+    			t661 = space();
+    			p126 = element("p");
+    			t662 = text("You have two options when your invoke looks bogus. First, you can retract your invoke and try something else, maybe a different aspect. Second, you can have a quick discussion about why you think the aspect fits. If the person still isn’t convinced, retract the invoke and move on. If they come around to your perspective, go ahead with the invoke as usual. The bogus rule is in here to help everyone at the table have a good time. Use it when something doesn’t sound right, make sense, or fit the tone. Someone invoking ");
+    			strong126 = element("strong");
+    			strong126.textContent = "Great at First Impressions";
+    			t664 = text(" to throw a car is likely bogus. But maybe that character has a supernatural stunt that makes them incredibly strong, strong enough to plausibly throw a car, and this is their opening gambit in a fight with a horrible monster. In that case, maybe ");
+    			strong127 = element("strong");
+    			strong127.textContent = "Great at First Impressions";
+    			t666 = text(" is plausible.");
+    			t667 = space();
+    			p127 = element("p");
+    			t668 = text("When you invoke an aspect, you can either ");
+    			strong128 = element("strong");
+    			strong128.textContent = "gain a +2 bonus";
+    			t670 = text(" to your roll or ");
+    			strong129 = element("strong");
+    			strong129.textContent = "reroll all four dice";
+    			t672 = text(", or you can add 2 to the difficulty of someone else’s roll, if justifiable. You can invoke multiple aspects on the same roll, but you can’t invoke the same aspect multiple times on the same roll. There is one exception: you can spend as many ");
+    			em21 = element("em");
+    			em21.textContent = "free invokes";
+    			t674 = text(" on an aspect as you like on the same roll.");
+    			t675 = space();
+    			p128 = element("p");
+    			t676 = text("Often you’ll invoke one of your character aspects. You may also invoke a situation aspect or make a hostile invocation of another character’s aspect (");
+    			strong130 = element("strong");
+    			strong130.textContent = "page XX";
+    			t678 = text(").");
+    			t679 = space();
+    			h39 = element("h3");
+    			h39.textContent = "Using Stunts";
+    			t681 = space();
+    			p129 = element("p");
+    			t682 = text("Stunts may give you a bonus to your roll, provided you meet the criteria written in the stunt, such as the circumstances, action, or skill used. You may wish to use create advantage (");
+    			strong131 = element("strong");
+    			strong131.textContent = "page XX";
+    			t684 = text(") to introduce aspects that line up with those circumstances. Keep your stunts’ circumstances in mind when you describe your actions too, and set yourself up for success.");
+    			t685 = space();
+    			p130 = element("p");
+    			p130.textContent = "Normally, stunts give you a +2 bonus in a narrow circumstance with no cost; you may use them anytime they apply. Some rare and exceptionally powerful stunts may require you to spend a fate point to use them.";
+    			t687 = space();
+    			h25 = element("h2");
+    			h25.textContent = "Outcomes";
+    			t689 = space();
+    			hr10 = element("hr");
+    			t690 = space();
+    			p131 = element("p");
+    			t691 = text("Whenever you roll dice, the difference between your effort and the target difficulty or opposition is measured in ");
+    			strong132 = element("strong");
+    			strong132.textContent = "shifts";
+    			t693 = text(". A shift has a value of 1. There are four possible outcomes:");
+    			t694 = space();
+    			ul7 = element("ul");
+    			li39 = element("li");
+    			t695 = text("If your effort is less than the target difficulty or opposition, you ");
+    			strong133 = element("strong");
+    			strong133.textContent = "fail";
+    			t697 = text(".");
+    			t698 = space();
+    			li40 = element("li");
+    			t699 = text("If your effort is equal to the target, you ");
+    			strong134 = element("strong");
+    			strong134.textContent = "tie";
+    			t701 = text(".");
+    			t702 = space();
+    			li41 = element("li");
+    			t703 = text("If your effort is one or two shifts more than the target, you ");
+    			strong135 = element("strong");
+    			strong135.textContent = "succeed";
+    			t705 = text(".");
+    			t706 = space();
+    			li42 = element("li");
+    			t707 = text("If your effort is three or more shifts more than the target, you ");
+    			strong136 = element("strong");
+    			strong136.textContent = "succeed with style";
+    			t709 = text(".");
+    			t710 = space();
+    			p132 = element("p");
+    			t711 = text("Some outcomes are obviously better for you than others, but all of them should advance the story in interesting ways. You started with fiction first (");
+    			strong137 = element("strong");
+    			strong137.textContent = "page XX";
+    			t713 = text("); make sure you end with it too, to maintain focus on the story, and to ensure you interpret the results in a way that fits the fiction.");
+    			t714 = space();
+    			p133 = element("p");
+    			p133.textContent = "Ethan isn’t an adept safe-cracker (though he has the tools), and yet he’s in a sinister cult’s guarded secret headquarters, with a steel door between him and the ritual book he desperately needs. Can he get in?";
+    			t716 = space();
+    			h310 = element("h3");
+    			h310.textContent = "Failure";
+    			t718 = space();
+    			p134 = element("p");
+    			p134.textContent = "If your effort is less than the target difficulty or opposition, you fail.";
+    			t720 = space();
+    			p135 = element("p");
+    			p135.textContent = "This can play out in a few ways: simple failure, success at a major cost, or taking a hit.";
+    			t722 = space();
+    			h49 = element("h4");
+    			h49.textContent = "Simple Failure";
+    			t724 = space();
+    			p136 = element("p");
+    			t725 = text("The first is the easiest to understand—");
+    			strong138 = element("strong");
+    			strong138.textContent = "simple failure";
+    			t727 = text(". You don’t accomplish your goal, don’t make any progress, and are left wanting. Ensure this keeps the story moving—simply failing to crack the safe is stagnant and boring.");
+    			t728 = space();
+    			p137 = element("p");
+    			p137.textContent = "Ethan pulls the handle triumphantly, but the safe remains resolutely closed while the alarms begin to blare. Failure has changed the situation and driven the story forward—now there are guards on the way. Ethan is faced with a new choice—try another way of opening the safe, now that subtlety is out the window, or cut his losses and run?";
+    			t730 = space();
+    			h410 = element("h4");
+    			h410.textContent = "Success at a major cost";
+    			t732 = space();
+    			p138 = element("p");
+    			t733 = text("Second is ");
+    			strong139 = element("strong");
+    			strong139.textContent = "success at a major cost";
+    			t735 = text(". You do what you set out to do, but there’s a significant price to be paid—the situation gets worse or more complicated. GM, you can either declare this is the result or can offer it in place of failure. Both options are good and useful in different situations.");
+    			t736 = space();
+    			p139 = element("p");
+    			p139.textContent = "Ethan fails his roll and the GM says, “You hear the click of the last tumbler falling into place. It’s echoed by the click of the hammer on a revolver as the guard tells you to put your hands in the air.” The major cost here is the confrontation with a guard he’d hoped to avoid.";
+    			t738 = space();
+    			h411 = element("h4");
+    			h411.textContent = "Take a Hit";
+    			t740 = space();
+    			p140 = element("p");
+    			t741 = text("Lastly, you may ");
+    			strong140 = element("strong");
+    			strong140.textContent = "take a hit";
+    			t743 = text(", which you’ll need to absorb with stress or consequences, or suffer some other drawback. This sort of failure is most common when defending against attacks or overcoming dangerous obstacles. This is different from a simple failure because the character alone, not necessarily the whole group, is affected. It’s also different from success at a major cost, in that success isn’t necessarily on the table.");
+    			t744 = space();
+    			p141 = element("p");
+    			t745 = text("Ethan is able to get the safe door open, but as he grasps the handle, he feels a jab in the back of his hand. He couldn’t disable the trap! He writes down the mild consequence ");
+    			strong141 = element("strong");
+    			strong141.textContent = "Poisoned";
+    			t747 = text(".");
+    			t748 = space();
+    			p142 = element("p");
+    			p142.textContent = "You can mix these options together: Harmful failure can be harsh but appropriate in the moment. Success at the cost of harm is certainly an option.";
+    			t750 = space();
+    			h311 = element("h3");
+    			h311.textContent = "Tie";
+    			t752 = space();
+    			p143 = element("p");
+    			p143.textContent = "If your effort is equal to the target difficulty or opposition, you tie.";
+    			t754 = space();
+    			p144 = element("p");
+    			p144.textContent = "Just like failure, ties should move the story forward, never stymie the action. Something interesting should happen. Similar to failure, this can play out a couple ways: success at a minor cost, or partial success.";
+    			t756 = space();
+    			h412 = element("h4");
+    			h412.textContent = "Success at a minor cost";
+    			t758 = space();
+    			p145 = element("p");
+    			t759 = text("The first is ");
+    			strong142 = element("strong");
+    			strong142.textContent = "success at a minor cost";
+    			t761 = text(" — a few points of stress, story details about difficulty or complication but aren’t hindrances themselves, and a boost (");
+    			strong143 = element("strong");
+    			strong143.textContent = "page XX";
+    			t763 = text(") to the enemy are all minor costs.");
+    			t764 = space();
+    			p146 = element("p");
+    			p146.textContent = "Ethan’s first few attempts all fail. By the time he actually gets the door open, dawn has broken, and escape under cover of darkness is impossible. He got what he needed, but his situation is worse now.";
+    			t766 = space();
+    			h413 = element("h4");
+    			h413.textContent = "Partial Success";
+    			t768 = space();
+    			p147 = element("p");
+    			t769 = text("The other way to handle a tie is ");
+    			strong144 = element("strong");
+    			strong144.textContent = "partial success";
+    			t771 = text(" — you succeeded but only got some of what you wanted.");
+    			t772 = space();
+    			p148 = element("p");
+    			p148.textContent = "Ethan can only open the safe door a crack—if the door opens more than an inch, the alarm will sound, and he can’t figure out how to disengage that. He manages to pull a couple pages of the ritual out through the narrow gap, but he’ll have to guess at the final steps.";
+    			t774 = space();
+    			h312 = element("h3");
+    			h312.textContent = "Success";
+    			t776 = space();
+    			p149 = element("p");
+    			p149.textContent = "If your effort is one or two more than the target, you succeed.";
+    			t778 = space();
+    			p150 = element("p");
+    			p150.textContent = "You get what you want with no additional cost.";
+    			t780 = space();
+    			p151 = element("p");
+    			p151.textContent = "Opened! Ethan grabs the ritual and leaves before the guards notice him.";
+    			t782 = space();
+    			h414 = element("h4");
+    			h414.textContent = "Applying “Fiction First” to Success";
+    			t784 = space();
+    			p152 = element("p");
+    			t785 = text("The fiction ");
+    			em22 = element("em");
+    			em22.textContent = "defines";
+    			t787 = text(" what success looks like. What if Ethan didn’t have the tools or experience needed to break into the safe? Perhaps that success is more like our “minor cost” example above. Similarly, if Ethan was on the team because he ");
+    			em23 = element("em");
+    			em23.textContent = "built";
+    			t789 = text(" the safe, that success might look more like our “with style” example.");
+    			t790 = space();
+    			h313 = element("h3");
+    			h313.textContent = "Success with Style";
+    			t792 = space();
+    			p153 = element("p");
+    			p153.textContent = "If your effort is three or more than the target, you succeed with style.";
+    			t794 = space();
+    			p154 = element("p");
+    			p154.textContent = "You get what you want, and you get a bit more on top of that.";
+    			t796 = space();
+    			p155 = element("p");
+    			p155.textContent = "Ethan is beyond lucky; the safe door opens almost instantly. Not only does he get the ritual, but he has enough time to poke through the other papers in the back of the safe. Amidst various ledgers and financial documents, he finds a map of the old Akeley mansion.";
+    			t798 = space();
+    			h26 = element("h2");
+    			h26.textContent = "Actions";
+    			t800 = space();
+    			hr11 = element("hr");
+    			t801 = space();
+    			p156 = element("p");
+    			p156.textContent = "There are four actions you can roll, each with a specific purpose and effect on the story:";
+    			t803 = space();
+    			ul8 = element("ul");
+    			li43 = element("li");
+    			strong145 = element("strong");
+    			strong145.textContent = "Overcome";
+    			t805 = text(" to surmount obstacles with your skills.");
+    			t806 = space();
+    			li44 = element("li");
+    			strong146 = element("strong");
+    			strong146.textContent = "Create an advantage";
+    			t808 = text(" to change a situation to your benefit.");
+    			t809 = space();
+    			li45 = element("li");
+    			strong147 = element("strong");
+    			strong147.textContent = "Attack";
+    			t811 = text(" to harm the enemy.");
+    			t812 = space();
+    			li46 = element("li");
+    			strong148 = element("strong");
+    			strong148.textContent = "Defend";
+    			t814 = text(" to survive an attack, stop a foe from creating an advantage, or oppose an effort to overcome an obstacle.");
+    			t815 = space();
+    			h314 = element("h3");
+    			h314.textContent = "Overcome";
+    			t817 = space();
+    			p157 = element("p");
+    			p157.textContent = "Overcome to surmount obstacles with your skills.";
+    			t819 = space();
+    			p158 = element("p");
+    			t820 = text("Every character will face untold challenges in the course of the story. The ");
+    			strong149 = element("strong");
+    			strong149.textContent = "overcome";
+    			t822 = text(" action is how they face and surmount those obstacles.");
+    			t823 = space();
+    			p159 = element("p");
+    			p159.textContent = "A character good at Athletics can climb over walls and race through crowded streets. A detective with high Investigate can piece together clues others have missed. Someone skilled in Rapport will find it easier to avoid a fight in a hostile bar.";
+    			t825 = space();
+    			p160 = element("p");
+    			p160.textContent = "Your outcomes when overcoming are:";
+    			t827 = space();
+    			ul9 = element("ul");
+    			li47 = element("li");
+    			p161 = element("p");
+    			strong150 = element("strong");
+    			strong150.textContent = "If you fail,";
+    			t829 = text(" discuss with the GM (and the defending player, if any) whether it’s a failure or success at a major cost (");
+    			strong151 = element("strong");
+    			strong151.textContent = "page XX";
+    			t831 = text(").");
+    			t832 = space();
+    			li48 = element("li");
+    			p162 = element("p");
+    			strong152 = element("strong");
+    			strong152.textContent = "If you tie,";
+    			t834 = text(" it’s success at a minor cost (");
+    			strong153 = element("strong");
+    			strong153.textContent = "page XX";
+    			t836 = text(")—you’re in a tough spot, the enemy gets a boost (");
+    			strong154 = element("strong");
+    			strong154.textContent = "page XX";
+    			t838 = text("), or you may take a hit. Alternatively, you fail but gain a boost.");
+    			t839 = space();
+    			li49 = element("li");
+    			p163 = element("p");
+    			strong155 = element("strong");
+    			strong155.textContent = "If you succeed,";
+    			t841 = text(" you meet your goal and the story moves on without hiccups.");
+    			t842 = space();
+    			li50 = element("li");
+    			p164 = element("p");
+    			strong156 = element("strong");
+    			strong156.textContent = "If you succeed with style,";
+    			t844 = text(" it’s a success and you also get a boost.");
+    			t845 = space();
+    			p165 = element("p");
+    			p165.textContent = "Charles has made his way to an Antarctic research facility. The buildings have been wrecked, and the occupants are missing. He wants to search the wreckage for clues. The GM tells him to roll Investigate against Fair (+2) difficulty. Charles gets [0][0][+][+] on the dice, plus his Average (+1) Investigate, for a Good (+3) effort. A success! The GM describes the clue he finds: footprints in the snow, made by creatures walking on many thin, inhuman legs.";
+    			t847 = space();
+    			p166 = element("p");
+    			p166.textContent = "Overcome actions are often used to determine whether a character can access or notice a particular fact or clue. Keep a close eye on those success-at-a-cost options when that’s the case. If missing a detail would cause your story to stall, take failure off the table, and focus on the cost instead.";
+    			t849 = space();
+    			h315 = element("h3");
+    			h315.textContent = "Create an Advantage";
+    			t851 = space();
+    			p167 = element("p");
+    			p167.textContent = "Create A situation aspect or gain a benefit from an existing aspect.";
+    			t853 = space();
+    			p168 = element("p");
+    			t854 = text("You can use the ");
+    			strong157 = element("strong");
+    			strong157.textContent = "create an advantage";
+    			t856 = text(" action to change the course of the story. By using your skills to introduce new aspects or add invokes to existing aspects, you can stack the deck for yourself and your teammates. You might change the circumstances (barring a door or creating a plan), discover new information (learning a monster’s weakness through research), or take advantage of something already known (such as a CEO’s taste for scotch).");
+    			t857 = space();
+    			p169 = element("p");
+    			t858 = text("An aspect created (or discovered) by creating an advantage works like any other: It defines the narrative circumstances and can allow, prevent, or impede actions—for instance, you cannot read a spell if the room has been made ");
+    			strong158 = element("strong");
+    			strong158.textContent = "Pitch Black";
+    			t860 = text(". It can also be invoked (");
+    			strong159 = element("strong");
+    			strong159.textContent = "page XX";
+    			t862 = text(") or compelled (");
+    			strong160 = element("strong");
+    			strong160.textContent = "page XX";
+    			t864 = text("). In addition, creating an advantage gives you one or more ");
+    			strong161 = element("strong");
+    			strong161.textContent = "free invokes";
+    			t866 = text(" of the created aspect. A free invoke, as the name suggests, lets you invoke an aspect without spending a fate point. You can even let your allies use free invokes you have created.");
+    			t867 = space();
+    			p170 = element("p");
+    			p170.textContent = "When you roll to create an advantage, specify whether you’re creating a new aspect or taking advantage of an existing one. If the former, are you attaching the aspect to an ally, opponent, or the environment? If you’re attaching it to an opponent, they can take the defend action to oppose you. Otherwise you’ll usually face a difficulty, but the GM can decide if something or someone opposes your efforts with a defend roll instead.";
+    			t869 = space();
+    			p171 = element("p");
+    			p171.textContent = "Your outcomes when creating a new aspect are:";
+    			t871 = space();
+    			ul10 = element("ul");
+    			li51 = element("li");
+    			p172 = element("p");
+    			strong162 = element("strong");
+    			strong162.textContent = "If you fail,";
+    			t873 = text(" you either don’t create the aspect (failure) or you create it but the enemy gets the free invoke (success at a cost). If you succeed at a cost, the final aspect may need to be rewritten to benefit the enemy. This may still be worth it because aspects are true (");
+    			strong163 = element("strong");
+    			strong163.textContent = "page XX";
+    			t875 = text(").");
+    			t876 = space();
+    			li52 = element("li");
+    			p173 = element("p");
+    			strong164 = element("strong");
+    			strong164.textContent = "If you tie,";
+    			t878 = text(" you don’t create an aspect, but you do get a boost (");
+    			strong165 = element("strong");
+    			strong165.textContent = "page XX";
+    			t880 = text(").");
+    			t881 = space();
+    			li53 = element("li");
+    			p174 = element("p");
+    			strong166 = element("strong");
+    			strong166.textContent = "If you succeed,";
+    			t883 = text(" you create a situation aspect with one free invoke on it.");
+    			t884 = space();
+    			li54 = element("li");
+    			p175 = element("p");
+    			strong167 = element("strong");
+    			strong167.textContent = "If you succeed with style,";
+    			t886 = text(" you create a situation aspect with ");
+    			em24 = element("em");
+    			em24.textContent = "two";
+    			t888 = text(" free invokes on it.");
+    			t889 = space();
+    			p176 = element("p");
+    			p176.textContent = "With an existing known or unknown aspect the outcomes are:";
+    			t891 = space();
+    			ul11 = element("ul");
+    			li55 = element("li");
+    			p177 = element("p");
+    			strong168 = element("strong");
+    			strong168.textContent = "If you fail,";
+    			t893 = text(" and the aspect was known, the enemy gets a free invoke. If it was unknown, they may choose to reveal it to get a free invoke.");
+    			t894 = space();
+    			li56 = element("li");
+    			p178 = element("p");
+    			strong169 = element("strong");
+    			strong169.textContent = "If you tie,";
+    			t896 = text(" you gain a boost if the aspect was unknown; it stays unknown. If the aspect is known, you get a free invoke on it instead.");
+    			t897 = space();
+    			li57 = element("li");
+    			p179 = element("p");
+    			strong170 = element("strong");
+    			strong170.textContent = "If you succeed,";
+    			t899 = text(" gain a free invoke on the aspect, revealing it if unknown.");
+    			t900 = space();
+    			li58 = element("li");
+    			p180 = element("p");
+    			strong171 = element("strong");
+    			strong171.textContent = "If you succeed with style,";
+    			t902 = text(" gain two free invokes, revealing it if unknown.");
+    			t903 = space();
+    			p181 = element("p");
+    			p181.textContent = "Ethan is face-to-something with a shoggoth, a massive and tireless fleshy beast. He knows it’s too powerful to attack directly, so he decides his best bet is to distract it: “I’d like to make a Molotov cocktail and set this thing on fire!” he announces.";
+    			t905 = space();
+    			p182 = element("p");
+    			p182.textContent = "The GM decides that actually hitting the shoggoth is trivial, so this is a Crafts roll—how quickly can he find and weaponize something flammable? The difficulty is set at Good (+3). Ethan has Average (+1) Crafts but rolls [0][+][+][+], giving a Great (+4) effort.";
+    			t907 = space();
+    			p183 = element("p");
+    			t908 = text("Ethan cobbles together the Molotov and tosses it at the beast. The shoggoth is now ");
+    			strong172 = element("strong");
+    			strong172.textContent = "On Fire";
+    			t910 = text(", and Ethan has one free invoke on that aspect. The shoggoth is definitely distracted, and if it does try to chase him, Ethan can use that invoke to help himself get away.");
+    			t911 = space();
+    			h316 = element("h3");
+    			h316.textContent = "Attack";
+    			t913 = space();
+    			p184 = element("p");
+    			p184.textContent = "Attack to harm the enemy.";
+    			t915 = space();
+    			p185 = element("p");
+    			t916 = text("The ");
+    			strong173 = element("strong");
+    			strong173.textContent = "attack";
+    			t918 = text(" action is how you try to take out an opponent—whether you’re looking to kill a loathsome monster, or knock out an innocent guard who doesn’t know the truth about what he’s guarding. An attack can be unloading with a machine gun, throwing a solid punch, or casting a baleful spell.");
+    			t919 = space();
+    			p186 = element("p");
+    			p186.textContent = "Keep in mind whether or not harming your target is even possible. Not every attack is equal. You can’t just punch a kaiju and hope to hurt it. Determine whether the attack even has a chance of being successful before you start rolling the dice. A number of powerful beings may have specific weaknesses that need to be exploited, or some means of defense you must get through before you can even begin to hurt them.";
+    			t921 = space();
+    			p187 = element("p");
+    			p187.textContent = "Your outcomes when attacking are:";
+    			t923 = space();
+    			ul12 = element("ul");
+    			li59 = element("li");
+    			p188 = element("p");
+    			strong174 = element("strong");
+    			strong174.textContent = "If you fail,";
+    			t925 = text(" you fail to connect—the attack is parried, dodged, or maybe just absorbed by armor.");
+    			t926 = space();
+    			li60 = element("li");
+    			p189 = element("p");
+    			strong175 = element("strong");
+    			strong175.textContent = "If you tie,";
+    			t928 = text(" maybe you barely connect, maybe you cause the defender to flinch. Either way, you get a boost (");
+    			strong176 = element("strong");
+    			strong176.textContent = "page XX";
+    			t930 = text(").");
+    			t931 = space();
+    			li61 = element("li");
+    			p190 = element("p");
+    			strong177 = element("strong");
+    			strong177.textContent = "If you succeed,";
+    			t933 = text(" you deal a hit equal to the difference between your attack’s total and the defense’s effort. The defender must absorb this hit with stress or consequences, or else be taken out (");
+    			strong178 = element("strong");
+    			strong178.textContent = "page XX";
+    			t935 = text(").");
+    			t936 = space();
+    			li62 = element("li");
+    			p191 = element("p");
+    			strong179 = element("strong");
+    			strong179.textContent = "If you succeed with style,";
+    			t938 = text(" you deal a hit just like a success, but you may reduce the shifts of the hit by one to get a boost.");
+    			t939 = space();
+    			p192 = element("p");
+    			p192.textContent = "Ruth has stumbled across a corpse raised by arcane powers to fulfill some dark purpose. She decides to punch it. She has Great (+4) Fight but rolls [-][-][0][0], giving a Fair (+2) effort.";
+    			t941 = space();
+    			h317 = element("h3");
+    			h317.textContent = "Defend";
+    			t943 = space();
+    			p193 = element("p");
+    			p193.textContent = "Defend to survive an attack or interfere with a foe’s action.";
+    			t945 = space();
+    			p194 = element("p");
+    			t946 = text("Is a monster trying to eat your face? Is a foe pushing you out of the way as they flee your wrath? What about when that cultist tries to stab you in both kidneys? ");
+    			strong180 = element("strong");
+    			strong180.textContent = "Defend";
+    			t948 = text(", defend, defend.");
+    			t949 = space();
+    			p195 = element("p");
+    			t950 = text("Defend is the only reactive action in ");
+    			em25 = element("em");
+    			em25.textContent = "Fate Condensed";
+    			t952 = text(". You use it to stop something from happening outside your turn, so you’re often facing an opposing roll rather than a set difficulty. Your enemy rolls, and you immediately roll to defend, so long as you’re the target or can justify your opposition (which often makes you the target). Aspects or stunts may provide justification.");
+    			t953 = space();
+    			p196 = element("p");
+    			p196.textContent = "Your outcomes when defending are:";
+    			t955 = space();
+    			ul13 = element("ul");
+    			li63 = element("li");
+    			p197 = element("p");
+    			strong181 = element("strong");
+    			strong181.textContent = "If you fail";
+    			t957 = text(" against an attack, you take a hit, which you must absorb with stress (");
+    			strong182 = element("strong");
+    			strong182.textContent = "page XX";
+    			t959 = text(") or consequences (");
+    			strong183 = element("strong");
+    			strong183.textContent = "page XX";
+    			t961 = text("). Regardless, the enemy succeeds as described for their action.");
+    			t962 = space();
+    			li64 = element("li");
+    			p198 = element("p");
+    			strong184 = element("strong");
+    			strong184.textContent = "If you tie,";
+    			t964 = text(" proceed according to the tie result for the opposed action.");
+    			t965 = space();
+    			li65 = element("li");
+    			p199 = element("p");
+    			strong185 = element("strong");
+    			strong185.textContent = "If you succeed,";
+    			t967 = text(" you don’t take a hit or you deny the enemy’s action.");
+    			t968 = space();
+    			li66 = element("li");
+    			p200 = element("p");
+    			strong186 = element("strong");
+    			strong186.textContent = "If you succeed with style,";
+    			t970 = text(" you don’t take a hit, you deny the enemy’s action, and you even get a boost as you gain the upper hand for a moment.");
+    			t971 = space();
+    			p201 = element("p");
+    			p201.textContent = "Continuing from the previous example, the corpse gets to defend itself against Ruth. The GM rolls [-][0][0][+], which doesn’t change the creature’s Mediocre (+0) Athletics.";
+    			t973 = space();
+    			p202 = element("p");
+    			p202.textContent = "Because Ruth’s effort was higher, her attack succeeds by two shifts, and the corpse is a little closer to being down for good. Had the corpse rolled better, then its defense would have succeeded, and the undead monstrosity would have avoided taking a hit.";
+    			t975 = space();
+    			h415 = element("h4");
+    			h415.textContent = "Which skills can be used to attack and defend?";
+    			t977 = space();
+    			p203 = element("p");
+    			p203.textContent = "The default list of skills follows these guidelines:";
+    			t979 = space();
+    			ul14 = element("ul");
+    			li67 = element("li");
+    			li67.textContent = "Fight and Shoot can be used to make physical attacks.";
+    			t981 = space();
+    			li68 = element("li");
+    			li68.textContent = "Athletics can be used to defend against any physical attack.";
+    			t983 = space();
+    			li69 = element("li");
+    			li69.textContent = "Fight can be used to defend against melee physical attacks.";
+    			t985 = space();
+    			li70 = element("li");
+    			li70.textContent = "Provoke can be used to make a mental attack.";
+    			t987 = space();
+    			li71 = element("li");
+    			li71.textContent = "Will can be used to defend against mental attacks.";
+    			t989 = space();
+    			p204 = element("p");
+    			p204.textContent = "Other skills may gain permission to attack or defend under special circumstances, as determined by the GM or table consensus. Some stunts may grant broader, guaranteed permission when circumstances might otherwise not do so. When a skill can’t be used to attack or defend but might help with it, prepare for it by using that skill with the create an advantage action, and use the free invokes generated on your next attack or defend roll.";
+    			t991 = space();
+    			h15 = element("h1");
+    			h15.textContent = "Aspects and Fate Points";
+    			t993 = space();
+    			hr12 = element("hr");
+    			t994 = space();
+    			p205 = element("p");
+    			t995 = text("An ");
+    			strong187 = element("strong");
+    			strong187.textContent = "aspect";
+    			t997 = text(" is a word or phrase that describes something special about a person, place, thing, situation, or group. Almost anything you can think of can have aspects. A person might have a reputation as the ");
+    			strong188 = element("strong");
+    			strong188.textContent = "Greatest Sharpshooter in the Wasteland";
+    			t999 = text(" (see below for more about these kinds of aspects). A room might be ");
+    			strong189 = element("strong");
+    			strong189.textContent = "On Fire";
+    			t1001 = text(" after you knock over an oil lamp. After an encounter with a monster, you might be ");
+    			strong190 = element("strong");
+    			strong190.textContent = "Terrified";
+    			t1003 = text(". Aspects let you change the story in ways that go along with your character’s tendencies, skills, or problems.");
+    			t1004 = space();
+    			h27 = element("h2");
+    			h27.textContent = "Aspects Are Always True";
+    			t1006 = space();
+    			hr13 = element("hr");
+    			t1007 = space();
+    			p206 = element("p");
+    			t1008 = text("You can invoke aspects for a bonus to a roll (");
+    			strong191 = element("strong");
+    			strong191.textContent = "page XX";
+    			t1010 = text(") and compel them to create a complication (");
+    			strong192 = element("strong");
+    			strong192.textContent = "page XX";
+    			t1012 = text("). But even when those aren’t in play, aspects still affect the narrative. When you have that flesh-wrapped monstrosity ");
+    			strong193 = element("strong");
+    			strong193.textContent = "Pinned in a Hydraulic Press";
+    			t1014 = text(", that is ");
+    			em26 = element("em");
+    			em26.textContent = "true";
+    			t1016 = text(". It can’t do much stuck in there, and it’s not getting out easy.");
+    			t1017 = space();
+    			p207 = element("p");
+    			t1018 = text("In essence, “aspects are always true” means that ");
+    			strong194 = element("strong");
+    			strong194.textContent = "aspects can grant or withdraw permission for what can happen in the story";
+    			t1020 = text(" (they can also affect difficulty: see ");
+    			strong195 = element("strong");
+    			strong195.textContent = "page XX";
+    			t1022 = text("). If the aforementioned monstrosity is ");
+    			strong196 = element("strong");
+    			strong196.textContent = "Pinned";
+    			t1024 = text(", the GM (and everyone else) has to respect that. The creature has lost permission to move until something happens which removes that aspect, either a successful overcome (which itself might require a justifying aspect like ");
+    			strong197 = element("strong");
+    			strong197.textContent = "Superhuman Strength";
+    			t1026 = text(") or someone foolishly reversing the press. Similarly, if you have ");
+    			strong198 = element("strong");
+    			strong198.textContent = "Cybernetically Enhanced Legs";
+    			t1028 = text(", you’ve arguably gained permission to leap over walls in a single bound without even having to roll for it.");
+    			t1029 = space();
+    			p208 = element("p");
+    			t1030 = text("That’s not to say you can create any aspect you want and use its truth like a club. Aspects grant a lot of power to shape the story, yes, but with that power comes the responsibility to play within the story’s constraints. Aspects have to line up with the table’s sense of what actually passes muster. ");
+    			strong199 = element("strong");
+    			strong199.textContent = "If an aspect doesn’t pass the sniff test, it needs to be reworded.";
+    			t1032 = space();
+    			p209 = element("p");
+    			t1033 = text("Sure, you might ");
+    			em27 = element("em");
+    			em27.textContent = "like";
+    			t1035 = text(" to use create an advantage to inflict the aspect ");
+    			strong200 = element("strong");
+    			strong200.textContent = "Dismembered";
+    			t1037 = text(" on that fungal super-soldier, but that clearly steps on the toes of the attack action, and besides, it takes a bit more work to lop her arm off than that (could work as a consequence, though—see the next page). You might ");
+    			em28 = element("em");
+    			em28.textContent = "say";
+    			t1039 = text(" you’re the ");
+    			strong201 = element("strong");
+    			strong201.textContent = "World’s Best Shot";
+    			t1041 = text(", but you’ll need to back that up with your skills. And as much as you’d like to make yourself ");
+    			strong202 = element("strong");
+    			strong202.textContent = "Bulletproof";
+    			t1043 = text(", removing permission for someone to use small arms fire to harm you, that is unlikely to fly unless the game you’re playing involves using aspects-as-superpowers.");
+    			t1044 = space();
+    			h28 = element("h2");
+    			h28.textContent = "What Kinds of Aspects Are There?";
+    			t1046 = space();
+    			hr14 = element("hr");
+    			t1047 = space();
+    			p210 = element("p");
+    			t1048 = text("There’s an endless variety of aspects (see ");
+    			strong203 = element("strong");
+    			strong203.textContent = "page XX";
+    			t1050 = text(" for more), but no matter what they’re called, they all work pretty much the same way. The main difference is how long they stick around before going away.");
+    			t1051 = space();
+    			h318 = element("h3");
+    			h318.textContent = "Character Aspects";
+    			t1053 = space();
+    			p211 = element("p");
+    			t1054 = text("These aspects are on your character sheet, such as your high concept and trouble. They describe personality traits, important details about your past, relationships you have with others, important items or titles you possess, problems you’re dealing with or goals you’re working toward, or reputations and obligations you carry. These aspects primarily change during milestones (");
+    			strong204 = element("strong");
+    			strong204.textContent = "page XX";
+    			t1056 = text(").");
+    			t1057 = space();
+    			p212 = element("p");
+    			strong205 = element("strong");
+    			strong205.textContent = "Examples:";
+    			t1059 = space();
+    			strong206 = element("strong");
+    			strong206.textContent = "Leader of My Band of Survivors; Attention to Detail; I Must Protect My Brother";
+    			t1061 = space();
+    			h319 = element("h3");
+    			h319.textContent = "Situation Aspects";
+    			t1063 = space();
+    			p213 = element("p");
+    			p213.textContent = "These aspects describe the surroundings or scenario where the action is taking place. A situation aspect usually vanishes at the end of the scene it was part of, or when someone takes some action that would change or get rid of it. Essentially, they last only as long as the situation they represent lasts.";
+    			t1065 = space();
+    			p214 = element("p");
+    			strong207 = element("strong");
+    			strong207.textContent = "Examples:";
+    			t1067 = space();
+    			strong208 = element("strong");
+    			strong208.textContent = "On Fire; Bright Sunlight; Crowd of Angry People; Knocked to the Ground; Pursued by the Police";
+    			t1069 = space();
+    			h320 = element("h3");
+    			h320.textContent = "Consequences";
+    			t1071 = space();
+    			p215 = element("p");
+    			t1072 = text("These aspects represent injuries or other lasting trauma taken by absorbing a hit, often from attacks (");
+    			strong209 = element("strong");
+    			strong209.textContent = "page XX";
+    			t1074 = text(").");
+    			t1075 = space();
+    			p216 = element("p");
+    			strong210 = element("strong");
+    			strong210.textContent = "Examples:";
+    			t1077 = space();
+    			strong211 = element("strong");
+    			strong211.textContent = "Sprained Ankle; Concussion; Debilitating Self-Doubt";
+    			t1079 = space();
+    			h321 = element("h3");
+    			h321.textContent = "Boosts";
+    			t1081 = space();
+    			p217 = element("p");
+    			t1082 = text("A ");
+    			strong212 = element("strong");
+    			strong212.textContent = "boost";
+    			t1084 = text(" is a special kind of aspect, representing an extremely temporary or minor situation. You cannot compel a boost or spend a fate point to invoke it. You may invoke it once for free, after which it vanishes. An unused boost vanishes when the advantage it represents no longer exists, which may be a few seconds or the duration of a single action. They never persist beyond the end of a scene, and you can hold off naming one until you’re using it. If you’re in control of a boost, you may pass it to an ally if there’s rationale for it.");
+    			t1085 = space();
+    			p218 = element("p");
+    			strong213 = element("strong");
+    			strong213.textContent = "Examples:";
+    			t1087 = space();
+    			strong214 = element("strong");
+    			strong214.textContent = "In My Sights; Distracted; Unstable Footing";
+    			t1089 = space();
+    			h29 = element("h2");
+    			h29.textContent = "What Can I Do with Aspects?";
+    			t1091 = space();
+    			hr15 = element("hr");
+    			t1092 = space();
+    			h322 = element("h3");
+    			h322.textContent = "Earning Fate Points";
+    			t1094 = space();
+    			p219 = element("p");
+    			t1095 = text("One way you can earn fate points is by letting your character’s aspects be ");
+    			strong215 = element("strong");
+    			strong215.textContent = "compelled";
+    			t1097 = text(" (");
+    			strong216 = element("strong");
+    			strong216.textContent = "page XX";
+    			t1099 = text(") against you to complicate the situation or make your life harder. You may also get a fate point payout if someone uses your aspect against you in a hostile invoke (");
+    			strong217 = element("strong");
+    			strong217.textContent = "page XX";
+    			t1101 = text(") or when you concede (");
+    			strong218 = element("strong");
+    			strong218.textContent = "page XX";
+    			t1103 = text(").");
+    			t1104 = space();
+    			p220 = element("p");
+    			t1105 = text("Remember, each session, you also start with fate points at least equal to your ");
+    			strong219 = element("strong");
+    			strong219.textContent = "refresh";
+    			t1107 = text(". If you were compelled more than you invoked in the prior session, you’ll show up at the next one with more. See ");
+    			strong220 = element("strong");
+    			strong220.textContent = "page XX";
+    			t1109 = text(" for details.");
+    			t1110 = space();
+    			h323 = element("h3");
+    			h323.textContent = "Invokes";
+    			t1112 = space();
+    			p221 = element("p");
+    			t1113 = text("To unlock the true power of aspects and make them help you, you’ll need to spend ");
+    			strong221 = element("strong");
+    			strong221.textContent = "fate points";
+    			t1115 = text(" to ");
+    			strong222 = element("strong");
+    			strong222.textContent = "invoke";
+    			t1117 = text(" them during dice rolls (");
+    			strong223 = element("strong");
+    			strong223.textContent = "page XX";
+    			t1119 = text("). Keep track of your fate points with pennies or glass beads or poker chips or some other tokens.");
+    			t1120 = space();
+    			p222 = element("p");
+    			t1121 = text("You can also invoke aspects for free, ");
+    			em29 = element("em");
+    			em29.textContent = "if";
+    			t1123 = text(" you have a free invoke from you or an ally creating an advantage you can use (");
+    			strong224 = element("strong");
+    			strong224.textContent = "page XX";
+    			t1125 = text(").");
+    			t1126 = space();
+    			h416 = element("h4");
+    			h416.textContent = "The Ellipsis Trick";
+    			t1128 = space();
+    			p223 = element("p");
+    			p223.textContent = "If you want an easy way to ensure you have room to incorporate aspects into a roll, try narrating your action with an ellipsis at the end (“...”), and then finish the action with the aspect you want to invoke. Like this:";
+    			t1130 = space();
+    			p224 = element("p");
+    			t1131 = text("Ryan says, “So I’m trying to decipher the runes and...” (rolls the dice, hates the result) “...and ");
+    			strong225 = element("strong");
+    			strong225.textContent = "If I Haven’t Been There, I’ve Read About It";
+    			t1133 = text("...” (spends a fate point) “...so I easily start rambling about their origin.”");
+    			t1134 = space();
+    			h417 = element("h4");
+    			h417.textContent = "Hostile Invocations";
+    			t1136 = space();
+    			p225 = element("p");
+    			t1137 = text("Most of the time an aspect is invoked, it’s a character aspect or a situation aspect. Sometimes you’ll invoke enemies’ character aspects ");
+    			em30 = element("em");
+    			em30.textContent = "against";
+    			t1139 = text(" them. This is called a ");
+    			strong226 = element("strong");
+    			strong226.textContent = "hostile invocation";
+    			t1141 = text(", and it works just like invoking any other aspect—pay a fate point and get a +2 to your roll or reroll the dice. There’s one small difference—");
+    			strong227 = element("strong");
+    			strong227.textContent = "when you make a hostile invocation, you give the fate point to the enemy.";
+    			t1143 = text(" But they don’t get to use the fate point until after the scene is over. This payout only applies when a fate point is actually spent on a hostile invocation. Free invokes do not trigger a payout.");
+    			t1144 = space();
+    			h418 = element("h4");
+    			h418.textContent = "Invoking to Declare Story Details";
+    			t1146 = space();
+    			p226 = element("p");
+    			t1147 = text("You may add an important or unlikely detail to the story based on an aspect in play. Don’t spend a fate point when “aspects are always true” (");
+    			strong228 = element("strong");
+    			strong228.textContent = "page XX";
+    			t1149 = text(") applies. Pay when it’s a stretch—or, table willing, when there’s no relevant aspect.");
+    			t1150 = space();
+    			h324 = element("h3");
+    			h324.textContent = "Compels";
+    			t1152 = space();
+    			p227 = element("p");
+    			t1153 = text("Aspects can be ");
+    			strong229 = element("strong");
+    			strong229.textContent = "compelled";
+    			t1155 = text(" to complicate the situation and earn fate points. To compel an aspect, the GM or a player offers a fate point to the player whose character is being compelled, and tells them why an aspect is making things more difficult or complicated. If you refuse the compel, you must spend a fate point from your own supply and describe how your character avoids the complication. Yes, this means that if you don’t have any fate points, you can’t refuse a compel!");
+    			t1156 = space();
+    			p228 = element("p");
+    			strong230 = element("strong");
+    			strong230.textContent = "Any aspect can be compelled";
+    			t1158 = text(" — whether it’s a character aspect, situation aspect, or consequence—but it must be something that affects the character being compelled.");
+    			t1159 = space();
+    			p229 = element("p");
+    			strong231 = element("strong");
+    			strong231.textContent = "Anyone can offer a compel.";
+    			t1161 = text(" The player proposing the compel must spend one of their own fate points. The GM then takes over running the compel for the affected target. The GM does not lose a fate point by offering a compel—they have a limited pool of fate points for invoking aspects, but can compel as much as they’d like.");
+    			t1162 = space();
+    			p230 = element("p");
+    			strong232 = element("strong");
+    			strong232.textContent = "Compels can be retroactive.";
+    			t1164 = text(" If a player finds they have roleplayed themself into a complication related to one of their aspects or a situation aspect that concerns them, they can ask the GM if that counts as a ");
+    			strong233 = element("strong");
+    			strong233.textContent = "self-compel";
+    			t1166 = text(". If the group agrees, the GM slides the player a fate point.");
+    			t1167 = space();
+    			p231 = element("p");
+    			strong234 = element("strong");
+    			strong234.textContent = "It’s okay to recognize a compel as off-the-mark and withdraw it.";
+    			t1169 = text(" If the group agrees that a proposed compel wasn’t appropriate, it should be withdrawn at no cost to the compelled character.");
+    			t1170 = space();
+    			h419 = element("h4");
+    			h419.textContent = "Compels Are Complications, Not Stymies";
+    			t1172 = space();
+    			p232 = element("p");
+    			p232.textContent = "When offering a compel, make sure that the complication is a course of action or major change in circumstance, not a denial of options.";
+    			t1174 = space();
+    			p233 = element("p");
+    			p233.textContent = "“Oh, you’ve got sand in your eyes, so you shoot at the creature and miss,” is not a compel. It denies action rather than complicating anything.";
+    			t1176 = space();
+    			p234 = element("p");
+    			p234.textContent = "“You know, curse your luck, I think that the sand in your eyes means you can’t really see anything. Your shots at the shoggoth go wild, puncturing a few barrels that are now gushing gasoline toward the fire pit.” This is a much better compel. It changes the scene, ratchets up the tension, and gives the players something new to think about.";
+    			t1178 = space();
+    			p235 = element("p");
+    			t1179 = text("For some ideas about what does and doesn’t work as a compel, check out the discussion of types of compels found in ");
+    			em31 = element("em");
+    			em31.textContent = "Fate Core System";
+    			t1181 = text(" starting on page 72 of that book, or online at: ");
+    			a3 = element("a");
+    			em32 = element("em");
+    			em32.textContent = "https://fate-srd.com/fate-core/invoking-compelling-aspects#types-of-compels";
+    			t1183 = space();
+    			h420 = element("h4");
+    			h420.textContent = "Events and Decisions";
+    			t1185 = space();
+    			p236 = element("p");
+    			t1186 = text("There are two general kinds of compels: ");
+    			strong235 = element("strong");
+    			strong235.textContent = "events";
+    			t1188 = text(" and ");
+    			strong236 = element("strong");
+    			strong236.textContent = "decisions";
+    			t1190 = text(".");
+    			t1191 = space();
+    			p237 = element("p");
+    			p237.textContent = "An event compel is something that happens to a character because of an external force. That external force connects with the aspect in some way, resulting in an unfortunate complication.";
+    			t1193 = space();
+    			p238 = element("p");
+    			p238.textContent = "A decision compel is internal, where the character’s flaws or competing values get in the way of better judgment. The aspect guides the character to make a particular choice—and the fallout of that choice creates a complication for them.";
+    			t1195 = space();
+    			p239 = element("p");
+    			p239.textContent = "In either case, a resulting complication is key! Without a complication, there is no compel.";
+    			t1197 = space();
+    			h421 = element("h4");
+    			h421.textContent = "Hostile Invocations or Compels?";
+    			t1199 = space();
+    			p240 = element("p");
+    			p240.textContent = "Don’t confuse hostile invocations and compels! Though they are similar—they are ways to give a character an immediate problem in exchange for a fate point—they work differently.";
+    			t1201 = space();
+    			p241 = element("p");
+    			t1202 = text("A compel creates a ");
+    			em33 = element("em");
+    			em33.textContent = "narrative change";
+    			t1204 = text(". The decision to compel a character’s aspect isn’t something that happens in-universe; rather, it’s the GM or player proposing a change to the story. The effect can be broad, but the target gets the fate point immediately if they accept the compel, and may choose to refuse the compel.");
+    			t1205 = space();
+    			p242 = element("p");
+    			t1206 = text("A hostile invocation is a ");
+    			em34 = element("em");
+    			em34.textContent = "mechanical effect";
+    			t1208 = text(". The target doesn’t get a chance to refuse the invocation—but as with any invocation, you will need to explain how that aspect makes sense to invoke. And while they do get a fate point, they don’t get to use it in the current scene. However, the ultimate result is much more constrained: a +2 bonus or one reroll of the dice.");
+    			t1209 = space();
+    			p243 = element("p");
+    			t1210 = text("Compels let you, as a player or GM, change what a scene is ");
+    			em35 = element("em");
+    			em35.textContent = "about";
+    			t1212 = text(". They throw a wrench in the narrative. Using them against an opponent is a risky proposition—they might refuse, or accomplish their objective despite the complication thanks to the shiny new fate point you handed them.");
+    			t1213 = space();
+    			p244 = element("p");
+    			p244.textContent = "Hostile invocations help you in the current moment. In addition to your own aspects, you have your opponent’s aspects available to invoke, giving you more options and making scenes more dynamic and connected.";
+    			t1215 = space();
+    			h210 = element("h2");
+    			h210.textContent = "How Can I Add and Remove Aspects?";
+    			t1217 = space();
+    			hr16 = element("hr");
+    			t1218 = space();
+    			p245 = element("p");
+    			t1219 = text("You can create or discover a situation aspect using the create an advantage action (");
+    			strong237 = element("strong");
+    			strong237.textContent = "page XX";
+    			t1221 = text("). You may also create boosts that way, or as a result of a tie or success with style when you overcome an obstacle, attack, or defend.");
+    			t1222 = space();
+    			p246 = element("p");
+    			t1223 = text("You can remove an aspect provided you can think of a way your character could do so—blast the ");
+    			strong238 = element("strong");
+    			strong238.textContent = "Raging Fire";
+    			t1225 = text(" with a fire extinguisher, use evasive maneuvers to escape the pursuing guard that’s ");
+    			strong239 = element("strong");
+    			strong239.textContent = "On Your Tail";
+    			t1227 = text(". Depending on the situation, that might require an overcome action (");
+    			strong240 = element("strong");
+    			strong240.textContent = "page XX";
+    			t1229 = text("); in this case, an opponent could use a defend action to try to preserve the aspect, if they can describe how they do so.");
+    			t1230 = space();
+    			p247 = element("p");
+    			t1231 = text("However, if there’s no narrative block to removing an aspect, you can simply do so. If you’re ");
+    			strong241 = element("strong");
+    			strong241.textContent = "All Tied Up";
+    			t1233 = text(" and then a friend unties you, the aspect goes away. If there’s nothing stopping you, there’s no need to roll.");
+    			t1234 = space();
+    			h211 = element("h2");
+    			h211.textContent = "Other Kinds of Aspects";
+    			t1236 = space();
+    			hr17 = element("hr");
+    			t1237 = space();
+    			p248 = element("p");
+    			t1238 = text("We’ve covered the standard aspect types on ");
+    			strong242 = element("strong");
+    			strong242.textContent = "page XX";
+    			t1240 = text(". These additional types are optional, but may add value to your game. To some extent these are variants on character aspects (if you expand your notion of what counts as a character) and situation aspects (if you change your notion of how long those last).");
+    			t1241 = space();
+    			p249 = element("p");
+    			strong243 = element("strong");
+    			strong243.textContent = "Organization aspects:";
+    			t1243 = text(" Sometimes you might be dealing with a whole organization that operates under a certain set of principles. Consider giving the organization aspects which any member of it can access as if it were their own.");
+    			t1244 = space();
+    			p250 = element("p");
+    			strong244 = element("strong");
+    			strong244.textContent = "Scenario aspects:";
+    			t1246 = text(" Sometimes a particular plot might introduce a new “trope” that shows up time and again in the storyline. Consider defining this as an aspect which is available to all characters in the story until that part of the story concludes.");
+    			t1247 = space();
+    			p251 = element("p");
+    			strong245 = element("strong");
+    			strong245.textContent = "Setting aspects:";
+    			t1249 = text(" Like a scenario aspect, the setting of your campaign itself may have recurring themes. Unlike a scenario aspect, these aspects don’t go away.");
+    			t1250 = space();
+    			p252 = element("p");
+    			strong246 = element("strong");
+    			strong246.textContent = "Zone aspects:";
+    			t1252 = text(" You can attach situation aspects to a particular place on the map represented by a zone (");
+    			strong247 = element("strong");
+    			strong247.textContent = "page XX";
+    			t1254 = text("). This can add extra dynamism to your group’s interactions with the map. A GM can encourage this by making an “up for grabs” free invoke available on a zone aspect at the start of the scene, drawing characters (player and non-player alike) to leverage that aspect as part of their early strategy.");
+    			t1255 = space();
+    			h16 = element("h1");
+    			h16.textContent = "Challenges, Conflicts, and Contests";
+    			t1257 = space();
+    			hr18 = element("hr");
+    			t1258 = space();
+    			p253 = element("p");
+    			t1259 = text("Many times, you will be able to resolve an action with a single roll of the dice—do you crack the safe, avoid security, or convince the reporter to give you their notes? Other times you’ll face extended engagements that take many rolls to resolve. For those cases, we offer three resolution tools: ");
+    			strong248 = element("strong");
+    			strong248.textContent = "challenges";
+    			t1261 = text(", ");
+    			strong249 = element("strong");
+    			strong249.textContent = "contests";
+    			t1263 = text(", and ");
+    			strong250 = element("strong");
+    			strong250.textContent = "conflicts";
+    			t1265 = text(". Each does things a little differently, depending on the goal of the engagement and the opposition involved.");
+    			t1266 = space();
+    			ul15 = element("ul");
+    			li72 = element("li");
+    			strong251 = element("strong");
+    			strong251.textContent = "A challenge is a complicated or dynamic situation.";
+    			t1268 = text(" You’ll be opposed by someone or something, but there isn’t a dominant “other side.” This is how you might play out a researcher looking for clues in an ancient tome, the party negotiator distracting the librarian, and the bruiser holding back untold horrors from entering the library all at the same time.");
+    			t1269 = space();
+    			li73 = element("li");
+    			strong252 = element("strong");
+    			strong252.textContent = "A contest is a situation where two or more parties are pursuing mutually exclusive goals, but not actively harming one another.";
+    			t1271 = text(" Contests are perfect for chases, debates, and races of all sorts. (And just because the parties are not trying to harm each other doesn’t mean that harm can’t befall them!)");
+    			t1272 = space();
+    			li74 = element("li");
+    			strong253 = element("strong");
+    			strong253.textContent = "A conflict is when characters can and want to harm one another.";
+    			t1274 = text(" Wrestling in the mud with a cultist as knives stab at bellies, riddling a swarm of ghouls with bullets as their claws rake at your flesh, and an exchange of vicious barbs with your rival under the watchful eye of the queen—these are all conflicts.");
+    			t1275 = space();
+    			h212 = element("h2");
+    			h212.textContent = "Setting Up Scenes";
+    			t1277 = space();
+    			hr19 = element("hr");
+    			t1278 = space();
+    			p254 = element("p");
+    			p254.textContent = "Regardless of the type of scene, the GM will start by setting the essential pieces into place, so that the players know what resources are available and what complications are in play.";
+    			t1280 = space();
+    			h325 = element("h3");
+    			h325.textContent = "Zones";
+    			t1282 = space();
+    			p255 = element("p");
+    			strong254 = element("strong");
+    			strong254.textContent = "Zones";
+    			t1284 = text(" are a representation of the physical space—a quick map broken into a few discrete sections. A conflict in a remote farmhouse might have four zones: the first floor, second floor, front yard, and back woods. Two to four zones are sufficient to handle most conflicts. Large or complicated scenes may require more. Try to keep your zone map to a simple sketch, something that fits on a note card or can be quickly drawn on a whiteboard.");
+    			t1285 = space();
+    			p256 = element("p");
+    			p256.textContent = "Zones help guide the story by shaping what is possible. Who you can attack and where you can move depend on the zone you’re in.";
+    			t1287 = space();
+    			p257 = element("p");
+    			strong255 = element("strong");
+    			strong255.textContent = "Anyone in a zone can interact with everyone and everything in that zone.";
+    			t1289 = text(" This means you can hit, stab, or otherwise physically engage with people and things in your zone. Need to open that wall safe in the bedroom? You’ll have to be in that zone. Anything outside your zone is usually beyond your reach—you’ll need to move to get there, or use something that can extend your reach there (telekinesis, a gun, etc).");
+    			t1290 = space();
+    			p258 = element("p");
+    			t1291 = text("Moving between zones is easy, as long as there’s nothing in your way. ");
+    			strong256 = element("strong");
+    			strong256.textContent = "You can move to an adjacent zone in addition to your action during an exchange (**";
+    			t1293 = text("page XX**");
+    			strong257 = element("strong");
+    			strong257.textContent = ") as long as nothing is in your way.";
+    			t1295 = text(" If your movement is impeded, it takes your action to do so. Make an overcome roll to climb a wall, rush past a group of cultists, or leap across rooftops. If you fail, you stay in your zone or the movement costs you something. You can also use your action to move ");
+    			em36 = element("em");
+    			em36.textContent = "anywhere";
+    			t1297 = text(" on the map—though the GM is within rights to set a high difficulty if it’s an epic movement.");
+    			t1298 = space();
+    			p259 = element("p");
+    			p259.textContent = "If something isn’t risky or interesting enough to merit a roll, then it isn’t an impediment to movement. For instance, you don’t need to use up your action opening an unlocked door—that’s just a part of the movement.";
+    			t1300 = space();
+    			p260 = element("p");
+    			p260.textContent = "Shooting lets you attack from a distance. Ranged attacks can target enemies in adjacent zones or maybe further, if the zones are clear enough. If there’s a creature rooting around in the bedroom upstairs and around the corner, you can’t shoot it from the bottom of the stairs. Pay attention to the way the zones and situation aspects are set up when deciding what’s fair game or not.";
+    			t1302 = space();
+    			h326 = element("h3");
+    			h326.textContent = "Situation Aspects";
+    			t1304 = space();
+    			p261 = element("p");
+    			p261.textContent = "When setting the scene, the GM should think of interesting and dynamic environmental features that can constrain the action or provide opportunities to change the situation by using them. Three to five details are more than enough. Use these categories as a guide:";
+    			t1306 = space();
+    			ul16 = element("ul");
+    			li75 = element("li");
+    			strong258 = element("strong");
+    			strong258.textContent = "Tone, mood, or weather";
+    			t1308 = text(" — darkness, lightning, and howling winds");
+    			t1309 = space();
+    			li76 = element("li");
+    			strong259 = element("strong");
+    			strong259.textContent = "Impediments to movement";
+    			t1311 = text(" — connected by ladders, covered in slime, and filled with smoke");
+    			t1312 = space();
+    			li77 = element("li");
+    			strong260 = element("strong");
+    			strong260.textContent = "Cover and obstructions";
+    			t1314 = text(" — vehicles, pillars, and crates");
+    			t1315 = space();
+    			li78 = element("li");
+    			strong261 = element("strong");
+    			strong261.textContent = "Dangerous features";
+    			t1317 = text(" — crates of TNT, barrels of oil, and eldritch artifacts crackling with electricity");
+    			t1318 = space();
+    			li79 = element("li");
+    			strong262 = element("strong");
+    			strong262.textContent = "Usable objects";
+    			t1320 = text(" — improvised weapons, statues or bookshelves to knock over, and doors to be barred");
+    			t1321 = space();
+    			p262 = element("p");
+    			t1322 = text("Anyone can invoke and compel these aspects, so remember to take them into account when you wrestle that cultist to the ground amid the ");
+    			strong263 = element("strong");
+    			strong263.textContent = "Caustic Slime Covering Everything";
+    			t1324 = text(".");
+    			t1325 = space();
+    			p263 = element("p");
+    			t1326 = text("More situation aspects can be written down as the scene plays out. If it makes sense that there are ");
+    			strong264 = element("strong");
+    			strong264.textContent = "Deep Shadows";
+    			t1328 = text(" in the recesses of the catacombs, go ahead and write that down when a player asks if there are any shadows they can use to hide. Other aspects come into play because characters use the create an advantage action. Things like ");
+    			strong265 = element("strong");
+    			strong265.textContent = "Flames Everywhere!";
+    			t1330 = text(" don’t just happen without character action. Well. Usually.");
+    			t1331 = space();
+    			h422 = element("h4");
+    			h422.textContent = "Free Invokes on the scene’s aspects?";
+    			t1333 = space();
+    			p264 = element("p");
+    			p264.textContent = "It’s up to the GM to decide if a situation aspect arising from the scene’s setup provides a free invoke to the players (or even to the NPCs). Some of the scene’s aspects might provide a clever player just the advantage they need right away—and a free invoke can be a strong incentive to drive players to interact with the environment. Free invokes also might end up on the scene’s aspects at the start due to preparations made in advance.";
+    			t1335 = space();
+    			h423 = element("h4");
+    			h423.textContent = "Zone Aspects";
+    			t1337 = space();
+    			p265 = element("p");
+    			t1338 = text("A mentioned on ");
+    			strong266 = element("strong");
+    			strong266.textContent = "page XX";
+    			t1340 = text(", Some situation aspects might apply to specific zones on the map, and not others. That’s okay—it can add some extra texture, opportunity, and challenge to the map that might be lacking otherwise.");
+    			t1341 = space();
+    			h327 = element("h3");
+    			h327.textContent = "Turn Order";
+    			t1343 = space();
+    			p266 = element("p");
+    			t1344 = text("Often, you won’t need to know who is acting precisely when, but in contests and conflicts turn order can become important. These scenes take place over a series of ");
+    			strong267 = element("strong");
+    			strong267.textContent = "exchanges";
+    			t1346 = text(". In an exchange, each involved character can take one overcome, create an advantage, or attack action, and can move once. (Contests work slightly differently; see ");
+    			strong268 = element("strong");
+    			strong268.textContent = "page XX";
+    			t1348 = text(".) Because defending is a reaction to someone else’s action, characters can defend as many times as they need to during other characters’ turns, so long as they can justify their ability to interfere based on what’s already been established in the story.");
+    			t1349 = space();
+    			p267 = element("p");
+    			p267.textContent = "At the start of a scene, the GM and players decide who goes first based on the situation, then the active player picks who goes next. The GM’s characters are selected in the turn order just like the PCs, with the GM deciding who goes next after the NPCs have acted. After everyone has taken a turn, the last player picks who goes next at the start of the next exchange.";
+    			t1351 = space();
+    			p268 = element("p");
+    			t1352 = text("Cassandra and Ruth have stumbled across a small group of cultists, led by an acolyte in a golden mask, performing some arcane ritual. Because the cultists are focused on their work, the GM declares that the PCs will go first in this conflict. The players decide that Cassandra will act first: she creates an advantage against the masked cultist, ");
+    			strong269 = element("strong");
+    			strong269.textContent = "Distracted";
+    			t1354 = text(", by running directly at them screaming. It’s crude but effective. To make the best use of the situation aspect, Cassandra’s player decides that Ruth should go next. Ruth throws a dagger at the masked acolyte, and immediately invokes ");
+    			strong270 = element("strong");
+    			strong270.textContent = "Distracted";
+    			t1356 = text(" to improve her attack. It’s not enough to take out the acolyte in one hit, but it is a one-two punch that leaves the cultist reeling.");
+    			t1357 = space();
+    			p269 = element("p");
+    			p269.textContent = "Unfortunately, now that all the PCs in the scene have acted, Ruth has no choice but to pick one of the cultists to go next. She chooses the masked acolyte. The GM smiles, because they know that once the acolyte acts, she can have the cultists act until the end of the round, at which point they can choose the masked acolyte to start the next exchange. The PCs may have gotten a good first hit in, but now the cultists get to fight back.";
+    			t1359 = space();
+    			p270 = element("p");
+    			t1360 = text("This method of determining turn order goes by several names in online discussion: elective action order, and “popcorn,” “handoff,” or “Balsera Style” initiative, the last one named after Fate Core author Leonard Balsera, who planted the seed of the idea. You can learn more about this method and its strategies at ");
+    			a4 = element("a");
+    			a4.textContent = "https://www.deadlyfredly.com/2012/02/marvel/";
+    			t1362 = space();
+    			h213 = element("h2");
+    			h213.textContent = "Teamwork";
+    			t1364 = space();
+    			hr20 = element("hr");
+    			t1365 = space();
+    			p271 = element("p");
+    			p271.textContent = "Fate offers three methods for teamwork: combining the same skill from multiple characters on a single roll, stacking free invokes by creating advantages to set up a team member for success, and invoking aspects on an ally’s behalf.";
+    			t1367 = space();
+    			p272 = element("p");
+    			p272.textContent = "When you combine skills, figure out who has the highest level in the skill among the participants. Each other participant who has at least Average (+1) in that skill adds a +1 to the highest person’s skill level. Providing support like this uses your action. Supporters face the same costs and consequences as the person making the roll. The maximum total bonus a team may provide this way is equal to the highest person’s skill level.";
+    			t1369 = space();
+    			p273 = element("p");
+    			p273.textContent = "Otherwise, you can create an advantage on your turn and let an ally use the free invokes when it makes sense that they can. Outside of your turn, you may invoke an aspect to add a bonus to someone else’s roll.";
+    			t1371 = space();
+    			h214 = element("h2");
+    			h214.textContent = "Challenges";
+    			t1373 = space();
+    			hr21 = element("hr");
+    			t1374 = space();
+    			p274 = element("p");
+    			p274.textContent = "Many of the difficulties your characters face can be handled with a single roll in the course of a scene—disarm the bomb, find the tome of eldritch lore, or decode the cypher. But sometimes things are more fluid, more complicated, and it’s just not as simple as finding the tome of eldritch lore because the yacht you’re searching is careening through Hong Kong harbor while a monsoon rages outside and the boat’s library is on fire—which is totally not your fault.";
+    			t1376 = space();
+    			p275 = element("p");
+    			t1377 = text("In complicated circumstances with no opposition, you’ll want to use a ");
+    			strong271 = element("strong");
+    			strong271.textContent = "challenge";
+    			t1379 = text(": a series of overcome actions that tackle a bigger issue. Challenges let the entire group work together in a scene, and they keep things dynamic.");
+    			t1380 = space();
+    			p276 = element("p");
+    			p276.textContent = "To set up a challenge, the GM considers the situation and picks a number of skills that can contribute to the success of the group. Treat each action as a separate overcome roll. Teamwork actions are allowed, but may introduce costs or complications, such as running out of time or other inefficiencies.";
+    			t1382 = space();
+    			p277 = element("p");
+    			p277.textContent = "GMs, do your best to give each character in the scene an opportunity to contribute—aim for a number of skills equal to the number of characters involved. Downsize if you expect to have some of the characters pulled away or distracted by other priorities, or if you want to make room for teamwork. For more difficult challenges, build the challenge with more needed actions than there are characters, in addition to adjusting the difficulties of the actions.";
+    			t1384 = space();
+    			p278 = element("p");
+    			p278.textContent = "After the rolls have been made, the GM will evaluate the successes, failures, and costs of each action as they interpret how the scene proceeds. It could be that the results lead into another challenge, a contest, or even a conflict. A mix of successes and failures should allow the characters to move forward with a partial victory as they face new entangling complications.";
+    			t1386 = space();
+    			h215 = element("h2");
+    			h215.textContent = "Contests";
+    			t1388 = space();
+    			hr22 = element("hr");
+    			t1389 = space();
+    			p279 = element("p");
+    			t1390 = text("A ");
+    			strong272 = element("strong");
+    			strong272.textContent = "contest";
+    			t1392 = text(" is when two or more sides are in direct opposition but there isn’t a conflict. This doesn’t mean one side doesn’t ");
+    			em37 = element("em");
+    			em37.textContent = "want";
+    			t1394 = text(" to hurt the other. Contests may involve the group trying to escape a threat before it cuts off any chance of victory.");
+    			t1395 = space();
+    			p280 = element("p");
+    			t1396 = text("At the start of a contest, everyone involved declares their intent, what they hope to get out of it. If there are multiple PCs involved, they can be on the same or different sides, depending on their goals—");
+    			em38 = element("em");
+    			em38.textContent = "e.g.,";
+    			t1398 = text(" in a foot race, each character might be on their own side. ");
+    			strong273 = element("strong");
+    			strong273.textContent = "In a contest, the PCs can’t or aren’t trying to harm the enemy.";
+    			t1400 = text(" External threats (e.g., erupting volcano, angry god) may attack any or all sides; those threats might also be a participant in the contest.");
+    			t1401 = space();
+    			p281 = element("p");
+    			p281.textContent = "Contests take place over a series of exchanges. Each side takes one overcome action to do something to achieve their goals during each exchange. Only one character on each side takes the overcome action in each exchange, but their allies can provide teamwork and try to create advantages to assist (which comes with some risk—see below). The overcome actions can be against passive difficulties—if the contestants are facing separate environmental challenges—or compared against one another when they’re in direct competition.";
+    			t1403 = space();
+    			p282 = element("p");
+    			t1404 = text("At the end of each exchange, compare the efforts of each side’s action. The side with the highest effort marks a ");
+    			strong274 = element("strong");
+    			strong274.textContent = "victory";
+    			t1406 = text(". If the victor succeeds with style—and no one else did—then they mark ");
+    			strong275 = element("strong");
+    			strong275.textContent = "two";
+    			t1408 = text(" victories. The first one to three victories wins the contest. (You can always decide instead to run an extended contest requiring more victories, though we recommend no more than five.)");
+    			t1409 = space();
+    			p283 = element("p");
+    			t1410 = text("When there’s a tie for the highest effort, no one marks a victory, and an ");
+    			strong276 = element("strong");
+    			strong276.textContent = "unexpected twist";
+    			t1412 = text(" happens. The GM will introduce a new situation aspect to reflect how the scene, terrain, or situation has changed.");
+    			t1413 = space();
+    			p284 = element("p");
+    			p284.textContent = "In contests where a threate is trying to harm any of the contestants, everyone on a side takes a hit when their contest roll is lower than the threat's attack roll or static difficulty rating. They take shifts equal to the shifts of failure. Just like in a conflict, if a character can’t absorb all the shifts of a hit, they are taken out.";
+    			t1415 = space();
+    			h328 = element("h3");
+    			h328.textContent = "Creating Advantages in a Contest";
+    			t1417 = space();
+    			p285 = element("p");
+    			t1418 = text("During any exchange, your side can try to create advantages before making your overcome roll. The target, or anyone else who can reasonably interfere, may oppose with a defend roll as normal. Each participant may attempt to create an advantage in addition to rolling or providing a teamwork bonus (");
+    			strong277 = element("strong");
+    			strong277.textContent = "page XX";
+    			t1420 = text("). If you fail to create an advantage, you have a choice: either your side forfeits its overcome roll, or you may “succeed at a cost” (preserving your roll or teamwork bonus) by giving the other side a free invoke instead. If you at least tie, proceed as normal with your roll or bonus.");
+    			t1421 = space();
+    			h216 = element("h2");
+    			h216.textContent = "Conflicts";
+    			t1423 = space();
+    			hr23 = element("hr");
+    			t1424 = space();
+    			p286 = element("p");
+    			t1425 = text("When the heroes get into a straight-up fight—whether with the authorities, cultists, or some unspeakable horror—and can win, you have a ");
+    			strong278 = element("strong");
+    			strong278.textContent = "conflict";
+    			t1427 = text(". In other words, use conflicts when violence or coercion is a reasonable means to the ends of the PCs.");
+    			t1428 = space();
+    			p287 = element("p");
+    			t1429 = text("Conflicts may seem the most straightforward—after all, the history of roleplaying games is built on combat simulators. But keep in mind a key part of their description: the characters involved have the capability to harm ");
+    			em39 = element("em");
+    			em39.textContent = "each other";
+    			t1431 = text(". If it’s one-sided—say you’re trying to punch a living mountain—there’s no chance you can hurt it. That’s not a conflict. That’s a contest, probably where the PCs are trying to escape or find the means to fight back.");
+    			t1432 = space();
+    			p288 = element("p");
+    			p288.textContent = "Conflicts can be physical or mental. Physical conflicts can be shoot-outs, sword-fights, or ramming extradimensional beings with trucks. Mental conflicts include arguments with loved ones, interrogations, and eldritch assaults upon the mind.";
+    			t1434 = space();
+    			p289 = element("p");
+    			t1435 = text("Timing matters when using some kinds of teamwork (");
+    			strong279 = element("strong");
+    			strong279.textContent = "page XX";
+    			t1437 = text("). You can invoke an aspect on your ally’s behalf to improve their roll at any time. You can help an ally ");
+    			em40 = element("em");
+    			em40.textContent = "before";
+    			t1439 = text(" their turn comes around by creating an advantage or giving a +1 bonus as your action. If they take their turn ahead of you in the exchange, you can’t create an advantage to help them, but you can use up your turn (skipping it for that exchange) to give them a +1 teamwork bonus.");
+    			t1440 = space();
+    			h329 = element("h3");
+    			h329.textContent = "Taking Harm";
+    			t1442 = space();
+    			p290 = element("p");
+    			p290.textContent = "When an attack is successful, the defender must absorb the hit, which has shifts equal to the difference between the attack’s effort and defense’s effort.";
+    			t1444 = space();
+    			p291 = element("p");
+    			t1445 = text("You can absorb shifts of a hit by marking stress boxes and by taking consequences. If you can’t or don’t absorb all of the shifts, you are ");
+    			strong280 = element("strong");
+    			strong280.textContent = "taken out";
+    			t1447 = text(" (");
+    			strong281 = element("strong");
+    			strong281.textContent = "page XX";
+    			t1449 = text(")—you’re removed from the scene, and the attacker decides how it plays out.");
+    			t1450 = space();
+    			p292 = element("p");
+    			p292.textContent = "A series of regrettable decisions has put Charles in a dank basement, confronting a ghoul that very much wants to eat him. The ghoul attacks, lunging with its sharp claws; this is an attack using its Fair (+2) Fight. The GM rolls [0][0][+][+], bringing the effort up to Great (+4). Charles tries to leap out of the way with his Good (+3) Athletics, but rolls [0][0][0][-], taking his effort down to Fair (+2). Because the ghoul’s attack effort was two steps higher than Charles’s defense effort, Charles must absorb two shifts. He marks the first two of his three physical stress boxes; already the fight is proving dangerous.";
+    			t1452 = space();
+    			h424 = element("h4");
+    			h424.textContent = "Stress";
+    			t1454 = space();
+    			p293 = element("p");
+    			t1455 = text("Simply put, ");
+    			strong282 = element("strong");
+    			strong282.textContent = "stress";
+    			t1457 = text(" is plot armor. It’s a resource used to keep your character up and in the fight when their foes hit them. When you mark stress boxes to absorb a hit, you’re saying things like, “That ");
+    			em41 = element("em");
+    			em41.textContent = "just";
+    			t1459 = text(" missed me,” or “Whoa, that knocked the wind out of me but I’m okay.” That said, it’s a limited resource—most characters only have three boxes for physical stress and three boxes for mental stress, though characters with high Will or Physique have more.");
+    			t1460 = space();
+    			p294 = element("p");
+    			t1461 = text("You’ll find two ");
+    			strong283 = element("strong");
+    			strong283.textContent = "stress tracks";
+    			t1463 = text(" on your character sheet, one for physical harm and one for mental harm. When you take a hit, you can mark empty stress boxes of the appropriate type to absorb it and stay in the fight. Each stress box you mark absorbs one shift. You can mark multiple stress boxes if you need to.");
+    			t1464 = space();
+    			p295 = element("p");
+    			p295.textContent = "The boxes are binary—either they’re empty and can be used or they’re full and can’t. That’s okay, though. You’ll clear the stress track as soon as you make it through the scene—provided the monsters don’t eat you first.";
+    			t1466 = space();
+    			h425 = element("h4");
+    			h425.textContent = "Consequences";
+    			t1468 = space();
+    			p296 = element("p");
+    			strong284 = element("strong");
+    			strong284.textContent = "Consequences";
+    			t1470 = text(" are new aspects you write on your character sheet when your character takes a hit, representing the real harm and injury your character suffers.");
+    			t1471 = space();
+    			p297 = element("p");
+    			t1472 = text("When you take a consequence to absorb a hit, write an aspect in an empty consequence slot that describes what harm befalls your character. Use the severity of the consequence as a guide: If you were bitten by star spawn, a mild consequence might be ");
+    			strong285 = element("strong");
+    			strong285.textContent = "Nasty Bite";
+    			t1474 = text(", but a moderate consequence could be ");
+    			strong286 = element("strong");
+    			strong286.textContent = "Bite That Won’t Stop Bleeding";
+    			t1476 = text(", and a severe consequence might be ");
+    			strong287 = element("strong");
+    			strong287.textContent = "Crippled Leg";
+    			t1478 = text(".");
+    			t1479 = space();
+    			p298 = element("p");
+    			t1480 = text("While stress turns a hit into a near miss, taking a consequence means you got hit hard. Why would you take a consequence? Because sometimes stress isn’t enough. Remember, you have to absorb ");
+    			em42 = element("em");
+    			em42.textContent = "all";
+    			t1482 = text(" the shifts of the hit to stay in the fight. You only have so many stress boxes. The good news is that consequences can take pretty big hits.");
+    			t1483 = space();
+    			p299 = element("p");
+    			p299.textContent = "Each character starts with three consequence slots—mild, moderate, and severe. Taking a minor consequence absorbs two shifts, a moderate one absorbs four shifts, and a severe one absorbs six shifts.";
+    			t1485 = space();
+    			p300 = element("p");
+    			p300.textContent = "So, if you take a big five-shift hit, you can absorb the whole thing with a single stress box and a moderate consequence. That’s a lot more efficient than spending five of your stress boxes.";
+    			t1487 = space();
+    			p301 = element("p");
+    			t1488 = text("The downside to consequences is that they are aspects—and aspects are always true (");
+    			strong288 = element("strong");
+    			strong288.textContent = "page XX";
+    			t1490 = text("). So if you’ve got ");
+    			strong289 = element("strong");
+    			strong289.textContent = "Gut Shot";
+    			t1492 = text(", your character’s gut is shot! That will mean you can’t do things a gut-shot person can’t do (like run fast). If things get particularly complicated due to this, you might even face a compel on your consequence, too. And, just like the aspects you make when you create an advantage, the character that created the consequence—that is, whoever shot you—gets one free invoke on that consequence. Ouch!");
+    			t1493 = space();
+    			p302 = element("p");
+    			t1494 = text("Charles is still battling the ghoul. It claws at him, this time rolling a [0][0][+][+], adding its Fair (+2) Fight, and invokes its ");
+    			strong290 = element("strong");
+    			strong290.textContent = "Hungry for Flesh";
+    			t1496 = text(" aspect for an additional +2, adding up to a devastating Fantastic (+6) blow. Charles’s [-][-][0][0], added to his Good (+3) Athletics, gives him a merely Average (+1) defense; that’s five shifts he needs to absorb. He chooses to take a moderate consequence. His player and the GM decide that the ghoul gave Charles a ");
+    			strong291 = element("strong");
+    			strong291.textContent = "Gaping Chest Wound";
+    			t1498 = text(". This consequence absorbs four of the shifts, leaving one, which Charles absorbs with his last remaining stress box.");
+    			t1499 = space();
+    			h426 = element("h4");
+    			h426.textContent = "Getting Taken Out";
+    			t1501 = space();
+    			p303 = element("p");
+    			t1502 = text("If you can’t absorb all the shifts of a hit with stress and consequences, you’re ");
+    			strong292 = element("strong");
+    			strong292.textContent = "taken out";
+    			t1504 = text(".");
+    			t1505 = space();
+    			p304 = element("p");
+    			p304.textContent = "Getting taken out is bad. Whoever took you out decides what happens. Given dangerous situations and powerful enemies, this could mean you’re dead, but that’s not the only possibility. The outcome must be in keeping with the scope and scale of the conflict at hand—you won’t die of shame if you lose an argument—but changes to your character sheet (and more) are possible. The outcome should also fit within the boundaries your group has established—if your group feels that characters should never get killed without the player’s consent, that’s perfectly valid.";
+    			t1507 = space();
+    			p305 = element("p");
+    			p305.textContent = "But even when death is on the table (it’s best to be clear about that before a roll), GMs should remember that it’s usually a boring result. A PC that’s been taken out could be lost, kidnapped, imperiled, be forced to take consequences… the list goes on. A character’s death means someone has to make a new character and bring them into the story, but a fate worse than death is limited only by your imagination.";
+    			t1509 = space();
+    			p306 = element("p");
+    			p306.textContent = "Follow the fiction when describing how someone—or something—is taken out. Was a cultist taken out by a barrage of machine gun fire? A spray of red fills the air as they slump with a wet thump to the ground. Were you hurled from the truck as it crossed the 26th Street overpass? You disappear over the edge and are left behind as the conflict rumbles on along the Dan Ryan. Keep death in mind when discussing the terms of being taken out, but often it’s just as interesting to cheat death.";
+    			t1511 = space();
+    			p307 = element("p");
+    			p307.textContent = "The ghoul gets in a very lucky hit, dealing a Legendary (+8) attack against Charles’s Poor (-1) defense. By this point in the conflict, all of Charles’s stress boxes are full, as is his moderate consequence slot. Even if he were to take a mild and a severe consequence at once, absorbing eight shifts, it wouldn’t be enough. As a result, Charles is taken out. The ghoul gets to decide his fate. The GM would be within their rights to have the ghoul kill Charles then and there…but getting killed isn’t the most interesting result.";
+    			t1513 = space();
+    			p308 = element("p");
+    			p308.textContent = "Instead, the GM declares that Charles survives, getting knocked out and dragged to the ghoul’s lair, consequences intact. Charles will wake up lost and very fragile in the pitch-dark catacombs beneath the city. Because he was taken out, Charles has no choice but to accept the terms laid before him.";
+    			t1515 = space();
+    			h427 = element("h4");
+    			h427.textContent = "Conceding";
+    			t1517 = space();
+    			p309 = element("p");
+    			t1518 = text("So how do you keep from dying horribly—or worse? You can interrupt any action in a conflict to ");
+    			strong293 = element("strong");
+    			strong293.textContent = "concede";
+    			t1520 = text(" as long as the dice haven’t hit the table yet. Just give in. Tell everyone that you’re done, that you can’t keep going. Your character loses and exits the conflict, but ");
+    			strong294 = element("strong");
+    			strong294.textContent = "you gain a fate point";
+    			t1522 = text(" plus an extra one for each consequence they took in the current conflict.");
+    			t1523 = space();
+    			p310 = element("p");
+    			t1524 = text("Also, concession means ");
+    			em43 = element("em");
+    			em43.textContent = "you";
+    			t1526 = text(" declare the terms of your loss and how you exit the conflict. You can escape the monsters and live to fight another day. It is a loss, though. You’ll have to give your foe something they want. You can’t concede and describe how you heroically save the day—that’s not on the table anymore.");
+    			t1527 = space();
+    			p311 = element("p");
+    			t1528 = text("Conceding is a powerful tool. You can concede to escape with an action plan for the next fight, a clue as to where to go, or some advantage going forward. You just can’t win ");
+    			em44 = element("em");
+    			em44.textContent = "this";
+    			t1530 = text(" fight.");
+    			t1531 = space();
+    			p312 = element("p");
+    			p312.textContent = "You must concede before your opponent rolls the dice. You can’t wait to see the outcome of the dice and concede when it’s obvious you can’t win—that’s poor form.";
+    			t1533 = space();
+    			p313 = element("p");
+    			p313.textContent = "Some negotiation is expected, here. Look for a solution that works for everyone at the table. If the opposition isn’t on board with the terms of your concession, they can push for rewording those terms, or ask that you sacrifice something different or extra. Because a concession is still a loss for you, that does mean the other side should gain at least part of what they’re after.";
+    			t1535 = space();
+    			p314 = element("p");
+    			p314.textContent = "The more significant the cost you pay, the greater the benefit your side should receive as part of the concession—if certain doom is about to befall the entire group, one member choosing to concede as a heroic (and fatal) last stand could mean everyone else is spared!";
+    			t1537 = space();
+    			h330 = element("h3");
+    			h330.textContent = "Ending a Conflict";
+    			t1539 = space();
+    			p315 = element("p");
+    			t1540 = text("A conflict draws to a close when everyone on one side has either conceded or been taken out. At the end of a conflict, any players who conceded collect their fate points for the concession (");
+    			strong295 = element("strong");
+    			strong295.textContent = "page XX";
+    			t1542 = text("). The GM also pays out fate points owed to players for hostile invokes (");
+    			strong296 = element("strong");
+    			strong296.textContent = "page XX";
+    			t1544 = text(") that happened during the conflict.");
+    			t1545 = space();
+    			h331 = element("h3");
+    			h331.textContent = "Recovering from Conflicts";
+    			t1547 = space();
+    			p316 = element("p");
+    			p316.textContent = "At the end of each scene, every character clears their stress boxes. Consequences take more time and effort to clear.";
+    			t1549 = space();
+    			p317 = element("p");
+    			t1550 = text("To start the ");
+    			strong297 = element("strong");
+    			strong297.textContent = "recovery process";
+    			t1552 = text(", the person treating you will need to succeed at an overcome action with an appropriate skill. Physical injuries typically are addressed using medical knowledge via Academics, while mental consequences are healed with Empathy. This overcome action faces difficulty equal to the severity of the consequence: Fair (+2) for a mild consequence, Great (+4) for moderate, and Fantastic (+6) for severe. These difficulties increase by two when you’re trying to treat yourself (it’s easier to have someone else do that).");
+    			t1553 = space();
+    			p318 = element("p");
+    			t1554 = text("If you succeed on this roll, rewrite the consequence to indicate that it is healing. A ");
+    			strong298 = element("strong");
+    			strong298.textContent = "Broken Arm";
+    			t1556 = text(" may be rewritten as ");
+    			strong299 = element("strong");
+    			strong299.textContent = "Arm in a Cast";
+    			t1558 = text(", for instance.");
+    			t1559 = space();
+    			p319 = element("p");
+    			p319.textContent = "Success here is only the first hurdle—it takes time to clear the consequence.";
+    			t1561 = space();
+    			ul17 = element("ul");
+    			li80 = element("li");
+    			strong300 = element("strong");
+    			strong300.textContent = "Mild";
+    			t1563 = text(" consequences take one full scene after treatment to clear.");
+    			t1564 = space();
+    			li81 = element("li");
+    			strong301 = element("strong");
+    			strong301.textContent = "Moderate";
+    			t1566 = text(" consequences last longer, taking a full session after treatment to clear.");
+    			t1567 = space();
+    			li82 = element("li");
+    			strong302 = element("strong");
+    			strong302.textContent = "Severe";
+    			t1569 = text(" consequences only clear when you reach a breakthrough (");
+    			strong303 = element("strong");
+    			strong303.textContent = "page XX";
+    			t1571 = text(") after treatment.");
+    			t1572 = space();
+    			h17 = element("h1");
+    			h17.textContent = "Advancement";
+    			t1574 = space();
+    			hr24 = element("hr");
+    			t1575 = space();
+    			p320 = element("p");
+    			t1576 = text("As your characters muck about in the storyline, they’ll grow and change. At the end of each session you’ll earn a ");
+    			strong304 = element("strong");
+    			strong304.textContent = "milestone";
+    			t1578 = text(", which lets you move things around on your character sheet. As you conclude each arc of the story, you’ll earn a ");
+    			strong305 = element("strong");
+    			strong305.textContent = "breakthrough";
+    			t1580 = text(", which lets you add things to your character sheet. (Learn more about sessions and arcs on ");
+    			strong306 = element("strong");
+    			strong306.textContent = "page XX";
+    			t1582 = text(".)");
+    			t1583 = space();
+    			h217 = element("h2");
+    			h217.textContent = "Milestones";
+    			t1585 = space();
+    			hr25 = element("hr");
+    			t1586 = space();
+    			p321 = element("p");
+    			p321.textContent = "Milestones happen at the end of a session, part of the way through dealing with a story arc. They are focused on adjusting your character laterally rather than advancing the character. You may not wish to use a milestone, which is fine. It doesn’t always make sense to change your character. The opportunity is there if you need it.";
+    			t1588 = space();
+    			p322 = element("p");
+    			p322.textContent = "During a milestone, you can do one of the following:";
+    			t1590 = space();
+    			ul18 = element("ul");
+    			li83 = element("li");
+    			li83.textContent = "Switch the ranks of any two skills, or replace one Average (+1) skill with one that isn’t on your sheet.";
+    			t1592 = space();
+    			li84 = element("li");
+    			li84.textContent = "Rewrite one stunt.";
+    			t1594 = space();
+    			li85 = element("li");
+    			li85.textContent = "Purchase a new stunt by spending 1 refresh. (Remember, you can’t go below 1 refresh.)";
+    			t1596 = space();
+    			li86 = element("li");
+    			li86.textContent = "Rewrite any one of your aspects, except your high concept.";
+    			t1598 = space();
+    			h218 = element("h2");
+    			h218.textContent = "Breakthroughs";
+    			t1600 = space();
+    			hr26 = element("hr");
+    			t1601 = space();
+    			p323 = element("p");
+    			t1602 = text("Breakthroughs are more significant, letting your character actually grow in power. A breakthrough lets you do one thing from the milestone list. On top of that, you do ");
+    			em45 = element("em");
+    			em45.textContent = "all";
+    			t1604 = text(" of the following:");
+    			t1605 = space();
+    			ul19 = element("ul");
+    			li87 = element("li");
+    			li87.textContent = "Rewrite your character’s high concept, if you care to.";
+    			t1607 = space();
+    			li88 = element("li");
+    			li88.textContent = "If you have any moderate or severe consequences not yet in recovery, you can begin the recovery process and rename them. Any that were already in recovery may now be cleared.";
+    			t1609 = space();
+    			li89 = element("li");
+    			li89.textContent = "Increase the skill rating of one skill by one step—even from Mediocre (+0) to Average (+1).";
+    			t1611 = space();
+    			p324 = element("p");
+    			p324.textContent = "If the GM feels a major plot development has concluded and it’s time for the characters to “power up,” they may also offer one or both of the following:";
+    			t1613 = space();
+    			ul20 = element("ul");
+    			li90 = element("li");
+    			li90.textContent = "Gain a point of refresh, which you can immediately spend to buy a new stunt if you like.";
+    			t1615 = space();
+    			li91 = element("li");
+    			li91.textContent = "Increase a second skill rating by one step.";
+    			t1617 = space();
+    			h332 = element("h3");
+    			h332.textContent = "Improving Skill Ratings";
+    			t1619 = space();
+    			p325 = element("p");
+    			p325.textContent = "When improving a skill rating, you must maintain a “column” structure. Each step may not have more skills than the step below it. That may mean you need to promote a few Mediocre (+0) skills first—or, you may save up your skill points rather than spend them immediately, allowing big increases all at once.";
+    			t1621 = space();
+    			p326 = element("p");
+    			p326.textContent = "Ruth wants to increase her Lore from Average (+1) to Fair (+2), but this means she’d have four Fair (+2) skills and only three Average (+1)…that won’t do. Luckily, she has saved a second skill point from an earlier milestone, so she also increases her Mediocre (+0) Empathy to Average (+1). Now she has one Great (+4), two Good (+3), four Fair (+2), and four Average (+1) skills.";
+    			t1623 = space();
+    			table3 = element("table");
+    			tbody3 = element("tbody");
+    			tr25 = element("tr");
+    			th8 = element("th");
+    			p327 = element("p");
+    			p327.textContent = "The pyramid";
+    			t1625 = space();
+    			td54 = element("td");
+    			t1626 = space();
+    			tr26 = element("tr");
+    			td55 = element("td");
+    			p328 = element("p");
+    			p328.textContent = "+4";
+    			t1628 = space();
+    			td56 = element("td");
+    			p329 = element("p");
+    			dice0 = element("dice");
+    			dice0.textContent = "[+]";
+    			t1630 = space();
+    			tr27 = element("tr");
+    			td57 = element("td");
+    			p330 = element("p");
+    			p330.textContent = "+3";
+    			t1632 = space();
+    			td58 = element("td");
+    			p331 = element("p");
+    			dice1 = element("dice");
+    			dice1.textContent = "[+][+]";
+    			t1634 = space();
+    			tr28 = element("tr");
+    			td59 = element("td");
+    			p332 = element("p");
+    			p332.textContent = "+2";
+    			t1636 = space();
+    			td60 = element("td");
+    			p333 = element("p");
+    			dice2 = element("dice");
+    			dice2.textContent = "[+][+][+]";
+    			t1638 = space();
+    			tr29 = element("tr");
+    			td61 = element("td");
+    			p334 = element("p");
+    			p334.textContent = "+1";
+    			t1640 = space();
+    			td62 = element("td");
+    			p335 = element("p");
+    			dice3 = element("dice");
+    			dice3.textContent = "[+][+][+][+]";
+    			t1642 = space();
+    			table4 = element("table");
+    			tbody4 = element("tbody");
+    			tr30 = element("tr");
+    			th9 = element("th");
+    			p336 = element("p");
+    			p336.textContent = "Not Valid";
+    			t1644 = space();
+    			td63 = element("td");
+    			t1645 = space();
+    			tr31 = element("tr");
+    			td64 = element("td");
+    			p337 = element("p");
+    			p337.textContent = "+4";
+    			t1647 = space();
+    			td65 = element("td");
+    			p338 = element("p");
+    			dice4 = element("dice");
+    			dice4.textContent = "[+]";
+    			t1649 = space();
+    			tr32 = element("tr");
+    			td66 = element("td");
+    			p339 = element("p");
+    			p339.textContent = "+3";
+    			t1651 = space();
+    			td67 = element("td");
+    			p340 = element("p");
+    			dice5 = element("dice");
+    			dice5.textContent = "[+][+]";
+    			t1653 = space();
+    			tr33 = element("tr");
+    			td68 = element("td");
+    			p341 = element("p");
+    			p341.textContent = "+2";
+    			t1655 = space();
+    			td69 = element("td");
+    			p342 = element("p");
+    			dice6 = element("dice");
+    			dice6.textContent = "[+][+][+][+]";
+    			t1657 = space();
+    			tr34 = element("tr");
+    			td70 = element("td");
+    			p343 = element("p");
+    			p343.textContent = "+1";
+    			t1659 = space();
+    			td71 = element("td");
+    			p344 = element("p");
+    			dice7 = element("dice");
+    			dice7.textContent = "[+][+][+]";
+    			t1661 = space();
+    			table5 = element("table");
+    			tbody5 = element("tbody");
+    			tr35 = element("tr");
+    			th10 = element("th");
+    			td72 = element("td");
+    			p345 = element("p");
+    			p345.textContent = "Valid";
+    			t1663 = space();
+    			td73 = element("td");
+    			t1664 = space();
+    			tr36 = element("tr");
+    			td74 = element("td");
+    			p346 = element("p");
+    			p346.textContent = "+4";
+    			t1666 = space();
+    			td75 = element("td");
+    			p347 = element("p");
+    			dice8 = element("dice");
+    			dice8.textContent = "[+]";
+    			t1668 = space();
+    			tr37 = element("tr");
+    			td76 = element("td");
+    			p348 = element("p");
+    			p348.textContent = "+3";
+    			t1670 = space();
+    			td77 = element("td");
+    			p349 = element("p");
+    			dice9 = element("dice");
+    			dice9.textContent = "[+][+]";
+    			t1672 = space();
+    			tr38 = element("tr");
+    			td78 = element("td");
+    			p350 = element("p");
+    			p350.textContent = "+2";
+    			t1674 = space();
+    			td79 = element("td");
+    			p351 = element("p");
+    			dice10 = element("dice");
+    			dice10.textContent = "[+][+][+][+]";
+    			t1676 = space();
+    			tr39 = element("tr");
+    			td80 = element("td");
+    			p352 = element("p");
+    			p352.textContent = "+1";
+    			t1678 = space();
+    			td81 = element("td");
+    			p353 = element("p");
+    			dice11 = element("dice");
+    			dice11.textContent = "[+][+][+][+]";
+    			t1680 = space();
+    			table6 = element("table");
+    			tbody6 = element("tbody");
+    			tr40 = element("tr");
+    			th11 = element("th");
+    			p354 = element("p");
+    			p354.textContent = "Also Valid";
+    			t1682 = space();
+    			tr41 = element("tr");
+    			td82 = element("td");
+    			p355 = element("p");
+    			p355.textContent = "+4";
+    			t1684 = space();
+    			td83 = element("td");
+    			p356 = element("p");
+    			dice12 = element("dice");
+    			dice12.textContent = "[+]";
+    			t1686 = space();
+    			tr42 = element("tr");
+    			td84 = element("td");
+    			p357 = element("p");
+    			p357.textContent = "+3";
+    			t1688 = space();
+    			td85 = element("td");
+    			p358 = element("p");
+    			dice13 = element("dice");
+    			dice13.textContent = "[+][+][+]";
+    			t1690 = space();
+    			tr43 = element("tr");
+    			td86 = element("td");
+    			p359 = element("p");
+    			p359.textContent = "+2";
+    			t1692 = space();
+    			td87 = element("td");
+    			p360 = element("p");
+    			dice14 = element("dice");
+    			dice14.textContent = "[+][+][+]";
+    			t1694 = space();
+    			tr44 = element("tr");
+    			td88 = element("td");
+    			p361 = element("p");
+    			p361.textContent = "+1";
+    			t1696 = space();
+    			td89 = element("td");
+    			p362 = element("p");
+    			dice15 = element("dice");
+    			dice15.textContent = "[+][+][+]";
+    			t1698 = space();
+    			h219 = element("h2");
+    			h219.textContent = "Sessions and Arcs";
+    			t1700 = space();
+    			hr27 = element("hr");
+    			t1701 = space();
+    			p363 = element("p");
+    			p363.textContent = "There are a few assumptions at play here where we talk about sessions and arcs. We’d like to shine some light on those assumptions so you can make adjustments based on how your game differs from them.";
+    			t1703 = space();
+    			p364 = element("p");
+    			t1704 = text("A ");
+    			strong307 = element("strong");
+    			strong307.textContent = "session";
+    			t1706 = text(" is a single session of play comprised of several scenes and a few hours of gameplay. Think of this as similar to a single episode of a television show. It likely falls into the three-to-four hour range.");
+    			t1707 = space();
+    			p365 = element("p");
+    			t1708 = text("An ");
+    			strong308 = element("strong");
+    			strong308.textContent = "arc";
+    			t1710 = text(" is a series of sessions that often contain plot elements that carry over from session to session. Those plot elements don’t have to conclude within an arc, but there are usually significant developments and changes that come about over the course of it. Think of this as similar to a third- or half-season of a television show. It’s likely comprised of about four sessions of play.");
+    			t1711 = space();
+    			p366 = element("p");
+    			p366.textContent = "If your gameplay falls outside of those “likely” ranges, you may want to change how some parts of advancement work. If your arcs run more than four to six sessions of play, you may want to allow Severe consequences to clear after four sessions pass rather than waiting until the end of the arc. If you want advancement to happen more slowly, you might allow improvements like skill points and refresh gains less often. If your group tends to schedule fairly short sessions, you might not hit a milestone at the end of every session. Season to taste; the game is yours to shape!";
+    			t1713 = space();
+    			h18 = element("h1");
+    			h18.textContent = "Being the Game Master";
+    			t1715 = space();
+    			hr28 = element("hr");
+    			t1716 = space();
+    			p367 = element("p");
+    			t1717 = text("As the GM, you are the director of game sessions. Note that you are not the ");
+    			em46 = element("em");
+    			em46.textContent = "boss.**Fate Condensed";
+    			t1719 = text(" is collaborative, and the players have say in what happens to their characters. Your job is to keep things moving by doing these things:");
+    			t1720 = space();
+    			ul21 = element("ul");
+    			li92 = element("li");
+    			strong309 = element("strong");
+    			strong309.textContent = "Run scenes:";
+    			t1722 = text(" A session is made up of scenes. Decide where the scene begins, who’s there, and what’s going on. Decide when all the interesting things have played out and the scene’s over. Skip over the unnecessary stuff; in the same way that you don’t roll dice if the outcome of an action won’t be interesting, don’t have a scene if nothing exciting, dramatic, useful, or fun will happen during it.");
+    			t1723 = space();
+    			li93 = element("li");
+    			strong310 = element("strong");
+    			strong310.textContent = "Adjudicate the rules:";
+    			t1725 = text(" When some question comes up about how to apply the rules, you can discuss it with the players and try to reach an agreeable consensus, but you get final say.");
+    			t1726 = space();
+    			li94 = element("li");
+    			strong311 = element("strong");
+    			strong311.textContent = "Set difficulty:";
+    			t1728 = text(" Decide when rolls are necessary and set their difficulties.");
+    			t1729 = space();
+    			li95 = element("li");
+    			strong312 = element("strong");
+    			strong312.textContent = "Determine the costs of failure:";
+    			t1731 = text(" When a character fails their roll, you decide what the cost of success at a cost will be. You can certainly take suggestions from the player—they may know just how they want their character to get hurt—but you ultimately decide.");
+    			t1732 = space();
+    			li96 = element("li");
+    			strong313 = element("strong");
+    			strong313.textContent = "Play the NPCs:";
+    			t1734 = text(" Each player controls their own character, but you control all the rest, from cultists to monsters to the Big Bad itself.");
+    			t1735 = space();
+    			li97 = element("li");
+    			strong314 = element("strong");
+    			strong314.textContent = "Give the PCs opportunities for action:";
+    			t1737 = text(" If the players don’t know what to do next, it’s your job to give them a nudge. Never let things get too bogged down in indecision or lack of information—do something to shake things up. When in doubt, think about your Big Bad’s tactics and goals to create a spot of bother for the heroes.");
+    			t1738 = space();
+    			li98 = element("li");
+    			strong315 = element("strong");
+    			strong315.textContent = "Make sure everyone gets the spotlight:";
+    			t1740 = text(" Your goal isn’t to defeat the players, but to challenge them. Make sure each PC gets a chance to be the star once in a while. Spread around compels and challenges tailored to the characters’ different abilities and weaknesses.");
+    			t1741 = space();
+    			li99 = element("li");
+    			strong316 = element("strong");
+    			strong316.textContent = "Complicate the PCs’ lives:";
+    			t1743 = text(" In addition to throwing monsters at the characters, you will be the primary source of compels. Players can compel themselves and other characters, of course, but you must ensure that everyone gets opportunities to experience the negative repercussions of their aspects.");
+    			t1744 = space();
+    			li100 = element("li");
+    			strong317 = element("strong");
+    			strong317.textContent = "Build off player choices:";
+    			t1746 = text(" Look at the actions the PCs have taken during play and think about how the world changes and responds. Make the world feel alive by presenting the PCs with those consequences—good and bad—in play.");
+    			t1747 = space();
+    			h220 = element("h2");
+    			h220.textContent = "Setting Difficulty and Opposition";
+    			t1749 = space();
+    			hr29 = element("hr");
+    			t1750 = space();
+    			p368 = element("p");
+    			t1751 = text("Sometimes, a PC’s action will face ");
+    			strong318 = element("strong");
+    			strong318.textContent = "opposition";
+    			t1753 = text(" via a defend roll from another character in the scene. In this case, the opposing character rolls dice and adds their relevant skill rating, just like the PC. If the opposing character has relevant aspects, they can be invoked; the GM can invoke NPCs’ aspects using the fate point in their pool (");
+    			strong319 = element("strong");
+    			strong319.textContent = "page XX";
+    			t1755 = text(").");
+    			t1756 = space();
+    			p369 = element("p");
+    			t1757 = text("But if there’s no opposition, you have to decide on the ");
+    			strong320 = element("strong");
+    			strong320.textContent = "difficulty";
+    			t1759 = text(" of the action:");
+    			t1760 = space();
+    			ul22 = element("ul");
+    			li101 = element("li");
+    			strong321 = element("strong");
+    			strong321.textContent = "Low difficulties";
+    			t1762 = text(", below the PC’s relevant skill rating, are best when you want to give them a chance to show off.");
+    			t1763 = space();
+    			li102 = element("li");
+    			strong322 = element("strong");
+    			strong322.textContent = "Moderate difficulties";
+    			t1765 = text(", near the PC’s relevant skill rating, are best when you want to provide tension but not overwhelm them.");
+    			t1766 = space();
+    			li103 = element("li");
+    			strong323 = element("strong");
+    			strong323.textContent = "High difficulties";
+    			t1768 = text(", much higher than the PC’s relevant skill rating, are best when you want to emphasize how dire or unusual the circumstances are and make them pull out all the stops, or put them in a position where they will need to suffer the consequences of failure.");
+    			t1769 = space();
+    			p370 = element("p");
+    			t1770 = text("Likewise, use the adjective ladder (");
+    			strong324 = element("strong");
+    			strong324.textContent = "page XX";
+    			t1772 = text(") of ratings to help you choose an appropriate difficulty. Is it superbly difficult? Then pick Superb (+5)! Here are a few rules of thumb to get you started.");
+    			t1773 = space();
+    			p371 = element("p");
+    			p371.textContent = "If the task isn’t very tough at all, make it Mediocre (+0)—or just tell the player they succeed without a roll, as long as there’s no serious time pressure or the character has an aspect that suggests they’d be good at it.";
+    			t1775 = space();
+    			p372 = element("p");
+    			p372.textContent = "If you can think of at least one reason why the task is tough, pick Fair (+2); for every extra factor working against them, add another +2 to the difficulty.";
+    			t1777 = space();
+    			p373 = element("p");
+    			t1778 = text("When thinking about those factors, consult what aspects are in play. When something is important enough to be made an aspect, it should get a little attention here. Since aspects are true (");
+    			strong325 = element("strong");
+    			strong325.textContent = "page XX";
+    			t1780 = text("), they might have influence over how easy or difficult something should be. That doesn’t mean that aspects are the only factors to consider, of course! Darkness is darkness regardless of whether or not you decided to make it an aspect on the scene.");
+    			t1781 = space();
+    			p374 = element("p");
+    			p374.textContent = "If the task is impossibly difficult, go as high as you think makes sense. The PC will need to drop some fate points and get lots of help to succeed, but that’s fine.";
+    			t1783 = space();
+    			p375 = element("p");
+    			t1784 = text("For an expanded look at what you can do to create varied and interesting opposition and adversaries for your players, check out the ");
+    			em47 = element("em");
+    			em47.textContent = "Fate Adversary Toolkit";
+    			t1786 = text(", available for sale as a PDF or with its essentials freely available in the online system reference documents at ");
+    			a5 = element("a");
+    			em48 = element("em");
+    			em48.textContent = "https://fate-srd.com/";
+    			t1788 = space();
+    			h221 = element("h2");
+    			h221.textContent = "NPCs";
+    			t1790 = space();
+    			hr30 = element("hr");
+    			t1791 = space();
+    			p376 = element("p");
+    			p376.textContent = "NPCs include bystanders, supporting cast, allies, foes, monsters, and pretty much anything else that might complicate or oppose the efforts of the PCs. You will probably want to create other characters for the PCs to interact with.";
+    			t1793 = space();
+    			h333 = element("h3");
+    			h333.textContent = "Major NPCs";
+    			t1795 = space();
+    			p377 = element("p");
+    			p377.textContent = "If someone is particularly important to the story, you can stat them out just like a PC. This is appropriate for someone who the PCs will deal with a lot, such as an ally, a rival, the representative of a powerful group, or a Big Bad.";
+    			t1797 = space();
+    			p378 = element("p");
+    			t1798 = text("A major NPC doesn’t necessarily follow the same limits as a starting PC. If the NPC is going to be a recurring boss-level threat, give them a higher peak skill (see ");
+    			em49 = element("em");
+    			em49.textContent = "Setting Difficulty and Opposition";
+    			t1800 = text(" on ");
+    			strong326 = element("strong");
+    			strong326.textContent = "page XX";
+    			t1802 = text("), more stunts, and whatever else it takes to make them a danger.");
+    			t1803 = space();
+    			h334 = element("h3");
+    			h334.textContent = "Minor NPCs";
+    			t1805 = space();
+    			p379 = element("p");
+    			p379.textContent = "NPCs that aren’t going to be major, recurring characters don’t need to be nearly as well-defined as major NPCs. For a minor NPC, only define what is absolutely necessary.";
+    			t1807 = space();
+    			p380 = element("p");
+    			t1808 = text("Most minor NPCs will have a single aspect, which is just what they are: ");
+    			strong327 = element("strong");
+    			strong327.textContent = "Guard Dog";
+    			t1810 = text(", ");
+    			strong328 = element("strong");
+    			strong328.textContent = "Obstructive Bureaucrat";
+    			t1812 = text(", or ");
+    			strong329 = element("strong");
+    			strong329.textContent = "Enraged Cultist";
+    			t1814 = text(", etc.");
+    			t1815 = space();
+    			p381 = element("p");
+    			p381.textContent = "If necessary, give them another aspect or two to reflect something interesting about them or a weakness. They may also have a stunt.";
+    			t1817 = space();
+    			p382 = element("p");
+    			p382.textContent = "Give them one or two skills to describe what they’re good at. You can use skills from the skill list or make up something more specific, like Fair (+2) at Getting into Bar Fights or Great (+4) at Biting People.";
+    			t1819 = space();
+    			p383 = element("p");
+    			p383.textContent = "Give them zero to three stress boxes; the more they have, the more of a threat they can be. Generally, they have no consequence slots; if they take a hit with more shifts than they can absorb with stress, they are simply taken out. Minor NPCs aren’t meant to stick around.";
+    			t1821 = space();
+    			h335 = element("h3");
+    			h335.textContent = "Monsters, Big Bads, and Other Threats";
+    			t1823 = space();
+    			p384 = element("p");
+    			p384.textContent = "Like minor NPCs, monsters and other threats (like a storm, a spreading fire, or a squad of armored minions) are written up as characters, but are usually simpler than a PC. You only need to define what is absolutely necessary. Unlike minor NPCs, these threats can be defined really in any way. Break the rules. Give them whatever combination of aspects, skills, stunts, stress, and consequences it will take to make them dangerous, and think about what sort of difficulties they will present to the PCs when determining their ratings.";
+    			t1825 = space();
+    			h222 = element("h2");
+    			h222.textContent = "Your Fate Points";
+    			t1827 = space();
+    			hr31 = element("hr");
+    			t1828 = space();
+    			p385 = element("p");
+    			t1829 = text("At the start of each scene, begin with a pool of fate points equal to the number of PCs. If the scene includes a major NPC or monster that conceded (");
+    			strong330 = element("strong");
+    			strong330.textContent = "page XX";
+    			t1831 = text(") a previous conflict, or received hostile invokes (");
+    			strong331 = element("strong");
+    			strong331.textContent = "page XX";
+    			t1833 = text(") in a previous scene, those fate points are added to your pool. If you received a compel in the prior scene that ended that scene, giving you no opportunity to spend the earned fate point, you may add that point to your pool as well.");
+    			t1834 = space();
+    			p386 = element("p");
+    			p386.textContent = "Charles, Ruth, Cassandra, and Ethan are headed for the final confrontation with Alice Westforth. Previously, she escaped from the heroes by conceding a conflict after she had taken a moderate consequence. That means the GM gets four fate points for the PCs and two more that Alice is bringing along.";
+    			t1836 = space();
+    			p387 = element("p");
+    			p387.textContent = "As the GM, you can spend fate points from this pool to invoke aspects, refuse compels that the players offer NPCs, and use any NPC stunts that require you to—all exactly as the players do.";
+    			t1838 = space();
+    			p388 = element("p");
+    			t1839 = text("**However, you do ");
+    			em50 = element("em");
+    			em50.textContent = "not";
+    			t1841 = text(" need to spend fate points to compel any aspects.**You have an infinite supply of fate points for that purpose.");
+    			t1842 = space();
+    			h223 = element("h2");
+    			h223.textContent = "Safety Tools";
+    			t1844 = space();
+    			hr32 = element("hr");
+    			t1845 = space();
+    			p389 = element("p");
+    			p389.textContent = "GMs (and truly, players as well) have a responsibility to ensure that everyone at the table feels safe in the game and space they’re playing. One way a GM can support this is by offering a framework for anyone at the table to voice a concern or objection. When this happens, it must take priority and must be addressed. Here are some tools that can help make that process more available to the players at the table and more easy to enact when necessary.";
+    			t1847 = space();
+    			ul23 = element("ul");
+    			li104 = element("li");
+    			strong332 = element("strong");
+    			strong332.textContent = "The X-Card:";
+    			t1849 = text(" The X-Card is an optional tool (created by John Stavropoulos) that allows anyone in your game (including you) to edit out any content anyone is uncomfortable with as you play. You can learn more about the X-Card at ");
+    			a6 = element("a");
+    			a6.textContent = "http://tinyurl.com/x-card-rpg";
+    			t1851 = space();
+    			li105 = element("li");
+    			strong333 = element("strong");
+    			strong333.textContent = "Script Change RPG Toolbox:";
+    			t1853 = text(" For something with a bit more nuance and granularity, look to Script Change by Brie Beau Sheldon, which provides options to pause, rewind, skip ahead, and more using an accessibly familiar media-player metaphor. Learn more about Script Change at ");
+    			a7 = element("a");
+    			a7.textContent = "http://tinyurl.com/nphed7m";
+    			t1855 = space();
+    			p390 = element("p");
+    			t1856 = text("Tools like these may also be used like the bogus rule (");
+    			strong334 = element("strong");
+    			strong334.textContent = "page XX";
+    			t1858 = text(") for calibration. They offer a way for players to comfortably advocate for what they’re looking for in the game. Give such tools the respect and support they deserve!");
+    			t1859 = space();
+    			h19 = element("h1");
+    			h19.textContent = "Optional Rules";
+    			t1861 = space();
+    			hr33 = element("hr");
+    			t1862 = space();
+    			p391 = element("p");
+    			p391.textContent = "These are a few optional or alternative rules you can decide to use in your game.";
+    			t1864 = space();
+    			h224 = element("h2");
+    			h224.textContent = "Conditions";
+    			t1866 = space();
+    			hr34 = element("hr");
+    			t1867 = space();
+    			p392 = element("p");
+    			strong335 = element("strong");
+    			strong335.textContent = "Conditions";
+    			t1869 = text("are a substitute for consequences, and replace them entirely. Conditions serve two purposes: they take some of the pressure off of the players and GM to quickly figure out a correctly-worded aspect for an inflicted consequence, and they give you an opportunity to shape the nature of your game by pre-defining the ways lasting harm befalls characters.");
+    			t1870 = space();
+    			p393 = element("p");
+    			t1871 = text("The ");
+    			em51 = element("em");
+    			em51.textContent = "Fate Condensed";
+    			t1873 = text(" version of conditions takes each consequence level and splits it into two conditions of half the value.");
+    			t1874 = space();
+    			p394 = element("p");
+    			strong336 = element("strong");
+    			strong336.textContent = "[1]";
+    			t1876 = space();
+    			strong337 = element("strong");
+    			strong337.textContent = "Hurt";
+    			t1878 = text(" (Mild) ");
+    			strong338 = element("strong");
+    			strong338.textContent = "[1]";
+    			t1880 = space();
+    			strong339 = element("strong");
+    			strong339.textContent = "Scared";
+    			t1882 = text(" (Mild)\n");
+    			strong340 = element("strong");
+    			strong340.textContent = "[2]";
+    			t1884 = space();
+    			strong341 = element("strong");
+    			strong341.textContent = "Injured";
+    			t1886 = text(" (Moderate) ");
+    			strong342 = element("strong");
+    			strong342.textContent = "[2]";
+    			t1888 = space();
+    			strong343 = element("strong");
+    			strong343.textContent = "Shaken";
+    			t1890 = text(" (Moderate)\n");
+    			strong344 = element("strong");
+    			strong344.textContent = "[3]";
+    			t1892 = space();
+    			strong345 = element("strong");
+    			strong345.textContent = "Wounded";
+    			t1894 = text(" (Severe) ");
+    			strong346 = element("strong");
+    			strong346.textContent = "[3]";
+    			t1896 = space();
+    			strong347 = element("strong");
+    			strong347.textContent = "Demoralized";
+    			t1898 = text(" (Severe)");
+    			t1899 = space();
+    			p395 = element("p");
+    			p395.textContent = "These correspond to physical and mental states—but just because you’ve taken a physical hit doesn’t mean you can’t also mark a mental condition, and vice-versa, so long as it makes sense. Attacks are traumatic!";
+    			t1901 = space();
+    			p396 = element("p");
+    			p396.textContent = "Conditions are recovered just like consequences, based on their severity.";
+    			t1903 = space();
+    			p397 = element("p");
+    			t1904 = text("If you would gain an additional mild consequence, instead gain two more boxes on either ");
+    			strong348 = element("strong");
+    			strong348.textContent = "Hurt";
+    			t1906 = text(" or ");
+    			strong349 = element("strong");
+    			strong349.textContent = "Scared";
+    			t1908 = text(", as appropriate.");
+    			t1909 = space();
+    			h336 = element("h3");
+    			h336.textContent = "Moving Conditions Further Apart";
+    			t1911 = space();
+    			p398 = element("p");
+    			t1912 = text("If you would prefer instead to keep physical and mental conditions separate, double the number of boxes on each. That said, there is a cutoff: if two boxes total are marked on either condition in a row, no more boxes may be marked on that row. So if you had one box (out of two) marked on ");
+    			strong350 = element("strong");
+    			strong350.textContent = "Hurt";
+    			t1914 = text(" and none on ");
+    			strong351 = element("strong");
+    			strong351.textContent = "Scared";
+    			t1916 = text(", and then marked either the second ");
+    			strong352 = element("strong");
+    			strong352.textContent = "Hurt";
+    			t1918 = text(" box or first ");
+    			strong353 = element("strong");
+    			strong353.textContent = "Scared";
+    			t1920 = text(" box, you would no longer be able to mark any more boxes on that row.");
+    			t1921 = space();
+    			p399 = element("p");
+    			t1922 = text("If you would gain a mild consequence slot (from high Physique, Will, or a stunt), instead add two more boxes of ");
+    			strong354 = element("strong");
+    			strong354.textContent = "Hurt";
+    			t1924 = text(" or ");
+    			strong355 = element("strong");
+    			strong355.textContent = "Scared";
+    			t1926 = text("as appropriate. These added boxes increase the cutoff threshold for that row, one for one.");
+    			t1927 = space();
+    			h337 = element("h3");
+    			h337.textContent = "Other Versions of Conditions";
+    			t1929 = space();
+    			p400 = element("p");
+    			p400.textContent = "Several published Fate-based games use conditions instead of consequences. Feel free to adopt their implementation instead of this one if it better suits you. Each one achieves much the same purpose for the game: reducing pressure to figure out consequence aspects on the fly, and guiding the nature of the game by limiting the kinds of lasting harm characters can take.";
+    			t1931 = space();
+    			h225 = element("h2");
+    			h225.textContent = "Changing the Skill List";
+    			t1933 = space();
+    			hr35 = element("hr");
+    			t1934 = space();
+    			p401 = element("p");
+    			t1935 = text("As mentioned on ");
+    			strong356 = element("strong");
+    			strong356.textContent = "page XX";
+    			t1937 = text(" skill lists are the first thing to consider tinkering with when making your own Fate game. Our default skill setup presents a list of 19 skills arranged in a pyramid of 10. That list is also structured around a traditional notion of capabilities in various fields of action, in essence addressing the question “what can you do?” Other skill lists aren’t necessarily the same length, arranged the same way, or addressing the same question. With that said, here are some short skill lists to consider, borrow, and modify.");
+    			t1938 = space();
+    			ul24 = element("ul");
+    			li106 = element("li");
+    			strong357 = element("strong");
+    			strong357.textContent = "Actions:";
+    			t1940 = text(" Endure, Fight, Know, Move, Notice, Pilot, Sneak, Speak, Tinker.");
+    			t1941 = space();
+    			li107 = element("li");
+    			strong358 = element("strong");
+    			strong358.textContent = "Approaches:";
+    			t1943 = text(" Careful, Clever, Flashy, Forceful, Quick, Sneaky.");
+    			t1944 = space();
+    			li108 = element("li");
+    			strong359 = element("strong");
+    			strong359.textContent = "Aptitudes:";
+    			t1946 = text(" Athletics, Combat, Leadership, Scholarship, Subterfuge.");
+    			t1947 = space();
+    			li109 = element("li");
+    			strong360 = element("strong");
+    			strong360.textContent = "Attributes:";
+    			t1949 = text(" Strength, Dexterity, Toughness, Intelligence, Charm.");
+    			t1950 = space();
+    			li110 = element("li");
+    			strong361 = element("strong");
+    			strong361.textContent = "Relationships:";
+    			t1952 = text(" Leading, Partnering, Supporting, Solo.");
+    			t1953 = space();
+    			li111 = element("li");
+    			strong362 = element("strong");
+    			strong362.textContent = "Roles:";
+    			t1955 = text(" Driver, Hitter, Hacker, Gearhead, Grifter, Thief, Mastermind.");
+    			t1956 = space();
+    			li112 = element("li");
+    			strong363 = element("strong");
+    			strong363.textContent = "Themes:";
+    			t1958 = text(" Air, Fire, Metal, Mind, Stone, Void, Water, Wind, Wood.");
+    			t1959 = space();
+    			li113 = element("li");
+    			strong364 = element("strong");
+    			strong364.textContent = "Values:";
+    			t1961 = text(" Duty, Glory, Justice, Love, Power, Safety, Truth, Vengeance.");
+    			t1962 = space();
+    			p402 = element("p");
+    			p402.textContent = "If you want a longer list, try starting with the default list, adding, combining, and removing skills from it as needed until you land on what you’re after. You could instead blend together two or more lists from the above in some form.";
+    			t1964 = space();
+    			p403 = element("p");
+    			strong365 = element("strong");
+    			strong365.textContent = "Advancement:";
+    			t1966 = text(" The smaller the number of skills in your list vs. the default, the less frequent you’ll want skill point awards from advancement. Perhaps allow them only during “power ups” (");
+    			strong366 = element("strong");
+    			strong366.textContent = "page XX";
+    			t1968 = text("), or restrict them another way.");
+    			t1969 = space();
+    			p404 = element("p");
+    			strong367 = element("strong");
+    			strong367.textContent = "Alternatives to the pyramid:";
+    			t1971 = space();
+    			ul25 = element("ul");
+    			li114 = element("li");
+    			strong368 = element("strong");
+    			strong368.textContent = "Diamond:";
+    			t1973 = text(" A broad middle (about a third of them) that tapers towards the top and bottom of the range, ");
+    			em52 = element("em");
+    			em52.textContent = "e.g.,";
+    			t1975 = text(" 1 at +0, 2 at +1, 3 at +2, 2 at +3, 1 at +4.");
+    			t1976 = space();
+    			li115 = element("li");
+    			strong369 = element("strong");
+    			strong369.textContent = "Column:";
+    			t1978 = text(" A roughly equal number of skills rated at each tier. If your list is short enough, this might be a line, one skill per tier.");
+    			t1979 = space();
+    			li116 = element("li");
+    			strong370 = element("strong");
+    			strong370.textContent = "Free + Cap:";
+    			t1981 = text(" Give players enough skill points to make a pyramid (or other shape), but don’t mandate it. They can buy whatever, staying under the cap.");
+    			t1982 = space();
+    			p405 = element("p");
+    			strong371 = element("strong");
+    			strong371.textContent = "Coverage:";
+    			t1984 = text(" Make sure to consider how many skills you expect to be rated out of the total. The default list has ratings in 53% (10 of 19). The higher the percentage, the more overlap players might have. Preserve niche protection.");
+    			t1985 = space();
+    			p406 = element("p");
+    			strong372 = element("strong");
+    			strong372.textContent = "Combination:";
+    			t1987 = text(" You may want to have two lists, with players adding together one from each to make their roll. The main thing to keep in mind is keeping the potential totals inside the zero-to-cap range. You might have ratings from +0 to +2 on each list, or -1 to +1 on one and +1 to +3 on the other, etc.");
+    			t1988 = space();
+    			h226 = element("h2");
+    			h226.textContent = "Character Creation As You Play";
+    			t1990 = space();
+    			hr36 = element("hr");
+    			t1991 = space();
+    			p407 = element("p");
+    			t1992 = text("If a player is comfortable making quick creative decisions in the moment, they may enjoy creating characters ");
+    			em53 = element("em");
+    			em53.textContent = "as they play";
+    			t1994 = text(" rather than ahead of time. This mimics the way characters reveal themselves and develop in other media. It’s not for everyone, but for groups where the method clicks it can be a real crowd-pleaser.");
+    			t1995 = space();
+    			p408 = element("p");
+    			p408.textContent = "With this method, characters start with only a name, high concept aspect, and highest skill—if that! As play progresses and they are called on to use an unrated skill, they can choose an empty slot and reveal their knowledge of it in the moment. Similarly, aspects and stunts can be filled in when the circumstances that call for them, right in the moment a fate point is spent or a bonus claimed.";
+    			t1997 = space();
+    			h227 = element("h2");
+    			h227.textContent = "Countdowns";
+    			t1999 = space();
+    			hr37 = element("hr");
+    			t2000 = space();
+    			p409 = element("p");
+    			p409.textContent = "A countdown adds urgency to an adversary or situation: deal with it now or things will get worse. Whether you’re talking about a ticking bomb, a ritual near completion, a bus teetering on the edge of a suspension bridge, or a soldier with a radio who’s about to call in reinforcements, countdowns force the PCs to act quickly or face a worse outcome.";
+    			t2002 = space();
+    			p410 = element("p");
+    			p410.textContent = "Countdowns have three components: a countdown track, one or more triggers, and an outcome.";
+    			t2004 = space();
+    			p411 = element("p");
+    			t2005 = text("The ");
+    			strong373 = element("strong");
+    			strong373.textContent = "countdown track";
+    			t2007 = text(" looks a lot like a stress track: it’s a row of boxes that you mark from left to right. Every time you check off a box, the countdown gets closer to being over. The shorter the track, the faster their doom approaches.");
+    			t2008 = space();
+    			p412 = element("p");
+    			t2009 = text("A ");
+    			strong374 = element("strong");
+    			strong374.textContent = "trigger";
+    			t2011 = text(" is an event that marks a box on the countdown track. It can be as simple as “a minute/hour/day/exchange elapses” or as specific as “the villain takes a consequence or gets taken out.”");
+    			t2012 = space();
+    			p413 = element("p");
+    			t2013 = text("When you mark the last box, the countdown ends and the ");
+    			strong375 = element("strong");
+    			strong375.textContent = "outcome";
+    			t2015 = text(" happens, whatever it is.");
+    			t2016 = space();
+    			p414 = element("p");
+    			p414.textContent = "GMs might wish to reveal the existence of a countdown track to players without telling them what it represents, at first, as a kind of foreshadowing and to turn up the feeling of tension in the story.";
+    			t2018 = space();
+    			p415 = element("p");
+    			p415.textContent = "A countdown can have more than one trigger if you want; perhaps the countdown proceeds at a predictable pace until something happens that accelerates it. You could also give a different trigger to each box on the countdown track, if you want a specific series of events to set off the outcome.";
+    			t2020 = space();
+    			h228 = element("h2");
+    			h228.textContent = "Extreme Consequences";
+    			t2022 = space();
+    			hr38 = element("hr");
+    			t2023 = space();
+    			p416 = element("p");
+    			p416.textContent = "Extreme consequences introduce an optional fourth severity of consequence to your game: something that permanently, irrevocably changes a character.";
+    			t2025 = space();
+    			p417 = element("p");
+    			t2026 = text("Taking an extreme consequence reduces stress taken by 8. When taken, you must ");
+    			strong376 = element("strong");
+    			strong376.textContent = "replace";
+    			t2028 = text(" one of your character’s existing aspects (other than their high concept, which is off-limits) with an aspect that represents the profound change to the character resulting from the harm they’ve taken.");
+    			t2029 = space();
+    			p418 = element("p");
+    			p418.textContent = "By default, there is no option to recover from an extreme consequence. It has become a part of the character now. At your next breakthrough you may rename it to reflect how you’ve come to terms with it, but you can’t go back to the original aspect.";
+    			t2031 = space();
+    			p419 = element("p");
+    			p419.textContent = "Between breakthroughs, a character may only use this option once.";
+    			t2033 = space();
+    			h229 = element("h2");
+    			h229.textContent = "Faster Contests";
+    			t2035 = space();
+    			hr39 = element("hr");
+    			t2036 = space();
+    			p420 = element("p");
+    			p420.textContent = "Some groups may feel contests involve too many attempts to create advantages per exchange. For those groups, try the following method: In each exchange of a contest, each participant may choose only one of these three options:";
+    			t2038 = space();
+    			ul26 = element("ul");
+    			li117 = element("li");
+    			t2039 = text("Make the overcome roll for their side (");
+    			strong377 = element("strong");
+    			strong377.textContent = "page XX";
+    			t2041 = text(").");
+    			t2042 = space();
+    			li118 = element("li");
+    			t2043 = text("Roll to create an advantage, but no teamwork bonus (");
+    			strong378 = element("strong");
+    			strong378.textContent = "page XX";
+    			t2045 = text(").");
+    			t2046 = space();
+    			li119 = element("li");
+    			li119.textContent = "Provide their teamwork bonus to their side’s overcome roll or another’s attempt to create an advantage. Don’t roll.";
+    			t2048 = space();
+    			h230 = element("h2");
+    			h230.textContent = "Full Defense";
+    			t2050 = space();
+    			hr40 = element("hr");
+    			t2051 = space();
+    			p421 = element("p");
+    			t2052 = text("Sometimes a player (or GM) may want their character to go all-in on using defend until their next turn, rather than taking an action on their turn. This is called ");
+    			strong379 = element("strong");
+    			strong379.textContent = "full defense";
+    			t2054 = text(".");
+    			t2055 = space();
+    			p422 = element("p");
+    			t2056 = text("When declaring full defense, you must be clear about the ");
+    			strong380 = element("strong");
+    			strong380.textContent = "focus";
+    			t2058 = text(" of your efforts. By default, you are defending yourself (from attacks and efforts to create advantages on you), but you may wish to specify someone you’re protecting, or a defense against a particular group of aggressors, or a particular effort or outcome you wish to oppose.");
+    			t2059 = space();
+    			p423 = element("p");
+    			strong381 = element("strong");
+    			strong381.textContent = "While on full defense you get a +2 to all defend rolls relevant to your declared focus";
+    			t2061 = text(".");
+    			t2062 = space();
+    			p424 = element("p");
+    			t2063 = text("If nothing comes of it and you haven’t rolled to defend at all by the time your next turn comes around, you gain a boost (");
+    			strong382 = element("strong");
+    			strong382.textContent = "page XX";
+    			t2065 = text(") as you’ve gotten the opportunity to prepare for your next action. This offsets “losing a turn” because you focused your efforts on defending against something that didn’t happen at all.");
+    			t2066 = space();
+    			h231 = element("h2");
+    			h231.textContent = "Obstacles";
+    			t2068 = space();
+    			hr41 = element("hr");
+    			t2069 = space();
+    			p425 = element("p");
+    			t2070 = text("The defining quality of enemies is that they can be attacked and taken out. By contrast, the defining quality of ");
+    			strong383 = element("strong");
+    			strong383.textContent = "obstacles";
+    			t2072 = text(" is that they can’t. Obstacles make scenes demonstrably more difficult on the PCs, but the PCs cannot simply fight them. Obstacles must be circumvented, endured, or rendered irrelevant.");
+    			t2073 = space();
+    			p426 = element("p");
+    			p426.textContent = "While most obstacles are features of the environment, some might be characters that can’t be taken out using conventional methods. The dragon might be a boss, but it might just as easily be a hazard obstacle. The animate statue keeping you from getting to the evil wizard might be a threat, but it could also be a block or a distraction. It all depends on the adversary’s function in the scene, and how PCs must deal with it.";
+    			t2075 = space();
+    			p427 = element("p");
+    			t2076 = text("Obstacles don’t appear in every scene. They serve to accent enemies in the scene, to make them more threatening or memorable, but overuse of obstacles can be frustrating to the PCs, particularly those focused on combat. You ");
+    			em54 = element("em");
+    			em54.textContent = "can";
+    			t2078 = text(" use them to give less combative PCs something to do during a fight, though.");
+    			t2079 = space();
+    			p428 = element("p");
+    			p428.textContent = "There are three kinds of obstacles: hazards, blocks, and distractions.";
+    			t2081 = space();
+    			h338 = element("h3");
+    			h338.textContent = "Hazards";
+    			t2083 = space();
+    			p429 = element("p");
+    			t2084 = text("If an obstacle can attack the PCs, it’s a ");
+    			strong384 = element("strong");
+    			strong384.textContent = "hazard";
+    			t2086 = text(". Fire jets, rolling boulders, or a sniper too far away to be dealt with directly—they’re all hazards. Every hazard has a name, a skill rating, and a Weapon rating (");
+    			strong385 = element("strong");
+    			strong385.textContent = "page XX";
+    			t2088 = text(") of 1 to 4.");
+    			t2089 = space();
+    			p430 = element("p");
+    			p430.textContent = "The hazard’s name is both a skill and an aspect; that is, the name defines what the hazard can do, and its skill rating defines how good it is at doing that, but the name can also be invoked or compelled like any aspect.";
+    			t2091 = space();
+    			p431 = element("p");
+    			t2092 = text("Generally speaking, a hazard’s skill rating should be at least as high as the PCs’ highest skill rating, if not a little bit higher. A hazard with a very high skill rating ");
+    			em55 = element("em");
+    			em55.textContent = "and";
+    			t2094 = text(" a very high Weapon rating will likely take out a PC or two. You could also make a hazard with a lower skill rating but a high Weapon rating, making for something that doesn’t hit often but hits hard when it does. Reversing that makes a hazard that hits frequently but doesn’t do much damage.");
+    			t2095 = space();
+    			p432 = element("p");
+    			p432.textContent = "A hazard acts in the initiative just like the PCs and their enemies do. If your rules require everyone to roll for initiative, hazards will roll with their rating. On its turn each exchange, a hazard acts as implied by its name, and rolls with its rating. If it attacks and hits with a tie or better, add its Weapon rating to its shifts. Hazards can attack or create advantages; they can’t be attacked, and they don’t overcome obstacles.";
+    			t2097 = space();
+    			p433 = element("p");
+    			p433.textContent = "If a player wants to overcome or create an advantage against a hazard, they’ll face passive opposition equal to the hazard’s skill rating.";
+    			t2099 = space();
+    			h339 = element("h3");
+    			h339.textContent = "Blocks";
+    			t2101 = space();
+    			p434 = element("p");
+    			t2102 = text("Where hazards exist to hurt the PCs, ");
+    			strong386 = element("strong");
+    			strong386.textContent = "blocks";
+    			t2104 = text(" prevent them from doing things they want to do. Blocks ");
+    			em56 = element("em");
+    			em56.textContent = "can";
+    			t2106 = text(" cause stress, though they don’t always. The chief differences between blocks and hazards is that blocks don’t take actions and are more difficult to remove. Blocks provide passive opposition in certain circumstances, and can threaten or cause harm if not heeded.");
+    			t2107 = space();
+    			p435 = element("p");
+    			p435.textContent = "Like hazards, blocks have a name and a skill rating, and the name is both a skill and an aspect. Unlike hazards, a block’s skill rating shouldn’t be much higher than one step above the PCs’ highest skill rating; otherwise, things can get frustrating quickly. A block can have a Weapon rating as high as 4, but it doesn’t need to have one.";
+    			t2109 = space();
+    			p436 = element("p");
+    			t2110 = text("Blocks only come into play under specific circumstances. A ");
+    			strong387 = element("strong");
+    			strong387.textContent = "Vat of Acid";
+    			t2112 = text(" only matters when someone tries to cross it or gets thrown into it. A ");
+    			strong388 = element("strong");
+    			strong388.textContent = "Chain Link Fence";
+    			t2114 = text(" only affects someone who tries to get past it. The ");
+    			strong389 = element("strong");
+    			strong389.textContent = "Animate Statue";
+    			t2116 = text(" only prevents entry into a specific room.");
+    			t2117 = space();
+    			p437 = element("p");
+    			p437.textContent = "Blocks don’t attack and don’t have a turn in the initiative order. Instead, whenever a block would interfere with someone’s action, they’ll have to roll against the block’s rating as a set difficulty. If the block can’t cause harm, it simply prevents the PC from taking the action they wanted to. If it can cause harm and the PC fails to overcome the block, the PC takes a hit equal to the amount by which they missed the target.";
+    			t2119 = space();
+    			p438 = element("p");
+    			p438.textContent = "Characters may try to force someone into a block as an attack. If you do this, you’ll roll to attack as normal, but add a Weapon rating equal to half the block’s Weapon rating (rounded down, minimum 1).";
+    			t2121 = space();
+    			p439 = element("p");
+    			t2122 = text("Finally, some blocks can be used as cover or as armor. This is situational—for some blocks, it simply won’t make sense. You probably can’t hide behind a ");
+    			strong390 = element("strong");
+    			strong390.textContent = "Vat of Acid";
+    			t2124 = text(", but a ");
+    			strong391 = element("strong");
+    			strong391.textContent = "Chain Link Fence";
+    			t2126 = space();
+    			em57 = element("em");
+    			em57.textContent = "is";
+    			t2128 = text(" effective protection against a baseball bat, probably preventing the attack altogether.");
+    			t2129 = space();
+    			p440 = element("p");
+    			p440.textContent = "When someone’s using a block as cover, decide whether it mitigates or negates the attack. If it negates it, the attack simply isn’t possible. If it mitigates it, the defender adds an Armor rating equal to half the block’s skill rating (rounded down, minimum 1).";
+    			t2131 = space();
+    			p441 = element("p");
+    			p441.textContent = "Use blocks sparingly. Blocks make it harder for PCs to take certain actions—so they can be frustrating if you overuse them—but they can also lead the players to think creatively. They may see an opportunity to turn blocks to their advantage. If they figure out how, let them!";
+    			t2133 = space();
+    			p442 = element("p");
+    			p442.textContent = "Sometimes players will just want to remove blocks outright. To do so, make an overcome roll against a set difficulty equal to the block’s rating plus two.";
+    			t2135 = space();
+    			h340 = element("h3");
+    			h340.textContent = "Distractions";
+    			t2137 = space();
+    			p443 = element("p");
+    			t2138 = text("Where hazards attack the PCs directly and blocks prevent them from taking certain actions, ");
+    			strong392 = element("strong");
+    			strong392.textContent = "distractions";
+    			t2140 = text(" force the PCs to figure out their priorities. Of the obstacles, distractions are often the least mechanically defined. They also don’t necessarily make the scene mechanically harder. Rather, they present the PCs with difficult decisions. Here are the distraction’s parts:");
+    			t2141 = space();
+    			ul27 = element("ul");
+    			li120 = element("li");
+    			t2142 = text("A distraction’s ");
+    			strong393 = element("strong");
+    			strong393.textContent = "name";
+    			t2144 = text(" is a brief, punchy representation of what it is. It can be an aspect, if you need or want it to be.");
+    			t2145 = space();
+    			li121 = element("li");
+    			t2146 = text("A distraction’s ");
+    			strong394 = element("strong");
+    			strong394.textContent = "choice";
+    			t2148 = text(" is a simple question that codifies the decision it gives to the PCs.");
+    			t2149 = space();
+    			li122 = element("li");
+    			t2150 = text("A distraction’s ");
+    			strong395 = element("strong");
+    			strong395.textContent = "repercussion";
+    			t2152 = text(" is what happens to the PCs if they don’t deal with the distraction. Some distractions might have multiple repercussions, including repercussions for ");
+    			em58 = element("em");
+    			em58.textContent = "successfully";
+    			t2154 = text(" dealing with the distraction.");
+    			t2155 = space();
+    			li123 = element("li");
+    			t2156 = text("A distraction’s ");
+    			strong396 = element("strong");
+    			strong396.textContent = "opposition";
+    			t2158 = text(" is its passive opposition against PCs rolling to deal with it. Not every distraction needs to provide opposition.");
+    			t2159 = space();
+    			p444 = element("p");
+    			p444.textContent = "If you’re afraid the PCs will deal handily with a fight you’ve got in store, adding a distraction or two can force them to decide whether it’s more important to trounce the bad guys or deal with the distractions.";
+    			t2161 = space();
+    			p445 = element("p");
+    			p445.textContent = "Dealing with a distraction should always have a clear benefit or, failing that, not dealing with a distraction should always have a clear consequence.";
+    			t2163 = space();
+    			p446 = element("p");
+    			p446.textContent = "Examples of Obstacles";
+    			t2165 = space();
+    			p447 = element("p");
+    			em59 = element("em");
+    			em59.textContent = "Hazards";
+    			t2167 = space();
+    			ul28 = element("ul");
+    			li124 = element("li");
+    			t2168 = text("Great (+4) ");
+    			strong397 = element("strong");
+    			strong397.textContent = "Machine-Gun Turret";
+    			t2170 = text(", Weapon:3");
+    			t2171 = space();
+    			li125 = element("li");
+    			t2172 = text("Superb (+5) ");
+    			strong398 = element("strong");
+    			strong398.textContent = "Distant Sniper";
+    			t2174 = text(", Weapon:4");
+    			t2175 = space();
+    			p448 = element("p");
+    			em60 = element("em");
+    			em60.textContent = "Blocks";
+    			t2177 = space();
+    			ul29 = element("ul");
+    			li126 = element("li");
+    			t2178 = text("Fair (+2) ");
+    			strong399 = element("strong");
+    			strong399.textContent = "Chain Link Fence";
+    			t2180 = text(", Great (+4) difficulty to remove");
+    			t2181 = space();
+    			li127 = element("li");
+    			t2182 = text("Good (+3) ");
+    			strong400 = element("strong");
+    			strong400.textContent = "Vat of Acid";
+    			t2184 = text(", Weapon:4, Superb (+5) difficulty to remove");
+    			t2185 = space();
+    			p449 = element("p");
+    			em61 = element("em");
+    			em61.textContent = "Distractions";
+    			t2187 = space();
+    			ul32 = element("ul");
+    			li131 = element("li");
+    			strong401 = element("strong");
+    			strong401.textContent = "Bus Full of Civilians—";
+    			t2189 = space();
+    			strong402 = element("strong");
+    			strong402.textContent = "Choice:";
+    			t2191 = space();
+    			em62 = element("em");
+    			em62.textContent = "Will the bus plunge off the bridge?";
+    			ul30 = element("ul");
+    			li128 = element("li");
+    			strong403 = element("strong");
+    			strong403.textContent = "Opposition:";
+    			t2194 = text(" Good (+3)");
+    			t2195 = space();
+    			li129 = element("li");
+    			strong404 = element("strong");
+    			strong404.textContent = "Repercussion (leave them):";
+    			t2197 = text(" All of the civilians on the bus die.");
+    			t2198 = space();
+    			li130 = element("li");
+    			strong405 = element("strong");
+    			strong405.textContent = "Repercussion (save them):";
+    			t2200 = text(" The villain gets away!");
+    			t2201 = space();
+    			li134 = element("li");
+    			strong406 = element("strong");
+    			strong406.textContent = "The Glittering Gem—";
+    			t2203 = space();
+    			strong407 = element("strong");
+    			strong407.textContent = "Choice:";
+    			t2205 = space();
+    			em63 = element("em");
+    			em63.textContent = "Can you take the gem from the pedestal?";
+    			ul31 = element("ul");
+    			li132 = element("li");
+    			strong408 = element("strong");
+    			strong408.textContent = "Repercussion (leave the gem):";
+    			t2208 = text(" You don’t get the (priceless) gem.");
+    			t2209 = space();
+    			li133 = element("li");
+    			strong409 = element("strong");
+    			strong409.textContent = "Repercussion (take the gem):";
+    			t2211 = text(" You activate the traps in the temple.");
+    			t2212 = space();
+    			h232 = element("h2");
+    			h232.textContent = "Scale";
+    			t2214 = space();
+    			hr42 = element("hr");
+    			t2215 = space();
+    			p450 = element("p");
+    			strong410 = element("strong");
+    			strong410.textContent = "Scale";
+    			t2217 = text(" is an optional subsystem that you can use to represent supernatural beings which operate on a level beyond the general range of capabilities of most characters in your game. Usually you don’t need to worry about the impact of scale within your game. There may be times, however, where it’s desirable to present the characters with a threat bigger than they typically face—or an opportunity for the characters to punch outside their usual weight class.");
+    			t2218 = space();
+    			p451 = element("p");
+    			p451.textContent = "As an example—you may wish to change the list to something more suitable to your setting—we’ll present you with five potential levels of scale: Mundane, Supernatural, Otherworldly, Legendary, and Godlike.";
+    			t2220 = space();
+    			ul33 = element("ul");
+    			li135 = element("li");
+    			strong411 = element("strong");
+    			strong411.textContent = "Mundane";
+    			t2222 = text(" represents characters without access to supernatural power or technologies that would boost them beyond the capabilities of humans.");
+    			t2223 = space();
+    			li136 = element("li");
+    			strong412 = element("strong");
+    			strong412.textContent = "Supernatural";
+    			t2225 = text(" represents characters who do have access to supernatural powers or technologies reaching beyond human capacity but who are still effectively human at the core.");
+    			t2226 = space();
+    			li137 = element("li");
+    			strong413 = element("strong");
+    			strong413.textContent = "Otherworldly";
+    			t2228 = text(" represents unusual or unique characters whose powers set them apart from the normal concerns of humanity.");
+    			t2229 = space();
+    			li138 = element("li");
+    			strong414 = element("strong");
+    			strong414.textContent = "Legendary";
+    			t2231 = text(" represents powerful spirits, entities, and alien beings to whom humanity is more of a curiosity than a threat.");
+    			t2232 = space();
+    			li139 = element("li");
+    			strong415 = element("strong");
+    			strong415.textContent = "Godlike";
+    			t2234 = text(" represents the universe’s mightiest forces: archangels, gods, faerie queens, living planets, and so on.");
+    			t2235 = space();
+    			p452 = element("p");
+    			t2236 = text("When applying scale to two opposing forces or individuals, compare the sides’ levels and determine who is higher, and by how many levels. They get ");
+    			em64 = element("em");
+    			em64.textContent = "one";
+    			t2238 = text(" of the following benefits on any rolled action against their lesser:");
+    			t2239 = space();
+    			ul34 = element("ul");
+    			li140 = element("li");
+    			t2240 = text("+1 per level of difference to their action ");
+    			em65 = element("em");
+    			em65.textContent = "before";
+    			t2242 = text(" the roll");
+    			t2243 = space();
+    			li141 = element("li");
+    			t2244 = text("+2 per level of difference to the result ");
+    			em66 = element("em");
+    			em66.textContent = "after";
+    			t2246 = text(" the roll, ");
+    			em67 = element("em");
+    			em67.textContent = "if";
+    			t2248 = text(" the roll succeeds");
+    			t2249 = space();
+    			li142 = element("li");
+    			li142.textContent = "1 additional free invoke per level of difference to the results of a successful create advantage action";
+    			t2251 = space();
+    			p453 = element("p");
+    			p453.textContent = "Frequent and rigid application of scale rules may put player characters at a distinct disadvantage. Compensate by generously affording those players opportunities to subvert scale disadvantage in clever ways. Viable options include researching a target for weaknesses, changing the venue to one where scale doesn’t apply, or altering goals so that their opponent cannot leverage their scale advantage.";
+    			t2253 = space();
+    			h341 = element("h3");
+    			h341.textContent = "Aspects and Scale";
+    			t2255 = space();
+    			p454 = element("p");
+    			t2256 = text("Active situation aspects sometimes represent a supernatural effect. In these cases, the GM may determine that invoking the aspect grants the additional benefit of its scale. Furthermore, a supernaturally created aspect may grant scale to some actions when invoked. It may also provide scale even without an invoke, such as in the case of a veil or high-tech camouflage suit; you need not invoke ");
+    			strong416 = element("strong");
+    			strong416.textContent = "Veiled";
+    			t2258 = text(" to gain Supernatural scale when sneaking about.");
+    			t2259 = space();
+    			h428 = element("h4");
+    			h428.textContent = "Does Scale Apply When Supernaturally Creating an Advantage?";
+    			t2261 = space();
+    			p455 = element("p");
+    			t2262 = text("If you are creating an advantage and ");
+    			em68 = element("em");
+    			em68.textContent = "there is no opposition";
+    			t2264 = text(", rather than rolling you simply gain the aspect with one free invoke. That aspect grants scale as previously described.");
+    			t2265 = space();
+    			p456 = element("p");
+    			t2266 = text("If you are creating the advantage ");
+    			em69 = element("em");
+    			em69.textContent = "on someone else to their detriment";
+    			t2268 = text(", such as casting ");
+    			strong417 = element("strong");
+    			strong417.textContent = "Entangled by Animated Vines";
+    			t2270 = text(" on your foe, you may gain scale on your effort to create the advantage.");
+    			t2271 = space();
+    			p457 = element("p");
+    			t2272 = text("If you are creating an advantage via supernatural means and ");
+    			em70 = element("em");
+    			em70.textContent = "an opposing party can directly impede the effort via physical or supernatural interference,";
+    			t2274 = text(" your scale may apply against their defend roll.");
+    			t2275 = space();
+    			p458 = element("p");
+    			em71 = element("em");
+    			em71.textContent = "Otherwise,";
+    			t2277 = text(" you roll to create the advantage without scale (likely against a set difficulty), but later use of that aspect grants scale when appropriate.");
+    			t2278 = space();
+    			h233 = element("h2");
+    			h233.textContent = "Time Shifts";
+    			t2280 = space();
+    			hr43 = element("hr");
+    			t2281 = space();
+    			p459 = element("p");
+    			p459.textContent = "When determining how long it takes characters to do something, you may want to use a more systematic approach to decide the impacts of success, failure, and “at a cost” options. How much longer or faster? Let the shifts decide, using these guidelines.";
+    			t2283 = space();
+    			p460 = element("p");
+    			p460.textContent = "First, decide how long the task takes with a simple success. Use an approximate quantity plus a unit of time: “a few days,” “half a minute,” “several weeks,” and so on. Approximate quantities for use include: half, about one, a few, or several of a given unit of time.";
+    			t2285 = space();
+    			p461 = element("p");
+    			p461.textContent = "Then look at how many shifts the roll exceeds or misses the target by. Each shift is worth one quantity-step from wherever your starting point is.";
+    			t2287 = space();
+    			p462 = element("p");
+    			p462.textContent = "So if your starting point is “a few hours,” then one shift faster jumps the quantity down to “about one hour,” two shifts down to “half an hour.” Going faster than “half” drops the unit down to the next smaller (hours to minutes, etc) and quantity up to “several”, so three shifts faster would be “several minutes.”";
+    			t2289 = space();
+    			p463 = element("p");
+    			p463.textContent = "In the case of slower, it’s the same process in the opposite direction: one shift slower is “several hours,” two is “half a day,” three is “about one day.”";
+    			t2291 = space();
+    			h234 = element("h2");
+    			h234.textContent = "Ways to Break the Rules for Big Bads";
+    			t2293 = space();
+    			hr44 = element("hr");
+    			t2294 = space();
+    			p464 = element("p");
+    			t2295 = text("Between combining skills and creating advantages for teamwork (");
+    			strong418 = element("strong");
+    			strong418.textContent = "page XX";
+    			t2297 = text("), a group of PCs can really overwhelm a single opponent. This is fine if you want to respect the advantage of numbers, but not great if you want to present a “big bad” that’s the equal of the whole group.");
+    			t2298 = space();
+    			p465 = element("p");
+    			t2299 = text("But remember, for monsters and other big threats it’s acceptable to break the rules (");
+    			strong419 = element("strong");
+    			strong419.textContent = "page XX";
+    			t2301 = text(")—so do so by looking at ways to counteract the group’s usual advantage of numbers, while still giving them a chance. Here are a few suggestions for ways you might do that. You can use one or more of these in combination for especially difficult or terrifying final bosses.");
+    			t2302 = space();
+    			h342 = element("h3");
+    			h342.textContent = "Challenge or Contest Immunity";
+    			t2304 = space();
+    			p466 = element("p");
+    			p466.textContent = "Both of these methods are about drawing out the final confrontation by running the group through a clock-is-ticking-down activity before they can actually go after the big bad directly.";
+    			t2306 = space();
+    			p467 = element("p");
+    			t2307 = text("With ");
+    			strong420 = element("strong");
+    			strong420.textContent = "challenge immunity";
+    			t2309 = text(", your big bad cannot be affected directly (mentally, physically, or both) until the group beats a challenge (e.g., dismantling the source of its power, figuring out what its weakness is, etc). The big bad, meanwhile, can act freely and may attack them during their efforts, oppose their overcome or create advantage efforts with its defend rolls, assail their free invokes with its own overcomes, or prepare for their eventual breakthrough by creating advantages of its own.");
+    			t2310 = space();
+    			p468 = element("p");
+    			t2311 = text("With ");
+    			strong421 = element("strong");
+    			strong421.textContent = "contest immunity";
+    			t2313 = text(", the group must win a contest to be able to directly attack the big bad—and the big bad gets to attack them while they’re trying. If the big bad wins the contest, it gets to pull off its scheme and get away unscathed.");
+    			t2314 = space();
+    			h343 = element("h3");
+    			h343.textContent = "Expendable Minion Armor";
+    			t2316 = space();
+    			p469 = element("p");
+    			p469.textContent = "Surrounding yourself with minions is one way to try to balance a big bad’s side against the PCs, but it only goes so far if the players can just decide to go after the big bad directly and ignore those pesky minions for a while.";
+    			t2318 = space();
+    			p470 = element("p");
+    			t2319 = text("But with ");
+    			strong422 = element("strong");
+    			strong422.textContent = "expendable minion armor";
+    			t2321 = text(" in play, a big bad may always succeed at a cost on its defend rolls against attacks by forcing a minion into the path of the attack. That minion doesn’t roll to defend, they just take the hit that would have landed on the big bad otherwise. This forces the PCs to chew through the big bad’s army before the final confrontation.");
+    			t2322 = space();
+    			p471 = element("p");
+    			t2323 = text("And remember, minions don’t have to be ");
+    			em72 = element("em");
+    			em72.textContent = "literal";
+    			t2325 = text(" minions. For example, you might write up one or more “shield generators”, each one with a stress track and perhaps a skill for creating defensive advantages for the shielded big bad!");
+    			t2326 = space();
+    			h344 = element("h3");
+    			h344.textContent = "Reveal True Form";
+    			t2328 = space();
+    			p472 = element("p");
+    			p472.textContent = "Okay, the group has thrown everything they’ve got at the big bad, and—*awesome!*—they just took him out. There’s just one problem: that just frees him from his cage of flesh to reveal his true form!";
+    			t2330 = space();
+    			p473 = element("p");
+    			t2331 = text("With ");
+    			strong423 = element("strong");
+    			strong423.textContent = "reveal true form";
+    			t2333 = text(", your big bad isn’t just one character, it’s at least ");
+    			em73 = element("em");
+    			em73.textContent = "two";
+    			t2335 = text(" characters which must be beaten sequentially, each one revealing new capabilities and stunts, higher skill ratings, fresh stress and consequence tracks, and even new “rule breaks.”");
+    			t2336 = space();
+    			p474 = element("p");
+    			p474.textContent = "If you want to gentle this a bit, carry the consequences the big bad has already taken forward between forms, dismissing the mild ones and downgrading the moderate and severe ones by one step each.";
+    			t2338 = space();
+    			h345 = element("h3");
+    			h345.textContent = "Scale Things Up";
+    			t2340 = space();
+    			p475 = element("p");
+    			t2341 = text("You could ");
+    			strong424 = element("strong");
+    			strong424.textContent = "scale things up";
+    			t2343 = text(" to let your big bad operate at a higher scale than the PCs, using the scale option from ");
+    			strong425 = element("strong");
+    			strong425.textContent = "page XX";
+    			t2345 = text(". You could do this even if scale isn’t normally in play in your campaign—these rules need only apply when a big bad takes the field!");
+    			t2346 = space();
+    			h346 = element("h3");
+    			h346.textContent = "Solo Bonus";
+    			t2348 = space();
+    			p476 = element("p");
+    			t2349 = text("Players may enjoy a teamwork bonus, sure—but why not give your big bad a complementary ");
+    			strong426 = element("strong");
+    			strong426.textContent = "solo bonus";
+    			t2351 = text(" when they’re the only one facing the heroes?");
+    			t2352 = space();
+    			p477 = element("p");
+    			p477.textContent = "There are a few ways you could implement a solo bonus. You could use more than one of these, but be careful when combining them as they’ll add up fast.";
+    			t2354 = space();
+    			ul35 = element("ul");
+    			li143 = element("li");
+    			t2355 = text("The big bad gets a ");
+    			strong427 = element("strong");
+    			strong427.textContent = "bonus to skill rolls";
+    			t2357 = text(" that’s equal to the group’s maximum potential teamwork bonus (");
+    			strong428 = element("strong");
+    			strong428.textContent = "page XX";
+    			t2359 = text(") — the number of PCs acting against the big bad minus one (so a +2 vs a group of 3, etc). This bonus can’t do better than double the big bad’s affected skill, though, just as with PCs (or maybe you’ll break ");
+    			em74 = element("em");
+    			em74.textContent = "that";
+    			t2361 = text(" rule too).");
+    			t2362 = space();
+    			li144 = element("li");
+    			t2363 = text("The big bad may ");
+    			strong429 = element("strong");
+    			strong429.textContent = "reduce the stress";
+    			t2365 = text(" of successful attacks by the number of opposing PCs divided by two, rounded up. If you’re worried this will make the fight run too long, then hits reduced this way can’t be reduced below 1.");
+    			t2366 = space();
+    			li145 = element("li");
+    			t2367 = text("The big bad has ");
+    			strong430 = element("strong");
+    			strong430.textContent = "amplified invokes";
+    			t2369 = text(": when making a ");
+    			em75 = element("em");
+    			em75.textContent = "paid";
+    			t2371 = text(" invoke of an aspect, their bonus is equal to the number of PCs they face. No such luck with free invokes, but this makes every fate point spent utterly terrifying.");
+    			t2372 = space();
+    			li146 = element("li");
+    			t2373 = text("The big bad may ");
+    			strong431 = element("strong");
+    			strong431.textContent = "suppress invokes";
+    			t2375 = text(": when facing two or more foes, the opposition’s invokes only provide a +1 bonus, or allow rerolls only, when used directly against the big bad. Optionally, the big bad might also remove the PCs’ ability to stack free invokes.");
+    			t2376 = space();
+    			h347 = element("h3");
+    			h347.textContent = "The Threat is a Map (or a Hive of Characters)";
+    			t2378 = space();
+    			p478 = element("p");
+    			t2379 = text("In Fate, anything can be a character, so why not a map? When ");
+    			strong432 = element("strong");
+    			strong432.textContent = "the threat is a map";
+    			t2381 = text(", your big bad has zones (");
+    			strong433 = element("strong");
+    			strong433.textContent = "page XX";
+    			t2383 = text(") which must be navigated to achieve victory.");
+    			t2384 = space();
+    			p479 = element("p");
+    			p479.textContent = "As you detail your big bad map, each zone might have its own skills, aspects, and stress capacity. Some zones might contain simple challenges that must be overcome in order to move deeper into the creature. Each zone may take an action as a separate character against PCs occupying that zone, or in the case of a zone representing a limb or similar, may be able to attack adjacent zones as well. If a zone is taken out by one of the PC’s attacks, it may be bypassed and no longer gets to take actions of its own, but the overall big bad isn’t defeated until the heroes can reach its heart and kill it true.";
+    			t2386 = space();
+    			p480 = element("p");
+    			t2387 = text("This method works particularly well if your big bad is a truly gigantic monster, but need not be limited to that situation. You can use the idea of treating the threat as a collection of interconnected characters, without requiring that the PCs actually enter or navigate the big bad as a literal map. Used this way, you’ve got a hybrid between a map and expendable minion armor (");
+    			strong434 = element("strong");
+    			strong434.textContent = "page XX";
+    			t2389 = text(")—a ");
+    			strong435 = element("strong");
+    			strong435.textContent = "hive of characters";
+    			t2391 = text(", after a fashion. Some parts of the big bad must be defeated before the players can hit where it is truly vulnerable, and those parts get to take their own actions in the exchange.");
+    			t2392 = space();
+    			p481 = element("p");
+    			p481.textContent = "Whether you fully engage the map idea or simply build the big bad as a hive, you’re sure to end up with a more dynamic fight where the big bad acts more frequently, and the players must figure out a plan of attack that eliminates the threat piece by piece before they can finally put it down.";
+    			t2394 = space();
+    			h235 = element("h2");
+    			h235.textContent = "Ways to Handle Multiple Targets";
+    			t2396 = space();
+    			hr45 = element("hr");
+    			t2397 = space();
+    			p482 = element("p");
+    			p482.textContent = "Inevitably, someone at your table will want to affect multiple targets at once. If it’s allowed, here are some methods you can use.";
+    			t2399 = space();
+    			p483 = element("p");
+    			t2400 = text("If you wish to be selective about your targets, you may ");
+    			strong436 = element("strong");
+    			strong436.textContent = "split your effort";
+    			t2402 = text(". Roll your skill, and if the resulting total is positive, you can split that total up however you like among the targets, who each get to defend against the effort you assigned to them. You must assign at least one point of effort to a target, or you didn’t target them at all.");
+    			t2403 = space();
+    			p484 = element("p");
+    			p484.textContent = "Sophie faces a trio of goons and wants to strike at all three in a flurry of thrusts with her rapier. Thanks to an invoke and a good roll, her Fight roll comes in at Epic (+7). She assigns a Good (+3) attack to the one that looks the most veteran, and Fair (+2) to each of the other two, for a total of seven. They each then roll to defend.";
+    			t2405 = space();
+    			p485 = element("p");
+    			t2406 = text("In some special circumstances, as with an explosion or similar, you may make a ");
+    			strong437 = element("strong");
+    			strong437.textContent = "zone attack";
+    			t2408 = text(" against everyone in one zone, friend and foe alike. Here, you don’t split your effort; every target must defend against your total roll. The circumstances and method must be right for doing this; often the GM will require you to invoke an aspect or use a stunt to gain permission.");
+    			t2409 = space();
+    			p486 = element("p");
+    			t2410 = text("If you wish to create an advantage affecting a whole zone or group, ");
+    			strong438 = element("strong");
+    			strong438.textContent = "target the scene";
+    			t2412 = text(" instead: place a single aspect on the zone or the scene itself rather than placing separate aspects on each of the targets. This has the added advantage of reducing overall book-keeping. If someone insists on creating a separate aspect on each target, they should be constrained to the effort splitting method.");
+    			t2413 = space();
+    			p487 = element("p");
+    			p487.textContent = "With any of these methods, all of the targets should occupy the same zone. The GM may allow the occasional exception due to method and circumstance.";
+    			t2415 = space();
+    			p488 = element("p");
+    			p488.textContent = "Only one action type should be used—such as attacking several targets in one blow, solving two problems at once with overcome, or swaying the minds of a few key NPCs with create an advantage. A GM might allow two different action types under special circumstances, but those actions should make sense for the skill used by both.";
+    			t2417 = space();
+    			h236 = element("h2");
+    			h236.textContent = "Weapon and Armor Ratings";
+    			t2419 = space();
+    			hr46 = element("hr");
+    			t2420 = space();
+    			p489 = element("p");
+    			p489.textContent = "Want to tap into a little bit of that combat equipment vibe other games have? Consider weapon and armor ratings. In short, getting hit by a weapon will damage you more, and having armor keeps that from happening. (You could model this with stunts, but using stunt slots might not feel right to you.)";
+    			t2422 = space();
+    			p490 = element("p");
+    			t2423 = text("A ");
+    			strong439 = element("strong");
+    			strong439.textContent = "weapon";
+    			t2425 = text(" value adds to the shift value of a successful hit. If you have Weapon:2, it means that any hit inflicts 2 more shifts than normal. This counts for ties; you inflict stress on a tie ");
+    			em76 = element("em");
+    			em76.textContent = "instead";
+    			t2427 = text(" of getting a boost.");
+    			t2428 = space();
+    			p491 = element("p");
+    			t2429 = text("An ");
+    			strong440 = element("strong");
+    			strong440.textContent = "armor";
+    			t2431 = text(" value reduces the shifts of a successful hit. So, Armor:2 makes any hit worth 2 less than usual. If you hit but the target’s Armor reduces the attack’s shifts to 0 or below, you get a boost to use on your target but don’t do any harm.");
+    			t2432 = space();
+    			p492 = element("p");
+    			p492.textContent = "Choose your range of ratings carefully. Keep an eye on how likely they make a consequence (or worse) on a tie. We recommend a range of 0 to 4 at most.";
+    			t2434 = space();
+    			h110 = element("h1");
+    			h110.textContent = "What Version Is This?";
+    			t2436 = space();
+    			hr47 = element("hr");
+    			t2437 = space();
+    			p493 = element("p");
+    			t2438 = text("Since late 2012, there has been only one version of Fate from Evil Hat: ");
+    			em77 = element("em");
+    			em77.textContent = "Fate Core System";
+    			t2440 = text(", the fourth edition of the system.");
+    			t2441 = space();
+    			p494 = element("p");
+    			t2442 = text("Ah, but what about ");
+    			em78 = element("em");
+    			em78.textContent = "Fate Accelerated";
+    			t2444 = text(", the perspicacious Fate afficionado might ask? Thing is, that’s Fate Core too—it’s the same system, just with different ");
+    			strong441 = element("strong");
+    			strong441.textContent = "dial settings";
+    			t2446 = text(" (i.e., configuration options/flavors) for stress tracks, the skill list, stunts, and NPC design. Any apparent differences in the ");
+    			em79 = element("em");
+    			em79.textContent = "core functions";
+    			t2448 = text(" of the system are due to accidents of parallel development and can be considered unintentional—with apologies to the rules lawyers out there! If a conflict between the designs exists, Fate Core System is the authority.");
+    			t2449 = space();
+    			p495 = element("p");
+    			t2450 = text("These two perspectives on Fate Core come together here, in ");
+    			em80 = element("em");
+    			em80.textContent = "Fate Condensed";
+    			t2452 = text("—very literally, in fact. Condensed began as the Accelerated text, minus all of the Accelerated dial settings, replaced by Core’s. From that starting-point we applied eight years of community-play experience to refine and clarify. That effort produced ");
+    			em81 = element("em");
+    			em81.textContent = "some";
+    			t2454 = text(" minor differences as noted on ");
+    			strong442 = element("strong");
+    			strong442.textContent = "page XX";
+    			t2456 = text(", but whether you choose to play with them or without, the system is still Fate Core at the end of the day. We feel Condensed is an improvement for sure, but there are no edition wars to be had here (and please don’t try to start one). It’s all Fate Core.");
+    			t2457 = space();
+    			h237 = element("h2");
+    			h237.textContent = "What Came Before";
+    			t2459 = space();
+    			hr48 = element("hr");
+    			t2460 = space();
+    			p496 = element("p");
+    			p496.textContent = "Fate started as a hack of the Fudge system circa 2000, a culmination of a few fevered conversations Fred Hicks and Rob Donoghue had about what they might do to run another Amber game. The versions that arose between then and 2005 were free, digital, and released to the Fudge community online to a surprisingly enthusiastic reception. These spanned from “Fate Zero” up to Fate 2.0.";
+    			t2462 = space();
+    			p497 = element("p");
+    			t2463 = text("Then, Jim Butcher offered them a chance to create an RPG based on the Dresden Files, triggering the establishment of Evil Hat as a company and a new take on the Fate system, first seen in ");
+    			em82 = element("em");
+    			em82.textContent = "Spirit of the Century";
+    			t2465 = text(" (2006) and eventually The ");
+    			em83 = element("em");
+    			em83.textContent = "Dresden Files RPG";
+    			t2467 = text(" (2010). The version of Fate found in both those (and thanks to open licensing, a number of others) was Fate 3.0.");
+    			t2468 = space();
+    			p498 = element("p");
+    			p498.textContent = "The effort to extract the system (by Leonard Balsera and Ryan Macklin) to present it on its own led to many improvements, and that gave us Fate Core.";
+    			t2470 = space();
+    			h238 = element("h2");
+    			h238.textContent = "Licensing";
+    			t2472 = space();
+    			hr49 = element("hr");
+    			t2473 = space();
+    			p499 = element("p");
+    			t2474 = text("In one form or another, Fate has always been open-licensable. You can find details about licensing Fate for your projects at ");
+    			a8 = element("a");
+    			a8.textContent = "http://www.faterpg.com/licensing";
+    			attr_dev(h10, "id", "fate-condensed");
+    			attr_dev(h10, "class", "svelte-14a6qz4");
+    			add_location(h10, file$e, 2, 0, 7);
+    			attr_dev(hr0, "class", "svelte-14a6qz4");
+    			add_location(hr0, file$e, 3, 0, 51);
+    			attr_dev(p0, "class", "svelte-14a6qz4");
+    			add_location(p0, file$e, 4, 0, 56);
+    			attr_dev(a0, "href", "http://www.faterpg.com/licensing/");
+    			attr_dev(a0, "class", "svelte-14a6qz4");
+    			add_location(a0, file$e, 5, 35, 146);
+    			attr_dev(p1, "class", "svelte-14a6qz4");
+    			add_location(p1, file$e, 5, 0, 111);
+    			attr_dev(strong0, "class", "svelte-14a6qz4");
+    			add_location(strong0, file$e, 6, 105, 349);
+    			attr_dev(p2, "class", "svelte-14a6qz4");
+    			add_location(p2, file$e, 6, 0, 244);
+    			attr_dev(a1, "href", "http://www.faterpg.com/");
+    			attr_dev(a1, "class", "svelte-14a6qz4");
+    			add_location(a1, file$e, 7, 50, 555);
+    			attr_dev(a2, "href", "http://creativecommons.org/licenses/by/3.0/");
+    			attr_dev(a2, "class", "svelte-14a6qz4");
+    			add_location(a2, file$e, 7, 345, 850);
+    			attr_dev(p3, "class", "svelte-14a6qz4");
+    			add_location(p3, file$e, 7, 0, 505);
+    			attr_dev(h11, "id", "credits");
+    			attr_dev(h11, "class", "svelte-14a6qz4");
+    			add_location(h11, file$e, 8, 0, 963);
+    			attr_dev(hr1, "class", "svelte-14a6qz4");
+    			add_location(hr1, file$e, 9, 0, 993);
+    			attr_dev(p4, "class", "svelte-14a6qz4");
+    			add_location(p4, file$e, 10, 0, 998);
+    			attr_dev(p5, "class", "svelte-14a6qz4");
+    			add_location(p5, file$e, 11, 0, 1143);
+    			attr_dev(p6, "class", "svelte-14a6qz4");
+    			add_location(p6, file$e, 12, 0, 1293);
+    			attr_dev(p7, "class", "svelte-14a6qz4");
+    			add_location(p7, file$e, 13, 0, 1453);
+    			attr_dev(p8, "class", "svelte-14a6qz4");
+    			add_location(p8, file$e, 14, 0, 1642);
+    			attr_dev(h12, "id", "introduction");
+    			attr_dev(h12, "class", "svelte-14a6qz4");
+    			add_location(h12, file$e, 15, 0, 1818);
+    			attr_dev(hr2, "class", "svelte-14a6qz4");
+    			add_location(hr2, file$e, 16, 0, 1858);
+    			attr_dev(em0, "class", "svelte-14a6qz4");
+    			add_location(em0, file$e, 17, 11, 1874);
+    			attr_dev(em1, "class", "svelte-14a6qz4");
+    			add_location(em1, file$e, 17, 49, 1912);
+    			attr_dev(p9, "class", "svelte-14a6qz4");
+    			add_location(p9, file$e, 17, 0, 1863);
+    			attr_dev(em2, "class", "svelte-14a6qz4");
+    			add_location(em2, file$e, 18, 41, 2144);
+    			attr_dev(p10, "class", "svelte-14a6qz4");
+    			add_location(p10, file$e, 18, 0, 2103);
+    			attr_dev(h20, "id", "what-do-i-need-to-play");
+    			attr_dev(h20, "class", "svelte-14a6qz4");
+    			add_location(h20, file$e, 19, 0, 2166);
+    			attr_dev(hr3, "class", "svelte-14a6qz4");
+    			add_location(hr3, file$e, 20, 0, 2227);
+    			attr_dev(em3, "class", "svelte-14a6qz4");
+    			add_location(em3, file$e, 21, 11, 2243);
+    			attr_dev(em4, "class", "svelte-14a6qz4");
+    			add_location(em4, file$e, 21, 193, 2425);
+    			attr_dev(p11, "class", "svelte-14a6qz4");
+    			add_location(p11, file$e, 21, 0, 2232);
+    			attr_dev(em5, "class", "svelte-14a6qz4");
+    			add_location(em5, file$e, 22, 3, 2470);
+    			attr_dev(strong1, "class", "svelte-14a6qz4");
+    			add_location(strong1, file$e, 22, 32, 2499);
+    			attr_dev(strong2, "class", "svelte-14a6qz4");
+    			add_location(strong2, file$e, 22, 348, 2815);
+    			attr_dev(p12, "class", "svelte-14a6qz4");
+    			add_location(p12, file$e, 22, 0, 2467);
+    			attr_dev(h30, "id", "for-veterans-changes-from-fate-core");
+    			attr_dev(h30, "class", "svelte-14a6qz4");
+    			add_location(h30, file$e, 23, 0, 2943);
+    			attr_dev(em6, "class", "svelte-14a6qz4");
+    			add_location(em6, file$e, 24, 170, 3200);
+    			attr_dev(p13, "class", "svelte-14a6qz4");
+    			add_location(p13, file$e, 24, 0, 3030);
+    			attr_dev(strong3, "class", "svelte-14a6qz4");
+    			add_location(strong3, file$e, 26, 75, 3421);
+    			attr_dev(li0, "class", "svelte-14a6qz4");
+    			add_location(li0, file$e, 26, 0, 3346);
+    			attr_dev(strong4, "class", "svelte-14a6qz4");
+    			add_location(strong4, file$e, 27, 160, 3613);
+    			attr_dev(li1, "class", "svelte-14a6qz4");
+    			add_location(li1, file$e, 27, 0, 3453);
+    			attr_dev(strong5, "class", "svelte-14a6qz4");
+    			add_location(strong5, file$e, 28, 146, 3791);
+    			attr_dev(li2, "class", "svelte-14a6qz4");
+    			add_location(li2, file$e, 28, 0, 3645);
+    			attr_dev(strong6, "class", "svelte-14a6qz4");
+    			add_location(strong6, file$e, 29, 86, 3909);
+    			attr_dev(strong7, "class", "svelte-14a6qz4");
+    			add_location(strong7, file$e, 29, 186, 4009);
+    			attr_dev(li3, "class", "svelte-14a6qz4");
+    			add_location(li3, file$e, 29, 0, 3823);
+    			attr_dev(strong8, "class", "svelte-14a6qz4");
+    			add_location(strong8, file$e, 30, 126, 4167);
+    			attr_dev(li4, "class", "svelte-14a6qz4");
+    			add_location(li4, file$e, 30, 0, 4041);
+    			attr_dev(strong9, "class", "svelte-14a6qz4");
+    			add_location(strong9, file$e, 31, 125, 4324);
+    			attr_dev(strong10, "class", "svelte-14a6qz4");
+    			add_location(strong10, file$e, 31, 216, 4415);
+    			attr_dev(li5, "class", "svelte-14a6qz4");
+    			add_location(li5, file$e, 31, 0, 4199);
+    			attr_dev(ul0, "class", "svelte-14a6qz4");
+    			add_location(ul0, file$e, 25, 0, 3341);
+    			attr_dev(h13, "id", "getting-started");
+    			attr_dev(h13, "class", "svelte-14a6qz4");
+    			add_location(h13, file$e, 33, 0, 4452);
+    			attr_dev(hr4, "class", "svelte-14a6qz4");
+    			add_location(hr4, file$e, 34, 0, 4498);
+    			attr_dev(h21, "id", "define-your-setting");
+    			attr_dev(h21, "class", "svelte-14a6qz4");
+    			add_location(h21, file$e, 35, 0, 4503);
+    			attr_dev(hr5, "class", "svelte-14a6qz4");
+    			add_location(hr5, file$e, 36, 0, 4557);
+    			attr_dev(p14, "class", "svelte-14a6qz4");
+    			add_location(p14, file$e, 37, 0, 4562);
+    			attr_dev(p15, "class", "svelte-14a6qz4");
+    			add_location(p15, file$e, 38, 0, 4953);
+    			attr_dev(h22, "id", "create-your-characters");
+    			attr_dev(h22, "class", "svelte-14a6qz4");
+    			add_location(h22, file$e, 39, 0, 5425);
+    			attr_dev(hr6, "class", "svelte-14a6qz4");
+    			add_location(hr6, file$e, 40, 0, 5485);
+    			attr_dev(h31, "id", "who-are-you");
+    			attr_dev(h31, "class", "svelte-14a6qz4");
+    			add_location(h31, file$e, 41, 0, 5490);
+    			attr_dev(p16, "class", "svelte-14a6qz4");
+    			add_location(p16, file$e, 42, 0, 5529);
+    			attr_dev(p17, "class", "svelte-14a6qz4");
+    			add_location(p17, file$e, 43, 0, 5898);
+    			attr_dev(strong11, "class", "svelte-14a6qz4");
+    			add_location(strong11, file$e, 45, 4, 5954);
+    			attr_dev(li6, "class", "svelte-14a6qz4");
+    			add_location(li6, file$e, 45, 0, 5950);
+    			attr_dev(strong12, "class", "svelte-14a6qz4");
+    			add_location(strong12, file$e, 46, 4, 6025);
+    			attr_dev(li7, "class", "svelte-14a6qz4");
+    			add_location(li7, file$e, 46, 0, 6021);
+    			attr_dev(strong13, "class", "svelte-14a6qz4");
+    			add_location(strong13, file$e, 47, 4, 6099);
+    			attr_dev(li8, "class", "svelte-14a6qz4");
+    			add_location(li8, file$e, 47, 0, 6095);
+    			attr_dev(strong14, "class", "svelte-14a6qz4");
+    			add_location(strong14, file$e, 48, 4, 6166);
+    			attr_dev(li9, "class", "svelte-14a6qz4");
+    			add_location(li9, file$e, 48, 0, 6162);
+    			attr_dev(strong15, "class", "svelte-14a6qz4");
+    			add_location(strong15, file$e, 49, 4, 6246);
+    			attr_dev(li10, "class", "svelte-14a6qz4");
+    			add_location(li10, file$e, 49, 0, 6242);
+    			attr_dev(strong16, "class", "svelte-14a6qz4");
+    			add_location(strong16, file$e, 50, 4, 6340);
+    			attr_dev(li11, "class", "svelte-14a6qz4");
+    			add_location(li11, file$e, 50, 0, 6336);
+    			attr_dev(strong17, "class", "svelte-14a6qz4");
+    			add_location(strong17, file$e, 51, 4, 6417);
+    			attr_dev(li12, "class", "svelte-14a6qz4");
+    			add_location(li12, file$e, 51, 0, 6413);
+    			attr_dev(ul1, "class", "svelte-14a6qz4");
+    			add_location(ul1, file$e, 44, 0, 5945);
+    			attr_dev(h32, "id", "aspects");
+    			attr_dev(h32, "class", "svelte-14a6qz4");
+    			add_location(h32, file$e, 53, 0, 6493);
+    			attr_dev(strong18, "class", "svelte-14a6qz4");
+    			add_location(strong18, file$e, 54, 3, 6526);
+    			attr_dev(p18, "class", "svelte-14a6qz4");
+    			add_location(p18, file$e, 54, 0, 6523);
+    			attr_dev(strong19, "class", "svelte-14a6qz4");
+    			add_location(strong19, file$e, 55, 42, 6832);
+    			attr_dev(strong20, "class", "svelte-14a6qz4");
+    			add_location(strong20, file$e, 55, 81, 6871);
+    			attr_dev(strong21, "class", "svelte-14a6qz4");
+    			add_location(strong21, file$e, 55, 268, 7058);
+    			attr_dev(em7, "class", "svelte-14a6qz4");
+    			add_location(em7, file$e, 55, 310, 7100);
+    			attr_dev(p19, "class", "svelte-14a6qz4");
+    			add_location(p19, file$e, 55, 0, 6790);
+    			attr_dev(strong22, "class", "svelte-14a6qz4");
+    			add_location(strong22, file$e, 56, 174, 7399);
+    			attr_dev(p20, "class", "svelte-14a6qz4");
+    			add_location(p20, file$e, 56, 0, 7225);
+    			attr_dev(em8, "class", "svelte-14a6qz4");
+    			add_location(em8, file$e, 57, 83, 7687);
+    			attr_dev(strong23, "class", "svelte-14a6qz4");
+    			add_location(strong23, file$e, 57, 117, 7721);
+    			attr_dev(p21, "class", "svelte-14a6qz4");
+    			add_location(p21, file$e, 57, 0, 7604);
+    			attr_dev(strong24, "class", "svelte-14a6qz4");
+    			add_location(strong24, file$e, 58, 3, 7755);
+    			attr_dev(p22, "class", "svelte-14a6qz4");
+    			add_location(p22, file$e, 58, 0, 7752);
+    			attr_dev(h40, "id", "high-concept");
+    			attr_dev(h40, "class", "svelte-14a6qz4");
+    			add_location(h40, file$e, 59, 0, 7939);
+    			attr_dev(strong25, "class", "svelte-14a6qz4");
+    			add_location(strong25, file$e, 60, 8, 7987);
+    			attr_dev(p23, "class", "svelte-14a6qz4");
+    			add_location(p23, file$e, 60, 0, 7979);
+    			attr_dev(h41, "id", "trouble");
+    			attr_dev(h41, "class", "svelte-14a6qz4");
+    			add_location(h41, file$e, 61, 0, 8174);
+    			attr_dev(strong26, "class", "svelte-14a6qz4");
+    			add_location(strong26, file$e, 62, 28, 8232);
+    			attr_dev(p24, "class", "svelte-14a6qz4");
+    			add_location(p24, file$e, 62, 0, 8204);
+    			attr_dev(h42, "id", "relationship");
+    			attr_dev(h42, "class", "svelte-14a6qz4");
+    			add_location(h42, file$e, 63, 0, 8442);
+    			attr_dev(strong27, "class", "svelte-14a6qz4");
+    			add_location(strong27, file$e, 64, 8, 8490);
+    			attr_dev(p25, "class", "svelte-14a6qz4");
+    			add_location(p25, file$e, 64, 0, 8482);
+    			attr_dev(p26, "class", "svelte-14a6qz4");
+    			add_location(p26, file$e, 65, 0, 8617);
+    			attr_dev(p27, "class", "svelte-14a6qz4");
+    			add_location(p27, file$e, 66, 0, 8848);
+    			attr_dev(h43, "id", "free-aspects");
+    			attr_dev(h43, "class", "svelte-14a6qz4");
+    			add_location(h43, file$e, 67, 0, 8976);
+    			attr_dev(p28, "class", "svelte-14a6qz4");
+    			add_location(p28, file$e, 68, 0, 9016);
+    			attr_dev(h33, "id", "skills");
+    			attr_dev(h33, "class", "svelte-14a6qz4");
+    			add_location(h33, file$e, 69, 0, 9295);
+    			attr_dev(strong28, "class", "svelte-14a6qz4");
+    			add_location(strong28, file$e, 70, 47, 9370);
+    			attr_dev(p29, "class", "svelte-14a6qz4");
+    			add_location(p29, file$e, 70, 0, 9323);
+    			attr_dev(strong29, "class", "svelte-14a6qz4");
+    			add_location(strong29, file$e, 71, 20, 9761);
+    			attr_dev(p30, "class", "svelte-14a6qz4");
+    			add_location(p30, file$e, 71, 0, 9741);
+    			attr_dev(p31, "class", "svelte-14a6qz4");
+    			add_location(p31, file$e, 72, 0, 9998);
+    			attr_dev(li13, "class", "svelte-14a6qz4");
+    			add_location(li13, file$e, 74, 0, 10134);
+    			attr_dev(li14, "class", "svelte-14a6qz4");
+    			add_location(li14, file$e, 75, 0, 10164);
+    			attr_dev(li15, "class", "svelte-14a6qz4");
+    			add_location(li15, file$e, 76, 0, 10194);
+    			attr_dev(li16, "class", "svelte-14a6qz4");
+    			add_location(li16, file$e, 77, 0, 10226);
+    			attr_dev(li17, "class", "svelte-14a6qz4");
+    			add_location(li17, file$e, 78, 0, 10260);
+    			attr_dev(ul2, "class", "svelte-14a6qz4");
+    			add_location(ul2, file$e, 73, 0, 10129);
+    			attr_dev(h44, "id", "the-adjective-ladder");
+    			attr_dev(h44, "class", "svelte-14a6qz4");
+    			add_location(h44, file$e, 80, 0, 10309);
+    			attr_dev(em9, "class", "svelte-14a6qz4");
+    			add_location(em9, file$e, 81, 6, 10371);
+    			attr_dev(p32, "class", "svelte-14a6qz4");
+    			add_location(p32, file$e, 81, 0, 10365);
+    			attr_dev(col0, "width", "50%");
+    			attr_dev(col0, "class", "svelte-14a6qz4");
+    			add_location(col0, file$e, 82, 7, 10495);
+    			attr_dev(col1, "width", "50%");
+    			attr_dev(col1, "class", "svelte-14a6qz4");
+    			add_location(col1, file$e, 83, 0, 10515);
+    			attr_dev(p33, "class", "svelte-14a6qz4");
+    			add_location(p33, file$e, 84, 40, 10575);
+    			attr_dev(th0, "align", "left");
+    			attr_dev(th0, "class", "svelte-14a6qz4");
+    			add_location(th0, file$e, 84, 23, 10558);
+    			attr_dev(p34, "class", "svelte-14a6qz4");
+    			add_location(p34, file$e, 85, 17, 10611);
+    			attr_dev(th1, "align", "left");
+    			attr_dev(th1, "class", "svelte-14a6qz4");
+    			add_location(th1, file$e, 85, 0, 10594);
+    			attr_dev(tr0, "class", "odd svelte-14a6qz4");
+    			add_location(tr0, file$e, 84, 7, 10542);
+    			attr_dev(p35, "class", "svelte-14a6qz4");
+    			add_location(p35, file$e, 87, 34, 10673);
+    			attr_dev(td0, "align", "left");
+    			attr_dev(td0, "class", "svelte-14a6qz4");
+    			add_location(td0, file$e, 87, 17, 10656);
+    			attr_dev(p36, "class", "svelte-14a6qz4");
+    			add_location(p36, file$e, 88, 17, 10705);
+    			attr_dev(td1, "align", "left");
+    			attr_dev(td1, "class", "svelte-14a6qz4");
+    			add_location(td1, file$e, 88, 0, 10688);
+    			attr_dev(tr1, "class", "even svelte-14a6qz4");
+    			add_location(tr1, file$e, 87, 0, 10639);
+    			attr_dev(p37, "class", "svelte-14a6qz4");
+    			add_location(p37, file$e, 90, 33, 10766);
+    			attr_dev(td2, "align", "left");
+    			attr_dev(td2, "class", "svelte-14a6qz4");
+    			add_location(td2, file$e, 90, 16, 10749);
+    			attr_dev(p38, "class", "svelte-14a6qz4");
+    			add_location(p38, file$e, 91, 17, 10798);
+    			attr_dev(td3, "align", "left");
+    			attr_dev(td3, "class", "svelte-14a6qz4");
+    			add_location(td3, file$e, 91, 0, 10781);
+    			attr_dev(tr2, "class", "odd svelte-14a6qz4");
+    			add_location(tr2, file$e, 90, 0, 10733);
+    			attr_dev(p39, "class", "svelte-14a6qz4");
+    			add_location(p39, file$e, 93, 34, 10855);
+    			attr_dev(td4, "align", "left");
+    			attr_dev(td4, "class", "svelte-14a6qz4");
+    			add_location(td4, file$e, 93, 17, 10838);
+    			attr_dev(p40, "class", "svelte-14a6qz4");
+    			add_location(p40, file$e, 94, 17, 10887);
+    			attr_dev(td5, "align", "left");
+    			attr_dev(td5, "class", "svelte-14a6qz4");
+    			add_location(td5, file$e, 94, 0, 10870);
+    			attr_dev(tr3, "class", "even svelte-14a6qz4");
+    			add_location(tr3, file$e, 93, 0, 10821);
+    			attr_dev(p41, "class", "svelte-14a6qz4");
+    			add_location(p41, file$e, 96, 33, 10948);
+    			attr_dev(td6, "align", "left");
+    			attr_dev(td6, "class", "svelte-14a6qz4");
+    			add_location(td6, file$e, 96, 16, 10931);
+    			attr_dev(p42, "class", "svelte-14a6qz4");
+    			add_location(p42, file$e, 97, 17, 10980);
+    			attr_dev(td7, "align", "left");
+    			attr_dev(td7, "class", "svelte-14a6qz4");
+    			add_location(td7, file$e, 97, 0, 10963);
+    			attr_dev(tr4, "class", "odd svelte-14a6qz4");
+    			add_location(tr4, file$e, 96, 0, 10915);
+    			attr_dev(p43, "class", "svelte-14a6qz4");
+    			add_location(p43, file$e, 99, 34, 11039);
+    			attr_dev(td8, "align", "left");
+    			attr_dev(td8, "class", "svelte-14a6qz4");
+    			add_location(td8, file$e, 99, 17, 11022);
+    			attr_dev(p44, "class", "svelte-14a6qz4");
+    			add_location(p44, file$e, 100, 17, 11071);
+    			attr_dev(td9, "align", "left");
+    			attr_dev(td9, "class", "svelte-14a6qz4");
+    			add_location(td9, file$e, 100, 0, 11054);
+    			attr_dev(tr5, "class", "even svelte-14a6qz4");
+    			add_location(tr5, file$e, 99, 0, 11005);
+    			attr_dev(p45, "class", "svelte-14a6qz4");
+    			add_location(p45, file$e, 102, 33, 11128);
+    			attr_dev(td10, "align", "left");
+    			attr_dev(td10, "class", "svelte-14a6qz4");
+    			add_location(td10, file$e, 102, 16, 11111);
+    			attr_dev(p46, "class", "svelte-14a6qz4");
+    			add_location(p46, file$e, 103, 17, 11160);
+    			attr_dev(td11, "align", "left");
+    			attr_dev(td11, "class", "svelte-14a6qz4");
+    			add_location(td11, file$e, 103, 0, 11143);
+    			attr_dev(tr6, "class", "odd svelte-14a6qz4");
+    			add_location(tr6, file$e, 102, 0, 11095);
+    			attr_dev(p47, "class", "svelte-14a6qz4");
+    			add_location(p47, file$e, 105, 34, 11217);
+    			attr_dev(td12, "align", "left");
+    			attr_dev(td12, "class", "svelte-14a6qz4");
+    			add_location(td12, file$e, 105, 17, 11200);
+    			attr_dev(p48, "class", "svelte-14a6qz4");
+    			add_location(p48, file$e, 106, 17, 11249);
+    			attr_dev(td13, "align", "left");
+    			attr_dev(td13, "class", "svelte-14a6qz4");
+    			add_location(td13, file$e, 106, 0, 11232);
+    			attr_dev(tr7, "class", "even svelte-14a6qz4");
+    			add_location(tr7, file$e, 105, 0, 11183);
+    			attr_dev(p49, "class", "svelte-14a6qz4");
+    			add_location(p49, file$e, 108, 33, 11305);
+    			attr_dev(td14, "align", "left");
+    			attr_dev(td14, "class", "svelte-14a6qz4");
+    			add_location(td14, file$e, 108, 16, 11288);
+    			attr_dev(p50, "class", "svelte-14a6qz4");
+    			add_location(p50, file$e, 109, 17, 11337);
+    			attr_dev(td15, "align", "left");
+    			attr_dev(td15, "class", "svelte-14a6qz4");
+    			add_location(td15, file$e, 109, 0, 11320);
+    			attr_dev(tr8, "class", "odd svelte-14a6qz4");
+    			add_location(tr8, file$e, 108, 0, 11272);
+    			attr_dev(p51, "class", "svelte-14a6qz4");
+    			add_location(p51, file$e, 111, 34, 11397);
+    			attr_dev(td16, "align", "left");
+    			attr_dev(td16, "class", "svelte-14a6qz4");
+    			add_location(td16, file$e, 111, 17, 11380);
+    			attr_dev(p52, "class", "svelte-14a6qz4");
+    			add_location(p52, file$e, 112, 17, 11429);
+    			attr_dev(td17, "align", "left");
+    			attr_dev(td17, "class", "svelte-14a6qz4");
+    			add_location(td17, file$e, 112, 0, 11412);
+    			attr_dev(tr9, "class", "even svelte-14a6qz4");
+    			add_location(tr9, file$e, 111, 0, 11363);
+    			attr_dev(p53, "class", "svelte-14a6qz4");
+    			add_location(p53, file$e, 114, 33, 11489);
+    			attr_dev(td18, "align", "left");
+    			attr_dev(td18, "class", "svelte-14a6qz4");
+    			add_location(td18, file$e, 114, 16, 11472);
+    			attr_dev(p54, "class", "svelte-14a6qz4");
+    			add_location(p54, file$e, 115, 17, 11521);
+    			attr_dev(td19, "align", "left");
+    			attr_dev(td19, "class", "svelte-14a6qz4");
+    			add_location(td19, file$e, 115, 0, 11504);
+    			attr_dev(tr10, "class", "odd svelte-14a6qz4");
+    			add_location(tr10, file$e, 114, 0, 11456);
+    			attr_dev(p55, "class", "svelte-14a6qz4");
+    			add_location(p55, file$e, 117, 34, 11578);
+    			attr_dev(td20, "align", "left");
+    			attr_dev(td20, "class", "svelte-14a6qz4");
+    			add_location(td20, file$e, 117, 17, 11561);
+    			attr_dev(p56, "class", "svelte-14a6qz4");
+    			add_location(p56, file$e, 118, 17, 11610);
+    			attr_dev(td21, "align", "left");
+    			attr_dev(td21, "class", "svelte-14a6qz4");
+    			add_location(td21, file$e, 118, 0, 11593);
+    			attr_dev(tr11, "class", "even svelte-14a6qz4");
+    			add_location(tr11, file$e, 117, 0, 11544);
+    			attr_dev(p57, "class", "svelte-14a6qz4");
+    			add_location(p57, file$e, 120, 33, 11670);
+    			attr_dev(td22, "align", "left");
+    			attr_dev(td22, "class", "svelte-14a6qz4");
+    			add_location(td22, file$e, 120, 16, 11653);
+    			attr_dev(p58, "class", "svelte-14a6qz4");
+    			add_location(p58, file$e, 121, 17, 11702);
+    			attr_dev(td23, "align", "left");
+    			attr_dev(td23, "class", "svelte-14a6qz4");
+    			add_location(td23, file$e, 121, 0, 11685);
+    			attr_dev(tr12, "class", "odd svelte-14a6qz4");
+    			add_location(tr12, file$e, 120, 0, 11637);
+    			attr_dev(p59, "class", "svelte-14a6qz4");
+    			add_location(p59, file$e, 123, 34, 11767);
+    			attr_dev(td24, "align", "left");
+    			attr_dev(td24, "class", "svelte-14a6qz4");
+    			add_location(td24, file$e, 123, 17, 11750);
+    			attr_dev(p60, "class", "svelte-14a6qz4");
+    			add_location(p60, file$e, 124, 17, 11799);
+    			attr_dev(td25, "align", "left");
+    			attr_dev(td25, "class", "svelte-14a6qz4");
+    			add_location(td25, file$e, 124, 0, 11782);
+    			attr_dev(tr13, "class", "even svelte-14a6qz4");
+    			add_location(tr13, file$e, 123, 0, 11733);
+    			attr_dev(tbody0, "class", "svelte-14a6qz4");
+    			add_location(tbody0, file$e, 84, 0, 10535);
+    			attr_dev(table0, "class", "svelte-14a6qz4");
+    			add_location(table0, file$e, 82, 0, 10488);
+    			attr_dev(h45, "id", "skill-list");
+    			attr_dev(h45, "class", "svelte-14a6qz4");
+    			add_location(h45, file$e, 128, 0, 11846);
+    			attr_dev(br0, "class", "svelte-14a6qz4");
+    			add_location(br0, file$e, 130, 0, 11932);
+    			attr_dev(br1, "class", "svelte-14a6qz4");
+    			add_location(br1, file$e, 131, 0, 11938);
+    			attr_dev(p61, "class", "svelte-14a6qz4");
+    			add_location(p61, file$e, 129, 0, 11882);
+    			attr_dev(th2, "class", "svelte-14a6qz4");
+    			add_location(th2, file$e, 135, 0, 11969);
+    			attr_dev(th3, "class", "svelte-14a6qz4");
+    			add_location(th3, file$e, 136, 0, 11979);
+    			attr_dev(th4, "class", "svelte-14a6qz4");
+    			add_location(th4, file$e, 137, 0, 11989);
+    			attr_dev(th5, "class", "svelte-14a6qz4");
+    			add_location(th5, file$e, 138, 0, 11999);
+    			attr_dev(tr14, "class", "svelte-14a6qz4");
+    			add_location(tr14, file$e, 134, 0, 11964);
+    			attr_dev(thead, "class", "svelte-14a6qz4");
+    			add_location(thead, file$e, 133, 0, 11956);
+    			attr_dev(strong30, "class", "svelte-14a6qz4");
+    			add_location(strong30, file$e, 142, 4, 12040);
+    			attr_dev(td26, "class", "svelte-14a6qz4");
+    			add_location(td26, file$e, 142, 0, 12036);
+    			attr_dev(strong31, "class", "svelte-14a6qz4");
+    			add_location(strong31, file$e, 143, 4, 12076);
+    			attr_dev(td27, "class", "svelte-14a6qz4");
+    			add_location(td27, file$e, 143, 0, 12072);
+    			attr_dev(strong32, "class", "svelte-14a6qz4");
+    			add_location(strong32, file$e, 144, 4, 12110);
+    			attr_dev(td28, "class", "svelte-14a6qz4");
+    			add_location(td28, file$e, 144, 0, 12106);
+    			attr_dev(strong33, "class", "svelte-14a6qz4");
+    			add_location(strong33, file$e, 145, 4, 12141);
+    			attr_dev(td29, "class", "svelte-14a6qz4");
+    			add_location(td29, file$e, 145, 0, 12137);
+    			attr_dev(tr15, "class", "svelte-14a6qz4");
+    			add_location(tr15, file$e, 141, 7, 12031);
+    			attr_dev(strong34, "class", "svelte-14a6qz4");
+    			add_location(strong34, file$e, 148, 4, 12188);
+    			attr_dev(td30, "class", "svelte-14a6qz4");
+    			add_location(td30, file$e, 148, 0, 12184);
+    			attr_dev(strong35, "class", "svelte-14a6qz4");
+    			add_location(strong35, file$e, 149, 4, 12224);
+    			attr_dev(td31, "class", "svelte-14a6qz4");
+    			add_location(td31, file$e, 149, 0, 12220);
+    			attr_dev(strong36, "class", "svelte-14a6qz4");
+    			add_location(strong36, file$e, 150, 4, 12256);
+    			attr_dev(td32, "class", "svelte-14a6qz4");
+    			add_location(td32, file$e, 150, 0, 12252);
+    			attr_dev(strong37, "class", "svelte-14a6qz4");
+    			add_location(strong37, file$e, 151, 4, 12289);
+    			attr_dev(td33, "class", "svelte-14a6qz4");
+    			add_location(td33, file$e, 151, 0, 12285);
+    			attr_dev(tr16, "class", "svelte-14a6qz4");
+    			add_location(tr16, file$e, 147, 0, 12179);
+    			attr_dev(strong38, "class", "svelte-14a6qz4");
+    			add_location(strong38, file$e, 154, 4, 12332);
+    			attr_dev(td34, "class", "svelte-14a6qz4");
+    			add_location(td34, file$e, 154, 0, 12328);
+    			attr_dev(strong39, "class", "svelte-14a6qz4");
+    			add_location(strong39, file$e, 155, 4, 12367);
+    			attr_dev(td35, "class", "svelte-14a6qz4");
+    			add_location(td35, file$e, 155, 0, 12363);
+    			attr_dev(strong40, "class", "svelte-14a6qz4");
+    			add_location(strong40, file$e, 156, 4, 12401);
+    			attr_dev(td36, "class", "svelte-14a6qz4");
+    			add_location(td36, file$e, 156, 0, 12397);
+    			attr_dev(strong41, "class", "svelte-14a6qz4");
+    			add_location(strong41, file$e, 157, 4, 12436);
+    			attr_dev(td37, "class", "svelte-14a6qz4");
+    			add_location(td37, file$e, 157, 0, 12432);
+    			attr_dev(tr17, "class", "svelte-14a6qz4");
+    			add_location(tr17, file$e, 153, 0, 12323);
+    			attr_dev(strong42, "class", "svelte-14a6qz4");
+    			add_location(strong42, file$e, 160, 4, 12481);
+    			attr_dev(td38, "class", "svelte-14a6qz4");
+    			add_location(td38, file$e, 160, 0, 12477);
+    			attr_dev(strong43, "class", "svelte-14a6qz4");
+    			add_location(strong43, file$e, 161, 4, 12516);
+    			attr_dev(td39, "class", "svelte-14a6qz4");
+    			add_location(td39, file$e, 161, 0, 12512);
+    			attr_dev(strong44, "class", "svelte-14a6qz4");
+    			add_location(strong44, file$e, 162, 4, 12548);
+    			attr_dev(td40, "class", "svelte-14a6qz4");
+    			add_location(td40, file$e, 162, 0, 12544);
+    			attr_dev(strong45, "class", "svelte-14a6qz4");
+    			add_location(strong45, file$e, 163, 4, 12582);
+    			attr_dev(td41, "class", "svelte-14a6qz4");
+    			add_location(td41, file$e, 163, 0, 12578);
+    			attr_dev(tr18, "class", "svelte-14a6qz4");
+    			add_location(tr18, file$e, 159, 0, 12472);
+    			attr_dev(strong46, "class", "svelte-14a6qz4");
+    			add_location(strong46, file$e, 166, 4, 12624);
+    			attr_dev(td42, "class", "svelte-14a6qz4");
+    			add_location(td42, file$e, 166, 0, 12620);
+    			attr_dev(strong47, "class", "svelte-14a6qz4");
+    			add_location(strong47, file$e, 167, 4, 12657);
+    			attr_dev(td43, "class", "svelte-14a6qz4");
+    			add_location(td43, file$e, 167, 0, 12653);
+    			attr_dev(strong48, "class", "svelte-14a6qz4");
+    			add_location(strong48, file$e, 168, 4, 12695);
+    			attr_dev(td44, "class", "svelte-14a6qz4");
+    			add_location(td44, file$e, 168, 0, 12691);
+    			attr_dev(td45, "class", "svelte-14a6qz4");
+    			add_location(td45, file$e, 169, 0, 12725);
+    			attr_dev(tr19, "class", "svelte-14a6qz4");
+    			add_location(tr19, file$e, 165, 0, 12615);
+    			attr_dev(tbody1, "class", "svelte-14a6qz4");
+    			add_location(tbody1, file$e, 141, 0, 12024);
+    			attr_dev(table1, "class", "svelte-14a6qz4");
+    			add_location(table1, file$e, 132, 0, 11948);
+    			attr_dev(br2, "class", "svelte-14a6qz4");
+    			add_location(br2, file$e, 172, 0, 12758);
+    			attr_dev(br3, "class", "svelte-14a6qz4");
+    			add_location(br3, file$e, 173, 0, 12764);
+    			attr_dev(br4, "class", "svelte-14a6qz4");
+    			add_location(br4, file$e, 174, 0, 12770);
+    			attr_dev(strong49, "class", "svelte-14a6qz4");
+    			add_location(strong49, file$e, 175, 3, 12779);
+    			attr_dev(p62, "class", "svelte-14a6qz4");
+    			add_location(p62, file$e, 175, 0, 12776);
+    			attr_dev(strong50, "class", "svelte-14a6qz4");
+    			add_location(strong50, file$e, 176, 3, 12989);
+    			attr_dev(p63, "class", "svelte-14a6qz4");
+    			add_location(p63, file$e, 176, 0, 12986);
+    			attr_dev(strong51, "class", "svelte-14a6qz4");
+    			add_location(strong51, file$e, 177, 3, 13143);
+    			attr_dev(p64, "class", "svelte-14a6qz4");
+    			add_location(p64, file$e, 177, 0, 13140);
+    			attr_dev(strong52, "class", "svelte-14a6qz4");
+    			add_location(strong52, file$e, 178, 3, 13394);
+    			attr_dev(p65, "class", "svelte-14a6qz4");
+    			add_location(p65, file$e, 178, 0, 13391);
+    			attr_dev(strong53, "class", "svelte-14a6qz4");
+    			add_location(strong53, file$e, 179, 3, 13588);
+    			attr_dev(p66, "class", "svelte-14a6qz4");
+    			add_location(p66, file$e, 179, 0, 13585);
+    			attr_dev(strong54, "class", "svelte-14a6qz4");
+    			add_location(strong54, file$e, 180, 3, 13934);
+    			attr_dev(p67, "class", "svelte-14a6qz4");
+    			add_location(p67, file$e, 180, 0, 13931);
+    			attr_dev(strong55, "class", "svelte-14a6qz4");
+    			add_location(strong55, file$e, 181, 3, 14131);
+    			attr_dev(p68, "class", "svelte-14a6qz4");
+    			add_location(p68, file$e, 181, 0, 14128);
+    			attr_dev(strong56, "class", "svelte-14a6qz4");
+    			add_location(strong56, file$e, 182, 3, 14470);
+    			attr_dev(p69, "class", "svelte-14a6qz4");
+    			add_location(p69, file$e, 182, 0, 14467);
+    			attr_dev(strong57, "class", "svelte-14a6qz4");
+    			add_location(strong57, file$e, 183, 3, 14679);
+    			attr_dev(p70, "class", "svelte-14a6qz4");
+    			add_location(p70, file$e, 183, 0, 14676);
+    			attr_dev(strong58, "class", "svelte-14a6qz4");
+    			add_location(strong58, file$e, 184, 3, 14845);
+    			attr_dev(p71, "class", "svelte-14a6qz4");
+    			add_location(p71, file$e, 184, 0, 14842);
+    			attr_dev(strong59, "class", "svelte-14a6qz4");
+    			add_location(strong59, file$e, 185, 3, 15097);
+    			attr_dev(p72, "class", "svelte-14a6qz4");
+    			add_location(p72, file$e, 185, 0, 15094);
+    			attr_dev(strong60, "class", "svelte-14a6qz4");
+    			add_location(strong60, file$e, 186, 3, 15491);
+    			attr_dev(p73, "class", "svelte-14a6qz4");
+    			add_location(p73, file$e, 186, 0, 15488);
+    			attr_dev(strong61, "class", "svelte-14a6qz4");
+    			add_location(strong61, file$e, 187, 3, 15793);
+    			attr_dev(strong62, "class", "svelte-14a6qz4");
+    			add_location(strong62, file$e, 187, 286, 16076);
+    			attr_dev(p74, "class", "svelte-14a6qz4");
+    			add_location(p74, file$e, 187, 0, 15790);
+    			attr_dev(strong63, "class", "svelte-14a6qz4");
+    			add_location(strong63, file$e, 188, 3, 16110);
+    			attr_dev(p75, "class", "svelte-14a6qz4");
+    			add_location(p75, file$e, 188, 0, 16107);
+    			attr_dev(strong64, "class", "svelte-14a6qz4");
+    			add_location(strong64, file$e, 189, 3, 16394);
+    			attr_dev(p76, "class", "svelte-14a6qz4");
+    			add_location(p76, file$e, 189, 0, 16391);
+    			attr_dev(strong65, "class", "svelte-14a6qz4");
+    			add_location(strong65, file$e, 190, 3, 16637);
+    			attr_dev(p77, "class", "svelte-14a6qz4");
+    			add_location(p77, file$e, 190, 0, 16634);
+    			attr_dev(strong66, "class", "svelte-14a6qz4");
+    			add_location(strong66, file$e, 191, 3, 16955);
+    			attr_dev(p78, "class", "svelte-14a6qz4");
+    			add_location(p78, file$e, 191, 0, 16952);
+    			attr_dev(strong67, "class", "svelte-14a6qz4");
+    			add_location(strong67, file$e, 192, 3, 17143);
+    			attr_dev(p79, "class", "svelte-14a6qz4");
+    			add_location(p79, file$e, 192, 0, 17140);
+    			attr_dev(strong68, "class", "svelte-14a6qz4");
+    			add_location(strong68, file$e, 193, 3, 17338);
+    			attr_dev(strong69, "class", "svelte-14a6qz4");
+    			add_location(strong69, file$e, 193, 330, 17665);
+    			attr_dev(p80, "class", "svelte-14a6qz4");
+    			add_location(p80, file$e, 193, 0, 17335);
+    			attr_dev(h46, "id", "alternative-skill-lists");
+    			attr_dev(h46, "class", "svelte-14a6qz4");
+    			add_location(h46, file$e, 194, 0, 17696);
+    			attr_dev(p81, "class", "svelte-14a6qz4");
+    			add_location(p81, file$e, 195, 0, 17758);
+    			attr_dev(li18, "class", "svelte-14a6qz4");
+    			add_location(li18, file$e, 197, 0, 18155);
+    			attr_dev(em10, "class", "svelte-14a6qz4");
+    			add_location(em10, file$e, 198, 253, 18632);
+    			attr_dev(li19, "class", "svelte-14a6qz4");
+    			add_location(li19, file$e, 198, 0, 18379);
+    			attr_dev(li20, "class", "svelte-14a6qz4");
+    			add_location(li20, file$e, 199, 0, 18721);
+    			attr_dev(li21, "class", "svelte-14a6qz4");
+    			add_location(li21, file$e, 200, 0, 18934);
+    			attr_dev(ul3, "class", "svelte-14a6qz4");
+    			add_location(ul3, file$e, 196, 0, 18150);
+    			attr_dev(p82, "class", "svelte-14a6qz4");
+    			add_location(p82, file$e, 202, 0, 19167);
+    			attr_dev(strong70, "class", "svelte-14a6qz4");
+    			add_location(strong70, file$e, 203, 133, 19932);
+    			attr_dev(p83, "class", "svelte-14a6qz4");
+    			add_location(p83, file$e, 203, 0, 19799);
+    			attr_dev(h34, "id", "refresh");
+    			attr_dev(h34, "class", "svelte-14a6qz4");
+    			add_location(h34, file$e, 204, 0, 19962);
+    			attr_dev(strong71, "class", "svelte-14a6qz4");
+    			add_location(strong71, file$e, 205, 8, 20000);
+    			attr_dev(strong72, "class", "svelte-14a6qz4");
+    			add_location(strong72, file$e, 205, 58, 20050);
+    			attr_dev(strong73, "class", "svelte-14a6qz4");
+    			add_location(strong73, file$e, 205, 88, 20080);
+    			attr_dev(p84, "class", "svelte-14a6qz4");
+    			add_location(p84, file$e, 205, 0, 19992);
+    			attr_dev(p85, "class", "svelte-14a6qz4");
+    			add_location(p85, file$e, 206, 0, 20210);
+    			attr_dev(p86, "class", "svelte-14a6qz4");
+    			add_location(p86, file$e, 207, 0, 20508);
+    			attr_dev(h35, "id", "stunts");
+    			attr_dev(h35, "class", "svelte-14a6qz4");
+    			add_location(h35, file$e, 208, 0, 20845);
+    			attr_dev(strong74, "class", "svelte-14a6qz4");
+    			add_location(strong74, file$e, 209, 132, 21005);
+    			attr_dev(p87, "class", "svelte-14a6qz4");
+    			add_location(p87, file$e, 209, 0, 20873);
+    			attr_dev(p88, "class", "svelte-14a6qz4");
+    			add_location(p88, file$e, 210, 0, 21366);
+    			attr_dev(h47, "id", "writing-stunts");
+    			attr_dev(h47, "class", "svelte-14a6qz4");
+    			add_location(h47, file$e, 211, 0, 21588);
+    			attr_dev(p89, "class", "svelte-14a6qz4");
+    			add_location(p89, file$e, 212, 0, 21632);
+    			attr_dev(strong75, "class", "svelte-14a6qz4");
+    			add_location(strong75, file$e, 213, 3, 21735);
+    			attr_dev(strong76, "class", "svelte-14a6qz4");
+    			add_location(strong76, file$e, 213, 67, 21799);
+    			attr_dev(strong77, "class", "svelte-14a6qz4");
+    			add_location(strong77, file$e, 213, 205, 21937);
+    			attr_dev(p90, "class", "svelte-14a6qz4");
+    			add_location(p90, file$e, 213, 0, 21732);
+    			attr_dev(p91, "class", "svelte-14a6qz4");
+    			add_location(p91, file$e, 214, 0, 22003);
+    			attr_dev(strong78, "class", "svelte-14a6qz4");
+    			add_location(strong78, file$e, 215, 13, 22060);
+    			attr_dev(strong79, "class", "svelte-14a6qz4");
+    			add_location(strong79, file$e, 215, 111, 22158);
+    			attr_dev(strong80, "class", "svelte-14a6qz4");
+    			add_location(strong80, file$e, 215, 146, 22193);
+    			attr_dev(strong81, "class", "svelte-14a6qz4");
+    			add_location(strong81, file$e, 215, 226, 22273);
+    			attr_dev(p92, "class", "svelte-14a6qz4");
+    			add_location(p92, file$e, 215, 0, 22047);
+    			attr_dev(strong82, "class", "svelte-14a6qz4");
+    			add_location(strong82, file$e, 216, 3, 22324);
+    			attr_dev(strong83, "class", "svelte-14a6qz4");
+    			add_location(strong83, file$e, 216, 63, 22384);
+    			attr_dev(strong84, "class", "svelte-14a6qz4");
+    			add_location(strong84, file$e, 216, 129, 22450);
+    			attr_dev(strong85, "class", "svelte-14a6qz4");
+    			add_location(strong85, file$e, 216, 155, 22476);
+    			attr_dev(strong86, "class", "svelte-14a6qz4");
+    			add_location(strong86, file$e, 216, 184, 22505);
+    			attr_dev(strong87, "class", "svelte-14a6qz4");
+    			add_location(strong87, file$e, 216, 217, 22538);
+    			attr_dev(p93, "class", "svelte-14a6qz4");
+    			add_location(p93, file$e, 216, 0, 22321);
+    			attr_dev(strong88, "class", "svelte-14a6qz4");
+    			add_location(strong88, file$e, 217, 3, 22576);
+    			attr_dev(strong89, "class", "svelte-14a6qz4");
+    			add_location(strong89, file$e, 217, 67, 22640);
+    			attr_dev(p94, "class", "svelte-14a6qz4");
+    			add_location(p94, file$e, 217, 0, 22573);
+    			attr_dev(strong90, "class", "svelte-14a6qz4");
+    			add_location(strong90, file$e, 219, 4, 22779);
+    			attr_dev(li22, "class", "svelte-14a6qz4");
+    			add_location(li22, file$e, 219, 0, 22775);
+    			attr_dev(li23, "class", "svelte-14a6qz4");
+    			add_location(li23, file$e, 220, 0, 22956);
+    			attr_dev(strong91, "class", "svelte-14a6qz4");
+    			add_location(strong91, file$e, 221, 4, 23169);
+    			attr_dev(li24, "class", "svelte-14a6qz4");
+    			add_location(li24, file$e, 221, 0, 23165);
+    			attr_dev(strong92, "class", "svelte-14a6qz4");
+    			add_location(strong92, file$e, 222, 4, 23386);
+    			attr_dev(strong93, "class", "svelte-14a6qz4");
+    			add_location(strong93, file$e, 222, 282, 23664);
+    			attr_dev(li25, "class", "svelte-14a6qz4");
+    			add_location(li25, file$e, 222, 0, 23382);
+    			attr_dev(strong94, "class", "svelte-14a6qz4");
+    			add_location(strong94, file$e, 223, 4, 23719);
+    			attr_dev(li26, "class", "svelte-14a6qz4");
+    			add_location(li26, file$e, 223, 0, 23715);
+    			attr_dev(ul4, "class", "svelte-14a6qz4");
+    			add_location(ul4, file$e, 218, 0, 22770);
+    			attr_dev(p95, "class", "svelte-14a6qz4");
+    			add_location(p95, file$e, 225, 0, 23897);
+    			attr_dev(strong95, "class", "svelte-14a6qz4");
+    			add_location(strong95, file$e, 226, 13, 23954);
+    			attr_dev(strong96, "class", "svelte-14a6qz4");
+    			add_location(strong96, file$e, 226, 95, 24036);
+    			attr_dev(strong97, "class", "svelte-14a6qz4");
+    			add_location(strong97, file$e, 226, 151, 24092);
+    			attr_dev(p96, "class", "svelte-14a6qz4");
+    			add_location(p96, file$e, 226, 0, 23941);
+    			attr_dev(strong98, "class", "svelte-14a6qz4");
+    			add_location(strong98, file$e, 227, 3, 24157);
+    			attr_dev(strong99, "class", "svelte-14a6qz4");
+    			add_location(strong99, file$e, 227, 59, 24213);
+    			attr_dev(strong100, "class", "svelte-14a6qz4");
+    			add_location(strong100, file$e, 227, 106, 24260);
+    			attr_dev(strong101, "class", "svelte-14a6qz4");
+    			add_location(strong101, file$e, 227, 178, 24332);
+    			attr_dev(p97, "class", "svelte-14a6qz4");
+    			add_location(p97, file$e, 227, 0, 24154);
+    			attr_dev(h36, "id", "stress-and-consequences");
+    			attr_dev(h36, "class", "svelte-14a6qz4");
+    			add_location(h36, file$e, 228, 0, 24376);
+    			attr_dev(strong102, "class", "svelte-14a6qz4");
+    			add_location(strong102, file$e, 229, 3, 24441);
+    			attr_dev(strong103, "class", "svelte-14a6qz4");
+    			add_location(strong103, file$e, 229, 31, 24469);
+    			attr_dev(p98, "class", "svelte-14a6qz4");
+    			add_location(p98, file$e, 229, 0, 24438);
+    			attr_dev(p99, "class", "svelte-14a6qz4");
+    			add_location(p99, file$e, 230, 0, 24781);
+    			attr_dev(col2, "width", "50%");
+    			attr_dev(col2, "class", "svelte-14a6qz4");
+    			add_location(col2, file$e, 231, 7, 24947);
+    			attr_dev(col3, "width", "50%");
+    			attr_dev(col3, "class", "svelte-14a6qz4");
+    			add_location(col3, file$e, 232, 0, 24967);
+    			attr_dev(p100, "class", "svelte-14a6qz4");
+    			add_location(p100, file$e, 233, 40, 25027);
+    			attr_dev(th6, "align", "left");
+    			attr_dev(th6, "class", "svelte-14a6qz4");
+    			add_location(th6, file$e, 233, 23, 25010);
+    			attr_dev(p101, "class", "svelte-14a6qz4");
+    			add_location(p101, file$e, 234, 17, 25070);
+    			attr_dev(th7, "align", "left");
+    			attr_dev(th7, "class", "svelte-14a6qz4");
+    			add_location(th7, file$e, 234, 0, 25053);
+    			attr_dev(tr20, "class", "odd svelte-14a6qz4");
+    			add_location(tr20, file$e, 233, 7, 24994);
+    			attr_dev(p102, "class", "svelte-14a6qz4");
+    			add_location(p102, file$e, 236, 34, 25145);
+    			attr_dev(td46, "align", "left");
+    			attr_dev(td46, "class", "svelte-14a6qz4");
+    			add_location(td46, file$e, 236, 17, 25128);
+    			attr_dev(strong104, "class", "svelte-14a6qz4");
+    			add_location(strong104, file$e, 237, 20, 25191);
+    			attr_dev(p103, "class", "svelte-14a6qz4");
+    			add_location(p103, file$e, 237, 17, 25188);
+    			attr_dev(td47, "align", "left");
+    			attr_dev(td47, "class", "svelte-14a6qz4");
+    			add_location(td47, file$e, 237, 0, 25171);
+    			attr_dev(tr21, "class", "even svelte-14a6qz4");
+    			add_location(tr21, file$e, 236, 0, 25111);
+    			attr_dev(p104, "class", "svelte-14a6qz4");
+    			add_location(p104, file$e, 239, 33, 25266);
+    			attr_dev(td48, "align", "left");
+    			attr_dev(td48, "class", "svelte-14a6qz4");
+    			add_location(td48, file$e, 239, 16, 25249);
+    			attr_dev(strong105, "class", "svelte-14a6qz4");
+    			add_location(strong105, file$e, 240, 20, 25324);
+    			attr_dev(p105, "class", "svelte-14a6qz4");
+    			add_location(p105, file$e, 240, 17, 25321);
+    			attr_dev(td49, "align", "left");
+    			attr_dev(td49, "class", "svelte-14a6qz4");
+    			add_location(td49, file$e, 240, 0, 25304);
+    			attr_dev(tr22, "class", "odd svelte-14a6qz4");
+    			add_location(tr22, file$e, 239, 0, 25233);
+    			attr_dev(p106, "class", "svelte-14a6qz4");
+    			add_location(p106, file$e, 242, 34, 25404);
+    			attr_dev(td50, "align", "left");
+    			attr_dev(td50, "class", "svelte-14a6qz4");
+    			add_location(td50, file$e, 242, 17, 25387);
+    			attr_dev(strong106, "class", "svelte-14a6qz4");
+    			add_location(strong106, file$e, 243, 20, 25460);
+    			attr_dev(p107, "class", "svelte-14a6qz4");
+    			add_location(p107, file$e, 243, 17, 25457);
+    			attr_dev(td51, "align", "left");
+    			attr_dev(td51, "class", "svelte-14a6qz4");
+    			add_location(td51, file$e, 243, 0, 25440);
+    			attr_dev(tr23, "class", "even svelte-14a6qz4");
+    			add_location(tr23, file$e, 242, 0, 25370);
+    			attr_dev(p108, "class", "svelte-14a6qz4");
+    			add_location(p108, file$e, 245, 33, 25545);
+    			attr_dev(td52, "align", "left");
+    			attr_dev(td52, "class", "svelte-14a6qz4");
+    			add_location(td52, file$e, 245, 16, 25528);
+    			attr_dev(strong107, "class", "svelte-14a6qz4");
+    			add_location(strong107, file$e, 246, 20, 25600);
+    			attr_dev(p109, "class", "svelte-14a6qz4");
+    			add_location(p109, file$e, 246, 17, 25597);
+    			attr_dev(td53, "align", "left");
+    			attr_dev(td53, "class", "svelte-14a6qz4");
+    			add_location(td53, file$e, 246, 0, 25580);
+    			attr_dev(tr24, "class", "odd svelte-14a6qz4");
+    			add_location(tr24, file$e, 245, 0, 25512);
+    			attr_dev(tbody2, "class", "svelte-14a6qz4");
+    			add_location(tbody2, file$e, 233, 0, 24987);
+    			attr_dev(table2, "class", "svelte-14a6qz4");
+    			add_location(table2, file$e, 231, 0, 24940);
+    			attr_dev(em11, "class", "svelte-14a6qz4");
+    			add_location(em11, file$e, 250, 64, 25810);
+    			attr_dev(strong108, "class", "svelte-14a6qz4");
+    			add_location(strong108, file$e, 250, 88, 25834);
+    			attr_dev(p110, "class", "svelte-14a6qz4");
+    			add_location(p110, file$e, 250, 0, 25746);
+    			attr_dev(h48, "id", "hang-on-thats-not-what-i-remember");
+    			attr_dev(h48, "class", "svelte-14a6qz4");
+    			add_location(h48, file$e, 251, 0, 25865);
+    			attr_dev(em12, "class", "svelte-14a6qz4");
+    			add_location(em12, file$e, 252, 6, 25956);
+    			attr_dev(em13, "class", "svelte-14a6qz4");
+    			add_location(em13, file$e, 252, 72, 26022);
+    			attr_dev(em14, "class", "svelte-14a6qz4");
+    			add_location(em14, file$e, 252, 102, 26052);
+    			attr_dev(p111, "class", "svelte-14a6qz4");
+    			add_location(p111, file$e, 252, 0, 25950);
+    			attr_dev(p112, "class", "svelte-14a6qz4");
+    			add_location(p112, file$e, 253, 0, 26368);
+    			attr_dev(strong109, "class", "svelte-14a6qz4");
+    			add_location(strong109, file$e, 255, 21, 26478);
+    			attr_dev(li27, "class", "svelte-14a6qz4");
+    			add_location(li27, file$e, 255, 0, 26457);
+    			attr_dev(em15, "class", "svelte-14a6qz4");
+    			add_location(em15, file$e, 256, 249, 26940);
+    			attr_dev(li28, "class", "svelte-14a6qz4");
+    			add_location(li28, file$e, 256, 0, 26691);
+    			attr_dev(strong110, "class", "svelte-14a6qz4");
+    			add_location(strong110, file$e, 257, 253, 27263);
+    			attr_dev(strong111, "class", "svelte-14a6qz4");
+    			add_location(strong111, file$e, 257, 306, 27316);
+    			attr_dev(strong112, "class", "svelte-14a6qz4");
+    			add_location(strong112, file$e, 257, 343, 27353);
+    			attr_dev(li29, "class", "svelte-14a6qz4");
+    			add_location(li29, file$e, 257, 0, 27010);
+    			attr_dev(ul5, "class", "svelte-14a6qz4");
+    			add_location(ul5, file$e, 254, 0, 26452);
+    			attr_dev(h37, "id", "finishing-touches");
+    			attr_dev(h37, "class", "svelte-14a6qz4");
+    			add_location(h37, file$e, 259, 0, 27406);
+    			attr_dev(p113, "class", "svelte-14a6qz4");
+    			add_location(p113, file$e, 260, 0, 27456);
+    			attr_dev(h14, "id", "taking-action-rolling-the-dice");
+    			attr_dev(h14, "class", "svelte-14a6qz4");
+    			add_location(h14, file$e, 261, 0, 27623);
+    			attr_dev(hr7, "class", "svelte-14a6qz4");
+    			add_location(hr7, file$e, 262, 0, 27700);
+    			attr_dev(em16, "class", "svelte-14a6qz4");
+    			add_location(em16, file$e, 263, 16, 27721);
+    			attr_dev(strong113, "class", "svelte-14a6qz4");
+    			add_location(strong113, file$e, 263, 240, 27945);
+    			attr_dev(p114, "class", "svelte-14a6qz4");
+    			add_location(p114, file$e, 263, 0, 27705);
+    			attr_dev(strong114, "class", "svelte-14a6qz4");
+    			add_location(strong114, file$e, 264, 35, 28074);
+    			attr_dev(em17, "class", "svelte-14a6qz4");
+    			add_location(em17, file$e, 264, 108, 28147);
+    			attr_dev(p115, "class", "svelte-14a6qz4");
+    			add_location(p115, file$e, 264, 0, 28039);
+    			attr_dev(p116, "class", "svelte-14a6qz4");
+    			add_location(p116, file$e, 265, 0, 28595);
+    			attr_dev(p117, "class", "svelte-14a6qz4");
+    			add_location(p117, file$e, 266, 0, 28844);
+    			attr_dev(li30, "class", "svelte-14a6qz4");
+    			add_location(li30, file$e, 268, 0, 28944);
+    			attr_dev(li31, "class", "svelte-14a6qz4");
+    			add_location(li31, file$e, 269, 0, 28990);
+    			attr_dev(li32, "class", "svelte-14a6qz4");
+    			add_location(li32, file$e, 270, 0, 29020);
+    			attr_dev(ul6, "class", "svelte-14a6qz4");
+    			add_location(ul6, file$e, 267, 0, 28939);
+    			attr_dev(p118, "class", "svelte-14a6qz4");
+    			add_location(p118, file$e, 272, 0, 29080);
+    			attr_dev(p119, "class", "svelte-14a6qz4");
+    			add_location(p119, file$e, 273, 0, 29391);
+    			attr_dev(em18, "class", "svelte-14a6qz4");
+    			add_location(em18, file$e, 275, 54, 29503);
+    			attr_dev(li33, "class", "svelte-14a6qz4");
+    			add_location(li33, file$e, 275, 0, 29449);
+    			attr_dev(li34, "class", "svelte-14a6qz4");
+    			add_location(li34, file$e, 276, 0, 29561);
+    			attr_dev(li35, "class", "svelte-14a6qz4");
+    			add_location(li35, file$e, 277, 0, 29586);
+    			attr_dev(li36, "class", "svelte-14a6qz4");
+    			add_location(li36, file$e, 278, 0, 29710);
+    			attr_dev(strong115, "class", "svelte-14a6qz4");
+    			add_location(strong115, file$e, 279, 41, 29802);
+    			attr_dev(strong116, "class", "svelte-14a6qz4");
+    			add_location(strong116, file$e, 279, 85, 29846);
+    			attr_dev(li37, "class", "svelte-14a6qz4");
+    			add_location(li37, file$e, 279, 0, 29761);
+    			attr_dev(strong117, "class", "svelte-14a6qz4");
+    			add_location(strong117, file$e, 280, 43, 29921);
+    			attr_dev(li38, "class", "svelte-14a6qz4");
+    			add_location(li38, file$e, 280, 0, 29878);
+    			attr_dev(ol, "class", "svelte-14a6qz4");
+    			add_location(ol, file$e, 274, 0, 29444);
+    			attr_dev(h23, "id", "difficulty-and-opposition");
+    			attr_dev(h23, "class", "svelte-14a6qz4");
+    			add_location(h23, file$e, 282, 0, 29957);
+    			attr_dev(hr8, "class", "svelte-14a6qz4");
+    			add_location(hr8, file$e, 283, 0, 30023);
+    			attr_dev(strong118, "class", "svelte-14a6qz4");
+    			add_location(strong118, file$e, 284, 155, 30183);
+    			attr_dev(p120, "class", "svelte-14a6qz4");
+    			add_location(p120, file$e, 284, 0, 30028);
+    			attr_dev(strong119, "class", "svelte-14a6qz4");
+    			add_location(strong119, file$e, 285, 41, 30495);
+    			attr_dev(strong120, "class", "svelte-14a6qz4");
+    			add_location(strong120, file$e, 285, 126, 30580);
+    			attr_dev(p121, "class", "svelte-14a6qz4");
+    			add_location(p121, file$e, 285, 0, 30454);
+    			attr_dev(em19, "class", "svelte-14a6qz4");
+    			add_location(em19, file$e, 286, 374, 31266);
+    			attr_dev(em20, "class", "svelte-14a6qz4");
+    			add_location(em20, file$e, 286, 428, 31320);
+    			attr_dev(p122, "class", "svelte-14a6qz4");
+    			add_location(p122, file$e, 286, 0, 30892);
+    			attr_dev(h24, "id", "modifying-the-dice");
+    			attr_dev(h24, "class", "svelte-14a6qz4");
+    			add_location(h24, file$e, 287, 0, 31374);
+    			attr_dev(hr9, "class", "svelte-14a6qz4");
+    			add_location(hr9, file$e, 288, 0, 31426);
+    			attr_dev(strong121, "class", "svelte-14a6qz4");
+    			add_location(strong121, file$e, 289, 174, 31605);
+    			attr_dev(p123, "class", "svelte-14a6qz4");
+    			add_location(p123, file$e, 289, 0, 31431);
+    			attr_dev(h38, "id", "invoking-aspects");
+    			attr_dev(h38, "class", "svelte-14a6qz4");
+    			add_location(h38, file$e, 290, 0, 31681);
+    			attr_dev(p124, "class", "svelte-14a6qz4");
+    			add_location(p124, file$e, 291, 0, 31729);
+    			attr_dev(strong122, "class", "svelte-14a6qz4");
+    			add_location(strong122, file$e, 292, 103, 32042);
+    			attr_dev(strong123, "class", "svelte-14a6qz4");
+    			add_location(strong123, file$e, 292, 202, 32141);
+    			attr_dev(strong124, "class", "svelte-14a6qz4");
+    			add_location(strong124, file$e, 292, 318, 32257);
+    			attr_dev(strong125, "class", "svelte-14a6qz4");
+    			add_location(strong125, file$e, 292, 502, 32441);
+    			attr_dev(p125, "class", "svelte-14a6qz4");
+    			add_location(p125, file$e, 292, 0, 31939);
+    			attr_dev(strong126, "class", "svelte-14a6qz4");
+    			add_location(strong126, file$e, 293, 524, 33016);
+    			attr_dev(strong127, "class", "svelte-14a6qz4");
+    			add_location(strong127, file$e, 293, 814, 33306);
+    			attr_dev(p126, "class", "svelte-14a6qz4");
+    			add_location(p126, file$e, 293, 0, 32492);
+    			attr_dev(strong128, "class", "svelte-14a6qz4");
+    			add_location(strong128, file$e, 294, 45, 33413);
+    			attr_dev(strong129, "class", "svelte-14a6qz4");
+    			add_location(strong129, file$e, 294, 94, 33462);
+    			attr_dev(em21, "class", "svelte-14a6qz4");
+    			add_location(em21, file$e, 294, 374, 33742);
+    			attr_dev(p127, "class", "svelte-14a6qz4");
+    			add_location(p127, file$e, 294, 0, 33368);
+    			attr_dev(strong130, "class", "svelte-14a6qz4");
+    			add_location(strong130, file$e, 295, 153, 33964);
+    			attr_dev(p128, "class", "svelte-14a6qz4");
+    			add_location(p128, file$e, 295, 0, 33811);
+    			attr_dev(h39, "id", "using-stunts");
+    			attr_dev(h39, "class", "svelte-14a6qz4");
+    			add_location(h39, file$e, 296, 0, 33995);
+    			attr_dev(strong131, "class", "svelte-14a6qz4");
+    			add_location(strong131, file$e, 297, 186, 34221);
+    			attr_dev(p129, "class", "svelte-14a6qz4");
+    			add_location(p129, file$e, 297, 0, 34035);
+    			attr_dev(p130, "class", "svelte-14a6qz4");
+    			add_location(p130, file$e, 298, 0, 34420);
+    			attr_dev(h25, "id", "outcomes");
+    			attr_dev(h25, "class", "svelte-14a6qz4");
+    			add_location(h25, file$e, 299, 0, 34635);
+    			attr_dev(hr10, "class", "svelte-14a6qz4");
+    			add_location(hr10, file$e, 300, 0, 34667);
+    			attr_dev(strong132, "class", "svelte-14a6qz4");
+    			add_location(strong132, file$e, 301, 117, 34789);
+    			attr_dev(p131, "class", "svelte-14a6qz4");
+    			add_location(p131, file$e, 301, 0, 34672);
+    			attr_dev(strong133, "class", "svelte-14a6qz4");
+    			add_location(strong133, file$e, 303, 73, 34956);
+    			attr_dev(li39, "class", "svelte-14a6qz4");
+    			add_location(li39, file$e, 303, 0, 34883);
+    			attr_dev(strong134, "class", "svelte-14a6qz4");
+    			add_location(strong134, file$e, 304, 47, 35031);
+    			attr_dev(li40, "class", "svelte-14a6qz4");
+    			add_location(li40, file$e, 304, 0, 34984);
+    			attr_dev(strong135, "class", "svelte-14a6qz4");
+    			add_location(strong135, file$e, 305, 66, 35124);
+    			attr_dev(li41, "class", "svelte-14a6qz4");
+    			add_location(li41, file$e, 305, 0, 35058);
+    			attr_dev(strong136, "class", "svelte-14a6qz4");
+    			add_location(strong136, file$e, 306, 69, 35224);
+    			attr_dev(li42, "class", "svelte-14a6qz4");
+    			add_location(li42, file$e, 306, 0, 35155);
+    			attr_dev(ul7, "class", "svelte-14a6qz4");
+    			add_location(ul7, file$e, 302, 0, 34878);
+    			attr_dev(strong137, "class", "svelte-14a6qz4");
+    			add_location(strong137, file$e, 308, 153, 35425);
+    			attr_dev(p132, "class", "svelte-14a6qz4");
+    			add_location(p132, file$e, 308, 0, 35272);
+    			attr_dev(p133, "class", "svelte-14a6qz4");
+    			add_location(p133, file$e, 309, 0, 35591);
+    			attr_dev(h310, "id", "failure");
+    			attr_dev(h310, "class", "svelte-14a6qz4");
+    			add_location(h310, file$e, 310, 0, 35809);
+    			attr_dev(p134, "class", "svelte-14a6qz4");
+    			add_location(p134, file$e, 311, 0, 35839);
+    			attr_dev(p135, "class", "svelte-14a6qz4");
+    			add_location(p135, file$e, 312, 0, 35921);
+    			attr_dev(h49, "id", "simple-failure");
+    			attr_dev(h49, "class", "svelte-14a6qz4");
+    			add_location(h49, file$e, 313, 0, 36019);
+    			attr_dev(strong138, "class", "svelte-14a6qz4");
+    			add_location(strong138, file$e, 314, 42, 36105);
+    			attr_dev(p136, "class", "svelte-14a6qz4");
+    			add_location(p136, file$e, 314, 0, 36063);
+    			attr_dev(p137, "class", "svelte-14a6qz4");
+    			add_location(p137, file$e, 315, 0, 36313);
+    			attr_dev(h410, "id", "success-at-a-major-cost");
+    			attr_dev(h410, "class", "svelte-14a6qz4");
+    			add_location(h410, file$e, 316, 0, 36659);
+    			attr_dev(strong139, "class", "svelte-14a6qz4");
+    			add_location(strong139, file$e, 317, 13, 36734);
+    			attr_dev(p138, "class", "svelte-14a6qz4");
+    			add_location(p138, file$e, 317, 0, 36721);
+    			attr_dev(p139, "class", "svelte-14a6qz4");
+    			add_location(p139, file$e, 318, 0, 37041);
+    			attr_dev(h411, "id", "take-a-hit");
+    			attr_dev(h411, "class", "svelte-14a6qz4");
+    			add_location(h411, file$e, 319, 0, 37328);
+    			attr_dev(strong140, "class", "svelte-14a6qz4");
+    			add_location(strong140, file$e, 320, 19, 37383);
+    			attr_dev(p140, "class", "svelte-14a6qz4");
+    			add_location(p140, file$e, 320, 0, 37364);
+    			attr_dev(strong141, "class", "svelte-14a6qz4");
+    			add_location(strong141, file$e, 321, 179, 37998);
+    			attr_dev(p141, "class", "svelte-14a6qz4");
+    			add_location(p141, file$e, 321, 0, 37819);
+    			attr_dev(p142, "class", "svelte-14a6qz4");
+    			add_location(p142, file$e, 322, 0, 38029);
+    			attr_dev(h311, "id", "tie");
+    			attr_dev(h311, "class", "svelte-14a6qz4");
+    			add_location(h311, file$e, 323, 0, 38184);
+    			attr_dev(p143, "class", "svelte-14a6qz4");
+    			add_location(p143, file$e, 324, 0, 38206);
+    			attr_dev(p144, "class", "svelte-14a6qz4");
+    			add_location(p144, file$e, 325, 0, 38286);
+    			attr_dev(h412, "id", "success-at-a-minor-cost");
+    			attr_dev(h412, "class", "svelte-14a6qz4");
+    			add_location(h412, file$e, 326, 0, 38508);
+    			attr_dev(strong142, "class", "svelte-14a6qz4");
+    			add_location(strong142, file$e, 327, 16, 38586);
+    			attr_dev(strong143, "class", "svelte-14a6qz4");
+    			add_location(strong143, file$e, 327, 177, 38747);
+    			attr_dev(p145, "class", "svelte-14a6qz4");
+    			add_location(p145, file$e, 327, 0, 38570);
+    			attr_dev(p146, "class", "svelte-14a6qz4");
+    			add_location(p146, file$e, 328, 0, 38811);
+    			attr_dev(h413, "id", "partial-success");
+    			attr_dev(h413, "class", "svelte-14a6qz4");
+    			add_location(h413, file$e, 329, 0, 39021);
+    			attr_dev(strong144, "class", "svelte-14a6qz4");
+    			add_location(strong144, file$e, 330, 36, 39103);
+    			attr_dev(p147, "class", "svelte-14a6qz4");
+    			add_location(p147, file$e, 330, 0, 39067);
+    			attr_dev(p148, "class", "svelte-14a6qz4");
+    			add_location(p148, file$e, 331, 0, 39194);
+    			attr_dev(h312, "id", "success");
+    			attr_dev(h312, "class", "svelte-14a6qz4");
+    			add_location(h312, file$e, 332, 0, 39469);
+    			attr_dev(p149, "class", "svelte-14a6qz4");
+    			add_location(p149, file$e, 333, 0, 39499);
+    			attr_dev(p150, "class", "svelte-14a6qz4");
+    			add_location(p150, file$e, 334, 0, 39570);
+    			attr_dev(p151, "class", "svelte-14a6qz4");
+    			add_location(p151, file$e, 335, 0, 39624);
+    			attr_dev(h414, "id", "applying-fiction-first-to-success");
+    			attr_dev(h414, "class", "svelte-14a6qz4");
+    			add_location(h414, file$e, 336, 0, 39703);
+    			attr_dev(em22, "class", "svelte-14a6qz4");
+    			add_location(em22, file$e, 337, 15, 39802);
+    			attr_dev(em23, "class", "svelte-14a6qz4");
+    			add_location(em23, file$e, 337, 251, 40038);
+    			attr_dev(p152, "class", "svelte-14a6qz4");
+    			add_location(p152, file$e, 337, 0, 39787);
+    			attr_dev(h313, "id", "success-with-style");
+    			attr_dev(h313, "class", "svelte-14a6qz4");
+    			add_location(h313, file$e, 338, 0, 40127);
+    			attr_dev(p153, "class", "svelte-14a6qz4");
+    			add_location(p153, file$e, 339, 0, 40179);
+    			attr_dev(p154, "class", "svelte-14a6qz4");
+    			add_location(p154, file$e, 340, 0, 40259);
+    			attr_dev(p155, "class", "svelte-14a6qz4");
+    			add_location(p155, file$e, 341, 0, 40328);
+    			attr_dev(h26, "id", "actions");
+    			attr_dev(h26, "class", "svelte-14a6qz4");
+    			add_location(h26, file$e, 342, 0, 40600);
+    			attr_dev(hr11, "class", "svelte-14a6qz4");
+    			add_location(hr11, file$e, 343, 0, 40630);
+    			attr_dev(p156, "class", "svelte-14a6qz4");
+    			add_location(p156, file$e, 344, 0, 40635);
+    			attr_dev(strong145, "class", "svelte-14a6qz4");
+    			add_location(strong145, file$e, 346, 4, 40742);
+    			attr_dev(li43, "class", "svelte-14a6qz4");
+    			add_location(li43, file$e, 346, 0, 40738);
+    			attr_dev(strong146, "class", "svelte-14a6qz4");
+    			add_location(strong146, file$e, 347, 4, 40817);
+    			attr_dev(li44, "class", "svelte-14a6qz4");
+    			add_location(li44, file$e, 347, 0, 40813);
+    			attr_dev(strong147, "class", "svelte-14a6qz4");
+    			add_location(strong147, file$e, 348, 4, 40902);
+    			attr_dev(li45, "class", "svelte-14a6qz4");
+    			add_location(li45, file$e, 348, 0, 40898);
+    			attr_dev(strong148, "class", "svelte-14a6qz4");
+    			add_location(strong148, file$e, 349, 4, 40954);
+    			attr_dev(li46, "class", "svelte-14a6qz4");
+    			add_location(li46, file$e, 349, 0, 40950);
+    			attr_dev(ul8, "class", "svelte-14a6qz4");
+    			add_location(ul8, file$e, 345, 0, 40733);
+    			attr_dev(h314, "id", "overcome");
+    			attr_dev(h314, "class", "svelte-14a6qz4");
+    			add_location(h314, file$e, 351, 0, 41095);
+    			attr_dev(p157, "class", "svelte-14a6qz4");
+    			add_location(p157, file$e, 352, 0, 41127);
+    			attr_dev(strong149, "class", "svelte-14a6qz4");
+    			add_location(strong149, file$e, 353, 79, 41262);
+    			attr_dev(p158, "class", "svelte-14a6qz4");
+    			add_location(p158, file$e, 353, 0, 41183);
+    			attr_dev(p159, "class", "svelte-14a6qz4");
+    			add_location(p159, file$e, 354, 0, 41346);
+    			attr_dev(p160, "class", "svelte-14a6qz4");
+    			add_location(p160, file$e, 355, 0, 41599);
+    			attr_dev(strong150, "class", "svelte-14a6qz4");
+    			add_location(strong150, file$e, 357, 7, 41653);
+    			attr_dev(strong151, "class", "svelte-14a6qz4");
+    			add_location(strong151, file$e, 357, 143, 41789);
+    			attr_dev(p161, "class", "svelte-14a6qz4");
+    			add_location(p161, file$e, 357, 4, 41650);
+    			attr_dev(li47, "class", "svelte-14a6qz4");
+    			add_location(li47, file$e, 357, 0, 41646);
+    			attr_dev(strong152, "class", "svelte-14a6qz4");
+    			add_location(strong152, file$e, 359, 7, 41833);
+    			attr_dev(strong153, "class", "svelte-14a6qz4");
+    			add_location(strong153, file$e, 359, 66, 41892);
+    			attr_dev(strong154, "class", "svelte-14a6qz4");
+    			add_location(strong154, file$e, 359, 140, 41966);
+    			attr_dev(p162, "class", "svelte-14a6qz4");
+    			add_location(p162, file$e, 359, 4, 41830);
+    			attr_dev(li48, "class", "svelte-14a6qz4");
+    			add_location(li48, file$e, 359, 0, 41826);
+    			attr_dev(strong155, "class", "svelte-14a6qz4");
+    			add_location(strong155, file$e, 361, 7, 42075);
+    			attr_dev(p163, "class", "svelte-14a6qz4");
+    			add_location(p163, file$e, 361, 4, 42072);
+    			attr_dev(li49, "class", "svelte-14a6qz4");
+    			add_location(li49, file$e, 361, 0, 42068);
+    			attr_dev(strong156, "class", "svelte-14a6qz4");
+    			add_location(strong156, file$e, 363, 7, 42184);
+    			attr_dev(p164, "class", "svelte-14a6qz4");
+    			add_location(p164, file$e, 363, 4, 42181);
+    			attr_dev(li50, "class", "svelte-14a6qz4");
+    			add_location(li50, file$e, 363, 0, 42177);
+    			attr_dev(ul9, "class", "svelte-14a6qz4");
+    			add_location(ul9, file$e, 356, 0, 41641);
+    			attr_dev(p165, "class", "svelte-14a6qz4");
+    			add_location(p165, file$e, 366, 0, 42285);
+    			attr_dev(p166, "class", "svelte-14a6qz4");
+    			add_location(p166, file$e, 367, 0, 42749);
+    			attr_dev(h315, "id", "create-an-advantage");
+    			attr_dev(h315, "class", "svelte-14a6qz4");
+    			add_location(h315, file$e, 368, 0, 43055);
+    			attr_dev(p167, "class", "svelte-14a6qz4");
+    			add_location(p167, file$e, 369, 0, 43109);
+    			attr_dev(strong157, "class", "svelte-14a6qz4");
+    			add_location(strong157, file$e, 370, 19, 43204);
+    			attr_dev(p168, "class", "svelte-14a6qz4");
+    			add_location(p168, file$e, 370, 0, 43185);
+    			attr_dev(strong158, "class", "svelte-14a6qz4");
+    			add_location(strong158, file$e, 371, 229, 43882);
+    			attr_dev(strong159, "class", "svelte-14a6qz4");
+    			add_location(strong159, file$e, 371, 283, 43936);
+    			attr_dev(strong160, "class", "svelte-14a6qz4");
+    			add_location(strong160, file$e, 371, 323, 43976);
+    			attr_dev(strong161, "class", "svelte-14a6qz4");
+    			add_location(strong161, file$e, 371, 407, 44060);
+    			attr_dev(p169, "class", "svelte-14a6qz4");
+    			add_location(p169, file$e, 371, 0, 43653);
+    			attr_dev(p170, "class", "svelte-14a6qz4");
+    			add_location(p170, file$e, 372, 0, 44275);
+    			attr_dev(p171, "class", "svelte-14a6qz4");
+    			add_location(p171, file$e, 373, 0, 44716);
+    			attr_dev(strong162, "class", "svelte-14a6qz4");
+    			add_location(strong162, file$e, 375, 7, 44781);
+    			attr_dev(strong163, "class", "svelte-14a6qz4");
+    			add_location(strong163, file$e, 375, 298, 45072);
+    			attr_dev(p172, "class", "svelte-14a6qz4");
+    			add_location(p172, file$e, 375, 4, 44778);
+    			attr_dev(li51, "class", "svelte-14a6qz4");
+    			add_location(li51, file$e, 375, 0, 44774);
+    			attr_dev(strong164, "class", "svelte-14a6qz4");
+    			add_location(strong164, file$e, 377, 7, 45116);
+    			attr_dev(strong165, "class", "svelte-14a6qz4");
+    			add_location(strong165, file$e, 377, 88, 45197);
+    			attr_dev(p173, "class", "svelte-14a6qz4");
+    			add_location(p173, file$e, 377, 4, 45113);
+    			attr_dev(li52, "class", "svelte-14a6qz4");
+    			add_location(li52, file$e, 377, 0, 45109);
+    			attr_dev(strong166, "class", "svelte-14a6qz4");
+    			add_location(strong166, file$e, 379, 7, 45241);
+    			attr_dev(p174, "class", "svelte-14a6qz4");
+    			add_location(p174, file$e, 379, 4, 45238);
+    			attr_dev(li53, "class", "svelte-14a6qz4");
+    			add_location(li53, file$e, 379, 0, 45234);
+    			attr_dev(strong167, "class", "svelte-14a6qz4");
+    			add_location(strong167, file$e, 381, 7, 45349);
+    			attr_dev(em24, "class", "svelte-14a6qz4");
+    			add_location(em24, file$e, 381, 86, 45428);
+    			attr_dev(p175, "class", "svelte-14a6qz4");
+    			add_location(p175, file$e, 381, 4, 45346);
+    			attr_dev(li54, "class", "svelte-14a6qz4");
+    			add_location(li54, file$e, 381, 0, 45342);
+    			attr_dev(ul10, "class", "svelte-14a6qz4");
+    			add_location(ul10, file$e, 374, 0, 44769);
+    			attr_dev(p176, "class", "svelte-14a6qz4");
+    			add_location(p176, file$e, 384, 0, 45477);
+    			attr_dev(strong168, "class", "svelte-14a6qz4");
+    			add_location(strong168, file$e, 386, 7, 45555);
+    			attr_dev(p177, "class", "svelte-14a6qz4");
+    			add_location(p177, file$e, 386, 4, 45552);
+    			attr_dev(li55, "class", "svelte-14a6qz4");
+    			add_location(li55, file$e, 386, 0, 45548);
+    			attr_dev(strong169, "class", "svelte-14a6qz4");
+    			add_location(strong169, file$e, 388, 7, 45728);
+    			attr_dev(p178, "class", "svelte-14a6qz4");
+    			add_location(p178, file$e, 388, 4, 45725);
+    			attr_dev(li56, "class", "svelte-14a6qz4");
+    			add_location(li56, file$e, 388, 0, 45721);
+    			attr_dev(strong170, "class", "svelte-14a6qz4");
+    			add_location(strong170, file$e, 390, 7, 45897);
+    			attr_dev(p179, "class", "svelte-14a6qz4");
+    			add_location(p179, file$e, 390, 4, 45894);
+    			attr_dev(li57, "class", "svelte-14a6qz4");
+    			add_location(li57, file$e, 390, 0, 45890);
+    			attr_dev(strong171, "class", "svelte-14a6qz4");
+    			add_location(strong171, file$e, 392, 7, 46006);
+    			attr_dev(p180, "class", "svelte-14a6qz4");
+    			add_location(p180, file$e, 392, 4, 46003);
+    			attr_dev(li58, "class", "svelte-14a6qz4");
+    			add_location(li58, file$e, 392, 0, 45999);
+    			attr_dev(ul11, "class", "svelte-14a6qz4");
+    			add_location(ul11, file$e, 385, 0, 45543);
+    			attr_dev(p181, "class", "svelte-14a6qz4");
+    			add_location(p181, file$e, 395, 0, 46114);
+    			attr_dev(p182, "class", "svelte-14a6qz4");
+    			add_location(p182, file$e, 396, 0, 46375);
+    			attr_dev(strong172, "class", "svelte-14a6qz4");
+    			add_location(strong172, file$e, 397, 86, 46732);
+    			attr_dev(p183, "class", "svelte-14a6qz4");
+    			add_location(p183, file$e, 397, 0, 46646);
+    			attr_dev(h316, "id", "attack");
+    			attr_dev(h316, "class", "svelte-14a6qz4");
+    			add_location(h316, file$e, 398, 0, 46932);
+    			attr_dev(p184, "class", "svelte-14a6qz4");
+    			add_location(p184, file$e, 399, 0, 46960);
+    			attr_dev(strong173, "class", "svelte-14a6qz4");
+    			add_location(strong173, file$e, 400, 7, 47000);
+    			attr_dev(p185, "class", "svelte-14a6qz4");
+    			add_location(p185, file$e, 400, 0, 46993);
+    			attr_dev(p186, "class", "svelte-14a6qz4");
+    			add_location(p186, file$e, 401, 0, 47309);
+    			attr_dev(p187, "class", "svelte-14a6qz4");
+    			add_location(p187, file$e, 402, 0, 47731);
+    			attr_dev(strong174, "class", "svelte-14a6qz4");
+    			add_location(strong174, file$e, 404, 7, 47784);
+    			attr_dev(p188, "class", "svelte-14a6qz4");
+    			add_location(p188, file$e, 404, 4, 47781);
+    			attr_dev(li59, "class", "svelte-14a6qz4");
+    			add_location(li59, file$e, 404, 0, 47777);
+    			attr_dev(strong175, "class", "svelte-14a6qz4");
+    			add_location(strong175, file$e, 406, 7, 47915);
+    			attr_dev(strong176, "class", "svelte-14a6qz4");
+    			add_location(strong176, file$e, 406, 131, 48039);
+    			attr_dev(p189, "class", "svelte-14a6qz4");
+    			add_location(p189, file$e, 406, 4, 47912);
+    			attr_dev(li60, "class", "svelte-14a6qz4");
+    			add_location(li60, file$e, 406, 0, 47908);
+    			attr_dev(strong177, "class", "svelte-14a6qz4");
+    			add_location(strong177, file$e, 408, 7, 48083);
+    			attr_dev(strong178, "class", "svelte-14a6qz4");
+    			add_location(strong178, file$e, 408, 218, 48294);
+    			attr_dev(p190, "class", "svelte-14a6qz4");
+    			add_location(p190, file$e, 408, 4, 48080);
+    			attr_dev(li61, "class", "svelte-14a6qz4");
+    			add_location(li61, file$e, 408, 0, 48076);
+    			attr_dev(strong179, "class", "svelte-14a6qz4");
+    			add_location(strong179, file$e, 410, 7, 48338);
+    			attr_dev(p191, "class", "svelte-14a6qz4");
+    			add_location(p191, file$e, 410, 4, 48335);
+    			attr_dev(li62, "class", "svelte-14a6qz4");
+    			add_location(li62, file$e, 410, 0, 48331);
+    			attr_dev(ul12, "class", "svelte-14a6qz4");
+    			add_location(ul12, file$e, 403, 0, 47772);
+    			attr_dev(p192, "class", "svelte-14a6qz4");
+    			add_location(p192, file$e, 413, 0, 48498);
+    			attr_dev(h317, "id", "defend");
+    			attr_dev(h317, "class", "svelte-14a6qz4");
+    			add_location(h317, file$e, 414, 0, 48694);
+    			attr_dev(p193, "class", "svelte-14a6qz4");
+    			add_location(p193, file$e, 415, 0, 48722);
+    			attr_dev(strong180, "class", "svelte-14a6qz4");
+    			add_location(strong180, file$e, 416, 166, 48957);
+    			attr_dev(p194, "class", "svelte-14a6qz4");
+    			add_location(p194, file$e, 416, 0, 48791);
+    			attr_dev(em25, "class", "svelte-14a6qz4");
+    			add_location(em25, file$e, 417, 41, 49043);
+    			attr_dev(p195, "class", "svelte-14a6qz4");
+    			add_location(p195, file$e, 417, 0, 49002);
+    			attr_dev(p196, "class", "svelte-14a6qz4");
+    			add_location(p196, file$e, 418, 0, 49400);
+    			attr_dev(strong181, "class", "svelte-14a6qz4");
+    			add_location(strong181, file$e, 420, 7, 49453);
+    			attr_dev(strong182, "class", "svelte-14a6qz4");
+    			add_location(strong182, file$e, 420, 106, 49552);
+    			attr_dev(strong183, "class", "svelte-14a6qz4");
+    			add_location(strong183, file$e, 420, 149, 49595);
+    			attr_dev(p197, "class", "svelte-14a6qz4");
+    			add_location(p197, file$e, 420, 4, 49450);
+    			attr_dev(li63, "class", "svelte-14a6qz4");
+    			add_location(li63, file$e, 420, 0, 49446);
+    			attr_dev(strong184, "class", "svelte-14a6qz4");
+    			add_location(strong184, file$e, 422, 7, 49701);
+    			attr_dev(p198, "class", "svelte-14a6qz4");
+    			add_location(p198, file$e, 422, 4, 49698);
+    			attr_dev(li64, "class", "svelte-14a6qz4");
+    			add_location(li64, file$e, 422, 0, 49694);
+    			attr_dev(strong185, "class", "svelte-14a6qz4");
+    			add_location(strong185, file$e, 424, 7, 49807);
+    			attr_dev(p199, "class", "svelte-14a6qz4");
+    			add_location(p199, file$e, 424, 4, 49804);
+    			attr_dev(li65, "class", "svelte-14a6qz4");
+    			add_location(li65, file$e, 424, 0, 49800);
+    			attr_dev(strong186, "class", "svelte-14a6qz4");
+    			add_location(strong186, file$e, 426, 7, 49910);
+    			attr_dev(p200, "class", "svelte-14a6qz4");
+    			add_location(p200, file$e, 426, 4, 49907);
+    			attr_dev(li66, "class", "svelte-14a6qz4");
+    			add_location(li66, file$e, 426, 0, 49903);
+    			attr_dev(ul13, "class", "svelte-14a6qz4");
+    			add_location(ul13, file$e, 419, 0, 49441);
+    			attr_dev(p201, "class", "svelte-14a6qz4");
+    			add_location(p201, file$e, 429, 0, 50087);
+    			attr_dev(p202, "class", "svelte-14a6qz4");
+    			add_location(p202, file$e, 430, 0, 50267);
+    			attr_dev(h415, "id", "which-skills-can-be-used-to-attack-and-defend");
+    			attr_dev(h415, "class", "svelte-14a6qz4");
+    			add_location(h415, file$e, 431, 0, 50530);
+    			attr_dev(p203, "class", "svelte-14a6qz4");
+    			add_location(p203, file$e, 432, 0, 50637);
+    			attr_dev(li67, "class", "svelte-14a6qz4");
+    			add_location(li67, file$e, 434, 0, 50702);
+    			attr_dev(li68, "class", "svelte-14a6qz4");
+    			add_location(li68, file$e, 435, 0, 50765);
+    			attr_dev(li69, "class", "svelte-14a6qz4");
+    			add_location(li69, file$e, 436, 0, 50835);
+    			attr_dev(li70, "class", "svelte-14a6qz4");
+    			add_location(li70, file$e, 437, 0, 50904);
+    			attr_dev(li71, "class", "svelte-14a6qz4");
+    			add_location(li71, file$e, 438, 0, 50958);
+    			attr_dev(ul14, "class", "svelte-14a6qz4");
+    			add_location(ul14, file$e, 433, 0, 50697);
+    			attr_dev(p204, "class", "svelte-14a6qz4");
+    			add_location(p204, file$e, 440, 0, 51024);
+    			attr_dev(h15, "id", "aspects-and-fate-points");
+    			attr_dev(h15, "class", "svelte-14a6qz4");
+    			add_location(h15, file$e, 441, 0, 51470);
+    			attr_dev(hr12, "class", "svelte-14a6qz4");
+    			add_location(hr12, file$e, 442, 0, 51532);
+    			attr_dev(strong187, "class", "svelte-14a6qz4");
+    			add_location(strong187, file$e, 443, 6, 51543);
+    			attr_dev(strong188, "class", "svelte-14a6qz4");
+    			add_location(strong188, file$e, 443, 225, 51762);
+    			attr_dev(strong189, "class", "svelte-14a6qz4");
+    			add_location(strong189, file$e, 443, 348, 51885);
+    			attr_dev(strong190, "class", "svelte-14a6qz4");
+    			add_location(strong190, file$e, 443, 455, 51992);
+    			attr_dev(p205, "class", "svelte-14a6qz4");
+    			add_location(p205, file$e, 443, 0, 51537);
+    			attr_dev(h27, "id", "aspects-are-always-true");
+    			attr_dev(h27, "class", "svelte-14a6qz4");
+    			add_location(h27, file$e, 444, 0, 52134);
+    			attr_dev(hr13, "class", "svelte-14a6qz4");
+    			add_location(hr13, file$e, 445, 0, 52196);
+    			attr_dev(strong191, "class", "svelte-14a6qz4");
+    			add_location(strong191, file$e, 446, 49, 52250);
+    			attr_dev(strong192, "class", "svelte-14a6qz4");
+    			add_location(strong192, file$e, 446, 117, 52318);
+    			attr_dev(strong193, "class", "svelte-14a6qz4");
+    			add_location(strong193, file$e, 446, 261, 52462);
+    			attr_dev(em26, "class", "svelte-14a6qz4");
+    			add_location(em26, file$e, 446, 315, 52516);
+    			attr_dev(p206, "class", "svelte-14a6qz4");
+    			add_location(p206, file$e, 446, 0, 52201);
+    			attr_dev(strong194, "class", "svelte-14a6qz4");
+    			add_location(strong194, file$e, 447, 52, 52651);
+    			attr_dev(strong195, "class", "svelte-14a6qz4");
+    			add_location(strong195, file$e, 447, 181, 52780);
+    			attr_dev(strong196, "class", "svelte-14a6qz4");
+    			add_location(strong196, file$e, 447, 245, 52844);
+    			attr_dev(strong197, "class", "svelte-14a6qz4");
+    			add_location(strong197, file$e, 447, 492, 53091);
+    			attr_dev(strong198, "class", "svelte-14a6qz4");
+    			add_location(strong198, file$e, 447, 595, 53194);
+    			attr_dev(p207, "class", "svelte-14a6qz4");
+    			add_location(p207, file$e, 447, 0, 52599);
+    			attr_dev(strong199, "class", "svelte-14a6qz4");
+    			add_location(strong199, file$e, 448, 305, 53657);
+    			attr_dev(p208, "class", "svelte-14a6qz4");
+    			add_location(p208, file$e, 448, 0, 53352);
+    			attr_dev(em27, "class", "svelte-14a6qz4");
+    			add_location(em27, file$e, 449, 19, 53764);
+    			attr_dev(strong200, "class", "svelte-14a6qz4");
+    			add_location(strong200, file$e, 449, 82, 53827);
+    			attr_dev(em28, "class", "svelte-14a6qz4");
+    			add_location(em28, file$e, 449, 332, 54077);
+    			attr_dev(strong201, "class", "svelte-14a6qz4");
+    			add_location(strong201, file$e, 449, 356, 54101);
+    			attr_dev(strong202, "class", "svelte-14a6qz4");
+    			add_location(strong202, file$e, 449, 485, 54230);
+    			attr_dev(p209, "class", "svelte-14a6qz4");
+    			add_location(p209, file$e, 449, 0, 53745);
+    			attr_dev(h28, "id", "what-kinds-of-aspects-are-there");
+    			attr_dev(h28, "class", "svelte-14a6qz4");
+    			add_location(h28, file$e, 450, 0, 54426);
+    			attr_dev(hr14, "class", "svelte-14a6qz4");
+    			add_location(hr14, file$e, 451, 0, 54505);
+    			attr_dev(strong203, "class", "svelte-14a6qz4");
+    			add_location(strong203, file$e, 452, 46, 54556);
+    			attr_dev(p210, "class", "svelte-14a6qz4");
+    			add_location(p210, file$e, 452, 0, 54510);
+    			attr_dev(h318, "id", "character-aspects");
+    			attr_dev(h318, "class", "svelte-14a6qz4");
+    			add_location(h318, file$e, 453, 0, 54740);
+    			attr_dev(strong204, "class", "svelte-14a6qz4");
+    			add_location(strong204, file$e, 454, 382, 55172);
+    			attr_dev(p211, "class", "svelte-14a6qz4");
+    			add_location(p211, file$e, 454, 0, 54790);
+    			attr_dev(strong205, "class", "svelte-14a6qz4");
+    			add_location(strong205, file$e, 455, 3, 55206);
+    			attr_dev(strong206, "class", "svelte-14a6qz4");
+    			add_location(strong206, file$e, 455, 30, 55233);
+    			attr_dev(p212, "class", "svelte-14a6qz4");
+    			add_location(p212, file$e, 455, 0, 55203);
+    			attr_dev(h319, "id", "situation-aspects");
+    			attr_dev(h319, "class", "svelte-14a6qz4");
+    			add_location(h319, file$e, 456, 0, 55333);
+    			attr_dev(p213, "class", "svelte-14a6qz4");
+    			add_location(p213, file$e, 457, 0, 55383);
+    			attr_dev(strong207, "class", "svelte-14a6qz4");
+    			add_location(strong207, file$e, 458, 3, 55700);
+    			attr_dev(strong208, "class", "svelte-14a6qz4");
+    			add_location(strong208, file$e, 458, 30, 55727);
+    			attr_dev(p214, "class", "svelte-14a6qz4");
+    			add_location(p214, file$e, 458, 0, 55697);
+    			attr_dev(h320, "id", "consequences");
+    			attr_dev(h320, "class", "svelte-14a6qz4");
+    			add_location(h320, file$e, 459, 0, 55842);
+    			attr_dev(strong209, "class", "svelte-14a6qz4");
+    			add_location(strong209, file$e, 460, 106, 55988);
+    			attr_dev(p215, "class", "svelte-14a6qz4");
+    			add_location(p215, file$e, 460, 0, 55882);
+    			attr_dev(strong210, "class", "svelte-14a6qz4");
+    			add_location(strong210, file$e, 461, 3, 56022);
+    			attr_dev(strong211, "class", "svelte-14a6qz4");
+    			add_location(strong211, file$e, 461, 30, 56049);
+    			attr_dev(p216, "class", "svelte-14a6qz4");
+    			add_location(p216, file$e, 461, 0, 56019);
+    			attr_dev(h321, "id", "boosts");
+    			attr_dev(h321, "class", "svelte-14a6qz4");
+    			add_location(h321, file$e, 462, 0, 56122);
+    			attr_dev(strong212, "class", "svelte-14a6qz4");
+    			add_location(strong212, file$e, 463, 5, 56155);
+    			attr_dev(p217, "class", "svelte-14a6qz4");
+    			add_location(p217, file$e, 463, 0, 56150);
+    			attr_dev(strong213, "class", "svelte-14a6qz4");
+    			add_location(strong213, file$e, 464, 3, 56719);
+    			attr_dev(strong214, "class", "svelte-14a6qz4");
+    			add_location(strong214, file$e, 464, 30, 56746);
+    			attr_dev(p218, "class", "svelte-14a6qz4");
+    			add_location(p218, file$e, 464, 0, 56716);
+    			attr_dev(h29, "id", "what-can-i-do-with-aspects");
+    			attr_dev(h29, "class", "svelte-14a6qz4");
+    			add_location(h29, file$e, 465, 0, 56810);
+    			attr_dev(hr15, "class", "svelte-14a6qz4");
+    			add_location(hr15, file$e, 466, 0, 56879);
+    			attr_dev(h322, "id", "earning-fate-points");
+    			attr_dev(h322, "class", "svelte-14a6qz4");
+    			add_location(h322, file$e, 467, 0, 56884);
+    			attr_dev(strong215, "class", "svelte-14a6qz4");
+    			add_location(strong215, file$e, 468, 78, 57016);
+    			attr_dev(strong216, "class", "svelte-14a6qz4");
+    			add_location(strong216, file$e, 468, 106, 57044);
+    			attr_dev(strong217, "class", "svelte-14a6qz4");
+    			add_location(strong217, file$e, 468, 296, 57234);
+    			attr_dev(strong218, "class", "svelte-14a6qz4");
+    			add_location(strong218, file$e, 468, 343, 57281);
+    			attr_dev(p219, "class", "svelte-14a6qz4");
+    			add_location(p219, file$e, 468, 0, 56938);
+    			attr_dev(strong219, "class", "svelte-14a6qz4");
+    			add_location(strong219, file$e, 469, 82, 57394);
+    			attr_dev(strong220, "class", "svelte-14a6qz4");
+    			add_location(strong220, file$e, 469, 220, 57532);
+    			attr_dev(p220, "class", "svelte-14a6qz4");
+    			add_location(p220, file$e, 469, 0, 57312);
+    			attr_dev(h323, "id", "invokes");
+    			attr_dev(h323, "class", "svelte-14a6qz4");
+    			add_location(h323, file$e, 470, 0, 57574);
+    			attr_dev(strong221, "class", "svelte-14a6qz4");
+    			add_location(strong221, file$e, 471, 84, 57688);
+    			attr_dev(strong222, "class", "svelte-14a6qz4");
+    			add_location(strong222, file$e, 471, 116, 57720);
+    			attr_dev(strong223, "class", "svelte-14a6qz4");
+    			add_location(strong223, file$e, 471, 164, 57768);
+    			attr_dev(p221, "class", "svelte-14a6qz4");
+    			add_location(p221, file$e, 471, 0, 57604);
+    			attr_dev(em29, "class", "svelte-14a6qz4");
+    			add_location(em29, file$e, 472, 41, 57936);
+    			attr_dev(strong224, "class", "svelte-14a6qz4");
+    			add_location(strong224, file$e, 472, 131, 58026);
+    			attr_dev(p222, "class", "svelte-14a6qz4");
+    			add_location(p222, file$e, 472, 0, 57895);
+    			attr_dev(h416, "id", "the-ellipsis-trick");
+    			attr_dev(h416, "class", "svelte-14a6qz4");
+    			add_location(h416, file$e, 473, 0, 58057);
+    			attr_dev(p223, "class", "svelte-14a6qz4");
+    			add_location(p223, file$e, 474, 0, 58109);
+    			attr_dev(strong225, "class", "svelte-14a6qz4");
+    			add_location(strong225, file$e, 475, 102, 58439);
+    			attr_dev(p224, "class", "svelte-14a6qz4");
+    			add_location(p224, file$e, 475, 0, 58337);
+    			attr_dev(h417, "id", "hostile-invocations");
+    			attr_dev(h417, "class", "svelte-14a6qz4");
+    			add_location(h417, file$e, 476, 0, 58582);
+    			attr_dev(em30, "class", "svelte-14a6qz4");
+    			add_location(em30, file$e, 477, 140, 58776);
+    			attr_dev(strong226, "class", "svelte-14a6qz4");
+    			add_location(strong226, file$e, 477, 180, 58816);
+    			attr_dev(strong227, "class", "svelte-14a6qz4");
+    			add_location(strong227, file$e, 477, 358, 58994);
+    			attr_dev(p225, "class", "svelte-14a6qz4");
+    			add_location(p225, file$e, 477, 0, 58636);
+    			attr_dev(h418, "id", "invoking-to-declare-story-details");
+    			attr_dev(h418, "class", "svelte-14a6qz4");
+    			add_location(h418, file$e, 478, 0, 59285);
+    			attr_dev(strong228, "class", "svelte-14a6qz4");
+    			add_location(strong228, file$e, 479, 145, 59512);
+    			attr_dev(p226, "class", "svelte-14a6qz4");
+    			add_location(p226, file$e, 479, 0, 59367);
+    			attr_dev(h324, "id", "compels");
+    			attr_dev(h324, "class", "svelte-14a6qz4");
+    			add_location(h324, file$e, 480, 0, 59627);
+    			attr_dev(strong229, "class", "svelte-14a6qz4");
+    			add_location(strong229, file$e, 481, 18, 59675);
+    			attr_dev(p227, "class", "svelte-14a6qz4");
+    			add_location(p227, file$e, 481, 0, 59657);
+    			attr_dev(strong230, "class", "svelte-14a6qz4");
+    			add_location(strong230, file$e, 482, 3, 60161);
+    			attr_dev(p228, "class", "svelte-14a6qz4");
+    			add_location(p228, file$e, 482, 0, 60158);
+    			attr_dev(strong231, "class", "svelte-14a6qz4");
+    			add_location(strong231, file$e, 483, 3, 60350);
+    			attr_dev(p229, "class", "svelte-14a6qz4");
+    			add_location(p229, file$e, 483, 0, 60347);
+    			attr_dev(strong232, "class", "svelte-14a6qz4");
+    			add_location(strong232, file$e, 484, 3, 60697);
+    			attr_dev(strong233, "class", "svelte-14a6qz4");
+    			add_location(strong233, file$e, 484, 230, 60924);
+    			attr_dev(p230, "class", "svelte-14a6qz4");
+    			add_location(p230, file$e, 484, 0, 60694);
+    			attr_dev(strong234, "class", "svelte-14a6qz4");
+    			add_location(strong234, file$e, 485, 3, 61021);
+    			attr_dev(p231, "class", "svelte-14a6qz4");
+    			add_location(p231, file$e, 485, 0, 61018);
+    			attr_dev(h419, "id", "compels-are-complications-not-stymies");
+    			attr_dev(h419, "class", "svelte-14a6qz4");
+    			add_location(h419, file$e, 486, 0, 61232);
+    			attr_dev(p232, "class", "svelte-14a6qz4");
+    			add_location(p232, file$e, 487, 0, 61323);
+    			attr_dev(p233, "class", "svelte-14a6qz4");
+    			add_location(p233, file$e, 488, 0, 61466);
+    			attr_dev(p234, "class", "svelte-14a6qz4");
+    			add_location(p234, file$e, 489, 0, 61617);
+    			attr_dev(em31, "class", "svelte-14a6qz4");
+    			add_location(em31, file$e, 490, 118, 62084);
+    			attr_dev(em32, "class", "svelte-14a6qz4");
+    			add_location(em32, file$e, 490, 203, 62169);
+    			attr_dev(a3, "href", "");
+    			attr_dev(a3, "class", "svelte-14a6qz4");
+    			add_location(a3, file$e, 490, 192, 62158);
+    			attr_dev(p235, "class", "svelte-14a6qz4");
+    			add_location(p235, file$e, 490, 0, 61966);
+    			attr_dev(h420, "id", "events-and-decisions");
+    			attr_dev(h420, "class", "svelte-14a6qz4");
+    			add_location(h420, file$e, 491, 0, 62262);
+    			attr_dev(strong235, "class", "svelte-14a6qz4");
+    			add_location(strong235, file$e, 492, 43, 62361);
+    			attr_dev(strong236, "class", "svelte-14a6qz4");
+    			add_location(strong236, file$e, 492, 71, 62389);
+    			attr_dev(p236, "class", "svelte-14a6qz4");
+    			add_location(p236, file$e, 492, 0, 62318);
+    			attr_dev(p237, "class", "svelte-14a6qz4");
+    			add_location(p237, file$e, 493, 0, 62421);
+    			attr_dev(p238, "class", "svelte-14a6qz4");
+    			add_location(p238, file$e, 494, 0, 62615);
+    			attr_dev(p239, "class", "svelte-14a6qz4");
+    			add_location(p239, file$e, 495, 0, 62860);
+    			attr_dev(h421, "id", "hostile-invocations-or-compels");
+    			attr_dev(h421, "class", "svelte-14a6qz4");
+    			add_location(h421, file$e, 496, 0, 62960);
+    			attr_dev(p240, "class", "svelte-14a6qz4");
+    			add_location(p240, file$e, 497, 0, 63037);
+    			attr_dev(em33, "class", "svelte-14a6qz4");
+    			add_location(em33, file$e, 498, 22, 63244);
+    			attr_dev(p241, "class", "svelte-14a6qz4");
+    			add_location(p241, file$e, 498, 0, 63222);
+    			attr_dev(em34, "class", "svelte-14a6qz4");
+    			add_location(em34, file$e, 499, 29, 63589);
+    			attr_dev(p242, "class", "svelte-14a6qz4");
+    			add_location(p242, file$e, 499, 0, 63560);
+    			attr_dev(em35, "class", "svelte-14a6qz4");
+    			add_location(em35, file$e, 500, 62, 64008);
+    			attr_dev(p243, "class", "svelte-14a6qz4");
+    			add_location(p243, file$e, 500, 0, 63946);
+    			attr_dev(p244, "class", "svelte-14a6qz4");
+    			add_location(p244, file$e, 501, 0, 64246);
+    			attr_dev(h210, "id", "how-can-i-add-and-remove-aspects");
+    			attr_dev(h210, "class", "svelte-14a6qz4");
+    			add_location(h210, file$e, 502, 0, 64462);
+    			attr_dev(hr16, "class", "svelte-14a6qz4");
+    			add_location(hr16, file$e, 503, 0, 64543);
+    			attr_dev(strong237, "class", "svelte-14a6qz4");
+    			add_location(strong237, file$e, 504, 87, 64635);
+    			attr_dev(p245, "class", "svelte-14a6qz4");
+    			add_location(p245, file$e, 504, 0, 64548);
+    			attr_dev(strong238, "class", "svelte-14a6qz4");
+    			add_location(strong238, file$e, 505, 97, 64896);
+    			attr_dev(strong239, "class", "svelte-14a6qz4");
+    			add_location(strong239, file$e, 505, 210, 65009);
+    			attr_dev(strong240, "class", "svelte-14a6qz4");
+    			add_location(strong240, file$e, 505, 308, 65107);
+    			attr_dev(p246, "class", "svelte-14a6qz4");
+    			add_location(p246, file$e, 505, 0, 64799);
+    			attr_dev(strong241, "class", "svelte-14a6qz4");
+    			add_location(strong241, file$e, 506, 97, 65355);
+    			attr_dev(p247, "class", "svelte-14a6qz4");
+    			add_location(p247, file$e, 506, 0, 65258);
+    			attr_dev(h211, "id", "other-kinds-of-aspects");
+    			attr_dev(h211, "class", "svelte-14a6qz4");
+    			add_location(h211, file$e, 507, 0, 65498);
+    			attr_dev(hr17, "class", "svelte-14a6qz4");
+    			add_location(hr17, file$e, 508, 0, 65558);
+    			attr_dev(strong242, "class", "svelte-14a6qz4");
+    			add_location(strong242, file$e, 509, 46, 65609);
+    			attr_dev(p248, "class", "svelte-14a6qz4");
+    			add_location(p248, file$e, 509, 0, 65563);
+    			attr_dev(strong243, "class", "svelte-14a6qz4");
+    			add_location(strong243, file$e, 510, 3, 65898);
+    			attr_dev(p249, "class", "svelte-14a6qz4");
+    			add_location(p249, file$e, 510, 0, 65895);
+    			attr_dev(strong244, "class", "svelte-14a6qz4");
+    			add_location(strong244, file$e, 511, 3, 66150);
+    			attr_dev(p250, "class", "svelte-14a6qz4");
+    			add_location(p250, file$e, 511, 0, 66147);
+    			attr_dev(strong245, "class", "svelte-14a6qz4");
+    			add_location(strong245, file$e, 512, 3, 66423);
+    			attr_dev(p251, "class", "svelte-14a6qz4");
+    			add_location(p251, file$e, 512, 0, 66420);
+    			attr_dev(strong246, "class", "svelte-14a6qz4");
+    			add_location(strong246, file$e, 513, 3, 66606);
+    			attr_dev(strong247, "class", "svelte-14a6qz4");
+    			add_location(strong247, file$e, 513, 123, 66726);
+    			attr_dev(p252, "class", "svelte-14a6qz4");
+    			add_location(p252, file$e, 513, 0, 66603);
+    			attr_dev(h16, "id", "challenges-conflicts-and-contests");
+    			attr_dev(h16, "class", "svelte-14a6qz4");
+    			add_location(h16, file$e, 514, 0, 67052);
+    			attr_dev(hr18, "class", "svelte-14a6qz4");
+    			add_location(hr18, file$e, 515, 0, 67136);
+    			attr_dev(strong248, "class", "svelte-14a6qz4");
+    			add_location(strong248, file$e, 516, 301, 67442);
+    			attr_dev(strong249, "class", "svelte-14a6qz4");
+    			add_location(strong249, file$e, 516, 330, 67471);
+    			attr_dev(strong250, "class", "svelte-14a6qz4");
+    			add_location(strong250, file$e, 516, 361, 67502);
+    			attr_dev(p253, "class", "svelte-14a6qz4");
+    			add_location(p253, file$e, 516, 0, 67141);
+    			attr_dev(strong251, "class", "svelte-14a6qz4");
+    			add_location(strong251, file$e, 518, 4, 67651);
+    			attr_dev(li72, "class", "svelte-14a6qz4");
+    			add_location(li72, file$e, 518, 0, 67647);
+    			attr_dev(strong252, "class", "svelte-14a6qz4");
+    			add_location(strong252, file$e, 519, 4, 68034);
+    			attr_dev(li73, "class", "svelte-14a6qz4");
+    			add_location(li73, file$e, 519, 0, 68030);
+    			attr_dev(strong253, "class", "svelte-14a6qz4");
+    			add_location(strong253, file$e, 520, 4, 68361);
+    			attr_dev(li74, "class", "svelte-14a6qz4");
+    			add_location(li74, file$e, 520, 0, 68357);
+    			attr_dev(ul15, "class", "svelte-14a6qz4");
+    			add_location(ul15, file$e, 517, 0, 67642);
+    			attr_dev(h212, "id", "setting-up-scenes");
+    			attr_dev(h212, "class", "svelte-14a6qz4");
+    			add_location(h212, file$e, 522, 0, 68701);
+    			attr_dev(hr19, "class", "svelte-14a6qz4");
+    			add_location(hr19, file$e, 523, 0, 68751);
+    			attr_dev(p254, "class", "svelte-14a6qz4");
+    			add_location(p254, file$e, 524, 0, 68756);
+    			attr_dev(h325, "id", "zones");
+    			attr_dev(h325, "class", "svelte-14a6qz4");
+    			add_location(h325, file$e, 525, 0, 68948);
+    			attr_dev(strong254, "class", "svelte-14a6qz4");
+    			add_location(strong254, file$e, 526, 3, 68977);
+    			attr_dev(p255, "class", "svelte-14a6qz4");
+    			add_location(p255, file$e, 526, 0, 68974);
+    			attr_dev(p256, "class", "svelte-14a6qz4");
+    			add_location(p256, file$e, 527, 0, 69438);
+    			attr_dev(strong255, "class", "svelte-14a6qz4");
+    			add_location(strong255, file$e, 528, 3, 69576);
+    			attr_dev(p257, "class", "svelte-14a6qz4");
+    			add_location(p257, file$e, 528, 0, 69573);
+    			attr_dev(strong256, "class", "svelte-14a6qz4");
+    			add_location(strong256, file$e, 529, 73, 70084);
+    			attr_dev(strong257, "class", "svelte-14a6qz4");
+    			add_location(strong257, file$e, 529, 181, 70192);
+    			attr_dev(em36, "class", "svelte-14a6qz4");
+    			add_location(em36, file$e, 529, 499, 70510);
+    			attr_dev(p258, "class", "svelte-14a6qz4");
+    			add_location(p258, file$e, 529, 0, 70011);
+    			attr_dev(p259, "class", "svelte-14a6qz4");
+    			add_location(p259, file$e, 530, 0, 70625);
+    			attr_dev(p260, "class", "svelte-14a6qz4");
+    			add_location(p260, file$e, 531, 0, 70849);
+    			attr_dev(h326, "id", "situation-aspects-1");
+    			attr_dev(h326, "class", "svelte-14a6qz4");
+    			add_location(h326, file$e, 532, 0, 71240);
+    			attr_dev(p261, "class", "svelte-14a6qz4");
+    			add_location(p261, file$e, 533, 0, 71292);
+    			attr_dev(strong258, "class", "svelte-14a6qz4");
+    			add_location(strong258, file$e, 535, 4, 71573);
+    			attr_dev(li75, "class", "svelte-14a6qz4");
+    			add_location(li75, file$e, 535, 0, 71569);
+    			attr_dev(strong259, "class", "svelte-14a6qz4");
+    			add_location(strong259, file$e, 536, 4, 71663);
+    			attr_dev(li76, "class", "svelte-14a6qz4");
+    			add_location(li76, file$e, 536, 0, 71659);
+    			attr_dev(strong260, "class", "svelte-14a6qz4");
+    			add_location(strong260, file$e, 537, 4, 71777);
+    			attr_dev(li77, "class", "svelte-14a6qz4");
+    			add_location(li77, file$e, 537, 0, 71773);
+    			attr_dev(strong261, "class", "svelte-14a6qz4");
+    			add_location(strong261, file$e, 538, 4, 71858);
+    			attr_dev(li78, "class", "svelte-14a6qz4");
+    			add_location(li78, file$e, 538, 0, 71854);
+    			attr_dev(strong262, "class", "svelte-14a6qz4");
+    			add_location(strong262, file$e, 539, 4, 71986);
+    			attr_dev(li79, "class", "svelte-14a6qz4");
+    			add_location(li79, file$e, 539, 0, 71982);
+    			attr_dev(ul16, "class", "svelte-14a6qz4");
+    			add_location(ul16, file$e, 534, 0, 71564);
+    			attr_dev(strong263, "class", "svelte-14a6qz4");
+    			add_location(strong263, file$e, 541, 138, 72250);
+    			attr_dev(p262, "class", "svelte-14a6qz4");
+    			add_location(p262, file$e, 541, 0, 72112);
+    			attr_dev(strong264, "class", "svelte-14a6qz4");
+    			add_location(strong264, file$e, 542, 103, 72409);
+    			attr_dev(strong265, "class", "svelte-14a6qz4");
+    			add_location(strong265, file$e, 542, 358, 72664);
+    			attr_dev(p263, "class", "svelte-14a6qz4");
+    			add_location(p263, file$e, 542, 0, 72306);
+    			attr_dev(h422, "id", "free-invokes-on-the-scenes-aspects");
+    			attr_dev(h422, "class", "svelte-14a6qz4");
+    			add_location(h422, file$e, 543, 0, 72763);
+    			attr_dev(p264, "class", "svelte-14a6qz4");
+    			add_location(p264, file$e, 544, 0, 72849);
+    			attr_dev(h423, "id", "zone-aspects");
+    			attr_dev(h423, "class", "svelte-14a6qz4");
+    			add_location(h423, file$e, 545, 0, 73295);
+    			attr_dev(strong266, "class", "svelte-14a6qz4");
+    			add_location(strong266, file$e, 546, 18, 73353);
+    			attr_dev(p265, "class", "svelte-14a6qz4");
+    			add_location(p265, file$e, 546, 0, 73335);
+    			attr_dev(h327, "id", "turn-order");
+    			attr_dev(h327, "class", "svelte-14a6qz4");
+    			add_location(h327, file$e, 547, 0, 73578);
+    			attr_dev(strong267, "class", "svelte-14a6qz4");
+    			add_location(strong267, file$e, 548, 167, 73781);
+    			attr_dev(strong268, "class", "svelte-14a6qz4");
+    			add_location(strong268, file$e, 548, 357, 73971);
+    			attr_dev(p266, "class", "svelte-14a6qz4");
+    			add_location(p266, file$e, 548, 0, 73614);
+    			attr_dev(p267, "class", "svelte-14a6qz4");
+    			add_location(p267, file$e, 549, 0, 74254);
+    			attr_dev(strong269, "class", "svelte-14a6qz4");
+    			add_location(strong269, file$e, 550, 349, 74980);
+    			attr_dev(strong270, "class", "svelte-14a6qz4");
+    			add_location(strong270, file$e, 550, 610, 75241);
+    			attr_dev(p268, "class", "svelte-14a6qz4");
+    			add_location(p268, file$e, 550, 0, 74631);
+    			attr_dev(p269, "class", "svelte-14a6qz4");
+    			add_location(p269, file$e, 551, 0, 75407);
+    			attr_dev(a4, "href", "https://www.deadlyfredly.com/2012/02/marvel/");
+    			attr_dev(a4, "class", "svelte-14a6qz4");
+    			add_location(a4, file$e, 552, 317, 76169);
+    			attr_dev(p270, "class", "svelte-14a6qz4");
+    			add_location(p270, file$e, 552, 0, 75852);
+    			attr_dev(h213, "id", "teamwork");
+    			attr_dev(h213, "class", "svelte-14a6qz4");
+    			add_location(h213, file$e, 553, 0, 76277);
+    			attr_dev(hr20, "class", "svelte-14a6qz4");
+    			add_location(hr20, file$e, 554, 0, 76309);
+    			attr_dev(p271, "class", "svelte-14a6qz4");
+    			add_location(p271, file$e, 555, 0, 76314);
+    			attr_dev(p272, "class", "svelte-14a6qz4");
+    			add_location(p272, file$e, 556, 0, 76553);
+    			attr_dev(p273, "class", "svelte-14a6qz4");
+    			add_location(p273, file$e, 557, 0, 76996);
+    			attr_dev(h214, "id", "challenges");
+    			attr_dev(h214, "class", "svelte-14a6qz4");
+    			add_location(h214, file$e, 558, 0, 77213);
+    			attr_dev(hr21, "class", "svelte-14a6qz4");
+    			add_location(hr21, file$e, 559, 0, 77249);
+    			attr_dev(p274, "class", "svelte-14a6qz4");
+    			add_location(p274, file$e, 560, 0, 77254);
+    			attr_dev(strong271, "class", "svelte-14a6qz4");
+    			add_location(strong271, file$e, 561, 73, 77800);
+    			attr_dev(p275, "class", "svelte-14a6qz4");
+    			add_location(p275, file$e, 561, 0, 77727);
+    			attr_dev(p276, "class", "svelte-14a6qz4");
+    			add_location(p276, file$e, 562, 0, 77977);
+    			attr_dev(p277, "class", "svelte-14a6qz4");
+    			add_location(p277, file$e, 563, 0, 78288);
+    			attr_dev(p278, "class", "svelte-14a6qz4");
+    			add_location(p278, file$e, 564, 0, 78753);
+    			attr_dev(h215, "id", "contests");
+    			attr_dev(h215, "class", "svelte-14a6qz4");
+    			add_location(h215, file$e, 565, 0, 79136);
+    			attr_dev(hr22, "class", "svelte-14a6qz4");
+    			add_location(hr22, file$e, 566, 0, 79168);
+    			attr_dev(strong272, "class", "svelte-14a6qz4");
+    			add_location(strong272, file$e, 567, 5, 79178);
+    			attr_dev(em37, "class", "svelte-14a6qz4");
+    			add_location(em37, file$e, 567, 144, 79317);
+    			attr_dev(p279, "class", "svelte-14a6qz4");
+    			add_location(p279, file$e, 567, 0, 79173);
+    			attr_dev(em38, "class", "svelte-14a6qz4");
+    			add_location(em38, file$e, 568, 209, 79662);
+    			attr_dev(strong273, "class", "svelte-14a6qz4");
+    			add_location(strong273, file$e, 568, 283, 79736);
+    			attr_dev(p280, "class", "svelte-14a6qz4");
+    			add_location(p280, file$e, 568, 0, 79453);
+    			attr_dev(p281, "class", "svelte-14a6qz4");
+    			add_location(p281, file$e, 569, 0, 79961);
+    			attr_dev(strong274, "class", "svelte-14a6qz4");
+    			add_location(strong274, file$e, 570, 116, 80611);
+    			attr_dev(strong275, "class", "svelte-14a6qz4");
+    			add_location(strong275, file$e, 570, 211, 80706);
+    			attr_dev(p282, "class", "svelte-14a6qz4");
+    			add_location(p282, file$e, 570, 0, 80495);
+    			attr_dev(strong276, "class", "svelte-14a6qz4");
+    			add_location(strong276, file$e, 571, 77, 80994);
+    			attr_dev(p283, "class", "svelte-14a6qz4");
+    			add_location(p283, file$e, 571, 0, 80917);
+    			attr_dev(p284, "class", "svelte-14a6qz4");
+    			add_location(p284, file$e, 572, 0, 81147);
+    			attr_dev(h328, "id", "creating-advantages-in-a-contest");
+    			attr_dev(h328, "class", "svelte-14a6qz4");
+    			add_location(h328, file$e, 573, 0, 81498);
+    			attr_dev(strong277, "class", "svelte-14a6qz4");
+    			add_location(strong277, file$e, 574, 301, 81879);
+    			attr_dev(p285, "class", "svelte-14a6qz4");
+    			add_location(p285, file$e, 574, 0, 81578);
+    			attr_dev(h216, "id", "conflicts");
+    			attr_dev(h216, "class", "svelte-14a6qz4");
+    			add_location(h216, file$e, 575, 0, 82194);
+    			attr_dev(hr23, "class", "svelte-14a6qz4");
+    			add_location(hr23, file$e, 576, 0, 82228);
+    			attr_dev(strong278, "class", "svelte-14a6qz4");
+    			add_location(strong278, file$e, 577, 139, 82372);
+    			attr_dev(p286, "class", "svelte-14a6qz4");
+    			add_location(p286, file$e, 577, 0, 82233);
+    			attr_dev(em39, "class", "svelte-14a6qz4");
+    			add_location(em39, file$e, 578, 224, 82729);
+    			attr_dev(p287, "class", "svelte-14a6qz4");
+    			add_location(p287, file$e, 578, 0, 82505);
+    			attr_dev(p288, "class", "svelte-14a6qz4");
+    			add_location(p288, file$e, 579, 0, 82970);
+    			attr_dev(strong279, "class", "svelte-14a6qz4");
+    			add_location(strong279, file$e, 580, 53, 83272);
+    			attr_dev(em40, "class", "svelte-14a6qz4");
+    			add_location(em40, file$e, 580, 183, 83402);
+    			attr_dev(p289, "class", "svelte-14a6qz4");
+    			add_location(p289, file$e, 580, 0, 83219);
+    			attr_dev(h329, "id", "taking-harm");
+    			attr_dev(h329, "class", "svelte-14a6qz4");
+    			add_location(h329, file$e, 581, 0, 83701);
+    			attr_dev(p290, "class", "svelte-14a6qz4");
+    			add_location(p290, file$e, 582, 0, 83739);
+    			attr_dev(strong280, "class", "svelte-14a6qz4");
+    			add_location(strong280, file$e, 583, 142, 84043);
+    			attr_dev(strong281, "class", "svelte-14a6qz4");
+    			add_location(strong281, file$e, 583, 170, 84071);
+    			attr_dev(p291, "class", "svelte-14a6qz4");
+    			add_location(p291, file$e, 583, 0, 83901);
+    			attr_dev(p292, "class", "svelte-14a6qz4");
+    			add_location(p292, file$e, 584, 0, 84175);
+    			attr_dev(h424, "id", "stress");
+    			attr_dev(h424, "class", "svelte-14a6qz4");
+    			add_location(h424, file$e, 585, 0, 84809);
+    			attr_dev(strong282, "class", "svelte-14a6qz4");
+    			add_location(strong282, file$e, 586, 15, 84852);
+    			attr_dev(em41, "class", "svelte-14a6qz4");
+    			add_location(em41, file$e, 586, 221, 85058);
+    			attr_dev(p293, "class", "svelte-14a6qz4");
+    			add_location(p293, file$e, 586, 0, 84837);
+    			attr_dev(strong283, "class", "svelte-14a6qz4");
+    			add_location(strong283, file$e, 587, 19, 85348);
+    			attr_dev(p294, "class", "svelte-14a6qz4");
+    			add_location(p294, file$e, 587, 0, 85329);
+    			attr_dev(p295, "class", "svelte-14a6qz4");
+    			add_location(p295, file$e, 588, 0, 85663);
+    			attr_dev(h425, "id", "consequences-1");
+    			attr_dev(h425, "class", "svelte-14a6qz4");
+    			add_location(h425, file$e, 589, 0, 85890);
+    			attr_dev(strong284, "class", "svelte-14a6qz4");
+    			add_location(strong284, file$e, 590, 3, 85935);
+    			attr_dev(p296, "class", "svelte-14a6qz4");
+    			add_location(p296, file$e, 590, 0, 85932);
+    			attr_dev(strong285, "class", "svelte-14a6qz4");
+    			add_location(strong285, file$e, 591, 252, 86366);
+    			attr_dev(strong286, "class", "svelte-14a6qz4");
+    			add_location(strong286, file$e, 591, 317, 86431);
+    			attr_dev(strong287, "class", "svelte-14a6qz4");
+    			add_location(strong287, file$e, 591, 399, 86513);
+    			attr_dev(p297, "class", "svelte-14a6qz4");
+    			add_location(p297, file$e, 591, 0, 86114);
+    			attr_dev(em42, "class", "svelte-14a6qz4");
+    			add_location(em42, file$e, 592, 193, 86741);
+    			attr_dev(p298, "class", "svelte-14a6qz4");
+    			add_location(p298, file$e, 592, 0, 86548);
+    			attr_dev(p299, "class", "svelte-14a6qz4");
+    			add_location(p299, file$e, 593, 0, 86899);
+    			attr_dev(p300, "class", "svelte-14a6qz4");
+    			add_location(p300, file$e, 594, 0, 87105);
+    			attr_dev(strong288, "class", "svelte-14a6qz4");
+    			add_location(strong288, file$e, 595, 86, 87389);
+    			attr_dev(strong289, "class", "svelte-14a6qz4");
+    			add_location(strong289, file$e, 595, 130, 87433);
+    			attr_dev(p301, "class", "svelte-14a6qz4");
+    			add_location(p301, file$e, 595, 0, 87303);
+    			attr_dev(strong290, "class", "svelte-14a6qz4");
+    			add_location(strong290, file$e, 596, 135, 87998);
+    			attr_dev(strong291, "class", "svelte-14a6qz4");
+    			add_location(strong291, file$e, 596, 486, 88349);
+    			attr_dev(p302, "class", "svelte-14a6qz4");
+    			add_location(p302, file$e, 596, 0, 87863);
+    			attr_dev(h426, "id", "getting-taken-out");
+    			attr_dev(h426, "class", "svelte-14a6qz4");
+    			add_location(h426, file$e, 597, 0, 88506);
+    			attr_dev(strong292, "class", "svelte-14a6qz4");
+    			add_location(strong292, file$e, 598, 84, 88640);
+    			attr_dev(p303, "class", "svelte-14a6qz4");
+    			add_location(p303, file$e, 598, 0, 88556);
+    			attr_dev(p304, "class", "svelte-14a6qz4");
+    			add_location(p304, file$e, 599, 0, 88672);
+    			attr_dev(p305, "class", "svelte-14a6qz4");
+    			add_location(p305, file$e, 600, 0, 89242);
+    			attr_dev(p306, "class", "svelte-14a6qz4");
+    			add_location(p306, file$e, 601, 0, 89662);
+    			attr_dev(p307, "class", "svelte-14a6qz4");
+    			add_location(p307, file$e, 602, 0, 90158);
+    			attr_dev(p308, "class", "svelte-14a6qz4");
+    			add_location(p308, file$e, 603, 0, 90696);
+    			attr_dev(h427, "id", "conceding");
+    			attr_dev(h427, "class", "svelte-14a6qz4");
+    			add_location(h427, file$e, 604, 0, 91003);
+    			attr_dev(strong293, "class", "svelte-14a6qz4");
+    			add_location(strong293, file$e, 605, 98, 91135);
+    			attr_dev(strong294, "class", "svelte-14a6qz4");
+    			add_location(strong294, file$e, 605, 292, 91329);
+    			attr_dev(p309, "class", "svelte-14a6qz4");
+    			add_location(p309, file$e, 605, 0, 91037);
+    			attr_dev(em43, "class", "svelte-14a6qz4");
+    			add_location(em43, file$e, 606, 26, 91472);
+    			attr_dev(p310, "class", "svelte-14a6qz4");
+    			add_location(p310, file$e, 606, 0, 91446);
+    			attr_dev(em44, "class", "svelte-14a6qz4");
+    			add_location(em44, file$e, 607, 177, 91955);
+    			attr_dev(p311, "class", "svelte-14a6qz4");
+    			add_location(p311, file$e, 607, 0, 91778);
+    			attr_dev(p312, "class", "svelte-14a6qz4");
+    			add_location(p312, file$e, 608, 0, 91980);
+    			attr_dev(p313, "class", "svelte-14a6qz4");
+    			add_location(p313, file$e, 609, 0, 92149);
+    			attr_dev(p314, "class", "svelte-14a6qz4");
+    			add_location(p314, file$e, 610, 0, 92540);
+    			attr_dev(h330, "id", "ending-a-conflict");
+    			attr_dev(h330, "class", "svelte-14a6qz4");
+    			add_location(h330, file$e, 611, 0, 92816);
+    			attr_dev(strong295, "class", "svelte-14a6qz4");
+    			add_location(strong295, file$e, 612, 193, 93059);
+    			attr_dev(strong296, "class", "svelte-14a6qz4");
+    			add_location(strong296, file$e, 612, 290, 93156);
+    			attr_dev(p315, "class", "svelte-14a6qz4");
+    			add_location(p315, file$e, 612, 0, 92866);
+    			attr_dev(h331, "id", "recovering-from-conflicts");
+    			attr_dev(h331, "class", "svelte-14a6qz4");
+    			add_location(h331, file$e, 613, 0, 93221);
+    			attr_dev(p316, "class", "svelte-14a6qz4");
+    			add_location(p316, file$e, 614, 0, 93287);
+    			attr_dev(strong297, "class", "svelte-14a6qz4");
+    			add_location(strong297, file$e, 615, 16, 93428);
+    			attr_dev(p317, "class", "svelte-14a6qz4");
+    			add_location(p317, file$e, 615, 0, 93412);
+    			attr_dev(strong298, "class", "svelte-14a6qz4");
+    			add_location(strong298, file$e, 616, 90, 94069);
+    			attr_dev(strong299, "class", "svelte-14a6qz4");
+    			add_location(strong299, file$e, 616, 138, 94117);
+    			attr_dev(p318, "class", "svelte-14a6qz4");
+    			add_location(p318, file$e, 616, 0, 93979);
+    			attr_dev(p319, "class", "svelte-14a6qz4");
+    			add_location(p319, file$e, 617, 0, 94167);
+    			attr_dev(strong300, "class", "svelte-14a6qz4");
+    			add_location(strong300, file$e, 619, 4, 94261);
+    			attr_dev(li80, "class", "svelte-14a6qz4");
+    			add_location(li80, file$e, 619, 0, 94257);
+    			attr_dev(strong301, "class", "svelte-14a6qz4");
+    			add_location(strong301, file$e, 620, 4, 94351);
+    			attr_dev(li81, "class", "svelte-14a6qz4");
+    			add_location(li81, file$e, 620, 0, 94347);
+    			attr_dev(strong302, "class", "svelte-14a6qz4");
+    			add_location(strong302, file$e, 621, 4, 94460);
+    			attr_dev(strong303, "class", "svelte-14a6qz4");
+    			add_location(strong303, file$e, 621, 83, 94539);
+    			attr_dev(li82, "class", "svelte-14a6qz4");
+    			add_location(li82, file$e, 621, 0, 94456);
+    			attr_dev(ul17, "class", "svelte-14a6qz4");
+    			add_location(ul17, file$e, 618, 0, 94252);
+    			attr_dev(h17, "id", "advancement");
+    			attr_dev(h17, "class", "svelte-14a6qz4");
+    			add_location(h17, file$e, 623, 0, 94593);
+    			attr_dev(hr24, "class", "svelte-14a6qz4");
+    			add_location(hr24, file$e, 624, 0, 94631);
+    			attr_dev(strong304, "class", "svelte-14a6qz4");
+    			add_location(strong304, file$e, 625, 117, 94753);
+    			attr_dev(strong305, "class", "svelte-14a6qz4");
+    			add_location(strong305, file$e, 625, 257, 94893);
+    			attr_dev(strong306, "class", "svelte-14a6qz4");
+    			add_location(strong306, file$e, 625, 378, 95014);
+    			attr_dev(p320, "class", "svelte-14a6qz4");
+    			add_location(p320, file$e, 625, 0, 94636);
+    			attr_dev(h217, "id", "milestones");
+    			attr_dev(h217, "class", "svelte-14a6qz4");
+    			add_location(h217, file$e, 626, 0, 95045);
+    			attr_dev(hr25, "class", "svelte-14a6qz4");
+    			add_location(hr25, file$e, 627, 0, 95081);
+    			attr_dev(p321, "class", "svelte-14a6qz4");
+    			add_location(p321, file$e, 628, 0, 95086);
+    			attr_dev(p322, "class", "svelte-14a6qz4");
+    			add_location(p322, file$e, 629, 0, 95426);
+    			attr_dev(li83, "class", "svelte-14a6qz4");
+    			add_location(li83, file$e, 631, 0, 95491);
+    			attr_dev(li84, "class", "svelte-14a6qz4");
+    			add_location(li84, file$e, 632, 0, 95605);
+    			attr_dev(li85, "class", "svelte-14a6qz4");
+    			add_location(li85, file$e, 633, 0, 95633);
+    			attr_dev(li86, "class", "svelte-14a6qz4");
+    			add_location(li86, file$e, 634, 0, 95728);
+    			attr_dev(ul18, "class", "svelte-14a6qz4");
+    			add_location(ul18, file$e, 630, 0, 95486);
+    			attr_dev(h218, "id", "breakthroughs");
+    			attr_dev(h218, "class", "svelte-14a6qz4");
+    			add_location(h218, file$e, 636, 0, 95802);
+    			attr_dev(hr26, "class", "svelte-14a6qz4");
+    			add_location(hr26, file$e, 637, 0, 95844);
+    			attr_dev(em45, "class", "svelte-14a6qz4");
+    			add_location(em45, file$e, 638, 171, 96020);
+    			attr_dev(p323, "class", "svelte-14a6qz4");
+    			add_location(p323, file$e, 638, 0, 95849);
+    			attr_dev(li87, "class", "svelte-14a6qz4");
+    			add_location(li87, file$e, 640, 0, 96060);
+    			attr_dev(li88, "class", "svelte-14a6qz4");
+    			add_location(li88, file$e, 641, 0, 96124);
+    			attr_dev(li89, "class", "svelte-14a6qz4");
+    			add_location(li89, file$e, 642, 0, 96308);
+    			attr_dev(ul19, "class", "svelte-14a6qz4");
+    			add_location(ul19, file$e, 639, 0, 96055);
+    			attr_dev(p324, "class", "svelte-14a6qz4");
+    			add_location(p324, file$e, 644, 0, 96415);
+    			attr_dev(li90, "class", "svelte-14a6qz4");
+    			add_location(li90, file$e, 646, 0, 96580);
+    			attr_dev(li91, "class", "svelte-14a6qz4");
+    			add_location(li91, file$e, 647, 0, 96678);
+    			attr_dev(ul20, "class", "svelte-14a6qz4");
+    			add_location(ul20, file$e, 645, 0, 96575);
+    			attr_dev(h332, "id", "improving-skill-ratings");
+    			attr_dev(h332, "class", "svelte-14a6qz4");
+    			add_location(h332, file$e, 649, 0, 96737);
+    			attr_dev(p325, "class", "svelte-14a6qz4");
+    			add_location(p325, file$e, 650, 0, 96799);
+    			attr_dev(p326, "class", "svelte-14a6qz4");
+    			add_location(p326, file$e, 651, 0, 97113);
+    			attr_dev(p327, "class", "svelte-14a6qz4");
+    			add_location(p327, file$e, 652, 48, 97548);
+    			attr_dev(th8, "colspan", "2");
+    			attr_dev(th8, "class", "svelte-14a6qz4");
+    			add_location(th8, file$e, 652, 32, 97532);
+    			attr_dev(td54, "class", "svelte-14a6qz4");
+    			add_location(td54, file$e, 653, 0, 97572);
+    			attr_dev(tr25, "class", "svelte-14a6qz4");
+    			add_location(tr25, file$e, 652, 28, 97528);
+    			attr_dev(p328, "class", "svelte-14a6qz4");
+    			add_location(p328, file$e, 655, 8, 97596);
+    			attr_dev(td55, "class", "svelte-14a6qz4");
+    			add_location(td55, file$e, 655, 4, 97592);
+    			attr_dev(dice0, "class", "svelte-14a6qz4");
+    			add_location(dice0, file$e, 656, 7, 97618);
+    			attr_dev(p329, "class", "svelte-14a6qz4");
+    			add_location(p329, file$e, 656, 4, 97615);
+    			attr_dev(td56, "class", "svelte-14a6qz4");
+    			add_location(td56, file$e, 656, 0, 97611);
+    			attr_dev(tr26, "class", "svelte-14a6qz4");
+    			add_location(tr26, file$e, 655, 0, 97588);
+    			attr_dev(p330, "class", "svelte-14a6qz4");
+    			add_location(p330, file$e, 658, 8, 97658);
+    			attr_dev(td57, "class", "svelte-14a6qz4");
+    			add_location(td57, file$e, 658, 4, 97654);
+    			attr_dev(dice1, "class", "svelte-14a6qz4");
+    			add_location(dice1, file$e, 659, 7, 97680);
+    			attr_dev(p331, "class", "svelte-14a6qz4");
+    			add_location(p331, file$e, 659, 4, 97677);
+    			attr_dev(td58, "class", "svelte-14a6qz4");
+    			add_location(td58, file$e, 659, 0, 97673);
+    			attr_dev(tr27, "class", "svelte-14a6qz4");
+    			add_location(tr27, file$e, 658, 0, 97650);
+    			attr_dev(p332, "class", "svelte-14a6qz4");
+    			add_location(p332, file$e, 661, 8, 97723);
+    			attr_dev(td59, "class", "svelte-14a6qz4");
+    			add_location(td59, file$e, 661, 4, 97719);
+    			attr_dev(dice2, "class", "svelte-14a6qz4");
+    			add_location(dice2, file$e, 662, 7, 97745);
+    			attr_dev(p333, "class", "svelte-14a6qz4");
+    			add_location(p333, file$e, 662, 4, 97742);
+    			attr_dev(td60, "class", "svelte-14a6qz4");
+    			add_location(td60, file$e, 662, 0, 97738);
+    			attr_dev(tr28, "class", "svelte-14a6qz4");
+    			add_location(tr28, file$e, 661, 0, 97715);
+    			attr_dev(p334, "class", "svelte-14a6qz4");
+    			add_location(p334, file$e, 664, 8, 97791);
+    			attr_dev(td61, "class", "svelte-14a6qz4");
+    			add_location(td61, file$e, 664, 4, 97787);
+    			attr_dev(dice3, "class", "svelte-14a6qz4");
+    			add_location(dice3, file$e, 665, 7, 97813);
+    			attr_dev(p335, "class", "svelte-14a6qz4");
+    			add_location(p335, file$e, 665, 4, 97810);
+    			attr_dev(td62, "class", "svelte-14a6qz4");
+    			add_location(td62, file$e, 665, 0, 97806);
+    			attr_dev(tr29, "class", "svelte-14a6qz4");
+    			add_location(tr29, file$e, 664, 0, 97783);
+    			attr_dev(tbody3, "class", "svelte-14a6qz4");
+    			add_location(tbody3, file$e, 652, 21, 97521);
+    			attr_dev(table3, "id", "table003");
+    			attr_dev(table3, "class", "svelte-14a6qz4");
+    			add_location(table3, file$e, 652, 0, 97500);
+    			attr_dev(p336, "class", "svelte-14a6qz4");
+    			add_location(p336, file$e, 668, 48, 97919);
+    			attr_dev(th9, "colspan", "2");
+    			attr_dev(th9, "class", "svelte-14a6qz4");
+    			add_location(th9, file$e, 668, 32, 97903);
+    			attr_dev(td63, "class", "svelte-14a6qz4");
+    			add_location(td63, file$e, 669, 8, 97949);
+    			attr_dev(tr30, "class", "svelte-14a6qz4");
+    			add_location(tr30, file$e, 668, 28, 97899);
+    			attr_dev(p337, "class", "svelte-14a6qz4");
+    			add_location(p337, file$e, 671, 8, 97973);
+    			attr_dev(td64, "class", "svelte-14a6qz4");
+    			add_location(td64, file$e, 671, 4, 97969);
+    			attr_dev(dice4, "class", "svelte-14a6qz4");
+    			add_location(dice4, file$e, 672, 7, 97995);
+    			attr_dev(p338, "class", "svelte-14a6qz4");
+    			add_location(p338, file$e, 672, 4, 97992);
+    			attr_dev(td65, "class", "svelte-14a6qz4");
+    			add_location(td65, file$e, 672, 0, 97988);
+    			attr_dev(tr31, "class", "svelte-14a6qz4");
+    			add_location(tr31, file$e, 671, 0, 97965);
+    			attr_dev(p339, "class", "svelte-14a6qz4");
+    			add_location(p339, file$e, 674, 8, 98035);
+    			attr_dev(td66, "class", "svelte-14a6qz4");
+    			add_location(td66, file$e, 674, 4, 98031);
+    			attr_dev(dice5, "class", "svelte-14a6qz4");
+    			add_location(dice5, file$e, 675, 7, 98057);
+    			attr_dev(p340, "class", "svelte-14a6qz4");
+    			add_location(p340, file$e, 675, 4, 98054);
+    			attr_dev(td67, "class", "svelte-14a6qz4");
+    			add_location(td67, file$e, 675, 0, 98050);
+    			attr_dev(tr32, "class", "svelte-14a6qz4");
+    			add_location(tr32, file$e, 674, 0, 98027);
+    			attr_dev(p341, "class", "svelte-14a6qz4");
+    			add_location(p341, file$e, 677, 8, 98100);
+    			attr_dev(td68, "class", "svelte-14a6qz4");
+    			add_location(td68, file$e, 677, 4, 98096);
+    			attr_dev(dice6, "class", "svelte-14a6qz4");
+    			add_location(dice6, file$e, 678, 7, 98122);
+    			attr_dev(p342, "class", "svelte-14a6qz4");
+    			add_location(p342, file$e, 678, 4, 98119);
+    			attr_dev(td69, "class", "svelte-14a6qz4");
+    			add_location(td69, file$e, 678, 0, 98115);
+    			attr_dev(tr33, "class", "svelte-14a6qz4");
+    			add_location(tr33, file$e, 677, 0, 98092);
+    			attr_dev(p343, "class", "svelte-14a6qz4");
+    			add_location(p343, file$e, 680, 8, 98171);
+    			attr_dev(td70, "class", "svelte-14a6qz4");
+    			add_location(td70, file$e, 680, 4, 98167);
+    			attr_dev(dice7, "class", "svelte-14a6qz4");
+    			add_location(dice7, file$e, 681, 7, 98193);
+    			attr_dev(p344, "class", "svelte-14a6qz4");
+    			add_location(p344, file$e, 681, 4, 98190);
+    			attr_dev(td71, "class", "svelte-14a6qz4");
+    			add_location(td71, file$e, 681, 0, 98186);
+    			attr_dev(tr34, "class", "svelte-14a6qz4");
+    			add_location(tr34, file$e, 680, 0, 98163);
+    			attr_dev(tbody4, "class", "svelte-14a6qz4");
+    			add_location(tbody4, file$e, 668, 21, 97892);
+    			attr_dev(table4, "id", "table004");
+    			attr_dev(table4, "class", "svelte-14a6qz4");
+    			add_location(table4, file$e, 668, 0, 97871);
+    			attr_dev(th10, "colspan", "2");
+    			attr_dev(th10, "class", "svelte-14a6qz4");
+    			add_location(th10, file$e, 687, 8, 98299);
+    			attr_dev(p345, "class", "svelte-14a6qz4");
+    			add_location(p345, file$e, 688, 4, 98320);
+    			attr_dev(td72, "class", "svelte-14a6qz4");
+    			add_location(td72, file$e, 688, 0, 98316);
+    			attr_dev(td73, "class", "svelte-14a6qz4");
+    			add_location(td73, file$e, 689, 8, 98346);
+    			attr_dev(tr35, "class", "svelte-14a6qz4");
+    			add_location(tr35, file$e, 686, 4, 98286);
+    			attr_dev(p346, "class", "svelte-14a6qz4");
+    			add_location(p346, file$e, 691, 8, 98374);
+    			attr_dev(td74, "class", "svelte-14a6qz4");
+    			add_location(td74, file$e, 691, 4, 98370);
+    			attr_dev(dice8, "class", "svelte-14a6qz4");
+    			add_location(dice8, file$e, 692, 7, 98396);
+    			attr_dev(p347, "class", "svelte-14a6qz4");
+    			add_location(p347, file$e, 692, 4, 98393);
+    			attr_dev(td75, "class", "svelte-14a6qz4");
+    			add_location(td75, file$e, 692, 0, 98389);
+    			attr_dev(tr36, "class", "svelte-14a6qz4");
+    			add_location(tr36, file$e, 691, 0, 98366);
+    			attr_dev(p348, "class", "svelte-14a6qz4");
+    			add_location(p348, file$e, 694, 8, 98436);
+    			attr_dev(td76, "class", "svelte-14a6qz4");
+    			add_location(td76, file$e, 694, 4, 98432);
+    			attr_dev(dice9, "class", "svelte-14a6qz4");
+    			add_location(dice9, file$e, 695, 7, 98458);
+    			attr_dev(p349, "class", "svelte-14a6qz4");
+    			add_location(p349, file$e, 695, 4, 98455);
+    			attr_dev(td77, "class", "svelte-14a6qz4");
+    			add_location(td77, file$e, 695, 0, 98451);
+    			attr_dev(tr37, "class", "svelte-14a6qz4");
+    			add_location(tr37, file$e, 694, 0, 98428);
+    			attr_dev(p350, "class", "svelte-14a6qz4");
+    			add_location(p350, file$e, 697, 8, 98501);
+    			attr_dev(td78, "class", "svelte-14a6qz4");
+    			add_location(td78, file$e, 697, 4, 98497);
+    			attr_dev(dice10, "class", "svelte-14a6qz4");
+    			add_location(dice10, file$e, 698, 7, 98523);
+    			attr_dev(p351, "class", "svelte-14a6qz4");
+    			add_location(p351, file$e, 698, 4, 98520);
+    			attr_dev(td79, "class", "svelte-14a6qz4");
+    			add_location(td79, file$e, 698, 0, 98516);
+    			attr_dev(tr38, "class", "svelte-14a6qz4");
+    			add_location(tr38, file$e, 697, 0, 98493);
+    			attr_dev(p352, "class", "svelte-14a6qz4");
+    			add_location(p352, file$e, 700, 8, 98572);
+    			attr_dev(td80, "class", "svelte-14a6qz4");
+    			add_location(td80, file$e, 700, 4, 98568);
+    			attr_dev(dice11, "class", "svelte-14a6qz4");
+    			add_location(dice11, file$e, 701, 7, 98594);
+    			attr_dev(p353, "class", "svelte-14a6qz4");
+    			add_location(p353, file$e, 701, 4, 98591);
+    			attr_dev(td81, "class", "svelte-14a6qz4");
+    			add_location(td81, file$e, 701, 0, 98587);
+    			attr_dev(tr39, "class", "svelte-14a6qz4");
+    			add_location(tr39, file$e, 700, 0, 98564);
+    			attr_dev(tbody5, "class", "svelte-14a6qz4");
+    			add_location(tbody5, file$e, 685, 4, 98274);
+    			attr_dev(table5, "id", "table005");
+    			attr_dev(table5, "class", "svelte-14a6qz4");
+    			add_location(table5, file$e, 684, 0, 98248);
+    			attr_dev(p354, "class", "svelte-14a6qz4");
+    			add_location(p354, file$e, 706, 48, 98706);
+    			attr_dev(th11, "colspan", "2");
+    			attr_dev(th11, "class", "svelte-14a6qz4");
+    			add_location(th11, file$e, 706, 32, 98690);
+    			attr_dev(tr40, "class", "svelte-14a6qz4");
+    			add_location(tr40, file$e, 706, 28, 98686);
+    			attr_dev(p355, "class", "svelte-14a6qz4");
+    			add_location(p355, file$e, 707, 8, 98742);
+    			attr_dev(td82, "class", "svelte-14a6qz4");
+    			add_location(td82, file$e, 707, 4, 98738);
+    			attr_dev(dice12, "class", "svelte-14a6qz4");
+    			add_location(dice12, file$e, 708, 7, 98764);
+    			attr_dev(p356, "class", "svelte-14a6qz4");
+    			add_location(p356, file$e, 708, 4, 98761);
+    			attr_dev(td83, "class", "svelte-14a6qz4");
+    			add_location(td83, file$e, 708, 0, 98757);
+    			attr_dev(tr41, "class", "svelte-14a6qz4");
+    			add_location(tr41, file$e, 707, 0, 98734);
+    			attr_dev(p357, "class", "svelte-14a6qz4");
+    			add_location(p357, file$e, 710, 8, 98804);
+    			attr_dev(td84, "class", "svelte-14a6qz4");
+    			add_location(td84, file$e, 710, 4, 98800);
+    			attr_dev(dice13, "class", "svelte-14a6qz4");
+    			add_location(dice13, file$e, 711, 7, 98826);
+    			attr_dev(p358, "class", "svelte-14a6qz4");
+    			add_location(p358, file$e, 711, 4, 98823);
+    			attr_dev(td85, "class", "svelte-14a6qz4");
+    			add_location(td85, file$e, 711, 0, 98819);
+    			attr_dev(tr42, "class", "svelte-14a6qz4");
+    			add_location(tr42, file$e, 710, 0, 98796);
+    			attr_dev(p359, "class", "svelte-14a6qz4");
+    			add_location(p359, file$e, 713, 8, 98872);
+    			attr_dev(td86, "class", "svelte-14a6qz4");
+    			add_location(td86, file$e, 713, 4, 98868);
+    			attr_dev(dice14, "class", "svelte-14a6qz4");
+    			add_location(dice14, file$e, 714, 7, 98894);
+    			attr_dev(p360, "class", "svelte-14a6qz4");
+    			add_location(p360, file$e, 714, 4, 98891);
+    			attr_dev(td87, "class", "svelte-14a6qz4");
+    			add_location(td87, file$e, 714, 0, 98887);
+    			attr_dev(tr43, "class", "svelte-14a6qz4");
+    			add_location(tr43, file$e, 713, 0, 98864);
+    			attr_dev(p361, "class", "svelte-14a6qz4");
+    			add_location(p361, file$e, 716, 8, 98940);
+    			attr_dev(td88, "class", "svelte-14a6qz4");
+    			add_location(td88, file$e, 716, 4, 98936);
+    			attr_dev(dice15, "class", "svelte-14a6qz4");
+    			add_location(dice15, file$e, 717, 7, 98962);
+    			attr_dev(p362, "class", "svelte-14a6qz4");
+    			add_location(p362, file$e, 717, 4, 98959);
+    			attr_dev(td89, "class", "svelte-14a6qz4");
+    			add_location(td89, file$e, 717, 0, 98955);
+    			attr_dev(tr44, "class", "svelte-14a6qz4");
+    			add_location(tr44, file$e, 716, 0, 98932);
+    			attr_dev(tbody6, "class", "svelte-14a6qz4");
+    			add_location(tbody6, file$e, 706, 21, 98679);
+    			attr_dev(table6, "id", "table006");
+    			attr_dev(table6, "class", "svelte-14a6qz4");
+    			add_location(table6, file$e, 706, 0, 98658);
+    			attr_dev(h219, "id", "sessions-and-arcs");
+    			attr_dev(h219, "class", "svelte-14a6qz4");
+    			add_location(h219, file$e, 720, 0, 99017);
+    			attr_dev(hr27, "class", "svelte-14a6qz4");
+    			add_location(hr27, file$e, 721, 0, 99067);
+    			attr_dev(p363, "class", "svelte-14a6qz4");
+    			add_location(p363, file$e, 722, 0, 99072);
+    			attr_dev(strong307, "class", "svelte-14a6qz4");
+    			add_location(strong307, file$e, 723, 5, 99285);
+    			attr_dev(p364, "class", "svelte-14a6qz4");
+    			add_location(p364, file$e, 723, 0, 99280);
+    			attr_dev(strong308, "class", "svelte-14a6qz4");
+    			add_location(strong308, file$e, 724, 6, 99523);
+    			attr_dev(p365, "class", "svelte-14a6qz4");
+    			add_location(p365, file$e, 724, 0, 99517);
+    			attr_dev(p366, "class", "svelte-14a6qz4");
+    			add_location(p366, file$e, 725, 0, 99930);
+    			attr_dev(h18, "id", "being-the-game-master");
+    			attr_dev(h18, "class", "svelte-14a6qz4");
+    			add_location(h18, file$e, 726, 0, 100515);
+    			attr_dev(hr28, "class", "svelte-14a6qz4");
+    			add_location(hr28, file$e, 727, 0, 100573);
+    			attr_dev(em46, "class", "svelte-14a6qz4");
+    			add_location(em46, file$e, 728, 79, 100657);
+    			attr_dev(p367, "class", "svelte-14a6qz4");
+    			add_location(p367, file$e, 728, 0, 100578);
+    			attr_dev(strong309, "class", "svelte-14a6qz4");
+    			add_location(strong309, file$e, 730, 4, 100838);
+    			attr_dev(li92, "class", "svelte-14a6qz4");
+    			add_location(li92, file$e, 730, 0, 100834);
+    			attr_dev(strong310, "class", "svelte-14a6qz4");
+    			add_location(strong310, file$e, 731, 4, 101262);
+    			attr_dev(li93, "class", "svelte-14a6qz4");
+    			add_location(li93, file$e, 731, 0, 101258);
+    			attr_dev(strong311, "class", "svelte-14a6qz4");
+    			add_location(strong311, file$e, 732, 4, 101468);
+    			attr_dev(li94, "class", "svelte-14a6qz4");
+    			add_location(li94, file$e, 732, 0, 101464);
+    			attr_dev(strong312, "class", "svelte-14a6qz4");
+    			add_location(strong312, file$e, 733, 4, 101570);
+    			attr_dev(li95, "class", "svelte-14a6qz4");
+    			add_location(li95, file$e, 733, 0, 101566);
+    			attr_dev(strong313, "class", "svelte-14a6qz4");
+    			add_location(strong313, file$e, 734, 4, 101857);
+    			attr_dev(li96, "class", "svelte-14a6qz4");
+    			add_location(li96, file$e, 734, 0, 101853);
+    			attr_dev(strong314, "class", "svelte-14a6qz4");
+    			add_location(strong314, file$e, 735, 4, 102019);
+    			attr_dev(li97, "class", "svelte-14a6qz4");
+    			add_location(li97, file$e, 735, 0, 102015);
+    			attr_dev(strong315, "class", "svelte-14a6qz4");
+    			add_location(strong315, file$e, 736, 4, 102373);
+    			attr_dev(li98, "class", "svelte-14a6qz4");
+    			add_location(li98, file$e, 736, 0, 102369);
+    			attr_dev(strong316, "class", "svelte-14a6qz4");
+    			add_location(strong316, file$e, 737, 4, 102665);
+    			attr_dev(li99, "class", "svelte-14a6qz4");
+    			add_location(li99, file$e, 737, 0, 102661);
+    			attr_dev(strong317, "class", "svelte-14a6qz4");
+    			add_location(strong317, file$e, 738, 4, 102988);
+    			attr_dev(li100, "class", "svelte-14a6qz4");
+    			add_location(li100, file$e, 738, 0, 102984);
+    			attr_dev(ul21, "class", "svelte-14a6qz4");
+    			add_location(ul21, file$e, 729, 0, 100829);
+    			attr_dev(h220, "id", "setting-difficulty-and-opposition");
+    			attr_dev(h220, "class", "svelte-14a6qz4");
+    			add_location(h220, file$e, 740, 0, 103239);
+    			attr_dev(hr29, "class", "svelte-14a6qz4");
+    			add_location(hr29, file$e, 741, 0, 103321);
+    			attr_dev(strong318, "class", "svelte-14a6qz4");
+    			add_location(strong318, file$e, 742, 38, 103364);
+    			attr_dev(strong319, "class", "svelte-14a6qz4");
+    			add_location(strong319, file$e, 742, 362, 103688);
+    			attr_dev(p368, "class", "svelte-14a6qz4");
+    			add_location(p368, file$e, 742, 0, 103326);
+    			attr_dev(strong320, "class", "svelte-14a6qz4");
+    			add_location(strong320, file$e, 743, 59, 103778);
+    			attr_dev(p369, "class", "svelte-14a6qz4");
+    			add_location(p369, file$e, 743, 0, 103719);
+    			attr_dev(strong321, "class", "svelte-14a6qz4");
+    			add_location(strong321, file$e, 745, 4, 103834);
+    			attr_dev(li101, "class", "svelte-14a6qz4");
+    			add_location(li101, file$e, 745, 0, 103830);
+    			attr_dev(strong322, "class", "svelte-14a6qz4");
+    			add_location(strong322, file$e, 746, 4, 103974);
+    			attr_dev(li102, "class", "svelte-14a6qz4");
+    			add_location(li102, file$e, 746, 0, 103970);
+    			attr_dev(strong323, "class", "svelte-14a6qz4");
+    			add_location(strong323, file$e, 747, 4, 104126);
+    			attr_dev(li103, "class", "svelte-14a6qz4");
+    			add_location(li103, file$e, 747, 0, 104122);
+    			attr_dev(ul22, "class", "svelte-14a6qz4");
+    			add_location(ul22, file$e, 744, 0, 103825);
+    			attr_dev(strong324, "class", "svelte-14a6qz4");
+    			add_location(strong324, file$e, 749, 39, 104463);
+    			attr_dev(p370, "class", "svelte-14a6qz4");
+    			add_location(p370, file$e, 749, 0, 104424);
+    			attr_dev(p371, "class", "svelte-14a6qz4");
+    			add_location(p371, file$e, 750, 0, 104649);
+    			attr_dev(p372, "class", "svelte-14a6qz4");
+    			add_location(p372, file$e, 751, 0, 104879);
+    			attr_dev(strong325, "class", "svelte-14a6qz4");
+    			add_location(strong325, file$e, 752, 192, 105236);
+    			attr_dev(p373, "class", "svelte-14a6qz4");
+    			add_location(p373, file$e, 752, 0, 105044);
+    			attr_dev(p374, "class", "svelte-14a6qz4");
+    			add_location(p374, file$e, 753, 0, 105514);
+    			attr_dev(em47, "class", "svelte-14a6qz4");
+    			add_location(em47, file$e, 754, 135, 105822);
+    			attr_dev(em48, "class", "svelte-14a6qz4");
+    			add_location(em48, file$e, 754, 312, 105999);
+    			attr_dev(a5, "href", "https://fate-srd.com/");
+    			attr_dev(a5, "class", "svelte-14a6qz4");
+    			add_location(a5, file$e, 754, 280, 105967);
+    			attr_dev(p375, "class", "svelte-14a6qz4");
+    			add_location(p375, file$e, 754, 0, 105687);
+    			attr_dev(h221, "id", "npcs");
+    			attr_dev(h221, "class", "svelte-14a6qz4");
+    			add_location(h221, file$e, 755, 0, 106038);
+    			attr_dev(hr30, "class", "svelte-14a6qz4");
+    			add_location(hr30, file$e, 756, 0, 106062);
+    			attr_dev(p376, "class", "svelte-14a6qz4");
+    			add_location(p376, file$e, 757, 0, 106067);
+    			attr_dev(h333, "id", "major-npcs");
+    			attr_dev(h333, "class", "svelte-14a6qz4");
+    			add_location(h333, file$e, 758, 0, 106306);
+    			attr_dev(p377, "class", "svelte-14a6qz4");
+    			add_location(p377, file$e, 759, 0, 106342);
+    			attr_dev(em49, "class", "svelte-14a6qz4");
+    			add_location(em49, file$e, 760, 168, 106752);
+    			attr_dev(strong326, "class", "svelte-14a6qz4");
+    			add_location(strong326, file$e, 760, 214, 106798);
+    			attr_dev(p378, "class", "svelte-14a6qz4");
+    			add_location(p378, file$e, 760, 0, 106584);
+    			attr_dev(h334, "id", "minor-npcs");
+    			attr_dev(h334, "class", "svelte-14a6qz4");
+    			add_location(h334, file$e, 761, 0, 106892);
+    			attr_dev(p379, "class", "svelte-14a6qz4");
+    			add_location(p379, file$e, 762, 0, 106928);
+    			attr_dev(strong327, "class", "svelte-14a6qz4");
+    			add_location(strong327, file$e, 763, 75, 107181);
+    			attr_dev(strong328, "class", "svelte-14a6qz4");
+    			add_location(strong328, file$e, 763, 103, 107209);
+    			attr_dev(strong329, "class", "svelte-14a6qz4");
+    			add_location(strong329, file$e, 763, 147, 107253);
+    			attr_dev(p380, "class", "svelte-14a6qz4");
+    			add_location(p380, file$e, 763, 0, 107106);
+    			attr_dev(p381, "class", "svelte-14a6qz4");
+    			add_location(p381, file$e, 764, 0, 107296);
+    			attr_dev(p382, "class", "svelte-14a6qz4");
+    			add_location(p382, file$e, 765, 0, 107436);
+    			attr_dev(p383, "class", "svelte-14a6qz4");
+    			add_location(p383, file$e, 766, 0, 107654);
+    			attr_dev(h335, "id", "monsters-big-bads-and-other-threats");
+    			attr_dev(h335, "class", "svelte-14a6qz4");
+    			add_location(h335, file$e, 767, 0, 107934);
+    			attr_dev(p384, "class", "svelte-14a6qz4");
+    			add_location(p384, file$e, 768, 0, 108022);
+    			attr_dev(h222, "id", "your-fate-points");
+    			attr_dev(h222, "class", "svelte-14a6qz4");
+    			add_location(h222, file$e, 769, 0, 108564);
+    			attr_dev(hr31, "class", "svelte-14a6qz4");
+    			add_location(hr31, file$e, 770, 0, 108612);
+    			attr_dev(strong330, "class", "svelte-14a6qz4");
+    			add_location(strong330, file$e, 771, 152, 108769);
+    			attr_dev(strong331, "class", "svelte-14a6qz4");
+    			add_location(strong331, file$e, 771, 228, 108845);
+    			attr_dev(p385, "class", "svelte-14a6qz4");
+    			add_location(p385, file$e, 771, 0, 108617);
+    			attr_dev(p386, "class", "svelte-14a6qz4");
+    			add_location(p386, file$e, 772, 0, 109108);
+    			attr_dev(p387, "class", "svelte-14a6qz4");
+    			add_location(p387, file$e, 773, 0, 109415);
+    			attr_dev(em50, "class", "svelte-14a6qz4");
+    			add_location(em50, file$e, 774, 21, 109632);
+    			attr_dev(p388, "class", "svelte-14a6qz4");
+    			add_location(p388, file$e, 774, 0, 109611);
+    			attr_dev(h223, "id", "safety-tools");
+    			attr_dev(h223, "class", "svelte-14a6qz4");
+    			add_location(h223, file$e, 775, 0, 109760);
+    			attr_dev(hr32, "class", "svelte-14a6qz4");
+    			add_location(hr32, file$e, 776, 0, 109800);
+    			attr_dev(p389, "class", "svelte-14a6qz4");
+    			add_location(p389, file$e, 777, 0, 109805);
+    			attr_dev(strong332, "class", "svelte-14a6qz4");
+    			add_location(strong332, file$e, 779, 4, 110275);
+    			attr_dev(a6, "href", "http://tinyurl.com/x-card-rpg");
+    			attr_dev(a6, "class", "svelte-14a6qz4");
+    			add_location(a6, file$e, 779, 248, 110519);
+    			attr_dev(li104, "class", "svelte-14a6qz4");
+    			add_location(li104, file$e, 779, 0, 110271);
+    			attr_dev(strong333, "class", "svelte-14a6qz4");
+    			add_location(strong333, file$e, 780, 4, 110602);
+    			attr_dev(a7, "href", "http://tinyurl.com/nphed7m");
+    			attr_dev(a7, "class", "svelte-14a6qz4");
+    			add_location(a7, file$e, 780, 294, 110892);
+    			attr_dev(li105, "class", "svelte-14a6qz4");
+    			add_location(li105, file$e, 780, 0, 110598);
+    			attr_dev(ul23, "class", "svelte-14a6qz4");
+    			add_location(ul23, file$e, 778, 0, 110266);
+    			attr_dev(strong334, "class", "svelte-14a6qz4");
+    			add_location(strong334, file$e, 782, 58, 111029);
+    			attr_dev(p390, "class", "svelte-14a6qz4");
+    			add_location(p390, file$e, 782, 0, 110971);
+    			attr_dev(h19, "id", "optional-rules");
+    			attr_dev(h19, "class", "svelte-14a6qz4");
+    			add_location(h19, file$e, 783, 0, 111225);
+    			attr_dev(hr33, "class", "svelte-14a6qz4");
+    			add_location(hr33, file$e, 784, 0, 111269);
+    			attr_dev(p391, "class", "svelte-14a6qz4");
+    			add_location(p391, file$e, 785, 0, 111274);
+    			attr_dev(h224, "id", "conditions");
+    			attr_dev(h224, "class", "svelte-14a6qz4");
+    			add_location(h224, file$e, 786, 0, 111363);
+    			attr_dev(hr34, "class", "svelte-14a6qz4");
+    			add_location(hr34, file$e, 787, 0, 111399);
+    			attr_dev(strong335, "class", "svelte-14a6qz4");
+    			add_location(strong335, file$e, 788, 3, 111407);
+    			attr_dev(p392, "class", "svelte-14a6qz4");
+    			add_location(p392, file$e, 788, 0, 111404);
+    			attr_dev(em51, "class", "svelte-14a6qz4");
+    			add_location(em51, file$e, 789, 7, 111797);
+    			attr_dev(p393, "class", "svelte-14a6qz4");
+    			add_location(p393, file$e, 789, 0, 111790);
+    			attr_dev(strong336, "class", "svelte-14a6qz4");
+    			add_location(strong336, file$e, 790, 3, 111932);
+    			attr_dev(strong337, "class", "svelte-14a6qz4");
+    			add_location(strong337, file$e, 790, 24, 111953);
+    			attr_dev(strong338, "class", "svelte-14a6qz4");
+    			add_location(strong338, file$e, 790, 53, 111982);
+    			attr_dev(strong339, "class", "svelte-14a6qz4");
+    			add_location(strong339, file$e, 790, 74, 112003);
+    			attr_dev(strong340, "class", "svelte-14a6qz4");
+    			add_location(strong340, file$e, 791, 0, 112034);
+    			attr_dev(strong341, "class", "svelte-14a6qz4");
+    			add_location(strong341, file$e, 791, 21, 112055);
+    			attr_dev(strong342, "class", "svelte-14a6qz4");
+    			add_location(strong342, file$e, 791, 57, 112091);
+    			attr_dev(strong343, "class", "svelte-14a6qz4");
+    			add_location(strong343, file$e, 791, 78, 112112);
+    			attr_dev(strong344, "class", "svelte-14a6qz4");
+    			add_location(strong344, file$e, 792, 0, 112147);
+    			attr_dev(strong345, "class", "svelte-14a6qz4");
+    			add_location(strong345, file$e, 792, 21, 112168);
+    			attr_dev(strong346, "class", "svelte-14a6qz4");
+    			add_location(strong346, file$e, 792, 55, 112202);
+    			attr_dev(strong347, "class", "svelte-14a6qz4");
+    			add_location(strong347, file$e, 792, 76, 112223);
+    			attr_dev(p394, "class", "svelte-14a6qz4");
+    			add_location(p394, file$e, 790, 0, 111929);
+    			attr_dev(p395, "class", "svelte-14a6qz4");
+    			add_location(p395, file$e, 793, 0, 112265);
+    			attr_dev(p396, "class", "svelte-14a6qz4");
+    			add_location(p396, file$e, 794, 0, 112483);
+    			attr_dev(strong348, "class", "svelte-14a6qz4");
+    			add_location(strong348, file$e, 795, 91, 112655);
+    			attr_dev(strong349, "class", "svelte-14a6qz4");
+    			add_location(strong349, file$e, 795, 116, 112680);
+    			attr_dev(p397, "class", "svelte-14a6qz4");
+    			add_location(p397, file$e, 795, 0, 112564);
+    			attr_dev(h336, "id", "moving-conditions-further-apart");
+    			attr_dev(h336, "class", "svelte-14a6qz4");
+    			add_location(h336, file$e, 796, 0, 112725);
+    			attr_dev(strong350, "class", "svelte-14a6qz4");
+    			add_location(strong350, file$e, 797, 292, 113095);
+    			attr_dev(strong351, "class", "svelte-14a6qz4");
+    			add_location(strong351, file$e, 797, 326, 113129);
+    			attr_dev(strong352, "class", "svelte-14a6qz4");
+    			add_location(strong352, file$e, 797, 385, 113188);
+    			attr_dev(strong353, "class", "svelte-14a6qz4");
+    			add_location(strong353, file$e, 797, 420, 113223);
+    			attr_dev(p398, "class", "svelte-14a6qz4");
+    			add_location(p398, file$e, 797, 0, 112803);
+    			attr_dev(strong354, "class", "svelte-14a6qz4");
+    			add_location(strong354, file$e, 798, 115, 113435);
+    			attr_dev(strong355, "class", "svelte-14a6qz4");
+    			add_location(strong355, file$e, 798, 140, 113460);
+    			attr_dev(p399, "class", "svelte-14a6qz4");
+    			add_location(p399, file$e, 798, 0, 113320);
+    			attr_dev(h337, "id", "other-versions-of-conditions");
+    			attr_dev(h337, "class", "svelte-14a6qz4");
+    			add_location(h337, file$e, 799, 0, 113578);
+    			attr_dev(p400, "class", "svelte-14a6qz4");
+    			add_location(p400, file$e, 800, 0, 113650);
+    			attr_dev(h225, "id", "changing-the-skill-list");
+    			attr_dev(h225, "class", "svelte-14a6qz4");
+    			add_location(h225, file$e, 801, 0, 114028);
+    			attr_dev(hr35, "class", "svelte-14a6qz4");
+    			add_location(hr35, file$e, 802, 0, 114090);
+    			attr_dev(strong356, "class", "svelte-14a6qz4");
+    			add_location(strong356, file$e, 803, 19, 114114);
+    			attr_dev(p401, "class", "svelte-14a6qz4");
+    			add_location(p401, file$e, 803, 0, 114095);
+    			attr_dev(strong357, "class", "svelte-14a6qz4");
+    			add_location(strong357, file$e, 805, 4, 114672);
+    			attr_dev(li106, "class", "svelte-14a6qz4");
+    			add_location(li106, file$e, 805, 0, 114668);
+    			attr_dev(strong358, "class", "svelte-14a6qz4");
+    			add_location(strong358, file$e, 806, 4, 114771);
+    			attr_dev(li107, "class", "svelte-14a6qz4");
+    			add_location(li107, file$e, 806, 0, 114767);
+    			attr_dev(strong359, "class", "svelte-14a6qz4");
+    			add_location(strong359, file$e, 807, 4, 114859);
+    			attr_dev(li108, "class", "svelte-14a6qz4");
+    			add_location(li108, file$e, 807, 0, 114855);
+    			attr_dev(strong360, "class", "svelte-14a6qz4");
+    			add_location(strong360, file$e, 808, 4, 114952);
+    			attr_dev(li109, "class", "svelte-14a6qz4");
+    			add_location(li109, file$e, 808, 0, 114948);
+    			attr_dev(strong361, "class", "svelte-14a6qz4");
+    			add_location(strong361, file$e, 809, 4, 115043);
+    			attr_dev(li110, "class", "svelte-14a6qz4");
+    			add_location(li110, file$e, 809, 0, 115039);
+    			attr_dev(strong362, "class", "svelte-14a6qz4");
+    			add_location(strong362, file$e, 810, 4, 115123);
+    			attr_dev(li111, "class", "svelte-14a6qz4");
+    			add_location(li111, file$e, 810, 0, 115119);
+    			attr_dev(strong363, "class", "svelte-14a6qz4");
+    			add_location(strong363, file$e, 811, 4, 115218);
+    			attr_dev(li112, "class", "svelte-14a6qz4");
+    			add_location(li112, file$e, 811, 0, 115214);
+    			attr_dev(strong364, "class", "svelte-14a6qz4");
+    			add_location(strong364, file$e, 812, 4, 115308);
+    			attr_dev(li113, "class", "svelte-14a6qz4");
+    			add_location(li113, file$e, 812, 0, 115304);
+    			attr_dev(ul24, "class", "svelte-14a6qz4");
+    			add_location(ul24, file$e, 804, 0, 114663);
+    			attr_dev(p402, "class", "svelte-14a6qz4");
+    			add_location(p402, file$e, 814, 0, 115405);
+    			attr_dev(strong365, "class", "svelte-14a6qz4");
+    			add_location(strong365, file$e, 815, 3, 115652);
+    			attr_dev(strong366, "class", "svelte-14a6qz4");
+    			add_location(strong366, file$e, 815, 207, 115856);
+    			attr_dev(p403, "class", "svelte-14a6qz4");
+    			add_location(p403, file$e, 815, 0, 115649);
+    			attr_dev(strong367, "class", "svelte-14a6qz4");
+    			add_location(strong367, file$e, 816, 3, 115920);
+    			attr_dev(p404, "class", "svelte-14a6qz4");
+    			add_location(p404, file$e, 816, 0, 115917);
+    			attr_dev(strong368, "class", "svelte-14a6qz4");
+    			add_location(strong368, file$e, 818, 4, 115979);
+    			attr_dev(em52, "class", "svelte-14a6qz4");
+    			add_location(em52, file$e, 818, 122, 116097);
+    			attr_dev(li114, "class", "svelte-14a6qz4");
+    			add_location(li114, file$e, 818, 0, 115975);
+    			attr_dev(strong369, "class", "svelte-14a6qz4");
+    			add_location(strong369, file$e, 819, 4, 116166);
+    			attr_dev(li115, "class", "svelte-14a6qz4");
+    			add_location(li115, file$e, 819, 0, 116162);
+    			attr_dev(strong370, "class", "svelte-14a6qz4");
+    			add_location(strong370, file$e, 820, 4, 116325);
+    			attr_dev(li116, "class", "svelte-14a6qz4");
+    			add_location(li116, file$e, 820, 0, 116321);
+    			attr_dev(ul25, "class", "svelte-14a6qz4");
+    			add_location(ul25, file$e, 817, 0, 115970);
+    			attr_dev(strong371, "class", "svelte-14a6qz4");
+    			add_location(strong371, file$e, 822, 3, 116505);
+    			attr_dev(p405, "class", "svelte-14a6qz4");
+    			add_location(p405, file$e, 822, 0, 116502);
+    			attr_dev(strong372, "class", "svelte-14a6qz4");
+    			add_location(strong372, file$e, 823, 3, 116757);
+    			attr_dev(p406, "class", "svelte-14a6qz4");
+    			add_location(p406, file$e, 823, 0, 116754);
+    			attr_dev(h226, "id", "character-creation-as-you-play");
+    			attr_dev(h226, "class", "svelte-14a6qz4");
+    			add_location(h226, file$e, 824, 0, 117081);
+    			attr_dev(hr36, "class", "svelte-14a6qz4");
+    			add_location(hr36, file$e, 825, 0, 117157);
+    			attr_dev(em53, "class", "svelte-14a6qz4");
+    			add_location(em53, file$e, 826, 112, 117274);
+    			attr_dev(p407, "class", "svelte-14a6qz4");
+    			add_location(p407, file$e, 826, 0, 117162);
+    			attr_dev(p408, "class", "svelte-14a6qz4");
+    			add_location(p408, file$e, 827, 0, 117498);
+    			attr_dev(h227, "id", "countdowns");
+    			attr_dev(h227, "class", "svelte-14a6qz4");
+    			add_location(h227, file$e, 828, 0, 117903);
+    			attr_dev(hr37, "class", "svelte-14a6qz4");
+    			add_location(hr37, file$e, 829, 0, 117939);
+    			attr_dev(p409, "class", "svelte-14a6qz4");
+    			add_location(p409, file$e, 830, 0, 117944);
+    			attr_dev(p410, "class", "svelte-14a6qz4");
+    			add_location(p410, file$e, 831, 0, 118302);
+    			attr_dev(strong373, "class", "svelte-14a6qz4");
+    			add_location(strong373, file$e, 832, 7, 118407);
+    			attr_dev(p411, "class", "svelte-14a6qz4");
+    			add_location(p411, file$e, 832, 0, 118400);
+    			attr_dev(strong374, "class", "svelte-14a6qz4");
+    			add_location(strong374, file$e, 833, 5, 118666);
+    			attr_dev(p412, "class", "svelte-14a6qz4");
+    			add_location(p412, file$e, 833, 0, 118661);
+    			attr_dev(strong375, "class", "svelte-14a6qz4");
+    			add_location(strong375, file$e, 834, 58, 118937);
+    			attr_dev(p413, "class", "svelte-14a6qz4");
+    			add_location(p413, file$e, 834, 0, 118879);
+    			attr_dev(p414, "class", "svelte-14a6qz4");
+    			add_location(p414, file$e, 835, 0, 118991);
+    			attr_dev(p415, "class", "svelte-14a6qz4");
+    			add_location(p415, file$e, 836, 0, 119199);
+    			attr_dev(h228, "id", "extreme-consequences");
+    			attr_dev(h228, "class", "svelte-14a6qz4");
+    			add_location(h228, file$e, 837, 0, 119500);
+    			attr_dev(hr38, "class", "svelte-14a6qz4");
+    			add_location(hr38, file$e, 838, 0, 119556);
+    			attr_dev(p416, "class", "svelte-14a6qz4");
+    			add_location(p416, file$e, 839, 0, 119561);
+    			attr_dev(strong376, "class", "svelte-14a6qz4");
+    			add_location(strong376, file$e, 840, 81, 119798);
+    			attr_dev(p417, "class", "svelte-14a6qz4");
+    			add_location(p417, file$e, 840, 0, 119717);
+    			attr_dev(p418, "class", "svelte-14a6qz4");
+    			add_location(p418, file$e, 841, 0, 120028);
+    			attr_dev(p419, "class", "svelte-14a6qz4");
+    			add_location(p419, file$e, 842, 0, 120284);
+    			attr_dev(h229, "id", "faster-contests");
+    			attr_dev(h229, "class", "svelte-14a6qz4");
+    			add_location(h229, file$e, 843, 0, 120357);
+    			attr_dev(hr39, "class", "svelte-14a6qz4");
+    			add_location(hr39, file$e, 844, 0, 120403);
+    			attr_dev(p420, "class", "svelte-14a6qz4");
+    			add_location(p420, file$e, 845, 0, 120408);
+    			attr_dev(strong377, "class", "svelte-14a6qz4");
+    			add_location(strong377, file$e, 847, 43, 120690);
+    			attr_dev(li117, "class", "svelte-14a6qz4");
+    			add_location(li117, file$e, 847, 0, 120647);
+    			attr_dev(strong378, "class", "svelte-14a6qz4");
+    			add_location(strong378, file$e, 848, 56, 120778);
+    			attr_dev(li118, "class", "svelte-14a6qz4");
+    			add_location(li118, file$e, 848, 0, 120722);
+    			attr_dev(li119, "class", "svelte-14a6qz4");
+    			add_location(li119, file$e, 849, 0, 120810);
+    			attr_dev(ul26, "class", "svelte-14a6qz4");
+    			add_location(ul26, file$e, 846, 0, 120642);
+    			attr_dev(h230, "id", "full-defense");
+    			attr_dev(h230, "class", "svelte-14a6qz4");
+    			add_location(h230, file$e, 851, 0, 120941);
+    			attr_dev(hr40, "class", "svelte-14a6qz4");
+    			add_location(hr40, file$e, 852, 0, 120981);
+    			attr_dev(strong379, "class", "svelte-14a6qz4");
+    			add_location(strong379, file$e, 853, 166, 121152);
+    			attr_dev(p421, "class", "svelte-14a6qz4");
+    			add_location(p421, file$e, 853, 0, 120986);
+    			attr_dev(strong380, "class", "svelte-14a6qz4");
+    			add_location(strong380, file$e, 854, 60, 121247);
+    			attr_dev(p422, "class", "svelte-14a6qz4");
+    			add_location(p422, file$e, 854, 0, 121187);
+    			attr_dev(strong381, "class", "svelte-14a6qz4");
+    			add_location(strong381, file$e, 855, 3, 121553);
+    			attr_dev(p423, "class", "svelte-14a6qz4");
+    			add_location(p423, file$e, 855, 0, 121550);
+    			attr_dev(strong382, "class", "svelte-14a6qz4");
+    			add_location(strong382, file$e, 856, 125, 121787);
+    			attr_dev(p424, "class", "svelte-14a6qz4");
+    			add_location(p424, file$e, 856, 0, 121662);
+    			attr_dev(h231, "id", "obstacles");
+    			attr_dev(h231, "class", "svelte-14a6qz4");
+    			add_location(h231, file$e, 857, 0, 122003);
+    			attr_dev(hr41, "class", "svelte-14a6qz4");
+    			add_location(hr41, file$e, 858, 0, 122037);
+    			attr_dev(strong383, "class", "svelte-14a6qz4");
+    			add_location(strong383, file$e, 859, 116, 122158);
+    			attr_dev(p425, "class", "svelte-14a6qz4");
+    			add_location(p425, file$e, 859, 0, 122042);
+    			attr_dev(p426, "class", "svelte-14a6qz4");
+    			add_location(p426, file$e, 860, 0, 122374);
+    			attr_dev(em54, "class", "svelte-14a6qz4");
+    			add_location(em54, file$e, 861, 227, 123034);
+    			attr_dev(p427, "class", "svelte-14a6qz4");
+    			add_location(p427, file$e, 861, 0, 122807);
+    			attr_dev(p428, "class", "svelte-14a6qz4");
+    			add_location(p428, file$e, 862, 0, 123127);
+    			attr_dev(h338, "id", "hazards");
+    			attr_dev(h338, "class", "svelte-14a6qz4");
+    			add_location(h338, file$e, 863, 0, 123205);
+    			attr_dev(strong384, "class", "svelte-14a6qz4");
+    			add_location(strong384, file$e, 864, 45, 123280);
+    			attr_dev(strong385, "class", "svelte-14a6qz4");
+    			add_location(strong385, file$e, 864, 233, 123468);
+    			attr_dev(p429, "class", "svelte-14a6qz4");
+    			add_location(p429, file$e, 864, 0, 123235);
+    			attr_dev(p430, "class", "svelte-14a6qz4");
+    			add_location(p430, file$e, 865, 0, 123509);
+    			attr_dev(em55, "class", "svelte-14a6qz4");
+    			add_location(em55, file$e, 866, 175, 123912);
+    			attr_dev(p431, "class", "svelte-14a6qz4");
+    			add_location(p431, file$e, 866, 0, 123737);
+    			attr_dev(p432, "class", "svelte-14a6qz4");
+    			add_location(p432, file$e, 867, 0, 124221);
+    			attr_dev(p433, "class", "svelte-14a6qz4");
+    			add_location(p433, file$e, 868, 0, 124666);
+    			attr_dev(h339, "id", "blocks");
+    			attr_dev(h339, "class", "svelte-14a6qz4");
+    			add_location(h339, file$e, 869, 0, 124812);
+    			attr_dev(strong386, "class", "svelte-14a6qz4");
+    			add_location(strong386, file$e, 870, 40, 124880);
+    			attr_dev(em56, "class", "svelte-14a6qz4");
+    			add_location(em56, file$e, 870, 119, 124959);
+    			attr_dev(p434, "class", "svelte-14a6qz4");
+    			add_location(p434, file$e, 870, 0, 124840);
+    			attr_dev(p435, "class", "svelte-14a6qz4");
+    			add_location(p435, file$e, 871, 0, 125239);
+    			attr_dev(strong387, "class", "svelte-14a6qz4");
+    			add_location(strong387, file$e, 872, 62, 125647);
+    			attr_dev(strong388, "class", "svelte-14a6qz4");
+    			add_location(strong388, file$e, 872, 161, 125746);
+    			attr_dev(strong389, "class", "svelte-14a6qz4");
+    			add_location(strong389, file$e, 872, 246, 125831);
+    			attr_dev(p436, "class", "svelte-14a6qz4");
+    			add_location(p436, file$e, 872, 0, 125585);
+    			attr_dev(p437, "class", "svelte-14a6qz4");
+    			add_location(p437, file$e, 873, 0, 125909);
+    			attr_dev(p438, "class", "svelte-14a6qz4");
+    			add_location(p438, file$e, 874, 0, 126346);
+    			attr_dev(strong390, "class", "svelte-14a6qz4");
+    			add_location(strong390, file$e, 875, 156, 126712);
+    			attr_dev(strong391, "class", "svelte-14a6qz4");
+    			add_location(strong391, file$e, 875, 192, 126748);
+    			attr_dev(em57, "class", "svelte-14a6qz4");
+    			add_location(em57, file$e, 875, 226, 126782);
+    			attr_dev(p439, "class", "svelte-14a6qz4");
+    			add_location(p439, file$e, 875, 0, 126556);
+    			attr_dev(p440, "class", "svelte-14a6qz4");
+    			add_location(p440, file$e, 876, 0, 126886);
+    			attr_dev(p441, "class", "svelte-14a6qz4");
+    			add_location(p441, file$e, 877, 0, 127155);
+    			attr_dev(p442, "class", "svelte-14a6qz4");
+    			add_location(p442, file$e, 878, 0, 127438);
+    			attr_dev(h340, "id", "distractions");
+    			attr_dev(h340, "class", "svelte-14a6qz4");
+    			add_location(h340, file$e, 879, 0, 127600);
+    			attr_dev(strong392, "class", "svelte-14a6qz4");
+    			add_location(strong392, file$e, 880, 94, 127734);
+    			attr_dev(p443, "class", "svelte-14a6qz4");
+    			add_location(p443, file$e, 880, 0, 127640);
+    			attr_dev(strong393, "class", "svelte-14a6qz4");
+    			add_location(strong393, file$e, 882, 20, 128065);
+    			attr_dev(li120, "class", "svelte-14a6qz4");
+    			add_location(li120, file$e, 882, 0, 128045);
+    			attr_dev(strong394, "class", "svelte-14a6qz4");
+    			add_location(strong394, file$e, 883, 20, 128212);
+    			attr_dev(li121, "class", "svelte-14a6qz4");
+    			add_location(li121, file$e, 883, 0, 128192);
+    			attr_dev(strong395, "class", "svelte-14a6qz4");
+    			add_location(strong395, file$e, 884, 20, 128330);
+    			attr_dev(em58, "class", "svelte-14a6qz4");
+    			add_location(em58, file$e, 884, 199, 128509);
+    			attr_dev(li122, "class", "svelte-14a6qz4");
+    			add_location(li122, file$e, 884, 0, 128310);
+    			attr_dev(strong396, "class", "svelte-14a6qz4");
+    			add_location(strong396, file$e, 885, 20, 128586);
+    			attr_dev(li123, "class", "svelte-14a6qz4");
+    			add_location(li123, file$e, 885, 0, 128566);
+    			attr_dev(ul27, "class", "svelte-14a6qz4");
+    			add_location(ul27, file$e, 881, 0, 128040);
+    			attr_dev(p444, "class", "svelte-14a6qz4");
+    			add_location(p444, file$e, 887, 0, 128739);
+    			attr_dev(p445, "class", "svelte-14a6qz4");
+    			add_location(p445, file$e, 888, 0, 128959);
+    			attr_dev(p446, "class", "svelte-14a6qz4");
+    			add_location(p446, file$e, 889, 0, 129117);
+    			attr_dev(em59, "class", "svelte-14a6qz4");
+    			add_location(em59, file$e, 890, 3, 129149);
+    			attr_dev(p447, "class", "svelte-14a6qz4");
+    			add_location(p447, file$e, 890, 0, 129146);
+    			attr_dev(strong397, "class", "svelte-14a6qz4");
+    			add_location(strong397, file$e, 892, 15, 129190);
+    			attr_dev(li124, "class", "svelte-14a6qz4");
+    			add_location(li124, file$e, 892, 0, 129175);
+    			attr_dev(strong398, "class", "svelte-14a6qz4");
+    			add_location(strong398, file$e, 893, 16, 129257);
+    			attr_dev(li125, "class", "svelte-14a6qz4");
+    			add_location(li125, file$e, 893, 0, 129241);
+    			attr_dev(ul28, "class", "svelte-14a6qz4");
+    			add_location(ul28, file$e, 891, 0, 129170);
+    			attr_dev(em60, "class", "svelte-14a6qz4");
+    			add_location(em60, file$e, 895, 3, 129313);
+    			attr_dev(p448, "class", "svelte-14a6qz4");
+    			add_location(p448, file$e, 895, 0, 129310);
+    			attr_dev(strong399, "class", "svelte-14a6qz4");
+    			add_location(strong399, file$e, 897, 14, 129352);
+    			attr_dev(li126, "class", "svelte-14a6qz4");
+    			add_location(li126, file$e, 897, 0, 129338);
+    			attr_dev(strong400, "class", "svelte-14a6qz4");
+    			add_location(strong400, file$e, 898, 14, 129438);
+    			attr_dev(li127, "class", "svelte-14a6qz4");
+    			add_location(li127, file$e, 898, 0, 129424);
+    			attr_dev(ul29, "class", "svelte-14a6qz4");
+    			add_location(ul29, file$e, 896, 0, 129333);
+    			attr_dev(em61, "class", "svelte-14a6qz4");
+    			add_location(em61, file$e, 900, 3, 129525);
+    			attr_dev(p449, "class", "svelte-14a6qz4");
+    			add_location(p449, file$e, 900, 0, 129522);
+    			attr_dev(strong401, "class", "svelte-14a6qz4");
+    			add_location(strong401, file$e, 902, 4, 129560);
+    			attr_dev(strong402, "class", "svelte-14a6qz4");
+    			add_location(strong402, file$e, 902, 44, 129600);
+    			attr_dev(em62, "class", "svelte-14a6qz4");
+    			add_location(em62, file$e, 902, 69, 129625);
+    			attr_dev(strong403, "class", "svelte-14a6qz4");
+    			add_location(strong403, file$e, 903, 4, 129678);
+    			attr_dev(li128, "class", "svelte-14a6qz4");
+    			add_location(li128, file$e, 903, 0, 129674);
+    			attr_dev(strong404, "class", "svelte-14a6qz4");
+    			add_location(strong404, file$e, 904, 4, 129726);
+    			attr_dev(li129, "class", "svelte-14a6qz4");
+    			add_location(li129, file$e, 904, 0, 129722);
+    			attr_dev(strong405, "class", "svelte-14a6qz4");
+    			add_location(strong405, file$e, 905, 4, 129816);
+    			attr_dev(li130, "class", "svelte-14a6qz4");
+    			add_location(li130, file$e, 905, 0, 129812);
+    			attr_dev(ul30, "class", "svelte-14a6qz4");
+    			add_location(ul30, file$e, 902, 113, 129669);
+    			attr_dev(li131, "class", "svelte-14a6qz4");
+    			add_location(li131, file$e, 902, 0, 129556);
+    			attr_dev(strong406, "class", "svelte-14a6qz4");
+    			add_location(strong406, file$e, 908, 4, 129903);
+    			attr_dev(strong407, "class", "svelte-14a6qz4");
+    			add_location(strong407, file$e, 908, 41, 129940);
+    			attr_dev(em63, "class", "svelte-14a6qz4");
+    			add_location(em63, file$e, 908, 66, 129965);
+    			attr_dev(strong408, "class", "svelte-14a6qz4");
+    			add_location(strong408, file$e, 909, 4, 130022);
+    			attr_dev(li132, "class", "svelte-14a6qz4");
+    			add_location(li132, file$e, 909, 0, 130018);
+    			attr_dev(strong409, "class", "svelte-14a6qz4");
+    			add_location(strong409, file$e, 910, 4, 130113);
+    			attr_dev(li133, "class", "svelte-14a6qz4");
+    			add_location(li133, file$e, 910, 0, 130109);
+    			attr_dev(ul31, "class", "svelte-14a6qz4");
+    			add_location(ul31, file$e, 908, 114, 130013);
+    			attr_dev(li134, "class", "svelte-14a6qz4");
+    			add_location(li134, file$e, 908, 0, 129899);
+    			attr_dev(ul32, "class", "svelte-14a6qz4");
+    			add_location(ul32, file$e, 901, 0, 129551);
+    			attr_dev(h232, "id", "scale");
+    			attr_dev(h232, "class", "svelte-14a6qz4");
+    			add_location(h232, file$e, 914, 0, 130220);
+    			attr_dev(hr42, "class", "svelte-14a6qz4");
+    			add_location(hr42, file$e, 915, 0, 130246);
+    			attr_dev(strong410, "class", "svelte-14a6qz4");
+    			add_location(strong410, file$e, 916, 3, 130254);
+    			attr_dev(p450, "class", "svelte-14a6qz4");
+    			add_location(p450, file$e, 916, 0, 130251);
+    			attr_dev(p451, "class", "svelte-14a6qz4");
+    			add_location(p451, file$e, 917, 0, 130733);
+    			attr_dev(strong411, "class", "svelte-14a6qz4");
+    			add_location(strong411, file$e, 919, 4, 130954);
+    			attr_dev(li135, "class", "svelte-14a6qz4");
+    			add_location(li135, file$e, 919, 0, 130950);
+    			attr_dev(strong412, "class", "svelte-14a6qz4");
+    			add_location(strong412, file$e, 920, 4, 131120);
+    			attr_dev(li136, "class", "svelte-14a6qz4");
+    			add_location(li136, file$e, 920, 0, 131116);
+    			attr_dev(strong413, "class", "svelte-14a6qz4");
+    			add_location(strong413, file$e, 921, 4, 131319);
+    			attr_dev(li137, "class", "svelte-14a6qz4");
+    			add_location(li137, file$e, 921, 0, 131315);
+    			attr_dev(strong414, "class", "svelte-14a6qz4");
+    			add_location(strong414, file$e, 922, 4, 131464);
+    			attr_dev(li138, "class", "svelte-14a6qz4");
+    			add_location(li138, file$e, 922, 0, 131460);
+    			attr_dev(strong415, "class", "svelte-14a6qz4");
+    			add_location(strong415, file$e, 923, 4, 131611);
+    			attr_dev(li139, "class", "svelte-14a6qz4");
+    			add_location(li139, file$e, 923, 0, 131607);
+    			attr_dev(ul33, "class", "svelte-14a6qz4");
+    			add_location(ul33, file$e, 918, 0, 130945);
+    			attr_dev(em64, "class", "svelte-14a6qz4");
+    			add_location(em64, file$e, 925, 150, 131901);
+    			attr_dev(p452, "class", "svelte-14a6qz4");
+    			add_location(p452, file$e, 925, 0, 131751);
+    			attr_dev(em65, "class", "svelte-14a6qz4");
+    			add_location(em65, file$e, 927, 47, 132039);
+    			attr_dev(li140, "class", "svelte-14a6qz4");
+    			add_location(li140, file$e, 927, 0, 131992);
+    			attr_dev(em66, "class", "svelte-14a6qz4");
+    			add_location(em66, file$e, 928, 45, 132114);
+    			attr_dev(em67, "class", "svelte-14a6qz4");
+    			add_location(em67, file$e, 928, 70, 132139);
+    			attr_dev(li141, "class", "svelte-14a6qz4");
+    			add_location(li141, file$e, 928, 0, 132069);
+    			attr_dev(li142, "class", "svelte-14a6qz4");
+    			add_location(li142, file$e, 929, 0, 132174);
+    			attr_dev(ul34, "class", "svelte-14a6qz4");
+    			add_location(ul34, file$e, 926, 0, 131987);
+    			attr_dev(p453, "class", "svelte-14a6qz4");
+    			add_location(p453, file$e, 931, 0, 132293);
+    			attr_dev(h341, "id", "aspects-and-scale");
+    			attr_dev(h341, "class", "svelte-14a6qz4");
+    			add_location(h341, file$e, 932, 0, 132702);
+    			attr_dev(strong416, "class", "svelte-14a6qz4");
+    			add_location(strong416, file$e, 933, 398, 133150);
+    			attr_dev(p454, "class", "svelte-14a6qz4");
+    			add_location(p454, file$e, 933, 0, 132752);
+    			attr_dev(h428, "id", "does-scale-apply-when-supernaturally-creating-an-advantage");
+    			attr_dev(h428, "class", "svelte-14a6qz4");
+    			add_location(h428, file$e, 934, 0, 133226);
+    			attr_dev(em68, "class", "svelte-14a6qz4");
+    			add_location(em68, file$e, 935, 40, 133399);
+    			attr_dev(p455, "class", "svelte-14a6qz4");
+    			add_location(p455, file$e, 935, 0, 133359);
+    			attr_dev(em69, "class", "svelte-14a6qz4");
+    			add_location(em69, file$e, 936, 37, 133592);
+    			attr_dev(strong417, "class", "svelte-14a6qz4");
+    			add_location(strong417, file$e, 936, 98, 133653);
+    			attr_dev(p456, "class", "svelte-14a6qz4");
+    			add_location(p456, file$e, 936, 0, 133555);
+    			attr_dev(em70, "class", "svelte-14a6qz4");
+    			add_location(em70, file$e, 937, 63, 133837);
+    			attr_dev(p457, "class", "svelte-14a6qz4");
+    			add_location(p457, file$e, 937, 0, 133774);
+    			attr_dev(em71, "class", "svelte-14a6qz4");
+    			add_location(em71, file$e, 938, 3, 133993);
+    			attr_dev(p458, "class", "svelte-14a6qz4");
+    			add_location(p458, file$e, 938, 0, 133990);
+    			attr_dev(h233, "id", "time-shifts");
+    			attr_dev(h233, "class", "svelte-14a6qz4");
+    			add_location(h233, file$e, 939, 0, 134159);
+    			attr_dev(hr43, "class", "svelte-14a6qz4");
+    			add_location(hr43, file$e, 940, 0, 134197);
+    			attr_dev(p459, "class", "svelte-14a6qz4");
+    			add_location(p459, file$e, 941, 0, 134202);
+    			attr_dev(p460, "class", "svelte-14a6qz4");
+    			add_location(p460, file$e, 942, 0, 134461);
+    			attr_dev(p461, "class", "svelte-14a6qz4");
+    			add_location(p461, file$e, 943, 0, 134737);
+    			attr_dev(p462, "class", "svelte-14a6qz4");
+    			add_location(p462, file$e, 944, 0, 134891);
+    			attr_dev(p463, "class", "svelte-14a6qz4");
+    			add_location(p463, file$e, 945, 0, 135214);
+    			attr_dev(h234, "id", "ways-to-break-the-rules-for-big-bads");
+    			attr_dev(h234, "class", "svelte-14a6qz4");
+    			add_location(h234, file$e, 946, 0, 135377);
+    			attr_dev(hr44, "class", "svelte-14a6qz4");
+    			add_location(hr44, file$e, 947, 0, 135465);
+    			attr_dev(strong418, "class", "svelte-14a6qz4");
+    			add_location(strong418, file$e, 948, 66, 135536);
+    			attr_dev(p464, "class", "svelte-14a6qz4");
+    			add_location(p464, file$e, 948, 0, 135470);
+    			attr_dev(strong419, "class", "svelte-14a6qz4");
+    			add_location(strong419, file$e, 949, 88, 135858);
+    			attr_dev(p465, "class", "svelte-14a6qz4");
+    			add_location(p465, file$e, 949, 0, 135770);
+    			attr_dev(h342, "id", "challenge-or-contest-immunity");
+    			attr_dev(h342, "class", "svelte-14a6qz4");
+    			add_location(h342, file$e, 950, 0, 136160);
+    			attr_dev(p466, "class", "svelte-14a6qz4");
+    			add_location(p466, file$e, 951, 0, 136234);
+    			attr_dev(strong420, "class", "svelte-14a6qz4");
+    			add_location(strong420, file$e, 952, 8, 136435);
+    			attr_dev(p467, "class", "svelte-14a6qz4");
+    			add_location(p467, file$e, 952, 0, 136427);
+    			attr_dev(strong421, "class", "svelte-14a6qz4");
+    			add_location(strong421, file$e, 953, 8, 136958);
+    			attr_dev(p468, "class", "svelte-14a6qz4");
+    			add_location(p468, file$e, 953, 0, 136950);
+    			attr_dev(h343, "id", "expendable-minion-armor");
+    			attr_dev(h343, "class", "svelte-14a6qz4");
+    			add_location(h343, file$e, 954, 0, 137214);
+    			attr_dev(p469, "class", "svelte-14a6qz4");
+    			add_location(p469, file$e, 955, 0, 137276);
+    			attr_dev(strong422, "class", "svelte-14a6qz4");
+    			add_location(strong422, file$e, 956, 12, 137524);
+    			attr_dev(p470, "class", "svelte-14a6qz4");
+    			add_location(p470, file$e, 956, 0, 137512);
+    			attr_dev(em72, "class", "svelte-14a6qz4");
+    			add_location(em72, file$e, 957, 42, 137939);
+    			attr_dev(p471, "class", "svelte-14a6qz4");
+    			add_location(p471, file$e, 957, 0, 137897);
+    			attr_dev(h344, "id", "reveal-true-form");
+    			attr_dev(h344, "class", "svelte-14a6qz4");
+    			add_location(h344, file$e, 958, 0, 138143);
+    			attr_dev(p472, "class", "svelte-14a6qz4");
+    			add_location(p472, file$e, 959, 0, 138191);
+    			attr_dev(strong423, "class", "svelte-14a6qz4");
+    			add_location(strong423, file$e, 960, 8, 138405);
+    			attr_dev(em73, "class", "svelte-14a6qz4");
+    			add_location(em73, file$e, 960, 96, 138493);
+    			attr_dev(p473, "class", "svelte-14a6qz4");
+    			add_location(p473, file$e, 960, 0, 138397);
+    			attr_dev(p474, "class", "svelte-14a6qz4");
+    			add_location(p474, file$e, 961, 0, 138691);
+    			attr_dev(h345, "id", "scale-things-up");
+    			attr_dev(h345, "class", "svelte-14a6qz4");
+    			add_location(h345, file$e, 962, 0, 138896);
+    			attr_dev(strong424, "class", "svelte-14a6qz4");
+    			add_location(strong424, file$e, 963, 13, 138955);
+    			attr_dev(strong425, "class", "svelte-14a6qz4");
+    			add_location(strong425, file$e, 963, 134, 139076);
+    			attr_dev(p475, "class", "svelte-14a6qz4");
+    			add_location(p475, file$e, 963, 0, 138942);
+    			attr_dev(h346, "id", "solo-bonus");
+    			attr_dev(h346, "class", "svelte-14a6qz4");
+    			add_location(h346, file$e, 964, 0, 139238);
+    			attr_dev(strong426, "class", "svelte-14a6qz4");
+    			add_location(strong426, file$e, 965, 90, 139364);
+    			attr_dev(p476, "class", "svelte-14a6qz4");
+    			add_location(p476, file$e, 965, 0, 139274);
+    			attr_dev(p477, "class", "svelte-14a6qz4");
+    			add_location(p477, file$e, 966, 0, 139441);
+    			attr_dev(strong427, "class", "svelte-14a6qz4");
+    			add_location(strong427, file$e, 968, 23, 139628);
+    			attr_dev(strong428, "class", "svelte-14a6qz4");
+    			add_location(strong428, file$e, 968, 123, 139728);
+    			attr_dev(em74, "class", "svelte-14a6qz4");
+    			add_location(em74, file$e, 968, 355, 139960);
+    			attr_dev(li143, "class", "svelte-14a6qz4");
+    			add_location(li143, file$e, 968, 0, 139605);
+    			attr_dev(strong429, "class", "svelte-14a6qz4");
+    			add_location(strong429, file$e, 969, 20, 140010);
+    			attr_dev(li144, "class", "svelte-14a6qz4");
+    			add_location(li144, file$e, 969, 0, 139990);
+    			attr_dev(strong430, "class", "svelte-14a6qz4");
+    			add_location(strong430, file$e, 970, 20, 140260);
+    			attr_dev(em75, "class", "svelte-14a6qz4");
+    			add_location(em75, file$e, 970, 70, 140310);
+    			attr_dev(li145, "class", "svelte-14a6qz4");
+    			add_location(li145, file$e, 970, 0, 140240);
+    			attr_dev(strong431, "class", "svelte-14a6qz4");
+    			add_location(strong431, file$e, 971, 20, 140513);
+    			attr_dev(li146, "class", "svelte-14a6qz4");
+    			add_location(li146, file$e, 971, 0, 140493);
+    			attr_dev(ul35, "class", "svelte-14a6qz4");
+    			add_location(ul35, file$e, 967, 0, 139600);
+    			attr_dev(h347, "id", "the-threat-is-a-map-or-a-hive-of-characters");
+    			attr_dev(h347, "class", "svelte-14a6qz4");
+    			add_location(h347, file$e, 973, 0, 140784);
+    			attr_dev(strong432, "class", "svelte-14a6qz4");
+    			add_location(strong432, file$e, 974, 64, 140952);
+    			attr_dev(strong433, "class", "svelte-14a6qz4");
+    			add_location(strong433, file$e, 974, 126, 141014);
+    			attr_dev(p478, "class", "svelte-14a6qz4");
+    			add_location(p478, file$e, 974, 0, 140888);
+    			attr_dev(p479, "class", "svelte-14a6qz4");
+    			add_location(p479, file$e, 975, 0, 141088);
+    			attr_dev(strong434, "class", "svelte-14a6qz4");
+    			add_location(strong434, file$e, 976, 383, 142085);
+    			attr_dev(strong435, "class", "svelte-14a6qz4");
+    			add_location(strong435, file$e, 976, 411, 142113);
+    			attr_dev(p480, "class", "svelte-14a6qz4");
+    			add_location(p480, file$e, 976, 0, 141702);
+    			attr_dev(p481, "class", "svelte-14a6qz4");
+    			add_location(p481, file$e, 977, 0, 142334);
+    			attr_dev(h235, "id", "ways-to-handle-multiple-targets");
+    			attr_dev(h235, "class", "svelte-14a6qz4");
+    			add_location(h235, file$e, 978, 0, 142634);
+    			attr_dev(hr45, "class", "svelte-14a6qz4");
+    			add_location(hr45, file$e, 979, 0, 142712);
+    			attr_dev(p482, "class", "svelte-14a6qz4");
+    			add_location(p482, file$e, 980, 0, 142717);
+    			attr_dev(strong436, "class", "svelte-14a6qz4");
+    			add_location(strong436, file$e, 981, 59, 142915);
+    			attr_dev(p483, "class", "svelte-14a6qz4");
+    			add_location(p483, file$e, 981, 0, 142856);
+    			attr_dev(p484, "class", "svelte-14a6qz4");
+    			add_location(p484, file$e, 982, 0, 143232);
+    			attr_dev(strong437, "class", "svelte-14a6qz4");
+    			add_location(strong437, file$e, 983, 82, 143662);
+    			attr_dev(p485, "class", "svelte-14a6qz4");
+    			add_location(p485, file$e, 983, 0, 143580);
+    			attr_dev(strong438, "class", "svelte-14a6qz4");
+    			add_location(strong438, file$e, 984, 71, 144047);
+    			attr_dev(p486, "class", "svelte-14a6qz4");
+    			add_location(p486, file$e, 984, 0, 143976);
+    			attr_dev(p487, "class", "svelte-14a6qz4");
+    			add_location(p487, file$e, 985, 0, 144396);
+    			attr_dev(p488, "class", "svelte-14a6qz4");
+    			add_location(p488, file$e, 986, 0, 144552);
+    			attr_dev(h236, "id", "weapon-and-armor-ratings");
+    			attr_dev(h236, "class", "svelte-14a6qz4");
+    			add_location(h236, file$e, 987, 0, 144888);
+    			attr_dev(hr46, "class", "svelte-14a6qz4");
+    			add_location(hr46, file$e, 988, 0, 144952);
+    			attr_dev(p489, "class", "svelte-14a6qz4");
+    			add_location(p489, file$e, 989, 0, 144957);
+    			attr_dev(strong439, "class", "svelte-14a6qz4");
+    			add_location(strong439, file$e, 990, 5, 145269);
+    			attr_dev(em76, "class", "svelte-14a6qz4");
+    			add_location(em76, file$e, 990, 210, 145474);
+    			attr_dev(p490, "class", "svelte-14a6qz4");
+    			add_location(p490, file$e, 990, 0, 145264);
+    			attr_dev(strong440, "class", "svelte-14a6qz4");
+    			add_location(strong440, file$e, 991, 6, 145521);
+    			attr_dev(p491, "class", "svelte-14a6qz4");
+    			add_location(p491, file$e, 991, 0, 145515);
+    			attr_dev(p492, "class", "svelte-14a6qz4");
+    			add_location(p492, file$e, 992, 0, 145783);
+    			attr_dev(h110, "id", "what-version-is-this");
+    			attr_dev(h110, "class", "svelte-14a6qz4");
+    			add_location(h110, file$e, 993, 0, 145941);
+    			attr_dev(hr47, "class", "svelte-14a6qz4");
+    			add_location(hr47, file$e, 994, 0, 145998);
+    			attr_dev(em77, "class", "svelte-14a6qz4");
+    			add_location(em77, file$e, 995, 75, 146078);
+    			attr_dev(p493, "class", "svelte-14a6qz4");
+    			add_location(p493, file$e, 995, 0, 146003);
+    			attr_dev(em78, "class", "svelte-14a6qz4");
+    			add_location(em78, file$e, 996, 22, 146165);
+    			attr_dev(strong441, "class", "svelte-14a6qz4");
+    			add_location(strong441, file$e, 996, 168, 146311);
+    			attr_dev(em79, "class", "svelte-14a6qz4");
+    			add_location(em79, file$e, 996, 328, 146471);
+    			attr_dev(p494, "class", "svelte-14a6qz4");
+    			add_location(p494, file$e, 996, 0, 146143);
+    			attr_dev(em80, "class", "svelte-14a6qz4");
+    			add_location(em80, file$e, 997, 62, 146780);
+    			attr_dev(em81, "class", "svelte-14a6qz4");
+    			add_location(em81, file$e, 997, 337, 147055);
+    			attr_dev(strong442, "class", "svelte-14a6qz4");
+    			add_location(strong442, file$e, 997, 381, 147099);
+    			attr_dev(p495, "class", "svelte-14a6qz4");
+    			add_location(p495, file$e, 997, 0, 146718);
+    			attr_dev(h237, "id", "what-came-before");
+    			attr_dev(h237, "class", "svelte-14a6qz4");
+    			add_location(h237, file$e, 998, 0, 147383);
+    			attr_dev(hr48, "class", "svelte-14a6qz4");
+    			add_location(hr48, file$e, 999, 0, 147431);
+    			attr_dev(p496, "class", "svelte-14a6qz4");
+    			add_location(p496, file$e, 1000, 0, 147436);
+    			attr_dev(em82, "class", "svelte-14a6qz4");
+    			add_location(em82, file$e, 1001, 191, 148016);
+    			attr_dev(em83, "class", "svelte-14a6qz4");
+    			add_location(em83, file$e, 1001, 248, 148073);
+    			attr_dev(p497, "class", "svelte-14a6qz4");
+    			add_location(p497, file$e, 1001, 0, 147825);
+    			attr_dev(p498, "class", "svelte-14a6qz4");
+    			add_location(p498, file$e, 1002, 0, 148217);
+    			attr_dev(h238, "id", "licensing");
+    			attr_dev(h238, "class", "svelte-14a6qz4");
+    			add_location(h238, file$e, 1003, 0, 148374);
+    			attr_dev(hr49, "class", "svelte-14a6qz4");
+    			add_location(hr49, file$e, 1004, 0, 148408);
+    			attr_dev(a8, "href", "http://www.faterpg.com/licensing");
+    			attr_dev(a8, "class", "svelte-14a6qz4");
+    			add_location(a8, file$e, 1005, 128, 148541);
+    			attr_dev(p499, "class", "svelte-14a6qz4");
+    			add_location(p499, file$e, 1005, 0, 148413);
+    			attr_dev(div, "class", "svelte-14a6qz4");
+    			add_location(div, file$e, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h10);
+    			append_dev(div, t1);
+    			append_dev(div, hr0);
+    			append_dev(div, t2);
+    			append_dev(div, p0);
+    			append_dev(div, t4);
+    			append_dev(div, p1);
+    			append_dev(p1, t5);
+    			append_dev(p1, a0);
+    			append_dev(p1, t7);
+    			append_dev(div, t8);
+    			append_dev(div, p2);
+    			append_dev(p2, t9);
+    			append_dev(p2, strong0);
+    			append_dev(div, t11);
+    			append_dev(div, p3);
+    			append_dev(p3, t12);
+    			append_dev(p3, a1);
+    			append_dev(p3, t14);
+    			append_dev(p3, a2);
+    			append_dev(p3, t16);
+    			append_dev(div, t17);
+    			append_dev(div, h11);
+    			append_dev(div, t19);
+    			append_dev(div, hr1);
+    			append_dev(div, t20);
+    			append_dev(div, p4);
+    			append_dev(div, t22);
+    			append_dev(div, p5);
+    			append_dev(div, t24);
+    			append_dev(div, p6);
+    			append_dev(div, t26);
+    			append_dev(div, p7);
+    			append_dev(div, t28);
+    			append_dev(div, p8);
+    			append_dev(div, t30);
+    			append_dev(div, h12);
+    			append_dev(div, t32);
+    			append_dev(div, hr2);
+    			append_dev(div, t33);
+    			append_dev(div, p9);
+    			append_dev(p9, t34);
+    			append_dev(p9, em0);
+    			append_dev(p9, t36);
+    			append_dev(p9, em1);
+    			append_dev(p9, t38);
+    			append_dev(div, t39);
+    			append_dev(div, p10);
+    			append_dev(p10, t40);
+    			append_dev(p10, em2);
+    			append_dev(p10, t42);
+    			append_dev(div, t43);
+    			append_dev(div, h20);
+    			append_dev(div, t45);
+    			append_dev(div, hr3);
+    			append_dev(div, t46);
+    			append_dev(div, p11);
+    			append_dev(p11, t47);
+    			append_dev(p11, em3);
+    			append_dev(p11, t49);
+    			append_dev(p11, em4);
+    			append_dev(p11, t51);
+    			append_dev(div, t52);
+    			append_dev(div, p12);
+    			append_dev(p12, em5);
+    			append_dev(p12, t54);
+    			append_dev(p12, strong1);
+    			append_dev(p12, t56);
+    			append_dev(p12, strong2);
+    			append_dev(p12, t58);
+    			append_dev(div, t59);
+    			append_dev(div, h30);
+    			append_dev(div, t61);
+    			append_dev(div, p13);
+    			append_dev(p13, t62);
+    			append_dev(p13, em6);
+    			append_dev(p13, t64);
+    			append_dev(div, t65);
+    			append_dev(div, ul0);
+    			append_dev(ul0, li0);
+    			append_dev(li0, t66);
+    			append_dev(li0, strong3);
+    			append_dev(li0, t68);
+    			append_dev(ul0, t69);
+    			append_dev(ul0, li1);
+    			append_dev(li1, t70);
+    			append_dev(li1, strong4);
+    			append_dev(li1, t72);
+    			append_dev(ul0, t73);
+    			append_dev(ul0, li2);
+    			append_dev(li2, t74);
+    			append_dev(li2, strong5);
+    			append_dev(li2, t76);
+    			append_dev(ul0, t77);
+    			append_dev(ul0, li3);
+    			append_dev(li3, t78);
+    			append_dev(li3, strong6);
+    			append_dev(li3, t80);
+    			append_dev(li3, strong7);
+    			append_dev(li3, t82);
+    			append_dev(ul0, t83);
+    			append_dev(ul0, li4);
+    			append_dev(li4, t84);
+    			append_dev(li4, strong8);
+    			append_dev(li4, t86);
+    			append_dev(ul0, t87);
+    			append_dev(ul0, li5);
+    			append_dev(li5, t88);
+    			append_dev(li5, strong9);
+    			append_dev(li5, t90);
+    			append_dev(li5, strong10);
+    			append_dev(li5, t92);
+    			append_dev(div, t93);
+    			append_dev(div, h13);
+    			append_dev(div, t95);
+    			append_dev(div, hr4);
+    			append_dev(div, t96);
+    			append_dev(div, h21);
+    			append_dev(div, t98);
+    			append_dev(div, hr5);
+    			append_dev(div, t99);
+    			append_dev(div, p14);
+    			append_dev(div, t101);
+    			append_dev(div, p15);
+    			append_dev(div, t103);
+    			append_dev(div, h22);
+    			append_dev(div, t105);
+    			append_dev(div, hr6);
+    			append_dev(div, t106);
+    			append_dev(div, h31);
+    			append_dev(div, t108);
+    			append_dev(div, p16);
+    			append_dev(div, t110);
+    			append_dev(div, p17);
+    			append_dev(div, t112);
+    			append_dev(div, ul1);
+    			append_dev(ul1, li6);
+    			append_dev(li6, strong11);
+    			append_dev(li6, t114);
+    			append_dev(ul1, t115);
+    			append_dev(ul1, li7);
+    			append_dev(li7, strong12);
+    			append_dev(li7, t117);
+    			append_dev(ul1, t118);
+    			append_dev(ul1, li8);
+    			append_dev(li8, strong13);
+    			append_dev(li8, t120);
+    			append_dev(ul1, t121);
+    			append_dev(ul1, li9);
+    			append_dev(li9, strong14);
+    			append_dev(li9, t123);
+    			append_dev(ul1, t124);
+    			append_dev(ul1, li10);
+    			append_dev(li10, strong15);
+    			append_dev(li10, t126);
+    			append_dev(ul1, t127);
+    			append_dev(ul1, li11);
+    			append_dev(li11, strong16);
+    			append_dev(li11, t129);
+    			append_dev(ul1, t130);
+    			append_dev(ul1, li12);
+    			append_dev(li12, strong17);
+    			append_dev(li12, t132);
+    			append_dev(div, t133);
+    			append_dev(div, h32);
+    			append_dev(div, t135);
+    			append_dev(div, p18);
+    			append_dev(p18, strong18);
+    			append_dev(p18, t137);
+    			append_dev(div, t138);
+    			append_dev(div, p19);
+    			append_dev(p19, t139);
+    			append_dev(p19, strong19);
+    			append_dev(p19, t141);
+    			append_dev(p19, strong20);
+    			append_dev(p19, t143);
+    			append_dev(p19, strong21);
+    			append_dev(p19, t145);
+    			append_dev(p19, em7);
+    			append_dev(p19, t147);
+    			append_dev(div, t148);
+    			append_dev(div, p20);
+    			append_dev(p20, t149);
+    			append_dev(p20, strong22);
+    			append_dev(p20, t151);
+    			append_dev(div, t152);
+    			append_dev(div, p21);
+    			append_dev(p21, t153);
+    			append_dev(p21, em8);
+    			append_dev(p21, t155);
+    			append_dev(p21, strong23);
+    			append_dev(p21, t157);
+    			append_dev(div, t158);
+    			append_dev(div, p22);
+    			append_dev(p22, strong24);
+    			append_dev(p22, t160);
+    			append_dev(div, t161);
+    			append_dev(div, h40);
+    			append_dev(div, t163);
+    			append_dev(div, p23);
+    			append_dev(p23, t164);
+    			append_dev(p23, strong25);
+    			append_dev(p23, t166);
+    			append_dev(div, t167);
+    			append_dev(div, h41);
+    			append_dev(div, t169);
+    			append_dev(div, p24);
+    			append_dev(p24, t170);
+    			append_dev(p24, strong26);
+    			append_dev(p24, t172);
+    			append_dev(div, t173);
+    			append_dev(div, h42);
+    			append_dev(div, t175);
+    			append_dev(div, p25);
+    			append_dev(p25, t176);
+    			append_dev(p25, strong27);
+    			append_dev(p25, t178);
+    			append_dev(div, t179);
+    			append_dev(div, p26);
+    			append_dev(div, t181);
+    			append_dev(div, p27);
+    			append_dev(div, t183);
+    			append_dev(div, h43);
+    			append_dev(div, t185);
+    			append_dev(div, p28);
+    			append_dev(div, t187);
+    			append_dev(div, h33);
+    			append_dev(div, t189);
+    			append_dev(div, p29);
+    			append_dev(p29, t190);
+    			append_dev(p29, strong28);
+    			append_dev(p29, t192);
+    			append_dev(div, t193);
+    			append_dev(div, p30);
+    			append_dev(p30, t194);
+    			append_dev(p30, strong29);
+    			append_dev(p30, t196);
+    			append_dev(div, t197);
+    			append_dev(div, p31);
+    			append_dev(div, t199);
+    			append_dev(div, ul2);
+    			append_dev(ul2, li13);
+    			append_dev(ul2, t201);
+    			append_dev(ul2, li14);
+    			append_dev(ul2, t203);
+    			append_dev(ul2, li15);
+    			append_dev(ul2, t205);
+    			append_dev(ul2, li16);
+    			append_dev(ul2, t207);
+    			append_dev(ul2, li17);
+    			append_dev(div, t209);
+    			append_dev(div, h44);
+    			append_dev(div, t211);
+    			append_dev(div, p32);
+    			append_dev(p32, t212);
+    			append_dev(p32, em9);
+    			append_dev(p32, t214);
+    			append_dev(div, t215);
+    			append_dev(div, table0);
+    			append_dev(table0, col0);
+    			append_dev(table0, t216);
+    			append_dev(table0, col1);
+    			append_dev(table0, t217);
+    			append_dev(table0, tbody0);
+    			append_dev(tbody0, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(th0, p33);
+    			append_dev(tr0, t219);
+    			append_dev(tr0, th1);
+    			append_dev(th1, p34);
+    			append_dev(tbody0, t221);
+    			append_dev(tbody0, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(td0, p35);
+    			append_dev(tr1, t223);
+    			append_dev(tr1, td1);
+    			append_dev(td1, p36);
+    			append_dev(tbody0, t225);
+    			append_dev(tbody0, tr2);
+    			append_dev(tr2, td2);
+    			append_dev(td2, p37);
+    			append_dev(tr2, t227);
+    			append_dev(tr2, td3);
+    			append_dev(td3, p38);
+    			append_dev(tbody0, t229);
+    			append_dev(tbody0, tr3);
+    			append_dev(tr3, td4);
+    			append_dev(td4, p39);
+    			append_dev(tr3, t231);
+    			append_dev(tr3, td5);
+    			append_dev(td5, p40);
+    			append_dev(tbody0, t233);
+    			append_dev(tbody0, tr4);
+    			append_dev(tr4, td6);
+    			append_dev(td6, p41);
+    			append_dev(tr4, t235);
+    			append_dev(tr4, td7);
+    			append_dev(td7, p42);
+    			append_dev(tbody0, t237);
+    			append_dev(tbody0, tr5);
+    			append_dev(tr5, td8);
+    			append_dev(td8, p43);
+    			append_dev(tr5, t239);
+    			append_dev(tr5, td9);
+    			append_dev(td9, p44);
+    			append_dev(tbody0, t241);
+    			append_dev(tbody0, tr6);
+    			append_dev(tr6, td10);
+    			append_dev(td10, p45);
+    			append_dev(tr6, t243);
+    			append_dev(tr6, td11);
+    			append_dev(td11, p46);
+    			append_dev(tbody0, t245);
+    			append_dev(tbody0, tr7);
+    			append_dev(tr7, td12);
+    			append_dev(td12, p47);
+    			append_dev(tr7, t247);
+    			append_dev(tr7, td13);
+    			append_dev(td13, p48);
+    			append_dev(tbody0, t249);
+    			append_dev(tbody0, tr8);
+    			append_dev(tr8, td14);
+    			append_dev(td14, p49);
+    			append_dev(tr8, t251);
+    			append_dev(tr8, td15);
+    			append_dev(td15, p50);
+    			append_dev(tbody0, t253);
+    			append_dev(tbody0, tr9);
+    			append_dev(tr9, td16);
+    			append_dev(td16, p51);
+    			append_dev(tr9, t255);
+    			append_dev(tr9, td17);
+    			append_dev(td17, p52);
+    			append_dev(tbody0, t257);
+    			append_dev(tbody0, tr10);
+    			append_dev(tr10, td18);
+    			append_dev(td18, p53);
+    			append_dev(tr10, t259);
+    			append_dev(tr10, td19);
+    			append_dev(td19, p54);
+    			append_dev(tbody0, t261);
+    			append_dev(tbody0, tr11);
+    			append_dev(tr11, td20);
+    			append_dev(td20, p55);
+    			append_dev(tr11, t263);
+    			append_dev(tr11, td21);
+    			append_dev(td21, p56);
+    			append_dev(tbody0, t265);
+    			append_dev(tbody0, tr12);
+    			append_dev(tr12, td22);
+    			append_dev(td22, p57);
+    			append_dev(tr12, t267);
+    			append_dev(tr12, td23);
+    			append_dev(td23, p58);
+    			append_dev(tbody0, t269);
+    			append_dev(tbody0, tr13);
+    			append_dev(tr13, td24);
+    			append_dev(td24, p59);
+    			append_dev(tr13, t271);
+    			append_dev(tr13, td25);
+    			append_dev(td25, p60);
+    			append_dev(div, t273);
+    			append_dev(div, h45);
+    			append_dev(div, t275);
+    			append_dev(div, p61);
+    			append_dev(p61, t276);
+    			append_dev(p61, br0);
+    			append_dev(p61, t277);
+    			append_dev(p61, br1);
+    			append_dev(div, t278);
+    			append_dev(div, table1);
+    			append_dev(table1, thead);
+    			append_dev(thead, tr14);
+    			append_dev(tr14, th2);
+    			append_dev(tr14, t279);
+    			append_dev(tr14, th3);
+    			append_dev(tr14, t280);
+    			append_dev(tr14, th4);
+    			append_dev(tr14, t281);
+    			append_dev(tr14, th5);
+    			append_dev(table1, t282);
+    			append_dev(table1, tbody1);
+    			append_dev(tbody1, tr15);
+    			append_dev(tr15, td26);
+    			append_dev(td26, strong30);
+    			append_dev(tr15, t284);
+    			append_dev(tr15, td27);
+    			append_dev(td27, strong31);
+    			append_dev(tr15, t286);
+    			append_dev(tr15, td28);
+    			append_dev(td28, strong32);
+    			append_dev(tr15, t288);
+    			append_dev(tr15, td29);
+    			append_dev(td29, strong33);
+    			append_dev(tbody1, t290);
+    			append_dev(tbody1, tr16);
+    			append_dev(tr16, td30);
+    			append_dev(td30, strong34);
+    			append_dev(tr16, t292);
+    			append_dev(tr16, td31);
+    			append_dev(td31, strong35);
+    			append_dev(tr16, t294);
+    			append_dev(tr16, td32);
+    			append_dev(td32, strong36);
+    			append_dev(tr16, t296);
+    			append_dev(tr16, td33);
+    			append_dev(td33, strong37);
+    			append_dev(tbody1, t298);
+    			append_dev(tbody1, tr17);
+    			append_dev(tr17, td34);
+    			append_dev(td34, strong38);
+    			append_dev(tr17, t300);
+    			append_dev(tr17, td35);
+    			append_dev(td35, strong39);
+    			append_dev(tr17, t302);
+    			append_dev(tr17, td36);
+    			append_dev(td36, strong40);
+    			append_dev(tr17, t304);
+    			append_dev(tr17, td37);
+    			append_dev(td37, strong41);
+    			append_dev(tbody1, t306);
+    			append_dev(tbody1, tr18);
+    			append_dev(tr18, td38);
+    			append_dev(td38, strong42);
+    			append_dev(tr18, t308);
+    			append_dev(tr18, td39);
+    			append_dev(td39, strong43);
+    			append_dev(tr18, t310);
+    			append_dev(tr18, td40);
+    			append_dev(td40, strong44);
+    			append_dev(tr18, t312);
+    			append_dev(tr18, td41);
+    			append_dev(td41, strong45);
+    			append_dev(tbody1, t314);
+    			append_dev(tbody1, tr19);
+    			append_dev(tr19, td42);
+    			append_dev(td42, strong46);
+    			append_dev(tr19, t316);
+    			append_dev(tr19, td43);
+    			append_dev(td43, strong47);
+    			append_dev(tr19, t318);
+    			append_dev(tr19, td44);
+    			append_dev(td44, strong48);
+    			append_dev(tr19, t320);
+    			append_dev(tr19, td45);
+    			append_dev(div, t321);
+    			append_dev(div, br2);
+    			append_dev(div, t322);
+    			append_dev(div, br3);
+    			append_dev(div, t323);
+    			append_dev(div, br4);
+    			append_dev(div, t324);
+    			append_dev(div, p62);
+    			append_dev(p62, strong49);
+    			append_dev(p62, t326);
+    			append_dev(div, t327);
+    			append_dev(div, p63);
+    			append_dev(p63, strong50);
+    			append_dev(p63, t329);
+    			append_dev(div, t330);
+    			append_dev(div, p64);
+    			append_dev(p64, strong51);
+    			append_dev(p64, t332);
+    			append_dev(div, t333);
+    			append_dev(div, p65);
+    			append_dev(p65, strong52);
+    			append_dev(p65, t335);
+    			append_dev(div, t336);
+    			append_dev(div, p66);
+    			append_dev(p66, strong53);
+    			append_dev(p66, t338);
+    			append_dev(div, t339);
+    			append_dev(div, p67);
+    			append_dev(p67, strong54);
+    			append_dev(p67, t341);
+    			append_dev(div, t342);
+    			append_dev(div, p68);
+    			append_dev(p68, strong55);
+    			append_dev(p68, t344);
+    			append_dev(div, t345);
+    			append_dev(div, p69);
+    			append_dev(p69, strong56);
+    			append_dev(p69, t347);
+    			append_dev(div, t348);
+    			append_dev(div, p70);
+    			append_dev(p70, strong57);
+    			append_dev(p70, t350);
+    			append_dev(div, t351);
+    			append_dev(div, p71);
+    			append_dev(p71, strong58);
+    			append_dev(p71, t353);
+    			append_dev(div, t354);
+    			append_dev(div, p72);
+    			append_dev(p72, strong59);
+    			append_dev(p72, t356);
+    			append_dev(div, t357);
+    			append_dev(div, p73);
+    			append_dev(p73, strong60);
+    			append_dev(p73, t359);
+    			append_dev(div, t360);
+    			append_dev(div, p74);
+    			append_dev(p74, strong61);
+    			append_dev(p74, t362);
+    			append_dev(p74, strong62);
+    			append_dev(p74, t364);
+    			append_dev(div, t365);
+    			append_dev(div, p75);
+    			append_dev(p75, strong63);
+    			append_dev(p75, t367);
+    			append_dev(div, t368);
+    			append_dev(div, p76);
+    			append_dev(p76, strong64);
+    			append_dev(p76, t370);
+    			append_dev(div, t371);
+    			append_dev(div, p77);
+    			append_dev(p77, strong65);
+    			append_dev(p77, t373);
+    			append_dev(div, t374);
+    			append_dev(div, p78);
+    			append_dev(p78, strong66);
+    			append_dev(p78, t376);
+    			append_dev(div, t377);
+    			append_dev(div, p79);
+    			append_dev(p79, strong67);
+    			append_dev(p79, t379);
+    			append_dev(div, t380);
+    			append_dev(div, p80);
+    			append_dev(p80, strong68);
+    			append_dev(p80, t382);
+    			append_dev(p80, strong69);
+    			append_dev(p80, t384);
+    			append_dev(div, t385);
+    			append_dev(div, h46);
+    			append_dev(div, t387);
+    			append_dev(div, p81);
+    			append_dev(div, t389);
+    			append_dev(div, ul3);
+    			append_dev(ul3, li18);
+    			append_dev(ul3, t391);
+    			append_dev(ul3, li19);
+    			append_dev(li19, t392);
+    			append_dev(li19, em10);
+    			append_dev(li19, t394);
+    			append_dev(ul3, t395);
+    			append_dev(ul3, li20);
+    			append_dev(ul3, t397);
+    			append_dev(ul3, li21);
+    			append_dev(div, t399);
+    			append_dev(div, p82);
+    			append_dev(div, t401);
+    			append_dev(div, p83);
+    			append_dev(p83, t402);
+    			append_dev(p83, strong70);
+    			append_dev(div, t404);
+    			append_dev(div, h34);
+    			append_dev(div, t406);
+    			append_dev(div, p84);
+    			append_dev(p84, t407);
+    			append_dev(p84, strong71);
+    			append_dev(p84, t409);
+    			append_dev(p84, strong72);
+    			append_dev(p84, t411);
+    			append_dev(p84, strong73);
+    			append_dev(p84, t413);
+    			append_dev(div, t414);
+    			append_dev(div, p85);
+    			append_dev(div, t416);
+    			append_dev(div, p86);
+    			append_dev(div, t418);
+    			append_dev(div, h35);
+    			append_dev(div, t420);
+    			append_dev(div, p87);
+    			append_dev(p87, t421);
+    			append_dev(p87, strong74);
+    			append_dev(p87, t423);
+    			append_dev(div, t424);
+    			append_dev(div, p88);
+    			append_dev(div, t426);
+    			append_dev(div, h47);
+    			append_dev(div, t428);
+    			append_dev(div, p89);
+    			append_dev(div, t430);
+    			append_dev(div, p90);
+    			append_dev(p90, strong75);
+    			append_dev(p90, t432);
+    			append_dev(p90, strong76);
+    			append_dev(p90, t434);
+    			append_dev(p90, strong77);
+    			append_dev(p90, t436);
+    			append_dev(div, t437);
+    			append_dev(div, p91);
+    			append_dev(div, t439);
+    			append_dev(div, p92);
+    			append_dev(p92, t440);
+    			append_dev(p92, strong78);
+    			append_dev(p92, t442);
+    			append_dev(p92, strong79);
+    			append_dev(p92, t444);
+    			append_dev(p92, strong80);
+    			append_dev(p92, t446);
+    			append_dev(p92, strong81);
+    			append_dev(p92, t448);
+    			append_dev(div, t449);
+    			append_dev(div, p93);
+    			append_dev(p93, strong82);
+    			append_dev(p93, t451);
+    			append_dev(p93, strong83);
+    			append_dev(p93, t453);
+    			append_dev(p93, strong84);
+    			append_dev(p93, t455);
+    			append_dev(p93, strong85);
+    			append_dev(p93, t457);
+    			append_dev(p93, strong86);
+    			append_dev(p93, t459);
+    			append_dev(p93, strong87);
+    			append_dev(p93, t461);
+    			append_dev(div, t462);
+    			append_dev(div, p94);
+    			append_dev(p94, strong88);
+    			append_dev(p94, t464);
+    			append_dev(p94, strong89);
+    			append_dev(p94, t466);
+    			append_dev(div, t467);
+    			append_dev(div, ul4);
+    			append_dev(ul4, li22);
+    			append_dev(li22, strong90);
+    			append_dev(li22, t469);
+    			append_dev(ul4, t470);
+    			append_dev(ul4, li23);
+    			append_dev(ul4, t472);
+    			append_dev(ul4, li24);
+    			append_dev(li24, strong91);
+    			append_dev(li24, t474);
+    			append_dev(ul4, t475);
+    			append_dev(ul4, li25);
+    			append_dev(li25, strong92);
+    			append_dev(li25, t477);
+    			append_dev(li25, strong93);
+    			append_dev(li25, t479);
+    			append_dev(ul4, t480);
+    			append_dev(ul4, li26);
+    			append_dev(li26, strong94);
+    			append_dev(li26, t482);
+    			append_dev(div, t483);
+    			append_dev(div, p95);
+    			append_dev(div, t485);
+    			append_dev(div, p96);
+    			append_dev(p96, t486);
+    			append_dev(p96, strong95);
+    			append_dev(p96, t488);
+    			append_dev(p96, strong96);
+    			append_dev(p96, t490);
+    			append_dev(p96, strong97);
+    			append_dev(p96, t492);
+    			append_dev(div, t493);
+    			append_dev(div, p97);
+    			append_dev(p97, strong98);
+    			append_dev(p97, t495);
+    			append_dev(p97, strong99);
+    			append_dev(p97, t497);
+    			append_dev(p97, strong100);
+    			append_dev(p97, t499);
+    			append_dev(p97, strong101);
+    			append_dev(p97, t501);
+    			append_dev(div, t502);
+    			append_dev(div, h36);
+    			append_dev(div, t504);
+    			append_dev(div, p98);
+    			append_dev(p98, strong102);
+    			append_dev(p98, t506);
+    			append_dev(p98, strong103);
+    			append_dev(p98, t508);
+    			append_dev(div, t509);
+    			append_dev(div, p99);
+    			append_dev(div, t511);
+    			append_dev(div, table2);
+    			append_dev(table2, col2);
+    			append_dev(table2, t512);
+    			append_dev(table2, col3);
+    			append_dev(table2, t513);
+    			append_dev(table2, tbody2);
+    			append_dev(tbody2, tr20);
+    			append_dev(tr20, th6);
+    			append_dev(th6, p100);
+    			append_dev(tr20, t515);
+    			append_dev(tr20, th7);
+    			append_dev(th7, p101);
+    			append_dev(tbody2, t517);
+    			append_dev(tbody2, tr21);
+    			append_dev(tr21, td46);
+    			append_dev(td46, p102);
+    			append_dev(tr21, t519);
+    			append_dev(tr21, td47);
+    			append_dev(td47, p103);
+    			append_dev(p103, strong104);
+    			append_dev(tbody2, t521);
+    			append_dev(tbody2, tr22);
+    			append_dev(tr22, td48);
+    			append_dev(td48, p104);
+    			append_dev(tr22, t523);
+    			append_dev(tr22, td49);
+    			append_dev(td49, p105);
+    			append_dev(p105, strong105);
+    			append_dev(tbody2, t525);
+    			append_dev(tbody2, tr23);
+    			append_dev(tr23, td50);
+    			append_dev(td50, p106);
+    			append_dev(tr23, t527);
+    			append_dev(tr23, td51);
+    			append_dev(td51, p107);
+    			append_dev(p107, strong106);
+    			append_dev(tbody2, t529);
+    			append_dev(tbody2, tr24);
+    			append_dev(tr24, td52);
+    			append_dev(td52, p108);
+    			append_dev(tr24, t531);
+    			append_dev(tr24, td53);
+    			append_dev(td53, p109);
+    			append_dev(p109, strong107);
+    			append_dev(p109, t533);
+    			append_dev(div, t534);
+    			append_dev(div, p110);
+    			append_dev(p110, t535);
+    			append_dev(p110, em11);
+    			append_dev(p110, t537);
+    			append_dev(p110, strong108);
+    			append_dev(p110, t539);
+    			append_dev(div, t540);
+    			append_dev(div, h48);
+    			append_dev(div, t542);
+    			append_dev(div, p111);
+    			append_dev(p111, t543);
+    			append_dev(p111, em12);
+    			append_dev(p111, t545);
+    			append_dev(p111, em13);
+    			append_dev(p111, t547);
+    			append_dev(p111, em14);
+    			append_dev(p111, t549);
+    			append_dev(div, t550);
+    			append_dev(div, p112);
+    			append_dev(div, t552);
+    			append_dev(div, ul5);
+    			append_dev(ul5, li27);
+    			append_dev(li27, t553);
+    			append_dev(li27, strong109);
+    			append_dev(li27, t555);
+    			append_dev(ul5, t556);
+    			append_dev(ul5, li28);
+    			append_dev(li28, t557);
+    			append_dev(li28, em15);
+    			append_dev(li28, t559);
+    			append_dev(ul5, t560);
+    			append_dev(ul5, li29);
+    			append_dev(li29, t561);
+    			append_dev(li29, strong110);
+    			append_dev(li29, t563);
+    			append_dev(li29, strong111);
+    			append_dev(li29, t565);
+    			append_dev(li29, strong112);
+    			append_dev(li29, t567);
+    			append_dev(div, t568);
+    			append_dev(div, h37);
+    			append_dev(div, t570);
+    			append_dev(div, p113);
+    			append_dev(div, t572);
+    			append_dev(div, h14);
+    			append_dev(div, t574);
+    			append_dev(div, hr7);
+    			append_dev(div, t575);
+    			append_dev(div, p114);
+    			append_dev(p114, t576);
+    			append_dev(p114, em16);
+    			append_dev(p114, t578);
+    			append_dev(p114, strong113);
+    			append_dev(p114, t580);
+    			append_dev(div, t581);
+    			append_dev(div, p115);
+    			append_dev(p115, t582);
+    			append_dev(p115, strong114);
+    			append_dev(p115, t584);
+    			append_dev(p115, em17);
+    			append_dev(p115, t586);
+    			append_dev(div, t587);
+    			append_dev(div, p116);
+    			append_dev(div, t589);
+    			append_dev(div, p117);
+    			append_dev(div, t591);
+    			append_dev(div, ul6);
+    			append_dev(ul6, li30);
+    			append_dev(ul6, t593);
+    			append_dev(ul6, li31);
+    			append_dev(ul6, t595);
+    			append_dev(ul6, li32);
+    			append_dev(div, t597);
+    			append_dev(div, p118);
+    			append_dev(div, t599);
+    			append_dev(div, p119);
+    			append_dev(div, t601);
+    			append_dev(div, ol);
+    			append_dev(ol, li33);
+    			append_dev(li33, t602);
+    			append_dev(li33, em18);
+    			append_dev(li33, t604);
+    			append_dev(ol, t605);
+    			append_dev(ol, li34);
+    			append_dev(ol, t607);
+    			append_dev(ol, li35);
+    			append_dev(ol, t609);
+    			append_dev(ol, li36);
+    			append_dev(ol, t611);
+    			append_dev(ol, li37);
+    			append_dev(li37, t612);
+    			append_dev(li37, strong115);
+    			append_dev(li37, t614);
+    			append_dev(li37, strong116);
+    			append_dev(li37, t616);
+    			append_dev(ol, t617);
+    			append_dev(ol, li38);
+    			append_dev(li38, t618);
+    			append_dev(li38, strong117);
+    			append_dev(li38, t620);
+    			append_dev(div, t621);
+    			append_dev(div, h23);
+    			append_dev(div, t623);
+    			append_dev(div, hr8);
+    			append_dev(div, t624);
+    			append_dev(div, p120);
+    			append_dev(p120, t625);
+    			append_dev(p120, strong118);
+    			append_dev(p120, t627);
+    			append_dev(div, t628);
+    			append_dev(div, p121);
+    			append_dev(p121, t629);
+    			append_dev(p121, strong119);
+    			append_dev(p121, t631);
+    			append_dev(p121, strong120);
+    			append_dev(p121, t633);
+    			append_dev(div, t634);
+    			append_dev(div, p122);
+    			append_dev(p122, t635);
+    			append_dev(p122, em19);
+    			append_dev(p122, t637);
+    			append_dev(p122, em20);
+    			append_dev(p122, t639);
+    			append_dev(div, t640);
+    			append_dev(div, h24);
+    			append_dev(div, t642);
+    			append_dev(div, hr9);
+    			append_dev(div, t643);
+    			append_dev(div, p123);
+    			append_dev(p123, t644);
+    			append_dev(p123, strong121);
+    			append_dev(p123, t646);
+    			append_dev(div, t647);
+    			append_dev(div, h38);
+    			append_dev(div, t649);
+    			append_dev(div, p124);
+    			append_dev(div, t651);
+    			append_dev(div, p125);
+    			append_dev(p125, t652);
+    			append_dev(p125, strong122);
+    			append_dev(p125, t654);
+    			append_dev(p125, strong123);
+    			append_dev(p125, t656);
+    			append_dev(p125, strong124);
+    			append_dev(p125, t658);
+    			append_dev(p125, strong125);
+    			append_dev(p125, t660);
+    			append_dev(div, t661);
+    			append_dev(div, p126);
+    			append_dev(p126, t662);
+    			append_dev(p126, strong126);
+    			append_dev(p126, t664);
+    			append_dev(p126, strong127);
+    			append_dev(p126, t666);
+    			append_dev(div, t667);
+    			append_dev(div, p127);
+    			append_dev(p127, t668);
+    			append_dev(p127, strong128);
+    			append_dev(p127, t670);
+    			append_dev(p127, strong129);
+    			append_dev(p127, t672);
+    			append_dev(p127, em21);
+    			append_dev(p127, t674);
+    			append_dev(div, t675);
+    			append_dev(div, p128);
+    			append_dev(p128, t676);
+    			append_dev(p128, strong130);
+    			append_dev(p128, t678);
+    			append_dev(div, t679);
+    			append_dev(div, h39);
+    			append_dev(div, t681);
+    			append_dev(div, p129);
+    			append_dev(p129, t682);
+    			append_dev(p129, strong131);
+    			append_dev(p129, t684);
+    			append_dev(div, t685);
+    			append_dev(div, p130);
+    			append_dev(div, t687);
+    			append_dev(div, h25);
+    			append_dev(div, t689);
+    			append_dev(div, hr10);
+    			append_dev(div, t690);
+    			append_dev(div, p131);
+    			append_dev(p131, t691);
+    			append_dev(p131, strong132);
+    			append_dev(p131, t693);
+    			append_dev(div, t694);
+    			append_dev(div, ul7);
+    			append_dev(ul7, li39);
+    			append_dev(li39, t695);
+    			append_dev(li39, strong133);
+    			append_dev(li39, t697);
+    			append_dev(ul7, t698);
+    			append_dev(ul7, li40);
+    			append_dev(li40, t699);
+    			append_dev(li40, strong134);
+    			append_dev(li40, t701);
+    			append_dev(ul7, t702);
+    			append_dev(ul7, li41);
+    			append_dev(li41, t703);
+    			append_dev(li41, strong135);
+    			append_dev(li41, t705);
+    			append_dev(ul7, t706);
+    			append_dev(ul7, li42);
+    			append_dev(li42, t707);
+    			append_dev(li42, strong136);
+    			append_dev(li42, t709);
+    			append_dev(div, t710);
+    			append_dev(div, p132);
+    			append_dev(p132, t711);
+    			append_dev(p132, strong137);
+    			append_dev(p132, t713);
+    			append_dev(div, t714);
+    			append_dev(div, p133);
+    			append_dev(div, t716);
+    			append_dev(div, h310);
+    			append_dev(div, t718);
+    			append_dev(div, p134);
+    			append_dev(div, t720);
+    			append_dev(div, p135);
+    			append_dev(div, t722);
+    			append_dev(div, h49);
+    			append_dev(div, t724);
+    			append_dev(div, p136);
+    			append_dev(p136, t725);
+    			append_dev(p136, strong138);
+    			append_dev(p136, t727);
+    			append_dev(div, t728);
+    			append_dev(div, p137);
+    			append_dev(div, t730);
+    			append_dev(div, h410);
+    			append_dev(div, t732);
+    			append_dev(div, p138);
+    			append_dev(p138, t733);
+    			append_dev(p138, strong139);
+    			append_dev(p138, t735);
+    			append_dev(div, t736);
+    			append_dev(div, p139);
+    			append_dev(div, t738);
+    			append_dev(div, h411);
+    			append_dev(div, t740);
+    			append_dev(div, p140);
+    			append_dev(p140, t741);
+    			append_dev(p140, strong140);
+    			append_dev(p140, t743);
+    			append_dev(div, t744);
+    			append_dev(div, p141);
+    			append_dev(p141, t745);
+    			append_dev(p141, strong141);
+    			append_dev(p141, t747);
+    			append_dev(div, t748);
+    			append_dev(div, p142);
+    			append_dev(div, t750);
+    			append_dev(div, h311);
+    			append_dev(div, t752);
+    			append_dev(div, p143);
+    			append_dev(div, t754);
+    			append_dev(div, p144);
+    			append_dev(div, t756);
+    			append_dev(div, h412);
+    			append_dev(div, t758);
+    			append_dev(div, p145);
+    			append_dev(p145, t759);
+    			append_dev(p145, strong142);
+    			append_dev(p145, t761);
+    			append_dev(p145, strong143);
+    			append_dev(p145, t763);
+    			append_dev(div, t764);
+    			append_dev(div, p146);
+    			append_dev(div, t766);
+    			append_dev(div, h413);
+    			append_dev(div, t768);
+    			append_dev(div, p147);
+    			append_dev(p147, t769);
+    			append_dev(p147, strong144);
+    			append_dev(p147, t771);
+    			append_dev(div, t772);
+    			append_dev(div, p148);
+    			append_dev(div, t774);
+    			append_dev(div, h312);
+    			append_dev(div, t776);
+    			append_dev(div, p149);
+    			append_dev(div, t778);
+    			append_dev(div, p150);
+    			append_dev(div, t780);
+    			append_dev(div, p151);
+    			append_dev(div, t782);
+    			append_dev(div, h414);
+    			append_dev(div, t784);
+    			append_dev(div, p152);
+    			append_dev(p152, t785);
+    			append_dev(p152, em22);
+    			append_dev(p152, t787);
+    			append_dev(p152, em23);
+    			append_dev(p152, t789);
+    			append_dev(div, t790);
+    			append_dev(div, h313);
+    			append_dev(div, t792);
+    			append_dev(div, p153);
+    			append_dev(div, t794);
+    			append_dev(div, p154);
+    			append_dev(div, t796);
+    			append_dev(div, p155);
+    			append_dev(div, t798);
+    			append_dev(div, h26);
+    			append_dev(div, t800);
+    			append_dev(div, hr11);
+    			append_dev(div, t801);
+    			append_dev(div, p156);
+    			append_dev(div, t803);
+    			append_dev(div, ul8);
+    			append_dev(ul8, li43);
+    			append_dev(li43, strong145);
+    			append_dev(li43, t805);
+    			append_dev(ul8, t806);
+    			append_dev(ul8, li44);
+    			append_dev(li44, strong146);
+    			append_dev(li44, t808);
+    			append_dev(ul8, t809);
+    			append_dev(ul8, li45);
+    			append_dev(li45, strong147);
+    			append_dev(li45, t811);
+    			append_dev(ul8, t812);
+    			append_dev(ul8, li46);
+    			append_dev(li46, strong148);
+    			append_dev(li46, t814);
+    			append_dev(div, t815);
+    			append_dev(div, h314);
+    			append_dev(div, t817);
+    			append_dev(div, p157);
+    			append_dev(div, t819);
+    			append_dev(div, p158);
+    			append_dev(p158, t820);
+    			append_dev(p158, strong149);
+    			append_dev(p158, t822);
+    			append_dev(div, t823);
+    			append_dev(div, p159);
+    			append_dev(div, t825);
+    			append_dev(div, p160);
+    			append_dev(div, t827);
+    			append_dev(div, ul9);
+    			append_dev(ul9, li47);
+    			append_dev(li47, p161);
+    			append_dev(p161, strong150);
+    			append_dev(p161, t829);
+    			append_dev(p161, strong151);
+    			append_dev(p161, t831);
+    			append_dev(ul9, t832);
+    			append_dev(ul9, li48);
+    			append_dev(li48, p162);
+    			append_dev(p162, strong152);
+    			append_dev(p162, t834);
+    			append_dev(p162, strong153);
+    			append_dev(p162, t836);
+    			append_dev(p162, strong154);
+    			append_dev(p162, t838);
+    			append_dev(ul9, t839);
+    			append_dev(ul9, li49);
+    			append_dev(li49, p163);
+    			append_dev(p163, strong155);
+    			append_dev(p163, t841);
+    			append_dev(ul9, t842);
+    			append_dev(ul9, li50);
+    			append_dev(li50, p164);
+    			append_dev(p164, strong156);
+    			append_dev(p164, t844);
+    			append_dev(div, t845);
+    			append_dev(div, p165);
+    			append_dev(div, t847);
+    			append_dev(div, p166);
+    			append_dev(div, t849);
+    			append_dev(div, h315);
+    			append_dev(div, t851);
+    			append_dev(div, p167);
+    			append_dev(div, t853);
+    			append_dev(div, p168);
+    			append_dev(p168, t854);
+    			append_dev(p168, strong157);
+    			append_dev(p168, t856);
+    			append_dev(div, t857);
+    			append_dev(div, p169);
+    			append_dev(p169, t858);
+    			append_dev(p169, strong158);
+    			append_dev(p169, t860);
+    			append_dev(p169, strong159);
+    			append_dev(p169, t862);
+    			append_dev(p169, strong160);
+    			append_dev(p169, t864);
+    			append_dev(p169, strong161);
+    			append_dev(p169, t866);
+    			append_dev(div, t867);
+    			append_dev(div, p170);
+    			append_dev(div, t869);
+    			append_dev(div, p171);
+    			append_dev(div, t871);
+    			append_dev(div, ul10);
+    			append_dev(ul10, li51);
+    			append_dev(li51, p172);
+    			append_dev(p172, strong162);
+    			append_dev(p172, t873);
+    			append_dev(p172, strong163);
+    			append_dev(p172, t875);
+    			append_dev(ul10, t876);
+    			append_dev(ul10, li52);
+    			append_dev(li52, p173);
+    			append_dev(p173, strong164);
+    			append_dev(p173, t878);
+    			append_dev(p173, strong165);
+    			append_dev(p173, t880);
+    			append_dev(ul10, t881);
+    			append_dev(ul10, li53);
+    			append_dev(li53, p174);
+    			append_dev(p174, strong166);
+    			append_dev(p174, t883);
+    			append_dev(ul10, t884);
+    			append_dev(ul10, li54);
+    			append_dev(li54, p175);
+    			append_dev(p175, strong167);
+    			append_dev(p175, t886);
+    			append_dev(p175, em24);
+    			append_dev(p175, t888);
+    			append_dev(div, t889);
+    			append_dev(div, p176);
+    			append_dev(div, t891);
+    			append_dev(div, ul11);
+    			append_dev(ul11, li55);
+    			append_dev(li55, p177);
+    			append_dev(p177, strong168);
+    			append_dev(p177, t893);
+    			append_dev(ul11, t894);
+    			append_dev(ul11, li56);
+    			append_dev(li56, p178);
+    			append_dev(p178, strong169);
+    			append_dev(p178, t896);
+    			append_dev(ul11, t897);
+    			append_dev(ul11, li57);
+    			append_dev(li57, p179);
+    			append_dev(p179, strong170);
+    			append_dev(p179, t899);
+    			append_dev(ul11, t900);
+    			append_dev(ul11, li58);
+    			append_dev(li58, p180);
+    			append_dev(p180, strong171);
+    			append_dev(p180, t902);
+    			append_dev(div, t903);
+    			append_dev(div, p181);
+    			append_dev(div, t905);
+    			append_dev(div, p182);
+    			append_dev(div, t907);
+    			append_dev(div, p183);
+    			append_dev(p183, t908);
+    			append_dev(p183, strong172);
+    			append_dev(p183, t910);
+    			append_dev(div, t911);
+    			append_dev(div, h316);
+    			append_dev(div, t913);
+    			append_dev(div, p184);
+    			append_dev(div, t915);
+    			append_dev(div, p185);
+    			append_dev(p185, t916);
+    			append_dev(p185, strong173);
+    			append_dev(p185, t918);
+    			append_dev(div, t919);
+    			append_dev(div, p186);
+    			append_dev(div, t921);
+    			append_dev(div, p187);
+    			append_dev(div, t923);
+    			append_dev(div, ul12);
+    			append_dev(ul12, li59);
+    			append_dev(li59, p188);
+    			append_dev(p188, strong174);
+    			append_dev(p188, t925);
+    			append_dev(ul12, t926);
+    			append_dev(ul12, li60);
+    			append_dev(li60, p189);
+    			append_dev(p189, strong175);
+    			append_dev(p189, t928);
+    			append_dev(p189, strong176);
+    			append_dev(p189, t930);
+    			append_dev(ul12, t931);
+    			append_dev(ul12, li61);
+    			append_dev(li61, p190);
+    			append_dev(p190, strong177);
+    			append_dev(p190, t933);
+    			append_dev(p190, strong178);
+    			append_dev(p190, t935);
+    			append_dev(ul12, t936);
+    			append_dev(ul12, li62);
+    			append_dev(li62, p191);
+    			append_dev(p191, strong179);
+    			append_dev(p191, t938);
+    			append_dev(div, t939);
+    			append_dev(div, p192);
+    			append_dev(div, t941);
+    			append_dev(div, h317);
+    			append_dev(div, t943);
+    			append_dev(div, p193);
+    			append_dev(div, t945);
+    			append_dev(div, p194);
+    			append_dev(p194, t946);
+    			append_dev(p194, strong180);
+    			append_dev(p194, t948);
+    			append_dev(div, t949);
+    			append_dev(div, p195);
+    			append_dev(p195, t950);
+    			append_dev(p195, em25);
+    			append_dev(p195, t952);
+    			append_dev(div, t953);
+    			append_dev(div, p196);
+    			append_dev(div, t955);
+    			append_dev(div, ul13);
+    			append_dev(ul13, li63);
+    			append_dev(li63, p197);
+    			append_dev(p197, strong181);
+    			append_dev(p197, t957);
+    			append_dev(p197, strong182);
+    			append_dev(p197, t959);
+    			append_dev(p197, strong183);
+    			append_dev(p197, t961);
+    			append_dev(ul13, t962);
+    			append_dev(ul13, li64);
+    			append_dev(li64, p198);
+    			append_dev(p198, strong184);
+    			append_dev(p198, t964);
+    			append_dev(ul13, t965);
+    			append_dev(ul13, li65);
+    			append_dev(li65, p199);
+    			append_dev(p199, strong185);
+    			append_dev(p199, t967);
+    			append_dev(ul13, t968);
+    			append_dev(ul13, li66);
+    			append_dev(li66, p200);
+    			append_dev(p200, strong186);
+    			append_dev(p200, t970);
+    			append_dev(div, t971);
+    			append_dev(div, p201);
+    			append_dev(div, t973);
+    			append_dev(div, p202);
+    			append_dev(div, t975);
+    			append_dev(div, h415);
+    			append_dev(div, t977);
+    			append_dev(div, p203);
+    			append_dev(div, t979);
+    			append_dev(div, ul14);
+    			append_dev(ul14, li67);
+    			append_dev(ul14, t981);
+    			append_dev(ul14, li68);
+    			append_dev(ul14, t983);
+    			append_dev(ul14, li69);
+    			append_dev(ul14, t985);
+    			append_dev(ul14, li70);
+    			append_dev(ul14, t987);
+    			append_dev(ul14, li71);
+    			append_dev(div, t989);
+    			append_dev(div, p204);
+    			append_dev(div, t991);
+    			append_dev(div, h15);
+    			append_dev(div, t993);
+    			append_dev(div, hr12);
+    			append_dev(div, t994);
+    			append_dev(div, p205);
+    			append_dev(p205, t995);
+    			append_dev(p205, strong187);
+    			append_dev(p205, t997);
+    			append_dev(p205, strong188);
+    			append_dev(p205, t999);
+    			append_dev(p205, strong189);
+    			append_dev(p205, t1001);
+    			append_dev(p205, strong190);
+    			append_dev(p205, t1003);
+    			append_dev(div, t1004);
+    			append_dev(div, h27);
+    			append_dev(div, t1006);
+    			append_dev(div, hr13);
+    			append_dev(div, t1007);
+    			append_dev(div, p206);
+    			append_dev(p206, t1008);
+    			append_dev(p206, strong191);
+    			append_dev(p206, t1010);
+    			append_dev(p206, strong192);
+    			append_dev(p206, t1012);
+    			append_dev(p206, strong193);
+    			append_dev(p206, t1014);
+    			append_dev(p206, em26);
+    			append_dev(p206, t1016);
+    			append_dev(div, t1017);
+    			append_dev(div, p207);
+    			append_dev(p207, t1018);
+    			append_dev(p207, strong194);
+    			append_dev(p207, t1020);
+    			append_dev(p207, strong195);
+    			append_dev(p207, t1022);
+    			append_dev(p207, strong196);
+    			append_dev(p207, t1024);
+    			append_dev(p207, strong197);
+    			append_dev(p207, t1026);
+    			append_dev(p207, strong198);
+    			append_dev(p207, t1028);
+    			append_dev(div, t1029);
+    			append_dev(div, p208);
+    			append_dev(p208, t1030);
+    			append_dev(p208, strong199);
+    			append_dev(div, t1032);
+    			append_dev(div, p209);
+    			append_dev(p209, t1033);
+    			append_dev(p209, em27);
+    			append_dev(p209, t1035);
+    			append_dev(p209, strong200);
+    			append_dev(p209, t1037);
+    			append_dev(p209, em28);
+    			append_dev(p209, t1039);
+    			append_dev(p209, strong201);
+    			append_dev(p209, t1041);
+    			append_dev(p209, strong202);
+    			append_dev(p209, t1043);
+    			append_dev(div, t1044);
+    			append_dev(div, h28);
+    			append_dev(div, t1046);
+    			append_dev(div, hr14);
+    			append_dev(div, t1047);
+    			append_dev(div, p210);
+    			append_dev(p210, t1048);
+    			append_dev(p210, strong203);
+    			append_dev(p210, t1050);
+    			append_dev(div, t1051);
+    			append_dev(div, h318);
+    			append_dev(div, t1053);
+    			append_dev(div, p211);
+    			append_dev(p211, t1054);
+    			append_dev(p211, strong204);
+    			append_dev(p211, t1056);
+    			append_dev(div, t1057);
+    			append_dev(div, p212);
+    			append_dev(p212, strong205);
+    			append_dev(p212, t1059);
+    			append_dev(p212, strong206);
+    			append_dev(div, t1061);
+    			append_dev(div, h319);
+    			append_dev(div, t1063);
+    			append_dev(div, p213);
+    			append_dev(div, t1065);
+    			append_dev(div, p214);
+    			append_dev(p214, strong207);
+    			append_dev(p214, t1067);
+    			append_dev(p214, strong208);
+    			append_dev(div, t1069);
+    			append_dev(div, h320);
+    			append_dev(div, t1071);
+    			append_dev(div, p215);
+    			append_dev(p215, t1072);
+    			append_dev(p215, strong209);
+    			append_dev(p215, t1074);
+    			append_dev(div, t1075);
+    			append_dev(div, p216);
+    			append_dev(p216, strong210);
+    			append_dev(p216, t1077);
+    			append_dev(p216, strong211);
+    			append_dev(div, t1079);
+    			append_dev(div, h321);
+    			append_dev(div, t1081);
+    			append_dev(div, p217);
+    			append_dev(p217, t1082);
+    			append_dev(p217, strong212);
+    			append_dev(p217, t1084);
+    			append_dev(div, t1085);
+    			append_dev(div, p218);
+    			append_dev(p218, strong213);
+    			append_dev(p218, t1087);
+    			append_dev(p218, strong214);
+    			append_dev(div, t1089);
+    			append_dev(div, h29);
+    			append_dev(div, t1091);
+    			append_dev(div, hr15);
+    			append_dev(div, t1092);
+    			append_dev(div, h322);
+    			append_dev(div, t1094);
+    			append_dev(div, p219);
+    			append_dev(p219, t1095);
+    			append_dev(p219, strong215);
+    			append_dev(p219, t1097);
+    			append_dev(p219, strong216);
+    			append_dev(p219, t1099);
+    			append_dev(p219, strong217);
+    			append_dev(p219, t1101);
+    			append_dev(p219, strong218);
+    			append_dev(p219, t1103);
+    			append_dev(div, t1104);
+    			append_dev(div, p220);
+    			append_dev(p220, t1105);
+    			append_dev(p220, strong219);
+    			append_dev(p220, t1107);
+    			append_dev(p220, strong220);
+    			append_dev(p220, t1109);
+    			append_dev(div, t1110);
+    			append_dev(div, h323);
+    			append_dev(div, t1112);
+    			append_dev(div, p221);
+    			append_dev(p221, t1113);
+    			append_dev(p221, strong221);
+    			append_dev(p221, t1115);
+    			append_dev(p221, strong222);
+    			append_dev(p221, t1117);
+    			append_dev(p221, strong223);
+    			append_dev(p221, t1119);
+    			append_dev(div, t1120);
+    			append_dev(div, p222);
+    			append_dev(p222, t1121);
+    			append_dev(p222, em29);
+    			append_dev(p222, t1123);
+    			append_dev(p222, strong224);
+    			append_dev(p222, t1125);
+    			append_dev(div, t1126);
+    			append_dev(div, h416);
+    			append_dev(div, t1128);
+    			append_dev(div, p223);
+    			append_dev(div, t1130);
+    			append_dev(div, p224);
+    			append_dev(p224, t1131);
+    			append_dev(p224, strong225);
+    			append_dev(p224, t1133);
+    			append_dev(div, t1134);
+    			append_dev(div, h417);
+    			append_dev(div, t1136);
+    			append_dev(div, p225);
+    			append_dev(p225, t1137);
+    			append_dev(p225, em30);
+    			append_dev(p225, t1139);
+    			append_dev(p225, strong226);
+    			append_dev(p225, t1141);
+    			append_dev(p225, strong227);
+    			append_dev(p225, t1143);
+    			append_dev(div, t1144);
+    			append_dev(div, h418);
+    			append_dev(div, t1146);
+    			append_dev(div, p226);
+    			append_dev(p226, t1147);
+    			append_dev(p226, strong228);
+    			append_dev(p226, t1149);
+    			append_dev(div, t1150);
+    			append_dev(div, h324);
+    			append_dev(div, t1152);
+    			append_dev(div, p227);
+    			append_dev(p227, t1153);
+    			append_dev(p227, strong229);
+    			append_dev(p227, t1155);
+    			append_dev(div, t1156);
+    			append_dev(div, p228);
+    			append_dev(p228, strong230);
+    			append_dev(p228, t1158);
+    			append_dev(div, t1159);
+    			append_dev(div, p229);
+    			append_dev(p229, strong231);
+    			append_dev(p229, t1161);
+    			append_dev(div, t1162);
+    			append_dev(div, p230);
+    			append_dev(p230, strong232);
+    			append_dev(p230, t1164);
+    			append_dev(p230, strong233);
+    			append_dev(p230, t1166);
+    			append_dev(div, t1167);
+    			append_dev(div, p231);
+    			append_dev(p231, strong234);
+    			append_dev(p231, t1169);
+    			append_dev(div, t1170);
+    			append_dev(div, h419);
+    			append_dev(div, t1172);
+    			append_dev(div, p232);
+    			append_dev(div, t1174);
+    			append_dev(div, p233);
+    			append_dev(div, t1176);
+    			append_dev(div, p234);
+    			append_dev(div, t1178);
+    			append_dev(div, p235);
+    			append_dev(p235, t1179);
+    			append_dev(p235, em31);
+    			append_dev(p235, t1181);
+    			append_dev(p235, a3);
+    			append_dev(a3, em32);
+    			append_dev(div, t1183);
+    			append_dev(div, h420);
+    			append_dev(div, t1185);
+    			append_dev(div, p236);
+    			append_dev(p236, t1186);
+    			append_dev(p236, strong235);
+    			append_dev(p236, t1188);
+    			append_dev(p236, strong236);
+    			append_dev(p236, t1190);
+    			append_dev(div, t1191);
+    			append_dev(div, p237);
+    			append_dev(div, t1193);
+    			append_dev(div, p238);
+    			append_dev(div, t1195);
+    			append_dev(div, p239);
+    			append_dev(div, t1197);
+    			append_dev(div, h421);
+    			append_dev(div, t1199);
+    			append_dev(div, p240);
+    			append_dev(div, t1201);
+    			append_dev(div, p241);
+    			append_dev(p241, t1202);
+    			append_dev(p241, em33);
+    			append_dev(p241, t1204);
+    			append_dev(div, t1205);
+    			append_dev(div, p242);
+    			append_dev(p242, t1206);
+    			append_dev(p242, em34);
+    			append_dev(p242, t1208);
+    			append_dev(div, t1209);
+    			append_dev(div, p243);
+    			append_dev(p243, t1210);
+    			append_dev(p243, em35);
+    			append_dev(p243, t1212);
+    			append_dev(div, t1213);
+    			append_dev(div, p244);
+    			append_dev(div, t1215);
+    			append_dev(div, h210);
+    			append_dev(div, t1217);
+    			append_dev(div, hr16);
+    			append_dev(div, t1218);
+    			append_dev(div, p245);
+    			append_dev(p245, t1219);
+    			append_dev(p245, strong237);
+    			append_dev(p245, t1221);
+    			append_dev(div, t1222);
+    			append_dev(div, p246);
+    			append_dev(p246, t1223);
+    			append_dev(p246, strong238);
+    			append_dev(p246, t1225);
+    			append_dev(p246, strong239);
+    			append_dev(p246, t1227);
+    			append_dev(p246, strong240);
+    			append_dev(p246, t1229);
+    			append_dev(div, t1230);
+    			append_dev(div, p247);
+    			append_dev(p247, t1231);
+    			append_dev(p247, strong241);
+    			append_dev(p247, t1233);
+    			append_dev(div, t1234);
+    			append_dev(div, h211);
+    			append_dev(div, t1236);
+    			append_dev(div, hr17);
+    			append_dev(div, t1237);
+    			append_dev(div, p248);
+    			append_dev(p248, t1238);
+    			append_dev(p248, strong242);
+    			append_dev(p248, t1240);
+    			append_dev(div, t1241);
+    			append_dev(div, p249);
+    			append_dev(p249, strong243);
+    			append_dev(p249, t1243);
+    			append_dev(div, t1244);
+    			append_dev(div, p250);
+    			append_dev(p250, strong244);
+    			append_dev(p250, t1246);
+    			append_dev(div, t1247);
+    			append_dev(div, p251);
+    			append_dev(p251, strong245);
+    			append_dev(p251, t1249);
+    			append_dev(div, t1250);
+    			append_dev(div, p252);
+    			append_dev(p252, strong246);
+    			append_dev(p252, t1252);
+    			append_dev(p252, strong247);
+    			append_dev(p252, t1254);
+    			append_dev(div, t1255);
+    			append_dev(div, h16);
+    			append_dev(div, t1257);
+    			append_dev(div, hr18);
+    			append_dev(div, t1258);
+    			append_dev(div, p253);
+    			append_dev(p253, t1259);
+    			append_dev(p253, strong248);
+    			append_dev(p253, t1261);
+    			append_dev(p253, strong249);
+    			append_dev(p253, t1263);
+    			append_dev(p253, strong250);
+    			append_dev(p253, t1265);
+    			append_dev(div, t1266);
+    			append_dev(div, ul15);
+    			append_dev(ul15, li72);
+    			append_dev(li72, strong251);
+    			append_dev(li72, t1268);
+    			append_dev(ul15, t1269);
+    			append_dev(ul15, li73);
+    			append_dev(li73, strong252);
+    			append_dev(li73, t1271);
+    			append_dev(ul15, t1272);
+    			append_dev(ul15, li74);
+    			append_dev(li74, strong253);
+    			append_dev(li74, t1274);
+    			append_dev(div, t1275);
+    			append_dev(div, h212);
+    			append_dev(div, t1277);
+    			append_dev(div, hr19);
+    			append_dev(div, t1278);
+    			append_dev(div, p254);
+    			append_dev(div, t1280);
+    			append_dev(div, h325);
+    			append_dev(div, t1282);
+    			append_dev(div, p255);
+    			append_dev(p255, strong254);
+    			append_dev(p255, t1284);
+    			append_dev(div, t1285);
+    			append_dev(div, p256);
+    			append_dev(div, t1287);
+    			append_dev(div, p257);
+    			append_dev(p257, strong255);
+    			append_dev(p257, t1289);
+    			append_dev(div, t1290);
+    			append_dev(div, p258);
+    			append_dev(p258, t1291);
+    			append_dev(p258, strong256);
+    			append_dev(p258, t1293);
+    			append_dev(p258, strong257);
+    			append_dev(p258, t1295);
+    			append_dev(p258, em36);
+    			append_dev(p258, t1297);
+    			append_dev(div, t1298);
+    			append_dev(div, p259);
+    			append_dev(div, t1300);
+    			append_dev(div, p260);
+    			append_dev(div, t1302);
+    			append_dev(div, h326);
+    			append_dev(div, t1304);
+    			append_dev(div, p261);
+    			append_dev(div, t1306);
+    			append_dev(div, ul16);
+    			append_dev(ul16, li75);
+    			append_dev(li75, strong258);
+    			append_dev(li75, t1308);
+    			append_dev(ul16, t1309);
+    			append_dev(ul16, li76);
+    			append_dev(li76, strong259);
+    			append_dev(li76, t1311);
+    			append_dev(ul16, t1312);
+    			append_dev(ul16, li77);
+    			append_dev(li77, strong260);
+    			append_dev(li77, t1314);
+    			append_dev(ul16, t1315);
+    			append_dev(ul16, li78);
+    			append_dev(li78, strong261);
+    			append_dev(li78, t1317);
+    			append_dev(ul16, t1318);
+    			append_dev(ul16, li79);
+    			append_dev(li79, strong262);
+    			append_dev(li79, t1320);
+    			append_dev(div, t1321);
+    			append_dev(div, p262);
+    			append_dev(p262, t1322);
+    			append_dev(p262, strong263);
+    			append_dev(p262, t1324);
+    			append_dev(div, t1325);
+    			append_dev(div, p263);
+    			append_dev(p263, t1326);
+    			append_dev(p263, strong264);
+    			append_dev(p263, t1328);
+    			append_dev(p263, strong265);
+    			append_dev(p263, t1330);
+    			append_dev(div, t1331);
+    			append_dev(div, h422);
+    			append_dev(div, t1333);
+    			append_dev(div, p264);
+    			append_dev(div, t1335);
+    			append_dev(div, h423);
+    			append_dev(div, t1337);
+    			append_dev(div, p265);
+    			append_dev(p265, t1338);
+    			append_dev(p265, strong266);
+    			append_dev(p265, t1340);
+    			append_dev(div, t1341);
+    			append_dev(div, h327);
+    			append_dev(div, t1343);
+    			append_dev(div, p266);
+    			append_dev(p266, t1344);
+    			append_dev(p266, strong267);
+    			append_dev(p266, t1346);
+    			append_dev(p266, strong268);
+    			append_dev(p266, t1348);
+    			append_dev(div, t1349);
+    			append_dev(div, p267);
+    			append_dev(div, t1351);
+    			append_dev(div, p268);
+    			append_dev(p268, t1352);
+    			append_dev(p268, strong269);
+    			append_dev(p268, t1354);
+    			append_dev(p268, strong270);
+    			append_dev(p268, t1356);
+    			append_dev(div, t1357);
+    			append_dev(div, p269);
+    			append_dev(div, t1359);
+    			append_dev(div, p270);
+    			append_dev(p270, t1360);
+    			append_dev(p270, a4);
+    			append_dev(div, t1362);
+    			append_dev(div, h213);
+    			append_dev(div, t1364);
+    			append_dev(div, hr20);
+    			append_dev(div, t1365);
+    			append_dev(div, p271);
+    			append_dev(div, t1367);
+    			append_dev(div, p272);
+    			append_dev(div, t1369);
+    			append_dev(div, p273);
+    			append_dev(div, t1371);
+    			append_dev(div, h214);
+    			append_dev(div, t1373);
+    			append_dev(div, hr21);
+    			append_dev(div, t1374);
+    			append_dev(div, p274);
+    			append_dev(div, t1376);
+    			append_dev(div, p275);
+    			append_dev(p275, t1377);
+    			append_dev(p275, strong271);
+    			append_dev(p275, t1379);
+    			append_dev(div, t1380);
+    			append_dev(div, p276);
+    			append_dev(div, t1382);
+    			append_dev(div, p277);
+    			append_dev(div, t1384);
+    			append_dev(div, p278);
+    			append_dev(div, t1386);
+    			append_dev(div, h215);
+    			append_dev(div, t1388);
+    			append_dev(div, hr22);
+    			append_dev(div, t1389);
+    			append_dev(div, p279);
+    			append_dev(p279, t1390);
+    			append_dev(p279, strong272);
+    			append_dev(p279, t1392);
+    			append_dev(p279, em37);
+    			append_dev(p279, t1394);
+    			append_dev(div, t1395);
+    			append_dev(div, p280);
+    			append_dev(p280, t1396);
+    			append_dev(p280, em38);
+    			append_dev(p280, t1398);
+    			append_dev(p280, strong273);
+    			append_dev(p280, t1400);
+    			append_dev(div, t1401);
+    			append_dev(div, p281);
+    			append_dev(div, t1403);
+    			append_dev(div, p282);
+    			append_dev(p282, t1404);
+    			append_dev(p282, strong274);
+    			append_dev(p282, t1406);
+    			append_dev(p282, strong275);
+    			append_dev(p282, t1408);
+    			append_dev(div, t1409);
+    			append_dev(div, p283);
+    			append_dev(p283, t1410);
+    			append_dev(p283, strong276);
+    			append_dev(p283, t1412);
+    			append_dev(div, t1413);
+    			append_dev(div, p284);
+    			append_dev(div, t1415);
+    			append_dev(div, h328);
+    			append_dev(div, t1417);
+    			append_dev(div, p285);
+    			append_dev(p285, t1418);
+    			append_dev(p285, strong277);
+    			append_dev(p285, t1420);
+    			append_dev(div, t1421);
+    			append_dev(div, h216);
+    			append_dev(div, t1423);
+    			append_dev(div, hr23);
+    			append_dev(div, t1424);
+    			append_dev(div, p286);
+    			append_dev(p286, t1425);
+    			append_dev(p286, strong278);
+    			append_dev(p286, t1427);
+    			append_dev(div, t1428);
+    			append_dev(div, p287);
+    			append_dev(p287, t1429);
+    			append_dev(p287, em39);
+    			append_dev(p287, t1431);
+    			append_dev(div, t1432);
+    			append_dev(div, p288);
+    			append_dev(div, t1434);
+    			append_dev(div, p289);
+    			append_dev(p289, t1435);
+    			append_dev(p289, strong279);
+    			append_dev(p289, t1437);
+    			append_dev(p289, em40);
+    			append_dev(p289, t1439);
+    			append_dev(div, t1440);
+    			append_dev(div, h329);
+    			append_dev(div, t1442);
+    			append_dev(div, p290);
+    			append_dev(div, t1444);
+    			append_dev(div, p291);
+    			append_dev(p291, t1445);
+    			append_dev(p291, strong280);
+    			append_dev(p291, t1447);
+    			append_dev(p291, strong281);
+    			append_dev(p291, t1449);
+    			append_dev(div, t1450);
+    			append_dev(div, p292);
+    			append_dev(div, t1452);
+    			append_dev(div, h424);
+    			append_dev(div, t1454);
+    			append_dev(div, p293);
+    			append_dev(p293, t1455);
+    			append_dev(p293, strong282);
+    			append_dev(p293, t1457);
+    			append_dev(p293, em41);
+    			append_dev(p293, t1459);
+    			append_dev(div, t1460);
+    			append_dev(div, p294);
+    			append_dev(p294, t1461);
+    			append_dev(p294, strong283);
+    			append_dev(p294, t1463);
+    			append_dev(div, t1464);
+    			append_dev(div, p295);
+    			append_dev(div, t1466);
+    			append_dev(div, h425);
+    			append_dev(div, t1468);
+    			append_dev(div, p296);
+    			append_dev(p296, strong284);
+    			append_dev(p296, t1470);
+    			append_dev(div, t1471);
+    			append_dev(div, p297);
+    			append_dev(p297, t1472);
+    			append_dev(p297, strong285);
+    			append_dev(p297, t1474);
+    			append_dev(p297, strong286);
+    			append_dev(p297, t1476);
+    			append_dev(p297, strong287);
+    			append_dev(p297, t1478);
+    			append_dev(div, t1479);
+    			append_dev(div, p298);
+    			append_dev(p298, t1480);
+    			append_dev(p298, em42);
+    			append_dev(p298, t1482);
+    			append_dev(div, t1483);
+    			append_dev(div, p299);
+    			append_dev(div, t1485);
+    			append_dev(div, p300);
+    			append_dev(div, t1487);
+    			append_dev(div, p301);
+    			append_dev(p301, t1488);
+    			append_dev(p301, strong288);
+    			append_dev(p301, t1490);
+    			append_dev(p301, strong289);
+    			append_dev(p301, t1492);
+    			append_dev(div, t1493);
+    			append_dev(div, p302);
+    			append_dev(p302, t1494);
+    			append_dev(p302, strong290);
+    			append_dev(p302, t1496);
+    			append_dev(p302, strong291);
+    			append_dev(p302, t1498);
+    			append_dev(div, t1499);
+    			append_dev(div, h426);
+    			append_dev(div, t1501);
+    			append_dev(div, p303);
+    			append_dev(p303, t1502);
+    			append_dev(p303, strong292);
+    			append_dev(p303, t1504);
+    			append_dev(div, t1505);
+    			append_dev(div, p304);
+    			append_dev(div, t1507);
+    			append_dev(div, p305);
+    			append_dev(div, t1509);
+    			append_dev(div, p306);
+    			append_dev(div, t1511);
+    			append_dev(div, p307);
+    			append_dev(div, t1513);
+    			append_dev(div, p308);
+    			append_dev(div, t1515);
+    			append_dev(div, h427);
+    			append_dev(div, t1517);
+    			append_dev(div, p309);
+    			append_dev(p309, t1518);
+    			append_dev(p309, strong293);
+    			append_dev(p309, t1520);
+    			append_dev(p309, strong294);
+    			append_dev(p309, t1522);
+    			append_dev(div, t1523);
+    			append_dev(div, p310);
+    			append_dev(p310, t1524);
+    			append_dev(p310, em43);
+    			append_dev(p310, t1526);
+    			append_dev(div, t1527);
+    			append_dev(div, p311);
+    			append_dev(p311, t1528);
+    			append_dev(p311, em44);
+    			append_dev(p311, t1530);
+    			append_dev(div, t1531);
+    			append_dev(div, p312);
+    			append_dev(div, t1533);
+    			append_dev(div, p313);
+    			append_dev(div, t1535);
+    			append_dev(div, p314);
+    			append_dev(div, t1537);
+    			append_dev(div, h330);
+    			append_dev(div, t1539);
+    			append_dev(div, p315);
+    			append_dev(p315, t1540);
+    			append_dev(p315, strong295);
+    			append_dev(p315, t1542);
+    			append_dev(p315, strong296);
+    			append_dev(p315, t1544);
+    			append_dev(div, t1545);
+    			append_dev(div, h331);
+    			append_dev(div, t1547);
+    			append_dev(div, p316);
+    			append_dev(div, t1549);
+    			append_dev(div, p317);
+    			append_dev(p317, t1550);
+    			append_dev(p317, strong297);
+    			append_dev(p317, t1552);
+    			append_dev(div, t1553);
+    			append_dev(div, p318);
+    			append_dev(p318, t1554);
+    			append_dev(p318, strong298);
+    			append_dev(p318, t1556);
+    			append_dev(p318, strong299);
+    			append_dev(p318, t1558);
+    			append_dev(div, t1559);
+    			append_dev(div, p319);
+    			append_dev(div, t1561);
+    			append_dev(div, ul17);
+    			append_dev(ul17, li80);
+    			append_dev(li80, strong300);
+    			append_dev(li80, t1563);
+    			append_dev(ul17, t1564);
+    			append_dev(ul17, li81);
+    			append_dev(li81, strong301);
+    			append_dev(li81, t1566);
+    			append_dev(ul17, t1567);
+    			append_dev(ul17, li82);
+    			append_dev(li82, strong302);
+    			append_dev(li82, t1569);
+    			append_dev(li82, strong303);
+    			append_dev(li82, t1571);
+    			append_dev(div, t1572);
+    			append_dev(div, h17);
+    			append_dev(div, t1574);
+    			append_dev(div, hr24);
+    			append_dev(div, t1575);
+    			append_dev(div, p320);
+    			append_dev(p320, t1576);
+    			append_dev(p320, strong304);
+    			append_dev(p320, t1578);
+    			append_dev(p320, strong305);
+    			append_dev(p320, t1580);
+    			append_dev(p320, strong306);
+    			append_dev(p320, t1582);
+    			append_dev(div, t1583);
+    			append_dev(div, h217);
+    			append_dev(div, t1585);
+    			append_dev(div, hr25);
+    			append_dev(div, t1586);
+    			append_dev(div, p321);
+    			append_dev(div, t1588);
+    			append_dev(div, p322);
+    			append_dev(div, t1590);
+    			append_dev(div, ul18);
+    			append_dev(ul18, li83);
+    			append_dev(ul18, t1592);
+    			append_dev(ul18, li84);
+    			append_dev(ul18, t1594);
+    			append_dev(ul18, li85);
+    			append_dev(ul18, t1596);
+    			append_dev(ul18, li86);
+    			append_dev(div, t1598);
+    			append_dev(div, h218);
+    			append_dev(div, t1600);
+    			append_dev(div, hr26);
+    			append_dev(div, t1601);
+    			append_dev(div, p323);
+    			append_dev(p323, t1602);
+    			append_dev(p323, em45);
+    			append_dev(p323, t1604);
+    			append_dev(div, t1605);
+    			append_dev(div, ul19);
+    			append_dev(ul19, li87);
+    			append_dev(ul19, t1607);
+    			append_dev(ul19, li88);
+    			append_dev(ul19, t1609);
+    			append_dev(ul19, li89);
+    			append_dev(div, t1611);
+    			append_dev(div, p324);
+    			append_dev(div, t1613);
+    			append_dev(div, ul20);
+    			append_dev(ul20, li90);
+    			append_dev(ul20, t1615);
+    			append_dev(ul20, li91);
+    			append_dev(div, t1617);
+    			append_dev(div, h332);
+    			append_dev(div, t1619);
+    			append_dev(div, p325);
+    			append_dev(div, t1621);
+    			append_dev(div, p326);
+    			append_dev(div, t1623);
+    			append_dev(div, table3);
+    			append_dev(table3, tbody3);
+    			append_dev(tbody3, tr25);
+    			append_dev(tr25, th8);
+    			append_dev(th8, p327);
+    			append_dev(tr25, t1625);
+    			append_dev(tr25, td54);
+    			append_dev(tbody3, t1626);
+    			append_dev(tbody3, tr26);
+    			append_dev(tr26, td55);
+    			append_dev(td55, p328);
+    			append_dev(tr26, t1628);
+    			append_dev(tr26, td56);
+    			append_dev(td56, p329);
+    			append_dev(p329, dice0);
+    			append_dev(tbody3, t1630);
+    			append_dev(tbody3, tr27);
+    			append_dev(tr27, td57);
+    			append_dev(td57, p330);
+    			append_dev(tr27, t1632);
+    			append_dev(tr27, td58);
+    			append_dev(td58, p331);
+    			append_dev(p331, dice1);
+    			append_dev(tbody3, t1634);
+    			append_dev(tbody3, tr28);
+    			append_dev(tr28, td59);
+    			append_dev(td59, p332);
+    			append_dev(tr28, t1636);
+    			append_dev(tr28, td60);
+    			append_dev(td60, p333);
+    			append_dev(p333, dice2);
+    			append_dev(tbody3, t1638);
+    			append_dev(tbody3, tr29);
+    			append_dev(tr29, td61);
+    			append_dev(td61, p334);
+    			append_dev(tr29, t1640);
+    			append_dev(tr29, td62);
+    			append_dev(td62, p335);
+    			append_dev(p335, dice3);
+    			append_dev(div, t1642);
+    			append_dev(div, table4);
+    			append_dev(table4, tbody4);
+    			append_dev(tbody4, tr30);
+    			append_dev(tr30, th9);
+    			append_dev(th9, p336);
+    			append_dev(tr30, t1644);
+    			append_dev(tr30, td63);
+    			append_dev(tbody4, t1645);
+    			append_dev(tbody4, tr31);
+    			append_dev(tr31, td64);
+    			append_dev(td64, p337);
+    			append_dev(tr31, t1647);
+    			append_dev(tr31, td65);
+    			append_dev(td65, p338);
+    			append_dev(p338, dice4);
+    			append_dev(tbody4, t1649);
+    			append_dev(tbody4, tr32);
+    			append_dev(tr32, td66);
+    			append_dev(td66, p339);
+    			append_dev(tr32, t1651);
+    			append_dev(tr32, td67);
+    			append_dev(td67, p340);
+    			append_dev(p340, dice5);
+    			append_dev(tbody4, t1653);
+    			append_dev(tbody4, tr33);
+    			append_dev(tr33, td68);
+    			append_dev(td68, p341);
+    			append_dev(tr33, t1655);
+    			append_dev(tr33, td69);
+    			append_dev(td69, p342);
+    			append_dev(p342, dice6);
+    			append_dev(tbody4, t1657);
+    			append_dev(tbody4, tr34);
+    			append_dev(tr34, td70);
+    			append_dev(td70, p343);
+    			append_dev(tr34, t1659);
+    			append_dev(tr34, td71);
+    			append_dev(td71, p344);
+    			append_dev(p344, dice7);
+    			append_dev(div, t1661);
+    			append_dev(div, table5);
+    			append_dev(table5, tbody5);
+    			append_dev(tbody5, tr35);
+    			append_dev(tr35, th10);
+    			append_dev(tr35, td72);
+    			append_dev(td72, p345);
+    			append_dev(tr35, t1663);
+    			append_dev(tr35, td73);
+    			append_dev(tbody5, t1664);
+    			append_dev(tbody5, tr36);
+    			append_dev(tr36, td74);
+    			append_dev(td74, p346);
+    			append_dev(tr36, t1666);
+    			append_dev(tr36, td75);
+    			append_dev(td75, p347);
+    			append_dev(p347, dice8);
+    			append_dev(tbody5, t1668);
+    			append_dev(tbody5, tr37);
+    			append_dev(tr37, td76);
+    			append_dev(td76, p348);
+    			append_dev(tr37, t1670);
+    			append_dev(tr37, td77);
+    			append_dev(td77, p349);
+    			append_dev(p349, dice9);
+    			append_dev(tbody5, t1672);
+    			append_dev(tbody5, tr38);
+    			append_dev(tr38, td78);
+    			append_dev(td78, p350);
+    			append_dev(tr38, t1674);
+    			append_dev(tr38, td79);
+    			append_dev(td79, p351);
+    			append_dev(p351, dice10);
+    			append_dev(tbody5, t1676);
+    			append_dev(tbody5, tr39);
+    			append_dev(tr39, td80);
+    			append_dev(td80, p352);
+    			append_dev(tr39, t1678);
+    			append_dev(tr39, td81);
+    			append_dev(td81, p353);
+    			append_dev(p353, dice11);
+    			append_dev(div, t1680);
+    			append_dev(div, table6);
+    			append_dev(table6, tbody6);
+    			append_dev(tbody6, tr40);
+    			append_dev(tr40, th11);
+    			append_dev(th11, p354);
+    			append_dev(tbody6, t1682);
+    			append_dev(tbody6, tr41);
+    			append_dev(tr41, td82);
+    			append_dev(td82, p355);
+    			append_dev(tr41, t1684);
+    			append_dev(tr41, td83);
+    			append_dev(td83, p356);
+    			append_dev(p356, dice12);
+    			append_dev(tbody6, t1686);
+    			append_dev(tbody6, tr42);
+    			append_dev(tr42, td84);
+    			append_dev(td84, p357);
+    			append_dev(tr42, t1688);
+    			append_dev(tr42, td85);
+    			append_dev(td85, p358);
+    			append_dev(p358, dice13);
+    			append_dev(tbody6, t1690);
+    			append_dev(tbody6, tr43);
+    			append_dev(tr43, td86);
+    			append_dev(td86, p359);
+    			append_dev(tr43, t1692);
+    			append_dev(tr43, td87);
+    			append_dev(td87, p360);
+    			append_dev(p360, dice14);
+    			append_dev(tbody6, t1694);
+    			append_dev(tbody6, tr44);
+    			append_dev(tr44, td88);
+    			append_dev(td88, p361);
+    			append_dev(tr44, t1696);
+    			append_dev(tr44, td89);
+    			append_dev(td89, p362);
+    			append_dev(p362, dice15);
+    			append_dev(div, t1698);
+    			append_dev(div, h219);
+    			append_dev(div, t1700);
+    			append_dev(div, hr27);
+    			append_dev(div, t1701);
+    			append_dev(div, p363);
+    			append_dev(div, t1703);
+    			append_dev(div, p364);
+    			append_dev(p364, t1704);
+    			append_dev(p364, strong307);
+    			append_dev(p364, t1706);
+    			append_dev(div, t1707);
+    			append_dev(div, p365);
+    			append_dev(p365, t1708);
+    			append_dev(p365, strong308);
+    			append_dev(p365, t1710);
+    			append_dev(div, t1711);
+    			append_dev(div, p366);
+    			append_dev(div, t1713);
+    			append_dev(div, h18);
+    			append_dev(div, t1715);
+    			append_dev(div, hr28);
+    			append_dev(div, t1716);
+    			append_dev(div, p367);
+    			append_dev(p367, t1717);
+    			append_dev(p367, em46);
+    			append_dev(p367, t1719);
+    			append_dev(div, t1720);
+    			append_dev(div, ul21);
+    			append_dev(ul21, li92);
+    			append_dev(li92, strong309);
+    			append_dev(li92, t1722);
+    			append_dev(ul21, t1723);
+    			append_dev(ul21, li93);
+    			append_dev(li93, strong310);
+    			append_dev(li93, t1725);
+    			append_dev(ul21, t1726);
+    			append_dev(ul21, li94);
+    			append_dev(li94, strong311);
+    			append_dev(li94, t1728);
+    			append_dev(ul21, t1729);
+    			append_dev(ul21, li95);
+    			append_dev(li95, strong312);
+    			append_dev(li95, t1731);
+    			append_dev(ul21, t1732);
+    			append_dev(ul21, li96);
+    			append_dev(li96, strong313);
+    			append_dev(li96, t1734);
+    			append_dev(ul21, t1735);
+    			append_dev(ul21, li97);
+    			append_dev(li97, strong314);
+    			append_dev(li97, t1737);
+    			append_dev(ul21, t1738);
+    			append_dev(ul21, li98);
+    			append_dev(li98, strong315);
+    			append_dev(li98, t1740);
+    			append_dev(ul21, t1741);
+    			append_dev(ul21, li99);
+    			append_dev(li99, strong316);
+    			append_dev(li99, t1743);
+    			append_dev(ul21, t1744);
+    			append_dev(ul21, li100);
+    			append_dev(li100, strong317);
+    			append_dev(li100, t1746);
+    			append_dev(div, t1747);
+    			append_dev(div, h220);
+    			append_dev(div, t1749);
+    			append_dev(div, hr29);
+    			append_dev(div, t1750);
+    			append_dev(div, p368);
+    			append_dev(p368, t1751);
+    			append_dev(p368, strong318);
+    			append_dev(p368, t1753);
+    			append_dev(p368, strong319);
+    			append_dev(p368, t1755);
+    			append_dev(div, t1756);
+    			append_dev(div, p369);
+    			append_dev(p369, t1757);
+    			append_dev(p369, strong320);
+    			append_dev(p369, t1759);
+    			append_dev(div, t1760);
+    			append_dev(div, ul22);
+    			append_dev(ul22, li101);
+    			append_dev(li101, strong321);
+    			append_dev(li101, t1762);
+    			append_dev(ul22, t1763);
+    			append_dev(ul22, li102);
+    			append_dev(li102, strong322);
+    			append_dev(li102, t1765);
+    			append_dev(ul22, t1766);
+    			append_dev(ul22, li103);
+    			append_dev(li103, strong323);
+    			append_dev(li103, t1768);
+    			append_dev(div, t1769);
+    			append_dev(div, p370);
+    			append_dev(p370, t1770);
+    			append_dev(p370, strong324);
+    			append_dev(p370, t1772);
+    			append_dev(div, t1773);
+    			append_dev(div, p371);
+    			append_dev(div, t1775);
+    			append_dev(div, p372);
+    			append_dev(div, t1777);
+    			append_dev(div, p373);
+    			append_dev(p373, t1778);
+    			append_dev(p373, strong325);
+    			append_dev(p373, t1780);
+    			append_dev(div, t1781);
+    			append_dev(div, p374);
+    			append_dev(div, t1783);
+    			append_dev(div, p375);
+    			append_dev(p375, t1784);
+    			append_dev(p375, em47);
+    			append_dev(p375, t1786);
+    			append_dev(p375, a5);
+    			append_dev(a5, em48);
+    			append_dev(div, t1788);
+    			append_dev(div, h221);
+    			append_dev(div, t1790);
+    			append_dev(div, hr30);
+    			append_dev(div, t1791);
+    			append_dev(div, p376);
+    			append_dev(div, t1793);
+    			append_dev(div, h333);
+    			append_dev(div, t1795);
+    			append_dev(div, p377);
+    			append_dev(div, t1797);
+    			append_dev(div, p378);
+    			append_dev(p378, t1798);
+    			append_dev(p378, em49);
+    			append_dev(p378, t1800);
+    			append_dev(p378, strong326);
+    			append_dev(p378, t1802);
+    			append_dev(div, t1803);
+    			append_dev(div, h334);
+    			append_dev(div, t1805);
+    			append_dev(div, p379);
+    			append_dev(div, t1807);
+    			append_dev(div, p380);
+    			append_dev(p380, t1808);
+    			append_dev(p380, strong327);
+    			append_dev(p380, t1810);
+    			append_dev(p380, strong328);
+    			append_dev(p380, t1812);
+    			append_dev(p380, strong329);
+    			append_dev(p380, t1814);
+    			append_dev(div, t1815);
+    			append_dev(div, p381);
+    			append_dev(div, t1817);
+    			append_dev(div, p382);
+    			append_dev(div, t1819);
+    			append_dev(div, p383);
+    			append_dev(div, t1821);
+    			append_dev(div, h335);
+    			append_dev(div, t1823);
+    			append_dev(div, p384);
+    			append_dev(div, t1825);
+    			append_dev(div, h222);
+    			append_dev(div, t1827);
+    			append_dev(div, hr31);
+    			append_dev(div, t1828);
+    			append_dev(div, p385);
+    			append_dev(p385, t1829);
+    			append_dev(p385, strong330);
+    			append_dev(p385, t1831);
+    			append_dev(p385, strong331);
+    			append_dev(p385, t1833);
+    			append_dev(div, t1834);
+    			append_dev(div, p386);
+    			append_dev(div, t1836);
+    			append_dev(div, p387);
+    			append_dev(div, t1838);
+    			append_dev(div, p388);
+    			append_dev(p388, t1839);
+    			append_dev(p388, em50);
+    			append_dev(p388, t1841);
+    			append_dev(div, t1842);
+    			append_dev(div, h223);
+    			append_dev(div, t1844);
+    			append_dev(div, hr32);
+    			append_dev(div, t1845);
+    			append_dev(div, p389);
+    			append_dev(div, t1847);
+    			append_dev(div, ul23);
+    			append_dev(ul23, li104);
+    			append_dev(li104, strong332);
+    			append_dev(li104, t1849);
+    			append_dev(li104, a6);
+    			append_dev(ul23, t1851);
+    			append_dev(ul23, li105);
+    			append_dev(li105, strong333);
+    			append_dev(li105, t1853);
+    			append_dev(li105, a7);
+    			append_dev(div, t1855);
+    			append_dev(div, p390);
+    			append_dev(p390, t1856);
+    			append_dev(p390, strong334);
+    			append_dev(p390, t1858);
+    			append_dev(div, t1859);
+    			append_dev(div, h19);
+    			append_dev(div, t1861);
+    			append_dev(div, hr33);
+    			append_dev(div, t1862);
+    			append_dev(div, p391);
+    			append_dev(div, t1864);
+    			append_dev(div, h224);
+    			append_dev(div, t1866);
+    			append_dev(div, hr34);
+    			append_dev(div, t1867);
+    			append_dev(div, p392);
+    			append_dev(p392, strong335);
+    			append_dev(p392, t1869);
+    			append_dev(div, t1870);
+    			append_dev(div, p393);
+    			append_dev(p393, t1871);
+    			append_dev(p393, em51);
+    			append_dev(p393, t1873);
+    			append_dev(div, t1874);
+    			append_dev(div, p394);
+    			append_dev(p394, strong336);
+    			append_dev(p394, t1876);
+    			append_dev(p394, strong337);
+    			append_dev(p394, t1878);
+    			append_dev(p394, strong338);
+    			append_dev(p394, t1880);
+    			append_dev(p394, strong339);
+    			append_dev(p394, t1882);
+    			append_dev(p394, strong340);
+    			append_dev(p394, t1884);
+    			append_dev(p394, strong341);
+    			append_dev(p394, t1886);
+    			append_dev(p394, strong342);
+    			append_dev(p394, t1888);
+    			append_dev(p394, strong343);
+    			append_dev(p394, t1890);
+    			append_dev(p394, strong344);
+    			append_dev(p394, t1892);
+    			append_dev(p394, strong345);
+    			append_dev(p394, t1894);
+    			append_dev(p394, strong346);
+    			append_dev(p394, t1896);
+    			append_dev(p394, strong347);
+    			append_dev(p394, t1898);
+    			append_dev(div, t1899);
+    			append_dev(div, p395);
+    			append_dev(div, t1901);
+    			append_dev(div, p396);
+    			append_dev(div, t1903);
+    			append_dev(div, p397);
+    			append_dev(p397, t1904);
+    			append_dev(p397, strong348);
+    			append_dev(p397, t1906);
+    			append_dev(p397, strong349);
+    			append_dev(p397, t1908);
+    			append_dev(div, t1909);
+    			append_dev(div, h336);
+    			append_dev(div, t1911);
+    			append_dev(div, p398);
+    			append_dev(p398, t1912);
+    			append_dev(p398, strong350);
+    			append_dev(p398, t1914);
+    			append_dev(p398, strong351);
+    			append_dev(p398, t1916);
+    			append_dev(p398, strong352);
+    			append_dev(p398, t1918);
+    			append_dev(p398, strong353);
+    			append_dev(p398, t1920);
+    			append_dev(div, t1921);
+    			append_dev(div, p399);
+    			append_dev(p399, t1922);
+    			append_dev(p399, strong354);
+    			append_dev(p399, t1924);
+    			append_dev(p399, strong355);
+    			append_dev(p399, t1926);
+    			append_dev(div, t1927);
+    			append_dev(div, h337);
+    			append_dev(div, t1929);
+    			append_dev(div, p400);
+    			append_dev(div, t1931);
+    			append_dev(div, h225);
+    			append_dev(div, t1933);
+    			append_dev(div, hr35);
+    			append_dev(div, t1934);
+    			append_dev(div, p401);
+    			append_dev(p401, t1935);
+    			append_dev(p401, strong356);
+    			append_dev(p401, t1937);
+    			append_dev(div, t1938);
+    			append_dev(div, ul24);
+    			append_dev(ul24, li106);
+    			append_dev(li106, strong357);
+    			append_dev(li106, t1940);
+    			append_dev(ul24, t1941);
+    			append_dev(ul24, li107);
+    			append_dev(li107, strong358);
+    			append_dev(li107, t1943);
+    			append_dev(ul24, t1944);
+    			append_dev(ul24, li108);
+    			append_dev(li108, strong359);
+    			append_dev(li108, t1946);
+    			append_dev(ul24, t1947);
+    			append_dev(ul24, li109);
+    			append_dev(li109, strong360);
+    			append_dev(li109, t1949);
+    			append_dev(ul24, t1950);
+    			append_dev(ul24, li110);
+    			append_dev(li110, strong361);
+    			append_dev(li110, t1952);
+    			append_dev(ul24, t1953);
+    			append_dev(ul24, li111);
+    			append_dev(li111, strong362);
+    			append_dev(li111, t1955);
+    			append_dev(ul24, t1956);
+    			append_dev(ul24, li112);
+    			append_dev(li112, strong363);
+    			append_dev(li112, t1958);
+    			append_dev(ul24, t1959);
+    			append_dev(ul24, li113);
+    			append_dev(li113, strong364);
+    			append_dev(li113, t1961);
+    			append_dev(div, t1962);
+    			append_dev(div, p402);
+    			append_dev(div, t1964);
+    			append_dev(div, p403);
+    			append_dev(p403, strong365);
+    			append_dev(p403, t1966);
+    			append_dev(p403, strong366);
+    			append_dev(p403, t1968);
+    			append_dev(div, t1969);
+    			append_dev(div, p404);
+    			append_dev(p404, strong367);
+    			append_dev(div, t1971);
+    			append_dev(div, ul25);
+    			append_dev(ul25, li114);
+    			append_dev(li114, strong368);
+    			append_dev(li114, t1973);
+    			append_dev(li114, em52);
+    			append_dev(li114, t1975);
+    			append_dev(ul25, t1976);
+    			append_dev(ul25, li115);
+    			append_dev(li115, strong369);
+    			append_dev(li115, t1978);
+    			append_dev(ul25, t1979);
+    			append_dev(ul25, li116);
+    			append_dev(li116, strong370);
+    			append_dev(li116, t1981);
+    			append_dev(div, t1982);
+    			append_dev(div, p405);
+    			append_dev(p405, strong371);
+    			append_dev(p405, t1984);
+    			append_dev(div, t1985);
+    			append_dev(div, p406);
+    			append_dev(p406, strong372);
+    			append_dev(p406, t1987);
+    			append_dev(div, t1988);
+    			append_dev(div, h226);
+    			append_dev(div, t1990);
+    			append_dev(div, hr36);
+    			append_dev(div, t1991);
+    			append_dev(div, p407);
+    			append_dev(p407, t1992);
+    			append_dev(p407, em53);
+    			append_dev(p407, t1994);
+    			append_dev(div, t1995);
+    			append_dev(div, p408);
+    			append_dev(div, t1997);
+    			append_dev(div, h227);
+    			append_dev(div, t1999);
+    			append_dev(div, hr37);
+    			append_dev(div, t2000);
+    			append_dev(div, p409);
+    			append_dev(div, t2002);
+    			append_dev(div, p410);
+    			append_dev(div, t2004);
+    			append_dev(div, p411);
+    			append_dev(p411, t2005);
+    			append_dev(p411, strong373);
+    			append_dev(p411, t2007);
+    			append_dev(div, t2008);
+    			append_dev(div, p412);
+    			append_dev(p412, t2009);
+    			append_dev(p412, strong374);
+    			append_dev(p412, t2011);
+    			append_dev(div, t2012);
+    			append_dev(div, p413);
+    			append_dev(p413, t2013);
+    			append_dev(p413, strong375);
+    			append_dev(p413, t2015);
+    			append_dev(div, t2016);
+    			append_dev(div, p414);
+    			append_dev(div, t2018);
+    			append_dev(div, p415);
+    			append_dev(div, t2020);
+    			append_dev(div, h228);
+    			append_dev(div, t2022);
+    			append_dev(div, hr38);
+    			append_dev(div, t2023);
+    			append_dev(div, p416);
+    			append_dev(div, t2025);
+    			append_dev(div, p417);
+    			append_dev(p417, t2026);
+    			append_dev(p417, strong376);
+    			append_dev(p417, t2028);
+    			append_dev(div, t2029);
+    			append_dev(div, p418);
+    			append_dev(div, t2031);
+    			append_dev(div, p419);
+    			append_dev(div, t2033);
+    			append_dev(div, h229);
+    			append_dev(div, t2035);
+    			append_dev(div, hr39);
+    			append_dev(div, t2036);
+    			append_dev(div, p420);
+    			append_dev(div, t2038);
+    			append_dev(div, ul26);
+    			append_dev(ul26, li117);
+    			append_dev(li117, t2039);
+    			append_dev(li117, strong377);
+    			append_dev(li117, t2041);
+    			append_dev(ul26, t2042);
+    			append_dev(ul26, li118);
+    			append_dev(li118, t2043);
+    			append_dev(li118, strong378);
+    			append_dev(li118, t2045);
+    			append_dev(ul26, t2046);
+    			append_dev(ul26, li119);
+    			append_dev(div, t2048);
+    			append_dev(div, h230);
+    			append_dev(div, t2050);
+    			append_dev(div, hr40);
+    			append_dev(div, t2051);
+    			append_dev(div, p421);
+    			append_dev(p421, t2052);
+    			append_dev(p421, strong379);
+    			append_dev(p421, t2054);
+    			append_dev(div, t2055);
+    			append_dev(div, p422);
+    			append_dev(p422, t2056);
+    			append_dev(p422, strong380);
+    			append_dev(p422, t2058);
+    			append_dev(div, t2059);
+    			append_dev(div, p423);
+    			append_dev(p423, strong381);
+    			append_dev(p423, t2061);
+    			append_dev(div, t2062);
+    			append_dev(div, p424);
+    			append_dev(p424, t2063);
+    			append_dev(p424, strong382);
+    			append_dev(p424, t2065);
+    			append_dev(div, t2066);
+    			append_dev(div, h231);
+    			append_dev(div, t2068);
+    			append_dev(div, hr41);
+    			append_dev(div, t2069);
+    			append_dev(div, p425);
+    			append_dev(p425, t2070);
+    			append_dev(p425, strong383);
+    			append_dev(p425, t2072);
+    			append_dev(div, t2073);
+    			append_dev(div, p426);
+    			append_dev(div, t2075);
+    			append_dev(div, p427);
+    			append_dev(p427, t2076);
+    			append_dev(p427, em54);
+    			append_dev(p427, t2078);
+    			append_dev(div, t2079);
+    			append_dev(div, p428);
+    			append_dev(div, t2081);
+    			append_dev(div, h338);
+    			append_dev(div, t2083);
+    			append_dev(div, p429);
+    			append_dev(p429, t2084);
+    			append_dev(p429, strong384);
+    			append_dev(p429, t2086);
+    			append_dev(p429, strong385);
+    			append_dev(p429, t2088);
+    			append_dev(div, t2089);
+    			append_dev(div, p430);
+    			append_dev(div, t2091);
+    			append_dev(div, p431);
+    			append_dev(p431, t2092);
+    			append_dev(p431, em55);
+    			append_dev(p431, t2094);
+    			append_dev(div, t2095);
+    			append_dev(div, p432);
+    			append_dev(div, t2097);
+    			append_dev(div, p433);
+    			append_dev(div, t2099);
+    			append_dev(div, h339);
+    			append_dev(div, t2101);
+    			append_dev(div, p434);
+    			append_dev(p434, t2102);
+    			append_dev(p434, strong386);
+    			append_dev(p434, t2104);
+    			append_dev(p434, em56);
+    			append_dev(p434, t2106);
+    			append_dev(div, t2107);
+    			append_dev(div, p435);
+    			append_dev(div, t2109);
+    			append_dev(div, p436);
+    			append_dev(p436, t2110);
+    			append_dev(p436, strong387);
+    			append_dev(p436, t2112);
+    			append_dev(p436, strong388);
+    			append_dev(p436, t2114);
+    			append_dev(p436, strong389);
+    			append_dev(p436, t2116);
+    			append_dev(div, t2117);
+    			append_dev(div, p437);
+    			append_dev(div, t2119);
+    			append_dev(div, p438);
+    			append_dev(div, t2121);
+    			append_dev(div, p439);
+    			append_dev(p439, t2122);
+    			append_dev(p439, strong390);
+    			append_dev(p439, t2124);
+    			append_dev(p439, strong391);
+    			append_dev(p439, t2126);
+    			append_dev(p439, em57);
+    			append_dev(p439, t2128);
+    			append_dev(div, t2129);
+    			append_dev(div, p440);
+    			append_dev(div, t2131);
+    			append_dev(div, p441);
+    			append_dev(div, t2133);
+    			append_dev(div, p442);
+    			append_dev(div, t2135);
+    			append_dev(div, h340);
+    			append_dev(div, t2137);
+    			append_dev(div, p443);
+    			append_dev(p443, t2138);
+    			append_dev(p443, strong392);
+    			append_dev(p443, t2140);
+    			append_dev(div, t2141);
+    			append_dev(div, ul27);
+    			append_dev(ul27, li120);
+    			append_dev(li120, t2142);
+    			append_dev(li120, strong393);
+    			append_dev(li120, t2144);
+    			append_dev(ul27, t2145);
+    			append_dev(ul27, li121);
+    			append_dev(li121, t2146);
+    			append_dev(li121, strong394);
+    			append_dev(li121, t2148);
+    			append_dev(ul27, t2149);
+    			append_dev(ul27, li122);
+    			append_dev(li122, t2150);
+    			append_dev(li122, strong395);
+    			append_dev(li122, t2152);
+    			append_dev(li122, em58);
+    			append_dev(li122, t2154);
+    			append_dev(ul27, t2155);
+    			append_dev(ul27, li123);
+    			append_dev(li123, t2156);
+    			append_dev(li123, strong396);
+    			append_dev(li123, t2158);
+    			append_dev(div, t2159);
+    			append_dev(div, p444);
+    			append_dev(div, t2161);
+    			append_dev(div, p445);
+    			append_dev(div, t2163);
+    			append_dev(div, p446);
+    			append_dev(div, t2165);
+    			append_dev(div, p447);
+    			append_dev(p447, em59);
+    			append_dev(div, t2167);
+    			append_dev(div, ul28);
+    			append_dev(ul28, li124);
+    			append_dev(li124, t2168);
+    			append_dev(li124, strong397);
+    			append_dev(li124, t2170);
+    			append_dev(ul28, t2171);
+    			append_dev(ul28, li125);
+    			append_dev(li125, t2172);
+    			append_dev(li125, strong398);
+    			append_dev(li125, t2174);
+    			append_dev(div, t2175);
+    			append_dev(div, p448);
+    			append_dev(p448, em60);
+    			append_dev(div, t2177);
+    			append_dev(div, ul29);
+    			append_dev(ul29, li126);
+    			append_dev(li126, t2178);
+    			append_dev(li126, strong399);
+    			append_dev(li126, t2180);
+    			append_dev(ul29, t2181);
+    			append_dev(ul29, li127);
+    			append_dev(li127, t2182);
+    			append_dev(li127, strong400);
+    			append_dev(li127, t2184);
+    			append_dev(div, t2185);
+    			append_dev(div, p449);
+    			append_dev(p449, em61);
+    			append_dev(div, t2187);
+    			append_dev(div, ul32);
+    			append_dev(ul32, li131);
+    			append_dev(li131, strong401);
+    			append_dev(li131, t2189);
+    			append_dev(li131, strong402);
+    			append_dev(li131, t2191);
+    			append_dev(li131, em62);
+    			append_dev(li131, ul30);
+    			append_dev(ul30, li128);
+    			append_dev(li128, strong403);
+    			append_dev(li128, t2194);
+    			append_dev(ul30, t2195);
+    			append_dev(ul30, li129);
+    			append_dev(li129, strong404);
+    			append_dev(li129, t2197);
+    			append_dev(ul30, t2198);
+    			append_dev(ul30, li130);
+    			append_dev(li130, strong405);
+    			append_dev(li130, t2200);
+    			append_dev(ul32, t2201);
+    			append_dev(ul32, li134);
+    			append_dev(li134, strong406);
+    			append_dev(li134, t2203);
+    			append_dev(li134, strong407);
+    			append_dev(li134, t2205);
+    			append_dev(li134, em63);
+    			append_dev(li134, ul31);
+    			append_dev(ul31, li132);
+    			append_dev(li132, strong408);
+    			append_dev(li132, t2208);
+    			append_dev(ul31, t2209);
+    			append_dev(ul31, li133);
+    			append_dev(li133, strong409);
+    			append_dev(li133, t2211);
+    			append_dev(div, t2212);
+    			append_dev(div, h232);
+    			append_dev(div, t2214);
+    			append_dev(div, hr42);
+    			append_dev(div, t2215);
+    			append_dev(div, p450);
+    			append_dev(p450, strong410);
+    			append_dev(p450, t2217);
+    			append_dev(div, t2218);
+    			append_dev(div, p451);
+    			append_dev(div, t2220);
+    			append_dev(div, ul33);
+    			append_dev(ul33, li135);
+    			append_dev(li135, strong411);
+    			append_dev(li135, t2222);
+    			append_dev(ul33, t2223);
+    			append_dev(ul33, li136);
+    			append_dev(li136, strong412);
+    			append_dev(li136, t2225);
+    			append_dev(ul33, t2226);
+    			append_dev(ul33, li137);
+    			append_dev(li137, strong413);
+    			append_dev(li137, t2228);
+    			append_dev(ul33, t2229);
+    			append_dev(ul33, li138);
+    			append_dev(li138, strong414);
+    			append_dev(li138, t2231);
+    			append_dev(ul33, t2232);
+    			append_dev(ul33, li139);
+    			append_dev(li139, strong415);
+    			append_dev(li139, t2234);
+    			append_dev(div, t2235);
+    			append_dev(div, p452);
+    			append_dev(p452, t2236);
+    			append_dev(p452, em64);
+    			append_dev(p452, t2238);
+    			append_dev(div, t2239);
+    			append_dev(div, ul34);
+    			append_dev(ul34, li140);
+    			append_dev(li140, t2240);
+    			append_dev(li140, em65);
+    			append_dev(li140, t2242);
+    			append_dev(ul34, t2243);
+    			append_dev(ul34, li141);
+    			append_dev(li141, t2244);
+    			append_dev(li141, em66);
+    			append_dev(li141, t2246);
+    			append_dev(li141, em67);
+    			append_dev(li141, t2248);
+    			append_dev(ul34, t2249);
+    			append_dev(ul34, li142);
+    			append_dev(div, t2251);
+    			append_dev(div, p453);
+    			append_dev(div, t2253);
+    			append_dev(div, h341);
+    			append_dev(div, t2255);
+    			append_dev(div, p454);
+    			append_dev(p454, t2256);
+    			append_dev(p454, strong416);
+    			append_dev(p454, t2258);
+    			append_dev(div, t2259);
+    			append_dev(div, h428);
+    			append_dev(div, t2261);
+    			append_dev(div, p455);
+    			append_dev(p455, t2262);
+    			append_dev(p455, em68);
+    			append_dev(p455, t2264);
+    			append_dev(div, t2265);
+    			append_dev(div, p456);
+    			append_dev(p456, t2266);
+    			append_dev(p456, em69);
+    			append_dev(p456, t2268);
+    			append_dev(p456, strong417);
+    			append_dev(p456, t2270);
+    			append_dev(div, t2271);
+    			append_dev(div, p457);
+    			append_dev(p457, t2272);
+    			append_dev(p457, em70);
+    			append_dev(p457, t2274);
+    			append_dev(div, t2275);
+    			append_dev(div, p458);
+    			append_dev(p458, em71);
+    			append_dev(p458, t2277);
+    			append_dev(div, t2278);
+    			append_dev(div, h233);
+    			append_dev(div, t2280);
+    			append_dev(div, hr43);
+    			append_dev(div, t2281);
+    			append_dev(div, p459);
+    			append_dev(div, t2283);
+    			append_dev(div, p460);
+    			append_dev(div, t2285);
+    			append_dev(div, p461);
+    			append_dev(div, t2287);
+    			append_dev(div, p462);
+    			append_dev(div, t2289);
+    			append_dev(div, p463);
+    			append_dev(div, t2291);
+    			append_dev(div, h234);
+    			append_dev(div, t2293);
+    			append_dev(div, hr44);
+    			append_dev(div, t2294);
+    			append_dev(div, p464);
+    			append_dev(p464, t2295);
+    			append_dev(p464, strong418);
+    			append_dev(p464, t2297);
+    			append_dev(div, t2298);
+    			append_dev(div, p465);
+    			append_dev(p465, t2299);
+    			append_dev(p465, strong419);
+    			append_dev(p465, t2301);
+    			append_dev(div, t2302);
+    			append_dev(div, h342);
+    			append_dev(div, t2304);
+    			append_dev(div, p466);
+    			append_dev(div, t2306);
+    			append_dev(div, p467);
+    			append_dev(p467, t2307);
+    			append_dev(p467, strong420);
+    			append_dev(p467, t2309);
+    			append_dev(div, t2310);
+    			append_dev(div, p468);
+    			append_dev(p468, t2311);
+    			append_dev(p468, strong421);
+    			append_dev(p468, t2313);
+    			append_dev(div, t2314);
+    			append_dev(div, h343);
+    			append_dev(div, t2316);
+    			append_dev(div, p469);
+    			append_dev(div, t2318);
+    			append_dev(div, p470);
+    			append_dev(p470, t2319);
+    			append_dev(p470, strong422);
+    			append_dev(p470, t2321);
+    			append_dev(div, t2322);
+    			append_dev(div, p471);
+    			append_dev(p471, t2323);
+    			append_dev(p471, em72);
+    			append_dev(p471, t2325);
+    			append_dev(div, t2326);
+    			append_dev(div, h344);
+    			append_dev(div, t2328);
+    			append_dev(div, p472);
+    			append_dev(div, t2330);
+    			append_dev(div, p473);
+    			append_dev(p473, t2331);
+    			append_dev(p473, strong423);
+    			append_dev(p473, t2333);
+    			append_dev(p473, em73);
+    			append_dev(p473, t2335);
+    			append_dev(div, t2336);
+    			append_dev(div, p474);
+    			append_dev(div, t2338);
+    			append_dev(div, h345);
+    			append_dev(div, t2340);
+    			append_dev(div, p475);
+    			append_dev(p475, t2341);
+    			append_dev(p475, strong424);
+    			append_dev(p475, t2343);
+    			append_dev(p475, strong425);
+    			append_dev(p475, t2345);
+    			append_dev(div, t2346);
+    			append_dev(div, h346);
+    			append_dev(div, t2348);
+    			append_dev(div, p476);
+    			append_dev(p476, t2349);
+    			append_dev(p476, strong426);
+    			append_dev(p476, t2351);
+    			append_dev(div, t2352);
+    			append_dev(div, p477);
+    			append_dev(div, t2354);
+    			append_dev(div, ul35);
+    			append_dev(ul35, li143);
+    			append_dev(li143, t2355);
+    			append_dev(li143, strong427);
+    			append_dev(li143, t2357);
+    			append_dev(li143, strong428);
+    			append_dev(li143, t2359);
+    			append_dev(li143, em74);
+    			append_dev(li143, t2361);
+    			append_dev(ul35, t2362);
+    			append_dev(ul35, li144);
+    			append_dev(li144, t2363);
+    			append_dev(li144, strong429);
+    			append_dev(li144, t2365);
+    			append_dev(ul35, t2366);
+    			append_dev(ul35, li145);
+    			append_dev(li145, t2367);
+    			append_dev(li145, strong430);
+    			append_dev(li145, t2369);
+    			append_dev(li145, em75);
+    			append_dev(li145, t2371);
+    			append_dev(ul35, t2372);
+    			append_dev(ul35, li146);
+    			append_dev(li146, t2373);
+    			append_dev(li146, strong431);
+    			append_dev(li146, t2375);
+    			append_dev(div, t2376);
+    			append_dev(div, h347);
+    			append_dev(div, t2378);
+    			append_dev(div, p478);
+    			append_dev(p478, t2379);
+    			append_dev(p478, strong432);
+    			append_dev(p478, t2381);
+    			append_dev(p478, strong433);
+    			append_dev(p478, t2383);
+    			append_dev(div, t2384);
+    			append_dev(div, p479);
+    			append_dev(div, t2386);
+    			append_dev(div, p480);
+    			append_dev(p480, t2387);
+    			append_dev(p480, strong434);
+    			append_dev(p480, t2389);
+    			append_dev(p480, strong435);
+    			append_dev(p480, t2391);
+    			append_dev(div, t2392);
+    			append_dev(div, p481);
+    			append_dev(div, t2394);
+    			append_dev(div, h235);
+    			append_dev(div, t2396);
+    			append_dev(div, hr45);
+    			append_dev(div, t2397);
+    			append_dev(div, p482);
+    			append_dev(div, t2399);
+    			append_dev(div, p483);
+    			append_dev(p483, t2400);
+    			append_dev(p483, strong436);
+    			append_dev(p483, t2402);
+    			append_dev(div, t2403);
+    			append_dev(div, p484);
+    			append_dev(div, t2405);
+    			append_dev(div, p485);
+    			append_dev(p485, t2406);
+    			append_dev(p485, strong437);
+    			append_dev(p485, t2408);
+    			append_dev(div, t2409);
+    			append_dev(div, p486);
+    			append_dev(p486, t2410);
+    			append_dev(p486, strong438);
+    			append_dev(p486, t2412);
+    			append_dev(div, t2413);
+    			append_dev(div, p487);
+    			append_dev(div, t2415);
+    			append_dev(div, p488);
+    			append_dev(div, t2417);
+    			append_dev(div, h236);
+    			append_dev(div, t2419);
+    			append_dev(div, hr46);
+    			append_dev(div, t2420);
+    			append_dev(div, p489);
+    			append_dev(div, t2422);
+    			append_dev(div, p490);
+    			append_dev(p490, t2423);
+    			append_dev(p490, strong439);
+    			append_dev(p490, t2425);
+    			append_dev(p490, em76);
+    			append_dev(p490, t2427);
+    			append_dev(div, t2428);
+    			append_dev(div, p491);
+    			append_dev(p491, t2429);
+    			append_dev(p491, strong440);
+    			append_dev(p491, t2431);
+    			append_dev(div, t2432);
+    			append_dev(div, p492);
+    			append_dev(div, t2434);
+    			append_dev(div, h110);
+    			append_dev(div, t2436);
+    			append_dev(div, hr47);
+    			append_dev(div, t2437);
+    			append_dev(div, p493);
+    			append_dev(p493, t2438);
+    			append_dev(p493, em77);
+    			append_dev(p493, t2440);
+    			append_dev(div, t2441);
+    			append_dev(div, p494);
+    			append_dev(p494, t2442);
+    			append_dev(p494, em78);
+    			append_dev(p494, t2444);
+    			append_dev(p494, strong441);
+    			append_dev(p494, t2446);
+    			append_dev(p494, em79);
+    			append_dev(p494, t2448);
+    			append_dev(div, t2449);
+    			append_dev(div, p495);
+    			append_dev(p495, t2450);
+    			append_dev(p495, em80);
+    			append_dev(p495, t2452);
+    			append_dev(p495, em81);
+    			append_dev(p495, t2454);
+    			append_dev(p495, strong442);
+    			append_dev(p495, t2456);
+    			append_dev(div, t2457);
+    			append_dev(div, h237);
+    			append_dev(div, t2459);
+    			append_dev(div, hr48);
+    			append_dev(div, t2460);
+    			append_dev(div, p496);
+    			append_dev(div, t2462);
+    			append_dev(div, p497);
+    			append_dev(p497, t2463);
+    			append_dev(p497, em82);
+    			append_dev(p497, t2465);
+    			append_dev(p497, em83);
+    			append_dev(p497, t2467);
+    			append_dev(div, t2468);
+    			append_dev(div, p498);
+    			append_dev(div, t2470);
+    			append_dev(div, h238);
+    			append_dev(div, t2472);
+    			append_dev(div, hr49);
+    			append_dev(div, t2473);
+    			append_dev(div, p499);
+    			append_dev(p499, t2474);
+    			append_dev(p499, a8);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
     		}
+    	};
 
-    		if (/*markdown*/ ctx[0] === undefined && !("markdown" in props)) {
-    			console.warn("<Markdown> was created without expected prop 'markdown'");
-    		}
-    	}
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$k.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
 
-    	get markdownFile() {
-    		throw new Error("<Markdown>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    	return block;
+    }
 
-    	set markdownFile(value) {
-    		throw new Error("<Markdown>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    const META$1 = {};
 
-    	get markdown() {
-    		throw new Error("<Markdown>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    function instance$k($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("SrdContent", slots, []);
+    	const writable_props = [];
 
-    	set markdown(value) {
-    		throw new Error("<Markdown>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<SrdContent> was created with unknown prop '${key}'`);
+    	});
 
-    	get props() {
-    		throw new Error("<Markdown>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    	$$self.$capture_state = () => ({ META: META$1 });
+    	return [];
+    }
 
-    	set props(value) {
-    		throw new Error("<Markdown>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    class SrdContent extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$k, create_fragment$k, safe_not_equal, {});
 
-    	get columns() {
-    		throw new Error("<Markdown>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set columns(value) {
-    		throw new Error("<Markdown>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "SrdContent",
+    			options,
+    			id: create_fragment$k.name
+    		});
     	}
     }
 
     /* src/components/SRD/SRD.svelte generated by Svelte v3.25.0 */
-    const file$e = "src/components/SRD/SRD.svelte";
+    const file$f = "src/components/SRD/SRD.svelte";
 
-    // (47:8) {:else}
+    // (51:8) {:else}
     function create_else_block(ctx) {
     	let mwc_icon_button;
     	let mounted;
@@ -18288,13 +30920,13 @@ var app = (function () {
     		c: function create() {
     			mwc_icon_button = element("mwc-icon-button");
     			set_custom_element_data(mwc_icon_button, "icon", "chevron_right");
-    			add_location(mwc_icon_button, file$e, 47, 12, 1347);
+    			add_location(mwc_icon_button, file$f, 51, 12, 1223);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(mwc_icon_button, "click", /*click_handler_1*/ ctx[4], false, false, false);
+    				dispose = listen_dev(mwc_icon_button, "click", /*click_handler_1*/ ctx[2], false, false, false);
     				mounted = true;
     			}
     		},
@@ -18310,15 +30942,15 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(47:8) {:else}",
+    		source: "(51:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (45:8) {#if showToc}
-    function create_if_block_2(ctx) {
+    // (49:8) {#if showToc}
+    function create_if_block_1(ctx) {
     	let mwc_icon_button;
     	let mounted;
     	let dispose;
@@ -18328,13 +30960,13 @@ var app = (function () {
     			mwc_icon_button = element("mwc-icon-button");
     			set_style(mwc_icon_button, "float", "right");
     			set_custom_element_data(mwc_icon_button, "icon", "chevron_left");
-    			add_location(mwc_icon_button, file$e, 45, 12, 1212);
+    			add_location(mwc_icon_button, file$f, 49, 12, 1088);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(mwc_icon_button, "click", /*click_handler*/ ctx[3], false, false, false);
+    				dispose = listen_dev(mwc_icon_button, "click", /*click_handler*/ ctx[1], false, false, false);
     				mounted = true;
     			}
     		},
@@ -18348,152 +30980,107 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2.name,
+    		id: create_if_block_1.name,
     		type: "if",
-    		source: "(45:8) {#if showToc}",
+    		source: "(49:8) {#if showToc}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (51:8) {#if tocMarkdown && showToc}
-    function create_if_block_1(ctx) {
+    // (55:8) {#if showToc}
+    function create_if_block$3(ctx) {
     	let h2;
     	let t1;
-    	let html_tag;
-    	let raw_value = marked(/*tocMarkdown*/ ctx[1]) + "";
-    	let html_anchor;
+    	let toc;
+    	let current;
+    	toc = new TOC({ $$inline: true });
 
     	const block = {
     		c: function create() {
     			h2 = element("h2");
     			h2.textContent = "Table of Contents";
     			t1 = space();
-    			html_anchor = empty();
-    			add_location(h2, file$e, 51, 12, 1498);
-    			html_tag = new HtmlTag(html_anchor);
+    			create_component(toc.$$.fragment);
+    			add_location(h2, file$f, 55, 12, 1359);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
     			insert_dev(target, t1, anchor);
-    			html_tag.m(raw_value, target, anchor);
-    			insert_dev(target, html_anchor, anchor);
+    			mount_component(toc, target, anchor);
+    			current = true;
     		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*tocMarkdown*/ 2 && raw_value !== (raw_value = marked(/*tocMarkdown*/ ctx[1]) + "")) html_tag.p(raw_value);
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(toc.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(toc.$$.fragment, local);
+    			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h2);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(html_anchor);
-    			if (detaching) html_tag.d();
+    			destroy_component(toc, detaching);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1.name,
+    		id: create_if_block$3.name,
     		type: "if",
-    		source: "(51:8) {#if tocMarkdown && showToc}",
+    		source: "(55:8) {#if showToc}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (57:4) {#if srdMarkdown}
-    function create_if_block$4(ctx) {
-    	let markdown;
-    	let current;
-
-    	markdown = new Markdown({
-    			props: {
-    				markdown: /*srdMarkdown*/ ctx[0],
-    				columns: "1",
-    				props: { style: "line-height:1.2rem;" }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(markdown.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(markdown, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const markdown_changes = {};
-    			if (dirty & /*srdMarkdown*/ 1) markdown_changes.markdown = /*srdMarkdown*/ ctx[0];
-    			markdown.$set(markdown_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(markdown.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(markdown.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(markdown, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$4.name,
-    		type: "if",
-    		source: "(57:4) {#if srdMarkdown}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$k(ctx) {
-    	let div;
+    function create_fragment$l(ctx) {
+    	let div0;
     	let t0;
     	let t1;
-    	let if_block2_anchor;
+    	let div1;
+    	let srd;
     	let current;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*showToc*/ ctx[2]) return create_if_block_2;
+    		if (/*showToc*/ ctx[0]) return create_if_block_1;
     		return create_else_block;
     	}
 
     	let current_block_type = select_block_type(ctx);
     	let if_block0 = current_block_type(ctx);
-    	let if_block1 = /*tocMarkdown*/ ctx[1] && /*showToc*/ ctx[2] && create_if_block_1(ctx);
-    	let if_block2 = /*srdMarkdown*/ ctx[0] && create_if_block$4(ctx);
+    	let if_block1 = /*showToc*/ ctx[0] && create_if_block$3(ctx);
+    	srd = new SrdContent({ $$inline: true });
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div0 = element("div");
     			if_block0.c();
     			t0 = space();
     			if (if_block1) if_block1.c();
     			t1 = space();
-    			if (if_block2) if_block2.c();
-    			if_block2_anchor = empty();
-    			attr_dev(div, "class", "toc svelte-1v8vhu2");
-    			add_location(div, file$e, 42, 4, 1159);
+    			div1 = element("div");
+    			create_component(srd.$$.fragment);
+    			attr_dev(div0, "class", "toc svelte-1keszrb");
+    			add_location(div0, file$f, 46, 4, 1035);
+    			attr_dev(div1, "class", "this-page svelte-1keszrb");
+    			add_location(div1, file$f, 59, 0, 1435);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			if_block0.m(div, null);
-    			append_dev(div, t0);
-    			if (if_block1) if_block1.m(div, null);
+    			insert_dev(target, div0, anchor);
+    			if_block0.m(div0, null);
+    			append_dev(div0, t0);
+    			if (if_block1) if_block1.m(div0, null);
     			insert_dev(target, t1, anchor);
-    			if (if_block2) if_block2.m(target, anchor);
-    			insert_dev(target, if_block2_anchor, anchor);
+    			insert_dev(target, div1, anchor);
+    			mount_component(srd, div1, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -18505,41 +31092,26 @@ var app = (function () {
 
     				if (if_block0) {
     					if_block0.c();
-    					if_block0.m(div, t0);
+    					if_block0.m(div0, t0);
     				}
     			}
 
-    			if (/*tocMarkdown*/ ctx[1] && /*showToc*/ ctx[2]) {
+    			if (/*showToc*/ ctx[0]) {
     				if (if_block1) {
-    					if_block1.p(ctx, dirty);
-    				} else {
-    					if_block1 = create_if_block_1(ctx);
-    					if_block1.c();
-    					if_block1.m(div, null);
-    				}
-    			} else if (if_block1) {
-    				if_block1.d(1);
-    				if_block1 = null;
-    			}
-
-    			if (/*srdMarkdown*/ ctx[0]) {
-    				if (if_block2) {
-    					if_block2.p(ctx, dirty);
-
-    					if (dirty & /*srdMarkdown*/ 1) {
-    						transition_in(if_block2, 1);
+    					if (dirty & /*showToc*/ 1) {
+    						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block2 = create_if_block$4(ctx);
-    					if_block2.c();
-    					transition_in(if_block2, 1);
-    					if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
+    					if_block1 = create_if_block$3(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(div0, null);
     				}
-    			} else if (if_block2) {
+    			} else if (if_block1) {
     				group_outros();
 
-    				transition_out(if_block2, 1, 1, () => {
-    					if_block2 = null;
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
     				});
 
     				check_outros();
@@ -18547,26 +31119,28 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(if_block2);
+    			transition_in(if_block1);
+    			transition_in(srd.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(if_block2);
+    			transition_out(if_block1);
+    			transition_out(srd.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div0);
     			if_block0.d();
     			if (if_block1) if_block1.d();
     			if (detaching) detach_dev(t1);
-    			if (if_block2) if_block2.d(detaching);
-    			if (detaching) detach_dev(if_block2_anchor);
+    			if (detaching) detach_dev(div1);
+    			destroy_component(srd);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$k.name,
+    		id: create_fragment$l.name,
     		type: "component",
     		source: "",
     		ctx
@@ -18575,20 +31149,10 @@ var app = (function () {
     	return block;
     }
 
-    function instance$k($$self, $$props, $$invalidate) {
+    function instance$l($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("SRD", slots, []);
-    	let { srdMarkdown } = $$props;
-    	let { tocMarkdown } = $$props;
     	let showToc = window.innerWidth > 15.25 * 6.022 * 16; //(inches*em/inch*px/em)
-
-    	if (!srdMarkdown) {
-    		fetch("./md/Fate-Condensed-SRD-CC-BY.md").then(response => response.text().then(data => $$invalidate(0, srdMarkdown = data)));
-    	}
-
-    	if (!tocMarkdown) {
-    		fetch("./md/SRD-TOC.md").then(response => response.text().then(data => $$invalidate(1, tocMarkdown = data)));
-    	}
 
     	if (window.location.hash) {
     		setTimeout(
@@ -18599,80 +31163,401 @@ var app = (function () {
     		);
     	}
 
-    	const writable_props = ["srdMarkdown", "tocMarkdown"];
+    	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<SRD> was created with unknown prop '${key}'`);
     	});
 
-    	const click_handler = () => $$invalidate(2, showToc = false);
-    	const click_handler_1 = () => $$invalidate(2, showToc = true);
-
-    	$$self.$$set = $$props => {
-    		if ("srdMarkdown" in $$props) $$invalidate(0, srdMarkdown = $$props.srdMarkdown);
-    		if ("tocMarkdown" in $$props) $$invalidate(1, tocMarkdown = $$props.tocMarkdown);
-    	};
-
-    	$$self.$capture_state = () => ({
-    		marked,
-    		Markdown,
-    		srdMarkdown,
-    		tocMarkdown,
-    		showToc
-    	});
+    	const click_handler = () => $$invalidate(0, showToc = false);
+    	const click_handler_1 = () => $$invalidate(0, showToc = true);
+    	$$self.$capture_state = () => ({ TOC, Srd: SrdContent, showToc });
 
     	$$self.$inject_state = $$props => {
-    		if ("srdMarkdown" in $$props) $$invalidate(0, srdMarkdown = $$props.srdMarkdown);
-    		if ("tocMarkdown" in $$props) $$invalidate(1, tocMarkdown = $$props.tocMarkdown);
-    		if ("showToc" in $$props) $$invalidate(2, showToc = $$props.showToc);
+    		if ("showToc" in $$props) $$invalidate(0, showToc = $$props.showToc);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [srdMarkdown, tocMarkdown, showToc, click_handler, click_handler_1];
+    	return [showToc, click_handler, click_handler_1];
     }
 
     class SRD extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$k, create_fragment$k, safe_not_equal, { srdMarkdown: 0, tocMarkdown: 1 });
+    		init(this, options, instance$l, create_fragment$l, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "SRD",
     			options,
-    			id: create_fragment$k.name
+    			id: create_fragment$l.name
     		});
+    	}
+    }
 
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
+    /* src/components/About/About.md generated by Svelte v3.25.0 */
 
-    		if (/*srdMarkdown*/ ctx[0] === undefined && !("srdMarkdown" in props)) {
-    			console.warn("<SRD> was created without expected prop 'srdMarkdown'");
+    const file$g = "src/components/About/About.md";
+
+    function create_fragment$m(ctx) {
+    	let div;
+    	let h10;
+    	let t1;
+    	let h20;
+    	let t3;
+    	let p0;
+    	let t5;
+    	let p1;
+    	let t7;
+    	let p2;
+    	let t9;
+    	let p3;
+    	let t11;
+    	let hr0;
+    	let t12;
+    	let h21;
+    	let t14;
+    	let p4;
+    	let t15;
+    	let a0;
+    	let t17;
+    	let t18;
+    	let hr1;
+    	let t19;
+    	let h11;
+    	let t21;
+    	let h22;
+    	let t23;
+    	let p5;
+    	let t24;
+    	let a1;
+    	let t26;
+    	let a2;
+    	let t28;
+    	let t29;
+    	let hr2;
+    	let t30;
+    	let h23;
+    	let t32;
+    	let p6;
+    	let t33;
+    	let a3;
+    	let t35;
+    	let t36;
+    	let ul;
+    	let li0;
+    	let a4;
+    	let t38;
+    	let t39;
+    	let li1;
+    	let a5;
+    	let t41;
+    	let t42;
+    	let li2;
+    	let a6;
+    	let t44;
+    	let t45;
+    	let li3;
+    	let a7;
+    	let t47;
+    	let t48;
+    	let li4;
+    	let a8;
+    	let t50;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h10 = element("h1");
+    			h10.textContent = "Licensing";
+    			t1 = space();
+    			h20 = element("h2");
+    			h20.textContent = "MIT License (Source Code)";
+    			t3 = space();
+    			p0 = element("p");
+    			p0.textContent = "Copyright (c) 2020 Jason C Daniels";
+    			t5 = space();
+    			p1 = element("p");
+    			p1.textContent = "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:";
+    			t7 = space();
+    			p2 = element("p");
+    			p2.textContent = "The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.";
+    			t9 = space();
+    			p3 = element("p");
+    			p3.textContent = "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.";
+    			t11 = space();
+    			hr0 = element("hr");
+    			t12 = space();
+    			h21 = element("h2");
+    			h21.textContent = "CC-BY 3.0 - (Creative Content)";
+    			t14 = space();
+    			p4 = element("p");
+    			t15 = text("The site layout and other original creative content are licensed separately under the\n");
+    			a0 = element("a");
+    			a0.textContent = "Creative Commons Attribution 3.0 Unported license";
+    			t17 = text(".");
+    			t18 = space();
+    			hr1 = element("hr");
+    			t19 = space();
+    			h11 = element("h1");
+    			h11.textContent = "3rd Party Licensing and Attribution";
+    			t21 = space();
+    			h22 = element("h2");
+    			h22.textContent = "CC-BY 3.0";
+    			t23 = space();
+    			p5 = element("p");
+    			t24 = text("This work is based on and includes the Fate Condensed SRD (found at ");
+    			a1 = element("a");
+    			a1.textContent = "http://www.faterpg.com/";
+    			t26 = text("), a \nproduct of Evil Hat Productions, LLC, developed, authored, and edited by \nPK Sullivan, Lara Turner, Leonard Balsera, Fred Hicks, Richard Bellingham, \nRobert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use under \nthe ");
+    			a2 = element("a");
+    			a2.textContent = "Creative Commons Attribution 3.0 Unported license";
+    			t28 = text(".");
+    			t29 = space();
+    			hr2 = element("hr");
+    			t30 = space();
+    			h23 = element("h2");
+    			h23.textContent = "OFL 1.1";
+    			t32 = space();
+    			p6 = element("p");
+    			t33 = text("The following fonts were converted to WOFF/WOFF2, are used, and are bundled with this software in accordance with the ");
+    			a3 = element("a");
+    			a3.textContent = "SIL Open Font License 1.1";
+    			t35 = text(". The fonts were acquired from Google Fonts.");
+    			t36 = space();
+    			ul = element("ul");
+    			li0 = element("li");
+    			a4 = element("a");
+    			a4.textContent = "EB Garamond";
+    			t38 = text(" designed by Georg Duffner");
+    			t39 = space();
+    			li1 = element("li");
+    			a5 = element("a");
+    			a5.textContent = "Barlow";
+    			t41 = text(" designed by Jeremy Tribby");
+    			t42 = space();
+    			li2 = element("li");
+    			a6 = element("a");
+    			a6.textContent = "Barlow Condensed";
+    			t44 = text(" designed by Jeremy Tribby");
+    			t45 = space();
+    			li3 = element("li");
+    			a7 = element("a");
+    			a7.textContent = "Barlow Semicondensed";
+    			t47 = text(" designed by Jeremy Tribby");
+    			t48 = space();
+    			li4 = element("li");
+    			a8 = element("a");
+    			a8.textContent = "Gothic A1";
+    			t50 = text(" designed by HanYang I&C Co");
+    			attr_dev(h10, "id", "licensing");
+    			attr_dev(h10, "class", "svelte-1qrsubo");
+    			add_location(h10, file$g, 0, 18, 18);
+    			attr_dev(h20, "id", "mit-license-source-code");
+    			attr_dev(h20, "class", "svelte-1qrsubo");
+    			add_location(h20, file$g, 1, 0, 52);
+    			attr_dev(p0, "class", "svelte-1qrsubo");
+    			add_location(p0, file$g, 2, 0, 116);
+    			attr_dev(p1, "class", "svelte-1qrsubo");
+    			add_location(p1, file$g, 3, 0, 158);
+    			attr_dev(p2, "class", "svelte-1qrsubo");
+    			add_location(p2, file$g, 9, 0, 608);
+    			attr_dev(p3, "class", "svelte-1qrsubo");
+    			add_location(p3, file$g, 11, 0, 742);
+    			attr_dev(hr0, "class", "svelte-1qrsubo");
+    			add_location(hr0, file$g, 18, 0, 1220);
+    			attr_dev(h21, "id", "cc-by-30---creative-content");
+    			attr_dev(h21, "class", "svelte-1qrsubo");
+    			add_location(h21, file$g, 19, 0, 1225);
+    			attr_dev(a0, "href", "http://creativecommons.org/licenses/by/3.0/");
+    			attr_dev(a0, "class", "svelte-1qrsubo");
+    			add_location(a0, file$g, 21, 0, 1387);
+    			attr_dev(p4, "class", "svelte-1qrsubo");
+    			add_location(p4, file$g, 20, 0, 1298);
+    			attr_dev(hr1, "class", "svelte-1qrsubo");
+    			add_location(hr1, file$g, 22, 0, 1500);
+    			attr_dev(h11, "id", "3rd-party-licensing-and-attribution");
+    			attr_dev(h11, "class", "svelte-1qrsubo");
+    			add_location(h11, file$g, 23, 0, 1505);
+    			attr_dev(h22, "id", "cc-by-30");
+    			attr_dev(h22, "class", "svelte-1qrsubo");
+    			add_location(h22, file$g, 24, 0, 1591);
+    			attr_dev(a1, "href", "http://www.faterpg.com/");
+    			attr_dev(a1, "class", "svelte-1qrsubo");
+    			add_location(a1, file$g, 25, 71, 1695);
+    			attr_dev(a2, "href", "http://creativecommons.org/licenses/by/3.0/");
+    			attr_dev(a2, "class", "svelte-1qrsubo");
+    			add_location(a2, file$g, 29, 4, 1994);
+    			attr_dev(p5, "class", "svelte-1qrsubo");
+    			add_location(p5, file$g, 25, 0, 1624);
+    			attr_dev(hr2, "class", "svelte-1qrsubo");
+    			add_location(hr2, file$g, 30, 0, 2107);
+    			attr_dev(h23, "id", "ofl-11");
+    			attr_dev(h23, "class", "svelte-1qrsubo");
+    			add_location(h23, file$g, 31, 0, 2112);
+    			attr_dev(a3, "href", "https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web");
+    			attr_dev(a3, "class", "svelte-1qrsubo");
+    			add_location(a3, file$g, 32, 121, 2262);
+    			attr_dev(p6, "class", "svelte-1qrsubo");
+    			add_location(p6, file$g, 32, 0, 2141);
+    			attr_dev(a4, "href", "https://fonts.google.com/specimen/EB+Garamond");
+    			attr_dev(a4, "class", "svelte-1qrsubo");
+    			add_location(a4, file$g, 34, 4, 2420);
+    			attr_dev(li0, "class", "svelte-1qrsubo");
+    			add_location(li0, file$g, 34, 0, 2416);
+    			attr_dev(a5, "href", "https://fonts.google.com/specimen/Barlow");
+    			attr_dev(a5, "class", "svelte-1qrsubo");
+    			add_location(a5, file$g, 35, 4, 2528);
+    			attr_dev(li1, "class", "svelte-1qrsubo");
+    			add_location(li1, file$g, 35, 0, 2524);
+    			attr_dev(a6, "href", "https://fonts.google.com/specimen/Barlow+Condensed");
+    			attr_dev(a6, "class", "svelte-1qrsubo");
+    			add_location(a6, file$g, 36, 4, 2625);
+    			attr_dev(li2, "class", "svelte-1qrsubo");
+    			add_location(li2, file$g, 36, 0, 2621);
+    			attr_dev(a7, "href", "https://fonts.google.com/specimen/Barlow+Semi+Condensed");
+    			attr_dev(a7, "class", "svelte-1qrsubo");
+    			add_location(a7, file$g, 37, 4, 2742);
+    			attr_dev(li3, "class", "svelte-1qrsubo");
+    			add_location(li3, file$g, 37, 0, 2738);
+    			attr_dev(a8, "href", "https://fonts.google.com/specimen/Gothic+A1");
+    			attr_dev(a8, "class", "svelte-1qrsubo");
+    			add_location(a8, file$g, 38, 4, 2868);
+    			attr_dev(li4, "class", "svelte-1qrsubo");
+    			add_location(li4, file$g, 38, 0, 2864);
+    			attr_dev(ul, "class", "svelte-1qrsubo");
+    			add_location(ul, file$g, 33, 0, 2411);
+    			attr_dev(div, "class", "page svelte-1qrsubo");
+    			add_location(div, file$g, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h10);
+    			append_dev(div, t1);
+    			append_dev(div, h20);
+    			append_dev(div, t3);
+    			append_dev(div, p0);
+    			append_dev(div, t5);
+    			append_dev(div, p1);
+    			append_dev(div, t7);
+    			append_dev(div, p2);
+    			append_dev(div, t9);
+    			append_dev(div, p3);
+    			append_dev(div, t11);
+    			append_dev(div, hr0);
+    			append_dev(div, t12);
+    			append_dev(div, h21);
+    			append_dev(div, t14);
+    			append_dev(div, p4);
+    			append_dev(p4, t15);
+    			append_dev(p4, a0);
+    			append_dev(p4, t17);
+    			append_dev(div, t18);
+    			append_dev(div, hr1);
+    			append_dev(div, t19);
+    			append_dev(div, h11);
+    			append_dev(div, t21);
+    			append_dev(div, h22);
+    			append_dev(div, t23);
+    			append_dev(div, p5);
+    			append_dev(p5, t24);
+    			append_dev(p5, a1);
+    			append_dev(p5, t26);
+    			append_dev(p5, a2);
+    			append_dev(p5, t28);
+    			append_dev(div, t29);
+    			append_dev(div, hr2);
+    			append_dev(div, t30);
+    			append_dev(div, h23);
+    			append_dev(div, t32);
+    			append_dev(div, p6);
+    			append_dev(p6, t33);
+    			append_dev(p6, a3);
+    			append_dev(p6, t35);
+    			append_dev(div, t36);
+    			append_dev(div, ul);
+    			append_dev(ul, li0);
+    			append_dev(li0, a4);
+    			append_dev(li0, t38);
+    			append_dev(ul, t39);
+    			append_dev(ul, li1);
+    			append_dev(li1, a5);
+    			append_dev(li1, t41);
+    			append_dev(ul, t42);
+    			append_dev(ul, li2);
+    			append_dev(li2, a6);
+    			append_dev(li2, t44);
+    			append_dev(ul, t45);
+    			append_dev(ul, li3);
+    			append_dev(li3, a7);
+    			append_dev(li3, t47);
+    			append_dev(ul, t48);
+    			append_dev(ul, li4);
+    			append_dev(li4, a8);
+    			append_dev(li4, t50);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
     		}
+    	};
 
-    		if (/*tocMarkdown*/ ctx[1] === undefined && !("tocMarkdown" in props)) {
-    			console.warn("<SRD> was created without expected prop 'tocMarkdown'");
-    		}
-    	}
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$m.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
 
-    	get srdMarkdown() {
-    		throw new Error("<SRD>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    	return block;
+    }
 
-    	set srdMarkdown(value) {
-    		throw new Error("<SRD>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    const META$2 = {};
 
-    	get tocMarkdown() {
-    		throw new Error("<SRD>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
+    function instance$m($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("About", slots, []);
+    	const writable_props = [];
 
-    	set tocMarkdown(value) {
-    		throw new Error("<SRD>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<About> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({ META: META$2 });
+    	return [];
+    }
+
+    class About extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$m, create_fragment$m, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "About",
+    			options,
+    			id: create_fragment$m.name
+    		});
     	}
+    }
+
+    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+    function unwrapExports (x) {
+    	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+    }
+
+    function createCommonjsModule(fn, module) {
+    	return module = { exports: {} }, fn(module, module.exports), module.exports;
     }
 
     var FileSaver_min = createCommonjsModule(function (module, exports) {
@@ -19079,7 +31964,7 @@ var app = (function () {
     }
 
     /* node_modules/svelte-file-dropzone/src/components/Dropzone.svelte generated by Svelte v3.25.0 */
-    const file$f = "node_modules/svelte-file-dropzone/src/components/Dropzone.svelte";
+    const file$h = "node_modules/svelte-file-dropzone/src/components/Dropzone.svelte";
 
     // (349:8)       
     function fallback_block(ctx) {
@@ -19089,7 +31974,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Drag 'n' drop some files here, or click to select files";
-    			add_location(p, file$f, 349, 4, 9204);
+    			add_location(p, file$h, 349, 4, 9204);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -19110,7 +31995,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$l(ctx) {
+    function create_fragment$n(ctx) {
     	let div;
     	let input;
     	let t;
@@ -19134,11 +32019,11 @@ var app = (function () {
     			attr_dev(input, "autocomplete", "off");
     			attr_dev(input, "tabindex", "-1");
     			set_style(input, "display", "none");
-    			add_location(input, file$f, 338, 2, 8973);
+    			add_location(input, file$h, 338, 2, 8973);
     			attr_dev(div, "class", div_class_value = "" + ((/*disableDefaultStyles*/ ctx[4] ? "" : "dropzone") + "\r\n  " + /*containerClasses*/ ctx[2] + " svelte-4uigcm"));
     			attr_dev(div, "style", /*containerStyles*/ ctx[3]);
     			attr_dev(div, "tabindex", "0");
-    			add_location(div, file$f, 324, 0, 8442);
+    			add_location(div, file$h, 324, 0, 8442);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19217,7 +32102,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$l.name,
+    		id: create_fragment$n.name,
     		type: "component",
     		source: "",
     		ctx
@@ -19230,7 +32115,7 @@ var app = (function () {
     	event.stopPropagation();
     }
 
-    function instance$l($$self, $$props, $$invalidate) {
+    function instance$n($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Dropzone", slots, ['default']);
     	let { accept } = $$props; // string or string[]
@@ -19677,8 +32562,8 @@ var app = (function () {
     		init(
     			this,
     			options,
-    			instance$l,
-    			create_fragment$l,
+    			instance$n,
+    			create_fragment$n,
     			safe_not_equal,
     			{
     				accept: 0,
@@ -19703,7 +32588,7 @@ var app = (function () {
     			component: this,
     			tagName: "Dropzone",
     			options,
-    			id: create_fragment$l.name
+    			id: create_fragment$n.name
     		});
 
     		const { ctx } = this.$$;
@@ -19875,9 +32760,9 @@ var app = (function () {
     /* src/App/App.svelte generated by Svelte v3.25.0 */
 
     const { console: console_1 } = globals;
-    const file$g = "src/App/App.svelte";
+    const file$i = "src/App/App.svelte";
 
-    // (247:8) {:else}
+    // (246:8) {:else}
     function create_else_block_2(ctx) {
     	let mwc_icon_button;
     	let mounted;
@@ -19888,13 +32773,13 @@ var app = (function () {
     			mwc_icon_button = element("mwc-icon-button");
     			set_custom_element_data(mwc_icon_button, "icon", "folder_open");
     			set_custom_element_data(mwc_icon_button, "slot", "actionItems");
-    			add_location(mwc_icon_button, file$g, 247, 12, 8737);
+    			add_location(mwc_icon_button, file$i, 246, 12, 8694);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(mwc_icon_button, "click", /*handleLoadCharacterClicked*/ ctx[14], false, false, false);
+    				dispose = listen_dev(mwc_icon_button, "click", /*handleLoadCharacterClicked*/ ctx[11], false, false, false);
     				mounted = true;
     			}
     		},
@@ -19910,15 +32795,15 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(247:8) {:else}",
+    		source: "(246:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (245:8) {#if showLoadPane}
-    function create_if_block_5(ctx) {
+    // (244:8) {#if showLoadPane}
+    function create_if_block_4(ctx) {
     	let mwc_icon_button;
     	let mounted;
     	let dispose;
@@ -19928,13 +32813,13 @@ var app = (function () {
     			mwc_icon_button = element("mwc-icon-button");
     			set_custom_element_data(mwc_icon_button, "icon", "cancel");
     			set_custom_element_data(mwc_icon_button, "slot", "actionItems");
-    			add_location(mwc_icon_button, file$g, 245, 12, 8616);
+    			add_location(mwc_icon_button, file$i, 244, 12, 8573);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mwc_icon_button, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(mwc_icon_button, "click", /*hideLoadPane*/ ctx[17], false, false, false);
+    				dispose = listen_dev(mwc_icon_button, "click", /*hideLoadPane*/ ctx[14], false, false, false);
     				mounted = true;
     			}
     		},
@@ -19948,16 +32833,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_5.name,
+    		id: create_if_block_4.name,
     		type: "if",
-    		source: "(245:8) {#if showLoadPane}",
+    		source: "(244:8) {#if showLoadPane}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (260:8) {:else}
+    // (259:8) {:else}
     function create_else_block$1(ctx) {
     	let div;
     	let current_block_type_index;
@@ -19966,7 +32851,7 @@ var app = (function () {
     	let mwc_snackbar;
     	let mwc_icon_button;
     	let current;
-    	const if_block_creators = [create_if_block_1$1, create_if_block_2$1, create_if_block_3, create_else_block_1];
+    	const if_block_creators = [create_if_block_1$1, create_if_block_2, create_if_block_3, create_else_block_1];
     	const if_blocks = [];
 
     	function select_block_type_2(ctx, dirty) {
@@ -19988,12 +32873,12 @@ var app = (function () {
     			mwc_icon_button = element("mwc-icon-button");
     			set_custom_element_data(mwc_icon_button, "icon", "close");
     			set_custom_element_data(mwc_icon_button, "slot", "dismiss");
-    			add_location(mwc_icon_button, file$g, 281, 20, 10315);
-    			set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[10]);
-    			add_location(mwc_snackbar, file$g, 280, 16, 10225);
+    			add_location(mwc_icon_button, file$i, 278, 20, 10130);
+    			set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[7]);
+    			add_location(mwc_snackbar, file$i, 277, 16, 10040);
     			attr_dev(div, "id", "content");
     			set_style(div, "padding", "2rem");
-    			add_location(div, file$g, 260, 12, 9468);
+    			add_location(div, file$i, 259, 12, 9425);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20001,7 +32886,7 @@ var app = (function () {
     			append_dev(div, t);
     			append_dev(div, mwc_snackbar);
     			append_dev(mwc_snackbar, mwc_icon_button);
-    			/*mwc_snackbar_binding*/ ctx[24](mwc_snackbar);
+    			/*mwc_snackbar_binding*/ ctx[18](mwc_snackbar);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -20029,8 +32914,8 @@ var app = (function () {
     				if_block.m(div, t);
     			}
 
-    			if (!current || dirty[0] & /*snackBarText*/ 1024) {
-    				set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[10]);
+    			if (!current || dirty[0] & /*snackBarText*/ 128) {
+    				set_custom_element_data(mwc_snackbar, "labeltext", /*snackBarText*/ ctx[7]);
     			}
     		},
     		i: function intro(local) {
@@ -20045,7 +32930,7 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			if_blocks[current_block_type_index].d();
-    			/*mwc_snackbar_binding*/ ctx[24](null);
+    			/*mwc_snackbar_binding*/ ctx[18](null);
     		}
     	};
 
@@ -20053,15 +32938,15 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(260:8) {:else}",
+    		source: "(259:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (255:8) {#if (showLoadPane)}
-    function create_if_block$5(ctx) {
+    // (254:8) {#if (showLoadPane)}
+    function create_if_block$4(ctx) {
     	let div;
     	let dropzone;
     	let current;
@@ -20073,7 +32958,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	dropzone.$on("drop", /*handleFilesSelect*/ ctx[16]);
+    	dropzone.$on("drop", /*handleFilesSelect*/ ctx[13]);
 
     	const block = {
     		c: function create() {
@@ -20082,7 +32967,7 @@ var app = (function () {
     			attr_dev(div, "id", "content");
     			attr_dev(div, "class", "noprint file-loader svelte-1p262ce");
     			set_style(div, "height", "100%");
-    			add_location(div, file$g, 255, 12, 9200);
+    			add_location(div, file$i, 254, 12, 9157);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20107,16 +32992,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$5.name,
+    		id: create_if_block$4.name,
     		type: "if",
-    		source: "(255:8) {#if (showLoadPane)}",
+    		source: "(254:8) {#if (showLoadPane)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (276:16) {:else}
+    // (273:16) {:else}
     function create_else_block_1(ctx) {
     	let div;
     	let h3;
@@ -20126,9 +33011,9 @@ var app = (function () {
     			div = element("div");
     			h3 = element("h3");
     			h3.textContent = "TBD/Coming Soon";
-    			add_location(h3, file$g, 277, 24, 10135);
+    			add_location(h3, file$i, 274, 24, 9950);
     			attr_dev(div, "class", "page");
-    			add_location(div, file$g, 276, 20, 10092);
+    			add_location(div, file$i, 273, 20, 9907);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20146,65 +33031,39 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(276:16) {:else}",
+    		source: "(273:16) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (270:44) 
+    // (269:44) 
     function create_if_block_3(ctx) {
-    	let if_block_anchor;
+    	let about;
     	let current;
-    	let if_block = /*aboutMarkdown*/ ctx[5] && create_if_block_4(ctx);
+    	about = new About({ $$inline: true });
 
     	const block = {
     		c: function create() {
-    			if (if_block) if_block.c();
-    			if_block_anchor = empty();
+    			create_component(about.$$.fragment);
     		},
     		m: function mount(target, anchor) {
-    			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, if_block_anchor, anchor);
+    			mount_component(about, target, anchor);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
-    			if (/*aboutMarkdown*/ ctx[5]) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
-
-    					if (dirty[0] & /*aboutMarkdown*/ 32) {
-    						transition_in(if_block, 1);
-    					}
-    				} else {
-    					if_block = create_if_block_4(ctx);
-    					if_block.c();
-    					transition_in(if_block, 1);
-    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
-    				}
-    			} else if (if_block) {
-    				group_outros();
-
-    				transition_out(if_block, 1, 1, () => {
-    					if_block = null;
-    				});
-
-    				check_outros();
-    			}
-    		},
+    		p: noop,
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(if_block);
+    			transition_in(about.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(if_block);
+    			transition_out(about.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (if_block) if_block.d(detaching);
-    			if (detaching) detach_dev(if_block_anchor);
+    			destroy_component(about, detaching);
     		}
     	};
 
@@ -20212,41 +33071,18 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(270:44) ",
+    		source: "(269:44) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (268:44) 
-    function create_if_block_2$1(ctx) {
+    // (267:44) 
+    function create_if_block_2(ctx) {
     	let srd;
-    	let updating_tocMarkdown;
-    	let updating_srdMarkdown;
     	let current;
-
-    	function srd_tocMarkdown_binding(value) {
-    		/*srd_tocMarkdown_binding*/ ctx[22].call(null, value);
-    	}
-
-    	function srd_srdMarkdown_binding(value) {
-    		/*srd_srdMarkdown_binding*/ ctx[23].call(null, value);
-    	}
-
-    	let srd_props = {};
-
-    	if (/*tocMarkdown*/ ctx[4] !== void 0) {
-    		srd_props.tocMarkdown = /*tocMarkdown*/ ctx[4];
-    	}
-
-    	if (/*srdMarkdown*/ ctx[3] !== void 0) {
-    		srd_props.srdMarkdown = /*srdMarkdown*/ ctx[3];
-    	}
-
-    	srd = new SRD({ props: srd_props, $$inline: true });
-    	binding_callbacks.push(() => bind(srd, "tocMarkdown", srd_tocMarkdown_binding));
-    	binding_callbacks.push(() => bind(srd, "srdMarkdown", srd_srdMarkdown_binding));
+    	srd = new SRD({ $$inline: true });
 
     	const block = {
     		c: function create() {
@@ -20256,23 +33092,7 @@ var app = (function () {
     			mount_component(srd, target, anchor);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
-    			const srd_changes = {};
-
-    			if (!updating_tocMarkdown && dirty[0] & /*tocMarkdown*/ 16) {
-    				updating_tocMarkdown = true;
-    				srd_changes.tocMarkdown = /*tocMarkdown*/ ctx[4];
-    				add_flush_callback(() => updating_tocMarkdown = false);
-    			}
-
-    			if (!updating_srdMarkdown && dirty[0] & /*srdMarkdown*/ 8) {
-    				updating_srdMarkdown = true;
-    				srd_changes.srdMarkdown = /*srdMarkdown*/ ctx[3];
-    				add_flush_callback(() => updating_srdMarkdown = false);
-    			}
-
-    			srd.$set(srd_changes);
-    		},
+    		p: noop,
     		i: function intro(local) {
     			if (current) return;
     			transition_in(srd.$$.fragment, local);
@@ -20289,16 +33109,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$1.name,
+    		id: create_if_block_2.name,
     		type: "if",
-    		source: "(268:44) ",
+    		source: "(267:44) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (262:16) {#if activeIndex === 0}
+    // (261:16) {#if activeIndex === 0}
     function create_if_block_1$1(ctx) {
     	let charactersheet;
     	let updating_character;
@@ -20314,13 +33134,13 @@ var app = (function () {
     	let current;
 
     	function charactersheet_character_binding(value) {
-    		/*charactersheet_character_binding*/ ctx[20].call(null, value);
+    		/*charactersheet_character_binding*/ ctx[16].call(null, value);
     	}
 
     	let charactersheet_props = {};
 
-    	if (/*character*/ ctx[11] !== void 0) {
-    		charactersheet_props.character = /*character*/ ctx[11];
+    	if (/*character*/ ctx[8] !== void 0) {
+    		charactersheet_props.character = /*character*/ ctx[8];
     	}
 
     	charactersheet = new CharacterSheet({
@@ -20331,13 +33151,13 @@ var app = (function () {
     	binding_callbacks.push(() => bind(charactersheet, "character", charactersheet_character_binding));
 
     	function supplementalsheet_character_binding(value) {
-    		/*supplementalsheet_character_binding*/ ctx[21].call(null, value);
+    		/*supplementalsheet_character_binding*/ ctx[17].call(null, value);
     	}
 
     	let supplementalsheet_props = {};
 
-    	if (/*character*/ ctx[11] !== void 0) {
-    		supplementalsheet_props.character = /*character*/ ctx[11];
+    	if (/*character*/ ctx[8] !== void 0) {
+    		supplementalsheet_props.character = /*character*/ ctx[8];
     	}
 
     	supplementalsheet = new SupplementalSheet({
@@ -20358,9 +33178,9 @@ var app = (function () {
     			br2 = element("br");
     			t3 = space();
     			create_component(supplementalsheet.$$.fragment);
-    			add_location(br0, file$g, 263, 20, 9634);
-    			add_location(br1, file$g, 264, 20, 9660);
-    			add_location(br2, file$g, 265, 16, 9682);
+    			add_location(br0, file$i, 262, 20, 9591);
+    			add_location(br1, file$i, 263, 20, 9617);
+    			add_location(br2, file$i, 264, 16, 9639);
     		},
     		m: function mount(target, anchor) {
     			mount_component(charactersheet, target, anchor);
@@ -20377,18 +33197,18 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const charactersheet_changes = {};
 
-    			if (!updating_character && dirty[0] & /*character*/ 2048) {
+    			if (!updating_character && dirty[0] & /*character*/ 256) {
     				updating_character = true;
-    				charactersheet_changes.character = /*character*/ ctx[11];
+    				charactersheet_changes.character = /*character*/ ctx[8];
     				add_flush_callback(() => updating_character = false);
     			}
 
     			charactersheet.$set(charactersheet_changes);
     			const supplementalsheet_changes = {};
 
-    			if (!updating_character_1 && dirty[0] & /*character*/ 2048) {
+    			if (!updating_character_1 && dirty[0] & /*character*/ 256) {
     				updating_character_1 = true;
-    				supplementalsheet_changes.character = /*character*/ ctx[11];
+    				supplementalsheet_changes.character = /*character*/ ctx[8];
     				add_flush_callback(() => updating_character_1 = false);
     			}
 
@@ -20422,65 +33242,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(262:16) {#if activeIndex === 0}",
+    		source: "(261:16) {#if activeIndex === 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (272:20) {#if aboutMarkdown}
-    function create_if_block_4(ctx) {
-    	let markdown;
-    	let current;
-
-    	markdown = new Markdown({
-    			props: {
-    				columns: "1",
-    				markdown: /*aboutMarkdown*/ ctx[5]
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(markdown.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(markdown, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const markdown_changes = {};
-    			if (dirty[0] & /*aboutMarkdown*/ 32) markdown_changes.markdown = /*aboutMarkdown*/ ctx[5];
-    			markdown.$set(markdown_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(markdown.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(markdown.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(markdown, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_4.name,
-    		type: "if",
-    		source: "(272:20) {#if aboutMarkdown}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$m(ctx) {
+    function create_fragment$o(ctx) {
     	let title_value;
     	let link0;
     	let link1;
@@ -20523,21 +33292,21 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	document.title = title_value = "" + (/*character*/ ctx[11].name + " - " + /*appSettings*/ ctx[0].applicationName + " - " + /*activeSection*/ ctx[2]);
+    	document.title = title_value = "" + (/*character*/ ctx[8].name + " - " + /*appSettings*/ ctx[0].applicationName + " - " + /*activeSection*/ ctx[2]);
     	globalcss = new GlobalCss({ $$inline: true });
 
     	function select_block_type(ctx, dirty) {
-    		if (/*showLoadPane*/ ctx[9]) return create_if_block_5;
+    		if (/*showLoadPane*/ ctx[6]) return create_if_block_4;
     		return create_else_block_2;
     	}
 
     	let current_block_type = select_block_type(ctx);
     	let if_block0 = current_block_type(ctx);
-    	const if_block_creators = [create_if_block$5, create_else_block$1];
+    	const if_block_creators = [create_if_block$4, create_else_block$1];
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
-    		if (/*showLoadPane*/ ctx[9]) return 0;
+    		if (/*showLoadPane*/ ctx[6]) return 0;
     		return 1;
     	}
 
@@ -20545,13 +33314,13 @@ var app = (function () {
     	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
     	function charactersheet_character_binding_1(value) {
-    		/*charactersheet_character_binding_1*/ ctx[25].call(null, value);
+    		/*charactersheet_character_binding_1*/ ctx[19].call(null, value);
     	}
 
     	let charactersheet_props = {};
 
-    	if (/*character*/ ctx[11] !== void 0) {
-    		charactersheet_props.character = /*character*/ ctx[11];
+    	if (/*character*/ ctx[8] !== void 0) {
+    		charactersheet_props.character = /*character*/ ctx[8];
     	}
 
     	charactersheet = new CharacterSheet({
@@ -20562,13 +33331,13 @@ var app = (function () {
     	binding_callbacks.push(() => bind(charactersheet, "character", charactersheet_character_binding_1));
 
     	function supplementalsheet_character_binding_1(value) {
-    		/*supplementalsheet_character_binding_1*/ ctx[26].call(null, value);
+    		/*supplementalsheet_character_binding_1*/ ctx[20].call(null, value);
     	}
 
     	let supplementalsheet_props = {};
 
-    	if (/*character*/ ctx[11] !== void 0) {
-    		supplementalsheet_props.character = /*character*/ ctx[11];
+    	if (/*character*/ ctx[8] !== void 0) {
+    		supplementalsheet_props.character = /*character*/ ctx[8];
     	}
 
     	supplementalsheet = new SupplementalSheet({
@@ -20617,44 +33386,44 @@ var app = (function () {
     			create_component(supplementalsheet.$$.fragment);
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Roboto:300,400,500");
     			attr_dev(link0, "rel", "stylesheet");
-    			add_location(link0, file$g, 224, 4, 7614);
+    			add_location(link0, file$i, 223, 4, 7571);
     			attr_dev(link1, "href", "https://fonts.googleapis.com/css?family=Material+Icons&display=block");
     			attr_dev(link1, "rel", "stylesheet");
-    			add_location(link1, file$g, 225, 4, 7708);
-    			add_location(span, file$g, 234, 47, 7984);
+    			add_location(link1, file$i, 224, 4, 7665);
+    			add_location(span, file$i, 233, 47, 7941);
     			set_style(div0, "display", "inline-block");
-    			add_location(div0, file$g, 234, 12, 7949);
+    			add_location(div0, file$i, 233, 12, 7906);
     			attr_dev(div1, "slot", "title");
-    			add_location(div1, file$g, 233, 8, 7918);
+    			add_location(div1, file$i, 232, 8, 7875);
     			set_custom_element_data(mwc_tab0, "label", "Character Sheet");
-    			add_location(mwc_tab0, file$g, 238, 12, 8266);
+    			add_location(mwc_tab0, file$i, 237, 12, 8223);
     			set_custom_element_data(mwc_tab1, "label", "Rules");
-    			add_location(mwc_tab1, file$g, 239, 12, 8322);
+    			add_location(mwc_tab1, file$i, 238, 12, 8279);
     			set_custom_element_data(mwc_tab2, "label", "About");
-    			add_location(mwc_tab2, file$g, 240, 12, 8368);
+    			add_location(mwc_tab2, file$i, 239, 12, 8325);
     			set_custom_element_data(mwc_tab_bar, "slot", "actionItems");
     			set_style(mwc_tab_bar, "display", "inline-block");
     			set_custom_element_data(mwc_tab_bar, "activeindex", /*activeIndex*/ ctx[1]);
     			set_custom_element_data(mwc_tab_bar, "class", "svelte-1p262ce");
-    			add_location(mwc_tab_bar, file$g, 236, 8, 8074);
+    			add_location(mwc_tab_bar, file$i, 235, 8, 8031);
     			set_custom_element_data(mwc_icon_button0, "icon", "note_add");
     			set_custom_element_data(mwc_icon_button0, "slot", "actionItems");
-    			set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[8]);
-    			add_location(mwc_icon_button0, file$g, 242, 8, 8433);
+    			set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[5]);
+    			add_location(mwc_icon_button0, file$i, 241, 8, 8390);
     			set_custom_element_data(mwc_icon_button1, "icon", "save");
     			set_custom_element_data(mwc_icon_button1, "slot", "actionItems");
-    			set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[8]);
-    			add_location(mwc_icon_button1, file$g, 250, 8, 8900);
+    			set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[5]);
+    			add_location(mwc_icon_button1, file$i, 249, 8, 8857);
     			set_custom_element_data(mwc_icon_button2, "icon", "print");
     			set_custom_element_data(mwc_icon_button2, "slot", "actionItems");
-    			set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[8]);
-    			add_location(mwc_icon_button2, file$g, 252, 8, 9049);
+    			set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[5]);
+    			add_location(mwc_icon_button2, file$i, 251, 8, 9006);
     			set_style(mwc_top_app_bar_fixed, "height", "100%");
-    			add_location(mwc_top_app_bar_fixed, file$g, 231, 4, 7865);
+    			add_location(mwc_top_app_bar_fixed, file$i, 230, 4, 7822);
     			attr_dev(main0, "class", "noprint svelte-1p262ce");
-    			add_location(main0, file$g, 229, 0, 7837);
+    			add_location(main0, file$i, 228, 0, 7794);
     			attr_dev(main1, "class", "printme svelte-1p262ce");
-    			add_location(main1, file$g, 289, 0, 10483);
+    			add_location(main1, file$i, 286, 0, 10298);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -20680,7 +33449,7 @@ var app = (function () {
     			append_dev(mwc_tab_bar, mwc_tab1);
     			append_dev(mwc_tab_bar, t7);
     			append_dev(mwc_tab_bar, mwc_tab2);
-    			/*mwc_tab_bar_binding*/ ctx[19](mwc_tab_bar);
+    			/*mwc_tab_bar_binding*/ ctx[15](mwc_tab_bar);
     			append_dev(mwc_top_app_bar_fixed, t8);
     			append_dev(mwc_top_app_bar_fixed, mwc_icon_button0);
     			append_dev(mwc_top_app_bar_fixed, t9);
@@ -20700,9 +33469,9 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(mwc_tab_bar, "MDCTabBar:activated", /*handleTabActivated*/ ctx[12], false, false, false),
-    					listen_dev(mwc_icon_button0, "click", /*handleNewCharacterClicked*/ ctx[15], false, false, false),
-    					listen_dev(mwc_icon_button1, "click", /*handleSaveCharacterClicked*/ ctx[13], false, false, false),
+    					listen_dev(mwc_tab_bar, "MDCTabBar:activated", /*handleTabActivated*/ ctx[9], false, false, false),
+    					listen_dev(mwc_icon_button0, "click", /*handleNewCharacterClicked*/ ctx[12], false, false, false),
+    					listen_dev(mwc_icon_button1, "click", /*handleSaveCharacterClicked*/ ctx[10], false, false, false),
     					listen_dev(mwc_icon_button2, "click", handlePrintClicked, false, false, false)
     				];
 
@@ -20710,7 +33479,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty[0] & /*character, appSettings, activeSection*/ 2053) && title_value !== (title_value = "" + (/*character*/ ctx[11].name + " - " + /*appSettings*/ ctx[0].applicationName + " - " + /*activeSection*/ ctx[2]))) {
+    			if ((!current || dirty[0] & /*character, appSettings, activeSection*/ 261) && title_value !== (title_value = "" + (/*character*/ ctx[8].name + " - " + /*appSettings*/ ctx[0].applicationName + " - " + /*activeSection*/ ctx[2]))) {
     				document.title = title_value;
     			}
 
@@ -20721,8 +33490,8 @@ var app = (function () {
     				set_custom_element_data(mwc_tab_bar, "activeindex", /*activeIndex*/ ctx[1]);
     			}
 
-    			if (!current || dirty[0] & /*disabled*/ 256) {
-    				set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[8]);
+    			if (!current || dirty[0] & /*disabled*/ 32) {
+    				set_custom_element_data(mwc_icon_button0, "disabled", /*disabled*/ ctx[5]);
     			}
 
     			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block0) {
@@ -20737,12 +33506,12 @@ var app = (function () {
     				}
     			}
 
-    			if (!current || dirty[0] & /*disabled*/ 256) {
-    				set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[8]);
+    			if (!current || dirty[0] & /*disabled*/ 32) {
+    				set_custom_element_data(mwc_icon_button1, "disabled", /*disabled*/ ctx[5]);
     			}
 
-    			if (!current || dirty[0] & /*disabled*/ 256) {
-    				set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[8]);
+    			if (!current || dirty[0] & /*disabled*/ 32) {
+    				set_custom_element_data(mwc_icon_button2, "disabled", /*disabled*/ ctx[5]);
     			}
 
     			let previous_block_index = current_block_type_index;
@@ -20771,18 +33540,18 @@ var app = (function () {
 
     			const charactersheet_changes = {};
 
-    			if (!updating_character && dirty[0] & /*character*/ 2048) {
+    			if (!updating_character && dirty[0] & /*character*/ 256) {
     				updating_character = true;
-    				charactersheet_changes.character = /*character*/ ctx[11];
+    				charactersheet_changes.character = /*character*/ ctx[8];
     				add_flush_callback(() => updating_character = false);
     			}
 
     			charactersheet.$set(charactersheet_changes);
     			const supplementalsheet_changes = {};
 
-    			if (!updating_character_1 && dirty[0] & /*character*/ 2048) {
+    			if (!updating_character_1 && dirty[0] & /*character*/ 256) {
     				updating_character_1 = true;
-    				supplementalsheet_changes.character = /*character*/ ctx[11];
+    				supplementalsheet_changes.character = /*character*/ ctx[8];
     				add_flush_callback(() => updating_character_1 = false);
     			}
 
@@ -20810,7 +33579,7 @@ var app = (function () {
     			destroy_component(globalcss, detaching);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(main0);
-    			/*mwc_tab_bar_binding*/ ctx[19](null);
+    			/*mwc_tab_bar_binding*/ ctx[15](null);
     			if_block0.d();
     			if_blocks[current_block_type_index].d();
     			if (detaching) detach_dev(t13);
@@ -20824,7 +33593,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$m.name,
+    		id: create_fragment$o.name,
     		type: "component",
     		source: "",
     		ctx
@@ -20837,10 +33606,9 @@ var app = (function () {
     	setTimeout(() => window.print(), 500);
     }
 
-    function instance$m($$self, $$props, $$invalidate) {
+    function instance$o($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
-    	let { name } = $$props;
 
     	let { appSettings = {
     		applicationName: "WARNING: Please pass appSettings from within main.js props."
@@ -20849,9 +33617,9 @@ var app = (function () {
     	let activeIndex;
     	let activeSection;
     	let srdMarkdown, tocMarkdown, aboutMarkdown;
-    	fetch("./md/About.md").then(response => response.text().then(data => $$invalidate(5, aboutMarkdown = data)));
-    	fetch("./md/SRD-TOC.md").then(response => response.text().then(data => $$invalidate(4, tocMarkdown = data)));
-    	fetch("./md/Fate-Condensed-SRD-CC-BY.md").then(response => response.text().then(data => $$invalidate(3, srdMarkdown = data)));
+    	fetch("./md/About.md").then(response => response.text().then(data => aboutMarkdown = data));
+    	fetch("./md/TOC.md").then(response => response.text().then(data => tocMarkdown = data));
+    	fetch("./md/SrdContent.md").then(response => response.text().then(data => srdMarkdown = data));
 
     	// Special DOM elements.
     	let printOptionListElement, snackBarElement, saveOptionsListElement, tabBarElement;
@@ -20954,12 +33722,12 @@ var app = (function () {
     	}
 
     	function handleLoadCharacterClicked() {
-    		$$invalidate(9, showLoadPane = true);
-    		$$invalidate(8, disabled = "disabled");
+    		$$invalidate(6, showLoadPane = true);
+    		$$invalidate(5, disabled = "disabled");
     	}
 
     	function handleNewCharacterClicked() {
-    		$$invalidate(11, character = getNewCharacter());
+    		$$invalidate(8, character = getNewCharacter());
     		$$invalidate(1, activeIndex = 0);
     		showSnackBar("Created new character.");
     	}
@@ -20976,7 +33744,7 @@ var app = (function () {
 
     				if (validateCharacter(tmpChar)) {
     					setTimeout(() => showSnackBar("Character loaded from file."), 250);
-    					$$invalidate(11, character = tmpChar);
+    					$$invalidate(8, character = tmpChar);
     					$$invalidate(1, activeIndex = 0);
     				}
     			} catch(err) {
@@ -20991,8 +33759,8 @@ var app = (function () {
     	}
 
     	function hideLoadPane() {
-    		$$invalidate(9, showLoadPane = false);
-    		$$invalidate(8, disabled = "");
+    		$$invalidate(6, showLoadPane = false);
+    		$$invalidate(5, disabled = "");
     	}
 
     	function scheduleAutosave() {
@@ -21010,11 +33778,11 @@ var app = (function () {
     	}
 
     	function showSnackBar(text) {
-    		$$invalidate(10, snackBarText = text);
+    		$$invalidate(7, snackBarText = text);
     		snackBarElement.show();
     	}
 
-    	const writable_props = ["name", "appSettings"];
+    	const writable_props = ["appSettings"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<App> was created with unknown prop '${key}'`);
@@ -21023,49 +33791,38 @@ var app = (function () {
     	function mwc_tab_bar_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			tabBarElement = $$value;
-    			$$invalidate(7, tabBarElement);
+    			$$invalidate(4, tabBarElement);
     		});
     	}
 
     	function charactersheet_character_binding(value) {
     		character = value;
-    		$$invalidate(11, character);
+    		$$invalidate(8, character);
     	}
 
     	function supplementalsheet_character_binding(value) {
     		character = value;
-    		$$invalidate(11, character);
-    	}
-
-    	function srd_tocMarkdown_binding(value) {
-    		tocMarkdown = value;
-    		$$invalidate(4, tocMarkdown);
-    	}
-
-    	function srd_srdMarkdown_binding(value) {
-    		srdMarkdown = value;
-    		$$invalidate(3, srdMarkdown);
+    		$$invalidate(8, character);
     	}
 
     	function mwc_snackbar_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			snackBarElement = $$value;
-    			$$invalidate(6, snackBarElement);
+    			$$invalidate(3, snackBarElement);
     		});
     	}
 
     	function charactersheet_character_binding_1(value) {
     		character = value;
-    		$$invalidate(11, character);
+    		$$invalidate(8, character);
     	}
 
     	function supplementalsheet_character_binding_1(value) {
     		character = value;
-    		$$invalidate(11, character);
+    		$$invalidate(8, character);
     	}
 
     	$$self.$$set = $$props => {
-    		if ("name" in $$props) $$invalidate(18, name = $$props.name);
     		if ("appSettings" in $$props) $$invalidate(0, appSettings = $$props.appSettings);
     	};
 
@@ -21074,12 +33831,11 @@ var app = (function () {
     		CharacterSheet,
     		SupplementalSheet,
     		SRD,
+    		About,
     		getNewCharacter,
     		downloadToClient: FileSaver_min,
     		Dropzone,
     		LocalStorageController,
-    		Markdown,
-    		name,
     		appSettings,
     		activeIndex,
     		activeSection,
@@ -21115,28 +33871,27 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("name" in $$props) $$invalidate(18, name = $$props.name);
     		if ("appSettings" in $$props) $$invalidate(0, appSettings = $$props.appSettings);
     		if ("activeIndex" in $$props) $$invalidate(1, activeIndex = $$props.activeIndex);
     		if ("activeSection" in $$props) $$invalidate(2, activeSection = $$props.activeSection);
-    		if ("srdMarkdown" in $$props) $$invalidate(3, srdMarkdown = $$props.srdMarkdown);
-    		if ("tocMarkdown" in $$props) $$invalidate(4, tocMarkdown = $$props.tocMarkdown);
-    		if ("aboutMarkdown" in $$props) $$invalidate(5, aboutMarkdown = $$props.aboutMarkdown);
+    		if ("srdMarkdown" in $$props) srdMarkdown = $$props.srdMarkdown;
+    		if ("tocMarkdown" in $$props) tocMarkdown = $$props.tocMarkdown;
+    		if ("aboutMarkdown" in $$props) aboutMarkdown = $$props.aboutMarkdown;
     		if ("printOptionListElement" in $$props) printOptionListElement = $$props.printOptionListElement;
-    		if ("snackBarElement" in $$props) $$invalidate(6, snackBarElement = $$props.snackBarElement);
+    		if ("snackBarElement" in $$props) $$invalidate(3, snackBarElement = $$props.snackBarElement);
     		if ("saveOptionsListElement" in $$props) saveOptionsListElement = $$props.saveOptionsListElement;
-    		if ("tabBarElement" in $$props) $$invalidate(7, tabBarElement = $$props.tabBarElement);
-    		if ("disabled" in $$props) $$invalidate(8, disabled = $$props.disabled);
-    		if ("showLoadPane" in $$props) $$invalidate(9, showLoadPane = $$props.showLoadPane);
+    		if ("tabBarElement" in $$props) $$invalidate(4, tabBarElement = $$props.tabBarElement);
+    		if ("disabled" in $$props) $$invalidate(5, disabled = $$props.disabled);
+    		if ("showLoadPane" in $$props) $$invalidate(6, showLoadPane = $$props.showLoadPane);
     		if ("firstCall" in $$props) firstCall = $$props.firstCall;
     		if ("saveAlsoDownloads" in $$props) saveAlsoDownloads = $$props.saveAlsoDownloads;
     		if ("localStorageController" in $$props) localStorageController = $$props.localStorageController;
     		if ("url" in $$props) url = $$props.url;
     		if ("basePath" in $$props) basePath = $$props.basePath;
-    		if ("snackBarText" in $$props) $$invalidate(10, snackBarText = $$props.snackBarText);
+    		if ("snackBarText" in $$props) $$invalidate(7, snackBarText = $$props.snackBarText);
     		if ("tmpChar" in $$props) tmpChar = $$props.tmpChar;
     		if ("charIsValid" in $$props) charIsValid = $$props.charIsValid;
-    		if ("character" in $$props) $$invalidate(11, character = $$props.character);
+    		if ("character" in $$props) $$invalidate(8, character = $$props.character);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -21147,9 +33902,6 @@ var app = (function () {
     		appSettings,
     		activeIndex,
     		activeSection,
-    		srdMarkdown,
-    		tocMarkdown,
-    		aboutMarkdown,
     		snackBarElement,
     		tabBarElement,
     		disabled,
@@ -21162,12 +33914,9 @@ var app = (function () {
     		handleNewCharacterClicked,
     		handleFilesSelect,
     		hideLoadPane,
-    		name,
     		mwc_tab_bar_binding,
     		charactersheet_character_binding,
     		supplementalsheet_character_binding,
-    		srd_tocMarkdown_binding,
-    		srd_srdMarkdown_binding,
     		mwc_snackbar_binding,
     		charactersheet_character_binding_1,
     		supplementalsheet_character_binding_1
@@ -21177,29 +33926,14 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$m, create_fragment$m, safe_not_equal, { name: 18, appSettings: 0 }, [-1, -1]);
+    		init(this, options, instance$o, create_fragment$o, safe_not_equal, { appSettings: 0 }, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$m.name
+    			id: create_fragment$o.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*name*/ ctx[18] === undefined && !("name" in props)) {
-    			console_1.warn("<App> was created without expected prop 'name'");
-    		}
-    	}
-
-    	get name() {
-    		throw new Error("<App>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set name(value) {
-    		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
     	get appSettings() {
